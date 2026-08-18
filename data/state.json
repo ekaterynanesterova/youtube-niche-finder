@@ -1,0 +1,16 @@
+{
+  "seedCursor": 6,
+  "runs": [
+    {
+      "date": "2026-08-18",
+      "budget": 5000,
+      "spent": 3770,
+      "byEndpoint": {
+        "search": 1200,
+        "channels": 5,
+        "playlistItems": 1031,
+        "videos": 1534
+      }
+    }
+  ]
+}
