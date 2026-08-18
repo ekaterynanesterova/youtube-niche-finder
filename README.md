@@ -1,1 +1,1 @@
-# youtube-niche-fider
+# youtube-niche-finder
