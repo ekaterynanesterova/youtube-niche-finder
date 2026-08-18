@@ -37,6 +37,7 @@ export function buildPayload(m, seeds, thresholds) {
 
   const niches = Object.values(m.niches).map((n) => ({
     id: n.id, group: n.group, control: n.control,
+    ru: byId[n.id]?.ru ?? null,
     query: byId[n.id]?.de ?? n.id,
     queries: n.queries,
     byMarket: n.byMarket,
@@ -117,6 +118,8 @@ button.chip[data-on="1"]{background:color-mix(in srgb,var(--brand) 16%,var(--rai
 .niche > summary::-webkit-details-marker{display:none}
 .niche[open]{border-color:color-mix(in srgb,var(--brand) 40%,var(--line))}
 .nm{font-size:16px;font-weight:600;letter-spacing:-.01em}
+.ru{color:var(--brand);font-weight:500;font-size:14.5px;white-space:nowrap}
+@media (max-width:520px){ .ru{display:block;white-space:normal;margin-left:22px} }
 .q{color:var(--dim);font-size:12.5px;margin-top:2px}
 .rank{color:var(--dim);font-variant-numeric:tabular-nums;font-size:13px;margin-right:8px}
 
@@ -244,7 +247,7 @@ function card(r, i) {
   return \`<details class="niche">
     <summary>
       <div>
-        <div class="nm"><span class="rank">\${i + 1}</span>\${q}</div>
+        <div class="nm"><span class="rank">\${i + 1}</span>\${q}\${r.ru ? \` <span class="ru">\${r.ru}</span>\` : ''}</div>
         <div class="q">\${r.group}\${r.control ? ' · опорная тема' : ''}</div>
       </div>
       <div class="meter">

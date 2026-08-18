@@ -1,181 +1,209 @@
 {
-  "_комментарий": "Черновик. Один seed = одна ниша для метрик. id должен быть стабильным: по нему склеивается история. \"control\": true — тема, по которой снимается английский контроль. Остальные собираются только на немецком.",
+  "_комментарий": "Черновик. Один seed = одна ниша для метрик. id должен быть стабильным: по нему склеивается история. \"control\": true — тема, по которой снимается английский контроль. Остальные собираются только на немецком. ru — расшифровка по-русски, она нигде не участвует в поиске.",
   "seeds": [
     {
       "id": "space-doku",
       "control": true,
       "group": "Космос",
       "de": "Weltraum Dokumentation",
-      "en": "space documentary"
+      "en": "space documentary",
+      "ru": "документалки о космосе"
     },
     {
       "id": "blackhole",
       "group": "Космос",
       "de": "schwarzes Loch Doku",
-      "en": "black hole documentary"
+      "en": "black hole documentary",
+      "ru": "чёрные дыры"
     },
     {
       "id": "universe-scale",
       "group": "Космос",
       "de": "Größe des Universums",
-      "en": "size of the universe"
+      "en": "size of the universe",
+      "ru": "размеры Вселенной"
     },
     {
       "id": "exoplanets",
       "group": "Космос",
       "de": "Exoplaneten Doku",
-      "en": "exoplanets documentary"
+      "en": "exoplanets documentary",
+      "ru": "экзопланеты"
     },
     {
       "id": "solar-system",
       "group": "Космос",
       "de": "Sonnensystem erklärt",
-      "en": "solar system explained"
+      "en": "solar system explained",
+      "ru": "Солнечная система"
     },
     {
       "id": "space-missions",
       "group": "Космос",
       "de": "Raumfahrt Dokumentation",
-      "en": "space missions documentary"
+      "en": "space missions documentary",
+      "ru": "космические миссии"
     },
     {
       "id": "dinos",
       "control": true,
       "group": "Доисторическое",
       "de": "Dinosaurier Dokumentation",
-      "en": "dinosaur documentary"
+      "en": "dinosaur documentary",
+      "ru": "динозавры"
     },
     {
       "id": "urzeit-tiere",
       "group": "Доисторическое",
       "de": "Urzeit Tiere Doku",
-      "en": "prehistoric animals documentary"
+      "en": "prehistoric animals documentary",
+      "ru": "звери доисторических эпох"
     },
     {
       "id": "mass-extinction",
       "group": "Доисторическое",
       "de": "Massenaussterben Doku",
-      "en": "mass extinction documentary"
+      "en": "mass extinction documentary",
+      "ru": "массовые вымирания"
     },
     {
       "id": "ice-age",
       "group": "Доисторическое",
       "de": "Eiszeit Dokumentation",
-      "en": "ice age documentary"
+      "en": "ice age documentary",
+      "ru": "ледниковый период"
     },
     {
       "id": "human-evolution",
       "control": true,
       "group": "Доисторическое",
       "de": "Evolution des Menschen Doku",
-      "en": "human evolution documentary"
+      "en": "human evolution documentary",
+      "ru": "эволюция человека"
     },
     {
       "id": "deep-sea",
       "control": true,
       "group": "Океан",
       "de": "Tiefsee Dokumentation",
-      "en": "deep sea documentary"
+      "en": "deep sea documentary",
+      "ru": "глубоководный мир"
     },
     {
       "id": "ocean-creatures",
       "group": "Океан",
       "de": "Tiefsee Lebewesen",
-      "en": "deep sea creatures"
+      "en": "deep sea creatures",
+      "ru": "обитатели глубин"
     },
     {
       "id": "antarctica",
       "group": "Океан",
       "de": "Antarktis Dokumentation",
-      "en": "antarctica documentary"
+      "en": "antarctica documentary",
+      "ru": "Антарктида"
     },
     {
       "id": "supervolcano",
       "control": true,
       "group": "Геология",
       "de": "Supervulkan Doku",
-      "en": "supervolcano documentary"
+      "en": "supervolcano documentary",
+      "ru": "супервулканы"
     },
     {
       "id": "plate-tectonics",
       "group": "Геология",
       "de": "Plattentektonik erklärt",
-      "en": "plate tectonics explained"
+      "en": "plate tectonics explained",
+      "ru": "тектоника плит"
     },
     {
       "id": "disasters",
       "group": "Геология",
       "de": "Naturkatastrophen Dokumentation",
-      "en": "natural disaster documentary"
+      "en": "natural disaster documentary",
+      "ru": "природные катастрофы"
     },
     {
       "id": "lost-civs",
       "control": true,
       "group": "Древние",
       "de": "versunkene Zivilisationen Doku",
-      "en": "lost civilizations documentary"
+      "en": "lost civilizations documentary",
+      "ru": "исчезнувшие цивилизации"
     },
     {
       "id": "egypt",
       "group": "Древние",
       "de": "Altes Ägypten Dokumentation",
-      "en": "ancient egypt documentary"
+      "en": "ancient egypt documentary",
+      "ru": "Древний Египет"
     },
     {
       "id": "archaeology",
       "group": "Древние",
       "de": "Archäologie Doku",
-      "en": "archaeology documentary"
+      "en": "archaeology documentary",
+      "ru": "загадки археологии"
     },
     {
       "id": "megastructures",
       "control": true,
       "group": "Инженерия",
       "de": "Megabauwerke Doku",
-      "en": "megastructures documentary"
+      "en": "megastructures documentary",
+      "ru": "мегасооружения"
     },
     {
       "id": "eng-disasters",
       "group": "Инженерия",
       "de": "Technikkatastrophen Doku",
-      "en": "engineering disasters documentary"
+      "en": "engineering disasters documentary",
+      "ru": "техногенные катастрофы"
     },
     {
       "id": "lost-places",
       "group": "Инженерия",
       "de": "Lost Places Doku",
-      "en": "abandoned places documentary"
+      "en": "abandoned places documentary",
+      "ru": "заброшенные места"
     },
     {
       "id": "parasites",
       "group": "Биология",
       "de": "Parasiten Dokumentation",
-      "en": "parasites documentary"
+      "en": "parasites documentary",
+      "ru": "паразиты"
     },
     {
       "id": "human-body",
       "group": "Биология",
       "de": "menschlicher Körper erklärt",
-      "en": "human body explained"
+      "en": "human body explained",
+      "ru": "как устроено тело"
     },
     {
       "id": "microbes",
       "group": "Биология",
       "de": "Mikroorganismen Doku",
-      "en": "microscopic world documentary"
+      "en": "microscopic world documentary",
+      "ru": "микромир"
     },
     {
       "id": "future-earth",
       "control": true,
       "group": "Будущее",
       "de": "Zukunft der Erde Doku",
-      "en": "future of earth documentary"
+      "en": "future of earth documentary",
+      "ru": "будущее Земли"
     },
     {
       "id": "terraforming",
       "group": "Будущее",
       "de": "Terraforming Mars",
-      "en": "terraforming mars"
+      "en": "terraforming mars",
+      "ru": "терраформирование Марса"
     }
   ]
 }

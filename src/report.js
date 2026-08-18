@@ -14,6 +14,7 @@ export function score(n) {
 }
 
 export function renderReport(m, seeds) {
+  const ru = Object.fromEntries(seeds.map((x) => [x.id, x.ru ?? '']));
   const ranked = Object.values(m.niches)
     .map((n) => ({ ...n, score: score(n) }))
     .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
@@ -36,7 +37,7 @@ export function renderReport(m, seeds) {
   L.push('| # | Ниша | Проницаемость | Молодых пробилось | Медиана выброса | Длина выброса | Мусорность | Лайки | Публикаций/нед | Доверие |');
   L.push('|---|------|---------------|-------------------|-----------------|---------------|------------|-------|----------------|---------|');
   withData.forEach((n, i) => {
-    L.push(`| ${i + 1} | **${n.id}** <br><sub>${n.group}</sub> | ${pct(n.permeability)} | ${n.youngOutlierChannels} из ${n.outlierChannels} | ${num(n.medianOutlierViews)} | ${one(n.medianOutlierMinutes)} мин | ${pct(n.slopShare)} | ${pct(n.medianLikeRate)} | ${one(n.medianUploadsPerWeek)} | ${n.confidence} |`);
+    L.push(`| ${i + 1} | **${n.id}** — ${ru[n.id]} <br><sub>${n.group}</sub> | ${pct(n.permeability)} | ${n.youngOutlierChannels} из ${n.outlierChannels} | ${num(n.medianOutlierViews)} | ${one(n.medianOutlierMinutes)} мин | ${pct(n.slopShare)} | ${pct(n.medianLikeRate)} | ${one(n.medianUploadsPerWeek)} | ${n.confidence} |`);
   });
   L.push('');
 
@@ -48,7 +49,7 @@ export function renderReport(m, seeds) {
   L.push('|------|------------------|------------|------------------|------------|');
   for (const n of ranked.filter((x) => x.byMarket.de.channels || x.byMarket.en.channels)) {
     const d = n.byMarket.de, e = n.byMarket.en;
-    L.push(`| ${n.control ? '⚓ ' : ''}${n.id} | ${pct(d.permeability)} (${d.outlierChannels}) | ${num(d.medianViews)} | ${pct(e.permeability)} (${e.outlierChannels}) | ${num(e.medianViews)} |`);
+    L.push(`| ${n.control ? '⚓ ' : ''}${n.id} — ${ru[n.id]} | ${pct(d.permeability)} (${d.outlierChannels}) | ${num(d.medianViews)} | ${pct(e.permeability)} (${e.outlierChannels}) | ${num(e.medianViews)} |`);
   }
   L.push('');
 
