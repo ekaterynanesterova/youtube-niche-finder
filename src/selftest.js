@@ -2,6 +2,7 @@
 import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
+import { Translator } from './translate.js';
 import { median, dominantLang, channelBaseline } from './metrics.js';
 
 let failed = 0;
@@ -23,6 +24,36 @@ check('медиана чётной длины', median([1, 2, 3, 4]) === 2.5);
 check('медиана игнорирует пустые', median([]) === null);
 check('язык канала — по большинству видео', dominantLang([{lang:'en-US'},{lang:'en'},{lang:'de'}]) === 'en');
 check('язык не выводится из двух рынков', dominantLang([{}], ['de','en']) === null);
+
+// --- переводчик ---
+const fakeFetch = (body, ok = true) => async () => ({ ok, json: async () => body });
+const okBody = { responseData: { translatedText: 'перевод' } };
+
+{
+  const t = new Translator({ fetchImpl: fakeFetch(okBody) });
+  check('перевод возвращается', await t.translate('Sonnensystem', 'de') === 'перевод');
+  check('второй раз берётся из кеша', await t.translate('Sonnensystem', 'de') === 'перевод');
+  check('сеть дёрнута ровно один раз', t.stats.fetched === 1 && t.stats.hit === 1);
+}
+{
+  // Предупреждение сервиса о лимите не должно осесть в кеше навсегда.
+  const t = new Translator({ fetchImpl: fakeFetch({ responseData: { translatedText:
+    'MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY' } }) });
+  check('предупреждение о лимите не выдаётся за перевод', await t.translate('Test', 'de') === null);
+  check('после лимита сервис больше не дёргается', t.blocked === true);
+  check('мусор не попал в кеш', Object.keys(t.cache).length === 0);
+}
+{
+  const t = new Translator({ fetchImpl: fakeFetch(okBody), charBudget: 5 });
+  check('длинное название не переводится сверх бюджета',
+    await t.translate('очень длинное название ролика', 'de') === null);
+  check('пропуск по бюджету посчитан', t.stats.skipped === 1);
+}
+{
+  const t = new Translator({ fetchImpl: async () => { throw new Error('сеть недоступна'); } });
+  check('падение сети не роняет прогон', await t.translate('Test', 'de') === null);
+  check('падение сети посчитано как неудача', t.stats.failed === 1);
+}
 
 // --- синтетическая база ---
 const now = '2026-08-18T00:00:00.000Z';

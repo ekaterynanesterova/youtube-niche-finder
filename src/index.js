@@ -5,6 +5,7 @@ import { discover, survey, hydrate, snapshot } from './collect.js';
 import { computeMetrics } from './metrics.js';
 import { renderReport } from './report.js';
 import { buildPayload, renderSite } from './site.js';
+import { Translator } from './translate.js';
 import {
   loadDb, saveDb, readJson, writeJson, writeCompactJson, writeText, paths,
   listSnapshots, today, ROOT,
@@ -47,7 +48,30 @@ const metrics = computeMetrics({ db, seeds, thresholds, snapshots });
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
 
 // Страница собирается с вшитыми данными: без fetch ей нечего не догрузить.
-writeText(join(ROOT, 'index.html'), renderSite(buildPayload(metrics, seeds, thresholds)));
+const payload = buildPayload(metrics, seeds, thresholds);
+
+// Названия видео переводим на русский. Переведённое живёт в кеше вечно,
+// так что расход у бесплатного сервиса падает почти до нуля со второго дня.
+const cache = readJson(paths.translations, {});
+const translator = new Translator({ cache });
+const pending = [];
+for (const [, byLang] of Object.entries(payload.examples)) {
+  for (const [lang, list] of Object.entries(byLang)) {
+    for (const v of list) pending.push(Object.assign(v, { from: lang }));
+  }
+}
+// Один и тот же ролик попадает в несколько ниш — переводим его один раз.
+const seen = new Set();
+await translator.translateAll(pending.filter((v) => !seen.has(v.title) && seen.add(v.title)));
+for (const v of pending) {
+  v.titleRu ??= translator.cached(v.title, v.from);
+  delete v.from;
+}
+writeJson(paths.translations, cache);
+console.log('Перевод:', JSON.stringify(translator.stats),
+            translator.blocked ? '(сервис исчерпал дневной лимит)' : '');
+
+writeText(join(ROOT, 'index.html'), renderSite(payload));
 
 // В metrics.json кладём выводы, а не сырьё: массив всех видео весил 17 МБ
 // и переписывался бы целиком каждый день. Сырьё и так лежит в data/.

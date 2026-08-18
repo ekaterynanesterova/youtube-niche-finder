@@ -142,6 +142,7 @@ button.chip[data-on="1"]{background:color-mix(in srgb,var(--brand) 16%,var(--rai
 .vid:last-child{border-bottom:0}
 .vid:hover .vt{color:var(--brand)}
 .vt{font-size:14px;line-height:1.4}
+.vru{font-size:13.5px;line-height:1.4;color:var(--brand);margin-top:2px}
 .vm{color:var(--dim);font-size:12px;margin-top:3px;font-variant-numeric:tabular-nums}
 .empty{color:var(--dim);font-size:13.5px;padding:28px 16px;text-align:center;
   background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}
@@ -267,6 +268,7 @@ function card(r, i) {
       <h4>Кто пробился — открой и посмотри глазами</h4>
       \${ex.length ? ex.map(v => \`<a class="vid" href="https://youtu.be/\${v.id}" target="_blank" rel="noopener">
         <div class="vt">\${v.title ?? ''}</div>
+        \${v.titleRu ? \`<div class="vru">\${v.titleRu}</div>\` : ''}
         <div class="vm">\${v.channel ?? ''} · \${num(v.views)} просмотров · ×\${v.ratio.toFixed(1)} к медиане канала · \${v.minutes} мин · каналу было \${plural(v.channelAge, 'день', 'дня', 'дней')}</div>
       </a>\`).join('') : '<div class="vm">Примеров пока нет — нужны прогоны.</div>'}
     </div>

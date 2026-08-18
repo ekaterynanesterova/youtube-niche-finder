@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-08-18T21:38:53.124Z",
+  "computedAt": "2026-08-18T21:45:39.000Z",
   "snapshotDays": 1,
   "thresholds": {
     "minDurationSec": 480,
@@ -61,13 +61,13 @@
         "en": {
           "channels": 30,
           "videos": 5955,
-          "outliers": 943,
+          "outliers": 947,
           "outlierChannels": 29,
           "youngOutlierChannels": 4,
           "permeability": 0.13793103448275862,
           "medianViews": 154884,
-          "medianOutlierViews": 748050,
-          "medianOutlierMinutes": 43.05,
+          "medianOutlierViews": 744243,
+          "medianOutlierMinutes": 42.75,
           "medianUploadsPerWeek": 1.1277777777777778,
           "medianLikeRate": 0.019612104976451075,
           "medianCommentRate": 0.0014219803551816746,
