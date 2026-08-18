@@ -5,7 +5,7 @@ import { discover, survey, hydrate, snapshot } from './collect.js';
 import { computeMetrics } from './metrics.js';
 import { renderReport } from './report.js';
 import {
-  loadDb, saveDb, readJson, writeJson, writeText, paths,
+  loadDb, saveDb, readJson, writeJson, writeCompactJson, writeText, paths,
   listSnapshots, today, ROOT,
 } from './store.js';
 import { join } from 'node:path';
@@ -30,10 +30,10 @@ if (!metricsOnly) {
   if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget });
   const pending = await survey({ api, db, thresholds });
   if (pending?.size) await hydrate({ api, db, pending, markets, thresholds });
-  const snap = await snapshot({ api, db });
+  const snap = await snapshot({ api, db, thresholds });
 
   if (Object.keys(snap).length) {
-    writeJson(paths.snapshot(date), { date, videos: snap });
+    writeCompactJson(paths.snapshot(date), { date, videos: snap });
   }
   db.state.runs = [...(db.state.runs ?? []).slice(-29), { date, ...quota.summary() }];
   saveDb(db);
@@ -43,6 +43,16 @@ if (!metricsOnly) {
 // Метрики считаем всегда — они дешёвые и не трогают API.
 const snapshots = listSnapshots().slice(-90).map((f) => readJson(paths.snapshot(f.replace('.json', ''))));
 const metrics = computeMetrics({ db, seeds, thresholds, snapshots });
-writeJson(paths.metrics, metrics);
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
+
+// В metrics.json кладём выводы, а не сырьё: массив всех видео весил 17 МБ
+// и переписывался бы целиком каждый день. Сырьё и так лежит в data/.
+writeJson(paths.metrics, {
+  computedAt: metrics.computedAt,
+  snapshotDays: metrics.snapshotDays,
+  thresholds: metrics.thresholds,
+  niches: metrics.niches,
+  channelCount: Object.keys(metrics.channels).length,
+  videoCount: metrics.videos.length,
+});
 console.log(`Готово. Каналов ${Object.keys(metrics.channels).length}, видео ${metrics.videos.length}, ниш ${Object.keys(metrics.niches).length}.`);

@@ -19,6 +19,13 @@ export function writeJson(path, value) {
   writeFileSync(path, JSON.stringify(value, null, 2) + '\n');
 }
 
+// Ряды наблюдений пишем без отступов: форматирование утраивало бы размер,
+// а читают их скрипты, не люди.
+export function writeCompactJson(path, value) {
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, JSON.stringify(value) + '\n');
+}
+
 export function writeText(path, text) {
   mkdirSync(dirname(path), { recursive: true });
   writeFileSync(path, text);
@@ -27,6 +34,7 @@ export function writeText(path, text) {
 export const paths = {
   channels: join(DATA, 'channels.json'),
   videos: join(DATA, 'videos.json'),
+  current: join(DATA, 'current.json'),
   state: join(DATA, 'state.json'),
   metrics: join(DATA, 'metrics.json'),
   snapshot: (date) => join(SNAPSHOTS, `${date}.json`),
@@ -38,10 +46,14 @@ export function listSnapshots() {
   return readdirSync(SNAPSHOTS).filter((f) => f.endsWith('.json')).sort();
 }
 
+// videos.json держит только неизменные метаданные — он почти не меняется между
+// прогонами, и git хранит его дёшево. Всё, что растёт каждый день (просмотры,
+// лайки, комментарии), живёт отдельно в current.json и в снапшотах.
 export function loadDb() {
   return {
     channels: readJson(paths.channels, {}),
     videos: readJson(paths.videos, {}),
+    current: readJson(paths.current, {}),
     state: readJson(paths.state, { seedCursor: 0, runs: [] }),
   };
 }
@@ -49,6 +61,7 @@ export function loadDb() {
 export function saveDb(db) {
   writeJson(paths.channels, db.channels);
   writeJson(paths.videos, db.videos);
+  writeCompactJson(paths.current, db.current);
   writeJson(paths.state, db.state);
 }
 

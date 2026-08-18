@@ -1,6 +1,16 @@
 // Метрики. Всё считается из накопленных данных, ничего не предсказывается.
 import { daysBetween } from './store.js';
 
+// Возраст канала. Полный архив даёт настоящую дату первой загрузки; когда
+// архив не долистан, берём дату регистрации — она может только состарить канал,
+// а это безопасная сторона ошибки.
+const ageDays_ = (at, now) => daysBetween(at, now);
+
+function ageDays(ch, now) {
+  const basis = ch.firstUploadComplete ? ch.firstUploadAt : ch.publishedAt;
+  return basis ? daysBetween(basis, now) : null;
+}
+
 export function median(xs) {
   const a = xs.filter((x) => Number.isFinite(x)).sort((p, q) => p - q);
   if (!a.length) return null;
@@ -36,11 +46,27 @@ export function engagement(v) {
   };
 }
 
+// Параметр relevanceLanguage в search.list — подсказка, а не фильтр: по немецкому
+// запросу приезжают National Geographic и KBS. Язык канала определяем по его же
+// видео; запрос говорит только о теме.
+export function dominantLang(videos, fallbackMarkets = []) {
+  const counts = {};
+  for (const v of videos) {
+    const base = (v.lang ?? '').split('-')[0];
+    if (base) counts[base] = (counts[base] ?? 0) + 1;
+  }
+  const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  if (top) return top[0];
+  // Язык не объявлен вообще — тогда доверяем рынку, если он единственный.
+  return fallbackMarkets.length === 1 ? fallbackMarkets[0] : null;
+}
+
 export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = new Date().toISOString() }) {
   const byChannel = {};
   for (const v of Object.values(db.videos)) {
-    if (!v.channelId || !Number.isFinite(v.views)) continue;
-    (byChannel[v.channelId] ??= []).push(v);
+    const [views, likes, comments] = db.current?.[v.id] ?? [];
+    if (!v.channelId || !Number.isFinite(views)) continue;
+    (byChannel[v.channelId] ??= []).push({ ...v, views, likes, comments });
   }
 
   // --- уровень канала ---
@@ -54,10 +80,15 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
       seeds: ch.seeds ?? [],
       markets: ch.markets ?? [],
       subscribers: ch.subscribers ?? null,
-      firstUploadAt: ch.firstUploadAt ?? ch.publishedAt ?? null,
+      // Дате первой загрузки верим только если долистали архив до конца.
+      // Иначе она врёт в опасную сторону — канал кажется моложе, чем он есть,
+      // и ниша выглядит проницаемой там, где сидят старожилы.
+      firstUploadAt: ch.firstUploadComplete ? ch.firstUploadAt : null,
       firstUploadComplete: !!ch.firstUploadComplete,
-      ageDays: ch.firstUploadAt ? daysBetween(ch.firstUploadAt, now) : null,
+      ageBasis: ch.firstUploadComplete ? 'первая загрузка' : 'регистрация канала',
+      ageDays: ageDays(ch, now),
       medianViews, matureCount,
+      lang: dominantLang(vids, ch.markets ?? []),
       videoCount: vids.length,
       uploadsPerWeek: uploadsPerWeek(vids, now),
     };
@@ -77,7 +108,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
         id: v.id, channelId: cid, title: v.title, publishedAt: v.publishedAt,
         durationSec: v.durationSec, views: v.views, ageDays,
         outlierRatio: c.medianViews ? v.views / c.medianViews : null,
-        channelAgeAtUploadDays: c.firstUploadAt ? daysBetween(c.firstUploadAt, v.publishedAt) : null,
+        channelAgeAtUploadDays: c.ageDays == null ? null : c.ageDays - ageDays_(v.publishedAt, now),
         proxyVelocity,
         velocity: realVelocity(v.id, snapshots),
         likeRate: eng.like, commentRate: eng.comment,
@@ -87,51 +118,23 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
   }
 
   // --- уровень ниши ---
+  // Считаем по каждому языку отдельно. Смешивать нельзя: немецкий выброс и
+  // английский живут в разных выдачах и конкурируют с разными каналами.
   const niches = {};
   for (const seed of seeds) {
     const seedVideos = videos.filter((v) => v.seeds.includes(seed.id));
-    const seedChannels = [...new Set(seedVideos.map((v) => v.channelId))].map((id) => channels[id]);
-
-    const outliers = seedVideos.filter((v) =>
-      v.outlierRatio != null && v.outlierRatio >= thresholds.outlierRatio && v.views >= thresholds.outlierMinViews);
-
-    // Схлопываем по каналу: один везунчик не должен давать нише пять очков.
-    const outlierChannels = [...new Set(outliers.map((v) => v.channelId))];
-    const youngOutlierChannels = outlierChannels.filter((id) => {
-      const first = outliers.find((v) => v.channelId === id);
-      return first?.channelAgeAtUploadDays != null && first.channelAgeAtUploadDays <= thresholds.youngChannelDays;
-    });
-
-    const slopChannels = seedChannels.filter((c) =>
-      c.uploadsPerWeek >= thresholds.slopUploadsPerWeek &&
-      c.ageDays != null && c.ageDays <= thresholds.slopChannelAgeDays);
-
+    const byLang = {};
+    for (const lang of ['de', 'en']) {
+      byLang[lang] = nicheStats(seedVideos.filter((v) => channels[v.channelId]?.lang === lang),
+                                channels, thresholds);
+    }
     niches[seed.id] = {
-      id: seed.id, group: seed.group, queries: { de: seed.de ?? null, en: seed.en ?? null },
-      channels: seedChannels.length,
-      videos: seedVideos.length,
-      outliers: outliers.length,
-      outlierChannels: outlierChannels.length,
-      // Сколько РАЗНЫХ молодых каналов пробилось. Один везунчик ничего не доказывает:
-      // канал бывает «проклятым» независимо от ниши, и наоборот. Повторяемость на
-      // нескольких каналах — единственное, что отличает открытую дверь от случайности.
-      youngOutlierChannels: youngOutlierChannels.length,
-      // Главная метрика: доля выбросов, приходящаяся на молодые каналы.
-      permeability: share(youngOutlierChannels.length, outlierChannels.length),
-      medianViews: median(seedVideos.map((v) => v.views)),
-      medianOutlierViews: median(outliers.map((v) => v.views)),
-      // Во что обойдётся вход: сколько минут длится типовой выброс.
-      medianOutlierMinutes: (() => {
-        const d = median(outliers.map((v) => v.durationSec));
-        return d == null ? null : d / 60;
-      })(),
-      medianUploadsPerWeek: median(seedChannels.map((c) => c.uploadsPerWeek)),
-      medianLikeRate: median(seedVideos.map((v) => v.likeRate).filter((x) => x != null)),
-      medianCommentRate: median(seedVideos.map((v) => v.commentRate).filter((x) => x != null)),
-      // Индекс мусорности: доля молодых каналов-конвейеров в нише.
-      slopShare: share(slopChannels.length, seedChannels.length),
-      byMarket: marketSplit(seedVideos, seedChannels, channels, outlierChannels, thresholds),
-      confidence: confidence(seedVideos.length, outlierChannels.length, snapshots.length),
+      id: seed.id, group: seed.group, control: !!seed.control,
+      queries: { de: seed.de ?? null, en: seed.en ?? null },
+      // Основной рынок — немецкий. Рейтинг строится по нему.
+      ...byLang.de,
+      byMarket: byLang,
+      confidence: confidence(byLang.de.videos, byLang.de.outlierChannels, snapshots.length),
     };
   }
 
@@ -150,22 +153,46 @@ function realVelocity(videoId, snapshots) {
   return days > 0 ? (b.views - a.views) / days : null;
 }
 
-function marketSplit(seedVideos, seedChannels, channels, outlierChannels, thresholds) {
-  const out = {};
-  for (const code of ['de', 'en']) {
-    const chans = seedChannels.filter((c) => c.markets?.includes(code));
-    const ids = new Set(chans.map((c) => c.id));
-    const vids = seedVideos.filter((v) => ids.has(v.channelId));
-    const outs = outlierChannels.filter((id) => ids.has(id));
-    const young = outs.filter((id) => (channels[id]?.ageDays ?? Infinity) <= thresholds.youngChannelDays);
-    out[code] = {
-      channels: chans.length, videos: vids.length,
-      medianViews: median(vids.map((v) => v.views)),
-      outlierChannels: outs.length,
-      permeability: share(young.length, outs.length),
-    };
-  }
-  return out;
+function nicheStats(seedVideos, channels, thresholds) {
+  const seedChannels = [...new Set(seedVideos.map((v) => v.channelId))].map((id) => channels[id]);
+
+  const outliers = seedVideos.filter((v) =>
+    v.outlierRatio != null && v.outlierRatio >= thresholds.outlierRatio && v.views >= thresholds.outlierMinViews);
+
+  // Схлопываем по каналу: один везунчик не должен давать нише пять очков.
+  const outlierChannels = [...new Set(outliers.map((v) => v.channelId))];
+  const youngOutlierChannels = outlierChannels.filter((id) => {
+    const first = outliers.find((v) => v.channelId === id);
+    return first?.channelAgeAtUploadDays != null && first.channelAgeAtUploadDays <= thresholds.youngChannelDays;
+  });
+
+  const slopChannels = seedChannels.filter((c) =>
+    c.uploadsPerWeek >= thresholds.slopUploadsPerWeek &&
+    c.ageDays != null && c.ageDays <= thresholds.slopChannelAgeDays);
+
+  const outlierDuration = median(outliers.map((v) => v.durationSec));
+
+  return {
+    channels: seedChannels.length,
+    videos: seedVideos.length,
+    outliers: outliers.length,
+    outlierChannels: outlierChannels.length,
+    // Сколько РАЗНЫХ молодых каналов пробилось. Один везунчик ничего не доказывает:
+    // канал бывает «проклятым» независимо от ниши, и наоборот. Повторяемость на
+    // нескольких каналах — единственное, что отличает открытую дверь от случайности.
+    youngOutlierChannels: youngOutlierChannels.length,
+    // Главная метрика: доля выбросов, приходящаяся на молодые каналы.
+    permeability: share(youngOutlierChannels.length, outlierChannels.length),
+    medianViews: median(seedVideos.map((v) => v.views)),
+    medianOutlierViews: median(outliers.map((v) => v.views)),
+    // Во что обойдётся вход: сколько минут длится типовой выброс.
+    medianOutlierMinutes: outlierDuration == null ? null : outlierDuration / 60,
+    medianUploadsPerWeek: median(seedChannels.map((c) => c.uploadsPerWeek)),
+    medianLikeRate: median(seedVideos.map((v) => v.likeRate).filter((x) => x != null)),
+    medianCommentRate: median(seedVideos.map((v) => v.commentRate).filter((x) => x != null)),
+    // Индекс мусорности: доля молодых каналов-конвейеров в нише.
+    slopShare: share(slopChannels.length, seedChannels.length),
+  };
 }
 
 // Честная оценка того, насколько цифрам можно верить в этот день.

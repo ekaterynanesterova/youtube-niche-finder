@@ -2,7 +2,7 @@
 import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
-import { median } from './metrics.js';
+import { median, dominantLang } from './metrics.js';
 
 let failed = 0;
 const check = (name, cond) => {
@@ -21,6 +21,8 @@ catch (e) { check('перерасход кидает BudgetExhausted', e instanc
 
 check('медиана чётной длины', median([1, 2, 3, 4]) === 2.5);
 check('медиана игнорирует пустые', median([]) === null);
+check('язык канала — по большинству видео', dominantLang([{lang:'en-US'},{lang:'en'},{lang:'de'}]) === 'en');
+check('язык не выводится из двух рынков', dominantLang([{}], ['de','en']) === null);
 
 // --- синтетическая база ---
 const now = '2026-08-18T00:00:00.000Z';
@@ -35,30 +37,31 @@ const seeds = [{ id: 'open', group: 'Тест', de: 'offen', en: 'open' },
 for (let c = 0; c < 4; c++) {
   const id = `young${c}`;
   channels[id] = { id, title: `Молодой ${c}`, seeds: ['open'], markets: ['de'],
-                   firstUploadAt: day(200), firstUploadComplete: true, subscribers: 900 };
+                   firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200), subscribers: 900 };
   for (let v = 0; v < 12; v++) {
     videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
-      publishedAt: day(40 + v * 10), durationSec: 1500, views: 10000, likes: 400, comments: 40 };
+      publishedAt: day(40 + v * 10), durationSec: 1500, views: 10000, likes: 400, comments: 40, lang: 'de' };
   }
   // один выброс — ×10 к медиане
   videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс ${c}`,
-    publishedAt: day(20), durationSec: 1800, views: 100000, likes: 4000, comments: 300 };
+    publishedAt: day(20), durationSec: 1800, views: 100000, likes: 4000, comments: 300, lang: 'de' };
 }
 
 // Ниша «closed»: выбросы только у старых каналов — дверь закрыта.
 for (let c = 0; c < 3; c++) {
   const id = `old${c}`;
   channels[id] = { id, title: `Старик ${c}`, seeds: ['closed'], markets: ['de'],
-                   firstUploadAt: day(2000), firstUploadComplete: true, subscribers: 1500000 };
+                   firstUploadAt: day(2000), firstUploadComplete: true, publishedAt: day(2000), subscribers: 1500000 };
   for (let v = 0; v < 12; v++) {
     videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
-      publishedAt: day(40 + v * 10), durationSec: 1500, views: 50000, likes: 1500, comments: 120 };
+      publishedAt: day(40 + v * 10), durationSec: 1500, views: 50000, likes: 1500, comments: 120, lang: 'de' };
   }
   videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс старика ${c}`,
-    publishedAt: day(20), durationSec: 1800, views: 500000, likes: 15000, comments: 900 };
+    publishedAt: day(20), durationSec: 1800, views: 500000, likes: 15000, comments: 900, lang: 'de' };
 }
 
 const thresholds = { minDurationSec: 480, medianMinVideoAgeDays: 30, velocityMaxVideoAgeDays: 60,
+  snapshotMaxAgeDays: 150,
   outlierRatio: 3, outlierMinViews: 20000, youngChannelDays: 365,
   slopUploadsPerWeek: 5, slopChannelAgeDays: 180 };
 
@@ -67,7 +70,13 @@ const snapshots = [
   { date: day(0), videos: { young0hit: [100000] } },
 ];
 
-const m = computeMetrics({ db: { channels, videos }, seeds, thresholds, snapshots, now });
+const current = {};
+for (const [id, v] of Object.entries(videos)) {
+  current[id] = [v.views, v.likes, v.comments];
+  delete v.views; delete v.likes; delete v.comments;
+}
+
+const m = computeMetrics({ db: { channels, videos, current }, seeds, thresholds, snapshots, now });
 
 check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 10000);
 check('выброс посчитан как ×10', Math.round(m.videos.find((v) => v.id === 'young0hit').outlierRatio) === 10);
@@ -94,6 +103,22 @@ const md = renderReport(m, seeds);
 check('отчёт содержит рейтинг', md.includes('## Рейтинг'));
 check('отчёт содержит сравнение рынков', md.includes('Немецкий против английского'));
 check('отчёт ставит open первым', md.indexOf('**open**') < md.indexOf('**closed**'));
+
+// Недолистанный архив: возраст обязан падать обратно на дату регистрации,
+// иначе канал притворится молодым и раздует проницаемость ниши.
+const partial = computeMetrics({
+  db: {
+    channels: { p1: { id: 'p1', seeds: ['open'], markets: ['de'],
+                      firstUploadAt: day(30), firstUploadComplete: false, publishedAt: day(3000) } },
+    videos: { p1v: { id: 'p1v', channelId: 'p1', publishedAt: day(60), durationSec: 1500, lang: 'de' } },
+    current: { p1v: [10000, 100, 10] },
+  },
+  seeds, thresholds, snapshots: [], now,
+});
+check('недолистанный архив не омолаживает канал',
+  Math.round(partial.channels.p1.ageDays) === 3000);
+check('основа возраста названа честно',
+  partial.channels.p1.ageBasis === 'регистрация канала');
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

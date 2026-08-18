@@ -11,5 +11,8 @@
   "maxUploadPagesNewChannel": 10,
   "maxChannelsSurveyedPerRun": 400,
   "slopUploadsPerWeek": 5,
-  "slopChannelAgeDays": 180
+  "slopChannelAgeDays": 180,
+  "snapshotMaxAgeDays": 150,
+  "medianSamplePages": 2,
+  "reportTopVideos": 60
 }

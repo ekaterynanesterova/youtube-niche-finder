@@ -1,6 +1,7 @@
 // Три слоя сбора: разведка (дорого), опрос (дёшево), накопление (даром).
 import { parseDuration, QuotaExceeded } from './api.js';
 import { BudgetExhausted } from './quota.js';
+import { daysBetween } from './store.js';
 
 const log = (...a) => console.log(...a);
 
@@ -88,7 +89,11 @@ export async function survey({ api, db, thresholds }) {
       if (!ch?.uploadsPlaylistId) continue;
       // Новый канал листаем до конца — нужна дата первой загрузки.
       // Известный — только первую страницу, свежее там всё равно нет.
-      const maxPages = ch.surveyed ? 1 : thresholds.maxUploadPagesNewChannel;
+      // У каналов с огромным архивом до конца не дойти: берём столько, сколько
+      // нужно для медианы, а возраст возьмём из даты регистрации.
+      const reachable = ch.videoCount <= thresholds.maxUploadPagesNewChannel * 50;
+      const maxPages = ch.surveyed ? 1
+        : (reachable ? thresholds.maxUploadPagesNewChannel : thresholds.medianSamplePages);
       let token, pages = 0, oldest = ch.firstUploadAt ?? null;
       while (pages < maxPages) {
         if (!api.quota.canAfford('playlistItems')) break;
@@ -147,21 +152,32 @@ export async function hydrate({ api, db, pending, markets, thresholds }) {
 }
 
 // Слой 3. Дневной срез. Ради него всё и затевалось: истории просмотров API не отдаёт.
-export async function snapshot({ api, db }) {
+export async function snapshot({ api, db, thresholds }) {
   const ids = Object.keys(db.videos);
-  const snap = {};
+  let n = 0;
   await tolerant('снапшот', async () => {
     for (let i = 0; i < ids.length; i += 50) {
       const res = await api.videos(ids.slice(i, i + 50));
       for (const v of res.items ?? []) {
-        const views = Number(v.statistics?.viewCount ?? 0);
-        const likes = v.statistics?.likeCount == null ? null : Number(v.statistics.likeCount);
-        const comments = v.statistics?.commentCount == null ? null : Number(v.statistics.commentCount);
-        snap[v.id] = [views, likes, comments];
-        Object.assign(db.videos[v.id], { views, likes, comments, updatedAt: new Date().toISOString() });
+        db.current[v.id] = [
+          Number(v.statistics?.viewCount ?? 0),
+          v.statistics?.likeCount == null ? null : Number(v.statistics.likeCount),
+          v.statistics?.commentCount == null ? null : Number(v.statistics.commentCount),
+        ];
+        n++;
       }
     }
   });
-  log(`Снапшот: ${Object.keys(snap).length} видео`);
-  return snap;
+
+  // В историю кладём только молодые видео: у старых кривая уже легла в полку,
+  // а хранить её каждый день — это сотни мегабайт в год ради нулевого прироста.
+  const history = {};
+  for (const [id, stats] of Object.entries(db.current)) {
+    const v = db.videos[id];
+    if (v && daysBetween(v.publishedAt, new Date().toISOString()) <= thresholds.snapshotMaxAgeDays) {
+      history[id] = stats;
+    }
+  }
+  log(`Снапшот: обновлено ${n} видео, в историю записано ${Object.keys(history).length}`);
+  return history;
 }
