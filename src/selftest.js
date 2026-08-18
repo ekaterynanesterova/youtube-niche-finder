@@ -94,7 +94,7 @@ for (let c = 0; c < 3; c++) {
 const thresholds = { minDurationSec: 480, medianMinVideoAgeDays: 30, velocityMaxVideoAgeDays: 60,
   snapshotMaxAgeDays: 150, medianMinMatureVideos: 5,
   outlierRatio: 3, outlierMinViews: 20000, youngChannelDays: 365,
-  slopUploadsPerWeek: 5, slopChannelAgeDays: 180 };
+  slopMinutesPerWeek: 180 };
 
 const snapshots = [
   { date: day(7), videos: { young0hit: [70000] } },
@@ -153,6 +153,19 @@ check('недолистанный архив не омолаживает кан�
   Math.round(partial.channels.p1.ageDays) === 3000);
 check('основа возраста названа честно',
   partial.channels.p1.ageBasis === 'регистрация канала');
+
+// Конвейер: канал, выпускающий больше трёх часов готового видео в неделю.
+// Возраст тут ни при чём — важен физически невозможный объём.
+const conveyor = { publishedAt: day(400), firstUploadComplete: false, seeds: ['open'], markets: ['de'] };
+const cv = {}, ccur = {};
+for (let i = 0; i < 60; i++) {            // 60 роликов по два часа за 90 дней
+  cv['c' + i] = { id: 'c' + i, channelId: 'c1', publishedAt: day(i + 5), durationSec: 7200, lang: 'de' };
+  ccur['c' + i] = [30000, 200, 10];
+}
+const conv = computeMetrics({ db: { channels: { c1: { id: 'c1', ...conveyor } }, videos: cv, current: ccur },
+                              seeds, thresholds, snapshots: [], now });
+check('конвейер пойман по объёму хронометража', conv.niches.open.slopShare === 1);
+check('минуты в неделю посчитаны', Math.round(conv.channels.c1.minutesPerWeek) === 560);
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

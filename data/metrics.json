@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-08-18T22:28:34.715Z",
+  "computedAt": "2026-08-18T22:36:08.276Z",
   "snapshotDays": 1,
   "thresholds": {
     "minDurationSec": 480,
@@ -13,12 +13,11 @@
     "searchesPerRun": 40,
     "maxUploadPagesNewChannel": 10,
     "maxChannelsSurveyedPerRun": 400,
-    "slopUploadsPerWeek": 5,
-    "slopChannelAgeDays": 180,
     "snapshotMaxAgeDays": 150,
     "medianSamplePages": 2,
     "reportTopVideos": 60,
-    "medianMinMatureVideos": 5
+    "medianMinMatureVideos": 5,
+    "slopMinutesPerWeek": 180
   },
   "niches": {
     "space-doku": {
@@ -41,7 +40,7 @@
       "medianUploadsPerWeek": 3.1888888888888887,
       "medianLikeRate": 0.012046802664582966,
       "medianCommentRate": 0.0010046255920665396,
-      "slopShare": 0.06666666666666667,
+      "slopShare": 0.7333333333333333,
       "byMarket": {
         "de": {
           "channels": 15,
@@ -56,7 +55,7 @@
           "medianUploadsPerWeek": 3.1888888888888887,
           "medianLikeRate": 0.012046802664582966,
           "medianCommentRate": 0.0010046255920665396,
-          "slopShare": 0.06666666666666667
+          "slopShare": 0.7333333333333333
         },
         "en": {
           "channels": 30,
@@ -71,7 +70,7 @@
           "medianUploadsPerWeek": 1.1277777777777778,
           "medianLikeRate": 0.0196105320899616,
           "medianCommentRate": 0.0014214289369984393,
-          "slopShare": 0
+          "slopShare": 0.26666666666666666
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -96,7 +95,7 @@
       "medianUploadsPerWeek": 2.761111111111111,
       "medianLikeRate": 0.015715606353475083,
       "medianCommentRate": 0.0009673158735480281,
-      "slopShare": 0.05,
+      "slopShare": 0.7,
       "byMarket": {
         "de": {
           "channels": 20,
@@ -111,7 +110,7 @@
           "medianUploadsPerWeek": 2.761111111111111,
           "medianLikeRate": 0.015715606353475083,
           "medianCommentRate": 0.0009673158735480281,
-          "slopShare": 0.05
+          "slopShare": 0.7
         },
         "en": {
           "channels": 2,
@@ -126,7 +125,7 @@
           "medianUploadsPerWeek": 2.6444444444444444,
           "medianLikeRate": 0.0213903743315508,
           "medianCommentRate": 0.0010496846577999386,
-          "slopShare": 0
+          "slopShare": 0.5
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -151,7 +150,7 @@
       "medianUploadsPerWeek": 2.6444444444444444,
       "medianLikeRate": 0.022935779816513763,
       "medianCommentRate": 0.001713796058269066,
-      "slopShare": 0.22580645161290322,
+      "slopShare": 0.7096774193548387,
       "byMarket": {
         "de": {
           "channels": 31,
@@ -166,7 +165,7 @@
           "medianUploadsPerWeek": 2.6444444444444444,
           "medianLikeRate": 0.022935779816513763,
           "medianCommentRate": 0.001713796058269066,
-          "slopShare": 0.22580645161290322
+          "slopShare": 0.7096774193548387
         },
         "en": {
           "channels": 4,
@@ -181,7 +180,7 @@
           "medianUploadsPerWeek": 2.9166666666666665,
           "medianLikeRate": 0.019880715705765408,
           "medianCommentRate": 0.0019933554817275745,
-          "slopShare": 0.25
+          "slopShare": 0.75
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -206,7 +205,7 @@
       "medianUploadsPerWeek": 3.033333333333333,
       "medianLikeRate": 0.01358600996935403,
       "medianCommentRate": 0.0011196556185989678,
-      "slopShare": 0,
+      "slopShare": 0.8888888888888888,
       "byMarket": {
         "de": {
           "channels": 9,
@@ -221,7 +220,7 @@
           "medianUploadsPerWeek": 3.033333333333333,
           "medianLikeRate": 0.01358600996935403,
           "medianCommentRate": 0.0011196556185989678,
-          "slopShare": 0
+          "slopShare": 0.8888888888888888
         },
         "en": {
           "channels": 25,
@@ -236,7 +235,7 @@
           "medianUploadsPerWeek": 4.355555555555556,
           "medianLikeRate": 0.01675977653631285,
           "medianCommentRate": 0.0013017112740895957,
-          "slopShare": 0.16
+          "slopShare": 0.56
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -261,7 +260,7 @@
       "medianUploadsPerWeek": 0.6222222222222222,
       "medianLikeRate": 0.018110895805579105,
       "medianCommentRate": 0,
-      "slopShare": 0,
+      "slopShare": 0.3333333333333333,
       "byMarket": {
         "de": {
           "channels": 3,
@@ -276,7 +275,7 @@
           "medianUploadsPerWeek": 0.6222222222222222,
           "medianLikeRate": 0.018110895805579105,
           "medianCommentRate": 0,
-          "slopShare": 0
+          "slopShare": 0.3333333333333333
         },
         "en": {
           "channels": 0,
@@ -316,7 +315,7 @@
       "medianUploadsPerWeek": 3.811111111111111,
       "medianLikeRate": 0.012843503126060194,
       "medianCommentRate": 0.0011927480916030535,
-      "slopShare": 0.11764705882352941,
+      "slopShare": 0.7647058823529411,
       "byMarket": {
         "de": {
           "channels": 17,
@@ -331,7 +330,7 @@
           "medianUploadsPerWeek": 3.811111111111111,
           "medianLikeRate": 0.012843503126060194,
           "medianCommentRate": 0.0011927480916030535,
-          "slopShare": 0.11764705882352941
+          "slopShare": 0.7647058823529411
         },
         "en": {
           "channels": 14,
@@ -346,7 +345,7 @@
           "medianUploadsPerWeek": 2.2555555555555555,
           "medianLikeRate": 0.016666666666666666,
           "medianCommentRate": 0.001354198013842913,
-          "slopShare": 0.07142857142857142
+          "slopShare": 0.35714285714285715
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -371,7 +370,7 @@
       "medianUploadsPerWeek": 1.3222222222222222,
       "medianLikeRate": 0.019114289527708717,
       "medianCommentRate": 0.0012556253662527857,
-      "slopShare": 0,
+      "slopShare": 0.3333333333333333,
       "byMarket": {
         "de": {
           "channels": 3,
@@ -386,7 +385,7 @@
           "medianUploadsPerWeek": 1.3222222222222222,
           "medianLikeRate": 0.019114289527708717,
           "medianCommentRate": 0.0012556253662527857,
-          "slopShare": 0
+          "slopShare": 0.3333333333333333
         },
         "en": {
           "channels": 37,
@@ -401,7 +400,7 @@
           "medianUploadsPerWeek": 1.8666666666666667,
           "medianLikeRate": 0.022016629581918256,
           "medianCommentRate": 0.0012142705703216854,
-          "slopShare": 0.02702702702702703
+          "slopShare": 0.24324324324324326
         }
       },
       "confidence": "нет данных"
@@ -426,7 +425,7 @@
       "medianUploadsPerWeek": 1.3222222222222222,
       "medianLikeRate": 0.012723358449946178,
       "medianCommentRate": 0.0007655502392344498,
-      "slopShare": 0.047619047619047616,
+      "slopShare": 0.3333333333333333,
       "byMarket": {
         "de": {
           "channels": 21,
@@ -441,7 +440,7 @@
           "medianUploadsPerWeek": 1.3222222222222222,
           "medianLikeRate": 0.012723358449946178,
           "medianCommentRate": 0.0007655502392344498,
-          "slopShare": 0.047619047619047616
+          "slopShare": 0.3333333333333333
         },
         "en": {
           "channels": 0,
@@ -481,7 +480,7 @@
       "medianUploadsPerWeek": 2.877777777777778,
       "medianLikeRate": 0.011695906432748537,
       "medianCommentRate": 0.0007738693131285395,
-      "slopShare": 0,
+      "slopShare": 0.5625,
       "byMarket": {
         "de": {
           "channels": 16,
@@ -496,7 +495,7 @@
           "medianUploadsPerWeek": 2.877777777777778,
           "medianLikeRate": 0.011695906432748537,
           "medianCommentRate": 0.0007738693131285395,
-          "slopShare": 0
+          "slopShare": 0.5625
         },
         "en": {
           "channels": 6,
@@ -511,7 +510,7 @@
           "medianUploadsPerWeek": 2.877777777777778,
           "medianLikeRate": 0.015864978902953585,
           "medianCommentRate": 0.0013698630136986301,
-          "slopShare": 0
+          "slopShare": 0.3333333333333333
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -621,7 +620,7 @@
           "medianUploadsPerWeek": 1.8666666666666667,
           "medianLikeRate": 0.024272024530493187,
           "medianCommentRate": 0.0017087439037520586,
-          "slopShare": 0.037037037037037035
+          "slopShare": 0.2222222222222222
         }
       },
       "confidence": "нет данных"
@@ -1581,7 +1580,7 @@
       "medianUploadsPerWeek": 1.788888888888889,
       "medianLikeRate": 0.014603288903750327,
       "medianCommentRate": 0.0011147409068335901,
-      "slopShare": 0,
+      "slopShare": 0.375,
       "byMarket": {
         "de": {
           "channels": 24,
@@ -1596,7 +1595,7 @@
           "medianUploadsPerWeek": 1.788888888888889,
           "medianLikeRate": 0.014603288903750327,
           "medianCommentRate": 0.0011147409068335901,
-          "slopShare": 0
+          "slopShare": 0.375
         },
         "en": {
           "channels": 23,
@@ -1611,7 +1610,7 @@
           "medianUploadsPerWeek": 2.9555555555555557,
           "medianLikeRate": 0.017904406040790907,
           "medianCommentRate": 0.001339405304045004,
-          "slopShare": 0.08695652173913043
+          "slopShare": 0.7391304347826086
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1636,7 +1635,7 @@
       "medianUploadsPerWeek": 1.6333333333333333,
       "medianLikeRate": 0.01730183959003015,
       "medianCommentRate": 0.0010238034968117183,
-      "slopShare": 0.07692307692307693,
+      "slopShare": 0.38461538461538464,
       "byMarket": {
         "de": {
           "channels": 13,
@@ -1651,7 +1650,7 @@
           "medianUploadsPerWeek": 1.6333333333333333,
           "medianLikeRate": 0.01730183959003015,
           "medianCommentRate": 0.0010238034968117183,
-          "slopShare": 0.07692307692307693
+          "slopShare": 0.38461538461538464
         },
         "en": {
           "channels": 0,
@@ -1691,7 +1690,7 @@
       "medianUploadsPerWeek": 3.7333333333333334,
       "medianLikeRate": 0.02103269407087739,
       "medianCommentRate": 0.001615513101576365,
-      "slopShare": 0.14285714285714285,
+      "slopShare": 0.7142857142857143,
       "byMarket": {
         "de": {
           "channels": 7,
@@ -1706,7 +1705,7 @@
           "medianUploadsPerWeek": 3.7333333333333334,
           "medianLikeRate": 0.02103269407087739,
           "medianCommentRate": 0.001615513101576365,
-          "slopShare": 0.14285714285714285
+          "slopShare": 0.7142857142857143
         },
         "en": {
           "channels": 0,
@@ -1746,7 +1745,7 @@
       "medianUploadsPerWeek": 1.9444444444444446,
       "medianLikeRate": 0.023533181117910175,
       "medianCommentRate": 0.002316648017302988,
-      "slopShare": 0.03571428571428571,
+      "slopShare": 0.32142857142857145,
       "byMarket": {
         "de": {
           "channels": 28,
@@ -1761,7 +1760,7 @@
           "medianUploadsPerWeek": 1.9444444444444446,
           "medianLikeRate": 0.023533181117910175,
           "medianCommentRate": 0.002316648017302988,
-          "slopShare": 0.03571428571428571
+          "slopShare": 0.32142857142857145
         },
         "en": {
           "channels": 0,
@@ -1801,7 +1800,7 @@
       "medianUploadsPerWeek": 1.088888888888889,
       "medianLikeRate": 0.03144522022153394,
       "medianCommentRate": 0.0038499508929883577,
-      "slopShare": 0,
+      "slopShare": 0.36363636363636365,
       "byMarket": {
         "de": {
           "channels": 11,
@@ -1816,7 +1815,7 @@
           "medianUploadsPerWeek": 1.088888888888889,
           "medianLikeRate": 0.03144522022153394,
           "medianCommentRate": 0.0038499508929883577,
-          "slopShare": 0
+          "slopShare": 0.36363636363636365
         },
         "en": {
           "channels": 0,

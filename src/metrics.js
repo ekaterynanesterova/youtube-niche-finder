@@ -94,6 +94,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
       lang: dominantLang(vids, ch.markets ?? []),
       videoCount: vids.length,
       uploadsPerWeek: uploadsPerWeek(vids, now),
+      minutesPerWeek: uploadsPerWeek(vids, now) * ((median(vids.map((v) => v.durationSec)) ?? 0) / 60),
     };
   }
 
@@ -169,9 +170,11 @@ function nicheStats(seedVideos, channels, thresholds) {
     return first?.channelAgeAtUploadDays != null && first.channelAgeAtUploadDays <= thresholds.youngChannelDays;
   });
 
-  const slopChannels = seedChannels.filter((c) =>
-    c.uploadsPerWeek >= thresholds.slopUploadsPerWeek &&
-    c.ageDays != null && c.ageDays <= thresholds.slopChannelAgeDays);
+  // Конвейер ловится не числом роликов, а объёмом готового хронометража.
+  // Пять видео в неделю по три минуты человек сделает; пять по два часа —
+  // нет. Считаем минуты готового видео в неделю: это физический предел,
+  // а не догадка о возрасте канала.
+  const slopChannels = seedChannels.filter((c) => c.minutesPerWeek >= thresholds.slopMinutesPerWeek);
 
   const outlierDuration = median(outliers.map((v) => v.durationSec));
 
