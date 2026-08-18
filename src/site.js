@@ -24,6 +24,9 @@ export function buildPayload(m, seeds, thresholds) {
           minutes: Math.round(v.durationSec / 60),
           channelAge: Math.round(v.channelAgeAtUploadDays),
           subs: ch.subscribers,
+          // Состояние канала целиком: без него один ролик ни о чём не говорит.
+          hits: ch.hits, videos: ch.videoCount, chMedian: ch.medianViews,
+          breakthrough: ch.breakthrough, lottery: ch.lottery,
         });
       }
     }
@@ -31,7 +34,8 @@ export function buildPayload(m, seeds, thresholds) {
   for (const sid of Object.keys(examples)) {
     for (const lang of Object.keys(examples[sid])) {
       examples[sid][lang] = examples[sid][lang]
-        .sort((a, b) => b.ratio - a.ratio).slice(0, 5);
+        .sort((a, b) => (b.breakthrough - a.breakthrough) || (b.hits - a.hits) || (b.views - a.views))
+        .slice(0, 5);
     }
   }
 
@@ -144,6 +148,8 @@ button.chip[data-on="1"]{background:color-mix(in srgb,var(--brand) 16%,var(--rai
 .vt{font-size:14px;line-height:1.4}
 .vru{font-size:13.5px;line-height:1.4;color:var(--brand);margin-top:2px}
 .vm{color:var(--dim);font-size:12px;margin-top:3px;font-variant-numeric:tabular-nums}
+.vm.good{color:var(--good)}
+.vm.warnt{color:var(--bad)}
 .empty{color:var(--dim);font-size:13.5px;padding:28px 16px;text-align:center;
   background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}
 
@@ -195,7 +201,9 @@ footer b{color:var(--ink)}
       <li><span class="dot" style="background:var(--bad)"></span><b>ниже 35%</b> — дверь закрыта. Выбросы достаются тем, у кого уже есть аудитория. Заходить туда с нуля — тратить время.</li>
     </ul>
     <p>Само по себе высокое число ещё ничего не решает: смотри рядом на <b>число пробившихся каналов</b>.</p>
-    <p><b>Пробилось</b> — сколько <i>разных</i> молодых каналов дали выброс. Смотреть надо именно сюда. Канал бывает мёртвым сам по себе: те же самые видео на другом канале собирают просмотры. Один выброс — это про везение одного канала, а не про нишу. Ниже трёх разных каналов ниша вообще не показывается.</p>
+    <p><b>Пробилось</b> — сколько <i>разных</i> каналов попадают в этой нише <b>повторно</b>: не меньше трёх видео выше 20 тысяч просмотров и не меньше 10% всех роликов канала. Одно залетевшее видео каналом не засчитывается вообще.</p>
+    <p><b>Лотерея</b> — доля каналов, у которых успех держится ровно на одном-двух видео. YouTube на старте раздаёт показы всем, и один ролик может залететь у кого угодно. Такой канал даёт огромную кратность к своей медиане именно потому, что медиана у него мёртвая — 237 роликов, два выстрела, остальное по три тысячи. Высокая лотерея значит, что ниша выдаёт разовые везения, а не устойчивый заход.</p>
+    <p><b>Попадаемость</b> — медианная доля роликов выше 20 тысяч у каналов ниши. Показывает, живут там на потоке случайностей или стабильно собирают.</p>
     <p><b>Длина</b> — сколько минут длится типовое выстрелившее видео. Это прямая цена входа: чтобы проверить нишу, нужно залить около десяти роликов.</p>
     <p><b>Конвейер</b> — доля каналов, выпускающих больше трёх часов готового видео в неделю. Это мера потока, а не качества: инструмент не видит, что внутри ролика, и не может отличить рукодельную работу от штамповки.</p>
     <p>Читать это число надо в обе стороны. Высокий конвейер значит, что конкурировать придётся объёмом — но он же доказывает, что формат <b>поставлен на поток и, значит, автоматизируется</b>. Хорошо это или плохо, зависит от того, что ты собираешься строить. Поэтому в рейтинг это число не входит — оно рядом, отдельной цифрой.</p>
@@ -282,6 +290,8 @@ function card(r, i) {
       <span class="k">пробилось <b>\${m.youngOutlierChannels}</b> из \${m.outlierChannels}</span>
       <span class="k">медиана выброса <b>\${num(m.medianOutlierViews)}</b></span>
       <span class="k">длина <b>\${m.medianOutlierMinutes == null ? '—' : Math.round(m.medianOutlierMinutes)}</b> мин</span>
+      <span class="k">лотерея <b>\${pct(m.lotteryShare)}</b></span>
+      <span class="k">попадаемость <b>\${pct(m.medianHitRate)}</b></span>
       <span class="k">конвейер <b>\${pct(m.conveyorShare)}</b></span>
       <span class="k">лайки <b>\${m.medianLikeRate == null ? '—' : (m.medianLikeRate * 100).toFixed(1) + '%'}</b></span>
       <span class="k">каналов <b>\${m.channels}</b></span>
@@ -291,7 +301,10 @@ function card(r, i) {
       \${ex.length ? ex.map(v => \`<a class="vid" href="https://youtu.be/\${v.id}" target="_blank" rel="noopener">
         <div class="vt">\${v.title ?? ''}</div>
         \${v.titleRu ? \`<div class="vru">\${v.titleRu}</div>\` : ''}
-        <div class="vm">\${v.channel ?? ''} · \${num(v.views)} просмотров · ×\${v.ratio.toFixed(1)} к медиане канала · \${v.minutes} мин · каналу было \${plural(v.channelAge, 'день', 'дня', 'дней')}</div>
+        <div class="vm">\${v.channel ?? ''} · \${num(v.views)} просмотров · \${v.minutes} мин · каналу было \${plural(v.channelAge, 'день', 'дня', 'дней')}</div>
+        <div class="vm \${v.breakthrough ? 'good' : 'warnt'}">\${v.breakthrough
+          ? 'канал попадает регулярно: ' + v.hits + ' из ' + v.videos + ' видео выше 20 тыс.'
+          : 'лотерея: у канала всего ' + v.hits + ' попадание' + (v.hits === 1 ? '' : 'й') + ' на ' + v.videos + ' видео, медиана ' + num(v.chMedian)}</div>
       </a>\`).join('') : '<div class="vm">Примеров пока нет — нужны прогоны.</div>'}
     </div>
   </details>\`;

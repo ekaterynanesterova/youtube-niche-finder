@@ -312,6 +312,71 @@
         "lift": 10.6,
         "medianViews": 48384
       }
+    },
+    {
+      "id": "tod",
+      "group": "Найдено автоматом",
+      "de": "tod Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 5,
+        "lift": 4,
+        "medianViews": 57165
+      }
+    },
+    {
+      "id": "europas",
+      "group": "Найдено автоматом",
+      "de": "europas Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 5,
+        "lift": 3.7,
+        "medianViews": 61094
+      }
+    },
+    {
+      "id": "kampf-ums-ueberleben",
+      "group": "Найдено автоматом",
+      "de": "kampf ums überleben Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.3,
+        "medianViews": 61883
+      }
+    },
+    {
+      "id": "gott",
+      "group": "Найдено автоматом",
+      "de": "gott Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.3,
+        "medianViews": 44490
+      }
+    },
+    {
+      "id": "giganten",
+      "group": "Найдено автоматом",
+      "de": "giganten Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 6,
+        "lift": 2.7,
+        "medianViews": 67588.5
+      }
     }
   ]
 }

@@ -11,6 +11,24 @@ function ageDays(ch, now) {
   return basis ? daysBetween(basis, now) : null;
 }
 
+// Один выстрел на двести роликов — это не прорыв, а лотерея: YouTube на старте
+// раздаёт показы всем, и одно видео может залететь у кого угодно. Причём
+// кратность к медиане такой канал даёт ОГРОМНУЮ именно потому, что медиана
+// у него мёртвая. Считаем иначе: сколько видео канала вообще перешли планку
+// и какая это доля. Пробившийся канал — тот, кто попадает повторно.
+export function hitProfile(videos, thresholds) {
+  const bar = thresholds.hitViews ?? 20000;
+  const hits = videos.filter((v) => v.views >= bar).length;
+  const hitRate = videos.length ? hits / videos.length : 0;
+  return {
+    hits, hitRate,
+    bestViews: videos.reduce((m, v) => Math.max(m, v.views ?? 0), 0),
+    breakthrough: hits >= (thresholds.channelMinHits ?? 3)
+      && hitRate >= (thresholds.channelMinHitRate ?? 0.1),
+    lottery: hits >= 1 && hits < (thresholds.channelMinHits ?? 3),
+  };
+}
+
 export function median(xs) {
   const a = xs.filter((x) => Number.isFinite(x)).sort((p, q) => p - q);
   if (!a.length) return null;
@@ -91,6 +109,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
       ageBasis: ch.firstUploadComplete ? 'первая загрузка' : 'регистрация канала',
       ageDays: ageDays(ch, now),
       medianViews, matureCount,
+      ...hitProfile(vids, thresholds),
       lang: dominantLang(vids, ch.markets ?? []),
       videoCount: vids.length,
       uploadsPerWeek: uploadsPerWeek(vids, now),
@@ -163,12 +182,13 @@ function nicheStats(seedVideos, channels, thresholds) {
   const outliers = seedVideos.filter((v) =>
     v.outlierRatio != null && v.outlierRatio >= thresholds.outlierRatio && v.views >= thresholds.outlierMinViews);
 
-  // Схлопываем по каналу: один везунчик не должен давать нише пять очков.
-  const outlierChannels = [...new Set(outliers.map((v) => v.channelId))];
-  const youngOutlierChannels = outlierChannels.filter((id) => {
-    const first = outliers.find((v) => v.channelId === id);
-    return first?.channelAgeAtUploadDays != null && first.channelAgeAtUploadDays <= thresholds.youngChannelDays;
-  });
+  // Проницаемость считаем только по каналам, которые попадают повторно.
+  // Канал с одним выстрелом на двести роликов ничего не доказывает — ни про
+  // себя, ни тем более про нишу.
+  const outlierChannels = seedChannels.filter((c) => c.breakthrough).map((c) => c.id);
+  const youngOutlierChannels = outlierChannels.filter((id) =>
+    channels[id]?.ageDays != null && channels[id].ageDays <= thresholds.youngChannelDays);
+  const lotteryChannels = seedChannels.filter((c) => c.lottery);
 
   // Сколько готового хронометража ниша выпускает в неделю. Это мера потока,
   // а не качества: высокий поток значит, что формат поставлен на конвейер —
@@ -199,6 +219,10 @@ function nicheStats(seedVideos, channels, thresholds) {
     medianCommentRate: median(seedVideos.map((v) => v.commentRate).filter((x) => x != null)),
     // Доля каналов, работающих на потоке.
     conveyorShare: share(conveyorChannels.length, seedChannels.length),
+    // Сколько каналов держатся на единственном выстреле. Высокая доля значит,
+    // что ниша выдаёт разовые везения, а не устойчивый заход.
+    lotteryShare: share(lotteryChannels.length, lotteryChannels.length + outlierChannels.length),
+    medianHitRate: median(seedChannels.filter((c) => c.hits > 0).map((c) => c.hitRate)),
   };
 }
 

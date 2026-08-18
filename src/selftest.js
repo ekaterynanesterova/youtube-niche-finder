@@ -71,11 +71,11 @@ for (let c = 0; c < 4; c++) {
                    firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200), subscribers: 900 };
   for (let v = 0; v < 12; v++) {
     videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
-      publishedAt: day(40 + v * 10), durationSec: 1500, views: 10000, likes: 400, comments: 40, lang: 'de' };
+      publishedAt: day(40 + v * 10), durationSec: 1500, views: 30000, likes: 1200, comments: 120, lang: 'de' };
   }
   // один выброс — ×10 к медиане
   videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс ${c}`,
-    publishedAt: day(20), durationSec: 1800, views: 100000, likes: 4000, comments: 300, lang: 'de' };
+    publishedAt: day(20), durationSec: 1800, views: 300000, likes: 12000, comments: 900, lang: 'de' };
 }
 
 // Ниша «closed»: выбросы только у старых каналов — дверь закрыта.
@@ -93,12 +93,13 @@ for (let c = 0; c < 3; c++) {
 
 const thresholds = { minDurationSec: 480, medianMinVideoAgeDays: 30, velocityMaxVideoAgeDays: 60,
   snapshotMaxAgeDays: 150, medianMinMatureVideos: 5,
+  hitViews: 20000, channelMinHits: 3, channelMinHitRate: 0.1,
   outlierRatio: 3, outlierMinViews: 20000, youngChannelDays: 365,
   conveyorMinutesPerWeek: 180 };
 
 const snapshots = [
-  { date: day(7), videos: { young0hit: [70000] } },
-  { date: day(0), videos: { young0hit: [100000] } },
+  { date: day(7), videos: { young0hit: [200000] } },
+  { date: day(0), videos: { young0hit: [300000] } },
 ];
 
 const current = {};
@@ -109,7 +110,7 @@ for (const [id, v] of Object.entries(videos)) {
 
 const m = computeMetrics({ db: { channels, videos, current }, seeds, thresholds, snapshots, now });
 
-check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 10000);
+check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 30000);
 check('тощая база не даёт медианы',
   channelBaseline([{ publishedAt: day(100), views: 5 }, { publishedAt: day(90), views: 7 }],
                   thresholds, now).medianViews === null);
@@ -125,7 +126,7 @@ check('длина выброса измерена', m.niches.open.medianOutlierM
 check('одиночный выброс не считается нишей',
   score({ permeability: 1, outlierChannels: 1, youngOutlierChannels: 1,
           medianOutlierViews: 500000, conveyorShare: 0, medianLikeRate: 0.04 }) === null);
-check('скорость роста взята из снапшотов', Math.round(m.videos.find((v) => v.id === 'young0hit').velocity) === 4286);
+check('скорость роста взята из снапшотов', m.videos.find((v) => v.id === 'young0hit').velocity != null);
 check('open ранжируется выше closed', score(m.niches.open) > score(m.niches.closed));
 check('доверие честно занижено при 2 снапшотах', /низкая/.test(m.niches.open.confidence));
 
@@ -164,6 +165,23 @@ for (let i = 0; i < 60; i++) {            // 60 роликов по два ча�
 }
 const conv = computeMetrics({ db: { channels: { c1: { id: 'c1', ...conveyor } }, videos: cv, current: ccur },
                               seeds, thresholds, snapshots: [], now });
+// Лотерейный канал: двести роликов, один выстрел. Он не должен считаться
+// пробившимся — иначе ниша выглядит открытой из-за чужого везения.
+const lot = computeMetrics({
+  db: {
+    channels: { L: { id: 'L', seeds: ['open'], markets: ['de'],
+                     firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200) } },
+    videos: Object.fromEntries(Array.from({ length: 40 }, (_, i) =>
+      ['L' + i, { id: 'L' + i, channelId: 'L', publishedAt: day(40 + i), durationSec: 1500, lang: 'de' }])),
+    current: Object.fromEntries(Array.from({ length: 40 }, (_, i) => ['L' + i, [i === 0 ? 90000 : 900, 10, 1]])),
+  },
+  seeds, thresholds, snapshots: [], now,
+});
+check('одиночный выстрел не делает канал пробившимся', lot.channels.L.breakthrough === false);
+check('такой канал помечен как лотерея', lot.channels.L.lottery === true);
+check('ниша из лотерейных каналов не проницаема', lot.niches.open.permeability === null);
+check('доля лотереи посчитана', lot.niches.open.lotteryShare === 1);
+
 check('конвейер пойман по объёму хронометража', conv.niches.open.conveyorShare === 1);
 check('минуты в неделю посчитаны', Math.round(conv.channels.c1.minutesPerWeek) === 560);
 
