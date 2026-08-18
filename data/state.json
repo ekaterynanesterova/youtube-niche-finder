@@ -11,6 +11,17 @@
         "playlistItems": 1031,
         "videos": 1534
       }
+    },
+    {
+      "date": "2026-08-18",
+      "budget": 5500,
+      "spent": 2293,
+      "byEndpoint": {
+        "search": 1000,
+        "channels": 6,
+        "playlistItems": 391,
+        "videos": 896
+      }
     }
   ]
 }

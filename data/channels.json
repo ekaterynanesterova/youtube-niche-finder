@@ -9,7 +9,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:24.541Z",
+    "surveyed": "2026-08-18T21:56:00.879Z",
     "title": "Best Documentary",
     "publishedAt": "2016-05-03T08:30:04Z",
     "country": "US",
@@ -28,7 +28,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:26.154Z",
+    "surveyed": "2026-08-18T21:56:01.179Z",
     "title": "Terra X Lesch & Co",
     "publishedAt": "2015-12-15T10:02:59Z",
     "country": "DE",
@@ -46,13 +46,15 @@
       "exoplanets",
       "space-missions",
       "urzeit-tiere",
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-doku",
+      "sleep-history"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:28.175Z",
+    "surveyed": "2026-08-18T21:56:01.384Z",
     "title": "ARTEde",
     "publishedAt": "2007-05-03T11:28:57Z",
     "country": "DE",
@@ -71,7 +73,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:37.608Z",
+    "surveyed": "2026-08-18T21:56:03.693Z",
     "title": "YouTube Movies",
     "publishedAt": "2018-08-13T17:35:03Z",
     "country": null,
@@ -84,13 +86,14 @@
   "UCT60JMcMi0evjm-j-I8gwVw": {
     "id": "UCT60JMcMi0evjm-j-I8gwVw",
     "seeds": [
-      "space-doku"
+      "space-doku",
+      "sleep-doku"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:39.757Z",
+    "surveyed": "2026-08-18T21:56:03.855Z",
     "title": "ARTE Fernweh",
     "publishedAt": "2015-08-21T12:12:19Z",
     "country": "DE",
@@ -105,13 +108,14 @@
     "seeds": [
       "space-doku",
       "exoplanets",
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-doku"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:40.599Z",
+    "surveyed": "2026-08-18T21:56:04.194Z",
     "title": "XL Doku Deutschland",
     "publishedAt": "2024-03-25T09:30:58.300955Z",
     "country": "DE",
@@ -135,7 +139,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:41.694Z",
+    "surveyed": "2026-08-18T21:56:04.471Z",
     "title": "Progress Deutschland",
     "publishedAt": "2024-11-11T15:47:55.623186Z",
     "country": null,
@@ -155,7 +159,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:43.831Z",
+    "surveyed": "2026-08-18T21:56:04.766Z",
     "title": "Utopja - Sci-Fi Filme",
     "publishedAt": "2012-05-10T09:21:27Z",
     "country": "DE",
@@ -169,13 +173,14 @@
     "id": "UC7FeuS5wwfSR9IwOPkBV7SQ",
     "seeds": [
       "space-doku",
-      "space-missions"
+      "space-missions",
+      "sleep-doku"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:45.591Z",
+    "surveyed": "2026-08-18T21:56:05.022Z",
     "title": "ZDFinfo Dokus & Reportagen",
     "publishedAt": "2017-05-22T12:01:46Z",
     "country": "DE",
@@ -191,19 +196,22 @@
       "space-doku",
       "blackhole",
       "universe-scale",
-      "exoplanets"
+      "exoplanets",
+      "sleep-doku",
+      "sleep-science",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:46.188Z",
+    "surveyed": "2026-08-18T21:56:05.217Z",
     "title": "Universum Mysterien",
     "publishedAt": "2025-07-22T07:18:20.612196Z",
     "country": "TR",
     "uploadsPlaylistId": "UUshg2vPIIs1RP7Hi0nx6kFw",
     "subscribers": 2850,
-    "videoCount": 110,
+    "videoCount": 111,
     "totalViews": 335381,
     "firstUploadComplete": true,
     "firstUploadAt": "2025-10-30T21:45:46Z"
@@ -221,7 +229,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:47.171Z",
+    "surveyed": "2026-08-18T21:56:05.498Z",
     "title": "Doku Deutschland",
     "publishedAt": "2025-07-15T08:28:52.132018Z",
     "country": "DE",
@@ -243,7 +251,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:48.989Z",
+    "surveyed": "2026-08-18T21:56:05.854Z",
     "title": "Spark Deutschland",
     "publishedAt": "2023-02-22T09:21:22.38103Z",
     "country": "DE",
@@ -265,7 +273,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.817Z",
-    "surveyed": "2026-08-18T21:08:50.882Z",
+    "surveyed": "2026-08-18T21:56:06.159Z",
     "title": "Real Stories Deutschland",
     "publishedAt": "2018-10-23T09:33:00Z",
     "country": "DE",
@@ -284,7 +292,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:51.434Z",
+    "surveyed": "2026-08-18T21:56:06.481Z",
     "title": "LimitLess",
     "publishedAt": "2017-12-13T18:29:03Z",
     "country": "IN",
@@ -306,7 +314,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:53.420Z",
+    "surveyed": "2026-08-18T21:56:06.768Z",
     "title": "Celestial Stuff",
     "publishedAt": "2025-06-27T13:06:20.890149Z",
     "country": "IN",
@@ -329,7 +337,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:54.540Z",
+    "surveyed": "2026-08-18T21:56:07.037Z",
     "title": "XL Natur",
     "publishedAt": "2024-05-14T15:32:24.477238Z",
     "country": "DE",
@@ -350,7 +358,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:55.556Z",
+    "surveyed": "2026-08-18T21:56:07.333Z",
     "title": "Real History Deutschland",
     "publishedAt": "2025-03-07T14:25:12.537394Z",
     "country": "DE",
@@ -371,7 +379,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:55.848Z",
+    "surveyed": "2026-08-18T21:56:07.556Z",
     "title": "Actual Space",
     "publishedAt": "2023-01-10T18:38:47.011079Z",
     "country": "IN",
@@ -392,7 +400,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:56.129Z",
+    "surveyed": "2026-08-18T21:56:07.767Z",
     "title": "Kosmos & Geist",
     "publishedAt": "2026-07-10T08:56:02.867428Z",
     "country": "BR",
@@ -414,7 +422,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:19.818Z",
-    "surveyed": "2026-08-18T21:08:56.533Z",
+    "surveyed": "2026-08-18T21:56:07.989Z",
     "title": "Schlaf auf Science",
     "publishedAt": "2026-05-30T07:25:21.505283Z",
     "country": "BR",
@@ -434,7 +442,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.055Z",
-    "surveyed": "2026-08-18T21:08:57.978Z",
+    "surveyed": "2026-08-18T21:56:08.827Z",
     "title": "ARTE",
     "publishedAt": "2010-11-18T12:54:57Z",
     "country": "FR",
@@ -455,7 +463,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.055Z",
-    "surveyed": "2026-08-18T21:08:59.931Z",
+    "surveyed": "2026-08-18T21:56:09.003Z",
     "title": "Entropy - Wissenschaft Schnell Erklärt",
     "publishedAt": "2019-09-23T13:20:04Z",
     "country": "DE",
@@ -469,13 +477,15 @@
     "id": "UCtYOU4f8qAXaKp70P1_XzWw",
     "seeds": [
       "blackhole",
-      "universe-scale"
+      "universe-scale",
+      "sleep-science",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.055Z",
-    "surveyed": "2026-08-18T21:09:00.981Z",
+    "surveyed": "2026-08-18T21:56:09.330Z",
     "title": "Wissenschaft und Schlaf",
     "publishedAt": "2025-12-01T16:37:46.318234Z",
     "country": "DE",
@@ -500,7 +510,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:03.262Z",
+    "surveyed": "2026-08-18T21:56:09.857Z",
     "title": "Modysee | Die Welt der Odysseen",
     "publishedAt": "2022-08-06T15:24:05.9545Z",
     "country": "DE",
@@ -520,7 +530,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:03.728Z",
+    "surveyed": "2026-08-18T21:56:10.094Z",
     "title": "Nachtflug Kosmos",
     "publishedAt": "2026-05-27T14:32:02.719499Z",
     "country": "BR",
@@ -536,18 +546,20 @@
     "seeds": [
       "blackhole",
       "universe-scale",
-      "space-missions"
+      "space-missions",
+      "sleep-science",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:04.990Z",
+    "surveyed": "2026-08-18T21:56:10.367Z",
     "title": "Wissenschaft der Nacht",
     "publishedAt": "2025-12-15T19:35:20.974394Z",
     "country": "DE",
     "uploadsPlaylistId": "UUH7QiH8-E8TrHMrx-p_EPTg",
-    "subscribers": 3100,
+    "subscribers": 3110,
     "videoCount": 237,
     "totalViews": 434802,
     "firstUploadComplete": true,
@@ -557,13 +569,15 @@
     "id": "UCo1X6WNF41IeRZC-y9LPjOw",
     "seeds": [
       "blackhole",
-      "universe-scale"
+      "universe-scale",
+      "sleep-science",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:05.113Z",
+    "surveyed": "2026-08-18T21:56:10.570Z",
     "title": "Nacht der Fakten",
     "publishedAt": "2026-05-27T04:57:36.471269Z",
     "country": "CH",
@@ -584,7 +598,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:07.381Z",
+    "surveyed": "2026-08-18T21:56:11.112Z",
     "title": "SONNENSEITE Serie",
     "publishedAt": "2023-11-23T09:49:19.732928Z",
     "country": "DE",
@@ -598,13 +612,15 @@
     "id": "UCFuTCV6mkTqPQVTqqpsAQRA",
     "seeds": [
       "blackhole",
-      "universe-scale"
+      "universe-scale",
+      "sleep-doku",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:07.561Z",
+    "surveyed": "2026-08-18T21:56:11.351Z",
     "title": "Science zum Träumen",
     "publishedAt": "2026-05-27T04:42:33.319716Z",
     "country": "DE",
@@ -624,7 +640,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:08.268Z",
+    "surveyed": "2026-08-18T21:56:11.677Z",
     "title": "Wissens Zeit",
     "publishedAt": "2025-12-05T16:21:42.23294Z",
     "country": "CH",
@@ -644,7 +660,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:08.485Z",
+    "surveyed": "2026-08-18T21:56:11.801Z",
     "title": "Nachtflug ins Universum",
     "publishedAt": "2026-06-07T13:51:36.415099Z",
     "country": "BR",
@@ -665,7 +681,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:09.047Z",
+    "surveyed": "2026-08-18T21:56:12.066Z",
     "title": "Dunkle Erkenntnis",
     "publishedAt": "2026-04-01T08:14:56.537825Z",
     "country": "DE",
@@ -685,7 +701,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:10.436Z",
+    "surveyed": "2026-08-18T21:56:12.274Z",
     "title": "Einfach Einschlafen",
     "publishedAt": "2025-03-08T21:51:56.480325Z",
     "country": "DE",
@@ -705,7 +721,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:10.686Z",
+    "surveyed": "2026-08-18T21:56:12.417Z",
     "title": "Orbitra",
     "publishedAt": "2022-09-12T01:22:05.00664Z",
     "country": "ES",
@@ -725,7 +741,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:14.316Z",
+    "surveyed": "2026-08-18T21:56:13.176Z",
     "title": "quasaria DE",
     "publishedAt": "2025-01-05T13:23:45.385377Z",
     "country": "DE",
@@ -744,7 +760,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:14.488Z",
+    "surveyed": "2026-08-18T21:56:13.313Z",
     "title": "Durch Feynmans Augen",
     "publishedAt": "2026-07-11T11:00:38.30657Z",
     "country": "TR",
@@ -764,7 +780,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.056Z",
-    "surveyed": "2026-08-18T21:09:15.093Z",
+    "surveyed": "2026-08-18T21:56:13.581Z",
     "title": "Abyx Cosmos Deutsch",
     "publishedAt": "2022-12-10T03:58:01.022892Z",
     "country": "DE",
@@ -784,7 +800,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:15.584Z",
+    "surveyed": "2026-08-18T21:56:13.841Z",
     "title": "Miralex",
     "publishedAt": "2026-03-20T19:05:21.196716Z",
     "country": null,
@@ -804,7 +820,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:15.736Z",
+    "surveyed": "2026-08-18T21:56:13.960Z",
     "title": "Stille Umlaufbahn",
     "publishedAt": "2026-07-14T06:37:08.02126Z",
     "country": "DE",
@@ -824,7 +840,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:16.128Z",
+    "surveyed": "2026-08-18T21:56:14.226Z",
     "title": "Kosmos mit Max ",
     "publishedAt": "2026-04-07T17:25:09.363329Z",
     "country": "DE",
@@ -844,7 +860,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:16.604Z",
+    "surveyed": "2026-08-18T21:56:14.421Z",
     "title": "Feynmans Weg",
     "publishedAt": "2026-03-20T14:13:25.980589Z",
     "country": "DE",
@@ -864,7 +880,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:16.752Z",
+    "surveyed": "2026-08-18T21:56:14.555Z",
     "title": "Vergessene Welten",
     "publishedAt": "2026-06-06T18:09:47.6643Z",
     "country": "US",
@@ -884,12 +900,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:16.889Z",
+    "surveyed": "2026-08-18T21:56:14.698Z",
     "title": "QuantenRaum",
     "publishedAt": "2017-12-27T14:37:33Z",
     "country": "BR",
     "uploadsPlaylistId": "UUg5-hM_wzF60gL9cZ-w-Y3g",
-    "subscribers": 572,
+    "subscribers": 573,
     "videoCount": 12,
     "totalViews": 23317,
     "firstUploadComplete": true,
@@ -904,7 +920,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:17.252Z",
+    "surveyed": "2026-08-18T21:56:14.882Z",
     "title": "Kosmos & Stille",
     "publishedAt": "2026-05-14T02:40:21.279206Z",
     "country": "BR",
@@ -924,7 +940,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:17.683Z",
+    "surveyed": "2026-08-18T21:56:15.170Z",
     "title": "The Universe Beyond the Visible",
     "publishedAt": "2022-12-29T05:16:00.977732Z",
     "country": "US",
@@ -944,7 +960,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:18.038Z",
+    "surveyed": "2026-08-18T21:56:15.418Z",
     "title": "SchlummerPhysik",
     "publishedAt": "2026-06-25T07:18:39.168572Z",
     "country": "BR",
@@ -958,13 +974,15 @@
   "UCA1ZC1nlXizgSwFeYWWVzCA": {
     "id": "UCA1ZC1nlXizgSwFeYWWVzCA",
     "seeds": [
-      "universe-scale"
+      "universe-scale",
+      "sleep-science",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:18.402Z",
+    "surveyed": "2026-08-18T21:56:15.655Z",
     "title": "Schlummernde Geheimnisse",
     "publishedAt": "2026-05-21T05:39:42.89481Z",
     "country": "BR",
@@ -984,7 +1002,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:18.684Z",
+    "surveyed": "2026-08-18T21:56:15.825Z",
     "title": "Schlaf im Kosmos",
     "publishedAt": "2026-07-11T04:51:23.924982Z",
     "country": "BR",
@@ -1004,7 +1022,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:18.910Z",
+    "surveyed": "2026-08-18T21:56:16.044Z",
     "title": "Sternenstaub",
     "publishedAt": "2017-06-19T09:18:01Z",
     "country": "BR",
@@ -1024,7 +1042,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:19.044Z",
+    "surveyed": "2026-08-18T21:56:16.194Z",
     "title": "Kosmos Schlummer",
     "publishedAt": "2026-06-29T09:27:56.270155Z",
     "country": "BR",
@@ -1044,7 +1062,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:19.290Z",
+    "surveyed": "2026-08-18T21:56:16.485Z",
     "title": "Die Grenzen der Physik",
     "publishedAt": "2026-04-19T05:52:41.372694Z",
     "country": "DE",
@@ -1064,7 +1082,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:19.810Z",
+    "surveyed": "2026-08-18T21:56:16.741Z",
     "title": "Astro Horizons",
     "publishedAt": "2015-07-09T12:35:46Z",
     "country": "US",
@@ -1079,13 +1097,14 @@
     "id": "UCF-w7bJ45BLteeL_cTOvOKg",
     "seeds": [
       "universe-scale",
-      "space-missions"
+      "space-missions",
+      "sleep-space"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:20.116Z",
+    "surveyed": "2026-08-18T21:56:16.952Z",
     "title": "Kosmos zum Einschlafen",
     "publishedAt": "2026-06-10T03:42:01.78021Z",
     "country": "BR",
@@ -1105,7 +1124,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:20.364Z",
+    "surveyed": "2026-08-18T21:56:17.125Z",
     "title": "Sternenstaub Ambient",
     "publishedAt": "2018-03-19T10:46:29Z",
     "country": "BR",
@@ -1125,7 +1144,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:20.576Z",
+    "surveyed": "2026-08-18T21:56:17.260Z",
     "title": "Universum zum Einschlafen",
     "publishedAt": "2026-06-13T02:54:53.336514Z",
     "country": null,
@@ -1145,7 +1164,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:21.641Z",
+    "surveyed": "2026-08-18T21:56:17.437Z",
     "title": "Sanfte Wissenschaft",
     "publishedAt": "2025-11-10T02:51:49.196748Z",
     "country": "BR",
@@ -1166,7 +1185,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:22.045Z",
+    "surveyed": "2026-08-18T21:56:17.761Z",
     "title": "Silent Abyss",
     "publishedAt": "2023-11-22T11:13:33.022121Z",
     "country": null,
@@ -1186,7 +1205,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:22.267Z",
+    "surveyed": "2026-08-18T21:56:17.902Z",
     "title": "Weltall Entdecker",
     "publishedAt": "2026-06-11T16:08:29.105868Z",
     "country": "BR",
@@ -1206,7 +1225,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:22.570Z",
+    "surveyed": "2026-08-18T21:56:18.067Z",
     "title": "SternenRuhe",
     "publishedAt": "2026-06-02T03:55:53.415155Z",
     "country": "BR",
@@ -1226,12 +1245,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:22.791Z",
+    "surveyed": "2026-08-18T21:56:18.203Z",
     "title": "GER STATION",
     "publishedAt": "2023-04-30T12:00:22.573943Z",
     "country": null,
     "uploadsPlaylistId": "UUfymAw77hQ0vBZqWu7obC_w",
-    "subscribers": 178,
+    "subscribers": 179,
     "videoCount": 25,
     "totalViews": 9580,
     "firstUploadComplete": true,
@@ -1246,7 +1265,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:22.987Z",
+    "surveyed": "2026-08-18T21:56:18.332Z",
     "title": "Sternenraum",
     "publishedAt": "2026-06-25T16:15:22.643604Z",
     "country": "DE",
@@ -1266,7 +1285,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:24.049Z",
+    "surveyed": "2026-08-18T21:56:18.692Z",
     "title": "The Universe & Space",
     "publishedAt": "2016-10-18T07:28:58Z",
     "country": "US",
@@ -1286,7 +1305,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.275Z",
-    "surveyed": "2026-08-18T21:09:24.517Z",
+    "surveyed": "2026-08-18T21:56:18.945Z",
     "title": "Himmels-Labor",
     "publishedAt": "2026-04-19T02:53:46.6886Z",
     "country": "DE",
@@ -1300,13 +1319,15 @@
   "UCNZegH5HQPx_chNsPqJw1Rw": {
     "id": "UCNZegH5HQPx_chNsPqJw1Rw",
     "seeds": [
-      "exoplanets"
+      "exoplanets",
+      "sleep-doku"
     ],
     "markets": [
-      "de"
+      "de",
+      "en"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:25.463Z",
+    "surveyed": "2026-08-18T21:56:19.141Z",
     "title": "Sleepy Science Channel",
     "publishedAt": "2025-07-10T06:19:19.678234Z",
     "country": "GB",
@@ -1326,7 +1347,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:25.700Z",
+    "surveyed": "2026-08-18T21:56:19.349Z",
     "title": "BRIGHT SIDE SPACE NEWS",
     "publishedAt": "2025-12-22T09:10:05.061931Z",
     "country": "US",
@@ -1346,7 +1367,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:25.987Z",
+    "surveyed": "2026-08-18T21:56:19.525Z",
     "title": "Horizonte de Eventos",
     "publishedAt": "2018-10-12T16:56:45Z",
     "country": "BR",
@@ -1366,7 +1387,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:26.484Z",
+    "surveyed": "2026-08-18T21:56:19.820Z",
     "title": "Cosmos Dust",
     "publishedAt": "2017-10-05T19:20:35Z",
     "country": "PL",
@@ -1388,7 +1409,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:28.075Z",
+    "surveyed": "2026-08-18T21:56:20.019Z",
     "title": "What If",
     "publishedAt": "2018-07-18T15:31:35Z",
     "country": "US",
@@ -1407,7 +1428,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:28.380Z",
+    "surveyed": "2026-08-18T21:56:20.207Z",
     "title": "Pure Science Docs",
     "publishedAt": "2026-05-06T13:05:09.46794Z",
     "country": null,
@@ -1427,7 +1448,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:28.784Z",
+    "surveyed": "2026-08-18T21:56:20.406Z",
     "title": "Proof",
     "publishedAt": "2026-06-24T17:03:39.078204Z",
     "country": null,
@@ -1447,7 +1468,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:33.570Z",
+    "surveyed": "2026-08-18T21:56:20.571Z",
     "title": "KBS 다큐",
     "publishedAt": "2011-12-28T02:27:16Z",
     "country": "KR",
@@ -1468,7 +1489,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:34.015Z",
+    "surveyed": "2026-08-18T21:56:20.797Z",
     "title": "Paleora",
     "publishedAt": "2024-02-16T14:42:03.388493Z",
     "country": null,
@@ -1490,7 +1511,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:35.895Z",
+    "surveyed": "2026-08-18T21:56:21.096Z",
     "title": "Earth Stories Deutschland",
     "publishedAt": "2023-05-24T08:59:31.095746Z",
     "country": "DE",
@@ -1510,7 +1531,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:37.270Z",
+    "surveyed": "2026-08-18T21:56:21.475Z",
     "title": "Ao Infinito e Além",
     "publishedAt": "2020-09-13T20:07:20.757044Z",
     "country": "BR",
@@ -1530,7 +1551,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:37.389Z",
+    "surveyed": "2026-08-18T21:56:21.554Z",
     "title": "Babel Science and Tech",
     "publishedAt": "2026-04-15T14:14:08.01686Z",
     "country": "ES",
@@ -1545,14 +1566,15 @@
     "id": "UCXyJmt3PKv0fbsU9DtcreEw",
     "seeds": [
       "exoplanets",
-      "space-doku"
+      "space-doku",
+      "sleep-doku"
     ],
     "markets": [
       "de",
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:37.975Z",
+    "surveyed": "2026-08-18T21:56:21.710Z",
     "title": "Calm Space",
     "publishedAt": "2025-12-19T11:59:50.187148Z",
     "country": "NL",
@@ -1572,7 +1594,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:39.942Z",
+    "surveyed": "2026-08-18T21:56:22.088Z",
     "title": "Genial Serie",
     "publishedAt": "2023-05-15T15:40:17.199922Z",
     "country": "MX",
@@ -1591,7 +1613,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:40.475Z",
+    "surveyed": "2026-08-18T21:56:22.308Z",
     "title": "Эхо Сатурна",
     "publishedAt": "2023-11-25T21:40:15.801574Z",
     "country": null,
@@ -1611,7 +1633,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:40.823Z",
+    "surveyed": "2026-08-18T21:56:22.611Z",
     "title": "Snoozy Space",
     "publishedAt": "2026-04-16T22:35:32.605522Z",
     "country": "US",
@@ -1631,7 +1653,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:41.481Z",
+    "surveyed": "2026-08-18T21:56:22.803Z",
     "title": "Hidden Origins",
     "publishedAt": "2026-05-10T20:02:54.506812Z",
     "country": "PL",
@@ -1651,7 +1673,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:43.231Z",
+    "surveyed": "2026-08-18T21:56:23.350Z",
     "title": "Insane Curiosity",
     "publishedAt": "2017-08-22T03:43:40Z",
     "country": "US",
@@ -1670,7 +1692,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:43.898Z",
+    "surveyed": "2026-08-18T21:56:23.549Z",
     "title": "Vigyan Show",
     "publishedAt": "2021-06-12T14:05:16.958967Z",
     "country": "IN",
@@ -1690,7 +1712,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:44.083Z",
+    "surveyed": "2026-08-18T21:56:23.719Z",
     "title": "The New Frontier Series | Full Episodes",
     "publishedAt": "2026-05-01T04:12:51.186675Z",
     "country": "US",
@@ -1710,7 +1732,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:44.422Z",
+    "surveyed": "2026-08-18T21:56:23.965Z",
     "title": "끝없는지식",
     "publishedAt": "2026-04-25T14:39:03.598764Z",
     "country": "KR",
@@ -1730,7 +1752,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:44.842Z",
+    "surveyed": "2026-08-18T21:56:24.303Z",
     "title": "Stellar",
     "publishedAt": "2022-07-21T15:18:29.245331Z",
     "country": null,
@@ -1750,12 +1772,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:45.882Z",
+    "surveyed": "2026-08-18T21:56:24.569Z",
     "title": "Aprende Ciencia Durmiendo",
     "publishedAt": "2025-04-07T17:17:16.028289Z",
     "country": null,
     "uploadsPlaylistId": "UUco1dmB2FwgWCETqAh3POGQ",
-    "subscribers": 8170,
+    "subscribers": 8180,
     "videoCount": 251,
     "totalViews": 1633894,
     "firstUploadComplete": true,
@@ -1770,7 +1792,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:47.734Z",
+    "surveyed": "2026-08-18T21:56:24.903Z",
     "title": "Bright Side Space GOAT",
     "publishedAt": "2025-01-29T13:07:50.951101Z",
     "country": "US",
@@ -1790,7 +1812,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:48.407Z",
+    "surveyed": "2026-08-18T21:56:25.121Z",
     "title": "Documentary for Sleep",
     "publishedAt": "2025-07-31T09:22:22.995796Z",
     "country": "US",
@@ -1810,7 +1832,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:49.279Z",
+    "surveyed": "2026-08-18T21:56:25.301Z",
     "title": "Sleep On Science",
     "publishedAt": "2025-08-30T16:27:42.185628Z",
     "country": "GB",
@@ -1830,7 +1852,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:51.184Z",
+    "surveyed": "2026-08-18T21:56:25.700Z",
     "title": "Simplify Dude",
     "publishedAt": "2024-08-06T08:03:39.466156Z",
     "country": "IN",
@@ -1849,7 +1871,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:51.334Z",
+    "surveyed": "2026-08-18T21:56:25.835Z",
     "title": "Quantum Grid",
     "publishedAt": "2025-11-02T14:16:25.968773Z",
     "country": "US",
@@ -1869,7 +1891,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:52.687Z",
+    "surveyed": "2026-08-18T21:56:26.105Z",
     "title": "Theories Before Sleep",
     "publishedAt": "2025-11-14T04:44:13.572748Z",
     "country": "US",
@@ -1889,7 +1911,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:52.867Z",
+    "surveyed": "2026-08-18T21:56:26.242Z",
     "title": "Dr Focus",
     "publishedAt": "2026-02-28T16:50:58.532034Z",
     "country": null,
@@ -1909,12 +1931,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:53.008Z",
+    "surveyed": "2026-08-18T21:56:26.517Z",
     "title": "Undiscovered",
     "publishedAt": "2026-06-21T13:02:33.448076Z",
     "country": "US",
     "uploadsPlaylistId": "UUd7VSfxoCp4sApKWR4Kw-Sg",
-    "subscribers": 588,
+    "subscribers": 591,
     "videoCount": 50,
     "totalViews": 62410,
     "firstUploadComplete": true,
@@ -1929,7 +1951,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.506Z",
-    "surveyed": "2026-08-18T21:09:53.983Z",
+    "surveyed": "2026-08-18T21:56:27.041Z",
     "title": "SPACE BEFOREAFTER",
     "publishedAt": "2025-12-27T18:52:25.341447Z",
     "country": "US",
@@ -1949,7 +1971,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.661Z",
-    "surveyed": "2026-08-18T21:09:54.159Z",
+    "surveyed": "2026-08-18T21:56:27.190Z",
     "title": "Kosmos Entschlüsselt",
     "publishedAt": "2025-05-29T18:29:57.874211Z",
     "country": "BR",
@@ -1969,7 +1991,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.661Z",
-    "surveyed": "2026-08-18T21:09:54.353Z",
+    "surveyed": "2026-08-18T21:56:27.332Z",
     "title": "Kosmos Vision",
     "publishedAt": "2026-07-05T14:00:15.543009Z",
     "country": null,
@@ -1989,7 +2011,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:09:54.975Z",
+    "surveyed": "2026-08-18T21:56:27.552Z",
     "title": "Cosmo",
     "publishedAt": "2024-01-23T13:30:29.482097Z",
     "country": "US",
@@ -2009,7 +2031,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:09:55.728Z",
+    "surveyed": "2026-08-18T21:56:27.759Z",
     "title": "Mindwired",
     "publishedAt": "2025-10-22T20:14:37.53035Z",
     "country": "US",
@@ -2031,7 +2053,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:09:56.191Z",
+    "surveyed": "2026-08-18T21:56:28.018Z",
     "title": "Free Documentary - Space",
     "publishedAt": "2025-02-12T09:18:33.161892Z",
     "country": "DE",
@@ -2051,7 +2073,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:03.606Z",
+    "surveyed": "2026-08-18T21:56:28.179Z",
     "title": "WELT Nachrichtensender",
     "publishedAt": "2011-05-04T14:49:18Z",
     "country": "DE",
@@ -2070,7 +2092,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:04.008Z",
+    "surveyed": "2026-08-18T21:56:28.370Z",
     "title": "Peaked Interest",
     "publishedAt": "2011-03-15T18:05:36Z",
     "country": "GB",
@@ -2090,7 +2112,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:04.313Z",
+    "surveyed": "2026-08-18T21:56:28.575Z",
     "title": "Dark Space",
     "publishedAt": "2020-12-07T19:54:58.394682Z",
     "country": "US",
@@ -2110,7 +2132,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:04.516Z",
+    "surveyed": "2026-08-18T21:56:28.807Z",
     "title": "Hidden World Docs",
     "publishedAt": "2026-02-05T14:26:19.827176Z",
     "country": null,
@@ -2130,7 +2152,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:05.022Z",
+    "surveyed": "2026-08-18T21:56:28.959Z",
     "title": "Slice Doku",
     "publishedAt": "2025-10-01T15:53:22.10893Z",
     "country": "FR",
@@ -2150,7 +2172,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:06.623Z",
+    "surveyed": "2026-08-18T21:56:29.403Z",
     "title": "Sci-Fi Central",
     "publishedAt": "2015-04-09T04:04:15Z",
     "country": "US",
@@ -2169,7 +2191,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:08.391Z",
+    "surveyed": "2026-08-18T21:56:29.627Z",
     "title": "Shah Cyrux",
     "publishedAt": "2021-10-09T08:52:51.915427Z",
     "country": null,
@@ -2183,13 +2205,15 @@
   "UCMV3aTOwUtG5vwfH9_rzb2w": {
     "id": "UCMV3aTOwUtG5vwfH9_rzb2w",
     "seeds": [
-      "space-missions"
+      "space-missions",
+      "sleep-doku"
     ],
     "markets": [
-      "de"
+      "de",
+      "en"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:09.992Z",
+    "surveyed": "2026-08-18T21:56:29.994Z",
     "title": "Spark",
     "publishedAt": "2017-01-17T09:44:18Z",
     "country": "GB",
@@ -2208,7 +2232,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:11.231Z",
+    "surveyed": "2026-08-18T21:56:30.260Z",
     "title": "The Aviation Channel",
     "publishedAt": "2023-12-20T16:14:36.971643Z",
     "country": null,
@@ -2228,7 +2252,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:11.570Z",
+    "surveyed": "2026-08-18T21:56:30.425Z",
     "title": "Seismon",
     "publishedAt": "2026-01-27T21:01:54.975024Z",
     "country": null,
@@ -2248,12 +2272,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:11.872Z",
+    "surveyed": "2026-08-18T21:56:30.589Z",
     "title": "Elias Richters Dokus",
     "publishedAt": "2026-04-19T10:30:28.083465Z",
     "country": "DE",
     "uploadsPlaylistId": "UUx0SshkxUwK2OQ_ecuIkeOA",
-    "subscribers": 3200,
+    "subscribers": 3210,
     "videoCount": 29,
     "totalViews": 408466,
     "firstUploadComplete": true,
@@ -2268,7 +2292,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:12.041Z",
+    "surveyed": "2026-08-18T21:56:30.731Z",
     "title": "XL Wissenschaft",
     "publishedAt": "2026-04-21T07:48:36.96285Z",
     "country": "DE",
@@ -2288,7 +2312,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:12.409Z",
+    "surveyed": "2026-08-18T21:56:31.005Z",
     "title": "SpaceX Insider",
     "publishedAt": "2024-05-17T08:20:48.164363Z",
     "country": "US",
@@ -2308,7 +2332,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:14.554Z",
+    "surveyed": "2026-08-18T21:56:31.345Z",
     "title": "documentry library",
     "publishedAt": "2016-12-20T02:13:43Z",
     "country": "IN",
@@ -2327,7 +2351,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:15.277Z",
+    "surveyed": "2026-08-18T21:56:31.560Z",
     "title": "Das Nacht-Labor",
     "publishedAt": "2026-04-20T12:00:55.070473Z",
     "country": "DE",
@@ -2347,7 +2371,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:20.922Z",
-    "surveyed": "2026-08-18T21:10:15.859Z",
+    "surveyed": "2026-08-18T21:56:31.818Z",
     "title": "Vistrel",
     "publishedAt": "2026-03-27T11:18:34.053764Z",
     "country": "GB",
@@ -2369,7 +2393,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:16.025Z",
+    "surveyed": "2026-08-18T21:56:31.959Z",
     "title": "Mundo Extinto",
     "publishedAt": "2025-06-17T03:03:56.285125Z",
     "country": "MX",
@@ -2391,7 +2415,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:16.171Z",
+    "surveyed": "2026-08-18T21:56:32.055Z",
     "title": "Extinct World",
     "publishedAt": "2025-08-17T05:24:52.813008Z",
     "country": "US",
@@ -2412,7 +2436,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:18.892Z",
+    "surveyed": "2026-08-18T21:56:32.960Z",
     "title": "Universal Pictures At Home",
     "publishedAt": "2006-09-18T23:27:02Z",
     "country": "US",
@@ -2434,12 +2458,12 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:19.222Z",
+    "surveyed": "2026-08-18T21:56:33.290Z",
     "title": "WUFO Earth",
     "publishedAt": "2008-04-07T14:08:32Z",
     "country": "US",
     "uploadsPlaylistId": "UUbCb9tjw70AYM4Xp8eEzQWw",
-    "subscribers": 18900,
+    "subscribers": 19000,
     "videoCount": 54,
     "totalViews": 3906246,
     "firstUploadComplete": true,
@@ -2455,7 +2479,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:19.373Z",
+    "surveyed": "2026-08-18T21:56:33.436Z",
     "title": "Extremwelt",
     "publishedAt": "2014-09-28T11:59:01Z",
     "country": "DE",
@@ -2475,7 +2499,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:19.507Z",
+    "surveyed": "2026-08-18T21:56:33.603Z",
     "title": "Mr. Prehistoria",
     "publishedAt": "2026-02-18T12:03:27.430788Z",
     "country": "ES",
@@ -2496,7 +2520,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:20.629Z",
+    "surveyed": "2026-08-18T21:56:33.857Z",
     "title": "Spinosnack",
     "publishedAt": "2024-12-30T18:35:42.285452Z",
     "country": "CA",
@@ -2517,7 +2541,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:22.050Z",
+    "surveyed": "2026-08-18T21:56:34.032Z",
     "title": "Sideprojects",
     "publishedAt": "2020-08-21T05:43:29.848462Z",
     "country": "CZ",
@@ -2536,7 +2560,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:22.145Z",
+    "surveyed": "2026-08-18T21:56:34.128Z",
     "title": "Historia de la Tierra",
     "publishedAt": "2026-07-01T14:32:16.196585Z",
     "country": "ES",
@@ -2556,7 +2580,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:22.301Z",
+    "surveyed": "2026-08-18T21:56:34.259Z",
     "title": "Забытые эпохи",
     "publishedAt": "2017-08-14T16:21:49Z",
     "country": "US",
@@ -2577,7 +2601,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:22.390Z",
+    "surveyed": "2026-08-18T21:56:34.398Z",
     "title": "The Last Day",
     "publishedAt": "2026-07-09T15:52:28.872248Z",
     "country": "US",
@@ -2597,7 +2621,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:22.506Z",
+    "surveyed": "2026-08-18T21:56:34.558Z",
     "title": "MundosOlvidados",
     "publishedAt": "2026-02-01T11:42:51.261725Z",
     "country": "ES",
@@ -2619,7 +2643,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:22.739Z",
+    "surveyed": "2026-08-18T21:56:34.720Z",
     "title": "Mundo Prehistórico de los Dinosaurios",
     "publishedAt": "2026-04-30T02:37:11.694801Z",
     "country": null,
@@ -2641,7 +2665,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:23.993Z",
+    "surveyed": "2026-08-18T21:56:34.864Z",
     "title": "National Geographic",
     "publishedAt": "2006-05-07T09:30:39Z",
     "country": "US",
@@ -2662,7 +2686,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:24.417Z",
+    "surveyed": "2026-08-18T21:56:35.065Z",
     "title": "Wild Horizons",
     "publishedAt": "2009-07-10T23:31:29Z",
     "country": "US",
@@ -2682,7 +2706,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:24.720Z",
+    "surveyed": "2026-08-18T21:56:35.246Z",
     "title": "Палеонтология на подушке",
     "publishedAt": "2025-08-17T15:24:11.774245Z",
     "country": "KZ",
@@ -2702,7 +2726,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:25.006Z",
+    "surveyed": "2026-08-18T21:56:35.388Z",
     "title": "Tech Ravi ",
     "publishedAt": "2026-03-14T09:08:56.794323Z",
     "country": null,
@@ -2722,7 +2746,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:25.239Z",
+    "surveyed": "2026-08-18T21:56:35.601Z",
     "title": "Instinto Feroz",
     "publishedAt": "2024-02-09T15:53:43.032748Z",
     "country": "BR",
@@ -2742,7 +2766,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:26.885Z",
+    "surveyed": "2026-08-18T21:56:35.955Z",
     "title": "Faruk Yılmaz",
     "publishedAt": "2014-10-04T16:04:21Z",
     "country": "TR",
@@ -2764,7 +2788,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:26.987Z",
+    "surveyed": "2026-08-18T21:56:36.082Z",
     "title": "Urzeit Geschichte",
     "publishedAt": "2026-06-28T11:04:14.309202Z",
     "country": "DE",
@@ -2785,7 +2809,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:29.467Z",
+    "surveyed": "2026-08-18T21:56:36.760Z",
     "title": "Origins Explained",
     "publishedAt": "2016-01-18T01:03:33Z",
     "country": "US",
@@ -2804,13 +2828,13 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:31.187Z",
+    "surveyed": "2026-08-18T21:56:37.335Z",
     "title": "Top Fives",
     "publishedAt": "2015-03-28T00:46:06Z",
     "country": "US",
     "uploadsPlaylistId": "UUbAlVnKhbGLK78GsSemQXxw",
     "subscribers": 3150000,
-    "videoCount": 2543,
+    "videoCount": 2544,
     "totalViews": 1355806541,
     "firstUploadAt": "2025-05-14T19:00:53Z"
   },
@@ -2823,7 +2847,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:31.274Z",
+    "surveyed": "2026-08-18T21:56:37.421Z",
     "title": "КОД ЗЕМЛИ",
     "publishedAt": "2025-12-07T18:34:10.970343Z",
     "country": "US",
@@ -2844,13 +2868,13 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:31.877Z",
+    "surveyed": "2026-08-18T21:56:37.658Z",
     "title": "Dinodust",
     "publishedAt": "2023-07-29T09:51:22.98198Z",
     "country": "NO",
     "uploadsPlaylistId": "UU_MCKNUrukBBApIg4-stGBg",
     "subscribers": 14900,
-    "videoCount": 165,
+    "videoCount": 166,
     "totalViews": 3879703,
     "firstUploadComplete": true,
     "firstUploadAt": "2024-09-16T20:08:22Z"
@@ -2864,7 +2888,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:32.284Z",
+    "surveyed": "2026-08-18T21:56:37.911Z",
     "title": "Megar Science",
     "publishedAt": "2026-06-02T03:48:34.696179Z",
     "country": "US",
@@ -2884,7 +2908,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:34.324Z",
+    "surveyed": "2026-08-18T21:56:38.116Z",
     "title": "Zoomundo",
     "publishedAt": "2017-10-20T01:02:18Z",
     "country": "BR",
@@ -2903,7 +2927,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:35.323Z",
+    "surveyed": "2026-08-18T21:56:38.377Z",
     "title": " جيو-اكشن JEO Action",
     "publishedAt": "2020-03-01T22:02:46.16995Z",
     "country": "EG",
@@ -2919,13 +2943,16 @@
     "seeds": [
       "dinos",
       "urzeit-tiere",
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-doku",
+      "sleep-science",
+      "sleep-history"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:35.607Z",
+    "surveyed": "2026-08-18T21:56:38.685Z",
     "title": "Geheimnisse der Antike",
     "publishedAt": "2025-04-14T05:38:36.415542Z",
     "country": "DE",
@@ -2945,7 +2972,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:36.168Z",
+    "surveyed": "2026-08-18T21:56:38.931Z",
     "title": "Our World Unlocked",
     "publishedAt": "2025-05-20T15:09:43.67114Z",
     "country": null,
@@ -2965,7 +2992,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.249Z",
-    "surveyed": "2026-08-18T21:10:36.255Z",
+    "surveyed": "2026-08-18T21:56:39.062Z",
     "title": "Prehistoria en Español TV",
     "publishedAt": "2026-06-20T10:25:17.635458Z",
     "country": "ES",
@@ -2985,7 +3012,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:38.206Z",
+    "surveyed": "2026-08-18T21:56:39.432Z",
     "title": "National Geographic Deutschland",
     "publishedAt": "2007-06-14T13:36:30Z",
     "country": "DE",
@@ -3004,12 +3031,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:38.309Z",
+    "surveyed": "2026-08-18T21:56:39.546Z",
     "title": "Alte Zeiten",
     "publishedAt": "2026-07-11T14:09:24.511078Z",
     "country": "DE",
     "uploadsPlaylistId": "UUZLjWAT3GcOXpVbph4ntODw",
-    "subscribers": 4170,
+    "subscribers": 4180,
     "videoCount": 13,
     "totalViews": 340497,
     "firstUploadComplete": true,
@@ -3025,7 +3052,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:38.414Z",
+    "surveyed": "2026-08-18T21:56:39.650Z",
     "title": "Planet Urzeit",
     "publishedAt": "2026-07-26T17:06:14.6012Z",
     "country": "DE",
@@ -3045,7 +3072,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:38.799Z",
+    "surveyed": "2026-08-18T21:56:39.890Z",
     "title": "JurassicWelt",
     "publishedAt": "2023-07-09T14:54:54.118903Z",
     "country": "DE",
@@ -3066,7 +3093,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:38.990Z",
+    "surveyed": "2026-08-18T21:56:40.108Z",
     "title": "Jurassic Stories",
     "publishedAt": "2025-05-23T12:32:57.136939Z",
     "country": "DE",
@@ -3081,13 +3108,15 @@
     "id": "UCCf599vX34Bf8vT22RYJe0w",
     "seeds": [
       "urzeit-tiere",
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-doku",
+      "sleep-science"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:40.902Z",
+    "surveyed": "2026-08-18T21:56:40.495Z",
     "title": "Real Wild Deutschland",
     "publishedAt": "2021-11-23T11:21:21.400378Z",
     "country": "DE",
@@ -3106,7 +3135,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:41.013Z",
+    "surveyed": "2026-08-18T21:56:40.627Z",
     "title": "Urzeit Welt",
     "publishedAt": "2026-07-11T17:37:32.307814Z",
     "country": "DE",
@@ -3126,7 +3155,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:41.224Z",
+    "surveyed": "2026-08-18T21:56:40.760Z",
     "title": "Urplanet",
     "publishedAt": "2025-02-21T12:14:05.415262Z",
     "country": "DE",
@@ -3146,7 +3175,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:41.367Z",
+    "surveyed": "2026-08-18T21:56:40.883Z",
     "title": "Urzeit Erde",
     "publishedAt": "2016-06-19T10:20:58Z",
     "country": null,
@@ -3166,12 +3195,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:41.538Z",
+    "surveyed": "2026-08-18T21:56:40.996Z",
     "title": "SchlummerWissen",
     "publishedAt": "2025-10-27T15:54:40.217611Z",
     "country": "DE",
     "uploadsPlaylistId": "UUJOrDA45WdgHpV1x5bj5SoQ",
-    "subscribers": 859,
+    "subscribers": 860,
     "videoCount": 25,
     "totalViews": 81855,
     "firstUploadComplete": true,
@@ -3186,7 +3215,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:42.269Z",
+    "surveyed": "2026-08-18T21:56:41.226Z",
     "title": "Raubtier Chronik",
     "publishedAt": "2026-04-13T20:01:13.452198Z",
     "country": "DE",
@@ -3206,7 +3235,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:42.426Z",
+    "surveyed": "2026-08-18T21:56:41.326Z",
     "title": "GeoWelten",
     "publishedAt": "2026-03-11T10:28:49.480472Z",
     "country": "DE",
@@ -3226,7 +3255,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:42.599Z",
+    "surveyed": "2026-08-18T21:56:41.508Z",
     "title": "Urzeit zum Einschlafen",
     "publishedAt": "2026-03-05T11:45:42.768019Z",
     "country": "DE",
@@ -3246,7 +3275,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.479Z",
-    "surveyed": "2026-08-18T21:10:44.268Z",
+    "surveyed": "2026-08-18T21:56:41.785Z",
     "title": "Fluss Monster",
     "publishedAt": "2025-03-14T10:31:30.358738Z",
     "country": "GB",
@@ -3265,12 +3294,12 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:44.373Z",
+    "surveyed": "2026-08-18T21:56:41.897Z",
     "title": "The Long Winter",
     "publishedAt": "2026-03-14T17:21:46.767188Z",
     "country": "US",
     "uploadsPlaylistId": "UUQOuSsvLBzOk6Ls1iwsFvRg",
-    "subscribers": 961,
+    "subscribers": 963,
     "videoCount": 12,
     "totalViews": 110978,
     "firstUploadComplete": true,
@@ -3285,7 +3314,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:44.534Z",
+    "surveyed": "2026-08-18T21:56:42.154Z",
     "title": "NibbleX - Documentaries",
     "publishedAt": "2021-07-24T20:13:24.914534Z",
     "country": "US",
@@ -3299,18 +3328,19 @@
   "UCFqCf_pOPPUjgwC7S4XNhAw": {
     "id": "UCFqCf_pOPPUjgwC7S4XNhAw",
     "seeds": [
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-science"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:44.766Z",
+    "surveyed": "2026-08-18T21:56:42.326Z",
     "title": "Wissen zum Einschlafen",
     "publishedAt": "2026-05-27T02:09:25.091438Z",
     "country": "DE",
     "uploadsPlaylistId": "UUFqCf_pOPPUjgwC7S4XNhAw",
-    "subscribers": 197,
+    "subscribers": 198,
     "videoCount": 21,
     "totalViews": 35143,
     "firstUploadComplete": true,
@@ -3319,13 +3349,15 @@
   "UC1J8es3V4mIkICfiRKptRJA": {
     "id": "UC1J8es3V4mIkICfiRKptRJA",
     "seeds": [
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-doku",
+      "sleep-science"
     ],
     "markets": [
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:44.956Z",
+    "surveyed": "2026-08-18T21:56:42.505Z",
     "title": "Leise Wissenschaft",
     "publishedAt": "2026-05-27T04:50:21.789216Z",
     "country": "AT",
@@ -3345,7 +3377,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:45.161Z",
+    "surveyed": "2026-08-18T21:56:42.730Z",
     "title": "WUFO TV",
     "publishedAt": "2026-06-19T01:33:21.821131Z",
     "country": "US",
@@ -3359,13 +3391,15 @@
   "UCp7n5Z_9ZQOEgCGQwgLfZGQ": {
     "id": "UCp7n5Z_9ZQOEgCGQwgLfZGQ",
     "seeds": [
-      "mass-extinction"
+      "mass-extinction",
+      "sleep-doku"
     ],
     "markets": [
-      "de"
+      "de",
+      "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:46.444Z",
+    "surveyed": "2026-08-18T21:56:43.133Z",
     "title": "Just About Earth",
     "publishedAt": "2025-06-08T12:08:30.486355Z",
     "country": "US",
@@ -3385,7 +3419,7 @@
       "de"
     ],
     "firstSeen": "2026-08-18T21:08:21.677Z",
-    "surveyed": "2026-08-18T21:10:46.794Z",
+    "surveyed": "2026-08-18T21:56:43.329Z",
     "title": "Ancient Earth",
     "publishedAt": "2026-05-07T08:44:53.727625Z",
     "country": "US",
@@ -3406,7 +3440,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:48.445Z",
+    "surveyed": "2026-08-18T21:56:43.498Z",
     "title": "The Diary Of A CEO",
     "publishedAt": "2019-03-22T21:53:58Z",
     "country": "GB",
@@ -3425,7 +3459,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:49.505Z",
+    "surveyed": "2026-08-18T21:56:43.669Z",
     "title": "SpaceX",
     "publishedAt": "2008-07-30T21:48:45Z",
     "country": null,
@@ -3445,7 +3479,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:51.603Z",
+    "surveyed": "2026-08-18T21:56:44.207Z",
     "title": "Club Shay Shay",
     "publishedAt": "2020-07-20T16:37:57.559083Z",
     "country": "US",
@@ -3464,7 +3498,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:52.688Z",
+    "surveyed": "2026-08-18T21:56:44.445Z",
     "title": "Secret Origins",
     "publishedAt": "2022-10-07T06:07:25.119591Z",
     "country": "US",
@@ -3484,7 +3518,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:53.648Z",
+    "surveyed": "2026-08-18T21:56:44.550Z",
     "title": "Ridddle",
     "publishedAt": "2014-11-20T09:44:48Z",
     "country": "US",
@@ -3503,7 +3537,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:56.202Z",
+    "surveyed": "2026-08-18T21:56:46.709Z",
     "title": "HISTORY",
     "publishedAt": "2006-08-27T02:37:20Z",
     "country": "US",
@@ -3522,7 +3556,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:57.530Z",
+    "surveyed": "2026-08-18T21:56:46.923Z",
     "title": "Joe Scott",
     "publishedAt": "2006-10-13T01:57:31Z",
     "country": "US",
@@ -3541,7 +3575,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:58.537Z",
+    "surveyed": "2026-08-18T21:56:47.113Z",
     "title": "Astrum",
     "publishedAt": "2013-10-09T14:30:23Z",
     "country": "GB",
@@ -3563,7 +3597,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:59.658Z",
+    "surveyed": "2026-08-18T21:56:47.332Z",
     "title": "New Scientist",
     "publishedAt": "2006-11-27T11:43:46Z",
     "country": "GB",
@@ -3582,7 +3616,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:10:59.932Z",
+    "surveyed": "2026-08-18T21:56:47.503Z",
     "title": "Cosmicus",
     "publishedAt": "2026-01-30T05:51:39.668397Z",
     "country": "US",
@@ -3602,7 +3636,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:00.336Z",
+    "surveyed": "2026-08-18T21:56:47.694Z",
     "title": "Astrum Extra",
     "publishedAt": "2016-01-18T15:27:18Z",
     "country": "GB",
@@ -3622,7 +3656,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:01.107Z",
+    "surveyed": "2026-08-18T21:56:47.860Z",
     "title": "Real Engineering",
     "publishedAt": "2013-09-12T06:45:57Z",
     "country": "US",
@@ -3642,7 +3676,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:01.414Z",
+    "surveyed": "2026-08-18T21:56:48.046Z",
     "title": "History of the Universe",
     "publishedAt": "2021-01-12T16:35:19.76432Z",
     "country": "ES",
@@ -3662,7 +3696,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:01.659Z",
+    "surveyed": "2026-08-18T21:56:48.313Z",
     "title": "QuietPluto",
     "publishedAt": "2019-07-18T20:55:17Z",
     "country": "US",
@@ -3682,7 +3716,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:02.247Z",
+    "surveyed": "2026-08-18T21:56:48.587Z",
     "title": "MovieVerse Hindi",
     "publishedAt": "2025-02-23T09:29:03.961786Z",
     "country": "IN",
@@ -3702,7 +3736,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:03.427Z",
+    "surveyed": "2026-08-18T21:56:48.805Z",
     "title": "Science Channel",
     "publishedAt": "2006-12-04T10:29:00Z",
     "country": null,
@@ -3721,7 +3755,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:03.854Z",
+    "surveyed": "2026-08-18T21:56:49.037Z",
     "title": "SEA",
     "publishedAt": "2015-08-28T13:58:11Z",
     "country": "GB",
@@ -3741,7 +3775,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:05.468Z",
+    "surveyed": "2026-08-18T21:56:49.368Z",
     "title": "The King Of UFOs",
     "publishedAt": "2009-04-12T14:36:03Z",
     "country": "GB",
@@ -3761,7 +3795,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:05.828Z",
+    "surveyed": "2026-08-18T21:56:49.604Z",
     "title": "Strange Space",
     "publishedAt": "2022-12-11T13:52:46.159957Z",
     "country": "IN",
@@ -3781,7 +3815,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:05.937Z",
+    "surveyed": "2026-08-18T21:56:50.011Z",
     "title": "Astral Curiosity",
     "publishedAt": "2023-10-29T07:57:26.696188Z",
     "country": null,
@@ -3801,7 +3835,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:06.297Z",
+    "surveyed": "2026-08-18T21:56:50.182Z",
     "title": "Sleep Over It",
     "publishedAt": "2024-08-29T22:45:47.315237Z",
     "country": "IN",
@@ -3821,7 +3855,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:21.957Z",
-    "surveyed": "2026-08-18T21:11:08.022Z",
+    "surveyed": "2026-08-18T21:56:50.485Z",
     "title": "American Experience | PBS",
     "publishedAt": "2007-05-15T15:38:07Z",
     "country": "US",
@@ -3840,7 +3874,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:08.203Z",
+    "surveyed": "2026-08-18T21:56:50.641Z",
     "title": "Astrum Earth",
     "publishedAt": "2024-09-09T14:44:31.694629Z",
     "country": "GB",
@@ -3860,7 +3894,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:09.655Z",
+    "surveyed": "2026-08-18T21:56:50.879Z",
     "title": "Christina Randall",
     "publishedAt": "2016-07-29T16:28:22Z",
     "country": "US",
@@ -3879,7 +3913,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:10.825Z",
+    "surveyed": "2026-08-18T21:56:51.006Z",
     "title": "ABCmouse",
     "publishedAt": "2010-11-11T01:28:23Z",
     "country": "US",
@@ -3898,7 +3932,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:10.943Z",
+    "surveyed": "2026-08-18T21:56:51.151Z",
     "title": "Razzu The Explainer ",
     "publishedAt": "2025-04-14T02:55:22.304263Z",
     "country": "IN",
@@ -3918,7 +3952,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:11.087Z",
+    "surveyed": "2026-08-18T21:56:51.301Z",
     "title": "Next movie recap01",
     "publishedAt": "2026-03-19T16:05:11.54288Z",
     "country": "IN",
@@ -3938,7 +3972,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:11.303Z",
+    "surveyed": "2026-08-18T21:56:51.531Z",
     "title": "Bangla Cine World",
     "publishedAt": "2026-02-25T07:28:23.8322Z",
     "country": "IN",
@@ -3958,7 +3992,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:12.266Z",
+    "surveyed": "2026-08-18T21:56:51.692Z",
     "title": "PBS KIDS",
     "publishedAt": "2014-10-02T17:03:49Z",
     "country": "US",
@@ -3977,7 +4011,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:12.354Z",
+    "surveyed": "2026-08-18T21:56:51.787Z",
     "title": "Mr. Science",
     "publishedAt": "2022-03-18T09:32:13.897371Z",
     "country": "US",
@@ -3997,7 +4031,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:12.533Z",
+    "surveyed": "2026-08-18T21:56:51.952Z",
     "title": "Prehistoria Hub",
     "publishedAt": "2026-05-21T09:34:41.595Z",
     "country": "US",
@@ -4017,7 +4051,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:15.361Z",
+    "surveyed": "2026-08-18T21:56:52.259Z",
     "title": "Big Think",
     "publishedAt": "2006-10-01T18:37:05Z",
     "country": "US",
@@ -4036,7 +4070,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:15.509Z",
+    "surveyed": "2026-08-18T21:56:53.611Z",
     "title": "Filmenic",
     "publishedAt": "2025-10-05T07:05:28.935668Z",
     "country": "IN",
@@ -4056,7 +4090,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:17.038Z",
+    "surveyed": "2026-08-18T21:56:54.006Z",
     "title": "Science Fiction Station",
     "publishedAt": "2022-03-18T14:39:03.323521Z",
     "country": "GB",
@@ -4075,7 +4109,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:17.172Z",
+    "surveyed": "2026-08-18T21:56:54.116Z",
     "title": "BrainFuel TV",
     "publishedAt": "2026-05-05T09:36:01.434295Z",
     "country": null,
@@ -4095,7 +4129,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:17.537Z",
+    "surveyed": "2026-08-18T21:56:54.302Z",
     "title": "WUFO - Science Documentaries",
     "publishedAt": "2023-11-23T06:43:27.810853Z",
     "country": "US",
@@ -4115,7 +4149,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:19.286Z",
+    "surveyed": "2026-08-18T21:56:54.671Z",
     "title": "National Jurassic",
     "publishedAt": "2019-04-17T20:42:43Z",
     "country": "DE",
@@ -4134,7 +4168,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:21.435Z",
+    "surveyed": "2026-08-18T21:56:54.984Z",
     "title": "Bright Side Wild Nature",
     "publishedAt": "2025-08-11T11:28:56.948679Z",
     "country": "US",
@@ -4153,7 +4187,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:22.556Z",
+    "surveyed": "2026-08-18T21:56:55.126Z",
     "title": "Pororo the Little Penguin",
     "publishedAt": "2016-07-29T08:03:41Z",
     "country": "US",
@@ -4172,7 +4206,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:24.525Z",
+    "surveyed": "2026-08-18T21:56:55.352Z",
     "title": "New Rockstars",
     "publishedAt": "2011-10-08T06:33:10Z",
     "country": "US",
@@ -4191,7 +4225,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:25.604Z",
+    "surveyed": "2026-08-18T21:56:55.587Z",
     "title": "ABC Terra",
     "publishedAt": "2021-01-17T22:20:36.247122Z",
     "country": "BR",
@@ -4211,7 +4245,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:25.794Z",
+    "surveyed": "2026-08-18T21:56:55.739Z",
     "title": "Exclusive Bangla",
     "publishedAt": "2023-07-31T14:37:55.729243Z",
     "country": "BD",
@@ -4231,7 +4265,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:25.881Z",
+    "surveyed": "2026-08-18T21:56:55.884Z",
     "title": "Epic Dinosaur Docs",
     "publishedAt": "2025-07-10T09:33:30.448692Z",
     "country": "US",
@@ -4251,7 +4285,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.367Z",
-    "surveyed": "2026-08-18T21:11:26.634Z",
+    "surveyed": "2026-08-18T21:56:56.190Z",
     "title": "Destiny",
     "publishedAt": "2018-02-11T18:07:06Z",
     "country": "US",
@@ -4271,7 +4305,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:26.784Z",
+    "surveyed": "2026-08-18T21:56:56.317Z",
     "title": "Humble Documentary",
     "publishedAt": "2026-02-14T13:19:22.713115Z",
     "country": "IN",
@@ -4291,7 +4325,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:27.124Z",
+    "surveyed": "2026-08-18T21:56:56.576Z",
     "title": "Mack",
     "publishedAt": "2026-05-21T13:55:00.802483Z",
     "country": null,
@@ -4311,7 +4345,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:27.293Z",
+    "surveyed": "2026-08-18T21:56:56.769Z",
     "title": "AG FACT            ",
     "publishedAt": "2024-09-15T12:25:20.75442Z",
     "country": "IN",
@@ -4331,7 +4365,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:27.404Z",
+    "surveyed": "2026-08-18T21:56:56.913Z",
     "title": "History Industry",
     "publishedAt": "2025-11-14T19:49:35.389671Z",
     "country": "IN",
@@ -4351,7 +4385,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:28.907Z",
+    "surveyed": "2026-08-18T21:56:57.111Z",
     "title": "Optic Expedition",
     "publishedAt": "2025-12-22T13:10:48.558126Z",
     "country": null,
@@ -4370,7 +4404,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:29.292Z",
+    "surveyed": "2026-08-18T21:56:57.328Z",
     "title": "NORTH 02",
     "publishedAt": "2018-08-08T02:49:23Z",
     "country": "US",
@@ -4390,7 +4424,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:29.581Z",
+    "surveyed": "2026-08-18T21:56:57.500Z",
     "title": "Explain In Paint",
     "publishedAt": "2026-04-26T00:57:02.997523Z",
     "country": null,
@@ -4410,12 +4444,12 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:29.706Z",
+    "surveyed": "2026-08-18T21:56:57.637Z",
     "title": "Unbaffled with Jim Al-Khalili",
     "publishedAt": "2026-04-28T12:33:04.338364Z",
     "country": "GB",
     "uploadsPlaylistId": "UU3_bHs6iNuOROAaTo0cUR1w",
-    "subscribers": 39800,
+    "subscribers": 39900,
     "videoCount": 28,
     "totalViews": 2186699,
     "firstUploadComplete": true,
@@ -4430,7 +4464,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:29.835Z",
+    "surveyed": "2026-08-18T21:56:57.767Z",
     "title": "Um Documentário",
     "publishedAt": "2026-04-11T15:44:01.021027Z",
     "country": null,
@@ -4450,7 +4484,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:31.502Z",
+    "surveyed": "2026-08-18T21:56:57.952Z",
     "title": "History Connect",
     "publishedAt": "2023-10-04T11:55:28.728842Z",
     "country": "IN",
@@ -4469,7 +4503,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:33.158Z",
+    "surveyed": "2026-08-18T21:56:58.200Z",
     "title": "Inside Archaeology",
     "publishedAt": "2015-11-17T15:08:59Z",
     "country": "GB",
@@ -4489,7 +4523,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:33.249Z",
+    "surveyed": "2026-08-18T21:56:58.282Z",
     "title": "Itihas Ka Gyan",
     "publishedAt": "2025-07-19T21:31:07.045393Z",
     "country": "IN",
@@ -4509,7 +4543,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:33.402Z",
+    "surveyed": "2026-08-18T21:56:58.461Z",
     "title": "Tiempos Antiguos",
     "publishedAt": "2026-02-15T20:17:36.32049Z",
     "country": "ES",
@@ -4529,7 +4563,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:33.581Z",
+    "surveyed": "2026-08-18T21:56:58.609Z",
     "title": "DOCUMENTARY INDUSTRIES",
     "publishedAt": "2025-04-29T03:22:53.775147Z",
     "country": "IN",
@@ -4549,7 +4583,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:35.160Z",
+    "surveyed": "2026-08-18T21:56:59.242Z",
     "title": "Investigation",
     "publishedAt": "2015-12-02T15:22:56Z",
     "country": "FR",
@@ -4568,7 +4602,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:37.041Z",
+    "surveyed": "2026-08-18T21:56:59.468Z",
     "title": "Varun Talks",
     "publishedAt": "2021-12-30T11:04:28.351143Z",
     "country": "IN",
@@ -4587,7 +4621,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:37.155Z",
+    "surveyed": "2026-08-18T21:56:59.621Z",
     "title": "Beginning To Now",
     "publishedAt": "2021-02-09T02:26:20.450823Z",
     "country": "US",
@@ -4607,7 +4641,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:37.286Z",
+    "surveyed": "2026-08-18T21:56:59.734Z",
     "title": "CRS ANIMDOCS",
     "publishedAt": "2026-03-10T16:20:21.645984Z",
     "country": "IN",
@@ -4627,7 +4661,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:38.089Z",
+    "surveyed": "2026-08-18T21:56:59.896Z",
     "title": "BBC Timestamp",
     "publishedAt": "2018-05-30T16:49:19Z",
     "country": "GB",
@@ -4647,12 +4681,12 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:38.224Z",
+    "surveyed": "2026-08-18T21:57:00.052Z",
     "title": "Nick Longrich Evolution and Paleontology",
     "publishedAt": "2013-10-27T05:38:12Z",
     "country": "US",
     "uploadsPlaylistId": "UUChfE3vhberNSVePQrVgmYw",
-    "subscribers": 31500,
+    "subscribers": 31600,
     "videoCount": 31,
     "totalViews": 2435068,
     "firstUploadComplete": true,
@@ -4667,7 +4701,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:38.421Z",
+    "surveyed": "2026-08-18T21:57:00.314Z",
     "title": "Basically Primitive",
     "publishedAt": "2023-03-07T11:05:06.545158Z",
     "country": "US",
@@ -4687,12 +4721,12 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:38.535Z",
+    "surveyed": "2026-08-18T21:57:00.516Z",
     "title": "Khalan Studio",
     "publishedAt": "2025-09-18T12:25:27.672523Z",
     "country": null,
     "uploadsPlaylistId": "UUPTDdIFlaBrHdCEerIjdXKw",
-    "subscribers": 13100,
+    "subscribers": 13200,
     "videoCount": 18,
     "totalViews": 1459213,
     "firstUploadComplete": true,
@@ -4707,7 +4741,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:38.956Z",
+    "surveyed": "2026-08-18T21:57:00.856Z",
     "title": "Gentle History",
     "publishedAt": "2010-02-25T02:46:18Z",
     "country": null,
@@ -4727,7 +4761,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:39.177Z",
+    "surveyed": "2026-08-18T21:57:01.106Z",
     "title": "Mogo",
     "publishedAt": "2026-06-08T18:48:34.437562Z",
     "country": null,
@@ -4747,7 +4781,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:39.517Z",
+    "surveyed": "2026-08-18T21:57:01.300Z",
     "title": "The Evolution of Life",
     "publishedAt": "2026-04-04T17:34:58.075765Z",
     "country": "EE",
@@ -4767,7 +4801,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:39.724Z",
+    "surveyed": "2026-08-18T21:57:01.496Z",
     "title": "O Ancestral",
     "publishedAt": "2026-03-13T18:55:32.880578Z",
     "country": "BR",
@@ -4787,7 +4821,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:39.833Z",
+    "surveyed": "2026-08-18T21:57:01.580Z",
     "title": "History Files",
     "publishedAt": "2026-03-11T23:49:40.883246Z",
     "country": null,
@@ -4807,7 +4841,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:40.187Z",
+    "surveyed": "2026-08-18T21:57:01.746Z",
     "title": "Chronicles of Planet Earth",
     "publishedAt": "2025-12-02T08:56:38.421704Z",
     "country": "PL",
@@ -4827,7 +4861,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:41.219Z",
+    "surveyed": "2026-08-18T21:57:02.007Z",
     "title": "English Chatterbox",
     "publishedAt": "2012-07-12T05:56:00Z",
     "country": "IN",
@@ -4847,7 +4881,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:42.268Z",
+    "surveyed": "2026-08-18T21:57:02.224Z",
     "title": "Wild Origins",
     "publishedAt": "2025-10-10T03:30:18.264685Z",
     "country": "US",
@@ -4867,7 +4901,7 @@
       "en"
     ],
     "firstSeen": "2026-08-18T21:08:22.641Z",
-    "surveyed": "2026-08-18T21:11:42.355Z",
+    "surveyed": "2026-08-18T21:57:02.296Z",
     "title": "MCR Chronicles",
     "publishedAt": "2026-06-08T04:49:37.308507Z",
     "country": null,
@@ -4877,5 +4911,1137 @@
     "totalViews": 105265,
     "firstUploadComplete": true,
     "firstUploadAt": "2026-06-19T06:44:21Z"
+  },
+  "UChs6UhfFkNMMMLuY1_F0rWA": {
+    "id": "UChs6UhfFkNMMMLuY1_F0rWA",
+    "seeds": [
+      "sleep-doku",
+      "sleep-science",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:30.720Z",
+    "title": "Erdarchiv",
+    "publishedAt": "2025-09-05T11:07:49.849421Z",
+    "country": "TR",
+    "uploadsPlaylistId": "UUhs6UhfFkNMMMLuY1_F0rWA",
+    "subscribers": 17100,
+    "videoCount": 31,
+    "totalViews": 2567538,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-10-13T18:00:43Z"
+  },
+  "UCbfx9d4rErcXGPoXZUQi05w": {
+    "id": "UCbfx9d4rErcXGPoXZUQi05w",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:31.530Z",
+    "title": "Alexander Weiss",
+    "publishedAt": "2026-02-13T20:27:17.831859Z",
+    "country": "GE",
+    "uploadsPlaylistId": "UUbfx9d4rErcXGPoXZUQi05w",
+    "subscribers": 25200,
+    "videoCount": 164,
+    "totalViews": 3693842,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-02-15T21:15:10Z"
+  },
+  "UCtK2am_wWuLbreHiY0lqGUQ": {
+    "id": "UCtK2am_wWuLbreHiY0lqGUQ",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:32.112Z",
+    "title": "Harry Potter Wissen",
+    "publishedAt": "2022-02-04T15:44:17.765766Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUtK2am_wWuLbreHiY0lqGUQ",
+    "subscribers": 68200,
+    "videoCount": 1336,
+    "totalViews": 40797010,
+    "firstUploadAt": "2026-02-08T16:51:10Z"
+  },
+  "UCp4DvF7g3z-D69PXj9lLtCA": {
+    "id": "UCp4DvF7g3z-D69PXj9lLtCA",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:32.291Z",
+    "title": "Geheimnis Geschichte",
+    "publishedAt": "2025-06-21T07:50:43.942103Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUp4DvF7g3z-D69PXj9lLtCA",
+    "subscribers": 2700,
+    "videoCount": 21,
+    "totalViews": 152237,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-01-13T18:15:05Z"
+  },
+  "UCVy2SN5oXbvHsxwl3oKbIGw": {
+    "id": "UCVy2SN5oXbvHsxwl3oKbIGw",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history",
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:33.223Z",
+    "title": "Mentalreisen",
+    "publishedAt": "2021-02-14T14:41:20.909778Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUVy2SN5oXbvHsxwl3oKbIGw",
+    "subscribers": 196000,
+    "videoCount": 208,
+    "totalViews": 51166985,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2021-02-19T12:57:46Z"
+  },
+  "UCqLFYf0PfGHuVpZtyxWdeww": {
+    "id": "UCqLFYf0PfGHuVpZtyxWdeww",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:33.512Z",
+    "title": "Ruhe der Zeit",
+    "publishedAt": "2021-08-27T15:44:42.85134Z",
+    "country": "GB",
+    "uploadsPlaylistId": "UUqLFYf0PfGHuVpZtyxWdeww",
+    "subscribers": 21500,
+    "videoCount": 33,
+    "totalViews": 2261537,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-07-14T19:27:43Z"
+  },
+  "UCyQ67ObfsdsQO9C05gMUriA": {
+    "id": "UCyQ67ObfsdsQO9C05gMUriA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:33.670Z",
+    "title": "XL Technik",
+    "publishedAt": "2026-04-21T07:49:08.7551Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUyQ67ObfsdsQO9C05gMUriA",
+    "subscribers": 794,
+    "videoCount": 28,
+    "totalViews": 289364,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-05-14T16:00:04Z"
+  },
+  "UCP_MAgSeUcSxDgpnpNM0SsQ": {
+    "id": "UCP_MAgSeUcSxDgpnpNM0SsQ",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:33.981Z",
+    "title": "Schlummerchronik",
+    "publishedAt": "2026-05-17T19:04:55.505913Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUP_MAgSeUcSxDgpnpNM0SsQ",
+    "subscribers": 1360,
+    "videoCount": 44,
+    "totalViews": 142062,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-05-20T20:42:58Z"
+  },
+  "UCeHE4fH2n-Xf90zydle9y1Q": {
+    "id": "UCeHE4fH2n-Xf90zydle9y1Q",
+    "seeds": [
+      "sleep-doku",
+      "sleep-science",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:34.107Z",
+    "title": "Vor der Zeit",
+    "publishedAt": "2025-06-17T11:15:54.440711Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUeHE4fH2n-Xf90zydle9y1Q",
+    "subscribers": 391,
+    "videoCount": 9,
+    "totalViews": 26772,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-07-08T21:46:55Z"
+  },
+  "UCxhp3eFZjOaRnuPzomUw6ag": {
+    "id": "UCxhp3eFZjOaRnuPzomUw6ag",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:34.296Z",
+    "title": "Zeitreise zum Einschlafen",
+    "publishedAt": "2026-04-07T20:27:29.735379Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUxhp3eFZjOaRnuPzomUw6ag",
+    "subscribers": 178,
+    "videoCount": 17,
+    "totalViews": 51236,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-04-09T17:00:06Z"
+  },
+  "UC_ovnR1uHIx2nJ58B71zKvw": {
+    "id": "UC_ovnR1uHIx2nJ58B71zKvw",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:34.699Z",
+    "title": "Traumlore",
+    "publishedAt": "2025-06-25T10:17:12.732442Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UU_ovnR1uHIx2nJ58B71zKvw",
+    "subscribers": 5000,
+    "videoCount": 60,
+    "totalViews": 807686,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-08-11T17:56:00Z"
+  },
+  "UC-mJlR8VnDOVukOlAzmKkdA": {
+    "id": "UC-mJlR8VnDOVukOlAzmKkdA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:35.001Z",
+    "title": "Medizin zum Einschlafen",
+    "publishedAt": "2025-12-23T04:04:30.99599Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UU-mJlR8VnDOVukOlAzmKkdA",
+    "subscribers": 4600,
+    "videoCount": 41,
+    "totalViews": 659242,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-03-13T18:45:10Z"
+  },
+  "UCM5eOB7IOI7u1-uCbuwsiDw": {
+    "id": "UCM5eOB7IOI7u1-uCbuwsiDw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:35.653Z",
+    "title": "Nordjarl",
+    "publishedAt": "2021-07-02T10:22:54.257139Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUM5eOB7IOI7u1-uCbuwsiDw",
+    "subscribers": 10800,
+    "videoCount": 1066,
+    "totalViews": 5542354,
+    "firstUploadAt": "2026-01-21T17:00:37Z"
+  },
+  "UCeEBqSoa7xWYYLNbnBsADZA": {
+    "id": "UCeEBqSoa7xWYYLNbnBsADZA",
+    "seeds": [
+      "sleep-doku",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:35.805Z",
+    "title": "Verlorene Ursprünge",
+    "publishedAt": "2026-02-04T05:01:01.542725Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUeEBqSoa7xWYYLNbnBsADZA",
+    "subscribers": 1080,
+    "videoCount": 12,
+    "totalViews": 28741,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-06-13T18:45:27Z"
+  },
+  "UCbA9IeQKR7CODharVAXu_VA": {
+    "id": "UCbA9IeQKR7CODharVAXu_VA",
+    "seeds": [
+      "sleep-doku",
+      "sleep-science"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.338Z",
+    "surveyed": "2026-08-18T21:55:35.958Z",
+    "title": "Urzeitwelten zum Einschlafen",
+    "publishedAt": "2026-07-12T01:04:41.865774Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUbA9IeQKR7CODharVAXu_VA",
+    "subscribers": 153,
+    "videoCount": 12,
+    "totalViews": 17999,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-07-13T17:45:15Z"
+  },
+  "UCn7BPs2lei3fmVuH2svglfw": {
+    "id": "UCn7BPs2lei3fmVuH2svglfw",
+    "seeds": [
+      "sleep-science",
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:27.693Z",
+    "surveyed": "2026-08-18T21:55:36.180Z",
+    "title": "Zeitflüstern",
+    "publishedAt": "2025-05-15T20:07:57.503746Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUn7BPs2lei3fmVuH2svglfw",
+    "subscribers": 3710,
+    "videoCount": 42,
+    "totalViews": 308916,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-11-29T17:01:40Z"
+  },
+  "UCx7tkR8YD3gg-Pa480zOroQ": {
+    "id": "UCx7tkR8YD3gg-Pa480zOroQ",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:36.838Z",
+    "title": "Märchen für Kinder - Gute Nacht Geschichte",
+    "publishedAt": "2016-10-24T14:05:51Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUx7tkR8YD3gg-Pa480zOroQ",
+    "subscribers": 623000,
+    "videoCount": 1055,
+    "totalViews": 392004594,
+    "firstUploadAt": "2025-12-14T09:00:14Z"
+  },
+  "UCZBu8EpgyxxQedeluMn3RCA": {
+    "id": "UCZBu8EpgyxxQedeluMn3RCA",
+    "seeds": [
+      "sleep-history",
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:37.155Z",
+    "title": "Schlaf mit dem Zen",
+    "publishedAt": "2026-03-16T19:02:12.060809Z",
+    "country": null,
+    "uploadsPlaylistId": "UUZBu8EpgyxxQedeluMn3RCA",
+    "subscribers": 4130,
+    "videoCount": 41,
+    "totalViews": 403093,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-04-19T17:47:15Z"
+  },
+  "UC2AAyebwiLLJoC3X9aCsF-A": {
+    "id": "UC2AAyebwiLLJoC3X9aCsF-A",
+    "seeds": [
+      "sleep-history",
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:38.258Z",
+    "title": "Marco Neumann Meditationen",
+    "publishedAt": "2022-07-17T10:05:35.011358Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UU2AAyebwiLLJoC3X9aCsF-A",
+    "subscribers": 37100,
+    "videoCount": 253,
+    "totalViews": 8533573,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2022-07-19T19:08:55Z"
+  },
+  "UCch3uc3rnwkfSvVvt_ZxpAA": {
+    "id": "UCch3uc3rnwkfSvVvt_ZxpAA",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:39.243Z",
+    "title": "Bleib entspannt! mit Kathi Klaudel",
+    "publishedAt": "2016-09-08T13:11:50Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUch3uc3rnwkfSvVvt_ZxpAA",
+    "subscribers": 40500,
+    "videoCount": 244,
+    "totalViews": 9055285,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2018-11-17T10:13:24Z"
+  },
+  "UCrNsFjb7kb0bY6UzR8x24Og": {
+    "id": "UCrNsFjb7kb0bY6UzR8x24Og",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:39.786Z",
+    "title": "Syrric Deutsch",
+    "publishedAt": "2025-09-13T20:57:42.602027Z",
+    "country": "CZ",
+    "uploadsPlaylistId": "UUrNsFjb7kb0bY6UzR8x24Og",
+    "subscribers": 9340,
+    "videoCount": 79,
+    "totalViews": 1463824,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-10-22T19:26:41Z"
+  },
+  "UCq0JAZ3mX9iFa_a9BVk9_kw": {
+    "id": "UCq0JAZ3mX9iFa_a9BVk9_kw",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:41.221Z",
+    "title": "Wissensruhe",
+    "publishedAt": "2025-07-27T23:59:25.834178Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUq0JAZ3mX9iFa_a9BVk9_kw",
+    "subscribers": 1960,
+    "videoCount": 307,
+    "totalViews": 249293,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-08-30T19:30:06Z"
+  },
+  "UC_hLuUWxTmEYVqR14jG4fXA": {
+    "id": "UC_hLuUWxTmEYVqR14jG4fXA",
+    "seeds": [
+      "sleep-history",
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:42.959Z",
+    "title": "Lies Kurzgeschichten | Entspannen in Minuten ",
+    "publishedAt": "2015-03-12T10:30:51Z",
+    "country": "NL",
+    "uploadsPlaylistId": "UU_hLuUWxTmEYVqR14jG4fXA",
+    "subscribers": 6870,
+    "videoCount": 394,
+    "totalViews": 550564,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2022-01-18T17:30:04Z"
+  },
+  "UCge-_APj_5L4E96bXYEYGMw": {
+    "id": "UCge-_APj_5L4E96bXYEYGMw",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:43.689Z",
+    "title": "Kati Winter Märchenwelt",
+    "publishedAt": "2016-04-30T14:41:36Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUge-_APj_5L4E96bXYEYGMw",
+    "subscribers": 107000,
+    "videoCount": 1189,
+    "totalViews": 32435468,
+    "firstUploadAt": "2025-12-16T17:01:05Z"
+  },
+  "UCvvy-cbYACLjoIrcCJ90M_Q": {
+    "id": "UCvvy-cbYACLjoIrcCJ90M_Q",
+    "seeds": [
+      "sleep-history",
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:44.478Z",
+    "title": "Lie liest vor: Hörbücher zum Einschlafen & Märchen",
+    "publishedAt": "2020-11-12T09:36:50.995678Z",
+    "country": "NL",
+    "uploadsPlaylistId": "UUvvy-cbYACLjoIrcCJ90M_Q",
+    "subscribers": 66300,
+    "videoCount": 1439,
+    "totalViews": 15916562,
+    "firstUploadAt": "2026-03-31T18:15:00Z"
+  },
+  "UCQW6NQkl877Ard417g_h5Dg": {
+    "id": "UCQW6NQkl877Ard417g_h5Dg",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:44.799Z",
+    "title": "Cartoon Legenden",
+    "publishedAt": "2025-09-23T19:05:11.886425Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUQW6NQkl877Ard417g_h5Dg",
+    "subscribers": 3030,
+    "videoCount": 58,
+    "totalViews": 557651,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-10-07T20:45:32Z"
+  },
+  "UColM-FEMZUqcdRO5pdvoX0A": {
+    "id": "UColM-FEMZUqcdRO5pdvoX0A",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:45.470Z",
+    "title": "Nachtchronograph",
+    "publishedAt": "2016-01-13T05:11:33Z",
+    "country": "MD",
+    "uploadsPlaylistId": "UUolM-FEMZUqcdRO5pdvoX0A",
+    "subscribers": 4120,
+    "videoCount": 113,
+    "totalViews": 432758,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-04-04T22:35:32Z"
+  },
+  "UCT564j3H4yVed4kfy8ha-XA": {
+    "id": "UCT564j3H4yVed4kfy8ha-XA",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:45.680Z",
+    "title": "Der Schlafrige Historiker",
+    "publishedAt": "2026-05-23T11:51:53.026798Z",
+    "country": "TR",
+    "uploadsPlaylistId": "UUT564j3H4yVed4kfy8ha-XA",
+    "subscribers": 326,
+    "videoCount": 29,
+    "totalViews": 28537,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-05-31T20:00:16Z"
+  },
+  "UCpxFIcNgyok96nIawROvDeg": {
+    "id": "UCpxFIcNgyok96nIawROvDeg",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:45.890Z",
+    "title": "Schlafloser Stormtrooper",
+    "publishedAt": "2025-06-24T22:25:41.835086Z",
+    "country": null,
+    "uploadsPlaylistId": "UUpxFIcNgyok96nIawROvDeg",
+    "subscribers": 3530,
+    "videoCount": 33,
+    "totalViews": 409073,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-08-11T16:01:23Z"
+  },
+  "UCE4fFCijwtdhj9u64oZKdKA": {
+    "id": "UCE4fFCijwtdhj9u64oZKdKA",
+    "seeds": [
+      "sleep-history",
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:47.114Z",
+    "title": "Traumflüstern - Geschichten zum Einschlafen",
+    "publishedAt": "2024-12-06T14:31:10.935489Z",
+    "country": "CH",
+    "uploadsPlaylistId": "UUE4fFCijwtdhj9u64oZKdKA",
+    "subscribers": 17200,
+    "videoCount": 267,
+    "totalViews": 2531173,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2024-12-19T18:06:04Z"
+  },
+  "UC6uHKd2Y2Z8a3zto-0tdnZg": {
+    "id": "UC6uHKd2Y2Z8a3zto-0tdnZg",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:47.670Z",
+    "title": "Wolkenkinder",
+    "publishedAt": "2018-04-24T14:34:11Z",
+    "country": "GB",
+    "uploadsPlaylistId": "UU6uHKd2Y2Z8a3zto-0tdnZg",
+    "subscribers": 37600,
+    "videoCount": 668,
+    "totalViews": 39062523,
+    "firstUploadAt": "2025-09-20T14:00:16Z"
+  },
+  "UCl0ZeQZgW2KqayZEvXWjrmQ": {
+    "id": "UCl0ZeQZgW2KqayZEvXWjrmQ",
+    "seeds": [
+      "sleep-history"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.197Z",
+    "surveyed": "2026-08-18T21:55:47.826Z",
+    "title": "Albtraum CreepyPasta",
+    "publishedAt": "2024-07-22T21:31:48.711969Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUl0ZeQZgW2KqayZEvXWjrmQ",
+    "subscribers": 12400,
+    "videoCount": 9,
+    "totalViews": 55273,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-04-12T15:12:28Z"
+  },
+  "UCb8ARv8jdwZSulnQ_TlkZBQ": {
+    "id": "UCb8ARv8jdwZSulnQ_TlkZBQ",
+    "seeds": [
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.427Z",
+    "surveyed": "2026-08-18T21:55:49.752Z",
+    "title": "Tandaniel der Geschichtenweber",
+    "publishedAt": "2019-11-14T13:43:32.878297Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UUb8ARv8jdwZSulnQ_TlkZBQ",
+    "subscribers": 46600,
+    "videoCount": 497,
+    "totalViews": 13061700,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2019-11-22T15:41:26Z"
+  },
+  "UC034c7-21M578DU3C2-9h2w": {
+    "id": "UC034c7-21M578DU3C2-9h2w",
+    "seeds": [
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.427Z",
+    "surveyed": "2026-08-18T21:55:50.557Z",
+    "title": "Ohrinsel - Meditationen",
+    "publishedAt": "2014-02-27T11:58:15Z",
+    "country": "DE",
+    "uploadsPlaylistId": "UU034c7-21M578DU3C2-9h2w",
+    "subscribers": 408000,
+    "videoCount": 337,
+    "totalViews": 109339436,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2015-03-29T18:28:17Z"
+  },
+  "UCAU3M-JInJzyIzRr5N_MwSA": {
+    "id": "UCAU3M-JInJzyIzRr5N_MwSA",
+    "seeds": [
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.427Z",
+    "surveyed": "2026-08-18T21:55:51.519Z",
+    "title": "Seelenflüstern - Emotionale Geschichten",
+    "publishedAt": "2025-04-14T07:36:50.333731Z",
+    "country": "CH",
+    "uploadsPlaylistId": "UUAU3M-JInJzyIzRr5N_MwSA",
+    "subscribers": 5730,
+    "videoCount": 203,
+    "totalViews": 834519,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-04-21T15:47:32Z"
+  },
+  "UCA_Nzq-3cxwdJ9ms-GLfnqw": {
+    "id": "UCA_Nzq-3cxwdJ9ms-GLfnqw",
+    "seeds": [
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.427Z",
+    "surveyed": "2026-08-18T21:55:51.693Z",
+    "title": "Schlafhafen – Einschlafgeschichten für Erwachsene",
+    "publishedAt": "2026-05-07T18:28:07.1817Z",
+    "country": "AT",
+    "uploadsPlaylistId": "UUA_Nzq-3cxwdJ9ms-GLfnqw",
+    "subscribers": 8,
+    "videoCount": 15,
+    "totalViews": 1233,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-05-10T18:00:47Z"
+  },
+  "UCPKOLfyZncGEN4IzJiuGEsQ": {
+    "id": "UCPKOLfyZncGEN4IzJiuGEsQ",
+    "seeds": [
+      "sleep-stories"
+    ],
+    "markets": [
+      "de"
+    ],
+    "firstSeen": "2026-08-18T21:55:28.427Z",
+    "surveyed": "2026-08-18T21:55:51.803Z",
+    "title": "Schlummerfahrt",
+    "publishedAt": "2014-04-20T07:20:20Z",
+    "country": null,
+    "uploadsPlaylistId": "UUPKOLfyZncGEN4IzJiuGEsQ",
+    "subscribers": 10,
+    "videoCount": 5,
+    "totalViews": 1141,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-06-23T15:32:42Z"
+  },
+  "UC6LYB8YhQKo2H6EK3q6U6kw": {
+    "id": "UC6LYB8YhQKo2H6EK3q6U6kw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:52.321Z",
+    "title": "Bedtime & Historian ",
+    "publishedAt": "2025-07-01T22:58:19.17603Z",
+    "country": "US",
+    "uploadsPlaylistId": "UU6LYB8YhQKo2H6EK3q6U6kw",
+    "subscribers": 75700,
+    "videoCount": 145,
+    "totalViews": 6887845,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-08-27T00:00:54Z"
+  },
+  "UC32Km2_H8Lo5Ulop6Nhzwug": {
+    "id": "UC32Km2_H8Lo5Ulop6Nhzwug",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:52.761Z",
+    "title": "Sleepy History Channel",
+    "publishedAt": "2025-07-27T11:05:58.327333Z",
+    "country": "GB",
+    "uploadsPlaylistId": "UU32Km2_H8Lo5Ulop6Nhzwug",
+    "subscribers": 43000,
+    "videoCount": 112,
+    "totalViews": 5004988,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-07-27T19:00:25Z"
+  },
+  "UCqvrJogWtTcH4kbJC2WqJFw": {
+    "id": "UCqvrJogWtTcH4kbJC2WqJFw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:53.127Z",
+    "title": "Mystery Sleep Forget",
+    "publishedAt": "2026-05-03T14:55:43.643652Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUqvrJogWtTcH4kbJC2WqJFw",
+    "subscribers": 3370,
+    "videoCount": 78,
+    "totalViews": 587539,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-05-08T22:00:18Z"
+  },
+  "UC9cHfpT2AVL4SX-WHbICztw": {
+    "id": "UC9cHfpT2AVL4SX-WHbICztw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:53.582Z",
+    "title": "Sleepy US Secrets",
+    "publishedAt": "2026-03-25T07:36:34.215694Z",
+    "country": null,
+    "uploadsPlaylistId": "UU9cHfpT2AVL4SX-WHbICztw",
+    "subscribers": 6190,
+    "videoCount": 87,
+    "totalViews": 649972,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-03-27T07:22:45Z"
+  },
+  "UCTPaH5uxhK1dq5fFaG5ob7Q": {
+    "id": "UCTPaH5uxhK1dq5fFaG5ob7Q",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:53.749Z",
+    "title": "Sleepy Mystery Channel",
+    "publishedAt": "2026-03-03T14:47:06.169668Z",
+    "country": "GB",
+    "uploadsPlaylistId": "UUTPaH5uxhK1dq5fFaG5ob7Q",
+    "subscribers": 7310,
+    "videoCount": 40,
+    "totalViews": 642355,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-04-23T21:01:07Z"
+  },
+  "UCiqAli4cS1AvOaME1w9_6_w": {
+    "id": "UCiqAli4cS1AvOaME1w9_6_w",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:54.000Z",
+    "title": "Nighttime Biographies",
+    "publishedAt": "2025-08-03T23:41:02.513276Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUiqAli4cS1AvOaME1w9_6_w",
+    "subscribers": 17800,
+    "videoCount": 45,
+    "totalViews": 1334503,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-12-26T03:45:00Z"
+  },
+  "UCx0MJWyAm_KhzB5BN4tY8EA": {
+    "id": "UCx0MJWyAm_KhzB5BN4tY8EA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:54.594Z",
+    "title": "Pillows of the Past",
+    "publishedAt": "2024-09-02T09:22:32.69678Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUx0MJWyAm_KhzB5BN4tY8EA",
+    "subscribers": 14300,
+    "videoCount": 546,
+    "totalViews": 3170460,
+    "firstUploadAt": "2026-07-22T18:30:36Z"
+  },
+  "UCI1uCM9LGBIFzE_tzeLhMBw": {
+    "id": "UCI1uCM9LGBIFzE_tzeLhMBw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:55.140Z",
+    "title": "WrestleMafia",
+    "publishedAt": "2022-04-03T06:02:47.281301Z",
+    "country": null,
+    "uploadsPlaylistId": "UUI1uCM9LGBIFzE_tzeLhMBw",
+    "subscribers": 48600,
+    "videoCount": 177,
+    "totalViews": 14665402,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-02-17T20:30:02Z"
+  },
+  "UCTVzOLXE7jdRdNyFtNvFFYA": {
+    "id": "UCTVzOLXE7jdRdNyFtNvFFYA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:55.716Z",
+    "title": "ZEROGC ",
+    "publishedAt": "2024-08-05T07:32:36.699444Z",
+    "country": null,
+    "uploadsPlaylistId": "UUTVzOLXE7jdRdNyFtNvFFYA",
+    "subscribers": 7260,
+    "videoCount": 127,
+    "totalViews": 2203202,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-11-26T11:59:43Z"
+  },
+  "UCYiKhBDh_4dVIdxXI8on2Rw": {
+    "id": "UCYiKhBDh_4dVIdxXI8on2Rw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:55.864Z",
+    "title": "The Long Watch",
+    "publishedAt": "2008-08-17T04:02:23Z",
+    "country": null,
+    "uploadsPlaylistId": "UUYiKhBDh_4dVIdxXI8on2Rw",
+    "subscribers": 2070,
+    "videoCount": 20,
+    "totalViews": 213830,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-07-17T05:45:08Z"
+  },
+  "UCd9w2r7qqF_ewIvqQsR4wqQ": {
+    "id": "UCd9w2r7qqF_ewIvqQsR4wqQ",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:56.056Z",
+    "title": "Deep Dive History Clips",
+    "publishedAt": "2025-10-08T16:29:36.493745Z",
+    "country": "GB",
+    "uploadsPlaylistId": "UUd9w2r7qqF_ewIvqQsR4wqQ",
+    "subscribers": 6020,
+    "videoCount": 20,
+    "totalViews": 769445,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-06-17T16:11:58Z"
+  },
+  "UCkq5m34pWsYCeDFI-O3M5yA": {
+    "id": "UCkq5m34pWsYCeDFI-O3M5yA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.219Z",
+    "surveyed": "2026-08-18T21:55:57.247Z",
+    "title": "Life Beyond Seen",
+    "publishedAt": "2025-08-30T12:31:46.767485Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUkq5m34pWsYCeDFI-O3M5yA",
+    "subscribers": 29800,
+    "videoCount": 335,
+    "totalViews": 4089707,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-09-02T20:00:36Z"
+  },
+  "UCy9G0x9Mg182PjaxYd6V8qw": {
+    "id": "UCy9G0x9Mg182PjaxYd6V8qw",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:55:57.685Z",
+    "title": "Top Bins",
+    "publishedAt": "2023-06-20T18:29:47.439431Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUy9G0x9Mg182PjaxYd6V8qw",
+    "subscribers": 169000,
+    "videoCount": 124,
+    "totalViews": 51424647,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2023-08-01T16:52:15Z"
+  },
+  "UC32FF_oUYob2e4sdT82JDeA": {
+    "id": "UC32FF_oUYob2e4sdT82JDeA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:55:57.887Z",
+    "title": "Drift Through History",
+    "publishedAt": "2026-05-31T09:49:56.366499Z",
+    "country": "US",
+    "uploadsPlaylistId": "UU32FF_oUYob2e4sdT82JDeA",
+    "subscribers": 5450,
+    "videoCount": 39,
+    "totalViews": 453640,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-06-03T20:21:14Z"
+  },
+  "UC9faOhgS5KtCMDauYbj5QYQ": {
+    "id": "UC9faOhgS5KtCMDauYbj5QYQ",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:55:58.193Z",
+    "title": "Midnight Marvel",
+    "publishedAt": "2008-10-08T17:26:07Z",
+    "country": "US",
+    "uploadsPlaylistId": "UU9faOhgS5KtCMDauYbj5QYQ",
+    "subscribers": 12600,
+    "videoCount": 62,
+    "totalViews": 2443093,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-03-27T05:09:17Z"
+  },
+  "UCFYB4pdBUyPH6MjH0AnGoIA": {
+    "id": "UCFYB4pdBUyPH6MjH0AnGoIA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:55:59.407Z",
+    "title": "Good Knights Sleep",
+    "publishedAt": "2013-05-09T02:42:09Z",
+    "country": "GB",
+    "uploadsPlaylistId": "UUFYB4pdBUyPH6MjH0AnGoIA",
+    "subscribers": 338000,
+    "videoCount": 436,
+    "totalViews": 32371125,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2023-09-19T19:16:19Z"
+  },
+  "UCPlUfxXfP-Cgg4_qM-y8ivA": {
+    "id": "UCPlUfxXfP-Cgg4_qM-y8ivA",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:55:59.732Z",
+    "title": "Silence of the Earth",
+    "publishedAt": "2025-02-11T07:01:28.069466Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUPlUfxXfP-Cgg4_qM-y8ivA",
+    "subscribers": 59000,
+    "videoCount": 75,
+    "totalViews": 9984021,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-10-08T01:30:02Z"
+  },
+  "UCEZZobZWx1hicAgxeQQTwoQ": {
+    "id": "UCEZZobZWx1hicAgxeQQTwoQ",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:56:00.089Z",
+    "title": "Baseball IQ",
+    "publishedAt": "2014-03-22T11:28:49Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUEZZobZWx1hicAgxeQQTwoQ",
+    "subscribers": 8020,
+    "videoCount": 90,
+    "totalViews": 2040047,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2025-08-13T17:51:00Z"
+  },
+  "UCnrYQqqk4wLv8PTxuY5QlwQ": {
+    "id": "UCnrYQqqk4wLv8PTxuY5QlwQ",
+    "seeds": [
+      "sleep-doku"
+    ],
+    "markets": [
+      "en"
+    ],
+    "firstSeen": "2026-08-18T21:55:29.626Z",
+    "surveyed": "2026-08-18T21:56:00.255Z",
+    "title": "History Before Sleep Channel",
+    "publishedAt": "2026-06-15T14:16:17.300851Z",
+    "country": "US",
+    "uploadsPlaylistId": "UUnrYQqqk4wLv8PTxuY5QlwQ",
+    "subscribers": 357,
+    "videoCount": 25,
+    "totalViews": 40990,
+    "firstUploadComplete": true,
+    "firstUploadAt": "2026-06-17T22:00:16Z"
   }
 }
