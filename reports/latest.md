@@ -49,46 +49,46 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 370.8 | 3 313 021 | 7 дн | 75 424 |
-| [Canada Just Changed the Auto Deal — Washington Is STUNNED](https://youtu.be/mNKKjd2Xrmc) | Undiscovered | 69.1 | 20 236 | 56 дн | 48 235 |
-| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 143.3 | 1 280 020 | 17 дн | 37 428 |
-| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 601.6 | 1 094 832 | 115 дн | 35 142 |
-| [China Built a Highway That Disappears Into the Sea Even Americans Can'](https://youtu.be/-0j6EVvAzHg) | Hidden World Docs | 246.8 | 449 259 | 128 дн | 24 693 |
-| [Kepler-442b: The Perfect World FULL EPISODE \| Science Fiction Documen](https://youtu.be/pAouFljMuLg) | Khalan Studio | 24.2 | 403 569 | 309 дн | 16 170 |
-| [Neanderthals: The Strongest Humanity That Ever Existed! \| Prehistoric](https://youtu.be/uGovzmAKAT8) | WUFO Earth | 18.0 | 467 442 | 47 дн | 15 368 |
-| [Before Crocodiles: The Giant Predators That Ruled Rivers First](https://youtu.be/PzwQmtO1lBA) | Epic Dinosaur Docs | 110.5 | 127 080 | 328 дн | 13 591 |
-| [JUST NOW: Vera Rubin just STOPPED the world!](https://youtu.be/wUq60fLI1jg) | Proof | 3.6 | 32 444 | 49 дн | 13 368 |
-| [They Removed a 96 Year Old Dam in Arizona — What Happened Next Shocked](https://youtu.be/lPtC0Cs0c6k) | Optic Expedition | 11.2 | 58 396 | 234 дн | 11 418 |
-| [How Did Ancient Humans Survive Endless Rain?](https://youtu.be/pPm3vHUQCpo) | Mack | 5.8 | 405 670 | 50 дн | 11 280 |
-| [Why Don’t We Eat Other Animal Eggs?](https://youtu.be/DODEMV7rRGQ) | Mogo | 109.2 | 398 782 | 28 дн | 11 123 |
-| [Fall Asleep To How Avengers Endgame Caused Doomsday](https://youtu.be/vV7__4sIqLY) | Midnight Marvel | 4.8 | 42 459 | 141 дн | 10 616 |
-| [What Would Actually Happen If You Traveled One Light Year?](https://youtu.be/o2eIwICmo7w) | Calm Space | 3.0 | 82 279 | 227 дн | 10 393 |
-| [IT’S ALIVE — 150 Million-Year-Old Sea Monster Caught Under Antarctic I](https://youtu.be/AoAl3gSGnYk) | Bright Side Wild Nature | 91.2 | 230 270 | 349 дн | 9 958 |
-| [How Did Humans Invent Guns?](https://youtu.be/z1StpnRL4k4) | Mack | 6.8 | 475 029 | 36 дн | 9 570 |
-| [The Odyssey Explained \| The Complete Story of Odysseus' 10 Year Journ](https://youtu.be/_aXJP_SFcVE) | Bedtime & Historian  | 8.6 | 251 359 | 330 дн | 9 342 |
-| [Stonehenge Was Reanalyzed by AI — And the Findings Are Hard to Explain](https://youtu.be/Fjgy9cruDkk) | Optic Expedition | 103.3 | 537 873 | 181 дн | 9 262 |
-| [What If Yellowstone Erupted Tomorrow? A Minute-by-Minute Scenario](https://youtu.be/isthFq-pkqQ) | The Long Winter | 110.7 | 82 267 | 106 дн | 9 162 |
-| [The First 'Humans': How Did Homo Habilis Struggle and Survive? \| Preh](https://youtu.be/zRaA-FD9ooc) | WUFO Earth | 10.9 | 284 916 | 44 дн | 8 526 |
-| [The ONLY Predator That Made Megalodon Tremble in Fear](https://youtu.be/AhYfsLdk0X4) | Wild Horizons | 4.8 | 464 320 | 278 дн | 8 224 |
-| [The Only Time in History Bugs Ruled the Earth (And It Was Terrifying)](https://youtu.be/raX4UXlJ1AE) | Prehistoria Hub | 9.2 | 126 194 | 72 дн | 8 164 |
-| [Der Orca – ein Killer, vor dem der ganze Ozean erzittert: Doch warum t](https://youtu.be/tDHYWQO8Mh8) | Extremwelt | 4.5 | 122 421 | 52 дн | 7 995 |
-| [THE GREEK GODS: The Entire Story (All the Best Myths)](https://youtu.be/5Qe7pbogx7I) | Deep Dive History Clips | 53.6 | 257 570 | 30 дн | 7 941 |
-| [Why Interstellar Travel Is Physically Impossible — The Barrier the Uni](https://youtu.be/VNmkoc3beE8) | Sleep On Science | 3.1 | 46 973 | 333 дн | 7 884 |
-| [Fall Asleep To How EVERYTHING CONNECTS In Avengers Doomsday](https://youtu.be/UMD1SvGp0RA) | Midnight Marvel | 24.9 | 219 106 | 117 дн | 7 825 |
-| [Why Can’t We Cure Cancer Yet?](https://youtu.be/2Z-pKKLhQi8) | Explain In Paint | 10.5 | 259 585 | 72 дн | 7 809 |
-| [Die Geschichte der Kriegsschiffe \| Folge 1: Herrscher der Meere \| Sl](https://youtu.be/Jlbn3jt4X-A) | Slice Doku | 4.3 | 25 409 | 304 дн | 7 392 |
-| [560,000-Year-Old Extinct Monster Uncovered in Antarctic Ice](https://youtu.be/rFSh5Gig654) | Bright Side Wild Nature | 157.4 | 397 568 | 317 дн | 7 212 |
-| [The Trojan War & The Odyssey - The Entire Story in Chronological Order](https://youtu.be/CfQgmm0QdKk) | Deep Dive History Clips | 41.4 | 198 884 | 34 дн | 6 998 |
-| [The Last Generation of Human Workers FULL EPISODE \| Science Fiction D](https://youtu.be/fd6XUtJAWWw) | Khalan Studio | 25.1 | 417 786 | 274 дн | 6 968 |
-| [When Earth Had ZERO Ice — What Lived Here Will Haunt You](https://youtu.be/ezRLfb17zdY) | Prehistoria Hub | 19.3 | 264 241 | 49 дн | 6 871 |
-| [Der T-Rex war erschreckender, als wir ihn uns je vorgestellt haben](https://youtu.be/yoGbujWX9_I) | Extremwelt | 9.5 | 256 529 | 28 дн | 6 525 |
-| [Why It's Impossible to Go Up in the Solar System](https://youtu.be/lHtLrXrC29A) | Calm Space | 5.5 | 149 231 | 211 дн | 6 240 |
-| [NASA CONFIRMED Voyager 2 Is Picking Up a Frequency From Outside Our Sy](https://youtu.be/-B-i33pfhmE) | Proof | 8.4 | 75 185 | 39 дн | 6 169 |
-| [The Lost Earth: A Planet Where Dinosaurs Still Ruled \| Full Documenta](https://youtu.be/hkTSDqSpy8o) | WUFO Earth | 8.4 | 218 019 | 42 дн | 6 156 |
-| [The Silurian Period:  What Earth Looked Like Before Forests  \| Prehis](https://youtu.be/U69NM4yKfG4) | WUFO Earth | 3.7 | 97 593 | 61 дн | 5 945 |
-| [The Universe Isn't 13.8 Billion Years Old Anymore — James Webb Just Ca](https://youtu.be/RBfzQ4FvS2E) | Cosmicus | 3.0 | 93 172 | 181 дн | 5 481 |
-| [The First Crusade (1096–1099) \| The Battle for the Holy Land \| Medie](https://youtu.be/oI7gRvhi-S4) | Bedtime & Historian  | 9.0 | 262 463 | 309 дн | 5 479 |
-| [Engineers Built a $1.5 Billion Lifeline for Nevada's Largest Reservoir](https://youtu.be/rgS0PfQzgSs) | Optic Expedition | 30.3 | 157 588 | 210 дн | 5 397 |
+| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 370.8 | 3 313 021 | 7 дн | 75 390 |
+| [Canada Just Changed the Auto Deal — Washington Is STUNNED](https://youtu.be/mNKKjd2Xrmc) | Undiscovered | 69.1 | 20 236 | 56 дн | 46 058 |
+| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 143.3 | 1 280 020 | 17 дн | 37 406 |
+| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 601.6 | 1 094 832 | 115 дн | 35 120 |
+| [China Built a Highway That Disappears Into the Sea Even Americans Can'](https://youtu.be/-0j6EVvAzHg) | Hidden World Docs | 246.8 | 449 259 | 128 дн | 24 666 |
+| [Kepler-442b: The Perfect World FULL EPISODE \| Science Fiction Documen](https://youtu.be/pAouFljMuLg) | Khalan Studio | 24.2 | 403 569 | 309 дн | 16 157 |
+| [Neanderthals: The Strongest Humanity That Ever Existed! \| Prehistoric](https://youtu.be/uGovzmAKAT8) | WUFO Earth | 18.0 | 467 442 | 47 дн | 15 358 |
+| [Before Crocodiles: The Giant Predators That Ruled Rivers First](https://youtu.be/PzwQmtO1lBA) | Epic Dinosaur Docs | 110.5 | 127 080 | 328 дн | 13 563 |
+| [JUST NOW: Vera Rubin just STOPPED the world!](https://youtu.be/wUq60fLI1jg) | Proof | 3.6 | 32 444 | 49 дн | 13 259 |
+| [They Removed a 96 Year Old Dam in Arizona — What Happened Next Shocked](https://youtu.be/lPtC0Cs0c6k) | Optic Expedition | 11.2 | 58 396 | 234 дн | 11 374 |
+| [How Did Ancient Humans Survive Endless Rain?](https://youtu.be/pPm3vHUQCpo) | Mack | 5.8 | 405 670 | 50 дн | 11 273 |
+| [Why Don’t We Eat Other Animal Eggs?](https://youtu.be/DODEMV7rRGQ) | Mogo | 109.2 | 398 782 | 28 дн | 11 117 |
+| [Fall Asleep To How Avengers Endgame Caused Doomsday](https://youtu.be/vV7__4sIqLY) | Midnight Marvel | 4.6 | 42 459 | 141 дн | 10 563 |
+| [What Would Actually Happen If You Traveled One Light Year?](https://youtu.be/o2eIwICmo7w) | Calm Space | 3.0 | 82 279 | 227 дн | 10 367 |
+| [IT’S ALIVE — 150 Million-Year-Old Sea Monster Caught Under Antarctic I](https://youtu.be/AoAl3gSGnYk) | Bright Side Wild Nature | 91.2 | 230 270 | 349 дн | 9 949 |
+| [How Did Humans Invent Guns?](https://youtu.be/z1StpnRL4k4) | Mack | 6.8 | 475 029 | 36 дн | 9 566 |
+| [The Odyssey Explained \| The Complete Story of Odysseus' 10 Year Journ](https://youtu.be/_aXJP_SFcVE) | Bedtime & Historian  | 8.6 | 251 359 | 330 дн | 9 335 |
+| [Stonehenge Was Reanalyzed by AI — And the Findings Are Hard to Explain](https://youtu.be/Fjgy9cruDkk) | Optic Expedition | 103.3 | 537 873 | 181 дн | 9 259 |
+| [What If Yellowstone Erupted Tomorrow? A Minute-by-Minute Scenario](https://youtu.be/isthFq-pkqQ) | The Long Winter | 110.7 | 82 267 | 106 дн | 9 142 |
+| [The First 'Humans': How Did Homo Habilis Struggle and Survive? \| Preh](https://youtu.be/zRaA-FD9ooc) | WUFO Earth | 10.9 | 284 916 | 44 дн | 8 521 |
+| [The ONLY Predator That Made Megalodon Tremble in Fear](https://youtu.be/AhYfsLdk0X4) | Wild Horizons | 4.8 | 464 320 | 278 дн | 8 221 |
+| [The Only Time in History Bugs Ruled the Earth (And It Was Terrifying)](https://youtu.be/raX4UXlJ1AE) | Prehistoria Hub | 9.2 | 126 194 | 72 дн | 8 153 |
+| [Der Orca – ein Killer, vor dem der ganze Ozean erzittert: Doch warum t](https://youtu.be/tDHYWQO8Mh8) | Extremwelt | 4.5 | 122 421 | 52 дн | 7 985 |
+| [THE GREEK GODS: The Entire Story (All the Best Myths)](https://youtu.be/5Qe7pbogx7I) | Deep Dive History Clips | 53.6 | 257 570 | 30 дн | 7 936 |
+| [Why Interstellar Travel Is Physically Impossible — The Barrier the Uni](https://youtu.be/VNmkoc3beE8) | Sleep On Science | 3.1 | 46 973 | 333 дн | 7 858 |
+| [Fall Asleep To How EVERYTHING CONNECTS In Avengers Doomsday](https://youtu.be/UMD1SvGp0RA) | Midnight Marvel | 24.0 | 219 106 | 117 дн | 7 820 |
+| [Why Can’t We Cure Cancer Yet?](https://youtu.be/2Z-pKKLhQi8) | Explain In Paint | 10.5 | 259 585 | 72 дн | 7 804 |
+| [Die Geschichte der Kriegsschiffe \| Folge 1: Herrscher der Meere \| Sl](https://youtu.be/Jlbn3jt4X-A) | Slice Doku | 4.3 | 25 409 | 304 дн | 7 349 |
+| [560,000-Year-Old Extinct Monster Uncovered in Antarctic Ice](https://youtu.be/rFSh5Gig654) | Bright Side Wild Nature | 157.4 | 397 568 | 317 дн | 7 210 |
+| [The Trojan War & The Odyssey - The Entire Story in Chronological Order](https://youtu.be/CfQgmm0QdKk) | Deep Dive History Clips | 41.4 | 198 884 | 34 дн | 6 993 |
+| [The Last Generation of Human Workers FULL EPISODE \| Science Fiction D](https://youtu.be/fd6XUtJAWWw) | Khalan Studio | 25.1 | 417 786 | 274 дн | 6 966 |
+| [When Earth Had ZERO Ice — What Lived Here Will Haunt You](https://youtu.be/ezRLfb17zdY) | Prehistoria Hub | 19.3 | 264 241 | 49 дн | 6 867 |
+| [Der T-Rex war erschreckender, als wir ihn uns je vorgestellt haben](https://youtu.be/yoGbujWX9_I) | Extremwelt | 9.5 | 256 529 | 28 дн | 6 522 |
+| [Why It's Impossible to Go Up in the Solar System](https://youtu.be/lHtLrXrC29A) | Calm Space | 5.5 | 149 231 | 211 дн | 6 235 |
+| [NASA CONFIRMED Voyager 2 Is Picking Up a Frequency From Outside Our Sy](https://youtu.be/-B-i33pfhmE) | Proof | 8.4 | 75 185 | 39 дн | 6 159 |
+| [The Lost Earth: A Planet Where Dinosaurs Still Ruled \| Full Documenta](https://youtu.be/hkTSDqSpy8o) | WUFO Earth | 8.4 | 218 019 | 42 дн | 6 152 |
+| [The Silurian Period:  What Earth Looked Like Before Forests  \| Prehis](https://youtu.be/U69NM4yKfG4) | WUFO Earth | 3.7 | 97 593 | 61 дн | 5 938 |
+| [The First Crusade (1096–1099) \| The Battle for the Holy Land \| Medie](https://youtu.be/oI7gRvhi-S4) | Bedtime & Historian  | 9.0 | 262 463 | 309 дн | 5 476 |
+| [The Universe Isn't 13.8 Billion Years Old Anymore — James Webb Just Ca](https://youtu.be/RBfzQ4FvS2E) | Cosmicus | 3.0 | 93 172 | 181 дн | 5 474 |
+| [Engineers Built a $1.5 Billion Lifeline for Nevada's Largest Reservoir](https://youtu.be/rgS0PfQzgSs) | Optic Expedition | 30.3 | 157 588 | 210 дн | 5 394 |
 
 ## Пока без данных
 

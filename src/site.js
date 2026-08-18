@@ -126,7 +126,8 @@ button.chip[data-on="1"]{background:color-mix(in srgb,var(--brand) 16%,var(--rai
 .meter{display:flex;align-items:center;gap:10px;min-width:150px}
 .track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
 .fill{height:100%;border-radius:99px}
-.pv{font-variant-numeric:tabular-nums;font-weight:600;font-size:15px;min-width:44px;text-align:right}
+.pv{font-variant-numeric:tabular-nums;font-weight:600;font-size:15px;min-width:52px;text-align:right}
+.pl{color:var(--dim);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;text-align:right;margin-top:1px}
 
 .chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 14px}
 .k{background:var(--raise);border:1px solid var(--line);border-radius:8px;
@@ -253,7 +254,10 @@ function card(r, i) {
       </div>
       <div class="meter">
         <div class="track"><div class="fill" style="width:\${Math.round((m.permeability ?? 0) * 100)}%;background:\${tone(m.permeability)}"></div></div>
-        <div class="pv" style="color:\${tone(m.permeability)}">\${pct(m.permeability)}</div>
+        <div>
+          <div class="pv" style="color:\${tone(m.permeability)}">\${pct(m.permeability)}</div>
+          <div class="pl">новичков</div>
+        </div>
       </div>
     </summary>
     <div class="chips">
@@ -291,8 +295,10 @@ function draw() {
 
   const rs = rows();
   document.getElementById('count').textContent =
-    rs.length ? plural(rs.length, 'ниша', 'ниши', 'ниш') + ' проходит фильтры'
-              : '';
+    rs.length
+      ? plural(rs.length, 'ниша', 'ниши', 'ниш') + ' проходит фильтры · '
+        + 'полоска — доля каналов моложе года среди тех, кто пробился'
+      : '';
   document.getElementById('list').innerHTML = rs.length
     ? rs.map(card).join('')
     : '<div class="empty">Под эти условия ничего не подошло. Ослабь фильтры — или данных пока просто мало.</div>';
