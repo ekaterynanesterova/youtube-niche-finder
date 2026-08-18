@@ -14,5 +14,6 @@
   "slopChannelAgeDays": 180,
   "snapshotMaxAgeDays": 150,
   "medianSamplePages": 2,
-  "reportTopVideos": 60
+  "reportTopVideos": 60,
+  "medianMinMatureVideos": 5
 }

@@ -4,6 +4,7 @@ import { Quota } from './quota.js';
 import { discover, survey, hydrate, snapshot } from './collect.js';
 import { computeMetrics } from './metrics.js';
 import { renderReport } from './report.js';
+import { buildPayload, renderSite } from './site.js';
 import {
   loadDb, saveDb, readJson, writeJson, writeCompactJson, writeText, paths,
   listSnapshots, today, ROOT,
@@ -44,6 +45,9 @@ if (!metricsOnly) {
 const snapshots = listSnapshots().slice(-90).map((f) => readJson(paths.snapshot(f.replace('.json', ''))));
 const metrics = computeMetrics({ db, seeds, thresholds, snapshots });
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
+
+// Страница собирается с вшитыми данными: без fetch ей нечего не догрузить.
+writeText(join(ROOT, 'index.html'), renderSite(buildPayload(metrics, seeds, thresholds)));
 
 // В metrics.json кладём выводы, а не сырьё: массив всех видео весил 17 МБ
 // и переписывался бы целиком каждый день. Сырьё и так лежит в data/.

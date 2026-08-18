@@ -24,8 +24,11 @@ const share = (n, total) => (total ? n / total : null);
 // и занижали бы базу, раздувая каждый ratio.
 export function channelBaseline(videos, thresholds, now) {
   const mature = videos.filter((v) => daysBetween(v.publishedAt, now) >= thresholds.medianMinVideoAgeDays);
+  // Медиана по двум-трём видео — это не база, а случайность: любой ролик
+  // рядом с ней выглядит выбросом. Такому каналу ratio не считаем вовсе.
+  const enough = mature.length >= (thresholds.medianMinMatureVideos ?? 5);
   return {
-    medianViews: median(mature.map((v) => v.views)),
+    medianViews: enough ? median(mature.map((v) => v.views)) : null,
     matureCount: mature.length,
   };
 }

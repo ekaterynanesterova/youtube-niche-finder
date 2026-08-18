@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-08-18T21:22:07.606Z",
+  "computedAt": "2026-08-18T21:34:34.606Z",
   "snapshotDays": 1,
   "thresholds": {
     "minDurationSec": 480,
@@ -17,7 +17,8 @@
     "slopChannelAgeDays": 180,
     "snapshotMaxAgeDays": 150,
     "medianSamplePages": 2,
-    "reportTopVideos": 60
+    "reportTopVideos": 60,
+    "medianMinMatureVideos": 5
   },
   "niches": {
     "space-doku": {
@@ -225,13 +226,13 @@
         "en": {
           "channels": 25,
           "videos": 4313,
-          "outliers": 479,
-          "outlierChannels": 22,
-          "youngOutlierChannels": 14,
-          "permeability": 0.6363636363636364,
+          "outliers": 476,
+          "outlierChannels": 20,
+          "youngOutlierChannels": 12,
+          "permeability": 0.6,
           "medianViews": 3683,
-          "medianOutlierViews": 107183,
-          "medianOutlierMinutes": 106.83333333333333,
+          "medianOutlierViews": 107324,
+          "medianOutlierMinutes": 107.11666666666666,
           "medianUploadsPerWeek": 4.355555555555556,
           "medianLikeRate": 0.016762649115590292,
           "medianCommentRate": 0.0013026222351951973,
@@ -390,13 +391,13 @@
         "en": {
           "channels": 37,
           "videos": 5844,
-          "outliers": 875,
-          "outlierChannels": 33,
-          "youngOutlierChannels": 12,
-          "permeability": 0.36363636363636365,
+          "outliers": 874,
+          "outlierChannels": 32,
+          "youngOutlierChannels": 11,
+          "permeability": 0.34375,
           "medianViews": 93061,
-          "medianOutlierViews": 438743,
-          "medianOutlierMinutes": 34.71666666666667,
+          "medianOutlierViews": 438784,
+          "medianOutlierMinutes": 34.766666666666666,
           "medianUploadsPerWeek": 1.8666666666666667,
           "medianLikeRate": 0.022014518864299035,
           "medianCommentRate": 0.001214710563793248,

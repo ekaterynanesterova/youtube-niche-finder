@@ -2,7 +2,7 @@
 import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
-import { median, dominantLang } from './metrics.js';
+import { median, dominantLang, channelBaseline } from './metrics.js';
 
 let failed = 0;
 const check = (name, cond) => {
@@ -61,7 +61,7 @@ for (let c = 0; c < 3; c++) {
 }
 
 const thresholds = { minDurationSec: 480, medianMinVideoAgeDays: 30, velocityMaxVideoAgeDays: 60,
-  snapshotMaxAgeDays: 150,
+  snapshotMaxAgeDays: 150, medianMinMatureVideos: 5,
   outlierRatio: 3, outlierMinViews: 20000, youngChannelDays: 365,
   slopUploadsPerWeek: 5, slopChannelAgeDays: 180 };
 
@@ -79,6 +79,9 @@ for (const [id, v] of Object.entries(videos)) {
 const m = computeMetrics({ db: { channels, videos, current }, seeds, thresholds, snapshots, now });
 
 check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 10000);
+check('тощая база не даёт медианы',
+  channelBaseline([{ publishedAt: day(100), views: 5 }, { publishedAt: day(90), views: 7 }],
+                  thresholds, now).medianViews === null);
 check('выброс посчитан как ×10', Math.round(m.videos.find((v) => v.id === 'young0hit').outlierRatio) === 10);
 check('ниша open полностью проницаема', m.niches.open.permeability === 1);
 check('ниша closed непроницаема', m.niches.closed.permeability === 0);
