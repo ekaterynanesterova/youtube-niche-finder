@@ -14,5 +14,5 @@
   "medianSamplePages": 2,
   "reportTopVideos": 60,
   "medianMinMatureVideos": 5,
-  "slopMinutesPerWeek": 180
+  "conveyorMinutesPerWeek": 180
 }

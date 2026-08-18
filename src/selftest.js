@@ -94,7 +94,7 @@ for (let c = 0; c < 3; c++) {
 const thresholds = { minDurationSec: 480, medianMinVideoAgeDays: 30, velocityMaxVideoAgeDays: 60,
   snapshotMaxAgeDays: 150, medianMinMatureVideos: 5,
   outlierRatio: 3, outlierMinViews: 20000, youngChannelDays: 365,
-  slopMinutesPerWeek: 180 };
+  conveyorMinutesPerWeek: 180 };
 
 const snapshots = [
   { date: day(7), videos: { young0hit: [70000] } },
@@ -124,7 +124,7 @@ check('длина выброса измерена', m.niches.open.medianOutlierM
 // это может быть везение конкретного канала, а не открытая дверь.
 check('одиночный выброс не считается нишей',
   score({ permeability: 1, outlierChannels: 1, youngOutlierChannels: 1,
-          medianOutlierViews: 500000, slopShare: 0, medianLikeRate: 0.04 }) === null);
+          medianOutlierViews: 500000, conveyorShare: 0, medianLikeRate: 0.04 }) === null);
 check('скорость роста взята из снапшотов', Math.round(m.videos.find((v) => v.id === 'young0hit').velocity) === 4286);
 check('open ранжируется выше closed', score(m.niches.open) > score(m.niches.closed));
 check('доверие честно занижено при 2 снапшотах', /низкая/.test(m.niches.open.confidence));
@@ -164,7 +164,7 @@ for (let i = 0; i < 60; i++) {            // 60 роликов по два ча�
 }
 const conv = computeMetrics({ db: { channels: { c1: { id: 'c1', ...conveyor } }, videos: cv, current: ccur },
                               seeds, thresholds, snapshots: [], now });
-check('конвейер пойман по объёму хронометража', conv.niches.open.slopShare === 1);
+check('конвейер пойман по объёму хронометража', conv.niches.open.conveyorShare === 1);
 check('минуты в неделю посчитаны', Math.round(conv.channels.c1.minutesPerWeek) === 560);
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

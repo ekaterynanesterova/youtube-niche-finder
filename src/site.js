@@ -133,7 +133,6 @@ button.chip[data-on="1"]{background:color-mix(in srgb,var(--brand) 16%,var(--rai
 .k{background:var(--raise);border:1px solid var(--line);border-radius:8px;
   padding:5px 9px;font-size:12.5px;color:var(--dim)}
 .k b{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:600}
-.k.warn b{color:var(--bad)}
 
 .detail{border-top:1px solid var(--line);padding:14px 16px;background:var(--raise)}
 .detail h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;
@@ -171,7 +170,7 @@ footer b{color:var(--ink)}
     <div class="row"><span class="lbl">Рынок</span><span id="f-market"></span></div>
     <div class="row"><span class="lbl">Тема</span><span id="f-group"></span></div>
     <div class="row"><span class="lbl">Длина</span><span id="f-len"></span></div>
-    <div class="row"><span class="lbl">Мусор</span><span id="f-slop"></span></div>
+    <div class="row"><span class="lbl">Поток</span><span id="f-slop"></span></div>
     <div class="row"><span class="lbl">Сортировка</span><span id="f-sort"></span></div>
   </div>
 
@@ -186,12 +185,14 @@ footer b{color:var(--ink)}
       <li><span class="dot" style="background:var(--mid)"></span><b>35–60%</b> — смешанно. Новички пробиваются, но конкурируют со старожилами. Нужен заметно лучший продукт.</li>
       <li><span class="dot" style="background:var(--bad)"></span><b>ниже 35%</b> — дверь закрыта. Выбросы достаются тем, у кого уже есть аудитория. Заходить туда с нуля — тратить время.</li>
     </ul>
-    <p>Само по себе высокое число ещё ничего не решает: смотри рядом на <b>число пробившихся каналов</b> и на <b>мусор</b>.</p>
+    <p>Само по себе высокое число ещё ничего не решает: смотри рядом на <b>число пробившихся каналов</b>.</p>
     <p><b>Пробилось</b> — сколько <i>разных</i> молодых каналов дали выброс. Смотреть надо именно сюда. Канал бывает мёртвым сам по себе: те же самые видео на другом канале собирают просмотры. Один выброс — это про везение одного канала, а не про нишу. Ниже трёх разных каналов ниша вообще не показывается.</p>
     <p><b>Длина</b> — сколько минут длится типовое выстрелившее видео. Это прямая цена входа: чтобы проверить нишу, нужно залить около десяти роликов.</p>
-    <p><b>Мусор</b> — доля каналов-конвейеров: тех, кто выпускает больше трёх часов готового видео в неделю. Руками столько не сделать, значит это поток. Высокий мусор означает, что в нише побеждают объёмом, а не качеством — соревноваться там бессмысленно, и YouTube такое давит.</p>
+    <p><b>Конвейер</b> — доля каналов, выпускающих больше трёх часов готового видео в неделю. Это мера потока, а не качества: инструмент не видит, что внутри ролика, и не может отличить рукодельную работу от штамповки.</p>
+    <p>Читать это число надо в обе стороны. Высокий конвейер значит, что конкурировать придётся объёмом — но он же доказывает, что формат <b>поставлен на поток и, значит, автоматизируется</b>. Хорошо это или плохо, зависит от того, что ты собираешься строить. Поэтому в рейтинг это число не входит — оно рядом, отдельной цифрой.</p>
     <h3>Чего эти цифры не знают</h3>
-    <p>Они не предсказывают будущее и не понимают, снимешь ли ты такое за день. Они показывают, где дверь открыта <b>сейчас</b>. Дальше — открыть примеры внутри ниши и посмотреть глазами.</p>
+    <p><b>Они не видят содержимое ролика.</b> Ни картинку, ни монтаж, ни то, сделано это руками или нагенерировано. Всё, что здесь есть, — заголовки, длительность, даты и счётчики.</p>
+    <p>Поэтому последнее слово всегда за глазами: открыть примеры внутри ниши и посмотреть, что там на самом деле.</p>
   </footer>
 </div>
 
@@ -216,7 +217,7 @@ const S = {
 };
 
 const LEN = [[0,'любая'],[20,'до 20 мин'],[35,'до 35 мин'],[50,'до 50 мин']];
-const SLOP = [[1,'любой'],[0.3,'до 30%'],[0.15,'до 15%'],[0.001,'без мусора']];
+const SLOP = [[1,'любой'],[0.7,'до 70%'],[0.4,'до 40%'],[0.15,'до 15%']];
 const SORT = [['permeability','по проницаемости'],['score','по перспективе'],
               ['youngOutlierChannels','по числу каналов'],['medianOutlierViews','по просмотрам'],
               ['medianOutlierMinutes','по длине']];
@@ -240,7 +241,7 @@ function rows() {
     .filter(r => r.m.outlierChannels >= P.minChannels)
     .filter(r => !S.groups.size || S.groups.has(r.group))
     .filter(r => !S.maxLen || (r.m.medianOutlierMinutes ?? 1e9) <= S.maxLen)
-    .filter(r => (r.m.slopShare ?? 0) <= S.maxSlop)
+    .filter(r => (r.m.conveyorShare ?? 0) <= S.maxSlop)
     .sort((a, b) => {
       if (S.sort === 'score') return (b.sc ?? -1) - (a.sc ?? -1);
       if (S.sort === 'medianOutlierMinutes')
@@ -253,7 +254,6 @@ function card(r, i) {
   const m = r.m;
   const ex = (P.examples[r.id] ?? {})[S.market] ?? [];
   const q = r.queries[S.market] ?? r.id;
-  const slopWarn = (m.slopShare ?? 0) > .3 ? ' warn' : '';
 
   return \`<details class="niche">
     <summary>
@@ -273,7 +273,7 @@ function card(r, i) {
       <span class="k">пробилось <b>\${m.youngOutlierChannels}</b> из \${m.outlierChannels}</span>
       <span class="k">медиана выброса <b>\${num(m.medianOutlierViews)}</b></span>
       <span class="k">длина <b>\${m.medianOutlierMinutes == null ? '—' : Math.round(m.medianOutlierMinutes)}</b> мин</span>
-      <span class="k\${slopWarn}">мусор <b>\${pct(m.slopShare)}</b></span>
+      <span class="k\${slopWarn}">мусор <b>\${pct(m.conveyorShare)}</b></span>
       <span class="k">лайки <b>\${m.medianLikeRate == null ? '—' : (m.medianLikeRate * 100).toFixed(1) + '%'}</b></span>
       <span class="k">каналов <b>\${m.channels}</b></span>
     </div>

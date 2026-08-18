@@ -170,11 +170,12 @@ function nicheStats(seedVideos, channels, thresholds) {
     return first?.channelAgeAtUploadDays != null && first.channelAgeAtUploadDays <= thresholds.youngChannelDays;
   });
 
-  // Конвейер ловится не числом роликов, а объёмом готового хронометража.
-  // Пять видео в неделю по три минуты человек сделает; пять по два часа —
-  // нет. Считаем минуты готового видео в неделю: это физический предел,
-  // а не догадка о возрасте канала.
-  const slopChannels = seedChannels.filter((c) => c.minutesPerWeek >= thresholds.slopMinutesPerWeek);
+  // Сколько готового хронометража ниша выпускает в неделю. Это мера потока,
+  // а не качества: высокий поток значит, что формат поставлен на конвейер —
+  // и это читается в обе стороны. Конкурировать объёмом придётся, но сам
+  // факт конвейера доказывает, что формат автоматизируется. Что из этого
+  // важнее, решает человек, а не скрипт.
+  const conveyorChannels = seedChannels.filter((c) => c.minutesPerWeek >= thresholds.conveyorMinutesPerWeek);
 
   const outlierDuration = median(outliers.map((v) => v.durationSec));
 
@@ -196,8 +197,8 @@ function nicheStats(seedVideos, channels, thresholds) {
     medianUploadsPerWeek: median(seedChannels.map((c) => c.uploadsPerWeek)),
     medianLikeRate: median(seedVideos.map((v) => v.likeRate).filter((x) => x != null)),
     medianCommentRate: median(seedVideos.map((v) => v.commentRate).filter((x) => x != null)),
-    // Индекс мусорности: доля молодых каналов-конвейеров в нише.
-    slopShare: share(slopChannels.length, seedChannels.length),
+    // Доля каналов, работающих на потоке.
+    conveyorShare: share(conveyorChannels.length, seedChannels.length),
   };
 }
 

@@ -7,10 +7,11 @@ const one = (x) => (x == null ? '—' : x.toFixed(1));
 // Это ранжирование по собранным данным, а не прогноз.
 export function score(n) {
   if (n.permeability == null || n.outlierChannels < 3) return null;
-  const demand = Math.log10(Math.max(n.medianOutlierViews ?? 0, 1)) / 6; // 0..~1
-  const clean = 1 - (n.slopShare ?? 0);
-  const alive = Math.min((n.medianLikeRate ?? 0) / 0.03, 1); // 3% лайков — здоровый док
-  return n.permeability * 0.45 + demand * 0.25 + clean * 0.2 + alive * 0.1;
+  // Только две вещи, обе измеримые: пускает ли алгоритм новичков и есть ли
+  // на что заходить. Поток и вовлечённость показываем отдельными числами:
+  // они читаются в обе стороны, и выбор за человеком.
+  const demand = Math.log10(Math.max(n.medianOutlierViews ?? 0, 1)) / 6;
+  return n.permeability * 0.65 + demand * 0.35;
 }
 
 export function renderReport(m, seeds) {
@@ -34,10 +35,10 @@ export function renderReport(m, seeds) {
 
   L.push('## Рейтинг — немецкий рынок');
   L.push('');
-  L.push('| # | Ниша | Проницаемость | Молодых пробилось | Медиана выброса | Длина выброса | Мусорность | Лайки | Публикаций/нед | Доверие |');
+  L.push('| # | Ниша | Проницаемость | Молодых пробилось | Медиана выброса | Длина выброса | Поток | Лайки | Публикаций/нед | Доверие |');
   L.push('|---|------|---------------|-------------------|-----------------|---------------|------------|-------|----------------|---------|');
   withData.forEach((n, i) => {
-    L.push(`| ${i + 1} | **${n.id}** — ${ru[n.id]} <br><sub>${n.group}</sub> | ${pct(n.permeability)} | ${n.youngOutlierChannels} из ${n.outlierChannels} | ${num(n.medianOutlierViews)} | ${one(n.medianOutlierMinutes)} мин | ${pct(n.slopShare)} | ${pct(n.medianLikeRate)} | ${one(n.medianUploadsPerWeek)} | ${n.confidence} |`);
+    L.push(`| ${i + 1} | **${n.id}** — ${ru[n.id]} <br><sub>${n.group}</sub> | ${pct(n.permeability)} | ${n.youngOutlierChannels} из ${n.outlierChannels} | ${num(n.medianOutlierViews)} | ${one(n.medianOutlierMinutes)} мин | ${pct(n.conveyorShare)} | ${pct(n.medianLikeRate)} | ${one(n.medianUploadsPerWeek)} | ${n.confidence} |`);
   });
   L.push('');
 
@@ -89,7 +90,7 @@ export function renderReport(m, seeds) {
   L.push('- **Проницаемость** — доля каналов с выбросами, которым на момент выстрела не было года. Высокая = алгоритм пускает новичков. Низкая = сидят старожилы, не залететь.');
   L.push('- **Молодых пробилось** — сколько *разных* каналов моложе года дали выброс, из общего числа каналов с выбросами. Смотреть надо на первое число: канал бывает «проклятым» сам по себе, и один везунчик ничего не доказывает. Ниже трёх разных каналов ниша в рейтинг не попадает вообще.');
   L.push('- **Длина выброса** — сколько минут длится типовое выстрелившее видео. Прямая оценка того, во что обойдётся вход.');
-  L.push('- **Мусорность** — доля молодых каналов-конвейеров (от 5 видео в неделю, возраст до полугода). Высокая = нишу заливают AI-потоком, YouTube такое давит.');
+  L.push('- **Поток** — доля каналов, выпускающих больше трёх часов готового видео в неделю. Высокий поток = формат поставлен на конвейер. Это не приговор: он же означает, что формат автоматизируется.');
   L.push('- **Лайки** — лайков на просмотр. У живого дока обычно 2–5%, у конвейерного контента заметно ниже.');
   L.push('- **Доверие** — можно ли уже что-то решать по этим цифрам.');
   L.push('');
