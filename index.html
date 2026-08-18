@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ниши · YouTube Niche Finder</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --line: #262b36; --text: #e7e9ee;
+    --dim: #8b93a7; --accent: #6ee7a8; --warn: #f0b866; --bad: #f08a8a;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f6f7f9; --panel:#fff; --line:#e2e5ea; --text:#1a1d23;
+            --dim:#666e80; --accent:#0f9d58; --warn:#b4750f; --bad:#c0392b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  header { padding:20px 16px 12px; border-bottom:1px solid var(--line); }
+  h1 { margin:0 0 4px; font-size:20px; }
+  .sub { color:var(--dim); font-size:13px; }
+  .note { margin:12px 16px 0; padding:10px 12px; border-radius:8px;
+          background:var(--panel); border:1px solid var(--line);
+          color:var(--warn); font-size:13px; }
+  .tabs { display:flex; gap:6px; padding:12px 16px 0; flex-wrap:wrap; }
+  .tab { padding:6px 12px; border-radius:999px; border:1px solid var(--line);
+         background:var(--panel); color:var(--dim); cursor:pointer; font-size:13px; }
+  .tab[aria-selected="true"] { color:var(--text); border-color:var(--accent); }
+  .wrap { overflow-x:auto; padding:12px 16px 40px; }
+  table { border-collapse:collapse; width:100%; min-width:720px; font-size:14px; }
+  th, td { padding:9px 10px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
+  th:first-child, td:first-child { text-align:left; white-space:normal; }
+  th { color:var(--dim); font-weight:600; cursor:pointer; user-select:none;
+       position:sticky; top:0; background:var(--bg); font-size:12px; }
+  th:hover { color:var(--text); }
+  tbody tr:hover { background:var(--panel); }
+  .group { color:var(--dim); font-size:12px; }
+  .bar { display:inline-block; height:6px; border-radius:3px; background:var(--accent);
+         vertical-align:middle; margin-right:6px; }
+  .dim { color:var(--dim); }
+  .bad { color:var(--bad); }
+  footer { padding:0 16px 40px; color:var(--dim); font-size:13px; max-width:70ch; }
+  footer h2 { font-size:14px; color:var(--text); margin:20px 0 6px; }
+  footer li { margin-bottom:6px; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ниши — где дверь открыта</h1>
+  <div class="sub" id="meta">загружаю…</div>
+</header>
+<div id="warn"></div>
+<div class="tabs" id="tabs"></div>
+<div class="wrap"><table>
+  <thead><tr id="head"></tr></thead>
+  <tbody id="body"></tbody>
+</table></div>
+<footer>
+  <h2>Как читать</h2>
+  <ul>
+    <li><b>Проницаемость</b> — доля каналов с выбросами, которым на момент выстрела не было года. Высокая = алгоритм пускает новичков.</li>
+    <li><b>Молодых</b> — сколько <i>разных</i> молодых каналов пробилось. Один канал ничего не доказывает: он бывает мёртвым сам по себе. Ниже трёх — ниша не показывается.</li>
+    <li><b>Мусорность</b> — доля молодых каналов-конвейеров. Высокая = нишу заливают потоком, туда лучше не лезть.</li>
+    <li><b>Длина</b> — сколько минут длится типовой выброс. Прямая оценка того, во что обойдётся вход.</li>
+  </ul>
+  <p>Рейтинг считается из собранных данных и ничего не предсказывает.</p>
+</footer>
+<script>
+const COLS = [
+  { k:'id',                   t:'Ниша',        fmt:(v,r)=>`<b>${v}</b><div class="group">${r.group}</div>` },
+  { k:'permeability',         t:'Проницаемость', fmt:v=>bar(v) },
+  { k:'youngOutlierChannels', t:'Молодых',     fmt:(v,r)=>`${v} <span class="dim">из ${r.outlierChannels}</span>` },
+  { k:'medianOutlierViews',   t:'Медиана выброса', fmt:num },
+  { k:'medianOutlierMinutes', t:'Длина, мин',  fmt:v=>v==null?'—':v.toFixed(0) },
+  { k:'slopShare',            t:'Мусорность',  fmt:v=>v==null?'—':`<span class="${v>0.3?'bad':''}">${pct(v)}</span>` },
+  { k:'medianLikeRate',       t:'Лайки',       fmt:v=>v==null?'—':(v*100).toFixed(1)+'%' },
+  { k:'medianUploadsPerWeek', t:'Видео/нед',   fmt:v=>v==null?'—':v.toFixed(1) },
+  { k:'channels',             t:'Каналов',     fmt:num },
+];
+const pct = v => v==null ? '—' : Math.round(v*100)+'%';
+const num = v => v==null ? '—' : Math.round(v).toLocaleString('ru-RU');
+const bar = v => v==null ? '—'
+  : `<span class="bar" style="width:${Math.round(v*46)}px"></span>${pct(v)}`;
+
+let rows = [], lang = 'de', sortKey = 'permeability', desc = true;
+
+// Ниша попадает в таблицу только когда пробились хотя бы три разных канала.
+const usable = (n) => n.outlierChannels >= 3;
+
+function render() {
+  const head = document.getElementById('head');
+  head.innerHTML = COLS.map(c =>
+    `<th data-k="${c.k}">${c.t}${sortKey===c.k ? (desc?' ↓':' ↑') : ''}</th>`).join('');
+  head.querySelectorAll('th').forEach(th => th.onclick = () => {
+    const k = th.dataset.k;
+    if (k === sortKey) desc = !desc; else { sortKey = k; desc = true; }
+    render();
+  });
+
+  const view = rows
+    .map(n => ({ id:n.id, group:n.group, ...n.byMarket[lang] }))
+    .filter(usable)
+    .sort((a,b) => {
+      const x = a[sortKey], y = b[sortKey];
+      if (typeof x === 'string') return desc ? y.localeCompare(x) : x.localeCompare(y);
+      return desc ? (y??-1)-(x??-1) : (x??-1)-(y??-1);
+    });
+
+  document.getElementById('body').innerHTML = view.length
+    ? view.map(r => '<tr>' + COLS.map(c => `<td>${c.fmt(r[c.k], r)}</td>`).join('') + '</tr>').join('')
+    : `<tr><td colspan="${COLS.length}" class="dim">Пока ни в одной нише не пробились три разных канала. Нужны прогоны.</td></tr>`;
+}
+
+fetch('data/metrics.json?' + Date.now())
+  .then(r => r.ok ? r.json() : Promise.reject(r.status))
+  .then(m => {
+    rows = Object.values(m.niches);
+    document.getElementById('meta').textContent =
+      `срез ${m.computedAt.slice(0,10)} · каналов ${m.channelCount} · видео ${m.videoCount.toLocaleString('ru-RU')} · дней накопления ${m.snapshotDays}`;
+    if (m.snapshotDays < 21) {
+      document.getElementById('warn').innerHTML =
+        `<div class="note">Накоплено ${m.snapshotDays} дн. Скорость роста пока считается как «просмотры ÷ возраст» — грубая прикидка. Настоящая кривая появится после ~21 дня сбора.</div>`;
+    }
+    document.getElementById('tabs').innerHTML =
+      [['de','Немецкий'],['en','Английский (контроль)']].map(([k,t]) =>
+        `<button class="tab" data-l="${k}" aria-selected="${k===lang}">${t}</button>`).join('');
+    document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+      lang = b.dataset.l;
+      document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x===b));
+      render();
+    });
+    render();
+  })
+  .catch(e => {
+    document.getElementById('meta').textContent = 'не удалось загрузить data/metrics.json (' + e + ')';
+  });
+</script>
+</body>
+</html>

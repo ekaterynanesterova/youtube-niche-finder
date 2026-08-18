@@ -26,7 +26,8 @@ data/
   snapshots/        — дневные срезы просмотров
   metrics.json      — посчитанные метрики
 reports/
-  latest.md         — то, что читаем глазами
+  latest.md         — то же самое текстом, читается прямо на GitHub
+index.html          — таблица с сортировкой, живёт на GitHub Pages
 ```
 
 ## Как запустить
@@ -38,6 +39,9 @@ reports/
 обновить метрики известных каналов.
 
 **По расписанию:** каждый день в 05:20 UTC, автоматически.
+
+**Смотреть результат:** страница на GitHub Pages (Settings → Pages → Source: Deploy
+from a branch, ветка `main`, папка `/ (root)`) или `reports/latest.md` прямо в репозитории.
 
 Нужен один секрет: `YOUTUBE_API_KEY` в Settings → Secrets and variables → Actions.
 
