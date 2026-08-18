@@ -1,0 +1,40 @@
+{
+  "_комментарий": "Черновик. Один seed = одна ниша для метрик. id должен быть стабильным: по нему склеивается история. query — то, что уходит в search.list.",
+  "seeds": [
+    { "id": "space-doku",        "group": "Космос",         "de": "Weltraum Dokumentation",        "en": "space documentary" },
+    { "id": "blackhole",         "group": "Космос",         "de": "schwarzes Loch Doku",           "en": "black hole documentary" },
+    { "id": "universe-scale",    "group": "Космос",         "de": "Größe des Universums",          "en": "size of the universe" },
+    { "id": "exoplanets",        "group": "Космос",         "de": "Exoplaneten Doku",              "en": "exoplanets documentary" },
+    { "id": "solar-system",      "group": "Космос",         "de": "Sonnensystem erklärt",          "en": "solar system explained" },
+    { "id": "space-missions",    "group": "Космос",         "de": "Raumfahrt Dokumentation",       "en": "space missions documentary" },
+
+    { "id": "dinos",             "group": "Доисторическое", "de": "Dinosaurier Dokumentation",     "en": "dinosaur documentary" },
+    { "id": "urzeit-tiere",      "group": "Доисторическое", "de": "Urzeit Tiere Doku",             "en": "prehistoric animals documentary" },
+    { "id": "mass-extinction",   "group": "Доисторическое", "de": "Massenaussterben Doku",         "en": "mass extinction documentary" },
+    { "id": "ice-age",           "group": "Доисторическое", "de": "Eiszeit Dokumentation",         "en": "ice age documentary" },
+    { "id": "human-evolution",   "group": "Доисторическое", "de": "Evolution des Menschen Doku",   "en": "human evolution documentary" },
+
+    { "id": "deep-sea",          "group": "Океан",          "de": "Tiefsee Dokumentation",         "en": "deep sea documentary" },
+    { "id": "ocean-creatures",   "group": "Океан",          "de": "Tiefsee Lebewesen",             "en": "deep sea creatures" },
+    { "id": "antarctica",        "group": "Океан",          "de": "Antarktis Dokumentation",       "en": "antarctica documentary" },
+
+    { "id": "supervolcano",      "group": "Геология",       "de": "Supervulkan Doku",              "en": "supervolcano documentary" },
+    { "id": "plate-tectonics",   "group": "Геология",       "de": "Plattentektonik erklärt",       "en": "plate tectonics explained" },
+    { "id": "disasters",         "group": "Геология",       "de": "Naturkatastrophen Dokumentation", "en": "natural disaster documentary" },
+
+    { "id": "lost-civs",         "group": "Древние",        "de": "versunkene Zivilisationen Doku", "en": "lost civilizations documentary" },
+    { "id": "egypt",             "group": "Древние",        "de": "Altes Ägypten Dokumentation",   "en": "ancient egypt documentary" },
+    { "id": "archaeology",       "group": "Древние",        "de": "Archäologie Doku",              "en": "archaeology documentary" },
+
+    { "id": "megastructures",    "group": "Инженерия",      "de": "Megabauwerke Doku",             "en": "megastructures documentary" },
+    { "id": "eng-disasters",     "group": "Инженерия",      "de": "Technikkatastrophen Doku",      "en": "engineering disasters documentary" },
+    { "id": "lost-places",       "group": "Инженерия",      "de": "Lost Places Doku",              "en": "abandoned places documentary" },
+
+    { "id": "parasites",         "group": "Биология",       "de": "Parasiten Dokumentation",       "en": "parasites documentary" },
+    { "id": "human-body",        "group": "Биология",       "de": "menschlicher Körper erklärt",   "en": "human body explained" },
+    { "id": "microbes",          "group": "Биология",       "de": "Mikroorganismen Doku",          "en": "microscopic world documentary" },
+
+    { "id": "future-earth",      "group": "Будущее",        "de": "Zukunft der Erde Doku",         "en": "future of earth documentary" },
+    { "id": "terraforming",      "group": "Будущее",        "de": "Terraforming Mars",             "en": "terraforming mars" }
+  ]
+}

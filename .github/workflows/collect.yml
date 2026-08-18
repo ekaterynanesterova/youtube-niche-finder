@@ -1,0 +1,54 @@
+name: Сбор данных
+
+on:
+  workflow_dispatch:
+    inputs:
+      searchBudget:
+        description: 'Сколько search-запросов сделать (0 = только опрос известных каналов, без разведки)'
+        default: '40'
+      unitBudget:
+        description: 'Потолок квоты на прогон (из 10000 в сутки)'
+        default: '9000'
+  schedule:
+    # 05:20 UTC. Квота Google обнуляется в полночь по тихоокеанскому времени,
+    # так что к этому моменту сутки всегда свежие.
+    - cron: '20 5 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Проверка счётной части
+        run: node src/selftest.js
+
+      - name: Прогон
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          SEARCH_BUDGET: ${{ github.event.inputs.searchBudget || '40' }}
+          UNIT_BUDGET: ${{ github.event.inputs.unitBudget || '9000' }}
+        run: node src/index.js
+
+      - name: Коммит результата
+        run: |
+          git config user.name "niche-finder"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data reports
+          if git diff --staged --quiet; then
+            echo "Данные не изменились — коммитить нечего"
+          else
+            git commit -m "Сбор за $(date -u +%F)"
+            git push
+          fi

@@ -1,0 +1,1031 @@
+{
+  "computedAt": "2026-08-18T20:51:26.125Z",
+  "thresholds": {
+    "minDurationSec": 480,
+    "discoveryWindowDays": 90,
+    "medianMinVideoAgeDays": 30,
+    "velocityMaxVideoAgeDays": 60,
+    "outlierRatio": 3,
+    "outlierMinViews": 20000,
+    "youngChannelDays": 365,
+    "dailyUnitBudget": 9000,
+    "searchesPerRun": 40,
+    "maxUploadPagesNewChannel": 10,
+    "maxChannelsSurveyedPerRun": 400,
+    "slopUploadsPerWeek": 5,
+    "slopChannelAgeDays": 180
+  },
+  "channels": {},
+  "videos": [],
+  "niches": {
+    "space-doku": {
+      "id": "space-doku",
+      "group": "Космос",
+      "queries": {
+        "de": "Weltraum Dokumentation",
+        "en": "space documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "blackhole": {
+      "id": "blackhole",
+      "group": "Космос",
+      "queries": {
+        "de": "schwarzes Loch Doku",
+        "en": "black hole documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "universe-scale": {
+      "id": "universe-scale",
+      "group": "Космос",
+      "queries": {
+        "de": "Größe des Universums",
+        "en": "size of the universe"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "exoplanets": {
+      "id": "exoplanets",
+      "group": "Космос",
+      "queries": {
+        "de": "Exoplaneten Doku",
+        "en": "exoplanets documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "solar-system": {
+      "id": "solar-system",
+      "group": "Космос",
+      "queries": {
+        "de": "Sonnensystem erklärt",
+        "en": "solar system explained"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "space-missions": {
+      "id": "space-missions",
+      "group": "Космос",
+      "queries": {
+        "de": "Raumfahrt Dokumentation",
+        "en": "space missions documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "dinos": {
+      "id": "dinos",
+      "group": "Доисторическое",
+      "queries": {
+        "de": "Dinosaurier Dokumentation",
+        "en": "dinosaur documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "urzeit-tiere": {
+      "id": "urzeit-tiere",
+      "group": "Доисторическое",
+      "queries": {
+        "de": "Urzeit Tiere Doku",
+        "en": "prehistoric animals documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "mass-extinction": {
+      "id": "mass-extinction",
+      "group": "Доисторическое",
+      "queries": {
+        "de": "Massenaussterben Doku",
+        "en": "mass extinction documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "ice-age": {
+      "id": "ice-age",
+      "group": "Доисторическое",
+      "queries": {
+        "de": "Eiszeit Dokumentation",
+        "en": "ice age documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "human-evolution": {
+      "id": "human-evolution",
+      "group": "Доисторическое",
+      "queries": {
+        "de": "Evolution des Menschen Doku",
+        "en": "human evolution documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "deep-sea": {
+      "id": "deep-sea",
+      "group": "Океан",
+      "queries": {
+        "de": "Tiefsee Dokumentation",
+        "en": "deep sea documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "ocean-creatures": {
+      "id": "ocean-creatures",
+      "group": "Океан",
+      "queries": {
+        "de": "Tiefsee Lebewesen",
+        "en": "deep sea creatures"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "antarctica": {
+      "id": "antarctica",
+      "group": "Океан",
+      "queries": {
+        "de": "Antarktis Dokumentation",
+        "en": "antarctica documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "supervolcano": {
+      "id": "supervolcano",
+      "group": "Геология",
+      "queries": {
+        "de": "Supervulkan Doku",
+        "en": "supervolcano documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "plate-tectonics": {
+      "id": "plate-tectonics",
+      "group": "Геология",
+      "queries": {
+        "de": "Plattentektonik erklärt",
+        "en": "plate tectonics explained"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "disasters": {
+      "id": "disasters",
+      "group": "Геология",
+      "queries": {
+        "de": "Naturkatastrophen Dokumentation",
+        "en": "natural disaster documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "lost-civs": {
+      "id": "lost-civs",
+      "group": "Древние",
+      "queries": {
+        "de": "versunkene Zivilisationen Doku",
+        "en": "lost civilizations documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "egypt": {
+      "id": "egypt",
+      "group": "Древние",
+      "queries": {
+        "de": "Altes Ägypten Dokumentation",
+        "en": "ancient egypt documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "archaeology": {
+      "id": "archaeology",
+      "group": "Древние",
+      "queries": {
+        "de": "Archäologie Doku",
+        "en": "archaeology documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "megastructures": {
+      "id": "megastructures",
+      "group": "Инженерия",
+      "queries": {
+        "de": "Megabauwerke Doku",
+        "en": "megastructures documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "eng-disasters": {
+      "id": "eng-disasters",
+      "group": "Инженерия",
+      "queries": {
+        "de": "Technikkatastrophen Doku",
+        "en": "engineering disasters documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "lost-places": {
+      "id": "lost-places",
+      "group": "Инженерия",
+      "queries": {
+        "de": "Lost Places Doku",
+        "en": "abandoned places documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "parasites": {
+      "id": "parasites",
+      "group": "Биология",
+      "queries": {
+        "de": "Parasiten Dokumentation",
+        "en": "parasites documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "human-body": {
+      "id": "human-body",
+      "group": "Биология",
+      "queries": {
+        "de": "menschlicher Körper erklärt",
+        "en": "human body explained"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "microbes": {
+      "id": "microbes",
+      "group": "Биология",
+      "queries": {
+        "de": "Mikroorganismen Doku",
+        "en": "microscopic world documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "future-earth": {
+      "id": "future-earth",
+      "group": "Будущее",
+      "queries": {
+        "de": "Zukunft der Erde Doku",
+        "en": "future of earth documentary"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "terraforming": {
+      "id": "terraforming",
+      "group": "Будущее",
+      "queries": {
+        "de": "Terraforming Mars",
+        "en": "terraforming mars"
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "slopShare": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "medianViews": null,
+          "outlierChannels": 0,
+          "permeability": null
+        }
+      },
+      "confidence": "нет данных"
+    }
+  },
+  "snapshotDays": 0
+}

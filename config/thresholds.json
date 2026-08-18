@@ -1,0 +1,15 @@
+{
+  "minDurationSec": 480,
+  "discoveryWindowDays": 90,
+  "medianMinVideoAgeDays": 30,
+  "velocityMaxVideoAgeDays": 60,
+  "outlierRatio": 3,
+  "outlierMinViews": 20000,
+  "youngChannelDays": 365,
+  "dailyUnitBudget": 9000,
+  "searchesPerRun": 40,
+  "maxUploadPagesNewChannel": 10,
+  "maxChannelsSurveyedPerRun": 400,
+  "slopUploadsPerWeek": 5,
+  "slopChannelAgeDays": 180
+}

@@ -1,0 +1,18 @@
+{
+  "de": {
+    "label": "Немецкий",
+    "regionCode": "DE",
+    "relevanceLanguage": "de",
+    "audioLanguages": ["de", "de-DE", "de-AT", "de-CH"],
+    "role": "primary",
+    "searchShare": 0.65
+  },
+  "en": {
+    "label": "Английский (контроль)",
+    "regionCode": "US",
+    "relevanceLanguage": "en",
+    "audioLanguages": ["en", "en-US", "en-GB"],
+    "role": "control",
+    "searchShare": 0.35
+  }
+}
