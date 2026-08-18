@@ -273,7 +273,7 @@ function card(r, i) {
       <span class="k">пробилось <b>\${m.youngOutlierChannels}</b> из \${m.outlierChannels}</span>
       <span class="k">медиана выброса <b>\${num(m.medianOutlierViews)}</b></span>
       <span class="k">длина <b>\${m.medianOutlierMinutes == null ? '—' : Math.round(m.medianOutlierMinutes)}</b> мин</span>
-      <span class="k\${slopWarn}">мусор <b>\${pct(m.conveyorShare)}</b></span>
+      <span class="k">конвейер <b>\${pct(m.conveyorShare)}</b></span>
       <span class="k">лайки <b>\${m.medianLikeRate == null ? '—' : (m.medianLikeRate * 100).toFixed(1) + '%'}</b></span>
       <span class="k">каналов <b>\${m.channels}</b></span>
     </div>
@@ -308,9 +308,16 @@ function draw() {
       ? plural(rs.length, 'ниша', 'ниши', 'ниш') + ' проходит фильтры · '
         + 'полоска — доля каналов моложе года среди тех, кто пробился'
       : '';
-  document.getElementById('list').innerHTML = rs.length
-    ? rs.map(card).join('')
-    : '<div class="empty">Под эти условия ничего не подошло. Ослабь фильтры — или данных пока просто мало.</div>';
+  let html;
+  try {
+    html = rs.length ? rs.map(card).join('') : '';
+  } catch (e) {
+    document.getElementById('list').innerHTML =
+      '<div class="empty">Страница сломалась при отрисовке: ' + e.message + '</div>';
+    throw e;
+  }
+  document.getElementById('list').innerHTML = html
+    || '<div class="empty">Под эти условия ничего не подошло. Ослабь фильтры — или данных пока просто мало.</div>';
 }
 
 document.getElementById('lede').textContent =
