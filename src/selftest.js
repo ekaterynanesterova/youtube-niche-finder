@@ -74,6 +74,14 @@ check('выброс посчитан как ×10', Math.round(m.videos.find((v) 
 check('ниша open полностью проницаема', m.niches.open.permeability === 1);
 check('ниша closed непроницаема', m.niches.closed.permeability === 0);
 check('выбросы схлопнуты по каналам', m.niches.open.outlierChannels === 4);
+check('молодых каналов пробилось 4', m.niches.open.youngOutlierChannels === 4);
+check('у старой ниши молодых нет', m.niches.closed.youngOutlierChannels === 0);
+check('длина выброса измерена', m.niches.open.medianOutlierMinutes === 30);
+// Ниша, где пробился один-единственный канал, в рейтинг попадать не должна:
+// это может быть везение конкретного канала, а не открытая дверь.
+check('одиночный выброс не считается нишей',
+  score({ permeability: 1, outlierChannels: 1, youngOutlierChannels: 1,
+          medianOutlierViews: 500000, slopShare: 0, medianLikeRate: 0.04 }) === null);
 check('скорость роста взята из снапшотов', Math.round(m.videos.find((v) => v.id === 'young0hit').velocity) === 4286);
 check('open ранжируется выше closed', score(m.niches.open) > score(m.niches.closed));
 check('доверие честно занижено при 2 снапшотах', /низкая/.test(m.niches.open.confidence));

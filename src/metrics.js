@@ -112,10 +112,19 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
       videos: seedVideos.length,
       outliers: outliers.length,
       outlierChannels: outlierChannels.length,
+      // Сколько РАЗНЫХ молодых каналов пробилось. Один везунчик ничего не доказывает:
+      // канал бывает «проклятым» независимо от ниши, и наоборот. Повторяемость на
+      // нескольких каналах — единственное, что отличает открытую дверь от случайности.
+      youngOutlierChannels: youngOutlierChannels.length,
       // Главная метрика: доля выбросов, приходящаяся на молодые каналы.
       permeability: share(youngOutlierChannels.length, outlierChannels.length),
       medianViews: median(seedVideos.map((v) => v.views)),
       medianOutlierViews: median(outliers.map((v) => v.views)),
+      // Во что обойдётся вход: сколько минут длится типовой выброс.
+      medianOutlierMinutes: (() => {
+        const d = median(outliers.map((v) => v.durationSec));
+        return d == null ? null : d / 60;
+      })(),
       medianUploadsPerWeek: median(seedChannels.map((c) => c.uploadsPerWeek)),
       medianLikeRate: median(seedVideos.map((v) => v.likeRate).filter((x) => x != null)),
       medianCommentRate: median(seedVideos.map((v) => v.commentRate).filter((x) => x != null)),

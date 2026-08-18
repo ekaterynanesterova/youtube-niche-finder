@@ -21,9 +21,13 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
   const after = new Date(Date.now() - thresholds.discoveryWindowDays * 86400000).toISOString();
   const plan = [];
   for (const [code, market] of Object.entries(markets)) {
+    // Основной рынок прокручивает все темы; контрольный держится за узкий
+    // постоянный набор — мерная линейка ценна повторяемостью, а не широтой.
+    const pool = market.role === 'control' ? seeds.filter((s) => s.control) : seeds;
+    if (!pool.length) continue;
     const n = Math.max(0, Math.round(searchBudget * market.searchShare));
     for (let i = 0; i < n; i++) {
-      const seed = seeds[(db.state.seedCursor + i) % seeds.length];
+      const seed = pool[(db.state.seedCursor + i) % pool.length];
       if (seed[code]) plan.push({ seed, code, market });
     }
   }
