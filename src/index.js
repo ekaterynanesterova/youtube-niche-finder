@@ -6,6 +6,7 @@ import { computeMetrics } from './metrics.js';
 import { renderReport } from './report.js';
 import { buildPayload, renderSite } from './site.js';
 import { Translator } from './translate.js';
+import { findTopics, promote } from './topics.js';
 import {
   loadDb, saveDb, readJson, writeJson, writeCompactJson, writeText, paths,
   listSnapshots, today, ROOT,
@@ -55,6 +56,26 @@ const payload = buildPayload(metrics, seeds, thresholds);
 // так что расход у бесплатного сервиса падает почти до нуля со второго дня.
 const cache = readJson(paths.translations, {});
 const translator = new Translator({ cache });
+
+// Темы достаём из собственной базы: что реально снимают молодые каналы,
+// которые пробились. Список тем перестаёт упираться в фантазию человека.
+const candidates = findTopics({
+  metrics, thresholds,
+  knownQueries: seeds.flatMap((x) => [x.de, x.en]).filter(Boolean),
+});
+const promoted = promote({
+  candidates, seeds, limit: thresholds.topicMaxPromotedPerRun ?? 5,
+});
+for (const t of promoted) {
+  t.ru = await translator.translate(t.de, 'de');
+  seeds.push(t);
+}
+if (promoted.length) {
+  const cfg = readJson(join(ROOT, 'config/seeds.json'));
+  cfg.seeds = seeds;
+  writeJson(join(ROOT, 'config/seeds.json'), cfg);
+  console.log('Новые темы:', promoted.map((t) => t.de).join(' · '));
+}
 const pending = [];
 for (const [, byLang] of Object.entries(payload.examples)) {
   for (const [lang, list] of Object.entries(byLang)) {
@@ -71,6 +92,11 @@ for (const v of pending) {
 writeJson(paths.translations, cache);
 console.log('Перевод:', JSON.stringify(translator.stats),
             translator.blocked ? '(сервис исчерпал дневной лимит)' : '');
+
+payload.candidates = candidates
+  .filter((c) => !promoted.some((t) => t.de.startsWith(c.phrase)))
+  .slice(0, 20);
+payload.promoted = promoted.map((t) => ({ id: t.id, query: t.de, ru: t.ru, ...t.foundVia }));
 
 writeText(join(ROOT, 'index.html'), renderSite(payload));
 

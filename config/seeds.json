@@ -247,6 +247,71 @@
       "de": "entspannende Doku lange Version",
       "en": "relaxing long documentary",
       "ru": "длинные расслабляющие документалки"
+    },
+    {
+      "id": "maschinen",
+      "group": "Найдено автоматом",
+      "de": "maschinen Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 6,
+        "lift": 5.8,
+        "medianViews": 75314.5
+      }
+    },
+    {
+      "id": "blindgaenger",
+      "group": "Найдено автоматом",
+      "de": "blindgänger Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 22.1,
+        "medianViews": 44180.5
+      }
+    },
+    {
+      "id": "sibirien",
+      "group": "Найдено автоматом",
+      "de": "sibirien Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 16.6,
+        "medianViews": 116198
+      }
+    },
+    {
+      "id": "deutschland",
+      "group": "Найдено автоматом",
+      "de": "deutschland Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 4,
+        "lift": 5.9,
+        "medianViews": 139469
+      }
+    },
+    {
+      "id": "nachtschicht",
+      "group": "Найдено автоматом",
+      "de": "nachtschicht Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.6,
+        "medianViews": 48384
+      }
     }
   ]
 }

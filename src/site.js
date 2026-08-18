@@ -147,6 +147,14 @@ button.chip[data-on="1"]{background:color-mix(in srgb,var(--brand) 16%,var(--rai
 .empty{color:var(--dim);font-size:13.5px;padding:28px 16px;text-align:center;
   background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}
 
+#found{margin-top:26px}
+#found h3{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin:0 0 4px}
+#found .hint{color:var(--dim);font-size:13px;margin:0 0 12px;max-width:64ch}
+.cand{display:flex;flex-wrap:wrap;gap:8px}
+.cand div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:13.5px}
+.cand b{font-weight:600}
+.cand span{color:var(--dim);font-size:12px;margin-left:6px}
+.cand .new{border-color:var(--good)}
 footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:64ch}
 footer h3{color:var(--ink);font-size:13px;text-transform:uppercase;
   letter-spacing:.07em;margin:22px 0 8px}
@@ -176,6 +184,7 @@ footer b{color:var(--ink)}
 
   <div class="count" id="count"></div>
   <div id="list"></div>
+  <div id="found"></div>
 
   <footer>
     <h3>Что означают цифры</h3>
@@ -336,6 +345,24 @@ if (P.snapshotDays < 21) {
     plural(P.snapshotDays, 'день', 'дня', 'дней') +
     '. Скорость роста пока считается как «просмотры ÷ возраст» — грубая прикидка. ' +
     'Через неделю картина станет осмысленной, через три появится настоящая кривая роста.</div>';
+}
+
+// Что нашлось в собственной базе — отдельно от рейтинга: это ещё не ниши,
+// а связки слов, которые непропорционально часто попадаются у прорвавшихся.
+const found = document.getElementById('found');
+const cand = P.candidates ?? [], prom = P.promoted ?? [];
+if (cand.length || prom.length) {
+  const chip = (q, ru, ch, lift, isNew) =>
+    '<div class="' + (isNew ? 'new' : '') + '"><b>' + q + '</b>'
+    + (ru ? ' — ' + ru : '')
+    + '<span>' + ch + ' кан · ×' + lift + '</span></div>';
+  found.innerHTML =
+    '<h3>Найдено в данных</h3>' +
+    '<p class="hint">Связки слов, которые у пробившихся молодых каналов встречаются кратно чаще, чем в базе вообще. ×5 значит «в пять раз чаще обычного». Зелёные уже поехали в разведку и станут нишами через пару прогонов.</p>' +
+    '<div class="cand">' +
+    prom.map(t => chip(t.query, t.ru, t.channels, t.lift, true)).join('') +
+    cand.map(c => chip(c.phrase, null, c.channels, c.lift, false)).join('') +
+    '</div>';
 }
 
 draw();
