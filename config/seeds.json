@@ -204,6 +204,49 @@
       "de": "Terraforming Mars",
       "en": "terraforming mars",
       "ru": "терраформирование Марса"
+    },
+    {
+      "id": "sleep-doku",
+      "group": "Засыпание",
+      "control": true,
+      "de": "Doku zum Einschlafen",
+      "en": "documentary to fall asleep to",
+      "ru": "документалка для засыпания"
+    },
+    {
+      "id": "sleep-science",
+      "group": "Засыпание",
+      "de": "Wissenschaft zum Einschlafen",
+      "en": "science to fall asleep to",
+      "ru": "наука для засыпания"
+    },
+    {
+      "id": "sleep-space",
+      "group": "Засыпание",
+      "de": "Weltraum zum Einschlafen",
+      "en": "space to fall asleep to",
+      "ru": "космос для засыпания"
+    },
+    {
+      "id": "sleep-history",
+      "group": "Засыпание",
+      "de": "Geschichte zum Einschlafen",
+      "en": "history to fall asleep to",
+      "ru": "история для засыпания"
+    },
+    {
+      "id": "sleep-stories",
+      "group": "Засыпание",
+      "de": "Einschlafgeschichten für Erwachsene",
+      "en": "sleep stories for adults",
+      "ru": "истории на ночь для взрослых"
+    },
+    {
+      "id": "sleep-relax",
+      "group": "Засыпание",
+      "de": "entspannende Doku lange Version",
+      "en": "relaxing long documentary",
+      "ru": "длинные расслабляющие документалки"
     }
   ]
 }

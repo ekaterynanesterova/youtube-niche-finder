@@ -29,7 +29,8 @@ if (!metricsOnly) {
 
   console.log(`Прогон ${date}. Бюджет ${quota.budget} юнитов, разведка ${searchBudget} запросов.`);
 
-  if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget });
+  const onlySeeds = (process.env.ONLY_SEEDS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+  if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds });
   const pending = await survey({ api, db, thresholds });
   if (pending?.size) await hydrate({ api, db, pending, markets, thresholds });
   const snap = await snapshot({ api, db, thresholds });

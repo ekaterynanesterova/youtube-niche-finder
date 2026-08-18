@@ -9,6 +9,9 @@ on:
       unitBudget:
         description: 'Потолок квоты на прогон (из 10000 в сутки)'
         default: '9000'
+      onlySeeds:
+        description: 'Прогнать только эти темы, через запятую (пусто = обычная ротация)'
+        default: ''
       metricsOnly:
         description: 'Только пересчитать метрики и пересобрать страницу, без похода в YouTube'
         type: boolean
@@ -43,6 +46,7 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           SEARCH_BUDGET: ${{ github.event.inputs.searchBudget || '40' }}
           UNIT_BUDGET: ${{ github.event.inputs.unitBudget || '9000' }}
+          ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}
         run: node src/index.js ${{ github.event.inputs.metricsOnly == 'true' && '--metrics-only' || '' }}
 
       - name: Коммит результата

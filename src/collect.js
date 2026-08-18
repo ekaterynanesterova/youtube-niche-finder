@@ -18,7 +18,14 @@ async function tolerant(label, fn) {
 }
 
 // Слой 1. Ищем каналы, а не видео. Сиды прокручиваются по кругу между прогонами.
-export async function discover({ api, db, seeds, markets, thresholds, searchBudget }) {
+export async function discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds }) {
+  // Прицельный прогон: новую тему хочется проверить сразу, а не когда до неё
+  // доедет курсор. Общую ротацию при этом не сбиваем.
+  if (onlySeeds?.length) {
+    seeds = seeds.filter((s) => onlySeeds.includes(s.id));
+    if (!seeds.length) { log('Ни одна из запрошенных тем не найдена в конфиге'); return; }
+    log(`Прицельная разведка: ${seeds.map((s) => s.id).join(', ')}`);
+  }
   const after = new Date(Date.now() - thresholds.discoveryWindowDays * 86400000).toISOString();
   const plan = [];
   for (const [code, market] of Object.entries(markets)) {
@@ -32,7 +39,9 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
       if (seed[code]) plan.push({ seed, code, market });
     }
   }
-  db.state.seedCursor = (db.state.seedCursor + Math.max(1, Math.round(searchBudget / 2))) % seeds.length;
+  if (!onlySeeds?.length) {
+    db.state.seedCursor = (db.state.seedCursor + Math.max(1, Math.round(searchBudget / 2))) % seeds.length;
+  }
 
   let found = 0, fresh = 0;
   await tolerant('разведка', async () => {
