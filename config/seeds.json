@@ -832,6 +832,19 @@
         "lift": 4.8,
         "medianViews": 49747
       }
+    },
+    {
+      "id": "sogar",
+      "group": "Найдено автоматом",
+      "de": "sogar Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.7,
+        "medianViews": 28333
+      }
     }
   ]
 }

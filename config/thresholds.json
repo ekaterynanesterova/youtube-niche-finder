@@ -22,5 +22,7 @@
   "targetMonthlyUsd": 2000,
   "rpmUsd": 5,
   "breakoutViews": 100000,
-  "workingViews": 20000
+  "workingViews": 20000,
+  "shelfAgeDays": 180,
+  "baselineRefreshDays": 7
 }

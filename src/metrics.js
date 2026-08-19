@@ -95,7 +95,7 @@ export function dominantLang(videos, fallbackMarkets = []) {
   return fallbackMarkets.length === 1 ? fallbackMarkets[0] : null;
 }
 
-export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = new Date().toISOString() }) {
+export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline = null, now = new Date().toISOString() }) {
   const byChannel = {};
   for (const v of Object.values(db.videos)) {
     const [views, likes, comments] = db.current?.[v.id] ?? [];
@@ -147,6 +147,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
         channelAgeAtUploadDays: c.ageDays == null ? null : c.ageDays - ageDays_(v.publishedAt, now),
         proxyVelocity,
         velocity: realVelocity(v.id, snapshots),
+        gain: viewsGained(v.id, snapshots, baseline, v.views),
         likeRate: eng.like, commentRate: eng.comment,
         seeds: c.seeds,
       });
@@ -176,6 +177,16 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
 
   return { computedAt: now, thresholds, channels, videos, niches,
            snapshotDays: snapshots.length };
+}
+
+// Сколько просмотров видео набрало за окно наблюдения. Ради этого числа
+// снапшоты и копятся: оно показывает, живо видео сейчас или лежит.
+function viewsGained(videoId, snapshots, baseline, currentViews) {
+  // Опорный срез покрывает все видео — им и меряем, когда он есть.
+  const was = baseline?.views?.[videoId];
+  if (Number.isFinite(was) && Number.isFinite(currentViews)) return Math.max(0, currentViews - was);
+  const pts = snapshots.map((s) => s.videos?.[videoId]?.[0]).filter(Number.isFinite);
+  return pts.length < 2 ? null : Math.max(0, pts[pts.length - 1] - pts[0]);
 }
 
 // Настоящая скорость роста — только когда накопились снапшоты.
@@ -247,12 +258,43 @@ function nicheStats(seedVideos, channels, thresholds) {
       .reduce((min, c) => (min == null ? c.ageDays : Math.min(min, c.ageDays)), null),
     // Сколько часов готового видео в неделю держит типичный состоявшийся канал.
     medianEarningMinutesPerWeek: median(seedChannels.filter((c) => c.earning).map((c) => c.minutesPerWeek)),
+    ...shelfLife(seedVideos, thresholds),
     // Ёмкость: на сколько роликов темы хватает тем, кто уже дошёл. Отвечает на
     // вопрос «а что я буду снимать после десятого видео».
     medianEarningCatalog: median(seedChannels.filter((c) => c.earning).map((c) => c.videoCount)),
     maxEarningCatalog: seedChannels.filter((c) => c.earning)
       .reduce((mx, c) => Math.max(mx, c.videoCount ?? 0), 0) || null,
   };
+}
+
+// Долговечность темы: работает ли старое видео или ниша требует бежать.
+// Две меры, потому что первая смещена.
+function shelfLife(videos, thresholds) {
+  const cut = thresholds.shelfAgeDays ?? 180;
+  const old = videos.filter((v) => v.ageDays > cut);
+  if (videos.length < 50 || old.length < 15) {
+    return { shelfIndex: null, shelfLiveIndex: null, shelfOldShare: null };
+  }
+  const countShare = old.length / videos.length;
+
+  // Приблизительно: какая доля НАКОПЛЕННЫХ просмотров лежит на старых видео.
+  // Смещено вверх — старое видео просто дольше копило, — но между нишами
+  // смещение одинаковое, так что порядок сравнивать можно.
+  const sum = (xs, f) => xs.reduce((s, v) => s + (f(v) ?? 0), 0);
+  const shelfIndex = (sum(old, (v) => v.views) / sum(videos, (v) => v.views)) / countShare;
+
+  // Точно: какая доля просмотров, набранных ЗА ОКНО НАБЛЮДЕНИЯ, пришлась на
+  // старые видео. Смещения нет — все считали одни и те же дни. Появляется,
+  // когда накопится хотя бы неделя снапшотов.
+  // Без данных по самим старым видео эта мера даёт ноль и врёт, что ниша
+  // мертва. Считаем, только когда прирост известен у большинства из них.
+  const oldMeasured = old.filter((v) => v.gain != null).length;
+  const gained = sum(videos, (v) => v.gain);
+  const shelfLiveIndex = gained > 0 && oldMeasured >= old.length * 0.5
+    ? (sum(old, (v) => v.gain) / gained) / countShare
+    : null;
+
+  return { shelfIndex, shelfLiveIndex, shelfOldShare: countShare };
 }
 
 // Честная оценка того, насколько цифрам можно верить в этот день.

@@ -23,6 +23,8 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         conveyor: m.conveyorShare,
         missing: m.lotteryShare,
         views: m.medianOutlierViews,
+        shelf: m.shelfLiveIndex ?? m.shelfIndex,
+        shelfLive: m.shelfLiveIndex != null,
         catalog: m.medianEarningCatalog,
         catalogMax: m.maxEarningCatalog,
       });
@@ -69,6 +71,11 @@ function risk(r, thresholds) {
   }
   if (r.minutes != null && r.minutes >= 90) {
     out.push(`типовой ролик — ${Math.round(r.minutes)} минут, это тяжёлый вход`);
+  }
+  // Ниша-беговая дорожка: старые ролики мертвы, доход держится только на
+  // свежих. Такую нишу нельзя занять — в ней можно только бежать.
+  if (r.shelf != null && r.shelf < 1) {
+    out.push(`старые ролики почти не смотрят — доход держится только на свежих, место в такой нише не занять`);
   }
   // Тема может кончиться раньше канала — это отдельный риск, не связанный
   // с деньгами и конкуренцией.

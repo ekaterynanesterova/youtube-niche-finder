@@ -39,6 +39,19 @@ if (!metricsOnly) {
   if (Object.keys(snap).length) {
     writeCompactJson(paths.snapshot(date), { date, videos: snap });
   }
+  // Опорный срез по ВСЕМ видео, включая старые. Он нужен для долговечности:
+  // дневные снапшоты хранят только молодые ролики ради места, а прирост
+  // старых иначе не измерить. Файл один и переписывается раз в неделю,
+  // поэтому объём не растёт.
+  const baseline = readJson(paths.baseline, null);
+  const baselineAge = baseline?.date
+    ? (Date.parse(date) - Date.parse(baseline.date)) / 86400000 : Infinity;
+  if (baselineAge >= (thresholds.baselineRefreshDays ?? 7)) {
+    writeCompactJson(paths.baseline, { date, views: Object.fromEntries(
+      Object.entries(db.current).map(([id, s]) => [id, s[0]])) });
+    console.log(`Опорный срез обновлён (прошлому было ${Math.round(baselineAge)} дн)`);
+  }
+
   db.state.runs = [...(db.state.runs ?? []).slice(-29), { date, ...quota.summary() }];
   saveDb(db);
   console.log(`Квота: потрачено ${quota.spent} из ${quota.budget}`, quota.byEndpoint);
@@ -46,7 +59,8 @@ if (!metricsOnly) {
 
 // Метрики считаем всегда — они дешёвые и не трогают API.
 const snapshots = listSnapshots().slice(-90).map((f) => readJson(paths.snapshot(f.replace('.json', ''))));
-const metrics = computeMetrics({ db, seeds, thresholds, snapshots });
+const metrics = computeMetrics({ db, seeds, thresholds, snapshots,
+                                baseline: readJson(paths.baseline, null) });
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
 
 // Страница собирается с вшитыми данными: без fetch ей нечего не догрузить.

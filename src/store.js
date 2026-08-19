@@ -35,6 +35,7 @@ export const paths = {
   channels: join(DATA, 'channels.json'),
   videos: join(DATA, 'videos.json'),
   current: join(DATA, 'current.json'),
+  baseline: join(DATA, 'baseline.json'),
   translations: join(DATA, 'translations.json'),
   state: join(DATA, 'state.json'),
   metrics: join(DATA, 'metrics.json'),
