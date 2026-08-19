@@ -241,6 +241,12 @@ function nicheStats(seedVideos, channels, thresholds) {
     medianYoungMonthlyUsd: median(seedChannels
       .filter((c) => c.earning && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
       .map((c) => c.monthlyUsd)),
+    // За сколько дошёл самый быстрый: это и есть ответ на «успею ли я».
+    fastestYoungDays: seedChannels
+      .filter((c) => c.earning && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
+      .reduce((min, c) => (min == null ? c.ageDays : Math.min(min, c.ageDays)), null),
+    // Сколько часов готового видео в неделю держит типичный состоявшийся канал.
+    medianEarningMinutesPerWeek: median(seedChannels.filter((c) => c.earning).map((c) => c.minutesPerWeek)),
   };
 }
 

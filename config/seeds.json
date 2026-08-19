@@ -507,6 +507,201 @@
         "lift": 3.8,
         "medianViews": 55266
       }
+    },
+    {
+      "id": "deutschlands-haerteste",
+      "group": "Найдено автоматом",
+      "de": "deutschlands härteste Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.2,
+        "medianViews": 72503
+      }
+    },
+    {
+      "id": "flugzeug",
+      "group": "Найдено автоматом",
+      "de": "flugzeug Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 5.2,
+        "medianViews": 76148
+      }
+    },
+    {
+      "id": "grausamste",
+      "group": "Найдено автоматом",
+      "de": "grausamste Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.2,
+        "medianViews": 94497
+      }
+    },
+    {
+      "id": "voraus",
+      "group": "Найдено автоматом",
+      "de": "voraus Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.2,
+        "medianViews": 21962
+      }
+    },
+    {
+      "id": "naturwunder",
+      "group": "Найдено автоматом",
+      "de": "naturwunder Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4.6,
+        "medianViews": 139498
+      }
+    },
+    {
+      "id": "einsatz",
+      "group": "Найдено автоматом",
+      "de": "einsatz Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4.5,
+        "medianViews": 65085
+      }
+    },
+    {
+      "id": "haertetest",
+      "group": "Найдено автоматом",
+      "de": "härtetest Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.3,
+        "medianViews": 99836
+      }
+    },
+    {
+      "id": "hussein",
+      "group": "Найдено автоматом",
+      "de": "hussein Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.3,
+        "medianViews": 132735
+      }
+    },
+    {
+      "id": "einblicke",
+      "group": "Найдено автоматом",
+      "de": "einblicke Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.1,
+        "medianViews": 52452
+      }
+    },
+    {
+      "id": "mittelalter",
+      "group": "Найдено автоматом",
+      "de": "mittelalter Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 5,
+        "lift": 3.1,
+        "medianViews": 107189
+      }
+    },
+    {
+      "id": "schlacht",
+      "group": "Найдено автоматом",
+      "de": "schlacht Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4,
+        "medianViews": 83747
+      }
+    },
+    {
+      "id": "herrscher",
+      "group": "Найдено автоматом",
+      "de": "herrscher Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4,
+        "medianViews": 68027.5
+      }
+    },
+    {
+      "id": "schiffe",
+      "group": "Найдено автоматом",
+      "de": "schiffe Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.1,
+        "medianViews": 74419
+      }
+    },
+    {
+      "id": "beherrscht",
+      "group": "Найдено автоматом",
+      "de": "beherrscht Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.1,
+        "medianViews": 49731
+      }
+    },
+    {
+      "id": "chinesische",
+      "group": "Найдено автоматом",
+      "de": "chinesische Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.6,
+        "medianViews": 24302
+      }
     }
   ]
 }

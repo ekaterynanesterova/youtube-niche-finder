@@ -1,6 +1,7 @@
 // Страница собирается на каждом прогоне с уже вшитыми данными.
 // Никаких fetch: нечему падать, нечего кешировать, работает и с диска.
 import { score } from './report.js';
+import { buildVerdict, headline, marketStats } from './verdict.js';
 
 const MARKET_LABEL = { de: 'Немецкий', en: 'Английский' };
 
@@ -39,6 +40,10 @@ export function buildPayload(m, seeds, thresholds) {
     }
   }
 
+  const withRu = Object.values(m.niches).map((n) => ({ ...n, ru: byId[n.id]?.ru ?? null }));
+  const markets = marketStats(m.channels, thresholds);
+  const verdict = buildVerdict({ niches: withRu, thresholds });
+
   const niches = Object.values(m.niches).map((n) => ({
     id: n.id, group: n.group, control: n.control,
     ru: byId[n.id]?.ru ?? null,
@@ -54,7 +59,9 @@ export function buildPayload(m, seeds, thresholds) {
     channelCount: Object.keys(m.channels).length,
     videoCount: m.videos.length,
     minChannels: 3,
-    niches, examples,
+    niches, examples, verdict, markets,
+    headline: headline(verdict, markets),
+    target: { usd: thresholds.targetMonthlyUsd, rpm: thresholds.rpmUsd },
     groups: [...new Set(seeds.map((s) => s.group))],
   };
 }
@@ -101,6 +108,32 @@ h1{margin:0;font-size:26px;letter-spacing:-.02em}
   border:1px solid color-mix(in srgb,var(--mid) 34%,var(--line));font-size:13.5px}
 .banner b{color:var(--mid)}
 
+/* верхние вкладки и карточки вывода */
+.vtabs{display:flex;gap:8px;padding:18px 0 4px}
+.vtabs button{font:inherit;font-size:14.5px;padding:8px 16px;border-radius:999px;
+  border:1px solid var(--line);background:var(--raise);color:var(--dim);cursor:pointer}
+.vtabs button[aria-selected="true"]{background:color-mix(in srgb,var(--brand) 16%,var(--raise));
+  border-color:var(--brand);color:var(--ink)}
+.head-note{background:var(--raise);border:1px solid var(--line);border-radius:var(--r);
+  padding:15px 17px;margin:14px 0 18px;font-size:15px;line-height:1.55}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:17px;margin-bottom:12px}
+.pick.first{border-color:var(--good);box-shadow:0 0 0 1px color-mix(in srgb,var(--good) 30%,transparent)}
+.pick .rk{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.pick.first .rk{color:var(--good)}
+.pick h4{margin:5px 0 2px;font-size:18px;letter-spacing:-.01em}
+.pick h4 em{font-style:normal;color:var(--brand);font-weight:500;font-size:15px}
+.pick .mk{color:var(--dim);font-size:12.5px;margin-bottom:14px}
+.money{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.money div{background:var(--raise);border:1px solid var(--line);border-radius:10px;
+  padding:9px 13px;min-width:112px}
+.money div b{display:block;font-size:19px;font-variant-numeric:tabular-nums;line-height:1.2}
+.money div span{display:block;color:var(--dim);font-size:10.5px;margin-top:3px;
+  text-transform:uppercase;letter-spacing:.06em}
+.pick p{margin:0 0 7px;font-size:13.5px;line-height:1.5}
+.pick p:last-child{margin-bottom:0}
+.pick .lab{color:var(--dim)}
+.disclaim{color:var(--dim);font-size:13px;max-width:64ch;margin-top:16px}
 .panel{position:sticky;top:0;z-index:5;background:var(--bg);
   padding:14px 0 10px;border-bottom:1px solid var(--line);margin-top:18px}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
@@ -180,6 +213,11 @@ footer b{color:var(--ink)}
     <div id="banner"></div>
   </header>
 
+  <div class="vtabs" id="view-tabs"></div>
+
+  <section id="view-verdict"></section>
+
+  <section id="view-all" hidden>
   <div class="panel">
     <div class="row"><span class="lbl">Рынок</span><span id="f-market"></span></div>
     <div class="row"><span class="lbl">Тема</span><span id="f-group"></span></div>
@@ -191,6 +229,7 @@ footer b{color:var(--ink)}
   <div class="count" id="count"></div>
   <div id="list"></div>
   <div id="found"></div>
+  </section>
 
   <footer>
     <h3>Что означают цифры</h3>
@@ -378,6 +417,59 @@ if (cand.length || prom.length) {
     '</div>';
 }
 
+// --- вкладка «Вывод» ---
+function drawVerdict() {
+  const V = P.verdict ?? [];
+  const host = document.getElementById('view-verdict');
+  if (!V.length) {
+    host.innerHTML = '<div class="head-note">' + (P.headline ?? '') + '</div>';
+    return;
+  }
+  const money = (r) => [
+    ['$' + num(r.usd) + '/мес', 'типичный доход'],
+    [r.young + ' из ' + r.total, 'молодых дошли'],
+    [r.fastestMonths == null ? '—' : Math.round(r.fastestMonths) + ' мес', 'самый быстрый'],
+    [r.effort ? r.effort.hoursPerWeek + ' ч/нед' : '—', 'темп лидеров'],
+  ].map(([v, l]) => '<div><b>' + v + '</b><span>' + l + '</span></div>').join('');
+
+  host.innerHTML =
+    '<div class="head-note">' + (P.headline ?? '') + '</div>' +
+    V.slice(0, 6).map((r, i) =>
+      '<div class="pick' + (i === 0 ? ' first' : '') + '">' +
+      '<div class="rk">' + (i === 0 ? 'брать первым' : '№' + (i + 1)) + '</div>' +
+      '<h4>' + r.query + (r.ru ? ' <em>' + r.ru + '</em>' : '') + '</h4>' +
+      '<div class="mk">' + r.market + ' рынок · ' + r.group + '</div>' +
+      '<div class="money">' + money(r) + '</div>' +
+      '<p><span class="lab">почему сейчас:</span> ' + r.why + '</p>' +
+      '<p><span class="lab">риск:</span> ' + r.risk + '</p>' +
+      (r.effort && r.effort.hoursPerMonth
+        ? '<p><span class="lab">объём:</span> дошедшие каналы выпускают около '
+          + plural(r.effort.hoursPerMonth, 'часа', 'часов', 'часов') + ' готового видео в месяц'
+          + (r.effort.minutes ? ', типовой ролик — ' + r.effort.minutes + ' мин' : '') + '.</p>'
+        : '') +
+      '</div>').join('') +
+    '<p class="disclaim">Цель — $' +
+      P.target.usd + ' в месяц при RPM $' + P.target.rpm +
+      '. RPM зависит от тематики и аудитории, точной цифры API не даёт, так что доход здесь — оценка порядка, а не обещание.</p>';
+}
+
+const views = [['verdict', 'Вывод'], ['all', 'Все ниши']];
+let view = 'verdict';
+function drawViews() {
+  document.getElementById('view-tabs').innerHTML = views.map(([k, t]) =>
+    '<button data-v="' + k + '" aria-selected="' + (k === view) + '">' + t + '</button>').join('');
+  document.querySelectorAll('#view-tabs button').forEach(b => b.onclick = () => {
+    view = b.dataset.v;
+    document.getElementById('view-verdict').hidden = view !== 'verdict';
+    document.getElementById('view-all').hidden = view !== 'all';
+    drawViews();
+  });
+  document.getElementById('view-verdict').hidden = view !== 'verdict';
+  document.getElementById('view-all').hidden = view !== 'all';
+}
+
+drawVerdict();
+drawViews();
 draw();
 </script>
 </body>
