@@ -3,7 +3,7 @@ import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
-import { median, dominantLang, channelBaseline } from './metrics.js';
+import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
 
 let failed = 0;
 const check = (name, cond) => {
@@ -71,11 +71,11 @@ for (let c = 0; c < 4; c++) {
                    firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200), subscribers: 900 };
   for (let v = 0; v < 12; v++) {
     videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
-      publishedAt: day(40 + v * 10), durationSec: 1500, views: 30000, likes: 1200, comments: 120, lang: 'de' };
+      publishedAt: day(40 + v * 10), durationSec: 1500, views: 150000, likes: 6000, comments: 600, lang: 'de' };
   }
   // один выброс — ×10 к медиане
   videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс ${c}`,
-    publishedAt: day(20), durationSec: 1800, views: 300000, likes: 12000, comments: 900, lang: 'de' };
+    publishedAt: day(20), durationSec: 1800, views: 1500000, likes: 60000, comments: 4500, lang: 'de' };
 }
 
 // Ниша «closed»: выбросы только у старых каналов — дверь закрыта.
@@ -85,21 +85,21 @@ for (let c = 0; c < 3; c++) {
                    firstUploadAt: day(2000), firstUploadComplete: true, publishedAt: day(2000), subscribers: 1500000 };
   for (let v = 0; v < 12; v++) {
     videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
-      publishedAt: day(40 + v * 10), durationSec: 1500, views: 50000, likes: 1500, comments: 120, lang: 'de' };
+      publishedAt: day(40 + v * 10), durationSec: 1500, views: 250000, likes: 7500, comments: 600, lang: 'de' };
   }
   videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс старика ${c}`,
-    publishedAt: day(20), durationSec: 1800, views: 500000, likes: 15000, comments: 900, lang: 'de' };
+    publishedAt: day(20), durationSec: 1800, views: 2500000, likes: 75000, comments: 4500, lang: 'de' };
 }
 
 const thresholds = { minDurationSec: 480, medianMinVideoAgeDays: 30, velocityMaxVideoAgeDays: 60,
   snapshotMaxAgeDays: 150, medianMinMatureVideos: 5,
-  hitViews: 20000, channelMinHits: 3, channelMinHitRate: 0.1,
+  targetMonthlyUsd: 2000, rpmUsd: 5, breakoutViews: 100000, workingViews: 20000,
   outlierRatio: 3, outlierMinViews: 20000, youngChannelDays: 365,
   conveyorMinutesPerWeek: 180 };
 
 const snapshots = [
-  { date: day(7), videos: { young0hit: [200000] } },
-  { date: day(0), videos: { young0hit: [300000] } },
+  { date: day(7), videos: { young0hit: [1000000] } },
+  { date: day(0), videos: { young0hit: [1500000] } },
 ];
 
 const current = {};
@@ -110,11 +110,13 @@ for (const [id, v] of Object.entries(videos)) {
 
 const m = computeMetrics({ db: { channels, videos, current }, seeds, thresholds, snapshots, now });
 
-check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 30000);
+check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 150000);
 check('тощая база не даёт медианы',
   channelBaseline([{ publishedAt: day(100), views: 5 }, { publishedAt: day(90), views: 7 }],
                   thresholds, now).medianViews === null);
 check('выброс посчитан как ×10', Math.round(m.videos.find((v) => v.id === 'young0hit').outlierRatio) === 10);
+check('доход канала оценён в деньгах', m.channels.young0.monthlyUsd > 2000);
+check('канал признан состоявшимся', m.channels.young0.earning === true);
 check('ниша open полностью проницаема', m.niches.open.permeability === 1);
 check('ниша closed непроницаема', m.niches.closed.permeability === 0);
 check('выбросы схлопнуты по каналам', m.niches.open.outlierChannels === 4);
@@ -177,10 +179,11 @@ const lot = computeMetrics({
   },
   seeds, thresholds, snapshots: [], now,
 });
-check('одиночный выстрел не делает канал пробившимся', lot.channels.L.breakthrough === false);
-check('такой канал помечен как лотерея', lot.channels.L.lottery === true);
+check('одиночный выстрел не выводит канал на цель', lot.channels.L.earning === false);
+check('такой канал помечен как недотягивающий', lot.channels.L.lottery === true);
 check('ниша из лотерейных каналов не проницаема', lot.niches.open.permeability === null);
-check('доля лотереи посчитана', lot.niches.open.lotteryShare === 1);
+check('доля недотягивающих посчитана', lot.niches.open.lotteryShare === 1);
+check('цель в просмотрах выведена из денег', targetMonthlyViews(thresholds) === 400000);
 
 check('конвейер пойман по объёму хронометража', conv.niches.open.conveyorShare === 1);
 check('минуты в неделю посчитаны', Math.round(conv.channels.c1.minutesPerWeek) === 560);

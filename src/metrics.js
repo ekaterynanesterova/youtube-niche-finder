@@ -11,21 +11,34 @@ function ageDays(ch, now) {
   return basis ? daysBetween(basis, now) : null;
 }
 
-// Один выстрел на двести роликов — это не прорыв, а лотерея: YouTube на старте
-// раздаёт показы всем, и одно видео может залететь у кого угодно. Причём
-// кратность к медиане такой канал даёт ОГРОМНУЮ именно потому, что медиана
-// у него мёртвая. Считаем иначе: сколько видео канала вообще перешли планку
-// и какая это доля. Пробившийся канал — тот, кто попадает повторно.
-export function hitProfile(videos, thresholds) {
-  const bar = thresholds.hitViews ?? 20000;
-  const hits = videos.filter((v) => v.views >= bar).length;
-  const hitRate = videos.length ? hits / videos.length : 0;
+// Смысл ниши — деньги, а не проценты. Цель задана в долларах в месяц;
+// из неё и RPM получается порог просмотров, и уже он решает, состоялся канал
+// или нет. Кратность к медиане тут бесполезна: у мёртвого канала она
+// огромная именно потому, что медиана мёртвая.
+export function targetMonthlyViews(thresholds) {
+  return (thresholds.targetMonthlyUsd / thresholds.rpmUsd) * 1000;
+}
+
+export function hitProfile(videos, thresholds, now) {
+  const breakouts = videos.filter((v) => v.views >= thresholds.breakoutViews).length;
+  const working = videos.filter((v) => v.views >= thresholds.workingViews).length;
+
+  // Что канал приносит СЕЙЧАС: просмотры свежих роликов, а не заслуги
+  // многолетней давности. Три месяца — достаточно, чтобы сгладить всплеск.
+  const fresh = videos.filter((v) => daysBetween(v.publishedAt, now) <= 90);
+  const monthlyViews = fresh.reduce((sum, v) => sum + (v.views ?? 0), 0) / 3;
+  const target = targetMonthlyViews(thresholds);
+
   return {
-    hits, hitRate,
+    breakouts, working,
+    workingRate: videos.length ? working / videos.length : 0,
+    monthlyViews,
+    monthlyUsd: (monthlyViews / 1000) * thresholds.rpmUsd,
+    // Канал состоялся, если на свежем контенте выходит на цель.
+    earning: monthlyViews >= target,
+    // Попадания есть, а денег нет: разовое везение или слишком мелкий масштаб.
+    lottery: working >= 1 && monthlyViews < target,
     bestViews: videos.reduce((m, v) => Math.max(m, v.views ?? 0), 0),
-    breakthrough: hits >= (thresholds.channelMinHits ?? 3)
-      && hitRate >= (thresholds.channelMinHitRate ?? 0.1),
-    lottery: hits >= 1 && hits < (thresholds.channelMinHits ?? 3),
   };
 }
 
@@ -109,7 +122,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], now = ne
       ageBasis: ch.firstUploadComplete ? 'первая загрузка' : 'регистрация канала',
       ageDays: ageDays(ch, now),
       medianViews, matureCount,
-      ...hitProfile(vids, thresholds),
+      ...hitProfile(vids, thresholds, now),
       lang: dominantLang(vids, ch.markets ?? []),
       videoCount: vids.length,
       uploadsPerWeek: uploadsPerWeek(vids, now),
@@ -185,7 +198,7 @@ function nicheStats(seedVideos, channels, thresholds) {
   // Проницаемость считаем только по каналам, которые попадают повторно.
   // Канал с одним выстрелом на двести роликов ничего не доказывает — ни про
   // себя, ни тем более про нишу.
-  const outlierChannels = seedChannels.filter((c) => c.breakthrough).map((c) => c.id);
+  const outlierChannels = seedChannels.filter((c) => c.earning).map((c) => c.id);
   const youngOutlierChannels = outlierChannels.filter((id) =>
     channels[id]?.ageDays != null && channels[id].ageDays <= thresholds.youngChannelDays);
   const lotteryChannels = seedChannels.filter((c) => c.lottery);
@@ -222,7 +235,12 @@ function nicheStats(seedVideos, channels, thresholds) {
     // Сколько каналов держатся на единственном выстреле. Высокая доля значит,
     // что ниша выдаёт разовые везения, а не устойчивый заход.
     lotteryShare: share(lotteryChannels.length, lotteryChannels.length + outlierChannels.length),
-    medianHitRate: median(seedChannels.filter((c) => c.hits > 0).map((c) => c.hitRate)),
+    medianWorkingRate: median(seedChannels.filter((c) => c.working > 0).map((c) => c.workingRate)),
+    // Сколько денег приносит типичный состоявшийся канал ниши.
+    medianMonthlyUsd: median(seedChannels.filter((c) => c.earning).map((c) => c.monthlyUsd)),
+    medianYoungMonthlyUsd: median(seedChannels
+      .filter((c) => c.earning && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
+      .map((c) => c.monthlyUsd)),
   };
 }
 

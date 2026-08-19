@@ -377,6 +377,136 @@
         "lift": 2.7,
         "medianViews": 67588.5
       }
+    },
+    {
+      "id": "urzeit",
+      "group": "Найдено автоматом",
+      "de": "urzeit Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4.4,
+        "medianViews": 81588
+      }
+    },
+    {
+      "id": "unserer-erde",
+      "group": "Найдено автоматом",
+      "de": "unserer erde Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.9,
+        "medianViews": 74466.5
+      }
+    },
+    {
+      "id": "mysterium",
+      "group": "Найдено автоматом",
+      "de": "mysterium Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.5,
+        "medianViews": 52088.5
+      }
+    },
+    {
+      "id": "vulkane",
+      "group": "Найдено автоматом",
+      "de": "vulkane Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.4,
+        "medianViews": 61223
+      }
+    },
+    {
+      "id": "bergen",
+      "group": "Найдено автоматом",
+      "de": "bergen Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.4,
+        "medianViews": 93684
+      }
+    },
+    {
+      "id": "deutschlands",
+      "group": "Найдено автоматом",
+      "de": "deutschlands Doku",
+      "ru": "немецкий документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 7,
+        "lift": 4.7,
+        "medianViews": 88640
+      }
+    },
+    {
+      "id": "decken",
+      "group": "Найдено автоматом",
+      "de": "decken Doku",
+      "ru": "cover Docu",
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 19.6,
+        "medianViews": 80006
+      }
+    },
+    {
+      "id": "furchterregende",
+      "group": "Найдено автоматом",
+      "de": "furchterregende Doku",
+      "ru": "ужасающий документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 8.9,
+        "medianViews": 118718
+      }
+    },
+    {
+      "id": "expedition",
+      "group": "Найдено автоматом",
+      "de": "expedition Doku",
+      "ru": "expedition Docu",
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.6,
+        "medianViews": 139498
+      }
+    },
+    {
+      "id": "gebaut",
+      "group": "Найдено автоматом",
+      "de": "gebaut Doku",
+      "ru": "построено DOCU",
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 5,
+        "lift": 3.8,
+        "medianViews": 55266
+      }
     }
   ]
 }

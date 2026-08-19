@@ -19,7 +19,8 @@
   "topicMinLift": 2.5,
   "topicMaxCandidates": 40,
   "topicMaxPromotedPerRun": 5,
-  "hitViews": 20000,
-  "channelMinHits": 3,
-  "channelMinHitRate": 0.1
+  "targetMonthlyUsd": 2000,
+  "rpmUsd": 5,
+  "breakoutViews": 100000,
+  "workingViews": 20000
 }

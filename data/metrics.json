@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-08-19T06:01:41.385Z",
+  "computedAt": "2026-08-19T12:15:50.833Z",
   "snapshotDays": 2,
   "thresholds": {
     "minDurationSec": 480,
@@ -22,9 +22,10 @@
     "topicMinLift": 2.5,
     "topicMaxCandidates": 40,
     "topicMaxPromotedPerRun": 5,
-    "hitViews": 20000,
-    "channelMinHits": 3,
-    "channelMinHitRate": 0.1
+    "targetMonthlyUsd": 2000,
+    "rpmUsd": 5,
+    "breakoutViews": 100000,
+    "workingViews": 20000
   },
   "niches": {
     "space-doku": {
@@ -38,7 +39,7 @@
       "channels": 15,
       "videos": 4206,
       "outliers": 823,
-      "outlierChannels": 12,
+      "outlierChannels": 5,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 20725,
@@ -48,14 +49,16 @@
       "medianLikeRate": 0.012028533687753525,
       "medianCommentRate": 0.000999900009999,
       "conveyorShare": 0.7333333333333333,
-      "lotteryShare": 0.07692307692307693,
-      "medianHitRate": 0.4117647058823529,
+      "lotteryShare": 0.6153846153846154,
+      "medianWorkingRate": 0.4117647058823529,
+      "medianMonthlyUsd": 7148.26,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 15,
           "videos": 4206,
           "outliers": 823,
-          "outlierChannels": 12,
+          "outlierChannels": 5,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 20725,
@@ -65,25 +68,29 @@
           "medianLikeRate": 0.012028533687753525,
           "medianCommentRate": 0.000999900009999,
           "conveyorShare": 0.7333333333333333,
-          "lotteryShare": 0.07692307692307693,
-          "medianHitRate": 0.4117647058823529
+          "lotteryShare": 0.6153846153846154,
+          "medianWorkingRate": 0.4117647058823529,
+          "medianMonthlyUsd": 7148.26,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 38,
           "videos": 6878,
-          "outliers": 1115,
-          "outlierChannels": 31,
-          "youngOutlierChannels": 4,
-          "permeability": 0.12903225806451613,
+          "outliers": 1116,
+          "outlierChannels": 19,
+          "youngOutlierChannels": 3,
+          "permeability": 0.15789473684210525,
           "medianViews": 95459.5,
-          "medianOutlierViews": 514419,
-          "medianOutlierMinutes": 51.78333333333333,
+          "medianOutlierViews": 513586.5,
+          "medianOutlierMinutes": 51.81666666666667,
           "medianUploadsPerWeek": 1.1666666666666667,
           "medianLikeRate": 0.019130018471211437,
           "medianCommentRate": 0.0013865984969957032,
           "conveyorShare": 0.3157894736842105,
-          "lotteryShare": 0.06060606060606061,
-          "medianHitRate": 0.7547169811320755
+          "lotteryShare": 0.4864864864864865,
+          "medianWorkingRate": 0.7547169811320755,
+          "medianMonthlyUsd": 9072.871666666666,
+          "medianYoungMonthlyUsd": 4471.98
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -99,7 +106,7 @@
       "channels": 20,
       "videos": 3923,
       "outliers": 394,
-      "outlierChannels": 6,
+      "outlierChannels": 3,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 2858,
@@ -109,14 +116,16 @@
       "medianLikeRate": 0.015698587127158554,
       "medianCommentRate": 0.0009665638267986466,
       "conveyorShare": 0.7,
-      "lotteryShare": 0.3333333333333333,
-      "medianHitRate": 0.4,
+      "lotteryShare": 0.6666666666666666,
+      "medianWorkingRate": 0.4,
+      "medianMonthlyUsd": 2317.42,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 20,
           "videos": 3923,
           "outliers": 394,
-          "outlierChannels": 6,
+          "outlierChannels": 3,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 2858,
@@ -126,8 +135,10 @@
           "medianLikeRate": 0.015698587127158554,
           "medianCommentRate": 0.0009665638267986466,
           "conveyorShare": 0.7,
-          "lotteryShare": 0.3333333333333333,
-          "medianHitRate": 0.4
+          "lotteryShare": 0.6666666666666666,
+          "medianWorkingRate": 0.4,
+          "medianMonthlyUsd": 2317.42,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 2,
@@ -144,7 +155,9 @@
           "medianCommentRate": 0.001227084418027049,
           "conveyorShare": 0.5,
           "lotteryShare": 1,
-          "medianHitRate": 0.2544642857142857
+          "medianWorkingRate": 0.2544642857142857,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -160,9 +173,9 @@
       "channels": 31,
       "videos": 2586,
       "outliers": 110,
-      "outlierChannels": 3,
-      "youngOutlierChannels": 1,
-      "permeability": 0.3333333333333333,
+      "outlierChannels": 1,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 1165,
       "medianOutlierViews": 92964.5,
       "medianOutlierMinutes": 60.44166666666667,
@@ -170,16 +183,18 @@
       "medianLikeRate": 0.022924518386161954,
       "medianCommentRate": 0.001714830104795173,
       "conveyorShare": 0.7096774193548387,
-      "lotteryShare": 0.5714285714285714,
-      "medianHitRate": 0.020833333333333332,
+      "lotteryShare": 0.8571428571428571,
+      "medianWorkingRate": 0.020833333333333332,
+      "medianMonthlyUsd": 2317.42,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 31,
           "videos": 2586,
           "outliers": 110,
-          "outlierChannels": 3,
-          "youngOutlierChannels": 1,
-          "permeability": 0.3333333333333333,
+          "outlierChannels": 1,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 1165,
           "medianOutlierViews": 92964.5,
           "medianOutlierMinutes": 60.44166666666667,
@@ -187,16 +202,18 @@
           "medianLikeRate": 0.022924518386161954,
           "medianCommentRate": 0.001714830104795173,
           "conveyorShare": 0.7096774193548387,
-          "lotteryShare": 0.5714285714285714,
-          "medianHitRate": 0.020833333333333332
+          "lotteryShare": 0.8571428571428571,
+          "medianWorkingRate": 0.020833333333333332,
+          "medianMonthlyUsd": 2317.42,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 4,
           "videos": 571,
           "outliers": 34,
-          "outlierChannels": 1,
+          "outlierChannels": 0,
           "youngOutlierChannels": 0,
-          "permeability": 0,
+          "permeability": null,
           "medianViews": 676,
           "medianOutlierViews": 48198.5,
           "medianOutlierMinutes": 120.76666666666667,
@@ -204,11 +221,13 @@
           "medianLikeRate": 0.01972386587771203,
           "medianCommentRate": 0.001999200319872051,
           "conveyorShare": 0.75,
-          "lotteryShare": 0,
-          "medianHitRate": 0.06451612903225806
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.06451612903225806,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "exoplanets": {
       "id": "exoplanets",
@@ -221,7 +240,7 @@
       "channels": 9,
       "videos": 2448,
       "outliers": 452,
-      "outlierChannels": 8,
+      "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 15604,
@@ -231,14 +250,16 @@
       "medianLikeRate": 0.013518612055389035,
       "medianCommentRate": 0.0011151744818524143,
       "conveyorShare": 0.8888888888888888,
-      "lotteryShare": 0.1111111111111111,
-      "medianHitRate": 0.4,
+      "lotteryShare": 0.7777777777777778,
+      "medianWorkingRate": 0.4,
+      "medianMonthlyUsd": 29440.331666666665,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 9,
           "videos": 2448,
           "outliers": 452,
-          "outlierChannels": 8,
+          "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 15604,
@@ -248,16 +269,18 @@
           "medianLikeRate": 0.013518612055389035,
           "medianCommentRate": 0.0011151744818524143,
           "conveyorShare": 0.8888888888888888,
-          "lotteryShare": 0.1111111111111111,
-          "medianHitRate": 0.4
+          "lotteryShare": 0.7777777777777778,
+          "medianWorkingRate": 0.4,
+          "medianMonthlyUsd": 29440.331666666665,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 25,
           "videos": 4313,
           "outliers": 479,
-          "outlierChannels": 11,
-          "youngOutlierChannels": 5,
-          "permeability": 0.45454545454545453,
+          "outlierChannels": 6,
+          "youngOutlierChannels": 3,
+          "permeability": 0.5,
           "medianViews": 3696,
           "medianOutlierViews": 106245,
           "medianOutlierMinutes": 107.1,
@@ -265,11 +288,13 @@
           "medianLikeRate": 0.01675977653631285,
           "medianCommentRate": 0.0012998457810090328,
           "conveyorShare": 0.56,
-          "lotteryShare": 0.3125,
-          "medianHitRate": 0.1711229946524064
+          "lotteryShare": 0.7391304347826086,
+          "medianWorkingRate": 0.1711229946524064,
+          "medianMonthlyUsd": 4602.705833333333,
+          "medianYoungMonthlyUsd": 5335.22
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "solar-system": {
       "id": "solar-system",
@@ -293,7 +318,9 @@
       "medianCommentRate": 0,
       "conveyorShare": 0.3333333333333333,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 3,
@@ -310,7 +337,9 @@
           "medianCommentRate": 0,
           "conveyorShare": 0.3333333333333333,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -327,7 +356,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -343,9 +374,9 @@
       "channels": 17,
       "videos": 3099,
       "outliers": 466,
-      "outlierChannels": 10,
-      "youngOutlierChannels": 2,
-      "permeability": 0.2,
+      "outlierChannels": 4,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 11811,
       "medianOutlierViews": 115677,
       "medianOutlierMinutes": 51.425,
@@ -353,16 +384,18 @@
       "medianLikeRate": 0.012794903633320736,
       "medianCommentRate": 0.0011862396204033216,
       "conveyorShare": 0.7647058823529411,
-      "lotteryShare": 0.16666666666666666,
-      "medianHitRate": 0.3043189368770764,
+      "lotteryShare": 0.7142857142857143,
+      "medianWorkingRate": 0.3043189368770764,
+      "medianMonthlyUsd": 7846.338333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 17,
           "videos": 3099,
           "outliers": 466,
-          "outlierChannels": 10,
-          "youngOutlierChannels": 2,
-          "permeability": 0.2,
+          "outlierChannels": 4,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 11811,
           "medianOutlierViews": 115677,
           "medianOutlierMinutes": 51.425,
@@ -370,16 +403,18 @@
           "medianLikeRate": 0.012794903633320736,
           "medianCommentRate": 0.0011862396204033216,
           "conveyorShare": 0.7647058823529411,
-          "lotteryShare": 0.16666666666666666,
-          "medianHitRate": 0.3043189368770764
+          "lotteryShare": 0.7142857142857143,
+          "medianWorkingRate": 0.3043189368770764,
+          "medianMonthlyUsd": 7846.338333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 14,
           "videos": 2412,
           "outliers": 415,
-          "outlierChannels": 7,
-          "youngOutlierChannels": 2,
-          "permeability": 0.2857142857142857,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 1,
+          "permeability": 0.3333333333333333,
           "medianViews": 4303.5,
           "medianOutlierViews": 90825,
           "medianOutlierMinutes": 51.96666666666667,
@@ -387,8 +422,10 @@
           "medianLikeRate": 0.016633806688349365,
           "medianCommentRate": 0.0013538669825689626,
           "conveyorShare": 0.35714285714285715,
-          "lotteryShare": 0.125,
-          "medianHitRate": 0.264
+          "lotteryShare": 0.7692307692307693,
+          "medianWorkingRate": 0.264,
+          "medianMonthlyUsd": 2981.0199999999995,
+          "medianYoungMonthlyUsd": 6051.040000000001
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -404,9 +441,9 @@
       "channels": 3,
       "videos": 78,
       "outliers": 6,
-      "outlierChannels": 3,
-      "youngOutlierChannels": 3,
-      "permeability": 1,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
       "medianViews": 8779.5,
       "medianOutlierViews": 85748.5,
       "medianOutlierMinutes": 79.675,
@@ -414,16 +451,18 @@
       "medianLikeRate": 0.019024138132409336,
       "medianCommentRate": 0.0012723201522933125,
       "conveyorShare": 0.3333333333333333,
-      "lotteryShare": 0,
-      "medianHitRate": 0.38461538461538464,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.38461538461538464,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 3,
           "videos": 78,
           "outliers": 6,
-          "outlierChannels": 3,
-          "youngOutlierChannels": 3,
-          "permeability": 1,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
           "medianViews": 8779.5,
           "medianOutlierViews": 85748.5,
           "medianOutlierMinutes": 79.675,
@@ -431,16 +470,18 @@
           "medianLikeRate": 0.019024138132409336,
           "medianCommentRate": 0.0012723201522933125,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0,
-          "medianHitRate": 0.38461538461538464
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.38461538461538464,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 39,
           "videos": 6230,
           "outliers": 929,
-          "outlierChannels": 33,
-          "youngOutlierChannels": 10,
-          "permeability": 0.30303030303030304,
+          "outlierChannels": 26,
+          "youngOutlierChannels": 8,
+          "permeability": 0.3076923076923077,
           "medianViews": 96084.5,
           "medianOutlierViews": 471741,
           "medianOutlierMinutes": 34.583333333333336,
@@ -448,11 +489,13 @@
           "medianLikeRate": 0.02111021120702317,
           "medianCommentRate": 0.001213622317429541,
           "conveyorShare": 0.2564102564102564,
-          "lotteryShare": 0.05714285714285714,
-          "medianHitRate": 0.7857142857142857
+          "lotteryShare": 0.2972972972972973,
+          "medianWorkingRate": 0.7857142857142857,
+          "medianMonthlyUsd": 8027.644166666666,
+          "medianYoungMonthlyUsd": 3353.7799999999997
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "urzeit-tiere": {
       "id": "urzeit-tiere",
@@ -465,9 +508,9 @@
       "channels": 21,
       "videos": 3237,
       "outliers": 654,
-      "outlierChannels": 15,
-      "youngOutlierChannels": 5,
-      "permeability": 0.3333333333333333,
+      "outlierChannels": 2,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 8735,
       "medianOutlierViews": 77793.5,
       "medianOutlierMinutes": 50.45,
@@ -475,16 +518,18 @@
       "medianLikeRate": 0.012683277862732751,
       "medianCommentRate": 0.0007652573177731012,
       "conveyorShare": 0.3333333333333333,
-      "lotteryShare": 0.11764705882352941,
-      "medianHitRate": 0.2925516438754728,
+      "lotteryShare": 0.8888888888888888,
+      "medianWorkingRate": 0.2925516438754728,
+      "medianMonthlyUsd": 29543.95,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 21,
           "videos": 3237,
           "outliers": 654,
-          "outlierChannels": 15,
-          "youngOutlierChannels": 5,
-          "permeability": 0.3333333333333333,
+          "outlierChannels": 2,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 8735,
           "medianOutlierViews": 77793.5,
           "medianOutlierMinutes": 50.45,
@@ -492,8 +537,10 @@
           "medianLikeRate": 0.012683277862732751,
           "medianCommentRate": 0.0007652573177731012,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0.11764705882352941,
-          "medianHitRate": 0.2925516438754728
+          "lotteryShare": 0.8888888888888888,
+          "medianWorkingRate": 0.2925516438754728,
+          "medianMonthlyUsd": 29543.95,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -510,10 +557,12 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "mass-extinction": {
       "id": "mass-extinction",
@@ -526,9 +575,9 @@
       "channels": 26,
       "videos": 3731,
       "outliers": 809,
-      "outlierChannels": 13,
-      "youngOutlierChannels": 2,
-      "permeability": 0.15384615384615385,
+      "outlierChannels": 2,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 10571,
       "medianOutlierViews": 91897,
       "medianOutlierMinutes": 52.65,
@@ -536,16 +585,18 @@
       "medianLikeRate": 0.01170631204345383,
       "medianCommentRate": 0.0007385638013165531,
       "conveyorShare": 0.4230769230769231,
-      "lotteryShare": 0.1875,
-      "medianHitRate": 0.3258054625218171,
+      "lotteryShare": 0.875,
+      "medianWorkingRate": 0.3258054625218171,
+      "medianMonthlyUsd": 29295.655,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 26,
           "videos": 3731,
           "outliers": 809,
-          "outlierChannels": 13,
-          "youngOutlierChannels": 2,
-          "permeability": 0.15384615384615385,
+          "outlierChannels": 2,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 10571,
           "medianOutlierViews": 91897,
           "medianOutlierMinutes": 52.65,
@@ -553,16 +604,18 @@
           "medianLikeRate": 0.01170631204345383,
           "medianCommentRate": 0.0007385638013165531,
           "conveyorShare": 0.4230769230769231,
-          "lotteryShare": 0.1875,
-          "medianHitRate": 0.3258054625218171
+          "lotteryShare": 0.875,
+          "medianWorkingRate": 0.3258054625218171,
+          "medianMonthlyUsd": 29295.655,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 6,
           "videos": 549,
           "outliers": 100,
-          "outlierChannels": 3,
-          "youngOutlierChannels": 2,
-          "permeability": 0.6666666666666666,
+          "outlierChannels": 1,
+          "youngOutlierChannels": 1,
+          "permeability": 1,
           "medianViews": 4030,
           "medianOutlierViews": 60772.5,
           "medianOutlierMinutes": 171.20833333333334,
@@ -570,11 +623,13 @@
           "medianLikeRate": 0.015864978902953585,
           "medianCommentRate": 0.0013831258644536654,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0.4,
-          "medianHitRate": 0.19948186528497408
+          "lotteryShare": 0.8,
+          "medianWorkingRate": 0.19948186528497408,
+          "medianMonthlyUsd": 6394.741666666667,
+          "medianYoungMonthlyUsd": 6394.741666666667
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "ice-age": {
       "id": "ice-age",
@@ -587,9 +642,9 @@
       "channels": 27,
       "videos": 3091,
       "outliers": 594,
-      "outlierChannels": 15,
-      "youngOutlierChannels": 6,
-      "permeability": 0.4,
+      "outlierChannels": 3,
+      "youngOutlierChannels": 1,
+      "permeability": 0.3333333333333333,
       "medianViews": 12373,
       "medianOutlierViews": 102714.5,
       "medianOutlierMinutes": 51.975,
@@ -597,16 +652,18 @@
       "medianLikeRate": 0.013264983843929934,
       "medianCommentRate": 0.000955963317494172,
       "conveyorShare": 0.3333333333333333,
-      "lotteryShare": 0.21052631578947367,
-      "medianHitRate": 0.375,
+      "lotteryShare": 0.8421052631578947,
+      "medianWorkingRate": 0.375,
+      "medianMonthlyUsd": 2040.0983333333334,
+      "medianYoungMonthlyUsd": 2040.0983333333334,
       "byMarket": {
         "de": {
           "channels": 27,
           "videos": 3091,
           "outliers": 594,
-          "outlierChannels": 15,
-          "youngOutlierChannels": 6,
-          "permeability": 0.4,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 1,
+          "permeability": 0.3333333333333333,
           "medianViews": 12373,
           "medianOutlierViews": 102714.5,
           "medianOutlierMinutes": 51.975,
@@ -614,8 +671,10 @@
           "medianLikeRate": 0.013264983843929934,
           "medianCommentRate": 0.000955963317494172,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0.21052631578947367,
-          "medianHitRate": 0.375
+          "lotteryShare": 0.8421052631578947,
+          "medianWorkingRate": 0.375,
+          "medianMonthlyUsd": 2040.0983333333334,
+          "medianYoungMonthlyUsd": 2040.0983333333334
         },
         "en": {
           "channels": 3,
@@ -632,7 +691,9 @@
           "medianCommentRate": 0.00018284343482362922,
           "conveyorShare": 0.6666666666666666,
           "lotteryShare": 0.6666666666666666,
-          "medianHitRate": 0.028169014084507043
+          "medianWorkingRate": 0.028169014084507043,
+          "medianMonthlyUsd": 3770.71,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -648,9 +709,9 @@
       "channels": 15,
       "videos": 2155,
       "outliers": 477,
-      "outlierChannels": 10,
-      "youngOutlierChannels": 4,
-      "permeability": 0.4,
+      "outlierChannels": 1,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 11862,
       "medianOutlierViews": 76161,
       "medianOutlierMinutes": 49.28333333333333,
@@ -658,16 +719,18 @@
       "medianLikeRate": 0.012878658223515317,
       "medianCommentRate": 0.0009844082436251628,
       "conveyorShare": 0.3333333333333333,
-      "lotteryShare": 0.16666666666666666,
-      "medianHitRate": 0.3068953123773563,
+      "lotteryShare": 0.9166666666666666,
+      "medianWorkingRate": 0.3068953123773563,
+      "medianMonthlyUsd": 56563.24333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 15,
           "videos": 2155,
           "outliers": 477,
-          "outlierChannels": 10,
-          "youngOutlierChannels": 4,
-          "permeability": 0.4,
+          "outlierChannels": 1,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 11862,
           "medianOutlierViews": 76161,
           "medianOutlierMinutes": 49.28333333333333,
@@ -675,16 +738,18 @@
           "medianLikeRate": 0.012878658223515317,
           "medianCommentRate": 0.0009844082436251628,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0.16666666666666666,
-          "medianHitRate": 0.3068953123773563
+          "lotteryShare": 0.9166666666666666,
+          "medianWorkingRate": 0.3068953123773563,
+          "medianMonthlyUsd": 56563.24333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 31,
           "videos": 2573,
           "outliers": 513,
-          "outlierChannels": 26,
-          "youngOutlierChannels": 15,
-          "permeability": 0.5769230769230769,
+          "outlierChannels": 13,
+          "youngOutlierChannels": 8,
+          "permeability": 0.6153846153846154,
           "medianViews": 16025,
           "medianOutlierViews": 192970,
           "medianOutlierMinutes": 29.75,
@@ -692,11 +757,13 @@
           "medianLikeRate": 0.024470570619636964,
           "medianCommentRate": 0.0017241379310344827,
           "conveyorShare": 0.1935483870967742,
-          "lotteryShare": 0.10344827586206896,
-          "medianHitRate": 0.5769230769230769
+          "lotteryShare": 0.5517241379310345,
+          "medianWorkingRate": 0.5769230769230769,
+          "medianMonthlyUsd": 7122.121666666666,
+          "medianYoungMonthlyUsd": 5357.378333333334
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "deep-sea": {
       "id": "deep-sea",
@@ -709,9 +776,9 @@
       "channels": 26,
       "videos": 3359,
       "outliers": 501,
-      "outlierChannels": 14,
-      "youngOutlierChannels": 5,
-      "permeability": 0.35714285714285715,
+      "outlierChannels": 3,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 6241,
       "medianOutlierViews": 66124,
       "medianOutlierMinutes": 51.3,
@@ -719,16 +786,18 @@
       "medianLikeRate": 0.015525114155251141,
       "medianCommentRate": 0.0009362243942628169,
       "conveyorShare": 0.34615384615384615,
-      "lotteryShare": 0.06666666666666667,
-      "medianHitRate": 0.2607142857142857,
+      "lotteryShare": 0.8333333333333334,
+      "medianWorkingRate": 0.2607142857142857,
+      "medianMonthlyUsd": 9376.953333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 26,
           "videos": 3359,
           "outliers": 501,
-          "outlierChannels": 14,
-          "youngOutlierChannels": 5,
-          "permeability": 0.35714285714285715,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 6241,
           "medianOutlierViews": 66124,
           "medianOutlierMinutes": 51.3,
@@ -736,16 +805,18 @@
           "medianLikeRate": 0.015525114155251141,
           "medianCommentRate": 0.0009362243942628169,
           "conveyorShare": 0.34615384615384615,
-          "lotteryShare": 0.06666666666666667,
-          "medianHitRate": 0.2607142857142857
+          "lotteryShare": 0.8333333333333334,
+          "medianWorkingRate": 0.2607142857142857,
+          "medianMonthlyUsd": 9376.953333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 36,
           "videos": 3055,
           "outliers": 553,
-          "outlierChannels": 30,
-          "youngOutlierChannels": 12,
-          "permeability": 0.4,
+          "outlierChannels": 26,
+          "youngOutlierChannels": 11,
+          "permeability": 0.4230769230769231,
           "medianViews": 65185,
           "medianOutlierViews": 392003,
           "medianOutlierMinutes": 35.46666666666667,
@@ -753,8 +824,10 @@
           "medianLikeRate": 0.015662388514248424,
           "medianCommentRate": 0.000963948332369385,
           "conveyorShare": 0.3055555555555556,
-          "lotteryShare": 0.0625,
-          "medianHitRate": 0.8004354136429608
+          "lotteryShare": 0.23529411764705882,
+          "medianWorkingRate": 0.8004354136429608,
+          "medianMonthlyUsd": 8291.565,
+          "medianYoungMonthlyUsd": 6051.040000000001
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -770,9 +843,9 @@
       "channels": 19,
       "videos": 2291,
       "outliers": 381,
-      "outlierChannels": 10,
-      "youngOutlierChannels": 4,
-      "permeability": 0.4,
+      "outlierChannels": 2,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 8954,
       "medianOutlierViews": 79294,
       "medianOutlierMinutes": 52.016666666666666,
@@ -780,16 +853,18 @@
       "medianLikeRate": 0.01500382640636137,
       "medianCommentRate": 0.0008691154097498329,
       "conveyorShare": 0.3684210526315789,
-      "lotteryShare": 0.16666666666666666,
-      "medianHitRate": 0.2552383020301813,
+      "lotteryShare": 0.8571428571428571,
+      "medianWorkingRate": 0.2552383020301813,
+      "medianMonthlyUsd": 32970.098333333335,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 19,
           "videos": 2291,
           "outliers": 381,
-          "outlierChannels": 10,
-          "youngOutlierChannels": 4,
-          "permeability": 0.4,
+          "outlierChannels": 2,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 8954,
           "medianOutlierViews": 79294,
           "medianOutlierMinutes": 52.016666666666666,
@@ -797,16 +872,18 @@
           "medianLikeRate": 0.01500382640636137,
           "medianCommentRate": 0.0008691154097498329,
           "conveyorShare": 0.3684210526315789,
-          "lotteryShare": 0.16666666666666666,
-          "medianHitRate": 0.2552383020301813
+          "lotteryShare": 0.8571428571428571,
+          "medianWorkingRate": 0.2552383020301813,
+          "medianMonthlyUsd": 32970.098333333335,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 5,
           "videos": 174,
           "outliers": 20,
-          "outlierChannels": 2,
+          "outlierChannels": 1,
           "youngOutlierChannels": 1,
-          "permeability": 0.5,
+          "permeability": 1,
           "medianViews": 1115,
           "medianOutlierViews": 62323,
           "medianOutlierMinutes": 170.375,
@@ -814,11 +891,13 @@
           "medianLikeRate": 0.011694204443447037,
           "medianCommentRate": 0.0008485788801519071,
           "conveyorShare": 0.2,
-          "lotteryShare": 0.3333333333333333,
-          "medianHitRate": 0.25735294117647056
+          "lotteryShare": 0.75,
+          "medianWorkingRate": 0.25735294117647056,
+          "medianMonthlyUsd": 2115.7266666666665,
+          "medianYoungMonthlyUsd": 2115.7266666666665
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "antarctica": {
       "id": "antarctica",
@@ -831,52 +910,58 @@
       "channels": 2,
       "videos": 474,
       "outliers": 65,
-      "outlierChannels": 2,
-      "youngOutlierChannels": 1,
-      "permeability": 0.5,
+      "outlierChannels": 1,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 38787,
       "medianOutlierViews": 233484,
       "medianOutlierMinutes": 32.166666666666664,
-      "medianUploadsPerWeek": 17.616666666666667,
+      "medianUploadsPerWeek": 17.577777777777776,
       "medianLikeRate": 0.01733980347575586,
       "medianCommentRate": 0.0026527905315784106,
       "conveyorShare": 0.5,
-      "lotteryShare": 0,
-      "medianHitRate": 0.44551427672736166,
+      "lotteryShare": 0.5,
+      "medianWorkingRate": 0.44551427672736166,
+      "medianMonthlyUsd": 56563.24333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 2,
           "videos": 474,
           "outliers": 65,
-          "outlierChannels": 2,
-          "youngOutlierChannels": 1,
-          "permeability": 0.5,
+          "outlierChannels": 1,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 38787,
           "medianOutlierViews": 233484,
           "medianOutlierMinutes": 32.166666666666664,
-          "medianUploadsPerWeek": 17.616666666666667,
+          "medianUploadsPerWeek": 17.577777777777776,
           "medianLikeRate": 0.01733980347575586,
           "medianCommentRate": 0.0026527905315784106,
           "conveyorShare": 0.5,
-          "lotteryShare": 0,
-          "medianHitRate": 0.44551427672736166
+          "lotteryShare": 0.5,
+          "medianWorkingRate": 0.44551427672736166,
+          "medianMonthlyUsd": 56563.24333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 30,
           "videos": 2313,
           "outliers": 288,
-          "outlierChannels": 14,
-          "youngOutlierChannels": 7,
+          "outlierChannels": 10,
+          "youngOutlierChannels": 5,
           "permeability": 0.5,
           "medianViews": 8391,
           "medianOutlierViews": 101912,
           "medianOutlierMinutes": 31.6,
-          "medianUploadsPerWeek": 1.9833333333333334,
+          "medianUploadsPerWeek": 1.9444444444444446,
           "medianLikeRate": 0.017418156340584412,
           "medianCommentRate": 0.0013034410844629822,
           "conveyorShare": 0.43333333333333335,
-          "lotteryShare": 0.36363636363636365,
-          "medianHitRate": 0.17543859649122806
+          "lotteryShare": 0.6428571428571429,
+          "medianWorkingRate": 0.17543859649122806,
+          "medianMonthlyUsd": 6624.5175,
+          "medianYoungMonthlyUsd": 6394.741666666667
         }
       },
       "confidence": "нет данных"
@@ -892,9 +977,9 @@
       "channels": 14,
       "videos": 2096,
       "outliers": 257,
-      "outlierChannels": 5,
-      "youngOutlierChannels": 1,
-      "permeability": 0.2,
+      "outlierChannels": 3,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 7137,
       "medianOutlierViews": 172591,
       "medianOutlierMinutes": 46.71666666666667,
@@ -902,16 +987,18 @@
       "medianLikeRate": 0.014644351464435146,
       "medianCommentRate": 0.001088139281828074,
       "conveyorShare": 0.5,
-      "lotteryShare": 0.2857142857142857,
-      "medianHitRate": 0.42857142857142855,
+      "lotteryShare": 0.5714285714285714,
+      "medianWorkingRate": 0.42857142857142855,
+      "medianMonthlyUsd": 3363.6000000000004,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 14,
           "videos": 2096,
           "outliers": 257,
-          "outlierChannels": 5,
-          "youngOutlierChannels": 1,
-          "permeability": 0.2,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 7137,
           "medianOutlierViews": 172591,
           "medianOutlierMinutes": 46.71666666666667,
@@ -919,16 +1006,18 @@
           "medianLikeRate": 0.014644351464435146,
           "medianCommentRate": 0.001088139281828074,
           "conveyorShare": 0.5,
-          "lotteryShare": 0.2857142857142857,
-          "medianHitRate": 0.42857142857142855
+          "lotteryShare": 0.5714285714285714,
+          "medianWorkingRate": 0.42857142857142855,
+          "medianMonthlyUsd": 3363.6000000000004,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 43,
           "videos": 3530,
           "outliers": 481,
-          "outlierChannels": 19,
-          "youngOutlierChannels": 8,
-          "permeability": 0.42105263157894735,
+          "outlierChannels": 10,
+          "youngOutlierChannels": 4,
+          "permeability": 0.4,
           "medianViews": 3418.5,
           "medianOutlierViews": 99597,
           "medianOutlierMinutes": 51.88333333333333,
@@ -936,8 +1025,10 @@
           "medianLikeRate": 0.017144576069673834,
           "medianCommentRate": 0.0009861148664768661,
           "conveyorShare": 0.4883720930232558,
-          "lotteryShare": 0.20833333333333334,
-          "medianHitRate": 0.20932997373837745
+          "lotteryShare": 0.6666666666666666,
+          "medianWorkingRate": 0.20932997373837745,
+          "medianMonthlyUsd": 4121.554166666667,
+          "medianYoungMonthlyUsd": 4024.2491666666665
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -964,7 +1055,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -981,7 +1074,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -998,7 +1093,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -1014,7 +1111,7 @@
       "channels": 22,
       "videos": 4552,
       "outliers": 906,
-      "outlierChannels": 18,
+      "outlierChannels": 6,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 13108.5,
@@ -1024,14 +1121,16 @@
       "medianLikeRate": 0.011781876842418597,
       "medianCommentRate": 0.0006925568977153764,
       "conveyorShare": 0.45454545454545453,
-      "lotteryShare": 0.1,
-      "medianHitRate": 0.45702870946762053,
+      "lotteryShare": 0.7,
+      "medianWorkingRate": 0.45702870946762053,
+      "medianMonthlyUsd": 5064.836666666666,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 22,
           "videos": 4552,
           "outliers": 906,
-          "outlierChannels": 18,
+          "outlierChannels": 6,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 13108.5,
@@ -1041,8 +1140,10 @@
           "medianLikeRate": 0.011781876842418597,
           "medianCommentRate": 0.0006925568977153764,
           "conveyorShare": 0.45454545454545453,
-          "lotteryShare": 0.1,
-          "medianHitRate": 0.45702870946762053
+          "lotteryShare": 0.7,
+          "medianWorkingRate": 0.45702870946762053,
+          "medianMonthlyUsd": 5064.836666666666,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 1,
@@ -1059,7 +1160,9 @@
           "medianCommentRate": 0.0013480526104856633,
           "conveyorShare": 0,
           "lotteryShare": 1,
-          "medianHitRate": 0.16666666666666666
+          "medianWorkingRate": 0.16666666666666666,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1075,9 +1178,9 @@
       "channels": 4,
       "videos": 179,
       "outliers": 51,
-      "outlierChannels": 1,
+      "outlierChannels": 0,
       "youngOutlierChannels": 0,
-      "permeability": 0,
+      "permeability": null,
       "medianViews": 6153,
       "medianOutlierViews": 55643,
       "medianOutlierMinutes": 50.766666666666666,
@@ -1085,16 +1188,18 @@
       "medianLikeRate": 0.012872052887491072,
       "medianCommentRate": 0.0012543274918659763,
       "conveyorShare": 0,
-      "lotteryShare": 0,
-      "medianHitRate": 0.3253012048192771,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.3253012048192771,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 4,
           "videos": 179,
           "outliers": 51,
-          "outlierChannels": 1,
+          "outlierChannels": 0,
           "youngOutlierChannels": 0,
-          "permeability": 0,
+          "permeability": null,
           "medianViews": 6153,
           "medianOutlierViews": 55643,
           "medianOutlierMinutes": 50.766666666666666,
@@ -1102,16 +1207,18 @@
           "medianLikeRate": 0.012872052887491072,
           "medianCommentRate": 0.0012543274918659763,
           "conveyorShare": 0,
-          "lotteryShare": 0,
-          "medianHitRate": 0.3253012048192771
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.3253012048192771,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 30,
           "videos": 3330,
           "outliers": 547,
-          "outlierChannels": 23,
-          "youngOutlierChannels": 5,
-          "permeability": 0.21739130434782608,
+          "outlierChannels": 19,
+          "youngOutlierChannels": 4,
+          "permeability": 0.21052631578947367,
           "medianViews": 54286,
           "medianOutlierViews": 441964,
           "medianOutlierMinutes": 44.65,
@@ -1119,8 +1226,10 @@
           "medianLikeRate": 0.018201257032462097,
           "medianCommentRate": 0.0012844446571889012,
           "conveyorShare": 0.36666666666666664,
-          "lotteryShare": 0.11538461538461539,
-          "medianHitRate": 0.6938423645320198
+          "lotteryShare": 0.32142857142857145,
+          "medianWorkingRate": 0.6938423645320198,
+          "medianMonthlyUsd": 6599.426666666666,
+          "medianYoungMonthlyUsd": 2832.7166666666667
         }
       },
       "confidence": "нет данных"
@@ -1136,9 +1245,9 @@
       "channels": 22,
       "videos": 3438,
       "outliers": 606,
-      "outlierChannels": 13,
-      "youngOutlierChannels": 1,
-      "permeability": 0.07692307692307693,
+      "outlierChannels": 3,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 25250,
       "medianOutlierViews": 172935.5,
       "medianOutlierMinutes": 50.00833333333333,
@@ -1146,16 +1255,18 @@
       "medianLikeRate": 0.013639464219273223,
       "medianCommentRate": 0.0008093696438773567,
       "conveyorShare": 0.5,
-      "lotteryShare": 0.13333333333333333,
-      "medianHitRate": 0.43,
+      "lotteryShare": 0.8235294117647058,
+      "medianWorkingRate": 0.43,
+      "medianMonthlyUsd": 9376.953333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 22,
           "videos": 3438,
           "outliers": 606,
-          "outlierChannels": 13,
-          "youngOutlierChannels": 1,
-          "permeability": 0.07692307692307693,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 25250,
           "medianOutlierViews": 172935.5,
           "medianOutlierMinutes": 50.00833333333333,
@@ -1163,8 +1274,10 @@
           "medianLikeRate": 0.013639464219273223,
           "medianCommentRate": 0.0008093696438773567,
           "conveyorShare": 0.5,
-          "lotteryShare": 0.13333333333333333,
-          "medianHitRate": 0.43
+          "lotteryShare": 0.8235294117647058,
+          "medianWorkingRate": 0.43,
+          "medianMonthlyUsd": 9376.953333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 1,
@@ -1181,7 +1294,9 @@
           "medianCommentRate": 0.000764947103337818,
           "conveyorShare": 1,
           "lotteryShare": 0,
-          "medianHitRate": 0.7547169811320755
+          "medianWorkingRate": 0.7547169811320755,
+          "medianMonthlyUsd": 55393.345,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1197,9 +1312,9 @@
       "channels": 18,
       "videos": 3700,
       "outliers": 745,
-      "outlierChannels": 17,
-      "youngOutlierChannels": 1,
-      "permeability": 0.058823529411764705,
+      "outlierChannels": 6,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 20646.5,
       "medianOutlierViews": 115359,
       "medianOutlierMinutes": 44.75,
@@ -1207,16 +1322,18 @@
       "medianLikeRate": 0.012901611647143131,
       "medianCommentRate": 0.0009240556737344593,
       "conveyorShare": 0.3333333333333333,
-      "lotteryShare": 0,
-      "medianHitRate": 0.4208823529411765,
+      "lotteryShare": 0.6666666666666666,
+      "medianWorkingRate": 0.4208823529411765,
+      "medianMonthlyUsd": 5273.2275,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 18,
           "videos": 3700,
           "outliers": 745,
-          "outlierChannels": 17,
-          "youngOutlierChannels": 1,
-          "permeability": 0.058823529411764705,
+          "outlierChannels": 6,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 20646.5,
           "medianOutlierViews": 115359,
           "medianOutlierMinutes": 44.75,
@@ -1224,8 +1341,10 @@
           "medianLikeRate": 0.012901611647143131,
           "medianCommentRate": 0.0009240556737344593,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0,
-          "medianHitRate": 0.4208823529411765
+          "lotteryShare": 0.6666666666666666,
+          "medianWorkingRate": 0.4208823529411765,
+          "medianMonthlyUsd": 5273.2275,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 3,
@@ -1241,8 +1360,10 @@
           "medianLikeRate": 0.013806382778881568,
           "medianCommentRate": 0.0006290174111794101,
           "conveyorShare": 1,
-          "lotteryShare": 0,
-          "medianHitRate": 0.9809523809523809
+          "lotteryShare": 0.3333333333333333,
+          "medianWorkingRate": 0.9809523809523809,
+          "medianMonthlyUsd": 89677.16083333333,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1258,9 +1379,9 @@
       "channels": 1,
       "videos": 80,
       "outliers": 8,
-      "outlierChannels": 1,
-      "youngOutlierChannels": 1,
-      "permeability": 1,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
       "medianViews": 2539.5,
       "medianOutlierViews": 55145,
       "medianOutlierMinutes": 68.875,
@@ -1268,16 +1389,18 @@
       "medianLikeRate": 0.00777579183597942,
       "medianCommentRate": 0,
       "conveyorShare": 1,
-      "lotteryShare": 0,
-      "medianHitRate": 0.1,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.1,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 1,
           "videos": 80,
           "outliers": 8,
-          "outlierChannels": 1,
-          "youngOutlierChannels": 1,
-          "permeability": 1,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
           "medianViews": 2539.5,
           "medianOutlierViews": 55145,
           "medianOutlierMinutes": 68.875,
@@ -1285,16 +1408,18 @@
           "medianLikeRate": 0.00777579183597942,
           "medianCommentRate": 0,
           "conveyorShare": 1,
-          "lotteryShare": 0,
-          "medianHitRate": 0.1
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.1,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 26,
           "videos": 3035,
           "outliers": 367,
-          "outlierChannels": 13,
-          "youngOutlierChannels": 5,
-          "permeability": 0.38461538461538464,
+          "outlierChannels": 5,
+          "youngOutlierChannels": 2,
+          "permeability": 0.4,
           "medianViews": 2452,
           "medianOutlierViews": 298608,
           "medianOutlierMinutes": 55.2,
@@ -1302,8 +1427,10 @@
           "medianLikeRate": 0.018497109826589597,
           "medianCommentRate": 0.0011389521640091116,
           "conveyorShare": 0.38461538461538464,
-          "lotteryShare": 0.1875,
-          "medianHitRate": 0.125
+          "lotteryShare": 0.7368421052631579,
+          "medianWorkingRate": 0.125,
+          "medianMonthlyUsd": 3251.4016666666666,
+          "medianYoungMonthlyUsd": 3041.556666666667
         }
       },
       "confidence": "нет данных"
@@ -1330,7 +1457,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -1347,7 +1476,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -1364,7 +1495,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -1380,9 +1513,9 @@
       "channels": 8,
       "videos": 851,
       "outliers": 104,
-      "outlierChannels": 8,
-      "youngOutlierChannels": 2,
-      "permeability": 0.25,
+      "outlierChannels": 3,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 43160,
       "medianOutlierViews": 82606,
       "medianOutlierMinutes": 41.525,
@@ -1390,16 +1523,18 @@
       "medianLikeRate": 0.04701469919684801,
       "medianCommentRate": 0.0015244553989941444,
       "conveyorShare": 0.125,
-      "lotteryShare": 0,
-      "medianHitRate": 0.5718181818181818,
+      "lotteryShare": 0.625,
+      "medianWorkingRate": 0.5718181818181818,
+      "medianMonthlyUsd": 3398.195,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 8,
           "videos": 851,
           "outliers": 104,
-          "outlierChannels": 8,
-          "youngOutlierChannels": 2,
-          "permeability": 0.25,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 43160,
           "medianOutlierViews": 82606,
           "medianOutlierMinutes": 41.525,
@@ -1407,25 +1542,29 @@
           "medianLikeRate": 0.04701469919684801,
           "medianCommentRate": 0.0015244553989941444,
           "conveyorShare": 0.125,
-          "lotteryShare": 0,
-          "medianHitRate": 0.5718181818181818
+          "lotteryShare": 0.625,
+          "medianWorkingRate": 0.5718181818181818,
+          "medianMonthlyUsd": 3398.195,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 19,
           "videos": 2694,
-          "outliers": 585,
-          "outlierChannels": 17,
+          "outliers": 586,
+          "outlierChannels": 15,
           "youngOutlierChannels": 3,
-          "permeability": 0.17647058823529413,
+          "permeability": 0.2,
           "medianViews": 66002.5,
-          "medianOutlierViews": 436952,
-          "medianOutlierMinutes": 51.9,
+          "medianOutlierViews": 435479.5,
+          "medianOutlierMinutes": 51.916666666666664,
           "medianUploadsPerWeek": 2.488888888888889,
           "medianLikeRate": 0.014516209259288919,
           "medianCommentRate": 0.0011716461628588166,
           "conveyorShare": 0.3684210526315789,
-          "lotteryShare": 0.05555555555555555,
-          "medianHitRate": 0.6814159292035398
+          "lotteryShare": 0.21052631578947367,
+          "medianWorkingRate": 0.6814159292035398,
+          "medianMonthlyUsd": 7911.463333333333,
+          "medianYoungMonthlyUsd": 4387.625
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1452,7 +1591,9 @@
       "medianCommentRate": 0.00125,
       "conveyorShare": 0.5,
       "lotteryShare": 0.3333333333333333,
-      "medianHitRate": 0.1441717791411043,
+      "medianWorkingRate": 0.1441717791411043,
+      "medianMonthlyUsd": 29543.95,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 6,
@@ -1469,7 +1610,9 @@
           "medianCommentRate": 0.00125,
           "conveyorShare": 0.5,
           "lotteryShare": 0.3333333333333333,
-          "medianHitRate": 0.1441717791411043
+          "medianWorkingRate": 0.1441717791411043,
+          "medianMonthlyUsd": 29543.95,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 1,
@@ -1486,7 +1629,9 @@
           "medianCommentRate": 0.0012725300304016899,
           "conveyorShare": 1,
           "lotteryShare": 1,
-          "medianHitRate": 0.02857142857142857
+          "medianWorkingRate": 0.02857142857142857,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -1502,9 +1647,9 @@
       "channels": 23,
       "videos": 1116,
       "outliers": 53,
-      "outlierChannels": 4,
-      "youngOutlierChannels": 3,
-      "permeability": 0.75,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
       "medianViews": 234,
       "medianOutlierViews": 43550,
       "medianOutlierMinutes": 23.216666666666665,
@@ -1512,16 +1657,18 @@
       "medianLikeRate": 0.04054054054054054,
       "medianCommentRate": 0.0018805829807240243,
       "conveyorShare": 0.21739130434782608,
-      "lotteryShare": 0.3333333333333333,
-      "medianHitRate": 0.10256410256410256,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.10256410256410256,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 23,
           "videos": 1116,
           "outliers": 53,
-          "outlierChannels": 4,
-          "youngOutlierChannels": 3,
-          "permeability": 0.75,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
           "medianViews": 234,
           "medianOutlierViews": 43550,
           "medianOutlierMinutes": 23.216666666666665,
@@ -1529,8 +1676,10 @@
           "medianLikeRate": 0.04054054054054054,
           "medianCommentRate": 0.0018805829807240243,
           "conveyorShare": 0.21739130434782608,
-          "lotteryShare": 0.3333333333333333,
-          "medianHitRate": 0.10256410256410256
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.10256410256410256,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -1547,10 +1696,12 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "microbes": {
       "id": "microbes",
@@ -1563,35 +1714,39 @@
       "channels": 2,
       "videos": 683,
       "outliers": 126,
-      "outlierChannels": 2,
+      "outlierChannels": 1,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 31012,
       "medianOutlierViews": 176543.5,
       "medianOutlierMinutes": 46.475,
-      "medianUploadsPerWeek": 16.761111111111113,
+      "medianUploadsPerWeek": 16.72222222222222,
       "medianLikeRate": 0.013335552458027337,
       "medianCommentRate": 0.0015894015397901623,
       "conveyorShare": 1,
-      "lotteryShare": 0,
-      "medianHitRate": 0.5821339950372209,
+      "lotteryShare": 0.5,
+      "medianWorkingRate": 0.5821339950372209,
+      "medianMonthlyUsd": 56563.24333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 2,
           "videos": 683,
           "outliers": 126,
-          "outlierChannels": 2,
+          "outlierChannels": 1,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 31012,
           "medianOutlierViews": 176543.5,
           "medianOutlierMinutes": 46.475,
-          "medianUploadsPerWeek": 16.761111111111113,
+          "medianUploadsPerWeek": 16.72222222222222,
           "medianLikeRate": 0.013335552458027337,
           "medianCommentRate": 0.0015894015397901623,
           "conveyorShare": 1,
-          "lotteryShare": 0,
-          "medianHitRate": 0.5821339950372209
+          "lotteryShare": 0.5,
+          "medianWorkingRate": 0.5821339950372209,
+          "medianMonthlyUsd": 56563.24333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -1608,7 +1763,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -1624,7 +1781,7 @@
       "channels": 6,
       "videos": 1309,
       "outliers": 306,
-      "outlierChannels": 5,
+      "outlierChannels": 1,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 19337,
@@ -1634,14 +1791,16 @@
       "medianLikeRate": 0.012227258353536418,
       "medianCommentRate": 0.0011695906432748538,
       "conveyorShare": 0.3333333333333333,
-      "lotteryShare": 0,
-      "medianHitRate": 0.44680851063829785,
+      "lotteryShare": 0.8,
+      "medianWorkingRate": 0.44680851063829785,
+      "medianMonthlyUsd": 56563.24333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 6,
           "videos": 1309,
           "outliers": 306,
-          "outlierChannels": 5,
+          "outlierChannels": 1,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 19337,
@@ -1651,16 +1810,18 @@
           "medianLikeRate": 0.012227258353536418,
           "medianCommentRate": 0.0011695906432748538,
           "conveyorShare": 0.3333333333333333,
-          "lotteryShare": 0,
-          "medianHitRate": 0.44680851063829785
+          "lotteryShare": 0.8,
+          "medianWorkingRate": 0.44680851063829785,
+          "medianMonthlyUsd": 56563.24333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 34,
           "videos": 2688,
           "outliers": 484,
-          "outlierChannels": 17,
-          "youngOutlierChannels": 7,
-          "permeability": 0.4117647058823529,
+          "outlierChannels": 6,
+          "youngOutlierChannels": 2,
+          "permeability": 0.3333333333333333,
           "medianViews": 7757,
           "medianOutlierViews": 117148,
           "medianOutlierMinutes": 60.475,
@@ -1668,11 +1829,13 @@
           "medianLikeRate": 0.014838649521405458,
           "medianCommentRate": 0.001009252185722774,
           "conveyorShare": 0.3235294117647059,
-          "lotteryShare": 0.15,
-          "medianHitRate": 0.23076923076923078
+          "lotteryShare": 0.7391304347826086,
+          "medianWorkingRate": 0.23076923076923078,
+          "medianMonthlyUsd": 14158.511666666667,
+          "medianYoungMonthlyUsd": 4047.1333333333337
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "terraforming": {
       "id": "terraforming",
@@ -1696,7 +1859,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -1713,15 +1878,17 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 25,
           "videos": 3110,
           "outliers": 141,
-          "outlierChannels": 7,
-          "youngOutlierChannels": 1,
-          "permeability": 0.14285714285714285,
+          "outlierChannels": 4,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 1642,
           "medianOutlierViews": 82588,
           "medianOutlierMinutes": 97.95,
@@ -1729,8 +1896,10 @@
           "medianLikeRate": 0.02017969027071758,
           "medianCommentRate": 0.0035294117647058825,
           "conveyorShare": 0.44,
-          "lotteryShare": 0.3,
-          "medianHitRate": 0.06417181069958848
+          "lotteryShare": 0.7777777777777778,
+          "medianWorkingRate": 0.06417181069958848,
+          "medianMonthlyUsd": 10187.315833333334,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -1746,9 +1915,9 @@
       "channels": 27,
       "videos": 3539,
       "outliers": 526,
-      "outlierChannels": 14,
-      "youngOutlierChannels": 4,
-      "permeability": 0.2857142857142857,
+      "outlierChannels": 3,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 12804,
       "medianOutlierViews": 98671,
       "medianOutlierMinutes": 53.916666666666664,
@@ -1756,16 +1925,18 @@
       "medianLikeRate": 0.014285714285714285,
       "medianCommentRate": 0.001040582726326743,
       "conveyorShare": 0.4074074074074074,
-      "lotteryShare": 0.2631578947368421,
-      "medianHitRate": 0.21589403973509935,
+      "lotteryShare": 0.85,
+      "medianWorkingRate": 0.21589403973509935,
+      "medianMonthlyUsd": 9376.953333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 27,
           "videos": 3539,
           "outliers": 526,
-          "outlierChannels": 14,
-          "youngOutlierChannels": 4,
-          "permeability": 0.2857142857142857,
+          "outlierChannels": 3,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 12804,
           "medianOutlierViews": 98671,
           "medianOutlierMinutes": 53.916666666666664,
@@ -1773,16 +1944,18 @@
           "medianLikeRate": 0.014285714285714285,
           "medianCommentRate": 0.001040582726326743,
           "conveyorShare": 0.4074074074074074,
-          "lotteryShare": 0.2631578947368421,
-          "medianHitRate": 0.21589403973509935
+          "lotteryShare": 0.85,
+          "medianWorkingRate": 0.21589403973509935,
+          "medianMonthlyUsd": 9376.953333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 23,
           "videos": 3341,
           "outliers": 596,
-          "outlierChannels": 19,
-          "youngOutlierChannels": 11,
-          "permeability": 0.5789473684210527,
+          "outlierChannels": 7,
+          "youngOutlierChannels": 3,
+          "permeability": 0.42857142857142855,
           "medianViews": 16580,
           "medianOutlierViews": 127238,
           "medianOutlierMinutes": 130.05833333333334,
@@ -1790,8 +1963,10 @@
           "medianLikeRate": 0.01789748814955921,
           "medianCommentRate": 0.0013450431205000396,
           "conveyorShare": 0.7391304347826086,
-          "lotteryShare": 0.13636363636363635,
-          "medianHitRate": 0.3333333333333333
+          "lotteryShare": 0.6956521739130435,
+          "medianWorkingRate": 0.3333333333333333,
+          "medianMonthlyUsd": 2853.061666666667,
+          "medianYoungMonthlyUsd": 3579.688333333333
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1807,9 +1982,9 @@
       "channels": 13,
       "videos": 1352,
       "outliers": 148,
-      "outlierChannels": 4,
-      "youngOutlierChannels": 3,
-      "permeability": 0.75,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
       "medianViews": 1788.5,
       "medianOutlierViews": 69849,
       "medianOutlierMinutes": 86.15833333333333,
@@ -1817,16 +1992,18 @@
       "medianLikeRate": 0.01735381672631965,
       "medianCommentRate": 0.0010219726735891347,
       "conveyorShare": 0.38461538461538464,
-      "lotteryShare": 0.5,
-      "medianHitRate": 0.07589285714285715,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.07589285714285715,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 13,
           "videos": 1352,
           "outliers": 148,
-          "outlierChannels": 4,
-          "youngOutlierChannels": 3,
-          "permeability": 0.75,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
           "medianViews": 1788.5,
           "medianOutlierViews": 69849,
           "medianOutlierMinutes": 86.15833333333333,
@@ -1834,8 +2011,10 @@
           "medianLikeRate": 0.01735381672631965,
           "medianCommentRate": 0.0010219726735891347,
           "conveyorShare": 0.38461538461538464,
-          "lotteryShare": 0.5,
-          "medianHitRate": 0.07589285714285715
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.07589285714285715,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -1852,10 +2031,12 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "sleep-space": {
       "id": "sleep-space",
@@ -1879,7 +2060,9 @@
       "medianCommentRate": 0.001615513101576365,
       "conveyorShare": 0.7142857142857143,
       "lotteryShare": 1,
-      "medianHitRate": 0.006678417547982766,
+      "medianWorkingRate": 0.006678417547982766,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 7,
@@ -1896,7 +2079,9 @@
           "medianCommentRate": 0.001615513101576365,
           "conveyorShare": 0.7142857142857143,
           "lotteryShare": 1,
-          "medianHitRate": 0.006678417547982766
+          "medianWorkingRate": 0.006678417547982766,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -1913,7 +2098,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -1929,9 +2116,9 @@
       "channels": 29,
       "videos": 2976,
       "outliers": 277,
-      "outlierChannels": 15,
-      "youngOutlierChannels": 6,
-      "permeability": 0.4,
+      "outlierChannels": 2,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 6395,
       "medianOutlierViews": 132940,
       "medianOutlierMinutes": 87.1,
@@ -1939,16 +2126,18 @@
       "medianLikeRate": 0.02340751932336091,
       "medianCommentRate": 0.002314532864167456,
       "conveyorShare": 0.3448275862068966,
-      "lotteryShare": 0.21052631578947367,
-      "medianHitRate": 0.1481060606060606,
+      "lotteryShare": 0.9090909090909091,
+      "medianWorkingRate": 0.1481060606060606,
+      "medianMonthlyUsd": 30102.3125,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 29,
           "videos": 2976,
           "outliers": 277,
-          "outlierChannels": 15,
-          "youngOutlierChannels": 6,
-          "permeability": 0.4,
+          "outlierChannels": 2,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 6395,
           "medianOutlierViews": 132940,
           "medianOutlierMinutes": 87.1,
@@ -1956,8 +2145,10 @@
           "medianLikeRate": 0.02340751932336091,
           "medianCommentRate": 0.002314532864167456,
           "conveyorShare": 0.3448275862068966,
-          "lotteryShare": 0.21052631578947367,
-          "medianHitRate": 0.1481060606060606
+          "lotteryShare": 0.9090909090909091,
+          "medianWorkingRate": 0.1481060606060606,
+          "medianMonthlyUsd": 30102.3125,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -1974,10 +2165,12 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "sleep-stories": {
       "id": "sleep-stories",
@@ -1990,9 +2183,9 @@
       "channels": 13,
       "videos": 1966,
       "outliers": 209,
-      "outlierChannels": 5,
-      "youngOutlierChannels": 1,
-      "permeability": 0.2,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
       "medianViews": 5539.5,
       "medianOutlierViews": 132633,
       "medianOutlierMinutes": 99.48333333333333,
@@ -2000,16 +2193,18 @@
       "medianLikeRate": 0.031538235149521344,
       "medianCommentRate": 0.003807911994922784,
       "conveyorShare": 0.3076923076923077,
-      "lotteryShare": 0,
-      "medianHitRate": 0.175,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.175,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 13,
           "videos": 1966,
           "outliers": 209,
-          "outlierChannels": 5,
-          "youngOutlierChannels": 1,
-          "permeability": 0.2,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
           "medianViews": 5539.5,
           "medianOutlierViews": 132633,
           "medianOutlierMinutes": 99.48333333333333,
@@ -2017,8 +2212,10 @@
           "medianLikeRate": 0.031538235149521344,
           "medianCommentRate": 0.003807911994922784,
           "conveyorShare": 0.3076923076923077,
-          "lotteryShare": 0,
-          "medianHitRate": 0.175
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.175,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2035,10 +2232,12 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "sleep-relax": {
       "id": "sleep-relax",
@@ -2062,7 +2261,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2079,7 +2280,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2096,7 +2299,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2112,9 +2317,9 @@
       "channels": 16,
       "videos": 2396,
       "outliers": 398,
-      "outlierChannels": 16,
-      "youngOutlierChannels": 3,
-      "permeability": 0.1875,
+      "outlierChannels": 10,
+      "youngOutlierChannels": 1,
+      "permeability": 0.1,
       "medianViews": 41951.5,
       "medianOutlierViews": 165306.5,
       "medianOutlierMinutes": 44.99166666666667,
@@ -2122,16 +2327,18 @@
       "medianLikeRate": 0.015124005992184992,
       "medianCommentRate": 0.0013114125568696885,
       "conveyorShare": 0.1875,
-      "lotteryShare": 0,
-      "medianHitRate": 0.6532451923076923,
+      "lotteryShare": 0.375,
+      "medianWorkingRate": 0.6532451923076923,
+      "medianMonthlyUsd": 6110.485833333333,
+      "medianYoungMonthlyUsd": 2619.8399999999997,
       "byMarket": {
         "de": {
           "channels": 16,
           "videos": 2396,
           "outliers": 398,
-          "outlierChannels": 16,
-          "youngOutlierChannels": 3,
-          "permeability": 0.1875,
+          "outlierChannels": 10,
+          "youngOutlierChannels": 1,
+          "permeability": 0.1,
           "medianViews": 41951.5,
           "medianOutlierViews": 165306.5,
           "medianOutlierMinutes": 44.99166666666667,
@@ -2139,16 +2346,18 @@
           "medianLikeRate": 0.015124005992184992,
           "medianCommentRate": 0.0013114125568696885,
           "conveyorShare": 0.1875,
-          "lotteryShare": 0,
-          "medianHitRate": 0.6532451923076923
+          "lotteryShare": 0.375,
+          "medianWorkingRate": 0.6532451923076923,
+          "medianMonthlyUsd": 6110.485833333333,
+          "medianYoungMonthlyUsd": 2619.8399999999997
         },
         "en": {
           "channels": 12,
           "videos": 1248,
           "outliers": 265,
-          "outlierChannels": 11,
-          "youngOutlierChannels": 4,
-          "permeability": 0.36363636363636365,
+          "outlierChannels": 4,
+          "youngOutlierChannels": 2,
+          "permeability": 0.5,
           "medianViews": 10624,
           "medianOutlierViews": 171600,
           "medianOutlierMinutes": 42.53333333333333,
@@ -2156,8 +2365,10 @@
           "medianLikeRate": 0.0130896612303462,
           "medianCommentRate": 0.0003795471962565127,
           "conveyorShare": 0.25,
-          "lotteryShare": 0.08333333333333333,
-          "medianHitRate": 0.36796536796536794
+          "lotteryShare": 0.6666666666666666,
+          "medianWorkingRate": 0.36796536796536794,
+          "medianMonthlyUsd": 3201.5066666666667,
+          "medianYoungMonthlyUsd": 3454.554166666667
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -2173,9 +2384,9 @@
       "channels": 1,
       "videos": 28,
       "outliers": 5,
-      "outlierChannels": 1,
-      "youngOutlierChannels": 1,
-      "permeability": 1,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
       "medianViews": 5651,
       "medianOutlierViews": 25609,
       "medianOutlierMinutes": 94.01666666666667,
@@ -2183,16 +2394,18 @@
       "medianLikeRate": 0.007306961008112187,
       "medianCommentRate": 0.00023697863242914773,
       "conveyorShare": 1,
-      "lotteryShare": 0,
-      "medianHitRate": 0.17857142857142858,
+      "lotteryShare": 1,
+      "medianWorkingRate": 0.17857142857142858,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 1,
           "videos": 28,
           "outliers": 5,
-          "outlierChannels": 1,
-          "youngOutlierChannels": 1,
-          "permeability": 1,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
           "medianViews": 5651,
           "medianOutlierViews": 25609,
           "medianOutlierMinutes": 94.01666666666667,
@@ -2200,8 +2413,10 @@
           "medianLikeRate": 0.007306961008112187,
           "medianCommentRate": 0.00023697863242914773,
           "conveyorShare": 1,
-          "lotteryShare": 0,
-          "medianHitRate": 0.17857142857142858
+          "lotteryShare": 1,
+          "medianWorkingRate": 0.17857142857142858,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2218,7 +2433,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2234,9 +2451,9 @@
       "channels": 4,
       "videos": 694,
       "outliers": 118,
-      "outlierChannels": 3,
-      "youngOutlierChannels": 2,
-      "permeability": 0.6666666666666666,
+      "outlierChannels": 1,
+      "youngOutlierChannels": 0,
+      "permeability": 0,
       "medianViews": 10432.5,
       "medianOutlierViews": 61310.5,
       "medianOutlierMinutes": 43.641666666666666,
@@ -2244,16 +2461,18 @@
       "medianLikeRate": 0.01766358094008985,
       "medianCommentRate": 0.0008886555658756119,
       "conveyorShare": 0.5,
-      "lotteryShare": 0,
-      "medianHitRate": 0.20150375939849624,
+      "lotteryShare": 0.75,
+      "medianWorkingRate": 0.20150375939849624,
+      "medianMonthlyUsd": 9376.953333333333,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 4,
           "videos": 694,
           "outliers": 118,
-          "outlierChannels": 3,
-          "youngOutlierChannels": 2,
-          "permeability": 0.6666666666666666,
+          "outlierChannels": 1,
+          "youngOutlierChannels": 0,
+          "permeability": 0,
           "medianViews": 10432.5,
           "medianOutlierViews": 61310.5,
           "medianOutlierMinutes": 43.641666666666666,
@@ -2261,28 +2480,32 @@
           "medianLikeRate": 0.01766358094008985,
           "medianCommentRate": 0.0008886555658756119,
           "conveyorShare": 0.5,
-          "lotteryShare": 0,
-          "medianHitRate": 0.20150375939849624
+          "lotteryShare": 0.75,
+          "medianWorkingRate": 0.20150375939849624,
+          "medianMonthlyUsd": 9376.953333333333,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 25,
           "videos": 2069,
-          "outliers": 466,
-          "outlierChannels": 16,
-          "youngOutlierChannels": 9,
-          "permeability": 0.5625,
+          "outliers": 467,
+          "outlierChannels": 10,
+          "youngOutlierChannels": 5,
+          "permeability": 0.5,
           "medianViews": 15413,
-          "medianOutlierViews": 212332.5,
-          "medianOutlierMinutes": 60.625,
+          "medianOutlierViews": 211802,
+          "medianOutlierMinutes": 60.63333333333333,
           "medianUploadsPerWeek": 2.177777777777778,
           "medianLikeRate": 0.0110670350533286,
           "medianCommentRate": 0.0009197679354747418,
           "conveyorShare": 0.28,
-          "lotteryShare": 0.30434782608695654,
-          "medianHitRate": 0.34523809523809523
+          "lotteryShare": 0.5833333333333334,
+          "medianWorkingRate": 0.34523809523809523,
+          "medianMonthlyUsd": 8218.7325,
+          "medianYoungMonthlyUsd": 4387.625
         }
       },
-      "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
+      "confidence": "нет данных"
     },
     "deutschland": {
       "id": "deutschland",
@@ -2306,7 +2529,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2323,7 +2548,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2340,7 +2567,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2367,7 +2596,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2384,7 +2615,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2401,7 +2634,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2428,7 +2663,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2445,7 +2682,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2462,7 +2701,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2489,7 +2730,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2506,7 +2749,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2523,7 +2768,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2550,7 +2797,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2567,7 +2816,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2584,7 +2835,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2611,7 +2864,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2628,7 +2883,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2645,7 +2902,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"
@@ -2672,7 +2931,9 @@
       "medianCommentRate": null,
       "conveyorShare": null,
       "lotteryShare": null,
-      "medianHitRate": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2689,7 +2950,9 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         },
         "en": {
           "channels": 0,
@@ -2706,7 +2969,344 @@
           "medianCommentRate": null,
           "conveyorShare": null,
           "lotteryShare": null,
-          "medianHitRate": null
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "urzeit": {
+      "id": "urzeit",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "urzeit Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "unserer-erde": {
+      "id": "unserer-erde",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "unserer erde Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "mysterium": {
+      "id": "mysterium",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "mysterium Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "vulkane": {
+      "id": "vulkane",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "vulkane Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "bergen": {
+      "id": "bergen",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "bergen Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null
         }
       },
       "confidence": "нет данных"

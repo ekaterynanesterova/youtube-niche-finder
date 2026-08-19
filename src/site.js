@@ -25,8 +25,8 @@ export function buildPayload(m, seeds, thresholds) {
           channelAge: Math.round(v.channelAgeAtUploadDays),
           subs: ch.subscribers,
           // Состояние канала целиком: без него один ролик ни о чём не говорит.
-          hits: ch.hits, videos: ch.videoCount, chMedian: ch.medianViews,
-          breakthrough: ch.breakthrough, lottery: ch.lottery,
+          breakouts: ch.breakouts, working: ch.working, videos: ch.videoCount,
+          chMedian: ch.medianViews, usd: ch.monthlyUsd, earning: ch.earning,
         });
       }
     }
@@ -34,7 +34,7 @@ export function buildPayload(m, seeds, thresholds) {
   for (const sid of Object.keys(examples)) {
     for (const lang of Object.keys(examples[sid])) {
       examples[sid][lang] = examples[sid][lang]
-        .sort((a, b) => (b.breakthrough - a.breakthrough) || (b.hits - a.hits) || (b.views - a.views))
+        .sort((a, b) => (b.earning - a.earning) || (b.usd - a.usd) || (b.views - a.views))
         .slice(0, 5);
     }
   }
@@ -201,9 +201,9 @@ footer b{color:var(--ink)}
       <li><span class="dot" style="background:var(--bad)"></span><b>ниже 35%</b> — дверь закрыта. Выбросы достаются тем, у кого уже есть аудитория. Заходить туда с нуля — тратить время.</li>
     </ul>
     <p>Само по себе высокое число ещё ничего не решает: смотри рядом на <b>число пробившихся каналов</b>.</p>
-    <p><b>Пробилось</b> — сколько <i>разных</i> каналов попадают в этой нише <b>повторно</b>: не меньше трёх видео выше 20 тысяч просмотров и не меньше 10% всех роликов канала. Одно залетевшее видео каналом не засчитывается вообще.</p>
-    <p><b>Лотерея</b> — доля каналов, у которых успех держится ровно на одном-двух видео. YouTube на старте раздаёт показы всем, и один ролик может залететь у кого угодно. Такой канал даёт огромную кратность к своей медиане именно потому, что медиана у него мёртвая — 237 роликов, два выстрела, остальное по три тысячи. Высокая лотерея значит, что ниша выдаёт разовые везения, а не устойчивый заход.</p>
-    <p><b>Попадаемость</b> — медианная доля роликов выше 20 тысяч у каналов ниши. Показывает, живут там на потоке случайностей или стабильно собирают.</p>
+    <p><b>Пробилось</b> — сколько <i>разных</i> каналов ниши выходят на денежную цель. Канал засчитывается, только если его свежие ролики за последние три месяца дают в среднем нужный объём просмотров. Одно залетевшее видео каналом не засчитывается: YouTube на старте раздаёт показы всем, и один ролик может выстрелить у кого угодно.</p>
+    <p><b>Не дотягивают</b> — доля каналов, у которых попадания есть, а до цели далеко. Двадцать тысяч на ролике выглядят прилично ровно до тех пор, пока не посчитаешь в деньгах.</p>
+    <p><b>Типичный доход</b> — сколько в месяц приносит средний состоявшийся канал ниши. Оценка грубая: RPM зависит от тематики, сезона и аудитории, и точной цифры API не даёт.</p>
     <p><b>Длина</b> — сколько минут длится типовое выстрелившее видео. Это прямая цена входа: чтобы проверить нишу, нужно залить около десяти роликов.</p>
     <p><b>Конвейер</b> — доля каналов, выпускающих больше трёх часов готового видео в неделю. Это мера потока, а не качества: инструмент не видит, что внутри ролика, и не может отличить рукодельную работу от штамповки.</p>
     <p>Читать это число надо в обе стороны. Высокий конвейер значит, что конкурировать придётся объёмом — но он же доказывает, что формат <b>поставлен на поток и, значит, автоматизируется</b>. Хорошо это или плохо, зависит от того, что ты собираешься строить. Поэтому в рейтинг это число не входит — оно рядом, отдельной цифрой.</p>
@@ -290,8 +290,8 @@ function card(r, i) {
       <span class="k">пробилось <b>\${m.youngOutlierChannels}</b> из \${m.outlierChannels}</span>
       <span class="k">медиана выброса <b>\${num(m.medianOutlierViews)}</b></span>
       <span class="k">длина <b>\${m.medianOutlierMinutes == null ? '—' : Math.round(m.medianOutlierMinutes)}</b> мин</span>
-      <span class="k">лотерея <b>\${pct(m.lotteryShare)}</b></span>
-      <span class="k">попадаемость <b>\${pct(m.medianHitRate)}</b></span>
+      <span class="k">типичный доход <b>\${m.medianMonthlyUsd == null ? '—' : '$' + num(m.medianMonthlyUsd)}</b>/мес</span>
+      <span class="k">не дотягивают <b>\${pct(m.lotteryShare)}</b></span>
       <span class="k">конвейер <b>\${pct(m.conveyorShare)}</b></span>
       <span class="k">лайки <b>\${m.medianLikeRate == null ? '—' : (m.medianLikeRate * 100).toFixed(1) + '%'}</b></span>
       <span class="k">каналов <b>\${m.channels}</b></span>
@@ -302,9 +302,9 @@ function card(r, i) {
         <div class="vt">\${v.title ?? ''}</div>
         \${v.titleRu ? \`<div class="vru">\${v.titleRu}</div>\` : ''}
         <div class="vm">\${v.channel ?? ''} · \${num(v.views)} просмотров · \${v.minutes} мин · каналу было \${plural(v.channelAge, 'день', 'дня', 'дней')}</div>
-        <div class="vm \${v.breakthrough ? 'good' : 'warnt'}">\${v.breakthrough
-          ? 'канал попадает регулярно: ' + v.hits + ' из ' + v.videos + ' видео выше 20 тыс.'
-          : 'лотерея: у канала всего ' + v.hits + ' попадание' + (v.hits === 1 ? '' : 'й') + ' на ' + v.videos + ' видео, медиана ' + num(v.chMedian)}</div>
+        <div class="vm \${v.earning ? 'good' : 'warnt'}">\${v.earning
+          ? 'канал зарабатывает ≈ $' + num(v.usd) + '/мес · ' + v.breakouts + ' видео выше 100 тыс. из ' + v.videos
+          : 'не выходит на цель: ≈ $' + num(v.usd) + '/мес · медиана канала ' + num(v.chMedian)}</div>
       </a>\`).join('') : '<div class="vm">Примеров пока нет — нужны прогоны.</div>'}
     </div>
   </details>\`;
