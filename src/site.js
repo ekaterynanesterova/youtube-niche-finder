@@ -2,6 +2,7 @@
 // Никаких fetch: нечему падать, нечего кешировать, работает и с диска.
 import { score } from './report.js';
 import { buildVerdict, headline, marketStats } from './verdict.js';
+import { buildArchetypes } from './archetypes.js';
 
 const MARKET_LABEL = { de: 'Немецкий', en: 'Английский' };
 
@@ -60,6 +61,8 @@ export function buildPayload(m, seeds, thresholds) {
     videoCount: m.videos.length,
     minChannels: 3,
     niches, examples, verdict, markets,
+    // Архетип канала — набор тем, которые состоявшиеся каналы снимают вместе.
+    archetypes: buildArchetypes({ metrics: m, thresholds, lang: 'en' }),
     headline: headline(verdict, markets),
     target: { usd: thresholds.targetMonthlyUsd, rpm: thresholds.rpmUsd },
     groups: [...new Set(seeds.map((s) => s.group))],
@@ -134,6 +137,17 @@ h1{margin:0;font-size:26px;letter-spacing:-.02em}
 .pick p:last-child{margin-bottom:0}
 .pick .lab{color:var(--dim)}
 .disclaim{color:var(--dim);font-size:13px;max-width:64ch;margin-top:16px}
+.arch{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:17px;margin-bottom:12px}
+.arch.hot{border-color:var(--good)}
+.arch h4{margin:0 0 3px;font-size:16px}
+.arch .sub{color:var(--dim);font-size:12.5px;margin-bottom:13px}
+.tops{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+.tops span{background:var(--raise);border:1px solid var(--line);border-radius:8px;
+  padding:4px 9px;font-size:12.5px}
+.chans{font-size:13px;line-height:1.7}
+.chans b{font-weight:600}
+.chans .u{color:var(--good);font-variant-numeric:tabular-nums}
 .panel{position:sticky;top:0;z-index:5;background:var(--bg);
   padding:14px 0 10px;border-bottom:1px solid var(--line);margin-top:18px}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
@@ -216,6 +230,8 @@ footer b{color:var(--ink)}
   <div class="vtabs" id="view-tabs"></div>
 
   <section id="view-verdict"></section>
+
+  <section id="view-arch" hidden></section>
 
   <section id="view-all" hidden>
   <div class="panel">
@@ -458,22 +474,59 @@ function drawVerdict() {
       '. RPM зависит от тематики и аудитории, точной цифры API не даёт, так что доход здесь — оценка порядка, а не обещание.</p>';
 }
 
-const views = [['verdict', 'Вывод'], ['all', 'Все ниши']];
+// --- вкладка «Архетипы каналов» ---
+function drawArch() {
+  const A = P.archetypes ?? [];
+  const host = document.getElementById('view-arch');
+  if (!A.length) {
+    host.innerHTML = '<div class="head-note">Пока не набралось групп каналов, снимающих одно и то же. Нужны прогоны.</div>';
+    return;
+  }
+  host.innerHTML =
+    '<div class="head-note">Ниша — это не тема, а <b>набор тем, которые одни и те же каналы снимают вместе</b>. ' +
+    'Спорить, «чёрные дыры — ниша или тема», незачем: видно, кто что публикует рядом. ' +
+    'Ниже — группы каналов, вышедших на цель, и темы, которые у них общие. Это готовая рамка для канала.</div>' +
+    A.map(a => {
+      const hot = a.young >= 3;
+      return '<div class="arch' + (hot ? ' hot' : '') + '">' +
+        '<h4>' + a.topics.slice(0, 3).map(t => t.topic).join(' · ') + '</h4>' +
+        '<div class="sub">' + plural(a.channels, 'канал', 'канала', 'каналов') +
+          ', из них моложе года — ' + a.young +
+          (a.fastestDays != null ? ' · самый быстрый дошёл за ' + Math.round(a.fastestDays / 30.4) + ' мес' : '') +
+        '</div>' +
+        '<div class="money">' +
+          '<div><b>$' + num(a.medianUsd) + '/мес</b><span>типичный доход</span></div>' +
+          '<div><b>' + Math.round(a.medianCatalog ?? 0) + '</b><span>роликов в каталоге</span></div>' +
+          '<div><b>' + (Math.round((a.medianMinutesPerWeek ?? 0) / 6) / 10) + ' ч/нед</b><span>темп</span></div>' +
+        '</div>' +
+        '<div class="tops">' + a.topics.slice(0, 12).map(t =>
+          '<span>' + t.topic + '</span>').join('') + '</div>' +
+        '<div class="chans">' + a.examples.map(e =>
+          '<b>' + e.title + '</b> <span class="u">$' + num(e.usd) + '/мес</span>' +
+          (e.ageDays != null ? ' · ' + plural(e.ageDays, 'день', 'дня', 'дней') : '') +
+          ' · ' + e.videos + ' видео').join('<br>') + '</div>' +
+      '</div>';
+    }).join('');
+}
+
+const views = [['verdict', 'Вывод'], ['arch', 'Архетипы каналов'], ['all', 'Все ниши']];
 let view = 'verdict';
 function drawViews() {
   document.getElementById('view-tabs').innerHTML = views.map(([k, t]) =>
     '<button data-v="' + k + '" aria-selected="' + (k === view) + '">' + t + '</button>').join('');
   document.querySelectorAll('#view-tabs button').forEach(b => b.onclick = () => {
     view = b.dataset.v;
-    document.getElementById('view-verdict').hidden = view !== 'verdict';
-    document.getElementById('view-all').hidden = view !== 'all';
+    show();
     drawViews();
   });
-  document.getElementById('view-verdict').hidden = view !== 'verdict';
-  document.getElementById('view-all').hidden = view !== 'all';
+  show();
+}
+function show() {
+  for (const [k] of views) document.getElementById('view-' + k).hidden = view !== k;
 }
 
 drawVerdict();
+drawArch();
 drawViews();
 draw();
 </script>

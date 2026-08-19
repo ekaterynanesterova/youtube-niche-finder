@@ -767,6 +767,71 @@
         "lift": 5.2,
         "medianViews": 183490
       }
+    },
+    {
+      "id": "stalin",
+      "group": "Найдено автоматом",
+      "de": "stalin Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.2,
+        "medianViews": 56286
+      }
+    },
+    {
+      "id": "untergang",
+      "group": "Найдено автоматом",
+      "de": "untergang Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 3.4,
+        "medianViews": 62560.5
+      }
+    },
+    {
+      "id": "spannende",
+      "group": "Найдено автоматом",
+      "de": "spannende Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.9,
+        "medianViews": 31298
+      }
+    },
+    {
+      "id": "stahl",
+      "group": "Найдено автоматом",
+      "de": "stahl Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.9,
+        "medianViews": 50347
+      }
+    },
+    {
+      "id": "kannst",
+      "group": "Найдено автоматом",
+      "de": "kannst Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.8,
+        "medianViews": 49747
+      }
     }
   ]
 }
