@@ -430,6 +430,7 @@ function drawVerdict() {
     [r.young + ' из ' + r.total, 'молодых дошли'],
     [r.fastestMonths == null ? '—' : Math.round(r.fastestMonths) + ' мес', 'самый быстрый'],
     [r.effort ? r.effort.hoursPerWeek + ' ч/нед' : '—', 'темп лидеров'],
+    [r.catalog == null ? '—' : Math.round(r.catalog) + ' видео', 'каталог лидера'],
   ].map(([v, l]) => '<div><b>' + v + '</b><span>' + l + '</span></div>').join('');
 
   host.innerHTML =
@@ -442,6 +443,10 @@ function drawVerdict() {
       '<div class="money">' + money(r) + '</div>' +
       '<p><span class="lab">почему сейчас:</span> ' + r.why + '</p>' +
       '<p><span class="lab">риск:</span> ' + r.risk + '</p>' +
+      (r.catalogMax
+        ? '<p><span class="lab">хватит ли тем:</span> у дошедших каналов в среднем '
+          + Math.round(r.catalog) + ' роликов по этой теме, у самого крупного — ' + r.catalogMax + '.</p>'
+        : '') +
       (r.effort && r.effort.hoursPerMonth
         ? '<p><span class="lab">объём:</span> дошедшие каналы выпускают около '
           + plural(r.effort.hoursPerMonth, 'часа', 'часов', 'часов') + ' готового видео в месяц'

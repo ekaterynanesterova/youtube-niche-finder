@@ -702,6 +702,71 @@
         "lift": 5.6,
         "medianViews": 24302
       }
+    },
+    {
+      "id": "weltkrieg",
+      "group": "Найдено автоматом",
+      "de": "weltkrieg Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 4,
+        "lift": 3.6,
+        "medianViews": 92965
+      }
+    },
+    {
+      "id": "amerika",
+      "group": "Найдено автоматом",
+      "de": "amerika Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.4,
+        "medianViews": 142210
+      }
+    },
+    {
+      "id": "hitler",
+      "group": "Найдено автоматом",
+      "de": "hitler Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 5,
+        "lift": 2.7,
+        "medianViews": 80387
+      }
+    },
+    {
+      "id": "letztes",
+      "group": "Найдено автоматом",
+      "de": "letztes Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.2,
+        "medianViews": 42560
+      }
+    },
+    {
+      "id": "marianengraben",
+      "group": "Найдено автоматом",
+      "de": "marianengraben Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.2,
+        "medianViews": 183490
+      }
     }
   ]
 }

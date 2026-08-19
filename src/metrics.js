@@ -247,6 +247,11 @@ function nicheStats(seedVideos, channels, thresholds) {
       .reduce((min, c) => (min == null ? c.ageDays : Math.min(min, c.ageDays)), null),
     // Сколько часов готового видео в неделю держит типичный состоявшийся канал.
     medianEarningMinutesPerWeek: median(seedChannels.filter((c) => c.earning).map((c) => c.minutesPerWeek)),
+    // Ёмкость: на сколько роликов темы хватает тем, кто уже дошёл. Отвечает на
+    // вопрос «а что я буду снимать после десятого видео».
+    medianEarningCatalog: median(seedChannels.filter((c) => c.earning).map((c) => c.videoCount)),
+    maxEarningCatalog: seedChannels.filter((c) => c.earning)
+      .reduce((mx, c) => Math.max(mx, c.videoCount ?? 0), 0) || null,
   };
 }
 

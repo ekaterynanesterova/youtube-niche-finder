@@ -23,6 +23,8 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         conveyor: m.conveyorShare,
         missing: m.lotteryShare,
         views: m.medianOutlierViews,
+        catalog: m.medianEarningCatalog,
+        catalogMax: m.maxEarningCatalog,
       });
     }
   }
@@ -67,6 +69,11 @@ function risk(r, thresholds) {
   }
   if (r.minutes != null && r.minutes >= 90) {
     out.push(`типовой ролик — ${Math.round(r.minutes)} минут, это тяжёлый вход`);
+  }
+  // Тема может кончиться раньше канала — это отдельный риск, не связанный
+  // с деньгами и конкуренцией.
+  if (r.catalog != null && r.catalog < 30) {
+    out.push(`тема неглубокая: у дошедших каналов в среднем всего ${Math.round(r.catalog)} роликов, надолго её может не хватить`);
   }
   return out.length ? out.join('; ') + '.' : 'Явных ловушек в цифрах не видно.';
 }

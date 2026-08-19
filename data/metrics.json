@@ -1,5 +1,5 @@
 {
-  "computedAt": "2026-08-19T12:43:44.841Z",
+  "computedAt": "2026-08-19T13:04:01.065Z",
   "snapshotDays": 2,
   "thresholds": {
     "minDurationSec": 480,
@@ -38,13 +38,13 @@
       },
       "channels": 15,
       "videos": 4206,
-      "outliers": 823,
+      "outliers": 824,
       "outlierChannels": 5,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 20725,
-      "medianOutlierViews": 103297,
-      "medianOutlierMinutes": 51.28333333333333,
+      "medianOutlierViews": 103344,
+      "medianOutlierMinutes": 50.983333333333334,
       "medianUploadsPerWeek": 3.1888888888888887,
       "medianLikeRate": 0.012028533687753525,
       "medianCommentRate": 0.000999900009999,
@@ -55,17 +55,19 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 195.7439814814815,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 15,
           "videos": 4206,
-          "outliers": 823,
+          "outliers": 824,
           "outlierChannels": 5,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 20725,
-          "medianOutlierViews": 103297,
-          "medianOutlierMinutes": 51.28333333333333,
+          "medianOutlierViews": 103344,
+          "medianOutlierMinutes": 50.983333333333334,
           "medianUploadsPerWeek": 3.1888888888888887,
           "medianLikeRate": 0.012028533687753525,
           "medianCommentRate": 0.000999900009999,
@@ -75,7 +77,9 @@
           "medianMonthlyUsd": 7148.26,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 195.7439814814815
+          "medianEarningMinutesPerWeek": 195.7439814814815,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 38,
@@ -90,13 +94,15 @@
           "medianUploadsPerWeek": 1.1666666666666667,
           "medianLikeRate": 0.019130018471211437,
           "medianCommentRate": 0.0013865984969957032,
-          "conveyorShare": 0.3157894736842105,
+          "conveyorShare": 0.2894736842105263,
           "lotteryShare": 0.4864864864864865,
           "medianWorkingRate": 0.7547169811320755,
           "medianMonthlyUsd": 9072.871666666666,
           "medianYoungMonthlyUsd": 4471.98,
-          "fastestYoungDays": 198.86320417824075,
-          "medianEarningMinutesPerWeek": 57.63333333333333
+          "fastestYoungDays": 198.8772808449074,
+          "medianEarningMinutesPerWeek": 57.63333333333333,
+          "medianEarningCatalog": 245,
+          "maxEarningCatalog": 493
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -111,13 +117,13 @@
       },
       "channels": 20,
       "videos": 3923,
-      "outliers": 394,
+      "outliers": 395,
       "outlierChannels": 3,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 2858,
-      "medianOutlierViews": 135490,
-      "medianOutlierMinutes": 48.525,
+      "medianOutlierViews": 135723,
+      "medianOutlierMinutes": 48.2,
       "medianUploadsPerWeek": 2.761111111111111,
       "medianLikeRate": 0.015698587127158554,
       "medianCommentRate": 0.0009665638267986466,
@@ -128,17 +134,19 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 195.7439814814815,
+      "medianEarningCatalog": 425,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 20,
           "videos": 3923,
-          "outliers": 394,
+          "outliers": 395,
           "outlierChannels": 3,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 2858,
-          "medianOutlierViews": 135490,
-          "medianOutlierMinutes": 48.525,
+          "medianOutlierViews": 135723,
+          "medianOutlierMinutes": 48.2,
           "medianUploadsPerWeek": 2.761111111111111,
           "medianLikeRate": 0.015698587127158554,
           "medianCommentRate": 0.0009665638267986466,
@@ -148,7 +156,9 @@
           "medianMonthlyUsd": 2317.42,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 195.7439814814815
+          "medianEarningMinutesPerWeek": 195.7439814814815,
+          "medianEarningCatalog": 425,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 2,
@@ -169,7 +179,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -201,6 +213,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 39.69777777777777,
+      "medianEarningCatalog": 425,
+      "maxEarningCatalog": 425,
       "byMarket": {
         "de": {
           "channels": 31,
@@ -221,7 +235,9 @@
           "medianMonthlyUsd": 2317.42,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 39.69777777777777
+          "medianEarningMinutesPerWeek": 39.69777777777777,
+          "medianEarningCatalog": 425,
+          "maxEarningCatalog": 425
         },
         "en": {
           "channels": 4,
@@ -242,7 +258,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -257,44 +275,48 @@
       },
       "channels": 9,
       "videos": 2448,
-      "outliers": 452,
+      "outliers": 453,
       "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 15604,
-      "medianOutlierViews": 92964.5,
-      "medianOutlierMinutes": 56.208333333333336,
+      "medianOutlierViews": 93309,
+      "medianOutlierMinutes": 56.18333333333333,
       "medianUploadsPerWeek": 3.033333333333333,
       "medianLikeRate": 0.013518612055389035,
       "medianCommentRate": 0.0011151744818524143,
       "conveyorShare": 0.8888888888888888,
       "lotteryShare": 0.7777777777777778,
       "medianWorkingRate": 0.4,
-      "medianMonthlyUsd": 29440.331666666665,
+      "medianMonthlyUsd": 29430.125833333335,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 473.73277777777776,
+      "medianEarningMinutesPerWeek": 472.5414814814815,
+      "medianEarningCatalog": 414,
+      "maxEarningCatalog": 425,
       "byMarket": {
         "de": {
           "channels": 9,
           "videos": 2448,
-          "outliers": 452,
+          "outliers": 453,
           "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 15604,
-          "medianOutlierViews": 92964.5,
-          "medianOutlierMinutes": 56.208333333333336,
+          "medianOutlierViews": 93309,
+          "medianOutlierMinutes": 56.18333333333333,
           "medianUploadsPerWeek": 3.033333333333333,
           "medianLikeRate": 0.013518612055389035,
           "medianCommentRate": 0.0011151744818524143,
           "conveyorShare": 0.8888888888888888,
           "lotteryShare": 0.7777777777777778,
           "medianWorkingRate": 0.4,
-          "medianMonthlyUsd": 29440.331666666665,
+          "medianMonthlyUsd": 29430.125833333335,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 473.73277777777776
+          "medianEarningMinutesPerWeek": 472.5414814814815,
+          "medianEarningCatalog": 414,
+          "maxEarningCatalog": 425
         },
         "en": {
           "channels": 25,
@@ -314,8 +336,10 @@
           "medianWorkingRate": 0.1711229946524064,
           "medianMonthlyUsd": 4602.705833333333,
           "medianYoungMonthlyUsd": 5335.22,
-          "fastestYoungDays": 51.68651436342593,
-          "medianEarningMinutesPerWeek": 391.48731481481485
+          "fastestYoungDays": 51.70059103009259,
+          "medianEarningMinutesPerWeek": 391.48731481481485,
+          "medianEarningCatalog": 273.5,
+          "maxEarningCatalog": 470
         }
       },
       "confidence": "нет данных"
@@ -347,6 +371,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 3,
@@ -367,7 +393,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -388,7 +416,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -403,13 +433,13 @@
       },
       "channels": 17,
       "videos": 3099,
-      "outliers": 466,
+      "outliers": 467,
       "outlierChannels": 4,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 11811,
-      "medianOutlierViews": 115677,
-      "medianOutlierMinutes": 51.425,
+      "medianOutlierViews": 116201,
+      "medianOutlierMinutes": 51.35,
       "medianUploadsPerWeek": 3.811111111111111,
       "medianLikeRate": 0.012794903633320736,
       "medianCommentRate": 0.0011862396204033216,
@@ -420,17 +450,19 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 150.8023611111111,
+      "medianEarningCatalog": 360.5,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 17,
           "videos": 3099,
-          "outliers": 466,
+          "outliers": 467,
           "outlierChannels": 4,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 11811,
-          "medianOutlierViews": 115677,
-          "medianOutlierMinutes": 51.425,
+          "medianOutlierViews": 116201,
+          "medianOutlierMinutes": 51.35,
           "medianUploadsPerWeek": 3.811111111111111,
           "medianLikeRate": 0.012794903633320736,
           "medianCommentRate": 0.0011862396204033216,
@@ -440,7 +472,9 @@
           "medianMonthlyUsd": 7846.338333333333,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 150.8023611111111
+          "medianEarningMinutesPerWeek": 150.8023611111111,
+          "medianEarningCatalog": 360.5,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 14,
@@ -460,8 +494,10 @@
           "medianWorkingRate": 0.264,
           "medianMonthlyUsd": 2981.0199999999995,
           "medianYoungMonthlyUsd": 6051.040000000001,
-          "fastestYoungDays": 146.7923245486111,
-          "medianEarningMinutesPerWeek": 241.19148148148147
+          "fastestYoungDays": 146.8064012152778,
+          "medianEarningMinutesPerWeek": 241.19148148148147,
+          "medianEarningCatalog": 500,
+          "maxEarningCatalog": 500
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -493,6 +529,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 3,
@@ -513,7 +551,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 39,
@@ -528,13 +568,15 @@
           "medianUploadsPerWeek": 1.8666666666666667,
           "medianLikeRate": 0.02111021120702317,
           "medianCommentRate": 0.001213622317429541,
-          "conveyorShare": 0.2564102564102564,
+          "conveyorShare": 0.23076923076923078,
           "lotteryShare": 0.2972972972972973,
           "medianWorkingRate": 0.7857142857142857,
           "medianMonthlyUsd": 8027.644166666666,
           "medianYoungMonthlyUsd": 3353.7799999999997,
-          "fastestYoungDays": 78.03031065972222,
-          "medianEarningMinutesPerWeek": 52.018425925925925
+          "fastestYoungDays": 78.04438732638889,
+          "medianEarningMinutesPerWeek": 52.018425925925925,
+          "medianEarningCatalog": 143,
+          "maxEarningCatalog": 499
         }
       },
       "confidence": "нет данных"
@@ -549,12 +591,12 @@
       },
       "channels": 21,
       "videos": 3237,
-      "outliers": 654,
+      "outliers": 655,
       "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 8735,
-      "medianOutlierViews": 77793.5,
+      "medianOutlierViews": 77948,
       "medianOutlierMinutes": 50.45,
       "medianUploadsPerWeek": 1.3222222222222222,
       "medianLikeRate": 0.012683277862732751,
@@ -562,20 +604,22 @@
       "conveyorShare": 0.3333333333333333,
       "lotteryShare": 0.8888888888888888,
       "medianWorkingRate": 0.2925516438754728,
-      "medianMonthlyUsd": 29543.95,
+      "medianMonthlyUsd": 29533.74416666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 710.3428240740741,
+      "medianEarningMinutesPerWeek": 709.1515277777778,
+      "medianEarningCatalog": 364.5,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 21,
           "videos": 3237,
-          "outliers": 654,
+          "outliers": 655,
           "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 8735,
-          "medianOutlierViews": 77793.5,
+          "medianOutlierViews": 77948,
           "medianOutlierMinutes": 50.45,
           "medianUploadsPerWeek": 1.3222222222222222,
           "medianLikeRate": 0.012683277862732751,
@@ -583,10 +627,12 @@
           "conveyorShare": 0.3333333333333333,
           "lotteryShare": 0.8888888888888888,
           "medianWorkingRate": 0.2925516438754728,
-          "medianMonthlyUsd": 29543.95,
+          "medianMonthlyUsd": 29533.74416666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 710.3428240740741
+          "medianEarningMinutesPerWeek": 709.1515277777778,
+          "medianEarningCatalog": 364.5,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 0,
@@ -607,7 +653,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -622,44 +670,48 @@
       },
       "channels": 26,
       "videos": 3731,
-      "outliers": 809,
+      "outliers": 810,
       "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 10571,
-      "medianOutlierViews": 91897,
-      "medianOutlierMinutes": 52.65,
+      "medianOutlierViews": 92195,
+      "medianOutlierMinutes": 52.641666666666666,
       "medianUploadsPerWeek": 1.711111111111111,
       "medianLikeRate": 0.01170631204345383,
       "medianCommentRate": 0.0007385638013165531,
       "conveyorShare": 0.4230769230769231,
       "lotteryShare": 0.875,
       "medianWorkingRate": 0.3258054625218171,
-      "medianMonthlyUsd": 29295.655,
+      "medianMonthlyUsd": 29285.44916666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 551.7558796296296,
+      "medianEarningMinutesPerWeek": 550.5645833333334,
+      "medianEarningCatalog": 451.5,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 26,
           "videos": 3731,
-          "outliers": 809,
+          "outliers": 810,
           "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 10571,
-          "medianOutlierViews": 91897,
-          "medianOutlierMinutes": 52.65,
+          "medianOutlierViews": 92195,
+          "medianOutlierMinutes": 52.641666666666666,
           "medianUploadsPerWeek": 1.711111111111111,
           "medianLikeRate": 0.01170631204345383,
           "medianCommentRate": 0.0007385638013165531,
           "conveyorShare": 0.4230769230769231,
           "lotteryShare": 0.875,
           "medianWorkingRate": 0.3258054625218171,
-          "medianMonthlyUsd": 29295.655,
+          "medianMonthlyUsd": 29285.44916666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 551.7558796296296
+          "medianEarningMinutesPerWeek": 550.5645833333334,
+          "medianEarningCatalog": 451.5,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 6,
@@ -679,8 +731,10 @@
           "medianWorkingRate": 0.19948186528497408,
           "medianMonthlyUsd": 6394.741666666667,
           "medianYoungMonthlyUsd": 6394.741666666667,
-          "fastestYoungDays": 78.03031065972222,
-          "medianEarningMinutesPerWeek": 243.91370370370367
+          "fastestYoungDays": 78.04438732638889,
+          "medianEarningMinutesPerWeek": 243.91370370370367,
+          "medianEarningCatalog": 52,
+          "maxEarningCatalog": 52
         }
       },
       "confidence": "нет данных"
@@ -695,13 +749,13 @@
       },
       "channels": 27,
       "videos": 3091,
-      "outliers": 594,
+      "outliers": 595,
       "outlierChannels": 3,
       "youngOutlierChannels": 1,
       "permeability": 0.3333333333333333,
       "medianViews": 12373,
-      "medianOutlierViews": 102714.5,
-      "medianOutlierMinutes": 51.975,
+      "medianOutlierViews": 102715,
+      "medianOutlierMinutes": 51.93333333333333,
       "medianUploadsPerWeek": 1.6333333333333333,
       "medianLikeRate": 0.013264983843929934,
       "medianCommentRate": 0.000955963317494172,
@@ -710,19 +764,21 @@
       "medianWorkingRate": 0.375,
       "medianMonthlyUsd": 2040.0983333333334,
       "medianYoungMonthlyUsd": 2040.0983333333334,
-      "fastestYoungDays": 132.8010745486111,
+      "fastestYoungDays": 132.81515121527778,
       "medianEarningMinutesPerWeek": 195.7439814814815,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 27,
           "videos": 3091,
-          "outliers": 594,
+          "outliers": 595,
           "outlierChannels": 3,
           "youngOutlierChannels": 1,
           "permeability": 0.3333333333333333,
           "medianViews": 12373,
-          "medianOutlierViews": 102714.5,
-          "medianOutlierMinutes": 51.975,
+          "medianOutlierViews": 102715,
+          "medianOutlierMinutes": 51.93333333333333,
           "medianUploadsPerWeek": 1.6333333333333333,
           "medianLikeRate": 0.013264983843929934,
           "medianCommentRate": 0.000955963317494172,
@@ -731,8 +787,10 @@
           "medianWorkingRate": 0.375,
           "medianMonthlyUsd": 2040.0983333333334,
           "medianYoungMonthlyUsd": 2040.0983333333334,
-          "fastestYoungDays": 132.8010745486111,
-          "medianEarningMinutesPerWeek": 195.7439814814815
+          "fastestYoungDays": 132.81515121527778,
+          "medianEarningMinutesPerWeek": 195.7439814814815,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 3,
@@ -753,7 +811,9 @@
           "medianMonthlyUsd": 3770.71,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 638.5425925925927
+          "medianEarningMinutesPerWeek": 638.5425925925927,
+          "medianEarningCatalog": 499,
+          "maxEarningCatalog": 499
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -768,44 +828,48 @@
       },
       "channels": 15,
       "videos": 2155,
-      "outliers": 477,
+      "outliers": 478,
       "outlierChannels": 1,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 11862,
-      "medianOutlierViews": 76161,
-      "medianOutlierMinutes": 49.28333333333333,
+      "medianOutlierViews": 76190,
+      "medianOutlierMinutes": 49.25,
       "medianUploadsPerWeek": 2.8000000000000003,
       "medianLikeRate": 0.012878658223515317,
       "medianCommentRate": 0.0009844082436251628,
       "conveyorShare": 0.3333333333333333,
       "lotteryShare": 0.9166666666666666,
       "medianWorkingRate": 0.3068953123773563,
-      "medianMonthlyUsd": 56563.24333333333,
+      "medianMonthlyUsd": 56542.83166666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 907.7677777777777,
+      "medianEarningMinutesPerWeek": 905.3851851851853,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 15,
           "videos": 2155,
-          "outliers": 477,
+          "outliers": 478,
           "outlierChannels": 1,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 11862,
-          "medianOutlierViews": 76161,
-          "medianOutlierMinutes": 49.28333333333333,
+          "medianOutlierViews": 76190,
+          "medianOutlierMinutes": 49.25,
           "medianUploadsPerWeek": 2.8000000000000003,
           "medianLikeRate": 0.012878658223515317,
           "medianCommentRate": 0.0009844082436251628,
           "conveyorShare": 0.3333333333333333,
           "lotteryShare": 0.9166666666666666,
           "medianWorkingRate": 0.3068953123773563,
-          "medianMonthlyUsd": 56563.24333333333,
+          "medianMonthlyUsd": 56542.83166666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 907.7677777777777
+          "medianEarningMinutesPerWeek": 905.3851851851853,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 31,
@@ -825,8 +889,10 @@
           "medianWorkingRate": 0.5769230769230769,
           "medianMonthlyUsd": 7122.121666666666,
           "medianYoungMonthlyUsd": 5357.378333333334,
-          "fastestYoungDays": 58.15610927083333,
-          "medianEarningMinutesPerWeek": 79.47722222222224
+          "fastestYoungDays": 58.1701859375,
+          "medianEarningMinutesPerWeek": 79.47722222222224,
+          "medianEarningCatalog": 67,
+          "maxEarningCatalog": 500
         }
       },
       "confidence": "нет данных"
@@ -841,13 +907,13 @@
       },
       "channels": 26,
       "videos": 3359,
-      "outliers": 501,
+      "outliers": 502,
       "outlierChannels": 3,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 6241,
-      "medianOutlierViews": 66124,
-      "medianOutlierMinutes": 51.3,
+      "medianOutlierViews": 66128,
+      "medianOutlierMinutes": 51.291666666666664,
       "medianUploadsPerWeek": 1.4777777777777779,
       "medianLikeRate": 0.015525114155251141,
       "medianCommentRate": 0.0009362243942628169,
@@ -858,17 +924,19 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 878.99,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 455,
       "byMarket": {
         "de": {
           "channels": 26,
           "videos": 3359,
-          "outliers": 501,
+          "outliers": 502,
           "outlierChannels": 3,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 6241,
-          "medianOutlierViews": 66124,
-          "medianOutlierMinutes": 51.3,
+          "medianOutlierViews": 66128,
+          "medianOutlierMinutes": 51.291666666666664,
           "medianUploadsPerWeek": 1.4777777777777779,
           "medianLikeRate": 0.015525114155251141,
           "medianCommentRate": 0.0009362243942628169,
@@ -878,7 +946,9 @@
           "medianMonthlyUsd": 9376.953333333333,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 878.99
+          "medianEarningMinutesPerWeek": 878.99,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 455
         },
         "en": {
           "channels": 36,
@@ -893,13 +963,15 @@
           "medianUploadsPerWeek": 1.9833333333333334,
           "medianLikeRate": 0.015662388514248424,
           "medianCommentRate": 0.000963948332369385,
-          "conveyorShare": 0.3055555555555556,
+          "conveyorShare": 0.2777777777777778,
           "lotteryShare": 0.23529411764705882,
           "medianWorkingRate": 0.8004354136429608,
-          "medianMonthlyUsd": 8291.565,
+          "medianMonthlyUsd": 8290.748333333333,
           "medianYoungMonthlyUsd": 6051.040000000001,
-          "fastestYoungDays": 38.746282881944445,
-          "medianEarningMinutesPerWeek": 84.11018518518519
+          "fastestYoungDays": 38.76035954861111,
+          "medianEarningMinutesPerWeek": 84.11018518518519,
+          "medianEarningCatalog": 84,
+          "maxEarningCatalog": 318
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -914,12 +986,12 @@
       },
       "channels": 19,
       "videos": 2291,
-      "outliers": 381,
+      "outliers": 382,
       "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 8954,
-      "medianOutlierViews": 79294,
+      "medianOutlierViews": 79402,
       "medianOutlierMinutes": 52.016666666666666,
       "medianUploadsPerWeek": 2.022222222222222,
       "medianLikeRate": 0.01500382640636137,
@@ -927,20 +999,22 @@
       "conveyorShare": 0.3684210526315789,
       "lotteryShare": 0.8571428571428571,
       "medianWorkingRate": 0.2552383020301813,
-      "medianMonthlyUsd": 32970.098333333335,
+      "medianMonthlyUsd": 32959.8925,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 893.3788888888889,
+      "medianEarningMinutesPerWeek": 892.1875925925926,
+      "medianEarningCatalog": 429,
+      "maxEarningCatalog": 455,
       "byMarket": {
         "de": {
           "channels": 19,
           "videos": 2291,
-          "outliers": 381,
+          "outliers": 382,
           "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 8954,
-          "medianOutlierViews": 79294,
+          "medianOutlierViews": 79402,
           "medianOutlierMinutes": 52.016666666666666,
           "medianUploadsPerWeek": 2.022222222222222,
           "medianLikeRate": 0.01500382640636137,
@@ -948,10 +1022,12 @@
           "conveyorShare": 0.3684210526315789,
           "lotteryShare": 0.8571428571428571,
           "medianWorkingRate": 0.2552383020301813,
-          "medianMonthlyUsd": 32970.098333333335,
+          "medianMonthlyUsd": 32959.8925,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 893.3788888888889
+          "medianEarningMinutesPerWeek": 892.1875925925926,
+          "medianEarningCatalog": 429,
+          "maxEarningCatalog": 455
         },
         "en": {
           "channels": 5,
@@ -971,8 +1047,10 @@
           "medianWorkingRate": 0.25735294117647056,
           "medianMonthlyUsd": 2115.7266666666665,
           "medianYoungMonthlyUsd": 2115.7266666666665,
-          "fastestYoungDays": 102.02944260416666,
-          "medianEarningMinutesPerWeek": 2.9419444444444447
+          "fastestYoungDays": 102.04351927083333,
+          "medianEarningMinutesPerWeek": 2.9419444444444447,
+          "medianEarningCatalog": 2,
+          "maxEarningCatalog": 2
         }
       },
       "confidence": "нет данных"
@@ -987,44 +1065,48 @@
       },
       "channels": 2,
       "videos": 474,
-      "outliers": 65,
+      "outliers": 66,
       "outlierChannels": 1,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 38787,
-      "medianOutlierViews": 233484,
-      "medianOutlierMinutes": 32.166666666666664,
-      "medianUploadsPerWeek": 17.577777777777776,
+      "medianOutlierViews": 232246,
+      "medianOutlierMinutes": 31.466666666666665,
+      "medianUploadsPerWeek": 17.53888888888889,
       "medianLikeRate": 0.01733980347575586,
       "medianCommentRate": 0.0026527905315784106,
       "conveyorShare": 0.5,
       "lotteryShare": 0.5,
       "medianWorkingRate": 0.44551427672736166,
-      "medianMonthlyUsd": 56563.24333333333,
+      "medianMonthlyUsd": 56542.83166666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 907.7677777777777,
+      "medianEarningMinutesPerWeek": 905.3851851851853,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 2,
           "videos": 474,
-          "outliers": 65,
+          "outliers": 66,
           "outlierChannels": 1,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 38787,
-          "medianOutlierViews": 233484,
-          "medianOutlierMinutes": 32.166666666666664,
-          "medianUploadsPerWeek": 17.577777777777776,
+          "medianOutlierViews": 232246,
+          "medianOutlierMinutes": 31.466666666666665,
+          "medianUploadsPerWeek": 17.53888888888889,
           "medianLikeRate": 0.01733980347575586,
           "medianCommentRate": 0.0026527905315784106,
           "conveyorShare": 0.5,
           "lotteryShare": 0.5,
           "medianWorkingRate": 0.44551427672736166,
-          "medianMonthlyUsd": 56563.24333333333,
+          "medianMonthlyUsd": 56542.83166666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 907.7677777777777
+          "medianEarningMinutesPerWeek": 905.3851851851853,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 30,
@@ -1044,8 +1126,10 @@
           "medianWorkingRate": 0.17543859649122806,
           "medianMonthlyUsd": 6624.5175,
           "medianYoungMonthlyUsd": 6394.741666666667,
-          "fastestYoungDays": 78.03031065972222,
-          "medianEarningMinutesPerWeek": 147.5762037037037
+          "fastestYoungDays": 78.04438732638889,
+          "medianEarningMinutesPerWeek": 147.5762037037037,
+          "medianEarningCatalog": 129,
+          "maxEarningCatalog": 255
         }
       },
       "confidence": "нет данных"
@@ -1060,13 +1144,13 @@
       },
       "channels": 14,
       "videos": 2096,
-      "outliers": 257,
+      "outliers": 258,
       "outlierChannels": 3,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 7137,
-      "medianOutlierViews": 172591,
-      "medianOutlierMinutes": 46.71666666666667,
+      "medianOutlierViews": 171580,
+      "medianOutlierMinutes": 46.65833333333333,
       "medianUploadsPerWeek": 3.461111111111111,
       "medianLikeRate": 0.014644351464435146,
       "medianCommentRate": 0.001088139281828074,
@@ -1077,17 +1161,19 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 195.7439814814815,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 14,
           "videos": 2096,
-          "outliers": 257,
+          "outliers": 258,
           "outlierChannels": 3,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 7137,
-          "medianOutlierViews": 172591,
-          "medianOutlierMinutes": 46.71666666666667,
+          "medianOutlierViews": 171580,
+          "medianOutlierMinutes": 46.65833333333333,
           "medianUploadsPerWeek": 3.461111111111111,
           "medianLikeRate": 0.014644351464435146,
           "medianCommentRate": 0.001088139281828074,
@@ -1097,7 +1183,9 @@
           "medianMonthlyUsd": 3363.6000000000004,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 195.7439814814815
+          "medianEarningMinutesPerWeek": 195.7439814814815,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 43,
@@ -1117,8 +1205,10 @@
           "medianWorkingRate": 0.20932997373837745,
           "medianMonthlyUsd": 4121.554166666667,
           "medianYoungMonthlyUsd": 4024.2491666666665,
-          "fastestYoungDays": 46.91837778935185,
-          "medianEarningMinutesPerWeek": 212.91407407407408
+          "fastestYoungDays": 46.93245445601852,
+          "medianEarningMinutesPerWeek": 212.91407407407408,
+          "medianEarningCatalog": 97.5,
+          "maxEarningCatalog": 318
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1150,6 +1240,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -1170,7 +1262,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -1191,7 +1285,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -1206,12 +1302,12 @@
       },
       "channels": 22,
       "videos": 4552,
-      "outliers": 906,
+      "outliers": 907,
       "outlierChannels": 6,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 13108.5,
-      "medianOutlierViews": 109384.5,
+      "medianOutlierViews": 109451,
       "medianOutlierMinutes": 50.083333333333336,
       "medianUploadsPerWeek": 3.188888888888889,
       "medianLikeRate": 0.011781876842418597,
@@ -1223,16 +1319,18 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 157.77708333333337,
+      "medianEarningCatalog": 232.5,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 22,
           "videos": 4552,
-          "outliers": 906,
+          "outliers": 907,
           "outlierChannels": 6,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 13108.5,
-          "medianOutlierViews": 109384.5,
+          "medianOutlierViews": 109451,
           "medianOutlierMinutes": 50.083333333333336,
           "medianUploadsPerWeek": 3.188888888888889,
           "medianLikeRate": 0.011781876842418597,
@@ -1243,7 +1341,9 @@
           "medianMonthlyUsd": 5064.836666666666,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 157.77708333333337
+          "medianEarningMinutesPerWeek": 157.77708333333337,
+          "medianEarningCatalog": 232.5,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 1,
@@ -1264,7 +1364,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1296,6 +1398,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 4,
@@ -1316,7 +1420,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 30,
@@ -1331,13 +1437,15 @@
           "medianUploadsPerWeek": 3.033333333333333,
           "medianLikeRate": 0.018201257032462097,
           "medianCommentRate": 0.0012844446571889012,
-          "conveyorShare": 0.36666666666666664,
+          "conveyorShare": 0.3333333333333333,
           "lotteryShare": 0.32142857142857145,
           "medianWorkingRate": 0.6938423645320198,
           "medianMonthlyUsd": 6599.426666666666,
           "medianYoungMonthlyUsd": 2832.7166666666667,
-          "fastestYoungDays": 77.03031065972222,
-          "medianEarningMinutesPerWeek": 122.0625
+          "fastestYoungDays": 77.04438732638889,
+          "medianEarningMinutesPerWeek": 122.0625,
+          "medianEarningCatalog": 100,
+          "maxEarningCatalog": 435
         }
       },
       "confidence": "нет данных"
@@ -1352,14 +1460,14 @@
       },
       "channels": 22,
       "videos": 3438,
-      "outliers": 606,
+      "outliers": 607,
       "outlierChannels": 3,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 25250,
-      "medianOutlierViews": 172935.5,
-      "medianOutlierMinutes": 50.00833333333333,
-      "medianUploadsPerWeek": 2.333333333333333,
+      "medianOutlierViews": 172591,
+      "medianOutlierMinutes": 50,
+      "medianUploadsPerWeek": 2.2944444444444443,
       "medianLikeRate": 0.013639464219273223,
       "medianCommentRate": 0.0008093696438773567,
       "conveyorShare": 0.5,
@@ -1369,18 +1477,20 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 878.99,
+      "medianEarningCatalog": 455,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 22,
           "videos": 3438,
-          "outliers": 606,
+          "outliers": 607,
           "outlierChannels": 3,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 25250,
-          "medianOutlierViews": 172935.5,
-          "medianOutlierMinutes": 50.00833333333333,
-          "medianUploadsPerWeek": 2.333333333333333,
+          "medianOutlierViews": 172591,
+          "medianOutlierMinutes": 50,
+          "medianUploadsPerWeek": 2.2944444444444443,
           "medianLikeRate": 0.013639464219273223,
           "medianCommentRate": 0.0008093696438773567,
           "conveyorShare": 0.5,
@@ -1389,7 +1499,9 @@
           "medianMonthlyUsd": 9376.953333333333,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 878.99
+          "medianEarningMinutesPerWeek": 878.99,
+          "medianEarningCatalog": 455,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 1,
@@ -1410,7 +1522,9 @@
           "medianMonthlyUsd": 55393.345,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 1045.8077777777778
+          "medianEarningMinutesPerWeek": 1045.8077777777778,
+          "medianEarningCatalog": 318,
+          "maxEarningCatalog": 318
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1425,12 +1539,12 @@
       },
       "channels": 18,
       "videos": 3700,
-      "outliers": 745,
+      "outliers": 746,
       "outlierChannels": 6,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 20646.5,
-      "medianOutlierViews": 115359,
+      "medianOutlierViews": 116141.5,
       "medianOutlierMinutes": 44.75,
       "medianUploadsPerWeek": 3.188888888888889,
       "medianLikeRate": 0.012901611647143131,
@@ -1442,16 +1556,18 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 231.36328703703705,
+      "medianEarningCatalog": 360.5,
+      "maxEarningCatalog": 500,
       "byMarket": {
         "de": {
           "channels": 18,
           "videos": 3700,
-          "outliers": 745,
+          "outliers": 746,
           "outlierChannels": 6,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 20646.5,
-          "medianOutlierViews": 115359,
+          "medianOutlierViews": 116141.5,
           "medianOutlierMinutes": 44.75,
           "medianUploadsPerWeek": 3.188888888888889,
           "medianLikeRate": 0.012901611647143131,
@@ -1462,7 +1578,9 @@
           "medianMonthlyUsd": 5273.2275,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 231.36328703703705
+          "medianEarningMinutesPerWeek": 231.36328703703705,
+          "medianEarningCatalog": 360.5,
+          "maxEarningCatalog": 500
         },
         "en": {
           "channels": 3,
@@ -1474,16 +1592,18 @@
           "medianViews": 296261,
           "medianOutlierViews": 1858272,
           "medianOutlierMinutes": 45.36666666666667,
-          "medianUploadsPerWeek": 4.122222222222223,
+          "medianUploadsPerWeek": 4.044444444444444,
           "medianLikeRate": 0.013806382778881568,
           "medianCommentRate": 0.0006290174111794101,
-          "conveyorShare": 1,
+          "conveyorShare": 0.6666666666666666,
           "lotteryShare": 0.3333333333333333,
           "medianWorkingRate": 0.9809523809523809,
-          "medianMonthlyUsd": 89677.16083333333,
+          "medianMonthlyUsd": 89580.08666666666,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 206.46435185185186
+          "medianEarningMinutesPerWeek": 204.73703703703706,
+          "medianEarningCatalog": 185.5,
+          "maxEarningCatalog": 210
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1515,6 +1635,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 1,
@@ -1535,7 +1657,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 26,
@@ -1547,16 +1671,18 @@
           "medianViews": 2452,
           "medianOutlierViews": 298608,
           "medianOutlierMinutes": 55.2,
-          "medianUploadsPerWeek": 2.9166666666666665,
+          "medianUploadsPerWeek": 2.8777777777777778,
           "medianLikeRate": 0.018497109826589597,
           "medianCommentRate": 0.0011389521640091116,
-          "conveyorShare": 0.38461538461538464,
+          "conveyorShare": 0.34615384615384615,
           "lotteryShare": 0.7368421052631579,
           "medianWorkingRate": 0.125,
           "medianMonthlyUsd": 3251.4016666666666,
           "medianYoungMonthlyUsd": 3041.556666666667,
-          "fastestYoungDays": 115.07117871527778,
-          "medianEarningMinutesPerWeek": 165.375
+          "fastestYoungDays": 115.08525538194445,
+          "medianEarningMinutesPerWeek": 165.375,
+          "medianEarningCatalog": 100,
+          "maxEarningCatalog": 361
         }
       },
       "confidence": "нет данных"
@@ -1588,6 +1714,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -1608,7 +1736,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -1629,7 +1759,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -1661,6 +1793,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 37.208888888888886,
+      "medianEarningCatalog": 100,
+      "maxEarningCatalog": 282,
       "byMarket": {
         "de": {
           "channels": 8,
@@ -1681,7 +1815,9 @@
           "medianMonthlyUsd": 3398.195,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 37.208888888888886
+          "medianEarningMinutesPerWeek": 37.208888888888886,
+          "medianEarningCatalog": 100,
+          "maxEarningCatalog": 282
         },
         "en": {
           "channels": 19,
@@ -1701,8 +1837,10 @@
           "medianWorkingRate": 0.6814159292035398,
           "medianMonthlyUsd": 7911.463333333333,
           "medianYoungMonthlyUsd": 4387.625,
-          "fastestYoungDays": 68.97800741898148,
-          "medianEarningMinutesPerWeek": 147.70000000000002
+          "fastestYoungDays": 68.99208408564814,
+          "medianEarningMinutesPerWeek": 147.70000000000002,
+          "medianEarningCatalog": 113,
+          "maxEarningCatalog": 381
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -1717,44 +1855,48 @@
       },
       "channels": 6,
       "videos": 1340,
-      "outliers": 104,
+      "outliers": 105,
       "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 2038,
-      "medianOutlierViews": 192343.5,
-      "medianOutlierMinutes": 52.94166666666667,
+      "medianOutlierViews": 191390,
+      "medianOutlierMinutes": 52.916666666666664,
       "medianUploadsPerWeek": 5.016666666666667,
       "medianLikeRate": 0.017605797054362722,
       "medianCommentRate": 0.00125,
       "conveyorShare": 0.5,
       "lotteryShare": 0.3333333333333333,
       "medianWorkingRate": 0.1441717791411043,
-      "medianMonthlyUsd": 29543.95,
+      "medianMonthlyUsd": 29533.74416666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 710.3428240740741,
+      "medianEarningMinutesPerWeek": 709.1515277777778,
+      "medianEarningCatalog": 364.5,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 6,
           "videos": 1340,
-          "outliers": 104,
+          "outliers": 105,
           "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 2038,
-          "medianOutlierViews": 192343.5,
-          "medianOutlierMinutes": 52.94166666666667,
+          "medianOutlierViews": 191390,
+          "medianOutlierMinutes": 52.916666666666664,
           "medianUploadsPerWeek": 5.016666666666667,
           "medianLikeRate": 0.017605797054362722,
           "medianCommentRate": 0.00125,
           "conveyorShare": 0.5,
           "lotteryShare": 0.3333333333333333,
           "medianWorkingRate": 0.1441717791411043,
-          "medianMonthlyUsd": 29543.95,
+          "medianMonthlyUsd": 29533.74416666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 710.3428240740741
+          "medianEarningMinutesPerWeek": 709.1515277777778,
+          "medianEarningCatalog": 364.5,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 1,
@@ -1775,7 +1917,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -1807,6 +1951,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 23,
@@ -1827,7 +1973,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -1848,7 +1996,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -1863,44 +2013,48 @@
       },
       "channels": 2,
       "videos": 683,
-      "outliers": 126,
+      "outliers": 127,
       "outlierChannels": 1,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 31012,
-      "medianOutlierViews": 176543.5,
-      "medianOutlierMinutes": 46.475,
-      "medianUploadsPerWeek": 16.72222222222222,
+      "medianOutlierViews": 173741,
+      "medianOutlierMinutes": 46.43333333333333,
+      "medianUploadsPerWeek": 16.683333333333334,
       "medianLikeRate": 0.013335552458027337,
       "medianCommentRate": 0.0015894015397901623,
       "conveyorShare": 1,
       "lotteryShare": 0.5,
       "medianWorkingRate": 0.5821339950372209,
-      "medianMonthlyUsd": 56563.24333333333,
+      "medianMonthlyUsd": 56542.83166666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 907.7677777777777,
+      "medianEarningMinutesPerWeek": 905.3851851851853,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 2,
           "videos": 683,
-          "outliers": 126,
+          "outliers": 127,
           "outlierChannels": 1,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 31012,
-          "medianOutlierViews": 176543.5,
-          "medianOutlierMinutes": 46.475,
-          "medianUploadsPerWeek": 16.72222222222222,
+          "medianOutlierViews": 173741,
+          "medianOutlierMinutes": 46.43333333333333,
+          "medianUploadsPerWeek": 16.683333333333334,
           "medianLikeRate": 0.013335552458027337,
           "medianCommentRate": 0.0015894015397901623,
           "conveyorShare": 1,
           "lotteryShare": 0.5,
           "medianWorkingRate": 0.5821339950372209,
-          "medianMonthlyUsd": 56563.24333333333,
+          "medianMonthlyUsd": 56542.83166666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 907.7677777777777
+          "medianEarningMinutesPerWeek": 905.3851851851853,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 0,
@@ -1921,7 +2075,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -1936,44 +2092,48 @@
       },
       "channels": 6,
       "videos": 1309,
-      "outliers": 306,
+      "outliers": 307,
       "outlierChannels": 1,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 19337,
-      "medianOutlierViews": 96494.5,
-      "medianOutlierMinutes": 49.666666666666664,
+      "medianOutlierViews": 96645,
+      "medianOutlierMinutes": 49.65,
       "medianUploadsPerWeek": 2.9944444444444445,
       "medianLikeRate": 0.012227258353536418,
       "medianCommentRate": 0.0011695906432748538,
       "conveyorShare": 0.3333333333333333,
       "lotteryShare": 0.8,
       "medianWorkingRate": 0.44680851063829785,
-      "medianMonthlyUsd": 56563.24333333333,
+      "medianMonthlyUsd": 56542.83166666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 907.7677777777777,
+      "medianEarningMinutesPerWeek": 905.3851851851853,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 6,
           "videos": 1309,
-          "outliers": 306,
+          "outliers": 307,
           "outlierChannels": 1,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 19337,
-          "medianOutlierViews": 96494.5,
-          "medianOutlierMinutes": 49.666666666666664,
+          "medianOutlierViews": 96645,
+          "medianOutlierMinutes": 49.65,
           "medianUploadsPerWeek": 2.9944444444444445,
           "medianLikeRate": 0.012227258353536418,
           "medianCommentRate": 0.0011695906432748538,
           "conveyorShare": 0.3333333333333333,
           "lotteryShare": 0.8,
           "medianWorkingRate": 0.44680851063829785,
-          "medianMonthlyUsd": 56563.24333333333,
+          "medianMonthlyUsd": 56542.83166666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 907.7677777777777
+          "medianEarningMinutesPerWeek": 905.3851851851853,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 34,
@@ -1993,8 +2153,10 @@
           "medianWorkingRate": 0.23076923076923078,
           "medianMonthlyUsd": 14158.511666666667,
           "medianYoungMonthlyUsd": 4047.1333333333337,
-          "fastestYoungDays": 146.7923245486111,
-          "medianEarningMinutesPerWeek": 149.39814814814818
+          "fastestYoungDays": 146.8064012152778,
+          "medianEarningMinutesPerWeek": 149.39814814814818,
+          "medianEarningCatalog": 203,
+          "maxEarningCatalog": 381
         }
       },
       "confidence": "нет данных"
@@ -2026,6 +2188,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2046,7 +2210,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 25,
@@ -2067,7 +2233,9 @@
           "medianMonthlyUsd": 10187.315833333334,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 121.11166666666668
+          "medianEarningMinutesPerWeek": 121.11166666666668,
+          "medianEarningCatalog": 82,
+          "maxEarningCatalog": 216
         }
       },
       "confidence": "нет данных"
@@ -2082,13 +2250,13 @@
       },
       "channels": 27,
       "videos": 3539,
-      "outliers": 526,
+      "outliers": 527,
       "outlierChannels": 3,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 12804,
-      "medianOutlierViews": 98671,
-      "medianOutlierMinutes": 53.916666666666664,
+      "medianOutlierViews": 99193,
+      "medianOutlierMinutes": 53.78333333333333,
       "medianUploadsPerWeek": 1.9444444444444446,
       "medianLikeRate": 0.014285714285714285,
       "medianCommentRate": 0.001040582726326743,
@@ -2099,17 +2267,19 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 878.99,
+      "medianEarningCatalog": 403,
+      "maxEarningCatalog": 455,
       "byMarket": {
         "de": {
           "channels": 27,
           "videos": 3539,
-          "outliers": 526,
+          "outliers": 527,
           "outlierChannels": 3,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 12804,
-          "medianOutlierViews": 98671,
-          "medianOutlierMinutes": 53.916666666666664,
+          "medianOutlierViews": 99193,
+          "medianOutlierMinutes": 53.78333333333333,
           "medianUploadsPerWeek": 1.9444444444444446,
           "medianLikeRate": 0.014285714285714285,
           "medianCommentRate": 0.001040582726326743,
@@ -2119,7 +2289,9 @@
           "medianMonthlyUsd": 9376.953333333333,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 878.99
+          "medianEarningMinutesPerWeek": 878.99,
+          "medianEarningCatalog": 403,
+          "maxEarningCatalog": 455
         },
         "en": {
           "channels": 23,
@@ -2139,8 +2311,10 @@
           "medianWorkingRate": 0.3333333333333333,
           "medianMonthlyUsd": 2853.061666666667,
           "medianYoungMonthlyUsd": 3579.688333333333,
-          "fastestYoungDays": 145.31560001157408,
-          "medianEarningMinutesPerWeek": 389.71851851851847
+          "fastestYoungDays": 145.32967667824073,
+          "medianEarningMinutesPerWeek": 389.71851851851847,
+          "medianEarningCatalog": 177,
+          "maxEarningCatalog": 500
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -2172,6 +2346,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 13,
@@ -2192,7 +2368,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2213,7 +2391,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2245,6 +2425,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 7,
@@ -2265,7 +2447,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2286,7 +2470,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2301,44 +2487,48 @@
       },
       "channels": 29,
       "videos": 2976,
-      "outliers": 277,
+      "outliers": 278,
       "outlierChannels": 2,
       "youngOutlierChannels": 0,
       "permeability": 0,
       "medianViews": 6395,
-      "medianOutlierViews": 132940,
-      "medianOutlierMinutes": 87.1,
+      "medianOutlierViews": 133795,
+      "medianOutlierMinutes": 87.05,
       "medianUploadsPerWeek": 1.9444444444444446,
       "medianLikeRate": 0.02340751932336091,
       "medianCommentRate": 0.002314532864167456,
       "conveyorShare": 0.3448275862068966,
       "lotteryShare": 0.9090909090909091,
       "medianWorkingRate": 0.1481060606060606,
-      "medianMonthlyUsd": 30102.3125,
+      "medianMonthlyUsd": 30092.10666666667,
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
-      "medianEarningMinutesPerWeek": 472.631574074074,
+      "medianEarningMinutesPerWeek": 471.44027777777785,
+      "medianEarningCatalog": 225,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 29,
           "videos": 2976,
-          "outliers": 277,
+          "outliers": 278,
           "outlierChannels": 2,
           "youngOutlierChannels": 0,
           "permeability": 0,
           "medianViews": 6395,
-          "medianOutlierViews": 132940,
-          "medianOutlierMinutes": 87.1,
+          "medianOutlierViews": 133795,
+          "medianOutlierMinutes": 87.05,
           "medianUploadsPerWeek": 1.9444444444444446,
           "medianLikeRate": 0.02340751932336091,
           "medianCommentRate": 0.002314532864167456,
           "conveyorShare": 0.3448275862068966,
           "lotteryShare": 0.9090909090909091,
           "medianWorkingRate": 0.1481060606060606,
-          "medianMonthlyUsd": 30102.3125,
+          "medianMonthlyUsd": 30092.10666666667,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 472.631574074074
+          "medianEarningMinutesPerWeek": 471.44027777777785,
+          "medianEarningCatalog": 225,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 0,
@@ -2359,7 +2549,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2391,6 +2583,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 13,
@@ -2411,7 +2605,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2432,7 +2628,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2464,6 +2662,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2484,7 +2684,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2505,7 +2707,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2520,13 +2724,13 @@
       },
       "channels": 16,
       "videos": 2396,
-      "outliers": 398,
+      "outliers": 399,
       "outlierChannels": 10,
       "youngOutlierChannels": 1,
       "permeability": 0.1,
       "medianViews": 41951.5,
-      "medianOutlierViews": 165306.5,
-      "medianOutlierMinutes": 44.99166666666667,
+      "medianOutlierViews": 165419,
+      "medianOutlierMinutes": 44.983333333333334,
       "medianUploadsPerWeek": 2.9944444444444445,
       "medianLikeRate": 0.015124005992184992,
       "medianCommentRate": 0.0013114125568696885,
@@ -2535,19 +2739,21 @@
       "medianWorkingRate": 0.6532451923076923,
       "medianMonthlyUsd": 6110.485833333333,
       "medianYoungMonthlyUsd": 2619.8399999999997,
-      "fastestYoungDays": 170.63601667824074,
+      "fastestYoungDays": 170.65009334490742,
       "medianEarningMinutesPerWeek": 86.8550925925926,
+      "medianEarningCatalog": 97.5,
+      "maxEarningCatalog": 403,
       "byMarket": {
         "de": {
           "channels": 16,
           "videos": 2396,
-          "outliers": 398,
+          "outliers": 399,
           "outlierChannels": 10,
           "youngOutlierChannels": 1,
           "permeability": 0.1,
           "medianViews": 41951.5,
-          "medianOutlierViews": 165306.5,
-          "medianOutlierMinutes": 44.99166666666667,
+          "medianOutlierViews": 165419,
+          "medianOutlierMinutes": 44.983333333333334,
           "medianUploadsPerWeek": 2.9944444444444445,
           "medianLikeRate": 0.015124005992184992,
           "medianCommentRate": 0.0013114125568696885,
@@ -2556,8 +2762,10 @@
           "medianWorkingRate": 0.6532451923076923,
           "medianMonthlyUsd": 6110.485833333333,
           "medianYoungMonthlyUsd": 2619.8399999999997,
-          "fastestYoungDays": 170.63601667824074,
-          "medianEarningMinutesPerWeek": 86.8550925925926
+          "fastestYoungDays": 170.65009334490742,
+          "medianEarningMinutesPerWeek": 86.8550925925926,
+          "medianEarningCatalog": 97.5,
+          "maxEarningCatalog": 403
         },
         "en": {
           "channels": 12,
@@ -2577,8 +2785,10 @@
           "medianWorkingRate": 0.36796536796536794,
           "medianMonthlyUsd": 3201.5066666666667,
           "medianYoungMonthlyUsd": 3454.554166666667,
-          "fastestYoungDays": 113.00756760416667,
-          "medianEarningMinutesPerWeek": 242.83324074074073
+          "fastestYoungDays": 113.02164427083333,
+          "medianEarningMinutesPerWeek": 242.83324074074073,
+          "medianEarningCatalog": 119,
+          "maxEarningCatalog": 410
         }
       },
       "confidence": "низкая — прокси-скорость, кривой роста ещё нет"
@@ -2610,6 +2820,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 1,
@@ -2630,7 +2842,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2651,7 +2865,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2683,6 +2899,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": 878.99,
+      "medianEarningCatalog": 455,
+      "maxEarningCatalog": 455,
       "byMarket": {
         "de": {
           "channels": 4,
@@ -2703,7 +2921,9 @@
           "medianMonthlyUsd": 9376.953333333333,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": 878.99
+          "medianEarningMinutesPerWeek": 878.99,
+          "medianEarningCatalog": 455,
+          "maxEarningCatalog": 455
         },
         "en": {
           "channels": 25,
@@ -2721,10 +2941,12 @@
           "conveyorShare": 0.28,
           "lotteryShare": 0.5833333333333334,
           "medianWorkingRate": 0.34523809523809523,
-          "medianMonthlyUsd": 8218.7325,
+          "medianMonthlyUsd": 8217.915833333333,
           "medianYoungMonthlyUsd": 4387.625,
-          "fastestYoungDays": 77.05137547453704,
-          "medianEarningMinutesPerWeek": 221.8837962962963
+          "fastestYoungDays": 77.0654521412037,
+          "medianEarningMinutesPerWeek": 219.07796296296297,
+          "medianEarningCatalog": 95.5,
+          "maxEarningCatalog": 381
         }
       },
       "confidence": "нет данных"
@@ -2756,6 +2978,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2776,7 +3000,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2797,7 +3023,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2829,6 +3057,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2849,7 +3079,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2870,7 +3102,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2902,6 +3136,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2922,7 +3158,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -2943,7 +3181,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -2975,6 +3215,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -2995,7 +3237,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3016,7 +3260,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3048,6 +3294,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3068,7 +3316,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3089,7 +3339,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3121,6 +3373,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3141,7 +3395,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3162,7 +3418,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3194,6 +3452,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3214,7 +3474,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3235,7 +3497,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3267,6 +3531,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3287,7 +3553,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3308,7 +3576,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3340,6 +3610,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3360,7 +3632,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3381,7 +3655,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3413,6 +3689,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3433,7 +3711,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3454,7 +3734,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3486,6 +3768,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3506,7 +3790,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3527,7 +3813,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3559,6 +3847,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3579,7 +3869,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3600,7 +3892,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3632,6 +3926,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3652,7 +3948,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3673,7 +3971,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3705,6 +4005,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3725,7 +4027,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3746,7 +4050,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3778,6 +4084,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3798,7 +4106,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3819,7 +4129,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3851,6 +4163,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3871,7 +4185,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3892,7 +4208,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3924,6 +4242,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -3944,7 +4264,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -3965,7 +4287,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -3997,6 +4321,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4017,7 +4343,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4038,7 +4366,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4070,6 +4400,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4090,7 +4422,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4111,7 +4445,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4143,6 +4479,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4163,7 +4501,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4184,7 +4524,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4216,6 +4558,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4236,7 +4580,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4257,7 +4603,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4289,6 +4637,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4309,7 +4659,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4330,7 +4682,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4362,6 +4716,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4382,7 +4738,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4403,7 +4761,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4435,6 +4795,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4455,7 +4817,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4476,7 +4840,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4508,6 +4874,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4528,7 +4896,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4549,7 +4919,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4581,6 +4953,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4601,7 +4975,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4622,7 +4998,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"
@@ -4654,6 +5032,8 @@
       "medianYoungMonthlyUsd": null,
       "fastestYoungDays": null,
       "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
       "byMarket": {
         "de": {
           "channels": 0,
@@ -4674,7 +5054,9 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         },
         "en": {
           "channels": 0,
@@ -4695,7 +5077,404 @@
           "medianMonthlyUsd": null,
           "medianYoungMonthlyUsd": null,
           "fastestYoungDays": null,
-          "medianEarningMinutesPerWeek": null
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "schlacht": {
+      "id": "schlacht",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "schlacht Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "fastestYoungDays": null,
+      "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "herrscher": {
+      "id": "herrscher",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "herrscher Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "fastestYoungDays": null,
+      "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "schiffe": {
+      "id": "schiffe",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "schiffe Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "fastestYoungDays": null,
+      "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "beherrscht": {
+      "id": "beherrscht",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "beherrscht Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "fastestYoungDays": null,
+      "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        }
+      },
+      "confidence": "нет данных"
+    },
+    "chinesische": {
+      "id": "chinesische",
+      "group": "Найдено автоматом",
+      "control": false,
+      "queries": {
+        "de": "chinesische Doku",
+        "en": null
+      },
+      "channels": 0,
+      "videos": 0,
+      "outliers": 0,
+      "outlierChannels": 0,
+      "youngOutlierChannels": 0,
+      "permeability": null,
+      "medianViews": null,
+      "medianOutlierViews": null,
+      "medianOutlierMinutes": null,
+      "medianUploadsPerWeek": null,
+      "medianLikeRate": null,
+      "medianCommentRate": null,
+      "conveyorShare": null,
+      "lotteryShare": null,
+      "medianWorkingRate": null,
+      "medianMonthlyUsd": null,
+      "medianYoungMonthlyUsd": null,
+      "fastestYoungDays": null,
+      "medianEarningMinutesPerWeek": null,
+      "medianEarningCatalog": null,
+      "maxEarningCatalog": null,
+      "byMarket": {
+        "de": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
+        },
+        "en": {
+          "channels": 0,
+          "videos": 0,
+          "outliers": 0,
+          "outlierChannels": 0,
+          "youngOutlierChannels": 0,
+          "permeability": null,
+          "medianViews": null,
+          "medianOutlierViews": null,
+          "medianOutlierMinutes": null,
+          "medianUploadsPerWeek": null,
+          "medianLikeRate": null,
+          "medianCommentRate": null,
+          "conveyorShare": null,
+          "lotteryShare": null,
+          "medianWorkingRate": null,
+          "medianMonthlyUsd": null,
+          "medianYoungMonthlyUsd": null,
+          "fastestYoungDays": null,
+          "medianEarningMinutesPerWeek": null,
+          "medianEarningCatalog": null,
+          "maxEarningCatalog": null
         }
       },
       "confidence": "нет данных"

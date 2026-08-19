@@ -1,6 +1,6 @@
 {
   "de": {
-    "label": "Немецкий",
+    "label": "Немецкий (контроль)",
     "regionCode": "DE",
     "relevanceLanguage": "de",
     "audioLanguages": [
@@ -9,11 +9,11 @@
       "de-AT",
       "de-CH"
     ],
-    "role": "primary",
-    "searchShare": 0.78
+    "role": "control",
+    "searchShare": 0.25
   },
   "en": {
-    "label": "Английский (контрольный замер)",
+    "label": "Английский",
     "regionCode": "US",
     "relevanceLanguage": "en",
     "audioLanguages": [
@@ -21,7 +21,7 @@
       "en-US",
       "en-GB"
     ],
-    "role": "control",
-    "searchShare": 0.22
+    "role": "primary",
+    "searchShare": 0.75
   }
 }
