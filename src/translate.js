@@ -18,7 +18,8 @@ export class Translator {
     this.fetch = fetchImpl;
     this.target = target;
     this.stats = { hit: 0, fetched: 0, skipped: 0, failed: 0 };
-    this.blocked = false; // сервис сказал, что лимит исчерпан
+    this.blocked = false;  // сервис сказал, что лимит исчерпан
+    this.streak = 0;       // подряд идущие неудачи
   }
 
   key(text, from) { return `${from}:${text}`; }
@@ -43,6 +44,7 @@ export class Translator {
         // Сервис возвращает предупреждение о лимите в поле перевода —
         // класть такое в кеш нельзя, иначе оно там останется навсегда.
         if (/MYMEMORY WARNING|QUERY LENGTH LIMIT/i.test(out)) { this.blocked = true; return null; }
+        this.streak = 0;
         this.left -= text.length;
         this.cache[this.key(text, from)] = out;
         this.stats.fetched++;
@@ -50,6 +52,9 @@ export class Translator {
       } catch { /* сеть моргнула — вторая попытка */ }
     }
     this.stats.failed++;
+    // Сервис недоступен целиком — дальше стучаться бессмысленно, а с ретраями
+    // и паузами это растягивает прогон на минуты впустую.
+    if (++this.streak >= 5) this.blocked = true;
     return null;
   }
 

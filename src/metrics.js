@@ -1,5 +1,6 @@
 // Метрики. Всё считается из накопленных данных, ничего не предсказывается.
 import { daysBetween } from './store.js';
+import { STOP } from './topics.js';
 
 // Возраст канала. Полный архив даёт настоящую дату первой загрузки; когда
 // архив не долистан, берём дату регистрации — она может только состарить канал,
@@ -130,6 +131,11 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
     };
   }
 
+  // Ключевые слова тем разбираются один раз, а не для каждого из десятков
+  // тысяч заголовков заново.
+  const sIndex = seedIndex(seeds, ['de', 'en'],
+    wordFrequency(Object.values(db.videos), db.channels ?? {}));
+
   // --- уровень видео ---
   const videos = [];
   for (const [cid, vids] of Object.entries(byChannel)) {
@@ -149,7 +155,8 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
         velocity: realVelocity(v.id, snapshots),
         gain: viewsGained(v.id, snapshots, baseline, v.views),
         likeRate: eng.like, commentRate: eng.comment,
-        seeds: c.seeds,
+        seeds: videoNiches(v.title, sIndex, c.lang),
+        channelSeeds: c.seeds,
       });
     }
   }
@@ -201,7 +208,14 @@ function realVelocity(videoId, snapshots) {
 }
 
 function nicheStats(seedVideos, channels, thresholds) {
-  const seedChannels = [...new Set(seedVideos.map((v) => v.channelId))].map((id) => channels[id]);
+  // Один случайный ролик по теме не делает канал каналом этой ниши.
+  const perChannel = new Map();
+  for (const v of seedVideos) perChannel.set(v.channelId, (perChannel.get(v.channelId) ?? 0) + 1);
+  const minVideos = thresholds.nicheMinVideosPerChannel ?? 3;
+  const seedChannels = [...perChannel.entries()]
+    .filter(([, n]) => n >= minVideos)
+    .map(([id]) => channels[id])
+    .filter(Boolean);
 
   const outliers = seedVideos.filter((v) =>
     v.outlierRatio != null && v.outlierRatio >= thresholds.outlierRatio && v.views >= thresholds.outlierMinViews);
@@ -265,6 +279,65 @@ function nicheStats(seedVideos, channels, thresholds) {
     maxEarningCatalog: seedChannels.filter((c) => c.earning)
       .reduce((mx, c) => Math.max(mx, c.videoCount ?? 0), 0) || null,
   };
+}
+
+// search.list возвращает не тему, а «что-то похожее»: по запросу
+// «deep sea documentary» приезжают ролики про Minecraft. Ведро, где ключевые
+// слова запроса встречаются у меньшинства роликов, — это не ниша, а выдача,
+// и любые метрики по нему считаются по мусору.
+const FORMAT_WORDS = /^(documentary|doku|dokumentation|film|video|explained|erklärt|full)$/i;
+
+export function queryKeywords(query) {
+  if (!query) return [];
+  return query.split(/\s+/)
+    .map((w) => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, ''))
+    .filter((w) => w.length > 2 && !FORMAT_WORDS.test(w) && !STOP.has(w));
+}
+
+// Канал, найденный по запросу «black hole documentary», снимает не только про
+// чёрные дыры. Раньше в нишу засчитывался весь его каталог целиком — пятьсот
+// роликов про что угодно, — и метрики считались по чужим видео. Теперь видео
+// попадает в нишу, только если сама тема видна в его заголовке.
+// Тему задаёт не одно слово, а связка. По одному редкому слову «human
+// evolution» и «human body» цеплялись за общее «human» и давали одинаковые
+// цифры. Требуем присутствия двух самых редких слов запроса сразу — а если
+// значимых слов всего одно или два, то всех.
+export function seedIndex(seeds, langs = ['de', 'en'], wordFreq = {}) {
+  const idx = {};
+  for (const lang of langs) {
+    idx[lang] = seeds.map((s) => {
+      const key = queryKeywords(s[lang]);
+      if (!key.length) return null;
+      const freq = wordFreq[lang] ?? new Map();
+      const byRarity = key.slice().sort((a, b) => (freq.get(a) ?? 0) - (freq.get(b) ?? 0));
+      const anchors = byRarity.slice(0, Math.min(2, byRarity.length));
+      return { id: s.id, anchors, key };
+    }).filter(Boolean);
+  }
+  return idx;
+}
+
+export function wordFrequency(videos, channels) {
+  const out = { de: new Map(), en: new Map() };
+  for (const v of videos) {
+    const lang = channels[v.channelId]?.lang;
+    if (!out[lang]) continue;
+    const m = out[lang];
+    for (const w of new Set((v.title ?? '').toLowerCase().split(/[^\p{L}\p{N}]+/u))) {
+      if (w.length > 2) m.set(w, (m.get(w) ?? 0) + 1);
+    }
+  }
+  return out;
+}
+
+export function videoNiches(title, index, lang) {
+  const t = (title ?? '').toLowerCase();
+  if (!t || !index?.[lang]) return [];
+  const out = [];
+  for (const s of index[lang]) {
+    if (s.anchors.every((w) => t.includes(w))) out.push(s.id);
+  }
+  return out;
 }
 
 // Долговечность темы: работает ли старое видео или ниша требует бежать.

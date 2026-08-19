@@ -31,6 +31,20 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
     }
   }
 
+  // Разные запросы могут описывать одну тему («deep sea documentary» и
+  // «deep sea creatures»). Показывать их дважды — засорять вывод.
+  const seen = new Map();
+  const unique = [];
+  for (const r of rows) {
+    const key = r.lang + '|' + r.young + '|' + Math.round(r.usd ?? 0) + '|' + Math.round(r.catalog ?? 0);
+    if (seen.has(key)) { seen.get(key).alias.push(r.query); continue; }
+    r.alias = [];
+    seen.set(key, r);
+    unique.push(r);
+  }
+  rows.length = 0;
+  rows.push(...unique);
+
   // Сначала повторяемость, потом деньги. Ниша, где дошли шестеро по три тысячи,
   // надёжнее ниши, где дошёл один на десять.
   rows.sort((a, b) => (b.young - a.young) || ((b.usd ?? 0) - (a.usd ?? 0)));

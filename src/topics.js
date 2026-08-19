@@ -5,7 +5,7 @@ import { daysBetween } from './store.js';
 
 // Служебные слова и форматная шелуха: они есть в каждом втором заголовке
 // и темой не являются.
-const STOP = new Set(`
+export const STOP = new Set(`
 der die das den dem des ein eine einer eines einem und oder aber wie was wer wo
 wann warum ist sind war waren wird werden hat haben hatte kann können muss
 mit von für auf aus bei nach über unter vor zwischen durch gegen ohne um zum zur
@@ -76,14 +76,21 @@ export function findTopics({ metrics, thresholds, knownQueries = [], lang = 'de'
   // у выстреливших. Считаем только для отобранных связок — иначе это
   // миллионы записей ради чисел, которые не понадобятся.
   const alive = [...stat.values()].filter((e) => e.channels.size >= minChannels);
-  const corpusJoined = sameLang.map((v) => ' ' + tokens(v.title).join(' ') + ' ');
+
+  // Знаменатель перевеса считаем одним проходом по корпусу. Раньше на каждого
+  // кандидата корпус пересматривался целиком — сотни миллионов сравнений.
+  const wanted = new Set(alive.map((e) => e.phrase));
+  const df = new Map();
+  for (const v of sameLang) {
+    for (const p of new Set(phrases(v.title))) {
+      if (wanted.has(p)) df.set(p, (df.get(p) ?? 0) + 1);
+    }
+  }
 
   const candidates = [];
   for (const e of alive) {
     if (known.has(e.phrase)) continue;
-    const needle = ' ' + e.phrase + ' ';
-    let inAll = 0;
-    for (const t of corpusJoined) if (t.includes(needle)) inAll++;
+    const inAll = df.get(e.phrase) ?? 0;
     const lift = (e.videos / breakout.length) / Math.max(inAll / sameLang.length, 1e-9);
     if (!Number.isFinite(lift) || lift < minLift) continue;
     candidates.push({

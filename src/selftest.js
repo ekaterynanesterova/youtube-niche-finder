@@ -53,6 +53,15 @@ const okBody = { responseData: { translatedText: 'перевод' } };
   const t = new Translator({ fetchImpl: async () => { throw new Error('сеть недоступна'); } });
   check('падение сети не роняет прогон', await t.translate('Test', 'de') === null);
   check('падение сети посчитано как неудача', t.stats.failed === 1);
+{
+  // Пять неудач подряд — сервис лежит, дальше стучаться бессмысленно.
+  const dead = new Translator({ fetchImpl: async () => { throw new Error('нет сети'); } });
+  for (let i = 0; i < 5; i++) await dead.translate('текст' + i, 'de');
+  check('после пяти неудач подряд переводчик отключается', dead.blocked === true);
+  const before = dead.stats.failed;
+  await dead.translate('ещё', 'de');
+  check('отключённый переводчик больше не ходит в сеть', dead.stats.failed === before);
+}
 }
 
 // --- синтетическая база ---
@@ -62,7 +71,7 @@ const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
 const channels = {};
 const videos = {};
 const seeds = [{ id: 'open', group: 'Тест', de: 'offen', en: 'open' },
-               { id: 'closed', group: 'Тест', de: 'zu', en: 'closed' }];
+               { id: 'closed', group: 'Тест', de: 'gesperrt', en: 'closed' }];
 
 // Ниша «open»: молодые каналы дают выбросы — дверь открыта.
 for (let c = 0; c < 4; c++) {
@@ -70,11 +79,11 @@ for (let c = 0; c < 4; c++) {
   channels[id] = { id, title: `Молодой ${c}`, seeds: ['open'], markets: ['de'],
                    firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200), subscribers: 900 };
   for (let v = 0; v < 12; v++) {
-    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
+    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `offen видео ${v}`,
       publishedAt: day(40 + v * 10), durationSec: 1500, views: 150000, likes: 6000, comments: 600, lang: 'de' };
   }
   // один выброс — ×10 к медиане
-  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс ${c}`,
+  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `offen выброс ${c}`,
     publishedAt: day(20), durationSec: 1800, views: 1500000, likes: 60000, comments: 4500, lang: 'de' };
 }
 
@@ -84,10 +93,10 @@ for (let c = 0; c < 3; c++) {
   channels[id] = { id, title: `Старик ${c}`, seeds: ['closed'], markets: ['de'],
                    firstUploadAt: day(2000), firstUploadComplete: true, publishedAt: day(2000), subscribers: 1500000 };
   for (let v = 0; v < 12; v++) {
-    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `видео ${v}`,
+    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `gesperrt видео ${v}`,
       publishedAt: day(40 + v * 10), durationSec: 1500, views: 250000, likes: 7500, comments: 600, lang: 'de' };
   }
-  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `выброс старика ${c}`,
+  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `gesperrt выброс старика ${c}`,
     publishedAt: day(20), durationSec: 1800, views: 2500000, likes: 75000, comments: 4500, lang: 'de' };
 }
 
@@ -147,7 +156,7 @@ const partial = computeMetrics({
   db: {
     channels: { p1: { id: 'p1', seeds: ['open'], markets: ['de'],
                       firstUploadAt: day(30), firstUploadComplete: false, publishedAt: day(3000) } },
-    videos: { p1v: { id: 'p1v', channelId: 'p1', publishedAt: day(60), durationSec: 1500, lang: 'de' } },
+    videos: { p1v: { id: 'p1v', channelId: 'p1', title: 'offen p1', publishedAt: day(60), durationSec: 1500, lang: 'de' } },
     current: { p1v: [10000, 100, 10] },
   },
   seeds, thresholds, snapshots: [], now,
@@ -162,7 +171,7 @@ check('основа возраста названа честно',
 const conveyor = { publishedAt: day(400), firstUploadComplete: false, seeds: ['open'], markets: ['de'] };
 const cv = {}, ccur = {};
 for (let i = 0; i < 60; i++) {            // 60 роликов по два часа за 90 дней
-  cv['c' + i] = { id: 'c' + i, channelId: 'c1', publishedAt: day(i + 5), durationSec: 7200, lang: 'de' };
+  cv['c' + i] = { id: 'c' + i, channelId: 'c1', title: 'offen c' + i, publishedAt: day(i + 5), durationSec: 7200, lang: 'de' };
   ccur['c' + i] = [30000, 200, 10];
 }
 const conv = computeMetrics({ db: { channels: { c1: { id: 'c1', ...conveyor } }, videos: cv, current: ccur },
@@ -174,11 +183,13 @@ const lot = computeMetrics({
     channels: { L: { id: 'L', seeds: ['open'], markets: ['de'],
                      firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200) } },
     videos: Object.fromEntries(Array.from({ length: 40 }, (_, i) =>
-      ['L' + i, { id: 'L' + i, channelId: 'L', publishedAt: day(40 + i), durationSec: 1500, lang: 'de' }])),
+      ['L' + i, { id: 'L' + i, channelId: 'L', title: 'offen L' + i, publishedAt: day(40 + i), durationSec: 1500, lang: 'de' }])),
     current: Object.fromEntries(Array.from({ length: 40 }, (_, i) => ['L' + i, [i === 0 ? 90000 : 900, 10, 1]])),
   },
   seeds, thresholds, snapshots: [], now,
 });
+check('видео без темы в заголовке в нишу не попадает',
+  lot.videos.every((v) => v.seeds.includes('open')));
 check('одиночный выстрел не выводит канал на цель', lot.channels.L.earning === false);
 check('такой канал помечен как недотягивающий', lot.channels.L.lottery === true);
 check('ниша из лотерейных каналов не проницаема', lot.niches.open.permeability === null);

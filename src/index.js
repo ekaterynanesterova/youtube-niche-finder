@@ -105,7 +105,7 @@ for (const v of pending) {
 }
 writeJson(paths.translations, cache);
 console.log('Перевод:', JSON.stringify(translator.stats),
-            translator.blocked ? '(сервис исчерпал дневной лимит)' : '');
+            translator.blocked ? (translator.stats.fetched ? '(дневной лимит сервиса исчерпан)' : '(сервис перевода недоступен)') : '');
 
 payload.candidates = candidates
   .filter((c) => !promoted.some((t) => t.de.startsWith(c.phrase)))
