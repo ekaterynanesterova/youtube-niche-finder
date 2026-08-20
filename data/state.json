@@ -1,5 +1,5 @@
 {
-  "seedCursor": 26,
+  "seedCursor": 46,
   "runs": [
     {
       "date": "2026-08-18",
@@ -32,6 +32,17 @@
         "channels": 8,
         "playlistItems": 992,
         "videos": 2033
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "budget": 9000,
+      "spent": 4039,
+      "byEndpoint": {
+        "search": 1800,
+        "channels": 8,
+        "playlistItems": 562,
+        "videos": 1669
       }
     }
   ]
