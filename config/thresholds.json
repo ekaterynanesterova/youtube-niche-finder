@@ -26,5 +26,11 @@
   "shelfAgeDays": 180,
   "baselineRefreshDays": 7,
   "nicheMinVideosPerChannel": 3,
-  "startingUsd": 400
+  "startingUsd": 400,
+  "trendingCategories": [
+    "27",
+    "28"
+  ],
+  "backfillUnitBudget": 1200,
+  "topicSingleWordLift": 8
 }

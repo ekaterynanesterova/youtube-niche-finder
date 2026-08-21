@@ -288,19 +288,6 @@
       }
     },
     {
-      "id": "deutschland",
-      "group": "Найдено автоматом",
-      "de": "deutschland Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-18",
-      "foundVia": {
-        "channels": 4,
-        "lift": 5.9,
-        "medianViews": 139469
-      }
-    },
-    {
       "id": "nachtschicht",
       "group": "Найдено автоматом",
       "de": "nachtschicht Doku",
@@ -311,32 +298,6 @@
         "channels": 3,
         "lift": 10.6,
         "medianViews": 48384
-      }
-    },
-    {
-      "id": "tod",
-      "group": "Найдено автоматом",
-      "de": "tod Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-18",
-      "foundVia": {
-        "channels": 5,
-        "lift": 4,
-        "medianViews": 57165
-      }
-    },
-    {
-      "id": "europas",
-      "group": "Найдено автоматом",
-      "de": "europas Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-18",
-      "foundVia": {
-        "channels": 5,
-        "lift": 3.7,
-        "medianViews": 61094
       }
     },
     {
@@ -870,6 +831,201 @@
         "channels": 3,
         "lift": 4.6,
         "medianViews": 52759
+      }
+    },
+    {
+      "id": "native",
+      "group": "Найдено автоматом",
+      "en": "native documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 12.1,
+        "medianViews": 43283.5
+      }
+    },
+    {
+      "id": "whales",
+      "group": "Найдено автоматом",
+      "en": "whales documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.1,
+        "medianViews": 83716
+      }
+    },
+    {
+      "id": "idaho",
+      "group": "Найдено автоматом",
+      "en": "idaho documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.1,
+        "medianViews": 29191
+      }
+    },
+    {
+      "id": "built-world",
+      "group": "Найдено автоматом",
+      "en": "built world documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.3,
+        "medianViews": 364454
+      }
+    },
+    {
+      "id": "people-live",
+      "group": "Найдено автоматом",
+      "en": "people live documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 6,
+        "lift": 2.7,
+        "medianViews": 152312
+      }
+    },
+    {
+      "id": "place-earth",
+      "group": "Найдено автоматом",
+      "en": "place earth documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.1,
+        "medianViews": 653313.5
+      }
+    },
+    {
+      "id": "ancient-humans-start",
+      "group": "Найдено автоматом",
+      "en": "ancient humans start documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.8,
+        "medianViews": 501108.5
+      }
+    },
+    {
+      "id": "humans-survive",
+      "group": "Найдено автоматом",
+      "en": "humans survive documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.7,
+        "medianViews": 383796
+      }
+    },
+    {
+      "id": "battle-survival",
+      "group": "Найдено автоматом",
+      "en": "battle survival documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 3.3,
+        "medianViews": 170379
+      }
+    },
+    {
+      "id": "did-ancient-humans",
+      "group": "Найдено автоматом",
+      "en": "did ancient humans documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 3,
+        "medianViews": 215726
+      }
+    },
+    {
+      "id": "spain",
+      "group": "Найдено автоматом",
+      "en": "spain documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.8,
+        "medianViews": 32632
+      }
+    },
+    {
+      "id": "finish",
+      "group": "Найдено автоматом",
+      "en": "finish documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.8,
+        "medianViews": 73917
+      }
+    },
+    {
+      "id": "mariana-trench",
+      "group": "Найдено автоматом",
+      "en": "mariana trench documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 12,
+        "lift": 2.8,
+        "medianViews": 202214.5
+      }
+    },
+    {
+      "id": "get-creepier-deeper",
+      "group": "Найдено автоматом",
+      "en": "get creepier deeper documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 5,
+        "lift": 8.3,
+        "medianViews": 115209
+      }
+    },
+    {
+      "id": "timeless",
+      "group": "Найдено автоматом",
+      "en": "timeless documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 5,
+        "lift": 8.3,
+        "medianViews": 59606
       }
     }
   ]

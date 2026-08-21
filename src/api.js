@@ -59,6 +59,16 @@ export class YouTubeApi {
     });
   }
 
+  // Trending по стране и категории. Стоит один юнит и приводит каналы,
+  // которых мы бы никогда не догадались искать: разведка по своим же запросам
+  // возвращает только то, что мы уже знаем.
+  trending({ regionCode, videoCategoryId, maxResults = 50 }) {
+    return this.call('videos', {
+      part: 'snippet,contentDetails,statistics',
+      chart: 'mostPopular', regionCode, videoCategoryId, maxResults,
+    });
+  }
+
   channels(ids) {
     return this.call('channels', {
       part: 'snippet,statistics,contentDetails',

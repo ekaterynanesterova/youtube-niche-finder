@@ -1,7 +1,7 @@
 // Оркестратор одного прогона. Запускается вручную (workflow_dispatch) или по крону.
 import { YouTubeApi } from './api.js';
 import { Quota } from './quota.js';
-import { discover, survey, hydrate, snapshot } from './collect.js';
+import { discover, explore, backfillFirstUpload, survey, hydrate, snapshot } from './collect.js';
 import { computeMetrics } from './metrics.js';
 import { renderReport } from './report.js';
 import { buildPayload, renderSite } from './site.js';
@@ -32,8 +32,18 @@ if (!metricsOnly) {
 
   const onlySeeds = (process.env.ONLY_SEEDS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
   if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds });
+  // Trending не знает про наш список тем — только он и приводит незнакомое.
+  if (!onlySeeds.length) await explore({ api, db, markets, thresholds });
   const pending = await survey({ api, db, thresholds });
   if (pending?.size) await hydrate({ api, db, pending, markets, thresholds });
+  // Настоящий возраст важнее всего у тех, кто уже зарабатывает: именно их мы
+  // объявляем новичками или стариками.
+  const needAge = Object.values(db.channels)
+    .filter((c) => c.uploadsPlaylistId && !c.firstUploadComplete)
+    .sort((a, b) => (b.totalViews ?? 0) - (a.totalViews ?? 0))
+    .map((c) => c.id);
+  await backfillFirstUpload({ api, db, ids: needAge, unitBudget: thresholds.backfillUnitBudget ?? 1200 });
+
   const snap = await snapshot({ api, db, thresholds });
 
   if (Object.keys(snap).length) {
@@ -73,22 +83,41 @@ const translator = new Translator({ cache });
 
 // Темы достаём из собственной базы: что реально снимают молодые каналы,
 // которые пробились. Список тем перестаёт упираться в фантазию человека.
-const candidates = findTopics({
-  metrics, thresholds,
-  knownQueries: seeds.flatMap((x) => [x.de, x.en]).filter(Boolean),
-});
+const known = seeds.flatMap((x) => [x.de, x.en]).filter(Boolean);
+
+// Каналы, не покрытые ни одной нишей, — прямая улика того, чего мы не назвали.
+const covered = new Set();
+{
+  const perPair = new Map();
+  for (const v of metrics.videos) {
+    for (const sid of v.seeds) {
+      const k = v.channelId + '|' + sid;
+      perPair.set(k, (perPair.get(k) ?? 0) + 1);
+    }
+  }
+  for (const [k, n] of perPair) if (n >= 3) covered.add(k.split('|')[0]);
+}
+const uncovered = new Set(Object.values(metrics.channels)
+  .filter((c) => c.started && !covered.has(c.id))
+  .map((c) => c.id));
+console.log(`Вне всех ниш зарабатывающих каналов: ${uncovered.size}`);
+
+const candidates = [
+  ...findTopics({ metrics, thresholds, knownQueries: known, lang: 'en', onlyChannels: uncovered }),
+  ...findTopics({ metrics, thresholds, knownQueries: known, lang: 'en' }),
+].filter((c, i, arr) => arr.findIndex((x) => x.phrase === c.phrase) === i);
 const promoted = promote({
-  candidates, seeds, limit: thresholds.topicMaxPromotedPerRun ?? 5,
+  candidates, seeds, limit: thresholds.topicMaxPromotedPerRun ?? 5, lang: 'en',
 });
 for (const t of promoted) {
-  t.ru = await translator.translate(t.de, 'de');
+  t.ru = await translator.translate(t.en, 'en');
   seeds.push(t);
 }
 if (promoted.length) {
   const cfg = readJson(join(ROOT, 'config/seeds.json'));
   cfg.seeds = seeds;
   writeJson(join(ROOT, 'config/seeds.json'), cfg);
-  console.log('Новые темы:', promoted.map((t) => t.de).join(' · '));
+  console.log('Новые темы:', promoted.map((t) => t.en ?? t.de).join(' · '));
 }
 const pending = [];
 for (const [, byLang] of Object.entries(payload.examples)) {
@@ -108,9 +137,9 @@ console.log('Перевод:', JSON.stringify(translator.stats),
             translator.blocked ? (translator.stats.fetched ? '(дневной лимит сервиса исчерпан)' : '(сервис перевода недоступен)') : '');
 
 payload.candidates = candidates
-  .filter((c) => !promoted.some((t) => t.de.startsWith(c.phrase)))
+  .filter((c) => !promoted.some((t) => (t.en ?? t.de ?? '').startsWith(c.phrase)))
   .slice(0, 20);
-payload.promoted = promoted.map((t) => ({ id: t.id, query: t.de, ru: t.ru, ...t.foundVia }));
+payload.promoted = promoted.map((t) => ({ id: t.id, query: t.en ?? t.de, ru: t.ru, ...t.foundVia }));
 
 writeText(join(ROOT, 'index.html'), renderSite(payload));
 

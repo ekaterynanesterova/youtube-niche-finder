@@ -45,12 +45,13 @@ export function phrases(title, maxLen = 3) {
 // просто частые слова — «Welt», «Leben», «Zeit». Поэтому меряем не частоту, а
 // перевес: во сколько раз связка чаще у прорвавшихся видео, чем во всей базе.
 // У пустого слова перевес около единицы, у настоящей темы — заметно больше.
-export function findTopics({ metrics, thresholds, knownQueries = [], lang = 'de' }) {
+export function findTopics({ metrics, thresholds, knownQueries = [], lang = 'de', onlyChannels = null }) {
   const known = new Set(knownQueries.map((q) => String(q).toLowerCase()));
   const minChannels = thresholds.topicMinChannels ?? 3;
   const minLift = thresholds.topicMinLift ?? 2.5;
 
-  const sameLang = metrics.videos.filter((v) => metrics.channels[v.channelId]?.lang === lang);
+  const sameLang = metrics.videos.filter((v) => metrics.channels[v.channelId]?.lang === lang
+    && (!onlyChannels || onlyChannels.has(v.channelId)));
   if (!sameLang.length) return [];
 
   const breakout = sameLang.filter((v) =>
@@ -93,6 +94,8 @@ export function findTopics({ metrics, thresholds, knownQueries = [], lang = 'de'
     const inAll = df.get(e.phrase) ?? 0;
     const lift = (e.videos / breakout.length) / Math.max(inAll / sameLang.length, 1e-9);
     if (!Number.isFinite(lift) || lift < minLift) continue;
+    const words = e.phrase.split(' ').length;
+    if (words === 1 && lift < (thresholds.topicSingleWordLift ?? 8)) continue;
     candidates.push({
       phrase: e.phrase,
       channels: e.channels.size,
@@ -147,13 +150,16 @@ export function slug(phrase) {
 
 // Поисковый запрос из связки. Голое слово ищется слишком широко, поэтому
 // добавляем формат — так же, как выглядят темы, заданные руками.
-export function toQuery(phrase) {
-  return /doku|dokumentation/i.test(phrase) ? phrase : `${phrase} Doku`;
+const FORMAT = { de: 'Doku', en: 'documentary' };
+
+export function toQuery(phrase, lang = 'de') {
+  return /doku|dokumentation|documentary/i.test(phrase)
+    ? phrase : `${phrase} ${FORMAT[lang] ?? FORMAT.de}`;
 }
 
 // Автодобавление с потолком: за прогон приезжает не больше нескольких тем,
 // иначе разведка расползётся и сожжёт квоту на случайных находках.
-export function promote({ candidates, seeds, limit, group = 'Найдено автоматом' }) {
+export function promote({ candidates, seeds, limit, lang = 'en', group = 'Найдено автоматом' }) {
   const ids = new Set(seeds.map((s) => s.id));
   const added = [];
   for (const c of candidates) {
@@ -163,7 +169,7 @@ export function promote({ candidates, seeds, limit, group = 'Найдено ав
     ids.add(id);
     added.push({
       id, group,
-      de: toQuery(c.phrase),
+      [lang]: toQuery(c.phrase, lang),
       ru: null,                      // подпись переведём отдельно
       source: 'auto',
       addedAt: new Date().toISOString().slice(0, 10),

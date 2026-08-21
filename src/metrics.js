@@ -126,6 +126,9 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       firstUploadComplete: !!ch.firstUploadComplete,
       ageBasis: ch.firstUploadComplete ? 'первая загрузка' : 'регистрация канала',
       ageDays: ageDays(ch, now),
+      // Дата регистрации отдельно: канал могли завести годами раньше и держать
+      // пустым — так делают, когда «прогревают» аккаунт перед запуском.
+      registeredDays: ch.publishedAt ? daysBetween(ch.publishedAt, now) : null,
       medianViews, matureCount,
       ...hitProfile(vids, thresholds, now),
       lang: dominantLang(vids, ch.markets ?? []),
@@ -187,6 +190,9 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
   }
 
   return { computedAt: now, thresholds, channels, videos, niches,
+           // За сколько дней измерен живой прирост. Сутки — это уже данные,
+           // но выводы по ним делать рано, и это должно быть видно.
+           gainWindowDays: baseline?.date ? Math.round(daysBetween(baseline.date, now)) : 0,
            snapshotDays: snapshots.length };
 }
 

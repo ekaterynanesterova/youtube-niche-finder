@@ -67,6 +67,60 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
   log(`Разведка: ${plan.length} запросов, ${found} попаданий, каналов в базе ${Object.keys(db.channels).length} (новых к опросу ${fresh})`);
 }
 
+// Слой 1б. Разведка вслепую. Разведка по своим запросам приводит только те
+// каналы, темы которых мы уже назвали, — система варится в себе. Trending
+// ломает круг: он не знает про наш список тем.
+export async function explore({ api, db, markets, thresholds }) {
+  const cats = thresholds.trendingCategories ?? ['27', '28'];
+  let fresh = 0, seen = 0;
+  await tolerant('trending', async () => {
+    for (const market of Object.values(markets)) {
+      for (const cat of cats) {
+        const res = await api.trending({ regionCode: market.regionCode, videoCategoryId: cat });
+        for (const v of res.items ?? []) {
+          const id = v.snippet?.channelId;
+          if (!id) continue;
+          seen++;
+          const ch = db.channels[id] ?? (db.channels[id] = {
+            id, seeds: [], markets: [], firstSeen: new Date().toISOString(), surveyed: null,
+          });
+          ch.viaTrending = true;
+          if (!ch.surveyed) fresh++;
+        }
+      }
+    }
+  });
+  log(`Trending: ${seen} попаданий, новых каналов ${fresh}`);
+}
+
+// Слой 2в. Достаём настоящую дату первой загрузки. Пока архив не долистан,
+// возраст берётся от регистрации — а канал мог годами лежать пустым и начать
+// полгода назад. Долистываем тех, кто важен, и по чуть-чуть за прогон.
+export async function backfillFirstUpload({ api, db, ids, unitBudget }) {
+  let done = 0;
+  const spentAtStart = api.quota.spent;
+  await tolerant('дата первой загрузки', async () => {
+    for (const id of ids) {
+      if (api.quota.spent - spentAtStart >= unitBudget) break;
+      const ch = db.channels[id];
+      if (!ch?.uploadsPlaylistId || ch.firstUploadComplete) continue;
+      let token, oldest = ch.firstUploadAt ?? null;
+      for (;;) {
+        if (!api.quota.canAfford('playlistItems')) return;
+        const res = await api.playlistItems(ch.uploadsPlaylistId, token);
+        for (const it of res.items ?? []) {
+          const at = it.contentDetails?.videoPublishedAt;
+          if (at && (!oldest || at < oldest)) oldest = at;
+        }
+        token = res.nextPageToken;
+        if (!token) { ch.firstUploadComplete = true; done++; break; }
+      }
+      ch.firstUploadAt = oldest;
+    }
+  });
+  log(`Дата первой загрузки уточнена у ${done} каналов`);
+}
+
 // Слой 2. Опрашиваем известные каналы: метаданные + список загрузок.
 export async function survey({ api, db, thresholds }) {
   const ids = Object.keys(db.channels);
