@@ -370,7 +370,8 @@ function shelfLife(videos, thresholds) {
   const cut = thresholds.shelfAgeDays ?? 180;
   const old = videos.filter((v) => v.ageDays > cut);
   if (videos.length < 50 || old.length < 15) {
-    return { shelfIndex: null, shelfLiveIndex: null, shelfOldShare: null };
+    return { shelfIndex: null, shelfLiveIndex: null, shelfOldShare: null,
+             shelfViewShare: null, shelfGainShare: null };
   }
   const countShare = old.length / videos.length;
 
@@ -391,7 +392,13 @@ function shelfLife(videos, thresholds) {
     ? (sum(old, (v) => v.gain) / gained) / countShare
     : null;
 
-  return { shelfIndex, shelfLiveIndex, shelfOldShare: countShare };
+  // Сырые доли отдаём наружу: коэффициент без них ничего не объясняет.
+  return {
+    shelfIndex, shelfLiveIndex,
+    shelfOldShare: countShare,
+    shelfViewShare: sum(old, (v) => v.views) / sum(videos, (v) => v.views),
+    shelfGainShare: shelfLiveIndex == null ? null : sum(old, (v) => v.gain) / gained,
+  };
 }
 
 // Честная оценка того, насколько цифрам можно верить в этот день.

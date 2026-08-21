@@ -28,6 +28,8 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         views: m.medianOutlierViews,
         shelf: m.shelfLiveIndex ?? m.shelfIndex,
         shelfLive: m.shelfLiveIndex != null,
+        shelfOldShare: m.shelfOldShare,
+        shelfShare: m.shelfLiveIndex != null ? m.shelfGainShare : m.shelfViewShare,
         catalog: m.medianEarningCatalog,
         catalogMax: m.maxEarningCatalog,
       });

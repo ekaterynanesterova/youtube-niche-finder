@@ -1027,6 +1027,71 @@
         "lift": 8.3,
         "medianViews": 59606
       }
+    },
+    {
+      "id": "answer-shocked",
+      "group": "Найдено автоматом",
+      "en": "answer shocked documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 12.9,
+        "medianViews": 44334.5
+      }
+    },
+    {
+      "id": "creatures-get-creepier",
+      "group": "Найдено автоматом",
+      "en": "creatures get creepier documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 12,
+        "medianViews": 203183
+      }
+    },
+    {
+      "id": "great-white-shark",
+      "group": "Найдено автоматом",
+      "en": "great white shark documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 6,
+        "lift": 5,
+        "medianViews": 78076.5
+      }
+    },
+    {
+      "id": "found-something",
+      "group": "Найдено автоматом",
+      "en": "found something documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 10,
+        "lift": 2.6,
+        "medianViews": 36850.5
+      }
+    },
+    {
+      "id": "stranger-gets-sleep",
+      "group": "Найдено автоматом",
+      "en": "stranger gets sleep documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 10,
+        "medianViews": 70683.5
+      }
     }
   ]
 }
