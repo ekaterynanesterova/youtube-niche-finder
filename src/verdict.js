@@ -17,6 +17,9 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         young: m.youngOutlierChannels,
         total: m.outlierChannels,
         usd: m.medianYoungMonthlyUsd ?? m.medianMonthlyUsd,
+        mature: m.matureChannels,
+        matureUsd: m.medianMatureUsd,
+        climb: m.medianClimbUsd,
         fastestMonths: m.fastestYoungDays == null ? null : m.fastestYoungDays / 30.4,
         minutes: m.medianOutlierMinutes,
         pace: m.medianEarningMinutesPerWeek,
@@ -69,9 +72,9 @@ function plural(n, a, b, c) {
 }
 
 function why(r) {
-  const parts = [`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года ${r.young === 1 ? 'вышел' : 'вышли'} на цель`];
+  const parts = [`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`];
+  if (r.mature) parts.push(`${r.mature} доросли до полной цели`);
   if (r.fastestMonths != null) parts.push(`самый быстрый — за ${months(r.fastestMonths)}`);
-  if (r.total > r.young) parts.push(`всего в нише зарабатывают ${r.total}`);
   return parts.join(', ') + '.';
 }
 

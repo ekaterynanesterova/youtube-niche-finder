@@ -37,8 +37,12 @@ export function hitProfile(videos, thresholds, now) {
     monthlyUsd: (monthlyViews / 1000) * thresholds.rpmUsd,
     // Канал состоялся, если на свежем контенте выходит на цель.
     earning: monthlyViews >= target,
-    // Попадания есть, а денег нет: разовое везение или слишком мелкий масштаб.
-    lottery: working >= 1 && monthlyViews < target,
+    // Молодой канал судить целью нельзя: он два месяца как открылся и десять
+    // роликов сделал. Для него важно другое — он уже что-то зарабатывает,
+    // то есть поехал. Цель остаётся мерой зрелости, а не входным билетом.
+    started: (monthlyViews / 1000) * thresholds.rpmUsd >= (thresholds.startingUsd ?? 400),
+    // Попадания есть, а денег нет совсем.
+    lottery: working >= 1 && (monthlyViews / 1000) * thresholds.rpmUsd < (thresholds.startingUsd ?? 400),
     bestViews: videos.reduce((m, v) => Math.max(m, v.views ?? 0), 0),
   };
 }
@@ -223,9 +227,15 @@ function nicheStats(seedVideos, channels, thresholds) {
   // Проницаемость считаем только по каналам, которые попадают повторно.
   // Канал с одним выстрелом на двести роликов ничего не доказывает — ни про
   // себя, ни тем более про нишу.
-  const outlierChannels = seedChannels.filter((c) => c.earning).map((c) => c.id);
+  // Доказательство проницаемости — молодые каналы, которые ПОЕХАЛИ. Требовать
+  // от двухмесячного канала полной цели значит выбрасывать ровно тех, на кого
+  // мы и хотим смотреть.
+  const started = seedChannels.filter((c) => c.started);
+  const outlierChannels = started.map((c) => c.id);
   const youngOutlierChannels = outlierChannels.filter((id) =>
     channels[id]?.ageDays != null && channels[id].ageDays <= thresholds.youngChannelDays);
+  // Отдельно — кто уже дотянул до полной цели, любого возраста.
+  const matureChannels = seedChannels.filter((c) => c.earning);
   const lotteryChannels = seedChannels.filter((c) => c.lottery);
 
   // Сколько готового хронометража ниша выпускает в неделю. Это мера потока,
@@ -262,13 +272,21 @@ function nicheStats(seedVideos, channels, thresholds) {
     lotteryShare: share(lotteryChannels.length, lotteryChannels.length + outlierChannels.length),
     medianWorkingRate: median(seedChannels.filter((c) => c.working > 0).map((c) => c.workingRate)),
     // Сколько денег приносит типичный состоявшийся канал ниши.
-    medianMonthlyUsd: median(seedChannels.filter((c) => c.earning).map((c) => c.monthlyUsd)),
+    medianMonthlyUsd: median(started.map((c) => c.monthlyUsd)),
+    // Сколько каналов ниши доросли до полной цели — мера потолка, а не входа.
+    matureChannels: matureChannels.length,
+    medianMatureUsd: median(matureChannels.map((c) => c.monthlyUsd)),
+    // Скорость набора: сколько канал зарабатывает на месяц своей жизни.
+    // Молодой канал на $700 за два месяца растёт быстрее, чем старый на $2000.
+    medianClimbUsd: median(seedChannels
+      .filter((c) => c.started && c.ageDays > 30)
+      .map((c) => c.monthlyUsd / (c.ageDays / 30.4))),
     medianYoungMonthlyUsd: median(seedChannels
-      .filter((c) => c.earning && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
+      .filter((c) => c.started && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
       .map((c) => c.monthlyUsd)),
     // За сколько дошёл самый быстрый: это и есть ответ на «успею ли я».
     fastestYoungDays: seedChannels
-      .filter((c) => c.earning && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
+      .filter((c) => c.started && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays)
       .reduce((min, c) => (min == null ? c.ageDays : Math.min(min, c.ageDays)), null),
     // Сколько часов готового видео в неделю держит типичный состоявшийся канал.
     medianEarningMinutesPerWeek: median(seedChannels.filter((c) => c.earning).map((c) => c.minutesPerWeek)),

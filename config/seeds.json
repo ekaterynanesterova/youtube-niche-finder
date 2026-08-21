@@ -5,28 +5,28 @@
       "id": "space-doku",
       "control": true,
       "group": "Космос",
-      "de": "Weltraum Dokumentation",
+      "de": "Weltraum Universum",
       "en": "space documentary",
       "ru": "документалки о космосе"
     },
     {
       "id": "blackhole",
       "group": "Космос",
-      "de": "schwarzes Loch Doku",
+      "de": "schwarze Löcher erklärt",
       "en": "black hole documentary",
       "ru": "чёрные дыры"
     },
     {
       "id": "universe-scale",
       "group": "Космос",
-      "de": "Größe des Universums",
+      "de": "wie groß ist das Universum",
       "en": "size of the universe",
       "ru": "размеры Вселенной"
     },
     {
       "id": "exoplanets",
       "group": "Космос",
-      "de": "Exoplaneten Doku",
+      "de": "Exoplaneten Leben",
       "en": "exoplanets documentary",
       "ru": "экзопланеты"
     },
@@ -40,7 +40,7 @@
     {
       "id": "space-missions",
       "group": "Космос",
-      "de": "Raumfahrt Dokumentation",
+      "de": "Raumfahrt Geschichte",
       "en": "space missions documentary",
       "ru": "космические миссии"
     },
@@ -48,28 +48,28 @@
       "id": "dinos",
       "control": true,
       "group": "Доисторическое",
-      "de": "Dinosaurier Dokumentation",
+      "de": "Dinosaurier Urzeit",
       "en": "dinosaur documentary",
       "ru": "динозавры"
     },
     {
       "id": "urzeit-tiere",
       "group": "Доисторическое",
-      "de": "Urzeit Tiere Doku",
+      "de": "Urzeit Tiere",
       "en": "prehistoric animals documentary",
       "ru": "звери доисторических эпох"
     },
     {
       "id": "mass-extinction",
       "group": "Доисторическое",
-      "de": "Massenaussterben Doku",
+      "de": "Massenaussterben Erde",
       "en": "mass extinction documentary",
       "ru": "массовые вымирания"
     },
     {
       "id": "ice-age",
       "group": "Доисторическое",
-      "de": "Eiszeit Dokumentation",
+      "de": "Eiszeit Mammut",
       "en": "ice age documentary",
       "ru": "ледниковый период"
     },
@@ -77,7 +77,7 @@
       "id": "human-evolution",
       "control": true,
       "group": "Доисторическое",
-      "de": "Evolution des Menschen Doku",
+      "de": "Evolution des Menschen",
       "en": "human evolution documentary",
       "ru": "эволюция человека"
     },
@@ -85,7 +85,7 @@
       "id": "deep-sea",
       "control": true,
       "group": "Океан",
-      "de": "Tiefsee Dokumentation",
+      "de": "Tiefsee Geheimnisse",
       "en": "deep sea documentary",
       "ru": "глубоководный мир"
     },
@@ -99,7 +99,7 @@
     {
       "id": "antarctica",
       "group": "Океан",
-      "de": "Antarktis Dokumentation",
+      "de": "Antarktis Expedition",
       "en": "antarctica documentary",
       "ru": "Антарктида"
     },
@@ -107,21 +107,21 @@
       "id": "supervolcano",
       "control": true,
       "group": "Геология",
-      "de": "Supervulkan Doku",
+      "de": "Supervulkan Ausbruch",
       "en": "supervolcano documentary",
       "ru": "супервулканы"
     },
     {
       "id": "plate-tectonics",
       "group": "Геология",
-      "de": "Plattentektonik erklärt",
+      "de": "Plattentektonik Erdbeben",
       "en": "plate tectonics explained",
       "ru": "тектоника плит"
     },
     {
       "id": "disasters",
       "group": "Геология",
-      "de": "Naturkatastrophen Dokumentation",
+      "de": "Naturkatastrophen Erde",
       "en": "natural disaster documentary",
       "ru": "природные катастрофы"
     },
@@ -129,21 +129,21 @@
       "id": "lost-civs",
       "control": true,
       "group": "Древние",
-      "de": "versunkene Zivilisationen Doku",
+      "de": "versunkene Zivilisationen",
       "en": "lost civilizations documentary",
       "ru": "исчезнувшие цивилизации"
     },
     {
       "id": "egypt",
       "group": "Древние",
-      "de": "Altes Ägypten Dokumentation",
+      "de": "Altes Ägypten Pyramiden",
       "en": "ancient egypt documentary",
       "ru": "Древний Египет"
     },
     {
       "id": "archaeology",
       "group": "Древние",
-      "de": "Archäologie Doku",
+      "de": "Archäologie Fund",
       "en": "archaeology documentary",
       "ru": "загадки археологии"
     },
@@ -151,42 +151,42 @@
       "id": "megastructures",
       "control": true,
       "group": "Инженерия",
-      "de": "Megabauwerke Doku",
+      "de": "Megabauwerke Technik",
       "en": "megastructures documentary",
       "ru": "мегасооружения"
     },
     {
       "id": "eng-disasters",
       "group": "Инженерия",
-      "de": "Technikkatastrophen Doku",
+      "de": "Technikkatastrophen Unglück",
       "en": "engineering disasters documentary",
       "ru": "техногенные катастрофы"
     },
     {
       "id": "lost-places",
       "group": "Инженерия",
-      "de": "Lost Places Doku",
+      "de": "Lost Places verlassen",
       "en": "abandoned places documentary",
       "ru": "заброшенные места"
     },
     {
       "id": "parasites",
       "group": "Биология",
-      "de": "Parasiten Dokumentation",
+      "de": "Parasiten Körper",
       "en": "parasites documentary",
       "ru": "паразиты"
     },
     {
       "id": "human-body",
       "group": "Биология",
-      "de": "menschlicher Körper erklärt",
+      "de": "menschlicher Körper Organe",
       "en": "human body explained",
       "ru": "как устроено тело"
     },
     {
       "id": "microbes",
       "group": "Биология",
-      "de": "Mikroorganismen Doku",
+      "de": "Mikroorganismen Zellen",
       "en": "microscopic world documentary",
       "ru": "микромир"
     },
@@ -194,7 +194,7 @@
       "id": "future-earth",
       "control": true,
       "group": "Будущее",
-      "de": "Zukunft der Erde Doku",
+      "de": "Zukunft der Erde",
       "en": "future of earth documentary",
       "ru": "будущее Земли"
     },
@@ -844,6 +844,32 @@
         "channels": 3,
         "lift": 4.7,
         "medianViews": 28333
+      }
+    },
+    {
+      "id": "hitlers",
+      "group": "Найдено автоматом",
+      "de": "hitlers Doku",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 6,
+        "lift": 2.5,
+        "medianViews": 60100
+      }
+    },
+    {
+      "id": "goldene",
+      "group": "Найдено автоматом",
+      "de": "goldene Doku",
+      "ru": "золотой DOCU",
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.6,
+        "medianViews": 52759
       }
     }
   ]

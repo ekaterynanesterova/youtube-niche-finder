@@ -15,8 +15,7 @@ export function buildPayload(m, seeds, thresholds) {
     for (const v of m.videos) {
       const ch = m.channels[v.channelId];
       if (ch?.lang !== lang) continue;
-      if (v.outlierRatio == null || v.outlierRatio < thresholds.outlierRatio) continue;
-      if (v.views < thresholds.outlierMinViews) continue;
+      if (v.views < thresholds.workingViews) continue;
       if (v.channelAgeAtUploadDays == null || v.channelAgeAtUploadDays > thresholds.youngChannelDays) continue;
       for (const sid of v.seeds) {
         const bucket = ((examples[sid] ??= {})[lang] ??= []);
@@ -28,16 +27,20 @@ export function buildPayload(m, seeds, thresholds) {
           subs: ch.subscribers,
           // Состояние канала целиком: без него один ролик ни о чём не говорит.
           breakouts: ch.breakouts, working: ch.working, videos: ch.videoCount,
-          chMedian: ch.medianViews, usd: ch.monthlyUsd, earning: ch.earning,
+          chMedian: ch.medianViews, usd: ch.monthlyUsd, earning: ch.started,
         });
       }
     }
   }
   for (const sid of Object.keys(examples)) {
     for (const lang of Object.keys(examples[sid])) {
+      // По одному ролику на канал: иначе список показывает один канал пять раз
+      // и создаёт впечатление, что больше в нише никого нет.
+      const seenCh = new Set();
       examples[sid][lang] = examples[sid][lang]
         .sort((a, b) => (b.earning - a.earning) || (b.usd - a.usd) || (b.views - a.views))
-        .slice(0, 5);
+        .filter((v) => !seenCh.has(v.channel) && seenCh.add(v.channel))
+        .slice(0, 6);
     }
   }
 
@@ -61,6 +64,21 @@ export function buildPayload(m, seeds, thresholds) {
     videoCount: m.videos.length,
     minChannels: 3,
     niches, examples, verdict, markets,
+    // Списки для раскрытия по клику: посмотреть глазами, что вообще собрано.
+    topChannels: Object.values(m.channels)
+      .filter((c) => c.title)
+      .sort((a, b) => (b.monthlyUsd ?? 0) - (a.monthlyUsd ?? 0))
+      .slice(0, 300)
+      .map((c) => ({ id: c.id, title: c.title, lang: c.lang, usd: Math.round(c.monthlyUsd ?? 0),
+                     age: c.ageDays == null ? null : Math.round(c.ageDays),
+                     videos: c.videoCount, subs: c.subscribers })),
+    topVideos: m.videos
+      .sort((a, b) => b.views - a.views)
+      .slice(0, 300)
+      .map((v) => ({ id: v.id, title: v.title, views: v.views,
+                     minutes: Math.round(v.durationSec / 60),
+                     age: Math.round(v.ageDays),
+                     channel: m.channels[v.channelId]?.title ?? null })),
     // Архетип канала — набор тем, которые состоявшиеся каналы снимают вместе.
     archetypes: buildArchetypes({ metrics: m, thresholds, lang: 'en' }),
     headline: headline(verdict, markets),
@@ -77,6 +95,7 @@ export function renderSite(payload) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234ade80'/%3E%3Cstop offset='1' stop-color='%2360a5fa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='%230d1014'/%3E%3Ccircle cx='27' cy='27' r='16' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M40 40 L54 54' stroke='url(%23g)' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M31 18h-3a5 5 0 0 0-5 5v14' fill='none' stroke='%23e8ecf2' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M19 27h11' stroke='%23e8ecf2' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <title>Ниши · Niche Finder</title>
 <style>
 :root{
@@ -104,6 +123,23 @@ h1{margin:0;font-size:26px;letter-spacing:-.02em}
 .stat{background:var(--raise);border:1px solid var(--line);border-radius:10px;
   padding:8px 12px;min-width:96px}
 .stat b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
+button.stat{font:inherit;text-align:left;cursor:pointer;color:inherit}
+button.stat:hover{border-color:var(--brand)}
+button.stat[aria-expanded="true"]{border-color:var(--brand);
+  background:color-mix(in srgb,var(--brand) 12%,var(--raise))}
+#drill{margin-top:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:14px;max-height:60vh;overflow:auto}
+#drill h4{margin:0 0 10px;font-size:13px;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--dim)}
+#drill table{border-collapse:collapse;width:100%;font-size:13px}
+#drill th{text-align:left;color:var(--dim);font-weight:600;font-size:11px;
+  text-transform:uppercase;letter-spacing:.05em;padding:6px 8px;
+  position:sticky;top:0;background:var(--card)}
+#drill td{padding:6px 8px;border-top:1px solid var(--line);
+  font-variant-numeric:tabular-nums}
+#drill td:first-child{max-width:340px}
+#drill a{color:inherit;text-decoration:none}
+#drill a:hover{color:var(--brand)}
 .stat span{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 
 .banner{margin:16px 0 0;padding:12px 14px;border-radius:var(--r);
@@ -224,6 +260,7 @@ footer b{color:var(--ink)}
     <h1>Где дверь открыта</h1>
     <div class="lede" id="lede"></div>
     <div class="stats" id="stats"></div>
+    <div id="drill" hidden></div>
     <div id="banner"></div>
   </header>
 
@@ -256,7 +293,8 @@ footer b{color:var(--ink)}
       <li><span class="dot" style="background:var(--bad)"></span><b>ниже 35%</b> — дверь закрыта. Выбросы достаются тем, у кого уже есть аудитория. Заходить туда с нуля — тратить время.</li>
     </ul>
     <p>Само по себе высокое число ещё ничего не решает: смотри рядом на <b>число пробившихся каналов</b>.</p>
-    <p><b>Пробилось</b> — сколько <i>разных</i> каналов ниши выходят на денежную цель. Канал засчитывается, только если его свежие ролики за последние три месяца дают в среднем нужный объём просмотров. Одно залетевшее видео каналом не засчитывается: YouTube на старте раздаёт показы всем, и один ролик может выстрелить у кого угодно.</p>
+    <p><b>Молодых поехали</b> — сколько каналов моложе года уже приносят заметные деньги. Судить двухмесячный канал полной целью бессмысленно: он только начал, у него десять роликов. Важно, что он <i>уже</i> зарабатывает — значит формат работает и на новичке.</p>
+    <p><b>Доросли до цели</b> — сколько каналов ниши, любого возраста, вышли на полную цель, и сколько приносит типичный из них. Это потолок ниши: до чего можно дорасти, если получится.</p>
     <p><b>Не дотягивают</b> — доля каналов, у которых попадания есть, а до цели далеко. Двадцать тысяч на ролике выглядят прилично ровно до тех пор, пока не посчитаешь в деньгах.</p>
     <p><b>Долговечность</b> — работает ли на тебя старое видео. Считается так: ролики старше полугода составляют, скажем, 17% каталога — а сколько просмотров они приносят? Если 55%, то есть в три раза больше своей доли, тема живёт годами и место в ней можно занять. Если меньше своей доли — ниша окажется беговой дорожкой: перестал выпускать, доход исчез.</p>
     <p><b>Типичный доход</b> — сколько в месяц приносит средний состоявшийся канал ниши. Оценка грубая: RPM зависит от тематики, сезона и аудитории, и точной цифры API не даёт.</p>
@@ -359,8 +397,8 @@ function card(r, i) {
         \${v.titleRu ? \`<div class="vru">\${v.titleRu}</div>\` : ''}
         <div class="vm">\${v.channel ?? ''} · \${num(v.views)} просмотров · \${v.minutes} мин · каналу было \${plural(v.channelAge, 'день', 'дня', 'дней')}</div>
         <div class="vm \${v.earning ? 'good' : 'warnt'}">\${v.earning
-          ? 'канал зарабатывает ≈ $' + num(v.usd) + '/мес · ' + v.breakouts + ' видео выше 100 тыс. из ' + v.videos
-          : 'не выходит на цель: ≈ $' + num(v.usd) + '/мес · медиана канала ' + num(v.chMedian)}</div>
+          ? 'канал уже зарабатывает ≈ $' + num(v.usd) + '/мес · ' + v.breakouts + ' видео выше 100 тыс. из ' + v.videos
+          : 'пока почти ничего: ≈ $' + num(v.usd) + '/мес · медиана канала ' + num(v.chMedian)}</div>
       </a>\`).join('') : '<div class="vm">Примеров пока нет — нужны прогоны.</div>'}
     </div>
   </details>\`;
@@ -402,11 +440,45 @@ document.getElementById('lede').textContent =
   'Срез ' + P.computedAt.slice(0, 10) + '. Ниша показывается, только если в ней пробились минимум ' +
   P.minChannels + ' разных молодых канала.';
 
+// Плашки — кнопки: за цифрой должно быть видно, что за ней стоит.
+function drawList(kind) {
+  const box = document.getElementById('drill');
+  if (!kind) { box.innerHTML = ''; box.hidden = true; return; }
+  box.hidden = false;
+  if (kind === 'channels') {
+    box.innerHTML = '<h4>Каналы — 300 самых заметных из ' + P.channelCount + '</h4>' +
+      '<table><tr><th>Канал</th><th>Язык</th><th>$/мес</th><th>Возраст</th><th>Видео</th><th>Подписчики</th></tr>' +
+      (P.topChannels ?? []).map(c =>
+        '<tr><td><a href="https://youtube.com/channel/' + c.id + '" target="_blank" rel="noopener">' +
+        (c.title || '') + '</a></td><td>' + (c.lang || '—') + '</td><td>$' + num(c.usd) +
+        '</td><td>' + (c.age == null ? '—' : num(c.age) + ' дн') + '</td><td>' + num(c.videos) +
+        '</td><td>' + (c.subs == null ? '—' : num(c.subs)) + '</td></tr>').join('') + '</table>';
+  } else {
+    box.innerHTML = '<h4>Видео — 300 самых просматриваемых из ' + P.videoCount.toLocaleString('ru-RU') + '</h4>' +
+      '<table><tr><th>Ролик</th><th>Канал</th><th>Просмотры</th><th>Длина</th><th>Возраст</th></tr>' +
+      (P.topVideos ?? []).map(v =>
+        '<tr><td><a href="https://youtu.be/' + v.id + '" target="_blank" rel="noopener">' +
+        (v.title || '') + '</a></td><td>' + (v.channel || '') + '</td><td>' + num(v.views) +
+        '</td><td>' + v.minutes + ' мин</td><td>' + num(v.age) + ' дн</td></tr>').join('') + '</table>';
+  }
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+let openList = null;
 document.getElementById('stats').innerHTML = [
   [P.channelCount.toLocaleString('ru-RU'), 'каналов'],
   [P.videoCount.toLocaleString('ru-RU'), 'видео'],
   [P.snapshotDays, 'дней сбора'],
-].map(([v, l]) => \`<div class="stat"><b>\${v}</b><span>\${l}</span></div>\`).join('');
+].map(([v, l], i) => (i < 2
+    ? \`<button class="stat act" data-k="\${i === 0 ? 'channels' : 'videos'}"><b>\${v}</b><span>\${l} ›</span></button>\`
+    : \`<div class="stat"><b>\${v}</b><span>\${l}</span></div>\`)).join('');
+
+document.querySelectorAll('.stat.act').forEach(b => b.onclick = () => {
+  openList = openList === b.dataset.k ? null : b.dataset.k;
+  drawList(openList);
+  document.querySelectorAll('.stat.act').forEach(x =>
+    x.setAttribute('aria-expanded', x.dataset.k === openList));
+});
 
 if (P.snapshotDays < 21) {
   document.getElementById('banner').innerHTML =
@@ -443,8 +515,9 @@ function drawVerdict() {
     return;
   }
   const money = (r) => [
-    ['$' + num(r.usd) + '/мес', 'типичный доход'],
-    [r.young + ' из ' + r.total, 'молодых дошли'],
+    ['$' + num(r.usd) + '/мес', 'типичный у молодых'],
+    [r.young + '', 'молодых поехали'],
+    [r.mature ? r.mature + ' · $' + num(r.matureUsd) : '—', 'доросли до цели'],
     [r.fastestMonths == null ? '—' : Math.round(r.fastestMonths) + ' мес', 'самый быстрый'],
     [r.effort ? r.effort.hoursPerWeek + ' ч/нед' : '—', 'темп лидеров'],
     [r.catalog == null ? '—' : Math.round(r.catalog) + ' видео', 'каталог лидера'],
