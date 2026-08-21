@@ -1393,6 +1393,71 @@
         "lift": 6.1,
         "medianViews": 107947
       }
+    },
+    {
+      "id": "still-alive",
+      "group": "Найдено автоматом",
+      "en": "still alive documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 6,
+        "lift": 3.3,
+        "medianViews": 78847
+      }
+    },
+    {
+      "id": "deeper-dig-into",
+      "group": "Найдено автоматом",
+      "en": "deeper dig into documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 5.8,
+        "medianViews": 57524
+      }
+    },
+    {
+      "id": "apex-predators",
+      "group": "Найдено автоматом",
+      "en": "apex predators documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 6,
+        "lift": 3.2,
+        "medianViews": 172733
+      }
+    },
+    {
+      "id": "period-earth",
+      "group": "Найдено автоматом",
+      "en": "period earth documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10,
+        "medianViews": 97226
+      }
+    },
+    {
+      "id": "china-hidden",
+      "group": "Найдено автоматом",
+      "en": "china hidden documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 5.6,
+        "medianViews": 71693
+      }
     }
   ]
 }
