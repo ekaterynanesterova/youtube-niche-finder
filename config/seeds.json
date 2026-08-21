@@ -1092,6 +1092,71 @@
         "lift": 10,
         "medianViews": 70683.5
       }
+    },
+    {
+      "id": "sea-creatures-get",
+      "group": "Найдено автоматом",
+      "en": "sea creatures get documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 8.6,
+        "medianViews": 203183
+      }
+    },
+    {
+      "id": "anyone-expected",
+      "group": "Найдено автоматом",
+      "en": "anyone expected documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 5,
+        "lift": 5.4,
+        "medianViews": 41627
+      }
+    },
+    {
+      "id": "start-smoking",
+      "group": "Найдено автоматом",
+      "en": "start smoking documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 15,
+        "medianViews": 961403
+      }
+    },
+    {
+      "id": "alaska-lake-monster",
+      "group": "Найдено автоматом",
+      "en": "alaska lake monster documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 15,
+        "medianViews": 35885
+      }
+    },
+    {
+      "id": "amazon-mysteries",
+      "group": "Найдено автоматом",
+      "en": "amazon mysteries documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 15,
+        "medianViews": 605875
+      }
     }
   ]
 }

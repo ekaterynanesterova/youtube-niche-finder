@@ -296,6 +296,7 @@ function nicheStats(seedVideos, channels, thresholds) {
       .reduce((min, c) => (min == null ? c.ageDays : Math.min(min, c.ageDays)), null),
     // Сколько часов готового видео в неделю держит типичный состоявшийся канал.
     medianEarningMinutesPerWeek: median(seedChannels.filter((c) => c.earning).map((c) => c.minutesPerWeek)),
+    ...newcomerFresh(seedVideos, channels, thresholds),
     ...shelfLife(seedVideos, thresholds),
     // Ёмкость: на сколько роликов темы хватает тем, кто уже дошёл. Отвечает на
     // вопрос «а что я буду снимать после десятого видео».
@@ -362,6 +363,31 @@ export function videoNiches(title, index, lang) {
     if (s.anchors.every((w) => t.includes(w))) out.push(s.id);
   }
   return out;
+}
+
+// Главный вопрос ниши: сколько соберёт НОВЫЙ ролик, выпущенный сегодня
+// каналом без аудитории. Долговечность старых роликов приятна, но вторична:
+// зарабатывают на ролике в момент его выхода, а не через год.
+function newcomerFresh(videos, channels, thresholds) {
+  const lo = thresholds.freshMinAgeDays ?? 7;      // до недели ролик ещё разгоняется
+  const hi = thresholds.freshMaxAgeDays ?? 60;
+  const fresh = videos.filter((v) => {
+    if (v.ageDays < lo || v.ageDays > hi) return false;
+    const c = channels[v.channelId];
+    return c?.ageDays != null && c.ageDays <= thresholds.youngChannelDays;
+  });
+  if (fresh.length < (thresholds.freshMinSample ?? 10)) {
+    return { freshViews: null, freshOverWorking: null, freshOverBreakout: null, freshSample: fresh.length };
+  }
+  const share = (n) => fresh.filter((v) => v.views >= n).length / fresh.length;
+  return {
+    // Столько собирает типовой свежий ролик у канала без аудитории.
+    freshViews: median(fresh.map((v) => v.views)),
+    // Насколько это надёжно: доля свежих роликов, перешагнувших планку.
+    freshOverWorking: share(thresholds.workingViews),
+    freshOverBreakout: share(thresholds.breakoutViews),
+    freshSample: fresh.length,
+  };
 }
 
 // Долговечность темы: работает ли старое видео или ниша требует бежать.

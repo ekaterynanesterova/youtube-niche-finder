@@ -32,5 +32,8 @@
     "28"
   ],
   "backfillUnitBudget": 1200,
-  "topicSingleWordLift": 8
+  "topicSingleWordLift": 8,
+  "freshMinAgeDays": 7,
+  "freshMaxAgeDays": 60,
+  "freshMinSample": 10
 }

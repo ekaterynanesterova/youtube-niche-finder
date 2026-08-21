@@ -10,6 +10,9 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
       // Доказательством считаем только повторяемость: один дошедший канал
       // может быть чьей угодно удачей, двое — уже закономерность.
       if (m.youngOutlierChannels < minYoung) continue;
+      // Без выборки свежих роликов судить не о чем: главный вопрос ниши
+      // именно в них.
+      if (m.freshViews == null) continue;
       rows.push({
         id: n.id, ru: n.ru, group: n.group, lang,
         market: MARKET[lang] ?? lang,
@@ -26,6 +29,10 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         conveyor: m.conveyorShare,
         missing: m.lotteryShare,
         views: m.medianOutlierViews,
+        fresh: m.freshViews,
+        freshOver20k: m.freshOverWorking,
+        freshOver100k: m.freshOverBreakout,
+        freshSample: m.freshSample,
         shelf: m.shelfLiveIndex ?? m.shelfIndex,
         shelfLive: m.shelfLiveIndex != null,
         shelfOldShare: m.shelfOldShare,
@@ -50,9 +57,12 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   rows.length = 0;
   rows.push(...unique);
 
-  // Сначала повторяемость, потом деньги. Ниша, где дошли шестеро по три тысячи,
-  // надёжнее ниши, где дошёл один на десять.
-  rows.sort((a, b) => (b.young - a.young) || ((b.usd ?? 0) - (a.usd ?? 0)));
+  // Ранжируем по тому, что решает: сколько соберёт новый ролик у новичка и
+  // насколько это повторяемо. Число дошедших каналов — подтверждение, а не
+  // основание: канал мог дойти год назад, когда в нише было пусто.
+  rows.sort((a, b) =>
+    ((b.fresh ?? 0) * (0.5 + (b.freshOver20k ?? 0))) -
+    ((a.fresh ?? 0) * (0.5 + (a.freshOver20k ?? 0))));
 
   for (const r of rows) {
     r.why = why(r);
@@ -74,9 +84,15 @@ function plural(n, a, b, c) {
 }
 
 function why(r) {
-  const parts = [`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`];
+  const parts = [];
+  if (r.fresh != null) {
+    parts.push(`свежий ролик у канала без аудитории собирает около ` +
+      `${Math.round(r.fresh).toLocaleString('ru-RU')} просмотров, ` +
+      `${Math.round((r.freshOver20k ?? 0) * 100)}% таких роликов берут 20 тысяч и выше`);
+  }
+  parts.push(`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`);
   if (r.mature) parts.push(`${r.mature} доросли до полной цели`);
-  if (r.fastestMonths != null) parts.push(`самый быстрый — за ${months(r.fastestMonths)}`);
+  if (r.fastestMonths != null) parts.push(`самый быстрый дошёл за ${months(r.fastestMonths)}`);
   return parts.join(', ') + '.';
 }
 
@@ -91,10 +107,11 @@ function risk(r, thresholds) {
   if (r.minutes != null && r.minutes >= 90) {
     out.push(`типовой ролик — ${Math.round(r.minutes)} минут, это тяжёлый вход`);
   }
-  // Ниша-беговая дорожка: старые ролики мертвы, доход держится только на
-  // свежих. Такую нишу нельзя занять — в ней можно только бежать.
-  if (r.shelf != null && r.shelf < 1) {
-    out.push(`старые ролики почти не смотрят — доход держится только на свежих, место в такой нише не занять`);
+  // Главный риск — свежий ролик не собирает. Всё остальное вторично.
+  if (r.fresh != null && r.fresh < 3000) {
+    out.push(`свежий ролик новичка собирает всего около ${Math.round(r.fresh).toLocaleString('ru-RU')} просмотров — заработать в моменте не выйдет`);
+  } else if ((r.freshOver20k ?? 0) < 0.2) {
+    out.push(`только ${Math.round((r.freshOver20k ?? 0) * 100)}% свежих роликов берут 20 тысяч — большинство выходит впустую`);
   }
   // Тема может кончиться раньше канала — это отдельный риск, не связанный
   // с деньгами и конкуренцией.
