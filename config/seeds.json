@@ -1157,6 +1157,112 @@
         "lift": 15,
         "medianViews": 605875
       }
+    },
+    {
+      "id": "calm-space",
+      "group": "Космос спокойный",
+      "control": true,
+      "en": "space to fall asleep to",
+      "de": "Weltraum zum Einschlafen",
+      "ru": "космос для засыпания"
+    },
+    {
+      "id": "calm-universe",
+      "group": "Космос спокойный",
+      "en": "relaxing universe documentary",
+      "de": "entspannendes Universum",
+      "ru": "расслабляющее о Вселенной"
+    },
+    {
+      "id": "sleep-science-space",
+      "group": "Космос спокойный",
+      "en": "calm science documentary sleep",
+      "de": "ruhige Wissenschaft Einschlafen",
+      "ru": "спокойная наука на ночь"
+    },
+    {
+      "id": "space-ambience",
+      "group": "Космос спокойный",
+      "en": "space ambience deep sleep",
+      "de": "Weltraum Klänge Schlaf",
+      "ru": "космический эмбиент для сна"
+    },
+    {
+      "id": "cosmic-journey",
+      "group": "Космос спокойный",
+      "en": "journey through the universe narration",
+      "de": "Reise durch das Universum",
+      "ru": "путешествие по Вселенной"
+    },
+    {
+      "id": "nasa-discoveries",
+      "group": "Космос",
+      "en": "nasa discovery explained",
+      "de": "NASA Entdeckung erklärt",
+      "ru": "открытия NASA"
+    },
+    {
+      "id": "james-webb",
+      "group": "Космос",
+      "en": "james webb telescope discovery",
+      "de": "James Webb Teleskop Entdeckung",
+      "ru": "телескоп Джеймс Уэбб"
+    },
+    {
+      "id": "galaxies",
+      "group": "Космос",
+      "en": "galaxies documentary",
+      "de": "Galaxien Doku",
+      "ru": "галактики"
+    },
+    {
+      "id": "neutron-stars",
+      "group": "Космос",
+      "en": "neutron star supernova",
+      "de": "Neutronenstern Supernova",
+      "ru": "нейтронные звёзды и сверхновые"
+    },
+    {
+      "id": "space-time",
+      "group": "Космос",
+      "en": "space time explained relativity",
+      "de": "Raumzeit Relativität erklärt",
+      "ru": "пространство-время и относительность"
+    },
+    {
+      "id": "alien-life",
+      "group": "Космос",
+      "en": "alien life search documentary",
+      "de": "Suche nach außerirdischem Leben",
+      "ru": "поиск внеземной жизни"
+    },
+    {
+      "id": "mars-exploration",
+      "group": "Космос",
+      "en": "mars exploration mission",
+      "de": "Mars Mission Erkundung",
+      "ru": "исследование Марса"
+    },
+    {
+      "id": "end-universe",
+      "group": "Космос",
+      "en": "end of the universe heat death",
+      "de": "Ende des Universums",
+      "ru": "конец Вселенной"
+    },
+    {
+      "id": "cosmic-scale",
+      "group": "Космос",
+      "en": "cosmic scale comparison",
+      "de": "kosmische Größenvergleich",
+      "ru": "масштабы космоса"
+    },
+    {
+      "id": "voyager-probes",
+      "group": "Космос",
+      "en": "voyager probe interstellar",
+      "de": "Voyager Sonde interstellar",
+      "ru": "Вояджеры и межзвёздное"
     }
   ]
 }
