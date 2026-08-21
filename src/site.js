@@ -48,6 +48,36 @@ export function buildPayload(m, seeds, thresholds) {
   const markets = marketStats(m.channels, thresholds);
   const verdict = buildVerdict({ niches: withRu, thresholds });
 
+  // Кто уже работает в нише. Без этого списка «брать первым» — совет вслепую:
+  // не видно ни числа конкурентов, ни того, насколько они крупные.
+  const med = (xs) => {
+    const a = xs.filter(Number.isFinite).sort((p, q) => p - q);
+    return a.length ? a[a.length >> 1] : null;
+  };
+  for (const r of verdict) {
+    const vids = m.videos.filter((v) => v.seeds.includes(r.id) && m.channels[v.channelId]?.lang === r.lang);
+    const per = new Map();
+    for (const v of vids) (per.get(v.channelId) ?? per.set(v.channelId, []).get(v.channelId)).push(v);
+    r.rivals = [...per.entries()]
+      .filter(([, vs]) => vs.length >= (thresholds.nicheMinVideosPerChannel ?? 3))
+      .map(([id, vs]) => {
+        const c = m.channels[id];
+        const fresh = vs.filter((v) => v.ageDays >= 7 && v.ageDays <= 60);
+        return {
+          id, title: c.title, subs: c.subscribers,
+          age: c.ageDays == null ? null : Math.round(c.ageDays),
+          exact: !!c.firstUploadComplete,
+          inNiche: vs.length, videos: c.videoCount,
+          usd: Math.round(c.monthlyUsd ?? 0),
+          fresh: fresh.length >= 2 ? med(fresh.map((v) => v.views)) : null,
+          best: Math.max(...vs.map((v) => v.views)),
+          young: c.ageDays != null && c.ageDays <= thresholds.youngChannelDays,
+        };
+      })
+      .sort((a, b) => b.usd - a.usd)
+      .slice(0, 14);
+  }
+
   const niches = Object.values(m.niches).map((n) => ({
     id: n.id, group: n.group, control: n.control,
     ru: byId[n.id]?.ru ?? null,
@@ -177,6 +207,20 @@ button.stat[aria-expanded="true"]{border-color:var(--brand);
 .pick p:last-child{margin-bottom:0}
 .pick .lab{color:var(--dim)}
 .disclaim{color:var(--dim);font-size:13px;max-width:64ch;margin-top:16px}
+.rivals{margin-top:12px;border-top:1px solid var(--line);padding-top:11px}
+.rivals > summary{cursor:pointer;list-style:none;font-size:13px;color:var(--brand)}
+.rivals > summary::-webkit-details-marker{display:none}
+.rivals > summary::after{content:' ▾'}
+.rivals[open] > summary::after{content:' ▴'}
+.rivals table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:10px;
+  display:block;overflow-x:auto;white-space:nowrap}
+.rivals th{text-align:left;color:var(--dim);font-weight:600;font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.05em;padding:5px 9px 5px 0;vertical-align:bottom}
+.rivals td{padding:5px 9px 5px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.rivals tr.y td{color:var(--good)}
+.rivals a{color:inherit;text-decoration:none}
+.rivals a:hover{text-decoration:underline}
+.rivals .hint{color:var(--dim);font-size:12px;margin:9px 0 0;white-space:normal}
 .arch{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
   padding:17px;margin-bottom:12px}
 .arch.hot{border-color:var(--good)}
@@ -615,6 +659,24 @@ function drawVerdict() {
         ? '<p><span class="lab">объём:</span> дошедшие каналы выпускают около '
           + plural(r.effort.hoursPerMonth, 'часа', 'часов', 'часов') + ' готового видео в месяц'
           + (r.effort.minutes ? ', типовой ролик — ' + r.effort.minutes + ' мин' : '') + '.</p>'
+        : '') +
+      (r.rivals && r.rivals.length
+        ? '<details class="rivals"><summary>' + plural(r.rivals.length, 'канал', 'канала', 'каналов')
+          + ' уже в этой теме — посмотреть конкуренцию</summary>'
+          + '<table><tr><th>Канал</th><th>С первого видео</th><th>Роликов<br>по теме</th>'
+          + '<th>Свежий<br>ролик</th><th>Лучший</th><th>$/мес</th><th>Подписчики</th></tr>'
+          + r.rivals.map(c =>
+              '<tr class="' + (c.young ? 'y' : '') + '">'
+              + '<td><a href="https://youtube.com/channel/' + c.id + '" target="_blank" rel="noopener">'
+              + (c.title || '') + '</a></td>'
+              + '<td>' + (c.age == null ? '—' : num(c.age) + ' дн' + (c.exact ? '' : '?')) + '</td>'
+              + '<td>' + c.inNiche + ' из ' + num(c.videos) + '</td>'
+              + '<td>' + (c.fresh == null ? '—' : num(c.fresh)) + '</td>'
+              + '<td>' + num(c.best) + '</td>'
+              + '<td>$' + num(c.usd) + '</td>'
+              + '<td>' + (c.subs == null ? '—' : num(c.subs)) + '</td></tr>').join('')
+          + '</table><p class="hint">Зелёным — каналы моложе года. «Свежий ролик» — медиана '
+          + 'по роликам возрастом от недели до двух месяцев.</p></details>'
         : '') +
       '</div>').join('') +
     '<p class="disclaim">Цель — $' +

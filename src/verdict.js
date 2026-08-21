@@ -19,6 +19,7 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         query: n.queries[lang] ?? n.id,
         young: m.youngOutlierChannels,
         total: m.outlierChannels,
+        nicheChannels: m.channels,
         usd: m.medianYoungMonthlyUsd ?? m.medianMonthlyUsd,
         mature: m.matureChannels,
         matureUsd: m.medianMatureUsd,
@@ -98,6 +99,14 @@ function why(r) {
 
 function risk(r, thresholds) {
   const out = [];
+  // Тонкая выборка — сама по себе риск. Красивые проценты по трём каналам
+  // и десятку роликов не значат почти ничего.
+  if (r.nicheChannels != null && r.nicheChannels < 6) {
+    out.push(`в нише всего ${plural(r.nicheChannels, 'канал', 'канала', 'каналов')} — выборка тонкая, проценты по ней шаткие`);
+  }
+  if (r.freshSample != null && r.freshSample < 25) {
+    out.push(`свежих роликов для замера всего ${r.freshSample}, цифра может сильно поехать`);
+  }
   if ((r.missing ?? 0) >= 0.6) {
     out.push(`${Math.round(r.missing * 100)}% каналов ниши до цели не дотягивают — попадания там есть, денег нет`);
   }

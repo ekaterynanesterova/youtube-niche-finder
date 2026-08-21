@@ -1263,6 +1263,136 @@
       "en": "voyager probe interstellar",
       "de": "Voyager Sonde interstellar",
       "ru": "Вояджеры и межзвёздное"
+    },
+    {
+      "id": "answer-shocked-everyone",
+      "group": "Найдено автоматом",
+      "en": "answer shocked everyone documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 15,
+        "medianViews": 33097
+      }
+    },
+    {
+      "id": "something-disturbing",
+      "group": "Найдено автоматом",
+      "en": "something disturbing documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 7.5,
+        "medianViews": 62640
+      }
+    },
+    {
+      "id": "deep-ocean",
+      "group": "Найдено автоматом",
+      "en": "deep ocean documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 7,
+        "lift": 3,
+        "medianViews": 58760
+      }
+    },
+    {
+      "id": "fiercest-predators",
+      "group": "Найдено автоматом",
+      "en": "fiercest predators documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 6.4,
+        "medianViews": 170480
+      }
+    },
+    {
+      "id": "rocky-mountains",
+      "group": "Найдено автоматом",
+      "en": "rocky mountains documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 6.3,
+        "medianViews": 100232
+      }
+    },
+    {
+      "id": "earth-planet",
+      "group": "Найдено автоматом",
+      "en": "earth planet documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 6.3,
+        "medianViews": 90201
+      }
+    },
+    {
+      "id": "bigger-than",
+      "group": "Найдено автоматом",
+      "en": "bigger than documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 8,
+        "lift": 2.5,
+        "medianViews": 59873
+      }
+    },
+    {
+      "id": "secret-china",
+      "group": "Найдено автоматом",
+      "en": "secret china documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 11.3,
+        "medianViews": 104333
+      }
+    },
+    {
+      "id": "scientists-asked-grok",
+      "group": "Найдено автоматом",
+      "en": "scientists asked grok documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 11.3,
+        "medianViews": 33097
+      }
+    },
+    {
+      "id": "ethiopian-bible",
+      "group": "Найдено автоматом",
+      "en": "ethiopian bible documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-08-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 6.1,
+        "medianViews": 107947
+      }
     }
   ]
 }
