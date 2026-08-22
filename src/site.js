@@ -193,8 +193,6 @@ header{position:relative;isolation:isolate;padding:16px 0 26px}
    radial-gradient(1.3px 1.3px at 88% 46%,#dbe7ff 50%,transparent),
    radial-gradient(1px 1px at 46% 62%,#9ec1ff 50%,transparent),
    radial-gradient(1.2px 1.2px at 22% 72%,#c8dcff 50%,transparent)}
-.sky::before{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;opacity:.6;
-  background:linear-gradient(90deg,transparent,var(--good),var(--brand),transparent)}
 @media (prefers-color-scheme: light){
   .sky{background:radial-gradient(120% 130% at 18% -20%,#e4ecfa 0%,#eef2f8 45%,var(--bg) 80%)}
   .sky::after{opacity:.25}
