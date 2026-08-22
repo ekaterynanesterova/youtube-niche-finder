@@ -168,9 +168,11 @@ export function headline(rows, marketStats) {
   const top = rows[0];
   const de = marketStats.de, en = marketStats.en;
   const gap = de.youngRate != null && en.youngRate != null && en.youngRate > 0
-    ? ` На немецком до цели доходят ${Math.round(de.youngRate * 100)}% молодых каналов, на английском — ${Math.round(en.youngRate * 100)}%.`
+    ? ` Для сравнения рынков: на немецком до цели доходят ${Math.round(de.youngRate * 100)}% молодых каналов, на английском — ${Math.round(en.youngRate * 100)}%.`
     : '';
-  return `Лучшее на сегодня — «${top.query}» (${top.market} рынок): ${plural(top.young, 'молодой канал', 'молодых канала', 'молодых каналов')} уже ${top.young === 1 ? 'зарабатывает' : 'зарабатывают'}, ` +
+  // Название лидера уже стоит в шапке крупно — здесь важно то, чего там нет:
+  // сколько он приносит и как рынки соотносятся между собой.
+  return `У ${plural(top.young, 'молодого канала', 'молодых каналов', 'молодых каналов')} в этой нише уже есть доход, ` +
          `типичный — около $${Math.round(top.usd ?? 0)} в месяц.${gap}`;
 }
 

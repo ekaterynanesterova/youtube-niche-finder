@@ -83,7 +83,11 @@ if (!metricsOnly) {
   } finally {
     // Что успели собрать — сохраняем, даже если прогон упал на полпути.
     // Иначе одна ошибка стоит суток квоты: юниты потрачены, данных нет.
-    db.state.runs = [...(db.state.runs ?? []).slice(-29), { date, ...quota.summary() }];
+    db.state.runs = [...(db.state.runs ?? []).slice(-29), {
+      date, ...quota.summary(),
+      channels: Object.keys(db.channels).length,
+      videos: Object.keys(db.videos).length,
+    }];
     saveDb(db);
     console.log(`Квота: потрачено ${quota.spent} из ${quota.budget}`, quota.byEndpoint);
   }
@@ -96,7 +100,7 @@ const metrics = computeMetrics({ db, seeds, thresholds, snapshots,
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
 
 // Страница собирается с вшитыми данными: без fetch ей нечего не догрузить.
-const payload = buildPayload(metrics, seeds, thresholds);
+const payload = buildPayload(metrics, seeds, thresholds, db);
 
 // Названия видео переводим на русский. Переведённое живёт в кеше вечно,
 // так что расход у бесплатного сервиса падает почти до нуля со второго дня.

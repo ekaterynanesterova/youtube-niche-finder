@@ -6,7 +6,29 @@ import { buildArchetypes } from './archetypes.js';
 
 const MARKET_LABEL = { de: 'Немецкий', en: 'Английский' };
 
-export function buildPayload(m, seeds, thresholds) {
+// Время показываем по Берлину: смотрят страницу оттуда, а крон живёт в UTC.
+function berlin(d) {
+  return new Intl.DateTimeFormat('ru-RU', {
+    timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit',
+  }).format(d);
+}
+
+function scheduleText() {
+  const now = new Date();
+  // Крон стоит на 07:30 UTC — сразу после обнуления квоты Google.
+  const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 7, 30));
+  if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
+  const sameDay = next.getUTCDate() === now.getUTCDate();
+  return { updated: berlin(now), next: berlin(next), nextDay: sameDay ? 'сегодня' : 'завтра' };
+}
+
+function growthSinceLastRun(runs) {
+  const last = runs.at(-1), prev = runs.at(-2);
+  if (!last || !prev || last.channels == null || prev.channels == null) return null;
+  return { channels: last.channels - prev.channels, videos: last.videos - prev.videos };
+}
+
+export function buildPayload(m, seeds, thresholds, db = {}) {
   const byId = Object.fromEntries(seeds.map((s) => [s.id, s]));
 
   // По пять живых примеров на нишу: цифры выбирают кандидатов, глаза решают.
@@ -95,6 +117,8 @@ export function buildPayload(m, seeds, thresholds) {
     videoCount: m.videos.length,
     minChannels: 3,
     niches, examples, verdict, markets,
+    // Разброс по нишам для шкалы наверху: одно число на нишу.
+    spread: verdict.map((r) => ({ id: r.id, q: r.query, fresh: r.fresh })).filter((r) => r.fresh > 0),
     pending: verdict.pending ?? [],
     // Списки для раскрытия по клику: посмотреть глазами, что вообще собрано.
     topChannels: Object.values(m.channels)
@@ -117,6 +141,14 @@ export function buildPayload(m, seeds, thresholds) {
     archetypes: buildArchetypes({ metrics: m, thresholds, lang: 'en' }),
     headline: headline(verdict, markets),
     target: { usd: thresholds.targetMonthlyUsd, rpm: thresholds.rpmUsd },
+    // Размер базы и прирост за сутки. Прирост показываем только когда в
+    // журнале есть с чем сравнивать — выдумывать его нельзя.
+    dbSize: { channels: Object.keys(db.channels ?? {}).length,
+              videos: Object.keys(db.videos ?? {}).length },
+    growth: growthSinceLastRun(db.state?.runs ?? []),
+    seedsDone: Object.values(db.state?.seedStats ?? {}).filter((x) => x.searches > 0).length,
+    seedsTotal: seeds.length,
+    schedule: scheduleText(),
     groups: [...new Set(seeds.map((s) => s.group))],
   };
 }
@@ -150,10 +182,74 @@ body{background:var(--bg);color:var(--ink);
   -webkit-font-smoothing:antialiased;padding-bottom:64px}
 .shell{max-width:1080px;margin:0 auto;padding:0 16px}
 
-header{padding:28px 0 18px}
-h1{margin:0;font-size:26px;letter-spacing:-.02em}
-.lede{color:var(--dim);font-size:14px;margin-top:6px}
-.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+header{position:relative;isolation:isolate;padding:16px 0 26px}
+.sky{position:absolute;inset:-26px -20px 40px;z-index:-1;border-radius:0 0 26px 26px;overflow:hidden;
+  background:radial-gradient(120% 130% at 18% -20%,#1d2b4a 0%,#141b28 42%,var(--bg) 78%)}
+.sky::after{content:'';position:absolute;inset:0;opacity:.7;
+  background-image:radial-gradient(1.4px 1.4px at 12% 28%,#cfe0ff 50%,transparent),
+   radial-gradient(1.1px 1.1px at 34% 12%,#9fc0ff 50%,transparent),
+   radial-gradient(1.6px 1.6px at 58% 34%,#e6eeff 50%,transparent),
+   radial-gradient(1px 1px at 76% 16%,#8fb4ff 50%,transparent),
+   radial-gradient(1.3px 1.3px at 88% 46%,#dbe7ff 50%,transparent),
+   radial-gradient(1px 1px at 46% 62%,#9ec1ff 50%,transparent),
+   radial-gradient(1.2px 1.2px at 22% 72%,#c8dcff 50%,transparent)}
+.sky::before{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;opacity:.6;
+  background:linear-gradient(90deg,transparent,var(--good),var(--brand),transparent)}
+@media (prefers-color-scheme: light){
+  .sky{background:radial-gradient(120% 130% at 18% -20%,#e4ecfa 0%,#eef2f8 45%,var(--bg) 80%)}
+  .sky::after{opacity:.25}
+}
+:root[data-theme="light"] .sky{background:radial-gradient(120% 130% at 18% -20%,#e4ecfa 0%,#eef2f8 45%,var(--bg) 80%)}
+
+.brandrow{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  flex-wrap:wrap;margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:9px;color:var(--dim);font-size:12.5px;
+  letter-spacing:.11em;text-transform:uppercase}
+.brand svg{color:var(--ink);flex:none}
+.live{display:inline-flex;align-items:center;gap:8px;color:var(--dim);font-size:12.5px}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--good);flex:none;
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 20%,transparent)}
+.kick{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--good);margin-bottom:7px}
+h1{margin:0;font-size:clamp(28px,6vw,46px);letter-spacing:-.035em;line-height:1.02;
+  background:linear-gradient(100deg,var(--ink) 25%,var(--brand) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.heroru{color:var(--brand);font-size:17px;margin-top:8px}
+.nums{display:flex;gap:clamp(18px,4vw,36px);flex-wrap:wrap;margin:26px 0 22px}
+.nums b{display:block;font-size:clamp(26px,5vw,34px);letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.nums span{display:block;color:var(--dim);font-size:12px;margin-top:5px;max-width:200px}
+.base{display:flex;gap:20px;flex-wrap:wrap;padding-top:16px;
+  border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+.base b{color:var(--ink);font-variant-numeric:tabular-nums}
+.base button.stat{display:inline;font:inherit;color:var(--dim);background:none;border:0;
+  padding:0;margin:0;cursor:pointer;border-radius:0;line-height:inherit;
+  text-decoration:underline;text-decoration-style:dashed;text-underline-offset:4px;
+  text-decoration-color:var(--line)}
+.base button.stat:hover{text-decoration-color:var(--brand)}
+.base button.stat b{display:inline}
+.base button.stat:hover b{color:var(--brand)}
+.base button.stat[aria-expanded="true"]{color:var(--ink);text-decoration-color:var(--brand)}
+.base em{font-style:normal;color:var(--good);font-size:11.5px}
+
+#scale{margin:22px 0 0}
+.scaletitle{color:var(--dim);font-size:12.5px;margin-bottom:14px}
+.scaleaxis{display:flex;justify-content:space-between;color:var(--dim);font-size:11px;margin-bottom:7px}
+.scaletrack{position:relative;height:10px;border-radius:99px;
+  background:linear-gradient(90deg,#2a3140,#3c4a63 55%,color-mix(in srgb,var(--good) 55%,#3c4a63))}
+.scaledot{position:absolute;top:50%;transform:translate(-50%,-50%)}
+.scaledot i{display:block;width:12px;height:12px;border-radius:50%;background:var(--brand);
+  border:2.5px solid var(--bg)}
+.scaledot.top i{width:19px;height:19px;background:var(--good);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--good) 22%,transparent)}
+.scalefoot{display:flex;justify-content:space-between;align-items:flex-start;
+  margin-top:14px;gap:24px}
+.scalefoot .lo{color:var(--dim);font-size:12.5px;max-width:260px}
+.scalefoot .hi{text-align:right}
+.scalefoot .hi b{display:block;font-size:15px}
+.scalefoot .hi em{font-style:normal;color:var(--good);font-size:24px;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .stat{background:var(--raise);border:1px solid var(--line);border-radius:10px;
   padding:8px 12px;min-width:96px}
 .stat b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
@@ -319,12 +415,29 @@ footer b{color:var(--ink)}
 <body>
 <div class="shell">
   <header>
-    <h1>Где дверь открыта</h1>
-    <div class="lede" id="lede"></div>
-    <div class="stats" id="stats"></div>
-    <div id="drill" hidden></div>
-    <div id="banner"></div>
+    <div class="sky"></div>
+    <div class="hin">
+      <div class="brandrow">
+        <div class="brand">
+          <svg width="26" height="26" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <defs><linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#4ade80"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+            <circle cx="27" cy="27" r="16" stroke="url(#lens)" stroke-width="6"/>
+            <path d="M40 40 L54 54" stroke="url(#lens)" stroke-width="8" stroke-linecap="round"/>
+            <path d="M31 18h-3a5 5 0 0 0-5 5v14" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M19 27h11" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/></svg>
+          <span>Niche Finder</span>
+        </div>
+        <div class="live" id="live"></div>
+      </div>
+      <div id="hero"></div>
+      <div class="base" id="base"></div>
+    </div>
   </header>
+
+  <div id="scale"></div>
+  <div id="banner"></div>
+  <div id="drill" hidden></div>
 
   <div class="vtabs" id="view-tabs"></div>
 
@@ -554,17 +667,67 @@ function draw() {
     || '<div class="empty">Под эти условия ничего не подошло. Ослабь фильтры — или данных пока просто мало.</div>';
 }
 
-document.getElementById('lede').textContent =
-  'Срез ' + P.computedAt.slice(0, 10) + '. Ниша показывается, только если в ней пробились минимум ' +
-  P.minChannels + ' разных молодых канала.';
+// --- шапка ---
+const lead = (P.verdict ?? [])[0];
+document.getElementById('live').innerHTML = P.schedule
+  ? '<i></i>обновлено в ' + P.schedule.updated + ' · следующий прогон ' + P.schedule.nextDay + ' в ' + P.schedule.next
+  : '';
 
-// Плашки — кнопки: за цифрой должно быть видно, что за ней стоит.
+document.getElementById('hero').innerHTML = lead
+  ? '<div class="kick">брать первым · ' + lead.market + ' рынок</div>'
+    + '<h1>' + lead.query + '</h1>'
+    + (lead.ru ? '<div class="heroru">' + lead.ru + '</div>' : '')
+    + '<div class="nums">'
+    + '<div><b>' + num(lead.fresh) + '</b><span>собирает свежий ролик у новичка</span></div>'
+    + '<div><b>' + pct(lead.freshOver20k) + '</b><span>таких роликов берут 20 тысяч</span></div>'
+    + '<div><b>' + lead.young + '</b><span>новичков уже зарабатывают</span></div>'
+    + '</div>'
+  : '<h1>Где дверь открыта</h1><div class="heroru">Данных пока мало — ни одна ниша не набрала достаточно.</div>';
+
+const g = P.growth;
+document.getElementById('base').innerHTML = [
+  '<button class="stat act" data-k="channels"><b>' + num(P.dbSize.channels) + '</b> каналов'
+    + (g && g.channels > 0 ? ' <em>+' + num(g.channels) + '</em>' : '') + ' ›</button>',
+  '<button class="stat act" data-k="videos"><b>' + num(P.dbSize.videos) + '</b> роликов'
+    + (g && g.videos > 0 ? ' <em>+' + num(g.videos) + '</em>' : '') + ' ›</button>',
+  '<span><b>' + P.snapshotDays + '</b> ' + plural(P.snapshotDays, 'день', 'дня', 'дней').split(' ')[1] + ' накопления</span>',
+  '<span><b>' + P.seedsDone + '/' + P.seedsTotal + '</b> тем изучено</span>',
+].join('');
+
+// --- шкала разброса ---
+// Список показывает числа по очереди, а отрыв лидера от остальных виден только
+// когда все ниши стоят на одной оси.
+const sp = (P.spread ?? []).filter((x) => x.fresh > 0);
+if (sp.length >= 4) {
+  const vals = sp.map((x) => x.fresh);
+  const hi = Math.max(...vals), lo = Math.min(...vals);
+  const at = (v) => {
+    const a = Math.log10(Math.max(lo, 100)), b = Math.log10(hi);
+    return b === a ? 50 : ((Math.log10(v) - a) / (b - a)) * 96 + 2;
+  };
+  const ticks = [lo, Math.sqrt(lo * hi), hi].map((v) => '<span>' + num(v) + '</span>');
+  document.getElementById('scale').innerHTML =
+    '<div class="scaletitle">Сколько собирает свежий ролик у канала без аудитории — все '
+      + plural(sp.length, 'ниша', 'ниши', 'ниш') + ' на одной шкале</div>'
+    + '<div class="scaleaxis">' + ticks.join('') + '</div>'
+    + '<div class="scaletrack">'
+    + sp.map((x, i) => '<div class="scaledot' + (x.fresh === hi ? ' top' : '') + '" style="left:'
+        + at(x.fresh).toFixed(1) + '%" title="' + x.q + ' — ' + num(x.fresh) + '"><i></i></div>').join('')
+    + '</div>'
+    + '<div class="scalefoot"><div class="lo">Большинство ниш жмётся к левому краю: ролик новичка там тонет.</div>'
+    + (lead ? '<div class="hi"><b>' + lead.query + '</b><em>' + num(lead.fresh) + '</em></div>' : '')
+    + '</div>';
+}
+
+// --- списки за цифрами ---
+// За числом должно быть видно, что за ним стоит: иначе «1803 канала» —
+// просто украшение.
 function drawList(kind) {
   const box = document.getElementById('drill');
   if (!kind) { box.innerHTML = ''; box.hidden = true; return; }
   box.hidden = false;
   if (kind === 'channels') {
-    box.innerHTML = '<h4>Каналы — 300 самых заметных из ' + P.channelCount + '</h4>' +
+    box.innerHTML = '<h4>Каналы — 300 самых заметных из ' + num(P.dbSize.channels) + '</h4>' +
       '<table><tr><th>Канал</th><th>Язык</th><th>$/мес</th><th>С первого видео</th><th>Видео</th><th>Подписчики</th></tr>' +
       (P.topChannels ?? []).map(c =>
         '<tr><td><a href="https://youtube.com/channel/' + c.id + '" target="_blank" rel="noopener">' +
@@ -575,8 +738,8 @@ function drawList(kind) {
         + '</td><td>' + num(c.videos) +
         '</td><td>' + (c.subs == null ? '—' : num(c.subs)) + '</td></tr>').join('') + '</table>';
   } else {
-    box.innerHTML = '<h4>Видео — 300 самых просматриваемых из ' + P.videoCount.toLocaleString('ru-RU') + '</h4>' +
-      '<table><tr><th>Ролик</th><th>Канал</th><th>Просмотры</th><th>Длина</th><th>С первого видео</th></tr>' +
+    box.innerHTML = '<h4>Видео — 300 самых просматриваемых из ' + num(P.dbSize.videos) + '</h4>' +
+      '<table><tr><th>Ролик</th><th>Канал</th><th>Просмотры</th><th>Длина</th><th>Возраст</th></tr>' +
       (P.topVideos ?? []).map(v =>
         '<tr><td><a href="https://youtu.be/' + v.id + '" target="_blank" rel="noopener">' +
         (v.title || '') + '</a></td><td>' + (v.channel || '') + '</td><td>' + num(v.views) +
@@ -586,14 +749,6 @@ function drawList(kind) {
 }
 
 let openList = null;
-document.getElementById('stats').innerHTML = [
-  [P.channelCount.toLocaleString('ru-RU'), 'каналов'],
-  [P.videoCount.toLocaleString('ru-RU'), 'видео'],
-  [P.snapshotDays, 'дней сбора'],
-].map(([v, l], i) => (i < 2
-    ? \`<button class="stat act" data-k="\${i === 0 ? 'channels' : 'videos'}"><b>\${v}</b><span>\${l} ›</span></button>\`
-    : \`<div class="stat"><b>\${v}</b><span>\${l}</span></div>\`)).join('');
-
 document.querySelectorAll('.stat.act').forEach(b => b.onclick = () => {
   openList = openList === b.dataset.k ? null : b.dataset.k;
   drawList(openList);
