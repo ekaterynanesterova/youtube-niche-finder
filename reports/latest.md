@@ -165,45 +165,45 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 582.0 | 4 874 364 | 156 дн | 113 915 |
-| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 315.2 | 1 271 609 | 82 дн | 106 563 |
-| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 395.2 | 3 341 437 | 7 дн | 70 390 |
-| [Impossible Places \| World’s Most Dangerous Structures That Will Leave](https://youtu.be/WzWs4dBRLI8) | Unknown Planet | 154.7 | 1 527 749 | 136 дн | 66 476 |
-| [DNA CONFIRMS D.B. Coopers Identity After 53 Years — And It’s NOT Who Y](https://youtu.be/yqstFZiDZVM) | New Discovery | 99.7 | 375 215 | 176 дн | 55 199 |
-| [How People Live in Bermuda \| Why 60,000 People Live on a Rock with Ze](https://youtu.be/3HZHJ20UfYs) | Impossible Travel | 30.0 | 1 493 953 | 44 дн | 53 750 |
-| [BRUTAL INSECTS \| Nature’s Tiny Killers \| Nature Animal Documentary](https://youtu.be/-bejNgfBcnw) | Discover Wildlife | 7.1 | 472 959 | 274 дн | 36 608 |
-| [Unseen China \| Hidden Places In China You Won’t Believe Actually Exis](https://youtu.be/5s1VPLSRpBc) | Unknown Planet | 94.4 | 932 334 | 132 дн | 34 555 |
-| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 151.4 | 1 280 278 | 17 дн | 33 919 |
-| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 542.9 | 1 129 272 | 115 дн | 32 545 |
-| [WILD PACIFIC \| The Supreme Predators of the Ocean Depths \| Animal Do](https://youtu.be/gvQys2e0QDM) | Wild Animals - Animal Document | 142.5 | 1 596 756 | 99 дн | 28 053 |
-| [Why Sperm Whales Are The Most TERRIFYING Apex Predator On Earth](https://youtu.be/PCnQ-fpgJoc) | OctoLab | 105.9 | 887 231 | 167 дн | 27 905 |
-| [Unseen Korea \| Why Korea Doesn’t Fear Mega Floods Anymore \| 4K Docum](https://youtu.be/S10bdFymeUk) | Vagarious Travel | 72.3 | 83 600 | 115 дн | 27 838 |
-| [New DNA Evidence FINALLY Reveals Jack the Ripper — 137 Years Later, An](https://youtu.be/JIkkUPdQn_g) | New Discovery | 78.6 | 295 762 | 172 дн | 27 802 |
-| [Scientists Explored the Mariana Trench—What They Found Is More Terrify](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 352.8 | 809 431 | 12 дн | 27 234 |
-| [America Just Got Hit By Two Disasters At Once — And It's DISTURBING](https://youtu.be/X-rWl4RWEq0) | S zone | 5.7 | 87 164 | 46 дн | 25 109 |
-| [The Deep Ocean: Journey Into the Last Hidden World](https://youtu.be/OhOBhVLyXh0) | Underwater Earth 4K | 23.1 | 93 257 | 90 дн | 23 236 |
-| [The Zodiac Killer's Identity FINALLY Revealed After 55 Years — And It'](https://youtu.be/haKXmADd32E) | New Discovery | 15.0 | 56 361 | 180 дн | 21 972 |
-| [Living in Ethiopia: How People Actually Live in Africa's Most Isolated](https://youtu.be/vtoRHf_FFOE) | Hidden Compass | 741.6 | 525 076 | 94 дн | 21 895 |
-| [China Built a Highway That Disappears Into the Sea Even Americans Can'](https://youtu.be/-0j6EVvAzHg) | Hidden World Docs | 225.4 | 468 849 | 128 дн | 21 568 |
-| [Living in Scotland \| How People Live at the "Edge of the UK" \| 4K Tr](https://youtu.be/VrSbJ8-G7xU) | The Planet Journal | 33.0 | 829 868 | 40 дн | 20 794 |
-| [WILD COLOMBIA \| South America’s Most Dangerous Predators \| Nature An](https://youtu.be/ary66lPQJC4) | Discover Wildlife | 13.1 | 876 307 | 243 дн | 19 953 |
-| [Researchers Studied People With Green Eyes — They Weren't Ready for th](https://youtu.be/5YvdRNLK0Bc) | New Discovery | 13.0 | 48 939 | 180 дн | 18 477 |
-| [Drone Discovers Amelia Earhart's Lost Plane After 88 Years — What They](https://youtu.be/9n7yR7XfNFg) | New Discovery | 36.5 | 137 455 | 175 дн | 18 372 |
-| [Unseen Japan \| How Japan Outsmarted Mega Floods \| 4K Documentary.](https://youtu.be/YhAYIB-mhDU) | Vagarious Travel | 93.6 | 108 260 | 112 дн | 18 034 |
-| [How People Live in Tristan \| Dark Secrets of the World’s Most Isolate](https://youtu.be/aSDhtruJBlI) | Impossible Travel | 15.5 | 772 221 | 28 дн | 17 616 |
-| [WILD AMAZON \| Discovering Mysterious Predators Yet To Be Known \| Ani](https://youtu.be/uxT-S4TkrpA) | Wild Animals - Animal Document | 81.3 | 910 169 | 102 дн | 16 880 |
-| [Unseen Japan \| The Hidden Tech That Keeps Japan Standing During Earth](https://youtu.be/hMx3ajwG6q4) | Vagarious Travel | 350.2 | 405 151 | 94 дн | 16 879 |
-| [2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD](https://youtu.be/pN96xPVw02s) | Proof | 5.4 | 45 276 | 52 дн | 16 508 |
-| [you need to sleep.](https://youtu.be/LFn2Qry5rEs) | comfort space ♡ | 25.0 | 382 821 | 107 дн | 15 835 |
-| [Kepler-442b: The Perfect World FULL EPISODE \| Science Fiction Documen](https://youtu.be/pAouFljMuLg) | Khalan Studio | 25.1 | 428 575 | 309 дн | 15 036 |
-| [Neanderthals: The Strongest Humanity That Ever Existed! \| Prehistoric](https://youtu.be/uGovzmAKAT8) | WUFO Earth | 20.7 | 498 964 | 47 дн | 14 692 |
-| [Scientists Sent a Robot 31,000 Feet to the Ocean Floor — The Footage L](https://youtu.be/Hdbs56WR78g) | Blue Nexus | 208.4 | 478 175 | 7 дн | 13 782 |
-| [Russia’s Greatest Mystery Finally Solved By AI — Dyatlov Pass Was Far ](https://youtu.be/5iQZ7T2-O_E) | New Discovery | 20.6 | 77 570 | 177 дн | 13 758 |
-| [Bermuda Triangle: The Ocean Mystery That Still Haunts the World](https://youtu.be/cuK192txUYw) | Underwater Earth 4K | 32.7 | 132 045 | 84 дн | 13 447 |
-| [The Wave That Was Taller Than a Skyscraper](https://youtu.be/nhaTh5gGXiM) | The Last Day | 7.5 | 449 488 | 8 дн | 13 013 |
-| [The Truth Dies With Me Unless I Speak Now" — Sole Survivor Breaks Deca](https://youtu.be/OY8EsDBgk18) | New Discovery | 73.5 | 276 512 | 161 дн | 12 730 |
-| [Europa glaubte eine Lüge – woher die Roma wirklich kommen](https://youtu.be/Ytis_fq4bvo) | Chronik der Evolution | 13.8 | 44 618 | 166 дн | 11 878 |
-| [Before Crocodiles: The Giant Predators That Ruled Rivers First](https://youtu.be/PzwQmtO1lBA) | Epic Dinosaur Docs | 130.0 | 150 980 | 328 дн | 11 709 |
+| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 582.0 | 4 874 364 | 156 дн | 113 907 |
+| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 315.2 | 1 271 609 | 82 дн | 106 536 |
+| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 395.2 | 3 341 437 | 7 дн | 70 385 |
+| [Impossible Places \| World’s Most Dangerous Structures That Will Leave](https://youtu.be/WzWs4dBRLI8) | Unknown Planet | 154.7 | 1 527 749 | 136 дн | 66 467 |
+| [DNA CONFIRMS D.B. Coopers Identity After 53 Years — And It’s NOT Who Y](https://youtu.be/yqstFZiDZVM) | New Discovery | 99.7 | 375 215 | 176 дн | 55 174 |
+| [How People Live in Bermuda \| Why 60,000 People Live on a Rock with Ze](https://youtu.be/3HZHJ20UfYs) | Impossible Travel | 30.0 | 1 493 953 | 44 дн | 53 744 |
+| [BRUTAL INSECTS \| Nature’s Tiny Killers \| Nature Animal Documentary](https://youtu.be/-bejNgfBcnw) | Discover Wildlife | 7.1 | 472 959 | 274 дн | 36 600 |
+| [Unseen China \| Hidden Places In China You Won’t Believe Actually Exis](https://youtu.be/5s1VPLSRpBc) | Unknown Planet | 94.4 | 932 334 | 132 дн | 34 551 |
+| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 151.4 | 1 280 278 | 17 дн | 33 917 |
+| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 542.9 | 1 129 272 | 115 дн | 32 542 |
+| [WILD PACIFIC \| The Supreme Predators of the Ocean Depths \| Animal Do](https://youtu.be/gvQys2e0QDM) | Wild Animals - Animal Document | 142.5 | 1 596 756 | 99 дн | 28 051 |
+| [Why Sperm Whales Are The Most TERRIFYING Apex Predator On Earth](https://youtu.be/PCnQ-fpgJoc) | OctoLab | 105.9 | 887 231 | 167 дн | 27 902 |
+| [Unseen Korea \| Why Korea Doesn’t Fear Mega Floods Anymore \| 4K Docum](https://youtu.be/S10bdFymeUk) | Vagarious Travel | 72.3 | 83 600 | 115 дн | 27 810 |
+| [New DNA Evidence FINALLY Reveals Jack the Ripper — 137 Years Later, An](https://youtu.be/JIkkUPdQn_g) | New Discovery | 78.6 | 295 762 | 172 дн | 27 794 |
+| [Scientists Explored the Mariana Trench—What They Found Is More Terrify](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 352.8 | 809 431 | 12 дн | 27 231 |
+| [America Just Got Hit By Two Disasters At Once — And It's DISTURBING](https://youtu.be/X-rWl4RWEq0) | S zone | 5.7 | 87 164 | 46 дн | 25 086 |
+| [The Deep Ocean: Journey Into the Last Hidden World](https://youtu.be/OhOBhVLyXh0) | Underwater Earth 4K | 23.1 | 93 257 | 90 дн | 23 218 |
+| [The Zodiac Killer's Identity FINALLY Revealed After 55 Years — And It'](https://youtu.be/haKXmADd32E) | New Discovery | 15.0 | 56 361 | 180 дн | 21 945 |
+| [Living in Ethiopia: How People Actually Live in Africa's Most Isolated](https://youtu.be/vtoRHf_FFOE) | Hidden Compass | 741.6 | 525 076 | 94 дн | 21 892 |
+| [China Built a Highway That Disappears Into the Sea Even Americans Can'](https://youtu.be/-0j6EVvAzHg) | Hidden World Docs | 225.4 | 468 849 | 128 дн | 21 565 |
+| [Living in Scotland \| How People Live at the "Edge of the UK" \| 4K Tr](https://youtu.be/VrSbJ8-G7xU) | The Planet Journal | 33.0 | 829 868 | 40 дн | 20 793 |
+| [WILD COLOMBIA \| South America’s Most Dangerous Predators \| Nature An](https://youtu.be/ary66lPQJC4) | Discover Wildlife | 13.1 | 876 307 | 243 дн | 19 951 |
+| [Researchers Studied People With Green Eyes — They Weren't Ready for th](https://youtu.be/5YvdRNLK0Bc) | New Discovery | 13.0 | 48 939 | 180 дн | 18 456 |
+| [Drone Discovers Amelia Earhart's Lost Plane After 88 Years — What They](https://youtu.be/9n7yR7XfNFg) | New Discovery | 36.5 | 137 455 | 175 дн | 18 364 |
+| [Unseen Japan \| How Japan Outsmarted Mega Floods \| 4K Documentary.](https://youtu.be/YhAYIB-mhDU) | Vagarious Travel | 93.6 | 108 260 | 112 дн | 18 025 |
+| [How People Live in Tristan \| Dark Secrets of the World’s Most Isolate](https://youtu.be/aSDhtruJBlI) | Impossible Travel | 15.5 | 772 221 | 28 дн | 17 615 |
+| [WILD AMAZON \| Discovering Mysterious Predators Yet To Be Known \| Ani](https://youtu.be/uxT-S4TkrpA) | Wild Animals - Animal Document | 81.3 | 910 169 | 102 дн | 16 879 |
+| [Unseen Japan \| The Hidden Tech That Keeps Japan Standing During Earth](https://youtu.be/hMx3ajwG6q4) | Vagarious Travel | 350.2 | 405 151 | 94 дн | 16 877 |
+| [2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD](https://youtu.be/pN96xPVw02s) | Proof | 5.4 | 45 276 | 52 дн | 16 490 |
+| [you need to sleep.](https://youtu.be/LFn2Qry5rEs) | comfort space ♡ | 25.0 | 382 821 | 107 дн | 15 833 |
+| [Kepler-442b: The Perfect World FULL EPISODE \| Science Fiction Documen](https://youtu.be/pAouFljMuLg) | Khalan Studio | 25.1 | 428 575 | 309 дн | 15 034 |
+| [Neanderthals: The Strongest Humanity That Ever Existed! \| Prehistoric](https://youtu.be/uGovzmAKAT8) | WUFO Earth | 20.7 | 498 964 | 47 дн | 14 691 |
+| [Scientists Sent a Robot 31,000 Feet to the Ocean Floor — The Footage L](https://youtu.be/Hdbs56WR78g) | Blue Nexus | 208.4 | 478 175 | 7 дн | 13 781 |
+| [Russia’s Greatest Mystery Finally Solved By AI — Dyatlov Pass Was Far ](https://youtu.be/5iQZ7T2-O_E) | New Discovery | 20.6 | 77 570 | 177 дн | 13 750 |
+| [Bermuda Triangle: The Ocean Mystery That Still Haunts the World](https://youtu.be/cuK192txUYw) | Underwater Earth 4K | 32.7 | 132 045 | 84 дн | 13 443 |
+| [The Wave That Was Taller Than a Skyscraper](https://youtu.be/nhaTh5gGXiM) | The Last Day | 7.5 | 449 488 | 8 дн | 13 012 |
+| [The Truth Dies With Me Unless I Speak Now" — Sole Survivor Breaks Deca](https://youtu.be/OY8EsDBgk18) | New Discovery | 73.5 | 276 512 | 161 дн | 12 728 |
+| [Europa glaubte eine Lüge – woher die Roma wirklich kommen](https://youtu.be/Ytis_fq4bvo) | Chronik der Evolution | 13.8 | 44 618 | 166 дн | 11 869 |
+| [Before Crocodiles: The Giant Predators That Ruled Rivers First](https://youtu.be/PzwQmtO1lBA) | Epic Dinosaur Docs | 130.0 | 150 980 | 328 дн | 11 706 |
 | [SAN ANDREAS: The Big One That Could Destroy California](https://youtu.be/lK1aa4cU6SY) | Vanished Worlds | 33.3 | 623 521 | 14 дн | 11 656 |
 
 ## Пока без данных

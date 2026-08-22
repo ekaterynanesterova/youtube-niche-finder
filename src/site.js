@@ -141,6 +141,9 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     archetypes: buildArchetypes({ metrics: m, thresholds, lang: 'en' }),
     headline: headline(verdict, markets),
     target: { usd: thresholds.targetMonthlyUsd, rpm: thresholds.rpmUsd },
+    // Пороги отдаём на страницу целиком: если переписывать их в текст руками,
+    // они разойдутся с кодом при первой же правке конфига.
+    thresholds,
     // Размер базы и прирост за сутки. Прирост показываем только когда в
     // журнале есть с чем сравнивать — выдумывать его нельзя.
     dbSize: { channels: Object.keys(db.channels ?? {}).length,
@@ -401,6 +404,17 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
 .gloss dt{color:var(--ink);font-weight:600;font-size:13.5px;margin-top:14px}
 .gloss dd{margin:3px 0 0;line-height:1.55}
 .gloss p{margin:12px 0 0;line-height:1.55}
+.limhint{margin:12px 0 4px}
+.limgroup{margin-top:18px}
+.limgroup h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand)}
+.limgroup table{border-collapse:collapse;width:100%;font-size:13.5px}
+.limgroup td{padding:7px 0;border-top:1px solid var(--line);vertical-align:top;line-height:1.5}
+.limgroup td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;
+  padding-right:16px;font-variant-numeric:tabular-nums;width:1%}
+.limgroup td:last-child{color:var(--dim)}
+.toplimits{color:var(--dim);font-size:12.5px;margin-top:10px}
+.toplimits a{color:var(--brand);text-decoration:none;border-bottom:1px dashed var(--line)}
+.toplimits a:hover{border-bottom-color:var(--brand)}
 footer h3{color:var(--ink);font-size:13px;text-transform:uppercase;
   letter-spacing:.07em;margin:22px 0 8px}
 footer p{margin:0 0 10px}
@@ -458,6 +472,12 @@ footer b{color:var(--ink)}
   </section>
 
   <footer>
+    <details class="gloss" id="limits">
+      <summary>Пороги — какие числа за что отвечают</summary>
+      <p class="limhint">Всё ниже подставляется из настроек сбора, а не переписано руками — эти числа всегда совпадают с тем, по которым реально считается страница.</p>
+      <div id="limtables"></div>
+    </details>
+
     <details class="gloss">
       <summary>Что означают цифры</summary>
       <dl>
@@ -928,6 +948,48 @@ function show() {
 drawVerdict();
 drawArch();
 drawViews();
+// --- пороги ---
+// Значения берутся из тех же настроек, по которым считается страница:
+// переписанные руками они бы разошлись с кодом на первой же правке.
+(function limits() {
+  const T = P.thresholds ?? {};
+  const d = (n) => plural(n, 'день', 'дня', 'дней');
+  const groups = [
+    ['Канал', [
+      [d(T.youngChannelDays), 'Столько канал считается <b>молодым</b>. Возраст берётся от первой загрузки, а не от регистрации: канал могли завести раньше и держать пустым.'],
+      ['от $' + num(T.startingUsd) + '/мес', 'Столько канал должен приносить, чтобы считаться <b>поехавшим</b>. Требовать полной цели от двухмесячного канала бессмысленно — важно, что он уже что-то зарабатывает.'],
+      ['от $' + num(T.targetMonthlyUsd) + '/мес', 'Полная <b>цель</b>. Канал, дошедший до неё, считается выросшим. При ставке $' + T.rpmUsd + ' за тысячу просмотров это ' + num(T.targetMonthlyUsd / T.rpmUsd * 1000) + ' просмотров в месяц.'],
+      ['от ' + num(T.conveyorMinutesPerWeek / 60) + ' ч/нед', 'Столько готового видео в неделю — и канал считается <b>конвейером</b>. Руками столько не сделать.'],
+      ['от ' + T.medianMinMatureVideos + ' роликов', 'Меньше — и медиана канала не считается вовсе: по двум-трём видео это не база, а случайность.'],
+    ]],
+    ['Ролик', [
+      ['от ' + Math.round(T.minDurationSec / 60) + ' мин', 'Короче в базу не попадает вообще. Отсекает шортсы и нарезки.'],
+      [T.freshMinAgeDays + '–' + T.freshMaxAgeDays + ' дней', 'Возраст <b>свежего ролика</b> — по таким считается главная цифра страницы. Первую неделю ролик ещё разгоняется, поэтому её не берём.'],
+      ['старше ' + d(T.shelfAgeDays), 'Ролик считается <b>старым</b>. По ним смотрим, работает ли на канал то, что снято давно.'],
+      ['от ' + num(T.workingViews), 'Просмотров — <b>рабочий уровень</b>. Планка, которую свежий ролик должен взять.'],
+      ['от ' + num(T.breakoutViews), 'Просмотров — <b>прорыв</b>.'],
+      ['старше ' + d(T.medianMinVideoAgeDays), 'Только такие ролики идут в медиану канала: свежие ещё не набрали и занижали бы её.'],
+    ]],
+    ['Ниша', [
+      ['от ' + T.nicheMinChannels + ' каналов', 'Меньше — и ниша не ранжируется, а уходит в «Ещё изучаем». Проценты по трём каналам выглядят убедительно и не значат ничего.'],
+      ['от ' + T.nicheMinVideosPerChannel + ' роликов', 'Столько роликов по теме должно быть у канала, чтобы он засчитался этой нише. Один случайный ролик каналом ниши не делает.'],
+      ['от 2 новичков', 'Столько молодых каналов с доходом нужно, чтобы ниша попала в «Вывод». Один может быть чьей угодно удачей.'],
+    ]],
+    ['Сбор', [
+      [T.searchesPerRun + ' поисков', 'За прогон. Каждый стоит 100 юнитов из ' + num(T.dailyUnitBudget) + ' дневных.'],
+      [d(T.discoveryWindowDays), 'Окно разведки: ищем каналы по роликам не старше этого срока.'],
+      ['до ' + T.topicMaxPromotedPerRun + ' тем', 'Столько новых тем автопоиск добавляет за прогон, и то лишь пока очередь непройденных короче ' + T.topicQueueLimit + '.'],
+      ['раз в ' + d(T.baselineRefreshDays), 'Обновляется опорный срез по всем видео — по нему считается живой прирост.'],
+    ]],
+  ];
+  const el = document.getElementById('limtables');
+  if (!el) return;
+  el.innerHTML = groups.map(([name, rows]) =>
+    '<div class="limgroup"><h4>' + name + '</h4><table>'
+    + rows.map(([v, t]) => '<tr><td>' + v + '</td><td>' + t + '</td></tr>').join('')
+    + '</table></div>').join('');
+})();
+
 draw();
 </script>
 </body>
