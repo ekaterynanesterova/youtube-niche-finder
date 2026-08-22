@@ -1,7 +1,8 @@
 // Поиск тем в собственной базе. Смысл: перестать выдумывать список тем и
 // доставать его из того, что молодые прорвавшиеся каналы реально снимают.
 
-import { daysBetween } from './store.js';
+import { daysBetween, readJson, ROOT } from './store.js';
+import { join } from 'node:path';
 
 // Служебные слова и форматная шелуха: они есть в каждом втором заголовке
 // и темой не являются.
@@ -90,7 +91,7 @@ export function findTopics({ metrics, thresholds, knownQueries = [], lang = 'de'
 
   const candidates = [];
   for (const e of alive) {
-    if (known.has(e.phrase) || isBanned(e.phrase)) continue;
+    if (known.has(e.phrase) || isBlocked(e.phrase, lang)) continue;
     const inAll = df.get(e.phrase) ?? 0;
     const lift = (e.videos / breakout.length) / Math.max(inAll / sameLang.length, 1e-9);
     if (!Number.isFinite(lift) || lift < minLift) continue;
@@ -137,17 +138,30 @@ function median(xs) {
   return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
 }
 
-// Темы, которые решено не брать: спор там идёт не о фактах, а об их
-// толковании, и монетизация режется. Автопоиск про эту договорённость не знает,
-// поэтому запрет нужен явный — он уже притащил «hitler Doku».
-export const BANNED = [
-  'hitler', 'nazi', 'nsdap', 'wehrmacht', 'holocaust', 'untergang', 'reich',
-  'weltkrieg', 'world war', 'ww2', 'wwii', 'stalin', 'genocide', 'völkermord',
-];
+// Правила по темам живут в config/policy.json, а не здесь: их правят по
+// решению, а не по коду, и они должны быть на виду. Ограничений два и они
+// разные. Первое — рынок, где тему не берём вовсе. Второе — пометка «реклама
+// урезана»: тема разрешена, но оценка дохода по общей ставке для неё завышена,
+// и об этом должно быть написано рядом с цифрой, а не в чьей-то памяти.
+export const POLICY = readJson(join(ROOT, 'config/policy.json'), { blockedMarkets: {}, adLimited: {} });
 
-export function isBanned(phrase) {
-  const t = ' ' + phrase.toLowerCase() + ' ';
-  return BANNED.some((w) => t.includes(' ' + w) || t.includes(w + ' '));
+// Слово ищем по границам, иначе «reich» поймает «erreicht», а «ss» — половину
+// немецкого словаря.
+function hits(phrase, words) {
+  const t = ' ' + phrase.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim() + ' ';
+  return (words ?? []).some((w) => t.includes(' ' + w.trim() + ' '));
+}
+
+export function isBlocked(phrase, lang) {
+  const rule = POLICY.blockedMarkets?.[lang];
+  return rule ? hits(phrase, rule.words) : false;
+}
+
+export function isAdLimited(phrase, group = null) {
+  // Группа целиком: «pacific war» и «eastern front» под список слов не
+  // подпадают, а ограничение по рекламе на них ровно то же.
+  if (group && (POLICY.adLimited?.groups ?? []).includes(group)) return true;
+  return hits(phrase, POLICY.adLimited?.words);
 }
 
 const UML = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
@@ -179,7 +193,7 @@ export function promote({ candidates, seeds, limit, lang = 'en', group = 'Най
     if (added.length >= limit) break;
     const id = slug(c.phrase);
     if (!id || ids.has(id)) continue;
-    if (isBanned(c.phrase)) continue;
+    if (isBlocked(c.phrase, lang)) continue;
     ids.add(id);
     added.push({
       id, group,

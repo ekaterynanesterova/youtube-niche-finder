@@ -1393,6 +1393,42 @@
         "lift": 5.6,
         "medianViews": 71693
       }
+    },
+    {
+      "id": "ww2-doku",
+      "group": "Вторая мировая",
+      "en": "world war 2 documentary",
+      "ru": "документалки о Второй мировой"
+    },
+    {
+      "id": "ww2-battles",
+      "group": "Вторая мировая",
+      "en": "ww2 battle documentary",
+      "ru": "сражения Второй мировой"
+    },
+    {
+      "id": "ww2-aircraft",
+      "group": "Вторая мировая",
+      "en": "ww2 aircraft documentary",
+      "ru": "авиация Второй мировой"
+    },
+    {
+      "id": "ww2-eastern",
+      "group": "Вторая мировая",
+      "en": "eastern front documentary",
+      "ru": "Восточный фронт"
+    },
+    {
+      "id": "ww2-pacific",
+      "group": "Вторая мировая",
+      "en": "pacific war documentary",
+      "ru": "война на Тихом океане"
+    },
+    {
+      "id": "ww2-codebreak",
+      "group": "Вторая мировая",
+      "en": "enigma codebreakers documentary",
+      "ru": "взлом «Энигмы»"
     }
   ]
 }

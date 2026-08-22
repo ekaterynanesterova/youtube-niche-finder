@@ -4,7 +4,7 @@ import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore } from './collect.js';
-import { isBanned, promote } from './topics.js';
+import { isBlocked, isAdLimited, promote } from './topics.js';
 import { renderBrief } from './brief.js';
 import { readJson, ROOT } from './store.js';
 import { join } from 'node:path';
@@ -30,15 +30,24 @@ check('медиана игнорирует пустые', median([]) === null);
 check('язык канала — по большинству видео', dominantLang([{lang:'en-US'},{lang:'en'},{lang:'de'}]) === 'en');
 check('язык не выводится из двух рынков', dominantLang([{}], ['de','en']) === null);
 
-// --- запрещённые темы ---
-// Автопоиск про договорённости не знает и уже притащил «hitler Doku».
-check('военная тематика отсекается', isBanned('hitler Doku') && isBanned('weltkrieg') && isBanned('world war two'));
-check('обычные темы проходят', !isBanned('dinosaur documentary') && !isBanned('architektur'));
-check('запрещённое не попадает в разведку даже первым кандидатом',
+// --- правила по темам ---
+// Ограничение теперь по рынку, а не общее: на немецком темы Третьего рейха не
+// ищутся, на английском ищутся и помечаются как урезанные по рекламе.
+check('военная тематика не идёт в немецкую разведку',
+  isBlocked('hitler Doku', 'de') && isBlocked('drittes reich', 'de') && isBlocked('weltkrieg', 'de'));
+check('на английском та же тема разрешена',
+  !isBlocked('hitler documentary', 'en') && !isBlocked('world war 2 documentary', 'en'));
+check('слово ловится по границе, а не по подстроке',
+  !isBlocked('erreicht Doku', 'de') && !isAdLimited('warsaw architecture'));
+check('обычные темы никуда не попадают',
+  !isBlocked('dinosaur documentary', 'de') && !isAdLimited('dinosaur documentary'));
+check('военная тематика помечена как урезанная по рекламе',
+  isAdLimited('world war 2 documentary') && isAdLimited('hitler documentary') && isAdLimited('ww2 aircraft'));
+check('запрещённое для рынка не попадает в разведку даже первым кандидатом',
   promote({ candidates: [{ phrase: 'hitler bunker', channels: 9, lift: 30 },
-                         { phrase: 'deep ocean', channels: 4, lift: 5 }],
-            seeds: [], limit: 2, lang: 'en' })
-    .every((t) => !t.en.includes('hitler')));
+                         { phrase: 'tiefsee', channels: 4, lift: 5 }],
+            seeds: [], limit: 2, lang: 'de' })
+    .every((t) => !t.de.includes('hitler')));
 
 // --- разведка вслепую ---
 // Чарт mostPopular существует не для всех пар «страна + категория». 404 на
@@ -268,8 +277,21 @@ const brief = renderBrief({
   pending: [{ query: 'whales documentary', ru: null, lang: 'en', channels: 4, fresh: 32852 }],
 });
 check('бриф не содержит невыведенных объектов', !brief.includes('[object'));
+// Ниша под урезанной рекламой должна нести предупреждение рядом с цифрой
+// дохода — иначе оценка по общей ставке читается как обещание.
+const briefWar = renderBrief({
+  computedAt: now, snapshotDays: 5, dbSize: { channels: 12, videos: 340 },
+  seedsDone: 7, seedsTotal: 9, thresholds: readJson(join(ROOT, 'config/thresholds.json')),
+  headline: 'Заголовок', markets: {}, examples: {}, archetypes: [], pending: [],
+  adLimitedWhy: 'Реклама там ограничена.',
+  verdict: [{ id: 'ww2-doku', lang: 'en', market: 'английский', query: 'world war 2 documentary',
+              ru: 'Вторая мировая', adLimited: true, fresh: 9000, freshOver20k: 0.2, young: 3,
+              usd: 900, nicheChannels: 20, minutes: 40, why: 'почему', risk: 'риск', rivals: [] }],
+});
+check('ниша с урезанной рекламой предупреждает об этом',
+  briefWar.includes('Реклама урезана') && briefWar.includes('завышен'));
 check('бриф не содержит пустых подстановок', !brief.includes('undefined') && !brief.includes('NaN'));
-check('в брифе есть ограничения по контенту', brief.includes('Гитлер'));
+check('в брифе есть правила по темам', brief.includes('только на английском') && brief.includes('§86a'));
 check('в брифе есть таблица конкурентов', brief.includes('Канал') && brief.includes('32 из 49'));
 check('трудозатраты выведены текстом', brief.includes('5.5 ч готового видео в неделю'));
 check('в брифе стоит ссылка на свежий срез', brief.includes('docs/brief.md'));

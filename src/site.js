@@ -3,6 +3,7 @@
 import { score } from './report.js';
 import { buildVerdict, headline, marketStats } from './verdict.js';
 import { buildArchetypes } from './archetypes.js';
+import { isAdLimited, POLICY } from './topics.js';
 
 const MARKET_LABEL = { de: 'Немецкий', en: 'Английский' };
 
@@ -77,6 +78,10 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     return a.length ? a[a.length >> 1] : null;
   };
   for (const r of verdict) {
+    // Тема разрешена, но реклама в ней урезана — значит оценка дохода по
+    // общей ставке для неё завышена. Пишем это рядом с цифрой, иначе
+    // предупреждение живёт только в переписке и теряется.
+    r.adLimited = isAdLimited(r.query, r.group) || isAdLimited(r.ru ?? '');
     const vids = m.videos.filter((v) => v.seeds.includes(r.id) && m.channels[v.channelId]?.lang === r.lang);
     const per = new Map();
     for (const v of vids) (per.get(v.channelId) ?? per.set(v.channelId, []).get(v.channelId)).push(v);
@@ -119,6 +124,7 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     niches, examples, verdict, markets,
     // Разброс по нишам для шкалы наверху: одно число на нишу.
     spread: verdict.map((r) => ({ id: r.id, q: r.query, fresh: r.fresh })).filter((r) => r.fresh > 0),
+    adLimitedWhy: POLICY.adLimited?.why ?? null,
     pending: verdict.pending ?? [],
     // Списки для раскрытия по клику: посмотреть глазами, что вообще собрано.
     topChannels: Object.values(m.channels)
@@ -168,6 +174,7 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
         newLast: st.newLastRun ?? null,
         channels: best?.channels ?? 0,
         fresh: best?.freshViews ?? null,
+        adLimited: isAdLimited(sd.en ?? sd.de ?? sd.id, sd.group),
       };
     }).sort((a, b) => a.searches - b.searches || b.channels - a.channels),
     schedule: scheduleText(),
@@ -296,6 +303,8 @@ button.stat[aria-expanded="true"]{border-color:var(--brand);
 #drill tr.untouched td:first-child::before{content:'○ ';color:var(--mid)}
 #drill .autotag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;
   color:var(--brand);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+#drill .adtag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mid);
+  border:1px solid var(--mid);border-radius:5px;padding:1px 4px;margin-left:6px;vertical-align:1px}
 .stat span{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 
 .banner{margin:16px 0 0;padding:12px 14px;border-radius:var(--r);
@@ -446,6 +455,9 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
   font-size:13px;cursor:pointer}
 .chat button:hover{border-color:var(--brand)}
 .chat .said{color:var(--good)}
+.adlim{margin:10px 0 0;padding:10px 12px;border:1px solid var(--mid);border-radius:10px;
+  background:var(--card);color:var(--ink);font-size:13px;line-height:1.5}
+.adlim b{color:var(--mid)}
 .toplimits a:hover{border-bottom-color:var(--brand)}
 footer h3{color:var(--ink);font-size:13px;text-transform:uppercase;
   letter-spacing:.07em;margin:22px 0 8px}
@@ -575,6 +587,11 @@ footer b{color:var(--ink)}
 
         <dt>Ещё изучаем</dt>
         <dd>Темы, по которым сделано меньше трёх поисков или найдено меньше пятнадцати каналов. В рейтинг они не попадают намеренно: проценты по трём каналам выглядят убедительно и не значат ничего.</dd>
+
+        <dt>Реклама урезана</dt>
+        <dd>Пометка на нише и в списке тем. YouTube относит войну, конфликты и трагедии к «спорным темам и деликатным событиям»: рекламу там ставят не всю или не ставят вовсе. Тема при этом разрешена и каналы в ней зарабатывают — но общая ставка $5 за тысячу просмотров, по которой считается весь сайт, для таких ниш завышена. Читай доход по ним как верхнюю границу, а не как ожидание.
+        <br><br>Инструмент не может измерить настоящую ставку: API её не отдаёт. Поэтому это пометка, а не поправочный коэффициент — придумывать множитель означало бы выдать догадку за расчёт.
+        <br><br>Отдельно: немецкий рынок эти темы не ищет вовсе, они заведены только на английский. Список слов и причина лежат в <b>config/policy.json</b>.</dd>
 
         <dt>Риск</dt>
         <dd>Строка под каждой нишей. Собирается из цифр автоматически, а не пишется вручную. Разбирает четыре вещи: собирает ли свежий ролик хоть что-то, насколько тонкая выборка (мало каналов или мало свежих роликов — красивые проценты по ним ничего не значат), не работает ли ниша на потоке и не слишком ли тяжёлый там типовой ролик.</dd>
@@ -816,7 +833,8 @@ function drawList(kind) {
       t.map(x =>
         '<tr class="' + (x.searches ? '' : 'untouched') + '">' +
         '<td>' + x.query + (x.ru ? ' <span class="reg">' + x.ru + '</span>' : '') +
-          (x.auto ? ' <span class="autotag">авто</span>' : '') + '</td>' +
+          (x.auto ? ' <span class="autotag">авто</span>' : '') +
+          (x.adLimited ? ' <span class="adtag">реклама урезана</span>' : '') + '</td>' +
         '<td>' + (x.searches || '—') + '</td>' +
         '<td>' + (x.channels || '—') + '</td>' +
         '<td>' + (x.newLast == null ? '—' : x.newLast) + '</td>' +
@@ -901,6 +919,9 @@ function drawVerdict() {
       '<div class="money">' + money(r) + '</div>' +
       '<p><span class="lab">почему сейчас:</span> ' + r.why + '</p>' +
       '<p><span class="lab">риск:</span> ' + r.risk + '</p>' +
+      (r.adLimited
+        ? '<p class="adlim"><b>Реклама урезана.</b> ' + (P.adLimitedWhy ?? '') + '</p>'
+        : '') +
       (r.shelf != null && r.shelfOldShare != null
         ? '<p><span class="lab">старые ролики:</span> видео старше полугода — это '
           + pct(r.shelfOldShare) + ' всех роликов ниши, а достаётся им '
