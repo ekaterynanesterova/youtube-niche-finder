@@ -5,6 +5,7 @@ import { discover, explore, backfillFirstUpload, survey, hydrate, snapshot } fro
 import { computeMetrics } from './metrics.js';
 import { renderReport } from './report.js';
 import { buildPayload, renderSite } from './site.js';
+import { renderBrief } from './brief.js';
 import { Translator } from './translate.js';
 import { findTopics, promote } from './topics.js';
 import {
@@ -176,6 +177,9 @@ payload.candidates = candidates
 payload.promoted = promoted.map((t) => ({ id: t.id, query: t.en ?? t.de, ru: t.ru, ...t.foundVia }));
 
 writeText(join(ROOT, 'index.html'), renderSite(payload));
+// Тот же вывод одним markdown-файлом: сайт читается глазами, а бриф нужен,
+// чтобы отдать статистику в другой чат целиком, одной ссылкой.
+writeText(join(ROOT, 'docs/brief.md'), renderBrief(payload));
 
 // В metrics.json кладём выводы, а не сырьё: массив всех видео весил 17 МБ
 // и переписывался бы целиком каждый день. Сырьё и так лежит в data/.

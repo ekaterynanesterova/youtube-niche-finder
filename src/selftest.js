@@ -5,6 +5,9 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore } from './collect.js';
 import { isBanned, promote } from './topics.js';
+import { renderBrief } from './brief.js';
+import { readJson, ROOT } from './store.js';
+import { join } from 'node:path';
 import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
 
 let failed = 0;
@@ -232,6 +235,44 @@ check('цель в просмотрах выведена из денег', targe
 
 check('конвейер пойман по объёму хронометража', conv.niches.open.conveyorShare === 1);
 check('минуты в неделю посчитаны', Math.round(conv.channels.c1.minutesPerWeek) === 560);
+
+// --- бриф для другого чата ---
+// Бриф собирается из payload сайта, где часть полей — объекты. Один такой
+// в шаблоне даёт [object Object] и незаметно уезжает в файл, который читает
+// другой чат. Проверяем, что текст остаётся текстом.
+const brief = renderBrief({
+  computedAt: now,
+  snapshotDays: 5,
+  dbSize: { channels: 12, videos: 340 },
+  seedsDone: 7, seedsTotal: 9,
+  // Пороги берём настоящие: бриф расшифровывает по ним метрики, и на
+  // урезанном наборе проверка «нет пустых подстановок» ловила бы фикстуру,
+  // а не код.
+  thresholds: readJson(join(ROOT, 'config/thresholds.json')),
+  headline: 'Заголовок',
+  markets: { de: { channels: 5, young: 4, youngEarning: 1, youngRate: 0.25 },
+             en: { channels: 7, young: 6, youngEarning: 3, youngRate: 0.5 } },
+  verdict: [{
+    id: 'open', lang: 'en', market: 'английский', query: 'open documentary', ru: 'открытая тема',
+    fresh: 24805, freshOver20k: 0.62, young: 5, usd: 777, nicheChannels: 16, minutes: 42,
+    why: 'почему', risk: 'риск',
+    effort: { hoursPerWeek: 5.5, hoursPerMonth: 24, minutes: 42 },
+    rivals: [{ title: 'Канал', age: 114, exact: true, subs: 18600, usd: 1969, fresh: 32443,
+               inNiche: 32, videos: 49, young: true }],
+  }],
+  examples: { open: { en: [{ title: 'Title', titleRu: 'Заголовок', views: 73506, minutes: 30,
+                             channel: 'Канал', channelAge: 74, earning: true, usd: 1969 }] } },
+  archetypes: [{ channels: 4, young: 3, fastestDays: 91, medianUsd: 7685, medianCatalog: 63,
+                 medianMinutesPerWeek: 102, topics: [{ topic: 'ancient', channels: 4 }],
+                 examples: [{ title: 'Mack' }] }],
+  pending: [{ query: 'whales documentary', ru: null, lang: 'en', channels: 4, fresh: 32852 }],
+});
+check('бриф не содержит невыведенных объектов', !brief.includes('[object'));
+check('бриф не содержит пустых подстановок', !brief.includes('undefined') && !brief.includes('NaN'));
+check('в брифе есть ограничения по контенту', brief.includes('Гитлер'));
+check('в брифе есть таблица конкурентов', brief.includes('Канал') && brief.includes('32 из 49'));
+check('трудозатраты выведены текстом', brief.includes('5.5 ч готового видео в неделю'));
+check('в брифе стоит ссылка на свежий срез', brief.includes('docs/brief.md'));
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

@@ -438,6 +438,14 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
 .limgroup td:last-child{color:var(--dim)}
 .toplimits{color:var(--dim);font-size:12.5px;margin-top:10px}
 .toplimits a{color:var(--brand);text-decoration:none;border-bottom:1px dashed var(--line)}
+.chat p{margin:12px 0 0;line-height:1.55}
+.chat code{background:var(--card);border:1px solid var(--line);border-radius:6px;
+  padding:2px 6px;font-size:12.5px;word-break:break-all;color:var(--ink)}
+.chat button{margin-top:12px;margin-right:8px;background:var(--card);color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;padding:9px 14px;font:inherit;
+  font-size:13px;cursor:pointer}
+.chat button:hover{border-color:var(--brand)}
+.chat .said{color:var(--good)}
 .toplimits a:hover{border-bottom-color:var(--brand)}
 footer h3{color:var(--ink);font-size:13px;text-transform:uppercase;
   letter-spacing:.07em;margin:22px 0 8px}
@@ -496,6 +504,20 @@ footer b{color:var(--ink)}
   </section>
 
   <footer>
+    <details class="gloss" id="chat">
+      <summary>Продолжить в другом чате</summary>
+      <p>Вся эта статистика лежит одним файлом. Нажми кнопку, открой новый чат и вставь
+      скопированное первым сообщением — разговор про темы роликов начнётся сразу с цифрами,
+      ничего пересказывать не придётся. Файл перезаписывается на каждом прогоне,
+      так что ссылка всегда ведёт на свежий срез.</p>
+      <div class="chat">
+        <p><code id="briefurl">https://raw.githubusercontent.com/ekaterynanesterova/youtube-niche-finder/main/docs/brief.md</code></p>
+        <button id="copyprompt">Скопировать готовый запрос</button>
+        <button id="copyurl">Скопировать только ссылку</button>
+        <p id="copied" class="said"></p>
+      </div>
+    </details>
+
     <details class="gloss" id="limits">
       <summary>Пороги — какие числа за что отвечают</summary>
       <p class="limhint">Всё ниже подставляется из настроек сбора, а не переписано руками — эти числа всегда совпадают с тем, по которым реально считается страница.</p>
@@ -1033,6 +1055,25 @@ drawViews();
     '<div class="limgroup"><h4>' + name + '</h4><table>'
     + rows.map(([v, t]) => '<tr><td>' + v + '</td><td>' + t + '</td></tr>').join('')
     + '</table></div>').join('');
+})();
+
+// Копирование запроса для другого чата. С планшета набирать длинную ссылку
+// руками — гарантированная опечатка, поэтому кнопка, а не текст.
+(function () {
+  const url = 'https://raw.githubusercontent.com/ekaterynanesterova/youtube-niche-finder/main/docs/brief.md';
+  const prompt = 'Прочитай целиком ' + url + ' — это свежий срез статистики по нишам YouTube, '
+    + 'который я собираю автоматически. Дальше обсуждаем контент-план, опираясь на эти цифры '
+    + 'и на перечисленные там ограничения.';
+  const said = document.getElementById('copied');
+  const put = (text, label) => {
+    const done = () => { if (said) { said.textContent = label + ' скопирован'; setTimeout(() => (said.textContent = ''), 2500); } };
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => {});
+    else done();
+  };
+  const a = document.getElementById('copyprompt');
+  const b = document.getElementById('copyurl');
+  if (a) a.onclick = () => put(prompt, 'Запрос');
+  if (b) b.onclick = () => put(url, 'Адрес');
 })();
 
 draw();
