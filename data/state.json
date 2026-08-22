@@ -55,6 +55,957 @@
         "playlistItems": 402,
         "videos": 1501
       }
+    },
+    {
+      "date": "2026-08-22",
+      "budget": 9500,
+      "spent": 9500,
+      "byEndpoint": {
+        "search": 5100,
+        "videos": 2317,
+        "channels": 8,
+        "playlistItems": 2075
+      }
     }
-  ]
+  ],
+  "seedStats": {
+    "space-doku": {
+      "searches": 3,
+      "lastSearched": "2026-08-22",
+      "totalResults": 172425,
+      "channelsSeen": 100,
+      "newLastRun": 0
+    },
+    "lost-places": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sibirien": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "blackhole": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "exoplanets": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "space-missions": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "urzeit-tiere": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "mass-extinction": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sleep-doku": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 57842,
+      "channelsSeen": 50,
+      "newLastRun": 0
+    },
+    "sleep-history": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "ice-age": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "human-evolution": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 153952,
+      "channelsSeen": 50,
+      "newLastRun": 14
+    },
+    "deep-sea": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 7720,
+      "channelsSeen": 23,
+      "newLastRun": 8
+    },
+    "ocean-creatures": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "antarctica": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "supervolcano": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 197,
+      "channelsSeen": 24,
+      "newLastRun": 10
+    },
+    "disasters": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "egypt": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "archaeology": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "parasites": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "microbes": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "future-earth": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 106890,
+      "channelsSeen": 22,
+      "newLastRun": 13
+    },
+    "maschinen": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "universe-scale": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sleep-science": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sleep-space": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "terraforming": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "solar-system": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sleep-relax": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "dinos": {
+      "searches": 3,
+      "lastSearched": "2026-08-22",
+      "totalResults": 658,
+      "channelsSeen": 100,
+      "newLastRun": 0
+    },
+    "lost-civs": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 580,
+      "channelsSeen": 12,
+      "newLastRun": 9
+    },
+    "megastructures": {
+      "searches": 2,
+      "lastSearched": "2026-08-22",
+      "totalResults": 30,
+      "channelsSeen": 0,
+      "newLastRun": 0
+    },
+    "sleep-stories": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "blindgaenger": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "human-body": {
+      "searches": 1,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "calm-space": {
+      "searches": 3,
+      "lastSearched": "2026-08-22",
+      "totalResults": 180533,
+      "channelsSeen": 150,
+      "newLastRun": 1
+    },
+    "plate-tectonics": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 1182,
+      "channelsSeen": 50,
+      "newLastRun": 39
+    },
+    "eng-disasters": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 44110,
+      "channelsSeen": 50,
+      "newLastRun": 30
+    },
+    "nachtschicht": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "kampf-ums-ueberleben": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "gott": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "giganten": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "urzeit": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "unserer-erde": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "mysterium": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "vulkane": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "bergen": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "deutschlands": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "decken": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "furchterregende": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "expedition": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "gebaut": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "deutschlands-haerteste": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "flugzeug": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "grausamste": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "voraus": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "naturwunder": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "einsatz": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "haertetest": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "hussein": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "einblicke": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "mittelalter": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "schlacht": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "herrscher": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "schiffe": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "beherrscht": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "chinesische": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "weltkrieg": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "amerika": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "letztes": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "hitler": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "marianengraben": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "stalin": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "untergang": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "spannende": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "stahl": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "kannst": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sogar": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "hitlers": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "goldene": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "native": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 173654,
+      "channelsSeen": 50,
+      "newLastRun": 37
+    },
+    "whales": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 65281,
+      "channelsSeen": 50,
+      "newLastRun": 17
+    },
+    "idaho": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 95591,
+      "channelsSeen": 50,
+      "newLastRun": 38
+    },
+    "built-world": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 220820,
+      "channelsSeen": 50,
+      "newLastRun": 28
+    },
+    "people-live": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 207983,
+      "channelsSeen": 50,
+      "newLastRun": 27
+    },
+    "place-earth": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 205995,
+      "channelsSeen": 50,
+      "newLastRun": 16
+    },
+    "ancient-humans-start": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 1000000,
+      "channelsSeen": 50,
+      "newLastRun": 17
+    },
+    "humans-survive": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 1000000,
+      "channelsSeen": 50,
+      "newLastRun": 23
+    },
+    "battle-survival": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 424925,
+      "channelsSeen": 50,
+      "newLastRun": 12
+    },
+    "did-ancient-humans": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 220570,
+      "channelsSeen": 50,
+      "newLastRun": 8
+    },
+    "spain": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 186393,
+      "channelsSeen": 50,
+      "newLastRun": 36
+    },
+    "finish": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 284377,
+      "channelsSeen": 50,
+      "newLastRun": 36
+    },
+    "mariana-trench": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 7370,
+      "channelsSeen": 50,
+      "newLastRun": 19
+    },
+    "get-creepier-deeper": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 72865,
+      "channelsSeen": 8,
+      "newLastRun": 8
+    },
+    "timeless": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 92595,
+      "channelsSeen": 50,
+      "newLastRun": 35
+    },
+    "answer-shocked": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 200334,
+      "channelsSeen": 50,
+      "newLastRun": 40
+    },
+    "creatures-get-creepier": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 196269,
+      "channelsSeen": 2,
+      "newLastRun": 1
+    },
+    "great-white-shark": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 65896,
+      "channelsSeen": 50,
+      "newLastRun": 11
+    },
+    "found-something": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 1000000,
+      "channelsSeen": 33,
+      "newLastRun": 28
+    },
+    "stranger-gets-sleep": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 203446,
+      "channelsSeen": 50,
+      "newLastRun": 30
+    },
+    "sea-creatures-get": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 1000000,
+      "channelsSeen": 50,
+      "newLastRun": 7
+    },
+    "anyone-expected": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 724673,
+      "channelsSeen": 4,
+      "newLastRun": 4
+    },
+    "start-smoking": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 201906,
+      "channelsSeen": 48,
+      "newLastRun": 45
+    },
+    "alaska-lake-monster": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 208,
+      "channelsSeen": 21,
+      "newLastRun": 11
+    },
+    "amazon-mysteries": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 136517,
+      "channelsSeen": 50,
+      "newLastRun": 31
+    },
+    "calm-universe": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 209251,
+      "channelsSeen": 50,
+      "newLastRun": 27
+    },
+    "sleep-science-space": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 94051,
+      "channelsSeen": 50,
+      "newLastRun": 3
+    },
+    "space-ambience": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 189469,
+      "channelsSeen": 50,
+      "newLastRun": 26
+    },
+    "cosmic-journey": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 186287,
+      "channelsSeen": 50,
+      "newLastRun": 28
+    },
+    "nasa-discoveries": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 80211,
+      "channelsSeen": 35,
+      "newLastRun": 23
+    },
+    "james-webb": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 52078,
+      "channelsSeen": 50,
+      "newLastRun": 18
+    },
+    "galaxies": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 109255,
+      "channelsSeen": 50,
+      "newLastRun": 15
+    },
+    "neutron-stars": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 12499,
+      "channelsSeen": 50,
+      "newLastRun": 24
+    },
+    "space-time": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 61519,
+      "channelsSeen": 50,
+      "newLastRun": 24
+    },
+    "alien-life": {
+      "searches": 1,
+      "lastSearched": "2026-08-22",
+      "totalResults": 175519,
+      "channelsSeen": 50,
+      "newLastRun": 21
+    },
+    "mars-exploration": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "end-universe": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "cosmic-scale": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "voyager-probes": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "answer-shocked-everyone": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "something-disturbing": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "deep-ocean": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "fiercest-predators": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "rocky-mountains": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "earth-planet": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "bigger-than": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "secret-china": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "scientists-asked-grok": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "ethiopian-bible": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "still-alive": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "deeper-dig-into": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "apex-predators": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "period-earth": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "china-hidden": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    }
+  }
 }
