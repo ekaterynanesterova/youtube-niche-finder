@@ -5,12 +5,19 @@ import { daysBetween } from './store.js';
 
 const log = (...a) => console.log(...a);
 
-// Ошибки бюджета/квоты не валят прогон: то, что уже собрано, должно сохраниться.
-async function tolerant(label, fn) {
+// Ошибки бюджета и квоты не валят прогон: собранное должно сохраниться.
+// Слои, помеченные optional, не валят его вообще ничем — они улучшают
+// результат, но без них сбор осмысленный. Обязательные слои по-прежнему
+// падают громко: молча терять данные хуже, чем упасть.
+async function tolerant(label, fn, { optional = false } = {}) {
   try { return await fn(); }
   catch (e) {
     if (e instanceof BudgetExhausted || e instanceof QuotaExceeded) {
       log(`  ⚠ ${label}: ${e.message} — останавливаю этот слой, собранное сохраняю`);
+      return null;
+    }
+    if (optional) {
+      log(`  ⚠ ${label} пропущен: ${e.message}`);
       return null;
     }
     throw e;
@@ -98,11 +105,24 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
 // ломает круг: он не знает про наш список тем.
 export async function explore({ api, db, markets, thresholds }) {
   const cats = thresholds.trendingCategories ?? ['27', '28'];
-  let fresh = 0, seen = 0;
+  let fresh = 0, seen = 0, skipped = 0;
   await tolerant('trending', async () => {
     for (const market of Object.values(markets)) {
       for (const cat of cats) {
-        const res = await api.trending({ regionCode: market.regionCode, videoCategoryId: cat });
+        // Чарт mostPopular существует не для всех пар «страна + категория»:
+        // на отсутствующую YouTube отвечает 404, и это нормальный ответ,
+        // а не поломка.
+        let res;
+        try {
+          res = await api.trending({ regionCode: market.regionCode, videoCategoryId: cat });
+        } catch (e) {
+          if (/404|not found/i.test(e.message)) {
+            skipped++;
+            log(`  Trending ${market.regionCode}/${cat}: чарта нет, пропускаю`);
+            continue;
+          }
+          throw e;
+        }
         for (const v of res.items ?? []) {
           const id = v.snippet?.channelId;
           if (!id) continue;
@@ -115,8 +135,9 @@ export async function explore({ api, db, markets, thresholds }) {
         }
       }
     }
-  });
-  log(`Trending: ${seen} попаданий, новых каналов ${fresh}`);
+  }, { optional: true });
+  log(`Trending: ${seen} попаданий, новых каналов ${fresh}` +
+      (skipped ? `, чартов без данных ${skipped}` : ''));
 }
 
 // Слой 2в. Достаём настоящую дату первой загрузки. Пока архив не долистан,

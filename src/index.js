@@ -42,44 +42,51 @@ if (!metricsOnly) {
   const quota = new Quota(Number(process.env.UNIT_BUDGET) || thresholds.dailyUnitBudget);
   const api = new YouTubeApi(process.env.YOUTUBE_API_KEY, quota);
   const searchBudget = Number(process.env.SEARCH_BUDGET ?? thresholds.searchesPerRun);
+  const onlySeeds = (process.env.ONLY_SEEDS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
 
   console.log(`Прогон ${date}. Бюджет ${quota.budget} юнитов, разведка ${searchBudget} запросов.`);
 
-  const onlySeeds = (process.env.ONLY_SEEDS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
-  if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds });
-  // Trending не знает про наш список тем — только он и приводит незнакомое.
-  if (!onlySeeds.length) await explore({ api, db, markets, thresholds });
-  const pending = await survey({ api, db, thresholds });
-  if (pending?.size) await hydrate({ api, db, pending, markets, thresholds });
-  // Настоящий возраст важнее всего у тех, кто уже зарабатывает: именно их мы
-  // объявляем новичками или стариками.
-  const needAge = Object.values(db.channels)
-    .filter((c) => c.uploadsPlaylistId && !c.firstUploadComplete)
-    .sort((a, b) => (b.totalViews ?? 0) - (a.totalViews ?? 0))
-    .map((c) => c.id);
-  await backfillFirstUpload({ api, db, ids: needAge, unitBudget: thresholds.backfillUnitBudget ?? 1200 });
+  try {
+    if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds });
 
-  const snap = await snapshot({ api, db, thresholds });
+    // Trending не знает про наш список тем — только он и приводит незнакомое.
+    if (!onlySeeds.length) await explore({ api, db, markets, thresholds });
 
-  if (Object.keys(snap).length) {
-    writeCompactJson(paths.snapshot(date), { date, videos: snap });
+    const pending = await survey({ api, db, thresholds });
+    if (pending?.size) await hydrate({ api, db, pending, markets, thresholds });
+
+    // Настоящий возраст важнее всего у тех, кто уже зарабатывает: именно их мы
+    // объявляем новичками или стариками.
+    const needAge = Object.values(db.channels)
+      .filter((c) => c.uploadsPlaylistId && !c.firstUploadComplete)
+      .sort((a, b) => (b.totalViews ?? 0) - (a.totalViews ?? 0))
+      .map((c) => c.id);
+    await backfillFirstUpload({ api, db, ids: needAge, unitBudget: thresholds.backfillUnitBudget ?? 1200 });
+
+    const snap = await snapshot({ api, db, thresholds });
+    if (Object.keys(snap).length) {
+      writeCompactJson(paths.snapshot(date), { date, videos: snap });
+    }
+
+    // Опорный срез по ВСЕМ видео, включая старые. Он нужен для долговечности:
+    // дневные снапшоты хранят только молодые ролики ради места, а прирост
+    // старых иначе не измерить. Файл один и переписывается раз в неделю,
+    // поэтому объём не растёт.
+    const baseline = readJson(paths.baseline, null);
+    const baselineAge = baseline?.date
+      ? (Date.parse(date) - Date.parse(baseline.date)) / 86400000 : Infinity;
+    if (baselineAge >= (thresholds.baselineRefreshDays ?? 7)) {
+      writeCompactJson(paths.baseline, { date, views: Object.fromEntries(
+        Object.entries(db.current).map(([id, s]) => [id, s[0]])) });
+      console.log(`Опорный срез обновлён (прошлому было ${Math.round(baselineAge)} дн)`);
+    }
+  } finally {
+    // Что успели собрать — сохраняем, даже если прогон упал на полпути.
+    // Иначе одна ошибка стоит суток квоты: юниты потрачены, данных нет.
+    db.state.runs = [...(db.state.runs ?? []).slice(-29), { date, ...quota.summary() }];
+    saveDb(db);
+    console.log(`Квота: потрачено ${quota.spent} из ${quota.budget}`, quota.byEndpoint);
   }
-  // Опорный срез по ВСЕМ видео, включая старые. Он нужен для долговечности:
-  // дневные снапшоты хранят только молодые ролики ради места, а прирост
-  // старых иначе не измерить. Файл один и переписывается раз в неделю,
-  // поэтому объём не растёт.
-  const baseline = readJson(paths.baseline, null);
-  const baselineAge = baseline?.date
-    ? (Date.parse(date) - Date.parse(baseline.date)) / 86400000 : Infinity;
-  if (baselineAge >= (thresholds.baselineRefreshDays ?? 7)) {
-    writeCompactJson(paths.baseline, { date, views: Object.fromEntries(
-      Object.entries(db.current).map(([id, s]) => [id, s[0]])) });
-    console.log(`Опорный срез обновлён (прошлому было ${Math.round(baselineAge)} дн)`);
-  }
-
-  db.state.runs = [...(db.state.runs ?? []).slice(-29), { date, ...quota.summary() }];
-  saveDb(db);
-  console.log(`Квота: потрачено ${quota.spent} из ${quota.budget}`, quota.byEndpoint);
 }
 
 // Метрики считаем всегда — они дешёвые и не трогают API.

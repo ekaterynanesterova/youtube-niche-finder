@@ -3,6 +3,7 @@ import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
+import { explore } from './collect.js';
 import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
 
 let failed = 0;
@@ -24,6 +25,28 @@ check('медиана чётной длины', median([1, 2, 3, 4]) === 2.5);
 check('медиана игнорирует пустые', median([]) === null);
 check('язык канала — по большинству видео', dominantLang([{lang:'en-US'},{lang:'en'},{lang:'de'}]) === 'en');
 check('язык не выводится из двух рынков', dominantLang([{}], ['de','en']) === null);
+
+// --- разведка вслепую ---
+// Чарт mostPopular существует не для всех пар «страна + категория». 404 на
+// отсутствующий чарт уронил ночной прогон целиком — это не должно повториться.
+{
+  const q = { spend() {}, canAfford: () => true };
+  const db = { channels: {}, state: {} };
+  const markets = { en: { regionCode: 'US' }, de: { regionCode: 'DE' } };
+  const api = { quota: q, async trending({ videoCategoryId }) {
+    if (videoCategoryId === '27') throw new Error('videos 404: Requested entity was not found.');
+    return { items: [{ snippet: { channelId: 'ch' + videoCategoryId } }] };
+  } };
+  await explore({ api, db, markets, thresholds: { trendingCategories: ['27', '28'] } });
+  check('отсутствующий чарт не роняет разведку', Object.keys(db.channels).length === 1);
+  check('канал из trending заведён правильно',
+    db.channels.ch28?.id === 'ch28' && Array.isArray(db.channels.ch28.seeds));
+
+  const broken = { quota: q, async trending() { throw new Error('внезапная поломка'); } };
+  const db2 = { channels: {}, state: {} };
+  await explore({ api: broken, db: db2, markets, thresholds: { trendingCategories: ['28'] } });
+  check('непредвиденная ошибка в необязательном слое не роняет прогон', true);
+}
 
 // --- переводчик ---
 const fakeFetch = (body, ok = true) => async () => ({ ok, json: async () => body });
