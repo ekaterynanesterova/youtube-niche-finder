@@ -95,6 +95,7 @@ export function buildPayload(m, seeds, thresholds) {
     videoCount: m.videos.length,
     minChannels: 3,
     niches, examples, verdict, markets,
+    pending: verdict.pending ?? [],
     // Списки для раскрытия по клику: посмотреть глазами, что вообще собрано.
     topChannels: Object.values(m.channels)
       .filter((c) => c.title)
@@ -207,6 +208,9 @@ button.stat[aria-expanded="true"]{border-color:var(--brand);
 .pick p:last-child{margin-bottom:0}
 .pick .lab{color:var(--dim)}
 .disclaim{color:var(--dim);font-size:13px;max-width:64ch;margin-top:16px}
+.pend{margin-top:26px;border-top:1px solid var(--line);padding-top:16px}
+.pend h3{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin:0 0 6px}
+.pend .hint{color:var(--dim);font-size:13px;max-width:64ch;margin:0 0 12px}
 .rivals{margin-top:12px;border-top:1px solid var(--line);padding-top:11px}
 .rivals > summary{cursor:pointer;list-style:none;font-size:13px;color:var(--brand)}
 .rivals > summary::-webkit-details-marker{display:none}
@@ -383,6 +387,13 @@ footer b{color:var(--ink)}
 
         <dt>Конвейер</dt>
         <dd>Доля каналов, выпускающих больше трёх часов готового видео в неделю. Это мера потока, а не качества: инструмент не видит, что внутри ролика. Высокий конвейер значит, что конкурировать придётся объёмом — но он же доказывает, что формат ставится на поток.</dd>
+
+        <dt>Роликов по теме на YouTube</dt>
+        <dd>Оценка самого YouTube: сколько всего роликов подходит под запрос. Приходит вместе с результатами поиска и это единственная прямая мера того, насколько тема велика <b>на самом деле</b>, а не в нашей базе.
+        <br><br>Важно не путать её с числом каналов в таблице конкурентов: там показано, сколько нашли <b>мы</b>. Если по теме сделан один поиск, найдётся горстка каналов — и это ничего не говорит о YouTube.</dd>
+
+        <dt>Ещё изучаем</dt>
+        <dd>Темы, по которым сделано меньше трёх поисков или найдено меньше пятнадцати каналов. В рейтинг они не попадают намеренно: проценты по трём каналам выглядят убедительно и не значат ничего.</dd>
 
         <dt>Риск</dt>
         <dd>Строка под каждой нишей. Собирается из цифр автоматически, а не пишется вручную. Разбирает четыре вещи: собирает ли свежий ролик хоть что-то, насколько тонкая выборка (мало каналов или мало свежих роликов — красивые проценты по ним ничего не значат), не работает ли ниша на потоке и не слишком ли тяжёлый там типовой ролик.</dd>
@@ -637,6 +648,7 @@ function drawVerdict() {
     [r.catalog == null ? '—' : Math.round(r.catalog) + '', 'роликов у лидера'],
     [r.shelfShare == null ? '—' : pct(r.shelfShare) + ' / ' + pct(r.shelfOldShare),
      'старым роликам достаётся / их доля'],
+    [r.totalResults == null ? '—' : num(r.totalResults), 'роликов по теме на YouTube'],
   ].map(([v, l]) => '<div><b>' + v + '</b><span>' + l + '</span></div>').join('');
 
   host.innerHTML =
@@ -692,6 +704,18 @@ function drawVerdict() {
           + 'по роликам возрастом от недели до двух месяцев.</p></details>'
         : '') +
       '</div>').join('') +
+    ((P.pending ?? []).length
+      ? '<div class="pend"><h3>Ещё изучаем</h3>'
+        + '<p class="hint">По этим темам сделано меньше трёх поисков или найдено меньше пятнадцати каналов. '
+        + 'Судить по ним рано: маленькое число каналов здесь означает не «на YouTube их мало», '
+        + 'а «мы ещё не искали».</p><div class="cand">'
+        + P.pending.slice(0, 24).map(c =>
+            '<div><b>' + c.query + '</b>' + (c.ru ? ' — ' + c.ru : '')
+            + '<span>' + c.searches + ' поиск' + (c.searches === 1 ? '' : 'а')
+            + ' · ' + c.channels + ' каналов'
+            + (c.totalResults != null ? ' · на YouTube ~' + num(c.totalResults) : '') + '</span></div>').join('')
+        + '</div></div>'
+      : '') +
     '<p class="disclaim">Цель — $' +
       P.target.usd + ' в месяц при RPM $' + P.target.rpm +
       '. RPM зависит от тематики и аудитории, точной цифры API не даёт, так что доход здесь — оценка порядка, а не обещание.</p>';

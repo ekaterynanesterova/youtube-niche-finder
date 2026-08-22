@@ -6,8 +6,8 @@
   "outlierRatio": 3,
   "outlierMinViews": 20000,
   "youngChannelDays": 365,
-  "dailyUnitBudget": 9000,
-  "searchesPerRun": 40,
+  "dailyUnitBudget": 9500,
+  "searchesPerRun": 50,
   "maxUploadPagesNewChannel": 10,
   "maxChannelsSurveyedPerRun": 400,
   "snapshotMaxAgeDays": 150,
@@ -31,9 +31,12 @@
     "27",
     "28"
   ],
-  "backfillUnitBudget": 1200,
+  "backfillUnitBudget": 800,
   "topicSingleWordLift": 8,
   "freshMinAgeDays": 7,
   "freshMaxAgeDays": 60,
-  "freshMinSample": 10
+  "freshMinSample": 10,
+  "nicheMinSearches": 3,
+  "nicheMinChannels": 15,
+  "topicQueueLimit": 25
 }

@@ -179,8 +179,15 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       byLang[lang] = nicheStats(seedVideos.filter((v) => channels[v.channelId]?.lang === lang),
                                 channels, thresholds);
     }
+    const st = db.state?.seedStats?.[seed.id] ?? {};
     niches[seed.id] = {
       id: seed.id, group: seed.group, control: !!seed.control,
+      // Сколько раз мы вообще искали по этой теме и что YouTube думает
+      // о её размере. Без этого «4 канала» читается как «на YouTube их 4».
+      searches: st.searches ?? 0,
+      totalResults: st.totalResults ?? null,
+      newChannelsLastSearch: st.newLastRun ?? null,
+      explored: (st.searches ?? 0) >= (thresholds.nicheMinSearches ?? 3),
       queries: { de: seed.de ?? null, en: seed.en ?? null },
       // Основной рынок — немецкий. Рейтинг строится по нему.
       ...byLang.de,

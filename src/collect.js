@@ -20,27 +20,34 @@ async function tolerant(label, fn) {
 // Слой 1. Ищем каналы, а не видео. Сиды прокручиваются по кругу между прогонами.
 export async function discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds }) {
   // Прицельный прогон: новую тему хочется проверить сразу, а не когда до неё
-  // доедет курсор. Общую ротацию при этом не сбиваем.
+  // доедет курсор. Общую очередь при этом не сбиваем.
   if (onlySeeds?.length) {
     seeds = seeds.filter((s) => onlySeeds.includes(s.id));
     if (!seeds.length) { log('Ни одна из запрошенных тем не найдена в конфиге'); return; }
     log(`Прицельная разведка: ${seeds.map((s) => s.id).join(', ')}`);
   }
+
   const after = new Date(Date.now() - thresholds.discoveryWindowDays * 86400000).toISOString();
+  const stats = (db.state.seedStats ??= {});
+  const statOf = (id) => (stats[id] ??= { searches: 0, lastSearched: null, totalResults: null,
+                                          channelsSeen: 0, newLastRun: null });
+
+  // Очередь по нужде, а не по кругу. Тема, которую не искали ни разу, знает о
+  // себе ноль — она важнее той, по которой уже есть сотня каналов. Ротация
+  // по кругу оставляла нетронутыми три четверти списка.
+  const queue = (pool) => pool.slice().sort((a, b) => {
+    const A = statOf(a.id), B = statOf(b.id);
+    if (A.searches !== B.searches) return A.searches - B.searches;
+    return String(A.lastSearched ?? '').localeCompare(String(B.lastSearched ?? ''));
+  });
+
   const plan = [];
   for (const [code, market] of Object.entries(markets)) {
-    // Основной рынок прокручивает все темы; контрольный держится за узкий
-    // постоянный набор — мерная линейка ценна повторяемостью, а не широтой.
     const pool = market.role === 'control' ? seeds.filter((s) => s.control) : seeds;
-    if (!pool.length) continue;
+    const ordered = queue(pool).filter((s) => s[code]);
+    if (!ordered.length) continue;
     const n = Math.max(0, Math.round(searchBudget * market.searchShare));
-    for (let i = 0; i < n; i++) {
-      const seed = pool[(db.state.seedCursor + i) % pool.length];
-      if (seed[code]) plan.push({ seed, code, market });
-    }
-  }
-  if (!onlySeeds?.length) {
-    db.state.seedCursor = (db.state.seedCursor + Math.max(1, Math.round(searchBudget / 2))) % seeds.length;
+    for (let i = 0; i < n; i++) plan.push({ seed: ordered[i % ordered.length], code, market });
   }
 
   let found = 0, fresh = 0;
@@ -50,21 +57,40 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
         q: seed[code], publishedAfter: after,
         regionCode: market.regionCode, relevanceLanguage: market.relevanceLanguage,
       });
+      const st = statOf(seed.id);
+      st.searches++;
+      st.lastSearched = new Date().toISOString().slice(0, 10);
+      // Сколько роликов вообще подходит под запрос — оценка YouTube. Приходит
+      // бесплатно с каждым поиском и это единственная прямая мера того,
+      // насколько тема велика на самом деле, а не в нашей базе.
+      if (Number.isFinite(res.pageInfo?.totalResults)) st.totalResults = res.pageInfo.totalResults;
+
+      let brandNew = 0;
       for (const item of res.items ?? []) {
         const id = item.snippet?.channelId;
         if (!id) continue;
         found++;
+        const known = !!db.channels[id];
         const ch = db.channels[id] ?? (db.channels[id] = {
           id, seeds: [], markets: [], firstSeen: new Date().toISOString(), surveyed: null,
         });
+        if (!known) brandNew++;
         if (!ch.seeds.includes(seed.id)) ch.seeds.push(seed.id);
         if (!ch.markets.includes(code)) ch.markets.push(code);
         if (!ch.surveyed) fresh++;
       }
-      log(`  [${code}] «${seed[code]}» → ${res.items?.length ?? 0} видео`);
+      // Сколько поиск принёс НЕЗНАКОМЫХ каналов. Пока приносит — тема большая;
+      // как только начинает возвращать одних и тех же, она исчерпана.
+      st.newLastRun = brandNew;
+      st.channelsSeen += res.items?.length ?? 0;
+      log(`  [${code}] «${seed[code]}» → ${res.items?.length ?? 0} видео, новых каналов ${brandNew}` +
+          (st.totalResults != null ? `, всего по теме ~${st.totalResults}` : ''));
     }
   });
-  log(`Разведка: ${plan.length} запросов, ${found} попаданий, каналов в базе ${Object.keys(db.channels).length} (новых к опросу ${fresh})`);
+
+  const untouched = seeds.filter((s) => !stats[s.id]?.searches).length;
+  log(`Разведка: ${plan.length} запросов, ${found} попаданий, каналов ${Object.keys(db.channels).length}` +
+      ` (новых к опросу ${fresh}); тем ещё не тронуто: ${untouched}`);
 }
 
 // Слой 1б. Разведка вслепую. Разведка по своим запросам приводит только те

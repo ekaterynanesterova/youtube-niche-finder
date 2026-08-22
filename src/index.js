@@ -23,6 +23,21 @@ const seeds = readJson(join(ROOT, 'config/seeds.json')).seeds;
 const db = loadDb();
 const date = today();
 
+// Журнал разведки завели позже, чем начали собирать. Тема, по которой в базе
+// есть каналы, точно искалась хотя бы раз — проставляем это, чтобы очередь
+// не считала её нетронутой и не гоняла по кругу заново.
+{
+  const stats = (db.state.seedStats ??= {});
+  const withChannels = new Set();
+  for (const c of Object.values(db.channels)) for (const sid of c.seeds ?? []) withChannels.add(sid);
+  let patched = 0;
+  for (const sid of withChannels) {
+    if (!stats[sid]) { stats[sid] = { searches: 1, lastSearched: null, totalResults: null,
+                                      channelsSeen: 0, newLastRun: null }; patched++; }
+  }
+  if (patched) console.log(`Журнал разведки восстановлен по базе для ${patched} тем`);
+}
+
 if (!metricsOnly) {
   const quota = new Quota(Number(process.env.UNIT_BUDGET) || thresholds.dailyUnitBudget);
   const api = new YouTubeApi(process.env.YOUTUBE_API_KEY, quota);
@@ -106,9 +121,17 @@ const candidates = [
   ...findTopics({ metrics, thresholds, knownQueries: known, lang: 'en', onlyChannels: uncovered }),
   ...findTopics({ metrics, thresholds, knownQueries: known, lang: 'en' }),
 ].filter((c, i, arr) => arr.findIndex((x) => x.phrase === c.phrase) === i);
+// Список тем рос быстрее, чем мы успевали его обходить: девяносто девять тем
+// из ста тридцати четырёх не искались ни разу. Новые пускаем только когда
+// очередь непройденных короткая.
+const untouched = seeds.filter((x) => !(db.state.seedStats?.[x.id]?.searches)).length;
+const room = Math.max(0, (thresholds.topicQueueLimit ?? 25) - untouched);
 const promoted = promote({
-  candidates, seeds, limit: thresholds.topicMaxPromotedPerRun ?? 5, lang: 'en',
+  candidates, seeds,
+  limit: Math.min(thresholds.topicMaxPromotedPerRun ?? 5, room),
+  lang: 'en',
 });
+if (!room) console.log(`Автопоиск тем на паузе: ${untouched} тем ещё не искались`);
 for (const t of promoted) {
   t.ru = await translator.translate(t.en, 'en');
   seeds.push(t);

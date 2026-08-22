@@ -5,6 +5,7 @@ const MARKET = { de: 'немецкий', en: 'английский' };
 
 export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   const rows = [];
+  const pending = [];
   for (const n of niches) {
     for (const [lang, m] of Object.entries(n.byMarket)) {
       // Доказательством считаем только повторяемость: один дошедший канал
@@ -13,6 +14,18 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
       // Без выборки свежих роликов судить не о чем: главный вопрос ниши
       // именно в них.
       if (m.freshViews == null) continue;
+      // Ниша, по которой сделали один поиск, ничего о себе не сообщает: её
+      // «размер» — это размер нашего обхода. Такие показываем отдельно, не
+      // в рейтинге.
+      // Доказательство — найденные каналы, а не журнал поисков: журнал ведётся
+      // только с недавних пор, а данные копились раньше. Число поисков служит
+      // объяснением, почему тема тонкая, а не самостоятельным барьером.
+      if (m.channels < (thresholds.nicheMinChannels ?? 15)) {
+        pending.push({ id: n.id, ru: n.ru, lang, query: n.queries[lang] ?? n.id,
+                       searches: n.searches, channels: m.channels,
+                       totalResults: n.totalResults, fresh: m.freshViews });
+        continue;
+      }
       rows.push({
         id: n.id, ru: n.ru, group: n.group, lang,
         market: MARKET[lang] ?? lang,
@@ -20,6 +33,9 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         young: m.youngOutlierChannels,
         total: m.outlierChannels,
         nicheChannels: m.channels,
+        searches: n.searches,
+        totalResults: n.totalResults,
+        newLastSearch: n.newChannelsLastSearch,
         usd: m.medianYoungMonthlyUsd ?? m.medianMonthlyUsd,
         mature: m.matureChannels,
         matureUsd: m.medianMatureUsd,
@@ -70,6 +86,8 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
     r.risk = risk(r, thresholds);
     r.effort = effort(r);
   }
+  pending.sort((a, b) => (b.fresh ?? 0) - (a.fresh ?? 0));
+  rows.pending = pending;
   return rows;
 }
 
@@ -101,8 +119,8 @@ function risk(r, thresholds) {
   const out = [];
   // Тонкая выборка — сама по себе риск. Красивые проценты по трём каналам
   // и десятку роликов не значат почти ничего.
-  if (r.nicheChannels != null && r.nicheChannels < 6) {
-    out.push(`в нише всего ${plural(r.nicheChannels, 'канал', 'канала', 'каналов')} — выборка тонкая, проценты по ней шаткие`);
+  if (r.nicheChannels != null && r.nicheChannels < 25) {
+    out.push(`в базе всего ${plural(r.nicheChannels, 'канал', 'канала', 'каналов')} по теме — выборка тонкая, проценты по ней шаткие`);
   }
   if (r.freshSample != null && r.freshSample < 25) {
     out.push(`свежих роликов для замера всего ${r.freshSample}, цифра может сильно поехать`);
