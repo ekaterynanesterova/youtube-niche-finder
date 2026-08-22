@@ -8,6 +8,7 @@ import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from 
 import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
+import { buildFocus } from './focus.js';
 import { readJson, ROOT } from './store.js';
 import { join } from 'node:path';
 import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
@@ -464,6 +465,67 @@ check('списки служебных слов разные', stopWords('en').h
   const p2 = phrases('The Great White Shark Hunt');
   check('длинная связка из соседних слов цела', p2.includes('great white shark'));
   check('одиночные слова остаются', p2.includes('shark'));
+}
+
+// --- фокусная ниша ---
+// Вопрос по своей нише другой, чем по чужим: не «куда идти», а «что сейчас
+// происходит». Значит суточный прирост и ускорение, а не медианы за три месяца.
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const chan = { c1: { id: 'c1', title: 'Космо', lang: 'en', ageDays: 100, monthlyUsd: 900,
+                       subscribers: 1000, catalogCount: 40 } };
+  const mk = (id, t, views, age) => ({ id, channelId: 'c1', title: t, views, ageDays: age,
+                                       durationSec: 1800, seeds: ['sp'], publishedAt: day(age) });
+  const metrics = {
+    thresholds: { youngChannelDays: 365 },
+    channels: chan,
+    videos: [mk('v1', 'Nebula collapse explained', 10000, 10),
+             mk('v2', 'Ancient star map found', 5000, 200)],
+  };
+  // Три среза: у v1 прирост вчера 100, сегодня 900 — это ускорение в девять раз.
+  const snapshots = [
+    { date: day(2), videos: { v1: [9000], v2: [4900] } },
+    { date: day(1), videos: { v1: [9100], v2: [4950] } },
+    { date: day(0), videos: { v1: [10000], v2: [5000] } },
+  ];
+  const f = buildFocus({
+    metrics, snapshots,
+    seeds: [{ id: 'sp', group: 'Космос', en: 'space documentary', ru: 'космос' }],
+    focus: { id: 'space', label: 'Космос', groups: ['Космос'], lang: 'en',
+             breakingMinPerDay: 100, listSize: 10, freshDays: 14 },
+  });
+  check('фокус собирает ролики своей группы', f.videoCount === 2);
+  check('суточный прирост считается по последним двум срезам',
+    Math.round(f.rising[0].perDay) === 900);
+  check('ускорение считается против предыдущего отрезка',
+    f.rising[0].accel === 9);
+  check('в «резко пошло» попадает ускорившийся ролик',
+    f.breaking.length === 1 && f.breaking[0].id === 'v1');
+  check('ролик с малым приростом в «резко пошло» не идёт',
+    !f.breaking.some((r) => r.id === 'v2'));
+  check('в «только вышло» только свежие', f.fresh.every((r) => r.age <= 14));
+  check('старый ролик в свежие не попал', !f.fresh.some((r) => r.id === 'v2'));
+  check('канал сведён по роликам темы',
+    f.channels.length === 1 && f.channels[0].videos === 2);
+  check('без настроенных групп фокуса нет', buildFocus({ metrics, snapshots, seeds: [], focus: {} }) === null);
+}
+
+// --- бриф не ломает таблицы чужими заголовками ---
+// «Space Odyssey | Discovery Channel» добавляет столбцы в markdown-таблицу.
+{
+  const b = renderBrief({
+    computedAt: now, snapshotDays: 5, dbSize: { channels: 1, videos: 1 },
+    seedsDone: 1, seedsTotal: 1, thresholds: readJson(join(ROOT, 'config/thresholds.json')),
+    headline: '', markets: {}, examples: {}, archetypes: [], pending: [], verdict: [],
+    focus: { label: 'Космос', why: 'зачем', videoCount: 1, measured: 1, channelCount: 1,
+             topics: [], hot: [], channels: [], fresh: [], rising: [],
+             breaking: [{ id: 'v1', title: 'A | B | C', titleRu: null, channel: 'D | E',
+                          young: false, age: 3, views: 10, perDay: 5, accel: 2 }] },
+  });
+  const line = b.split('\n').find((l) => l.includes('A \\| B'));
+  check('вертикальная черта в заголовке экранирована', !!line);
+  check('в строке таблицы ровно столько столбцов, сколько в шапке',
+    !!line && (line.match(/(?<!\\)\|/g) || []).length === 7);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

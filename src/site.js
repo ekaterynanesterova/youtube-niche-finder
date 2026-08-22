@@ -29,7 +29,7 @@ function growthSinceLastRun(runs) {
   return { channels: last.channels - prev.channels, videos: last.videos - prev.videos };
 }
 
-export function buildPayload(m, seeds, thresholds, db = {}) {
+export function buildPayload(m, seeds, thresholds, db = {}, focus = null) {
   const byId = Object.fromEntries(seeds.map((s) => [s.id, s]));
 
   // По пять живых примеров на нишу: цифры выбирают кандидатов, глаза решают.
@@ -129,6 +129,7 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     // Разброс по нишам для шкалы наверху: одно число на нишу.
     spread: verdict.map((r) => ({ id: r.id, q: r.query, fresh: r.fresh })).filter((r) => r.fresh > 0),
     adLimitedWhy: POLICY.adLimited?.why ?? null,
+    focus,
     pending: verdict.pending ?? [],
     broad: verdict.broad ?? [],
     broadWhy: POLICY.topicShape?.why ?? null,
@@ -201,6 +202,13 @@ export function renderSite(payload) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light">
+<!-- Страница не для поиска. noindex работает только если краулеру дали её
+     прочитать, поэтому robots.txt обход НЕ запрещает: запрет обхода помешал бы
+     увидеть эту строку, и адрес всё равно мог бы попасть в выдачу — без
+     содержимого, но попасть. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234ade80'/%3E%3Cstop offset='1' stop-color='%2360a5fa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='%230d1014'/%3E%3Ccircle cx='27' cy='27' r='16' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M40 40 L54 54' stroke='url(%23g)' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M31 18h-3a5 5 0 0 0-5 5v14' fill='none' stroke='%23e8ecf2' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M19 27h11' stroke='%23e8ecf2' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <title>Ниши · Niche Finder</title>
 <style>
@@ -468,6 +476,29 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
   font-size:13px;cursor:pointer}
 .chat button:hover{border-color:var(--brand)}
 .chat .said{color:var(--good)}
+.fnote{color:var(--dim);font-size:13.5px;line-height:1.55;max-width:78ch;margin:16px 0 0}
+.fgrid{display:grid;gap:18px;margin-top:20px}
+.fbox{background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.fbox h4{margin:0 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--brand)}
+.fbox .sub{color:var(--dim);font-size:12.5px;margin:0 0 12px;line-height:1.5}
+.fbox table{border-collapse:collapse;width:100%;font-size:13.5px}
+.fbox th{text-align:left;font-weight:600;color:var(--dim);font-size:11px;text-transform:uppercase;
+  letter-spacing:.06em;padding:0 10px 7px 0;border-bottom:1px solid var(--line)}
+.fbox td{padding:8px 10px 8px 0;border-top:1px solid var(--line);vertical-align:top;line-height:1.45}
+.fbox td.n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;padding-right:14px}
+.fbox tr.y td:first-child{border-left:2px solid var(--good);padding-left:8px}
+.fbox a{color:var(--ink);text-decoration:none}
+.fbox a:hover{color:var(--brand)}
+.up{color:var(--good);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:13px}
+.chips b{font-weight:600}
+.chips span{color:var(--dim);font-size:11.5px;margin-left:6px}
+.chips .new{border-color:var(--good)}
+.fhead{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px}
+.fhead div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.fhead b{display:block;font-size:19px;font-variant-numeric:tabular-nums}
+.fhead span{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 .adlim{margin:10px 0 0;padding:10px 12px;border:1px solid var(--mid);border-radius:10px;
   background:var(--card);color:var(--ink);font-size:13px;line-height:1.5}
 .adlim b{color:var(--mid)}
@@ -511,6 +542,8 @@ footer b{color:var(--ink)}
   <div class="vtabs" id="view-tabs"></div>
 
   <section id="view-verdict"></section>
+
+  <section id="view-focus" hidden></section>
 
   <section id="view-arch" hidden></section>
 
@@ -1046,7 +1079,77 @@ function drawArch() {
     }).join('');
 }
 
-const views = [['verdict', 'Вывод'], ['arch', 'Архетипы каналов'], ['all', 'Все ниши']];
+// --- вкладка фокусной ниши ---
+// Здесь другой вопрос, чем на остальных вкладках. Там мы выбираем нишу, тут
+// смотрим, что в своей происходит сегодня: суточный прирост, а не медианы.
+function drawFocus() {
+  const F = P.focus;
+  const host = document.getElementById('view-focus');
+  if (!F || !host) return;
+  const yt = (id, t) => '<a href="https://youtube.com/watch?v=' + id + '" target="_blank" rel="noopener">' + t + '</a>';
+  const ch = (id, t) => '<a href="https://youtube.com/channel/' + id + '" target="_blank" rel="noopener">' + (t || '—') + '</a>';
+  const up = (n) => n == null ? '—' : '<span class="up">+' + num(n) + '</span>';
+
+  const vidTable = (list, extra) =>
+    '<table><tr><th>Ролик</th><th>Канал</th>' + (extra ? '<th>' + extra.head + '</th>' : '')
+    + '<th>Возраст</th><th>Просмотров</th><th>За сутки</th></tr>'
+    + list.map(r => '<tr class="' + (r.young ? 'y' : '') + '">'
+      + '<td>' + yt(r.id, r.title) + (r.titleRu ? '<br><span class="reg">' + r.titleRu + '</span>' : '') + '</td>'
+      + '<td>' + ch(r.channelId, r.channel) + (r.young ? '<br><span class="reg">моложе года</span>' : '') + '</td>'
+      + (extra ? '<td class="n">' + extra.cell(r) + '</td>' : '')
+      + '<td class="n">' + r.age + ' дн</td>'
+      + '<td class="n">' + num(r.views) + '</td>'
+      + '<td class="n">' + up(r.perDay) + '</td></tr>').join('')
+    + '</table>';
+
+  const box = (title, sub, body) =>
+    '<div class="fbox"><h4>' + title + '</h4><p class="sub">' + sub + '</p>' + body + '</div>';
+
+  host.innerHTML =
+    '<p class="fnote">' + F.why + '</p>'
+    + '<div class="fhead">'
+      + '<div><b>' + num(F.videoCount) + '</b><span>роликов в теме</span></div>'
+      + '<div><b>' + num(F.measured) + '</b><span>с суточным замером</span></div>'
+      + '<div><b>' + num(F.channelCount) + '</b><span>каналов</span></div>'
+      + '<div><b>' + F.topics.length + '</b><span>запросов в теме</span></div>'
+    + '</div>'
+    + '<div class="fgrid">'
+    + (F.breaking.length ? box('Резко пошло',
+        'Ролики, у которых суточный прирост за последний замер вырос в полтора раза и больше. Именно так выглядит новость, под которую все побежали снимать: смотреть надо в первую очередь сюда.',
+        vidTable(F.breaking, { head: 'Ускорение', cell: r => '×' + r.accel.toFixed(1) })) : '')
+    + (F.rising.length ? box('Набирает больше всех',
+        'Просто самый большой прирост за сутки, без учёта ускорения. Что в теме смотрят прямо сейчас.',
+        vidTable(F.rising)) : '')
+    + (F.fresh.length ? box('Только вышло',
+        'Ролики не старше двух недель. По ним видно, что конкуренты снимают сегодня — независимо от того, взлетело оно или нет.',
+        vidTable(F.fresh)) : '')
+    + (F.hot.length ? box('Формулировки в ходу',
+        'Связки слов, доля которых среди свежих роликов выросла минимум в 1.8 раза против старых. Это не темы, а язык заголовков: чем сейчас цепляют. Рядом — сколько просмотров в сутки идёт на ролики с такой связкой.',
+        '<div class="chips">' + F.hot.map(h =>
+          '<div class="' + (h.lift === null || !isFinite(h.lift) ? 'new' : '') + '"><b>' + h.phrase + '</b>'
+          + '<span>' + (isFinite(h.lift) ? '×' + h.lift.toFixed(1) : 'ново') + ' · ' + h.videos + ' видео · +'
+          + num(h.perDay) + '/сут</span></div>').join('') + '</div>') : '')
+    + (F.channels.length ? box('Кто работает в теме',
+        'Отсортировано по суточному приросту всех роликов канала внутри темы, а не по подписчикам. Зелёной чертой отмечены каналы моложе года.',
+        '<table><tr><th>Канал</th><th>Роликов в теме</th><th>Свежих за месяц</th><th>Просмотров</th><th>За сутки</th><th>$/мес</th></tr>'
+        + F.channels.map(c => '<tr class="' + (c.young ? 'y' : '') + '">'
+          + '<td>' + ch(c.id, c.title) + (c.age != null ? '<br><span class="reg">' + c.age + ' дн</span>' : '') + '</td>'
+          + '<td class="n">' + c.videos + (c.catalog ? ' из ' + num(c.catalog) : '') + '</td>'
+          + '<td class="n">' + c.fresh + '</td>'
+          + '<td class="n">' + num(c.views) + '</td>'
+          + '<td class="n">' + up(c.perDay) + '</td>'
+          + '<td class="n">$' + num(c.usd) + '</td></tr>').join('')
+        + '</table>') : '')
+    + box('Запросы, по которым собрана тема',
+        'Разведка по ним идёт чаще, чем по остальным: фокусной нише отдана доля поисков в каждом прогоне.',
+        '<div class="chips">' + F.topics.map(t =>
+          '<div><b>' + t.query + '</b>' + (t.ru ? '<span>' + t.ru + '</span>' : '') + '</div>').join('') + '</div>')
+    + '</div>';
+}
+
+const views = [['verdict', 'Вывод']]
+  .concat(P.focus ? [['focus', P.focus.label]] : [])
+  .concat([['arch', 'Архетипы каналов'], ['all', 'Все ниши']]);
 let view = 'verdict';
 function drawViews() {
   document.getElementById('view-tabs').innerHTML = views.map(([k, t]) =>
@@ -1063,6 +1166,7 @@ function show() {
 }
 
 drawVerdict();
+drawFocus();
 drawArch();
 drawViews();
 // --- пороги ---

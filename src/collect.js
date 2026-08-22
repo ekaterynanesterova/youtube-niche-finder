@@ -27,7 +27,7 @@ async function tolerant(label, fn, { optional = false } = {}) {
 }
 
 // Слой 1. Ищем каналы, а не видео. Сиды прокручиваются по кругу между прогонами.
-export async function discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds }) {
+export async function discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds, focus = null }) {
   // Прицельный прогон: новую тему хочется проверить сразу, а не когда до неё
   // доедет курсор. Общую очередь при этом не сбиваем.
   if (onlySeeds?.length) {
@@ -57,14 +57,28 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
   if (broad.length) log(`Не ищем ${broad.length} широких тем: ${broad.map((s) => s.id).join(', ')}`);
   const usable = seeds.filter((s) => !broad.includes(s));
 
+  // Фокусной нише — своя доля поисков в каждом прогоне. По ней следят за тем,
+  // что происходит сегодня, и ждать, пока до неё доедет общая очередь, нельзя.
+  const focusIds = new Set((focus?.groups?.length ? usable.filter((s) => focus.groups.includes(s.group)) : [])
+    .map((s) => s.id));
+  const focusShare = focusIds.size ? (focus.searchShare ?? 0) : 0;
+
   const plan = [];
   for (const [code, market] of Object.entries(markets)) {
     const pool = market.role === 'control' ? usable.filter((s) => s.control) : usable;
-    const ordered = queue(pool).filter((s) => s[code]);
-    if (!ordered.length) continue;
     const n = Math.max(0, Math.round(searchBudget * market.searchShare));
-    for (let i = 0; i < n; i++) plan.push({ seed: ordered[i % ordered.length], code, market });
+    const nFocus = Math.round(n * focusShare);
+
+    const inFocus = queue(pool.filter((s) => focusIds.has(s.id))).filter((s) => s[code]);
+    const rest = queue(pool.filter((s) => !focusIds.has(s.id))).filter((s) => s[code]);
+    // Если фокусных запросов на этом рынке нет, его доля возвращается общей очереди.
+    const takeFocus = inFocus.length ? nFocus : 0;
+    for (let i = 0; i < takeFocus; i++) plan.push({ seed: inFocus[i % inFocus.length], code, market });
+    const ordered = rest.length ? rest : inFocus;
+    if (!ordered.length) continue;
+    for (let i = 0; i < n - takeFocus; i++) plan.push({ seed: ordered[i % ordered.length], code, market });
   }
+  if (focusShare) log(`Фокус «${focus.label}»: ${Math.round(focusShare * 100)}% поисков на ${focusIds.size} тем`);
 
   let found = 0, fresh = 0;
   await tolerant('разведка', async () => {

@@ -1,6 +1,6 @@
 # Бриф для контент-плана
 
-Срез на 22 августа в 20:55 по Берлину. Файл собирается заново на каждом прогоне —
+Срез на 22 августа в 21:09 по Берлину. Файл собирается заново на каждом прогоне —
 править его руками бессмысленно, правки затрёт следующий сбор.
 
 - Живая версия со всеми кликами: https://ekaterynanesterova.github.io/youtube-niche-finder/
@@ -225,7 +225,7 @@
 - **Neptune: The Most Violent Giant in the Solar System**  
   114 531 просмотров · 110 мин · канал «Sleep On Science» на 253-й день · зарабатывает $3 848/мес
 - **The Most Relaxing Facts About Our Solar System to Fall Asleep To** — «Самые расслабляющие факты о нашей Солнечной системе, чтобы уснуть»  
-  1 224 941 просмотров · 120 мин · канал «Sleepy Science Channel» на 12-й день · зарабатывает $3 263/мес
+  1 224 941 просмотров · 120 мин · канал «Sleepy Science Channel» на 12-й день · зарабатывает $3 001/мес
 - **Science For Sleep | What’s Above and Below Our Solar System?**  
   107 184 просмотров · 176 мин · канал «Science Before Sleep» на 96-й день · зарабатывает $1 673/мес
 
@@ -264,7 +264,7 @@
 - **The Dinosaur That May Still Be Alive in the Congo Rainforest? The Hidden World Inside Africa**  
   1 053 854 просмотров · 30 мин · канал «Wild Horizons» на 40-й день · зарабатывает $4 445/мес
 - **Bigger Than A T-Rex - The Forgotten 42-Ton Monster That Defied the Dinosaur Scale**  
-  182 382 просмотров · 51 мин · канал «Bright Side Wild Nature» на 288-й день · зарабатывает $3 847/мес
+  182 382 просмотров · 51 мин · канал «Bright Side Wild Nature» на 288-й день · зарабатывает $3 845/мес
 
 ## Архетипы каналов
 
@@ -295,6 +295,100 @@
 | немецкий | 266 | 163 | 2 | 1% |
 
 Разрыв здесь и есть причина делать канал на английском.
+
+## Космос — ниша, которую снимаем
+
+Ниша, которую снимаем сами. За ней следим отдельно и подробнее остальных: что набирает просмотры прямо сейчас, что взлетело за сутки, кто работает в теме и какие формулировки пошли в ход. Остальная разведка при этом продолжается — фокус забирает долю поисков, а не всю квоту.
+
+В теме 3 404 роликов у 159 каналов;
+суточный прирост измерен у 1 336.
+
+### Резко пошло
+
+Ролики, у которых суточный прирост вырос в полтора раза и больше за последний замер.
+Так выглядит новость, под которую все побежали снимать — смотреть сюда в первую очередь.
+
+| Ролик | Канал | Ускорение | Возраст | Просмотров | За сутки |
+|---|---|---|---|---|---|
+| The Untold Story Of India’s Space Programme \| India’s Space Odyssey \| Discovery Channel India | DiscoveryChannelInd | ×5.1 | 4 дн | 1 461 | +754 |
+| Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space! | Blue Nexus 🟢 | ×2.1 | 30 дн | 809 431 | +30 779 |
+| The Most Impossible Exoplanets We've Ever Found | Destiny | ×2.0 | 109 дн | 83 125 | +828 |
+| The Terrifying Truth About How Cold Space Really Is<br><sub>Ужасающая правда о том, насколько холодным на самом деле является космос</sub> | Calm Space 🟢 | ×1.9 | 145 дн | 180 686 | +3 409 |
+| What Will Fail First on a 100-Year Starship? \| Space Documentary | Celestial Stuff | ×1.9 | 10 дн | 5 276 | +343 |
+| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | ×1.8 | 4 дн | 27 703 | +11 476 |
+| Astronomers Found Galaxies So Far Away They Can't Be Real | Insane Curiosity | ×1.6 | 26 дн | 29 074 | +670 |
+| 100 Ancient Artifacts That Look Like Parts of Spacecraft | KirTop - Archaeology | ×1.6 | 36 дн | 19 272 | +671 |
+| A Hostile Alien Spacecraft Just Landed In The Arizona Desert! \| Battlefield 2025 \| Full Sci-Fi Movie | Sci-Fi Central | ×1.6 | 50 дн | 93 703 | +609 |
+| The Distance Between Galaxies Is Worse Than You Think | Calm Space 🟢 | ×1.6 | 71 дн | 222 975 | +2 526 |
+
+### Набирает больше всех
+
+| Ролик | Канал | Возраст | Просмотров | За сутки |
+|---|---|---|---|---|
+| James Webb Just Revealed Why Saturn Is the Scariest Planet in Our Solar System | Destiny | 7 дн | 279 338 | +83 888 |
+| Collisions: Life and Death From Outer Space ✦ The Secrets of the Universe 🪐 | Best Documentary | 18 дн | 859 683 | +42 440 |
+| Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space! | Blue Nexus 🟢 | 30 дн | 809 431 | +30 779 |
+| We’ve Never Seen This Happen In Space Until Now | Astrum Extra | 6 дн | 179 386 | +15 831 |
+| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | 4 дн | 27 703 | +11 476 |
+| Something’s Wrong With Our Galaxy’s Black Hole | Ridddle | 62 дн | 302 140 | +10 739 |
+| 2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD | Proof 🟢 | 3 дн | 45 276 | +10 163 |
+| The true Scale of the Universe – How Big is the Universe? \| Space Documentary 2026 | Actual Space | 83 дн | 577 222 | +8 873 |
+| Every Rare Space Event We’ll Actually See Before We Die | Ridddle | 136 дн | 1 886 469 | +8 678 |
+| The Terrifying Voices Caught From Space | Dark Space | 45 дн | 160 094 | +4 521 |
+
+### Только вышло
+
+Не старше двух недель — что конкуренты снимают сегодня, независимо от результата.
+
+| Ролик | Канал | Возраст | Просмотров | За сутки |
+|---|---|---|---|---|
+| James Webb Just Revealed Why Saturn Is the Scariest Planet in Our Solar System | Destiny | 7 дн | 279 338 | +83 888 |
+| We’ve Never Seen This Happen In Space Until Now | Astrum Extra | 6 дн | 179 386 | +15 831 |
+| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | 4 дн | 27 703 | +11 476 |
+| 2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD | Proof 🟢 | 3 дн | 45 276 | +10 163 |
+| Killer Asteroids: Averting the Apocalypse \| Free Documentary Space | Free Documentary - Space | 7 дн | 15 544 | +3 089 |
+| The Spy Satellites That Dropped Top-Secret Films From Space | Dark Space | 3 дн | 11 636 | +1 745 |
+| The Spaceship That Has to Replace Our Entire Planet | Calm Space 🟢 | 7 дн | 22 752 | +1 407 |
+| Cosmology: The Science of the Universe \| Free Documentary Space | Free Documentary - Space | 3 дн | 3 506 | +1 106 |
+| Why Uranus Broke Every Rule in the Solar System | Calm Space 🟢 | 4 дн | 7 394 | +973 |
+| One Year on Mars: The Journey of Perseverance \| Free Documentary Space | Free Documentary - Space | 14 дн | 34 961 | +942 |
+
+### Формулировки в ходу
+
+Связки слов, доля которых среди свежих роликов выросла минимум в 1.8 раза против старых.
+Это язык заголовков, а не темы: чем сейчас цепляют.
+
+- **scariest** — ×2.1, 6 видео, +83 897 просмотров в сутки
+- **scariest planet** — ×4.7, 3 видео, +83 890 просмотров в сутки
+- **terrifying** — ×2.3, 42 видео, +48 369 просмотров в сутки
+- **terrifying than** — ×2.7, 3 видео, +30 780 просмотров в сутки
+- **never** — ×2.0, 20 видео, +27 541 просмотров в сутки
+- **minutes ago** — ×18.9, 3 видео, +10 165 просмотров в сутки
+- **ago** — ×3.6, 4 видео, +10 165 просмотров в сутки
+- **ship** — ×7.4, 14 видео, +6 413 просмотров в сутки
+- **deep** — ×3.7, 53 видео, +5 376 просмотров в сутки
+- **story** — ×2.9, 6 видео, +4 952 просмотров в сутки
+- **told** — ×1.9, 3 видео, +4 115 просмотров в сутки
+- **wrong** — ×1.9, 4 видео, +3 997 просмотров в сутки
+- **about black** — ×2.3, 4 видео, +3 543 просмотров в сутки
+- **kill** — ×7.4, 7 видео, +3 090 просмотров в сутки
+
+### Кто работает в теме
+
+| Канал | Возраст | Роликов в теме | Свежих за месяц | За сутки | $/мес |
+|---|---|---|---|---|---|
+| Destiny | 3094 дн | 49 из 328 | 1 | +84 716 | $2 296 |
+| Best Documentary | 3763 дн | 3 из 3 373 | 2 | +42 496 | $16 577 |
+| Blue Nexus 🟢 | 42 дн | 2 из 41 | 2 | +30 850 | $2 799 |
+| Ridddle | 4293 дн | 71 из 564 | 0 | +23 357 | $14 219 |
+| Sleep On Science 🟢 | 343 дн | 77 из 320 | 11 | +19 400 | $3 848 |
+| Astrum Extra | 2489 дн | 81 из 191 | 1 | +19 071 | $5 984 |
+| Calm Space 🟢 | 239 дн | 56 из 185 | 10 | +18 341 | $5 148 |
+| Free Documentary - Space | 483 дн | 139 из 140 | 8 | +16 637 | $1 616 |
+| Proof 🟢 | 55 дн | 22 из 110 | 15 | +10 306 | $9 762 |
+| Actual Space | 1209 дн | 35 из 78 | 1 | +9 851 | $987 |
+| What If | 2957 дн | 32 из 1 665 | 0 | +8 734 | $9 959 |
+| Dark Space | 2047 дн | 44 из 96 | 1 | +7 276 | $475 |
 
 ## Не темы
 

@@ -13,6 +13,11 @@ const num = (n) => (n == null ? '—' : Math.round(n).toLocaleString('ru-RU'));
 const pct = (n) => (n == null ? '—' : Math.round(n * 100) + '%');
 const usd = (n) => (n == null ? '—' : '$' + Math.round(n).toLocaleString('ru-RU'));
 
+// Вертикальная черта в заголовке ломает markdown-таблицу: «Space Odyssey |
+// Discovery Channel» превращается в лишние столбцы. Экранируем всё, что
+// приходит из чужих заголовков.
+const esc = (t) => String(t ?? '').replace(/\|/g, '\\|');
+
 function plural(n, a, b, c) {
   const m = n % 100, k = n % 10;
   return n + ' ' + (m > 10 && m < 20 ? c : k === 1 ? a : k > 1 && k < 5 ? b : c);
@@ -110,7 +115,7 @@ export function renderBrief(P) {
     + '+ | Новичков зарабатывают | В месяц у новичка | Каналов в теме | Длина ролика |');
   w('|---|---|---|---|---|---|---|---|---|');
   for (const [i, r] of rows.slice(0, 12).entries()) {
-    w(`| ${i + 1} | **${r.query}**${r.adLimited ? ' ⚠' : ''}${r.ru ? `<br><sub>${r.ru}</sub>` : ''} | ${MARKET[r.lang] ?? r.lang} `
+    w(`| ${i + 1} | **${esc(r.query)}**${r.adLimited ? ' ⚠' : ''}${r.ru ? `<br><sub>${esc(r.ru)}</sub>` : ''} | ${MARKET[r.lang] ?? r.lang} `
       + `| ${num(r.fresh)} | ${pct(r.freshOver20k)} | ${r.young} | ${usd(r.usd)} | ${num(r.nicheChannels)} `
       + `| ${r.minutes == null ? '—' : Math.round(r.minutes) + ' мин'} |`);
   }
@@ -148,7 +153,7 @@ export function renderBrief(P) {
       w('| Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |');
       w('|---|---|---|---|---|---|');
       for (const c of rivals) {
-        w(`| ${c.young ? '🟢 ' : ''}${c.title} | ${c.age == null ? '—' : c.age + ' дн.' + (c.exact ? '' : '?')} `
+        w(`| ${c.young ? '🟢 ' : ''}${esc(c.title)} | ${c.age == null ? '—' : c.age + ' дн.' + (c.exact ? '' : '?')} `
           + `| ${num(c.subs)} | ${usd(c.usd)} | ${num(c.fresh)} | ${c.inNiche} из ${c.videos} |`);
       }
       w('');
@@ -199,6 +204,72 @@ export function renderBrief(P) {
     w('');
     w('Разрыв здесь и есть причина делать канал на английском.');
     w('');
+  }
+
+  const F = P.focus;
+  if (F) {
+    w(`## ${F.label} — ниша, которую снимаем`);
+    w('');
+    w(F.why);
+    w('');
+    w(`В теме ${num(F.videoCount)} роликов у ${num(F.channelCount)} каналов;`,
+      `суточный прирост измерен у ${num(F.measured)}.`);
+    w('');
+    const table = (list, head, cell) => {
+      w('| Ролик | Канал | ' + (head ? head + ' | ' : '') + 'Возраст | Просмотров | За сутки |');
+      w('|---|---|' + (head ? '---|' : '') + '---|---|---|');
+      for (const r of list.slice(0, 10)) {
+        w(`| ${esc(r.title)}${r.titleRu ? `<br><sub>${esc(r.titleRu)}</sub>` : ''} `
+          + `| ${esc(r.channel ?? '—')}${r.young ? ' 🟢' : ''} `
+          + (head ? `| ${cell(r)} ` : '')
+          + `| ${r.age} дн | ${num(r.views)} | +${num(r.perDay)} |`);
+      }
+      w('');
+    };
+    if (F.breaking.length) {
+      w('### Резко пошло');
+      w('');
+      w('Ролики, у которых суточный прирост вырос в полтора раза и больше за последний замер.',
+        'Так выглядит новость, под которую все побежали снимать — смотреть сюда в первую очередь.');
+      w('');
+      table(F.breaking, 'Ускорение', (r) => '×' + r.accel.toFixed(1));
+    }
+    if (F.rising.length) {
+      w('### Набирает больше всех');
+      w('');
+      table(F.rising);
+    }
+    if (F.fresh.length) {
+      w('### Только вышло');
+      w('');
+      w('Не старше двух недель — что конкуренты снимают сегодня, независимо от результата.');
+      w('');
+      table(F.fresh);
+    }
+    if (F.hot.length) {
+      w('### Формулировки в ходу');
+      w('');
+      w('Связки слов, доля которых среди свежих роликов выросла минимум в 1.8 раза против старых.',
+        'Это язык заголовков, а не темы: чем сейчас цепляют.');
+      w('');
+      for (const h of F.hot) {
+        w(`- **${h.phrase}** — ${Number.isFinite(h.lift) ? '×' + h.lift.toFixed(1) : 'ново'}, `
+          + `${h.videos} видео, +${num(h.perDay)} просмотров в сутки`);
+      }
+      w('');
+    }
+    if (F.channels.length) {
+      w('### Кто работает в теме');
+      w('');
+      w('| Канал | Возраст | Роликов в теме | Свежих за месяц | За сутки | $/мес |');
+      w('|---|---|---|---|---|---|');
+      for (const c of F.channels.slice(0, 12)) {
+        w(`| ${esc(c.title ?? '—')}${c.young ? ' 🟢' : ''} | ${c.age == null ? '—' : c.age + ' дн'} `
+          + `| ${c.videos}${c.catalog ? ' из ' + num(c.catalog) : ''} | ${c.fresh} `
+          + `| +${num(c.perDay)} | ${usd(c.usd)} |`);
+      }
+      w('');
+    }
   }
 
   const wide = P.broad ?? [];

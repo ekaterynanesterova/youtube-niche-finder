@@ -6,6 +6,7 @@ import { computeMetrics, seedIndex, wordFrequency } from './metrics.js';
 import { renderReport } from './report.js';
 import { buildPayload, renderSite } from './site.js';
 import { renderBrief } from './brief.js';
+import { buildFocus } from './focus.js';
 import { Translator } from './translate.js';
 import { findTopics, promote } from './topics.js';
 import {
@@ -60,7 +61,8 @@ if (!metricsOnly) {
               + `броня снапшота ${snapshotReserve} (молодых видео ${youngVideos}).`);
 
   try {
-    if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds });
+    if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds,
+                                           focus: readJson(join(ROOT, 'config/focus.json'), null) });
 
     // Trending не знает про наш список тем — только он и приводит незнакомое.
     if (!onlySeeds.length) await explore({ api, db, markets, thresholds });
@@ -114,7 +116,11 @@ const metrics = computeMetrics({ db, seeds, thresholds, snapshots, primaryLang,
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
 
 // Страница собирается с вшитыми данными: без fetch ей нечего не догрузить.
-const payload = buildPayload(metrics, seeds, thresholds, db);
+// Фокусная ниша — та, которую снимаем сами. Её отчёт строится по суточному
+// приросту, а не по медианам: новость живёт день.
+const focusCfg = readJson(join(ROOT, 'config/focus.json'), null);
+const focus = focusCfg ? buildFocus({ metrics, snapshots, seeds, focus: focusCfg }) : null;
+const payload = buildPayload(metrics, seeds, thresholds, db, focus);
 
 // Названия видео переводим на русский. Переведённое живёт в кеше вечно,
 // так что расход у бесплатного сервиса падает почти до нуля со второго дня.
@@ -171,6 +177,13 @@ const pending = [];
 for (const [, byLang] of Object.entries(payload.examples)) {
   for (const [lang, list] of Object.entries(byLang)) {
     for (const v of list) pending.push(Object.assign(v, { from: lang }));
+  }
+}
+// Заголовки фокусной ниши переводим тоже: по ней смотрят каждый день, и
+// читать её на английском — лишнее трение.
+if (focus) {
+  for (const list of [focus.rising, focus.breaking, focus.fresh]) {
+    for (const v of list) pending.push(Object.assign(v, { from: focus.lang }));
   }
 }
 // Один и тот же ролик попадает в несколько ниш — переводим его один раз.
