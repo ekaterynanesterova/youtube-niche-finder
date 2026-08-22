@@ -665,19 +665,6 @@
       }
     },
     {
-      "id": "weltkrieg",
-      "group": "Найдено автоматом",
-      "de": "weltkrieg Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 4,
-        "lift": 3.6,
-        "medianViews": 92965
-      }
-    },
-    {
       "id": "amerika",
       "group": "Найдено автоматом",
       "de": "amerika Doku",
@@ -688,19 +675,6 @@
         "channels": 3,
         "lift": 5.4,
         "medianViews": 142210
-      }
-    },
-    {
-      "id": "hitler",
-      "group": "Найдено автоматом",
-      "de": "hitler Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 5,
-        "lift": 2.7,
-        "medianViews": 80387
       }
     },
     {
@@ -727,32 +701,6 @@
         "channels": 3,
         "lift": 5.2,
         "medianViews": 183490
-      }
-    },
-    {
-      "id": "stalin",
-      "group": "Найдено автоматом",
-      "de": "stalin Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 3,
-        "lift": 5.2,
-        "medianViews": 56286
-      }
-    },
-    {
-      "id": "untergang",
-      "group": "Найдено автоматом",
-      "de": "untergang Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 4,
-        "lift": 3.4,
-        "medianViews": 62560.5
       }
     },
     {
@@ -805,19 +753,6 @@
         "channels": 3,
         "lift": 4.7,
         "medianViews": 28333
-      }
-    },
-    {
-      "id": "hitlers",
-      "group": "Найдено автоматом",
-      "de": "hitlers Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 6,
-        "lift": 2.5,
-        "medianViews": 60100
       }
     },
     {

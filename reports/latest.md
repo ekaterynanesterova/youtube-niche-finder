@@ -12,26 +12,22 @@
 | 2 | **sleep-history** — история для засыпания <br><sub>Засыпание</sub> | 33% | 1 из 3 | 76 636 | 90.0 мин | 4% | 3% | 1.4 | низкая — прокси-скорость, кривой роста ещё нет |
 | 3 | **mittelalter** —  <br><sub>Найдено автоматом</sub> | 25% | 2 из 8 | 138 695 | 44.6 мин | 8% | 2% | 3.3 | низкая — прокси-скорость, кривой роста ещё нет |
 | 4 | **sleep-doku** — документалка для засыпания <br><sub>Засыпание</sub> | 25% | 2 из 8 | 90 247 | 110.7 мин | 3% | 2% | 1.7 | низкая — прокси-скорость, кривой роста ещё нет |
-| 5 | **gebaut** — построено DOCU <br><sub>Найдено автоматом</sub> | 25% | 1 из 4 | 80 364 | 47.6 мин | 11% | 2% | 3.8 | низкая — прокси-скорость, кривой роста ещё нет |
+| 5 | **gebaut** — построено DOCU <br><sub>Найдено автоматом</sub> | 25% | 1 из 4 | 80 364 | 47.6 мин | 11% | 2% | 3.7 | низкая — прокси-скорость, кривой роста ещё нет |
 | 6 | **urzeit** —  <br><sub>Найдено автоматом</sub> | 25% | 2 из 8 | 69 748 | 43.4 мин | 0% | 1% | 3.0 | низкая — прокси-скорость, кривой роста ещё нет |
-| 7 | **untergang** —  <br><sub>Найдено автоматом</sub> | 25% | 2 из 8 | 64 402 | 53.9 мин | 0% | 1% | 3.0 | низкая — прокси-скорость, кривой роста ещё нет |
-| 8 | **naturwunder** —  <br><sub>Найдено автоматом</sub> | 20% | 1 из 5 | 122 768 | 114.6 мин | 0% | 1% | 3.5 | низкая — прокси-скорость, кривой роста ещё нет |
-| 9 | **deutschlands** — немецкий документальный фильм <br><sub>Найдено автоматом</sub> | 20% | 2 из 10 | 103 659 | 56.1 мин | 0% | 2% | 3.3 | низкая — прокси-скорость, кривой роста ещё нет |
-| 10 | **hitler** —  <br><sub>Найдено автоматом</sub> | 15% | 2 из 13 | 93 485 | 49.8 мин | 0% | 1% | 3.2 | низкая — прокси-скорость, кривой роста ещё нет |
-| 11 | **amerika** —  <br><sub>Найдено автоматом</sub> | 12% | 2 из 17 | 128 612 | 48.3 мин | 0% | 1% | 3.7 | низкая — прокси-скорость, кривой роста ещё нет |
-| 12 | **maschinen** —  <br><sub>Найдено автоматом</sub> | 11% | 1 из 9 | 80 054 | 59.7 мин | 0% | 1% | 2.8 | низкая — прокси-скорость, кривой роста ещё нет |
-| 13 | **grausamste** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 4 | 137 412 | 48.6 мин | 0% | 1% | 2.6 | нет данных |
-| 14 | **blackhole** — чёрные дыры <br><sub>Космос</sub> | 0% | 0 из 5 | 129 835 | 91.0 мин | 33% | 1% | 2.8 | низкая — прокси-скорость, кривой роста ещё нет |
-| 15 | **flugzeug** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 5 | 118 449 | 53.0 мин | 0% | 1% | 1.9 | низкая — прокси-скорость, кривой роста ещё нет |
-| 16 | **haertetest** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 3 | 99 837 | 62.0 мин | 0% | 1% | 2.8 | нет данных |
-| 17 | **schlacht** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 6 | 94 831 | 52.8 мин | 0% | 1% | 2.3 | низкая — прокси-скорость, кривой роста ещё нет |
-| 18 | **weltkrieg** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 8 | 93 657 | 104.2 мин | 0% | 1% | 3.0 | низкая — прокси-скорость, кривой роста ещё нет |
-| 19 | **expedition** — expedition Docu <br><sub>Найдено автоматом</sub> | 0% | 0 из 3 | 90 007 | 118.5 мин | 0% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
-| 20 | **giganten** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 9 | 89 877 | 61.4 мин | 7% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
-| 21 | **einsatz** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 8 | 82 133 | 64.0 мин | 0% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
-| 22 | **hitlers** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 9 | 77 400 | 51.0 мин | 0% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
-| 23 | **herrscher** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 3 | 51 723 | 44.3 мин | 0% | 1% | 3.2 | низкая — прокси-скорость, кривой роста ещё нет |
-| 24 | **james-webb** — телескоп Джеймс Уэбб <br><sub>Космос</sub> | 0% | 0 из 3 | 40 955 | 16.4 мин | 11% | 2% | 3.5 | низкая — прокси-скорость, кривой роста ещё нет |
+| 7 | **naturwunder** —  <br><sub>Найдено автоматом</sub> | 20% | 1 из 5 | 122 768 | 114.6 мин | 0% | 1% | 3.5 | низкая — прокси-скорость, кривой роста ещё нет |
+| 8 | **deutschlands** — немецкий документальный фильм <br><sub>Найдено автоматом</sub> | 20% | 2 из 10 | 103 659 | 56.1 мин | 0% | 2% | 3.3 | низкая — прокси-скорость, кривой роста ещё нет |
+| 9 | **amerika** —  <br><sub>Найдено автоматом</sub> | 12% | 2 из 17 | 128 612 | 48.3 мин | 0% | 1% | 3.7 | низкая — прокси-скорость, кривой роста ещё нет |
+| 10 | **maschinen** —  <br><sub>Найдено автоматом</sub> | 11% | 1 из 9 | 80 054 | 59.7 мин | 0% | 1% | 2.8 | низкая — прокси-скорость, кривой роста ещё нет |
+| 11 | **grausamste** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 4 | 137 412 | 48.6 мин | 0% | 1% | 2.6 | нет данных |
+| 12 | **blackhole** — чёрные дыры <br><sub>Космос</sub> | 0% | 0 из 5 | 129 835 | 91.0 мин | 33% | 1% | 2.8 | низкая — прокси-скорость, кривой роста ещё нет |
+| 13 | **flugzeug** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 5 | 118 449 | 53.0 мин | 0% | 1% | 1.9 | низкая — прокси-скорость, кривой роста ещё нет |
+| 14 | **haertetest** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 3 | 99 837 | 62.0 мин | 0% | 1% | 2.8 | нет данных |
+| 15 | **schlacht** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 6 | 94 831 | 52.8 мин | 0% | 1% | 2.3 | низкая — прокси-скорость, кривой роста ещё нет |
+| 16 | **expedition** — expedition Docu <br><sub>Найдено автоматом</sub> | 0% | 0 из 3 | 90 007 | 118.5 мин | 0% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
+| 17 | **giganten** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 9 | 89 877 | 61.4 мин | 7% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
+| 18 | **einsatz** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 8 | 82 133 | 64.0 мин | 0% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
+| 19 | **herrscher** —  <br><sub>Найдено автоматом</sub> | 0% | 0 из 3 | 51 723 | 44.3 мин | 0% | 1% | 3.2 | низкая — прокси-скорость, кривой роста ещё нет |
+| 20 | **james-webb** — телескоп Джеймс Уэбб <br><sub>Космос</sub> | 0% | 0 из 3 | 40 955 | 16.4 мин | 11% | 2% | 3.5 | низкая — прокси-скорость, кривой роста ещё нет |
 
 ## Немецкий против английского
 
@@ -45,10 +41,8 @@
 | ⚓ sleep-doku — документалка для засыпания | 25% (8) | 3 285 | 49% (37) | 13 810 |
 | gebaut — построено DOCU | 25% (4) | 3 082 | — (0) | — |
 | urzeit —  | 25% (8) | 3 812 | — (0) | — |
-| untergang —  | 25% (8) | 4 642 | — (0) | — |
 | naturwunder —  | 20% (5) | 9 442 | — (0) | — |
 | deutschlands — немецкий документальный фильм | 20% (10) | 12 137 | — (0) | — |
-| hitler —  | 15% (13) | 23 726 | — (0) | — |
 | amerika —  | 12% (17) | 8 423 | — (0) | — |
 | maschinen —  | 11% (9) | 14 179 | — (0) | — |
 | grausamste —  | 0% (4) | 12 834 | — (0) | — |
@@ -56,11 +50,9 @@
 | flugzeug —  | 0% (5) | 15 426 | — (0) | — |
 | haertetest —  | 0% (3) | 8 572 | — (0) | — |
 | schlacht —  | 0% (6) | 20 372 | — (0) | — |
-| weltkrieg —  | 0% (8) | 20 280 | — (0) | — |
 | expedition — expedition Docu | 0% (3) | 11 513 | — (0) | — |
 | giganten —  | 0% (9) | 5 147 | — (0) | — |
 | einsatz —  | 0% (8) | 31 835 | — (0) | — |
-| hitlers —  | 0% (9) | 21 122 | — (0) | — |
 | herrscher —  | 0% (3) | 11 170 | — (0) | — |
 | james-webb — телескоп Джеймс Уэбб | 0% (3) | 1 166 | 56% (18) | 3 015 |
 | ⚓ space-doku — документалки о космосе | — (0) | 3 229 | 33% (58) | 2 561 |
@@ -108,7 +100,6 @@
 | chinesische —  | 0% (2) | 6 840 | — (0) | — |
 | letztes —  | 0% (1) | 9 997 | — (0) | — |
 | marianengraben —  | 50% (2) | 1 251 | — (0) | — |
-| stalin —  | 50% (2) | 10 353 | — (0) | — |
 | spannende —  | 0% (1) | 275 | — (0) | — |
 | stahl —  | 0% (2) | 13 854 | — (0) | — |
 | kannst —  | 100% (1) | 5 543 | — (0) | — |
@@ -165,50 +156,50 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 582.0 | 4 874 364 | 156 дн | 113 863 |
-| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 315.2 | 1 271 609 | 82 дн | 106 389 |
-| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 395.2 | 3 341 437 | 7 дн | 70 361 |
-| [Impossible Places \| World’s Most Dangerous Structures That Will Leave](https://youtu.be/WzWs4dBRLI8) | Unknown Planet | 154.7 | 1 527 749 | 136 дн | 66 419 |
-| [DNA CONFIRMS D.B. Coopers Identity After 53 Years — And It’s NOT Who Y](https://youtu.be/yqstFZiDZVM) | New Discovery | 99.7 | 375 215 | 176 дн | 55 041 |
-| [How People Live in Bermuda \| Why 60,000 People Live on a Rock with Ze](https://youtu.be/3HZHJ20UfYs) | Impossible Travel | 30.0 | 1 493 953 | 44 дн | 53 712 |
-| [BRUTAL INSECTS \| Nature’s Tiny Killers \| Nature Animal Documentary](https://youtu.be/-bejNgfBcnw) | Discover Wildlife | 7.1 | 472 959 | 274 дн | 36 553 |
-| [Unseen China \| Hidden Places In China You Won’t Believe Actually Exis](https://youtu.be/5s1VPLSRpBc) | Unknown Planet | 94.4 | 932 334 | 132 дн | 34 530 |
-| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 151.4 | 1 280 278 | 17 дн | 33 902 |
-| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 542.9 | 1 129 272 | 115 дн | 32 526 |
-| [WILD PACIFIC \| The Supreme Predators of the Ocean Depths \| Animal Do](https://youtu.be/gvQys2e0QDM) | Wild Animals - Animal Document | 142.5 | 1 596 756 | 99 дн | 28 043 |
-| [Why Sperm Whales Are The Most TERRIFYING Apex Predator On Earth](https://youtu.be/PCnQ-fpgJoc) | OctoLab | 105.9 | 887 231 | 167 дн | 27 887 |
-| [New DNA Evidence FINALLY Reveals Jack the Ripper — 137 Years Later, An](https://youtu.be/JIkkUPdQn_g) | New Discovery | 78.6 | 295 762 | 172 дн | 27 751 |
-| [Unseen Korea \| Why Korea Doesn’t Fear Mega Floods Anymore \| 4K Docum](https://youtu.be/S10bdFymeUk) | Vagarious Travel | 72.3 | 83 600 | 115 дн | 27 658 |
-| [Scientists Explored the Mariana Trench—What They Found Is More Terrify](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 352.8 | 809 431 | 12 дн | 27 216 |
-| [America Just Got Hit By Two Disasters At Once — And It's DISTURBING](https://youtu.be/X-rWl4RWEq0) | S zone | 5.7 | 87 164 | 46 дн | 24 968 |
-| [The Deep Ocean: Journey Into the Last Hidden World](https://youtu.be/OhOBhVLyXh0) | Underwater Earth 4K | 23.1 | 93 257 | 90 дн | 23 123 |
-| [Living in Ethiopia: How People Actually Live in Africa's Most Isolated](https://youtu.be/vtoRHf_FFOE) | Hidden Compass | 722.3 | 525 076 | 94 дн | 21 877 |
-| [The Zodiac Killer's Identity FINALLY Revealed After 55 Years — And It'](https://youtu.be/haKXmADd32E) | New Discovery | 15.0 | 56 361 | 180 дн | 21 805 |
-| [China Built a Highway That Disappears Into the Sea Even Americans Can'](https://youtu.be/-0j6EVvAzHg) | Hidden World Docs | 225.4 | 468 849 | 128 дн | 21 548 |
-| [Living in Scotland \| How People Live at the "Edge of the UK" \| 4K Tr](https://youtu.be/VrSbJ8-G7xU) | The Planet Journal | 33.0 | 829 868 | 40 дн | 20 784 |
-| [WILD COLOMBIA \| South America’s Most Dangerous Predators \| Nature An](https://youtu.be/ary66lPQJC4) | Discover Wildlife | 13.1 | 876 307 | 243 дн | 19 944 |
-| [Researchers Studied People With Green Eyes — They Weren't Ready for th](https://youtu.be/5YvdRNLK0Bc) | New Discovery | 13.0 | 48 939 | 180 дн | 18 342 |
-| [Drone Discovers Amelia Earhart's Lost Plane After 88 Years — What They](https://youtu.be/9n7yR7XfNFg) | New Discovery | 36.5 | 137 455 | 175 дн | 18 324 |
-| [Unseen Japan \| How Japan Outsmarted Mega Floods \| 4K Documentary.](https://youtu.be/YhAYIB-mhDU) | Vagarious Travel | 93.6 | 108 260 | 112 дн | 17 976 |
-| [How People Live in Tristan \| Dark Secrets of the World’s Most Isolate](https://youtu.be/aSDhtruJBlI) | Impossible Travel | 15.5 | 772 221 | 28 дн | 17 609 |
-| [WILD AMAZON \| Discovering Mysterious Predators Yet To Be Known \| Ani](https://youtu.be/uxT-S4TkrpA) | Wild Animals - Animal Document | 81.3 | 910 169 | 102 дн | 16 874 |
-| [Unseen Japan \| The Hidden Tech That Keeps Japan Standing During Earth](https://youtu.be/hMx3ajwG6q4) | Vagarious Travel | 350.2 | 405 151 | 94 дн | 16 865 |
-| [2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD](https://youtu.be/pN96xPVw02s) | Proof | 5.4 | 45 276 | 52 дн | 16 391 |
-| [you need to sleep.](https://youtu.be/LFn2Qry5rEs) | comfort space ♡ | 25.0 | 382 821 | 107 дн | 15 823 |
-| [Kepler-442b: The Perfect World FULL EPISODE \| Science Fiction Documen](https://youtu.be/pAouFljMuLg) | Khalan Studio | 25.1 | 428 575 | 309 дн | 15 026 |
-| [Neanderthals: The Strongest Humanity That Ever Existed! \| Prehistoric](https://youtu.be/uGovzmAKAT8) | WUFO Earth | 20.7 | 498 964 | 47 дн | 14 684 |
-| [Scientists Sent a Robot 31,000 Feet to the Ocean Floor — The Footage L](https://youtu.be/Hdbs56WR78g) | Blue Nexus | 208.4 | 478 175 | 7 дн | 13 774 |
-| [Russia’s Greatest Mystery Finally Solved By AI — Dyatlov Pass Was Far ](https://youtu.be/5iQZ7T2-O_E) | New Discovery | 20.6 | 77 570 | 177 дн | 13 710 |
-| [Bermuda Triangle: The Ocean Mystery That Still Haunts the World](https://youtu.be/cuK192txUYw) | Underwater Earth 4K | 32.7 | 132 045 | 84 дн | 13 421 |
-| [The Wave That Was Taller Than a Skyscraper](https://youtu.be/nhaTh5gGXiM) | The Last Day | 7.5 | 449 488 | 8 дн | 13 006 |
-| [The Truth Dies With Me Unless I Speak Now" — Sole Survivor Breaks Deca](https://youtu.be/OY8EsDBgk18) | New Discovery | 73.5 | 276 512 | 161 дн | 12 718 |
-| [Europa glaubte eine Lüge – woher die Roma wirklich kommen](https://youtu.be/Ytis_fq4bvo) | Chronik der Evolution | 13.8 | 44 618 | 166 дн | 11 817 |
-| [Before Crocodiles: The Giant Predators That Ruled Rivers First](https://youtu.be/PzwQmtO1lBA) | Epic Dinosaur Docs | 130.0 | 150 980 | 328 дн | 11 691 |
-| [SAN ANDREAS: The Big One That Could Destroy California](https://youtu.be/lK1aa4cU6SY) | Vanished Worlds | 33.3 | 623 521 | 14 дн | 11 652 |
+| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 582.0 | 4 874 364 | 156 дн | 113 412 |
+| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 315.2 | 1 271 609 | 82 дн | 104 895 |
+| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 432.8 | 3 341 437 | 7 дн | 70 110 |
+| [Impossible Places \| World’s Most Dangerous Structures That Will Leave](https://youtu.be/WzWs4dBRLI8) | Unknown Planet | 154.7 | 1 527 749 | 136 дн | 65 931 |
+| [DNA CONFIRMS D.B. Coopers Identity After 53 Years — And It’s NOT Who Y](https://youtu.be/yqstFZiDZVM) | New Discovery | 99.7 | 375 215 | 176 дн | 53 700 |
+| [How People Live in Bermuda \| Why 60,000 People Live on a Rock with Ze](https://youtu.be/3HZHJ20UfYs) | Impossible Travel | 30.0 | 1 493 953 | 44 дн | 53 385 |
+| [BRUTAL INSECTS \| Nature’s Tiny Killers \| Nature Animal Documentary](https://youtu.be/-bejNgfBcnw) | Discover Wildlife | 6.7 | 472 959 | 274 дн | 36 078 |
+| [Unseen China \| Hidden Places In China You Won’t Believe Actually Exis](https://youtu.be/5s1VPLSRpBc) | Unknown Planet | 94.4 | 932 334 | 132 дн | 34 313 |
+| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 165.8 | 1 280 278 | 17 дн | 33 750 |
+| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 542.9 | 1 129 272 | 115 дн | 32 368 |
+| [WILD PACIFIC \| The Supreme Predators of the Ocean Depths \| Animal Do](https://youtu.be/gvQys2e0QDM) | Wild Animals - Animal Document | 138.4 | 1 596 756 | 99 дн | 27 960 |
+| [Why Sperm Whales Are The Most TERRIFYING Apex Predator On Earth](https://youtu.be/PCnQ-fpgJoc) | OctoLab | 105.9 | 887 231 | 167 дн | 27 739 |
+| [New DNA Evidence FINALLY Reveals Jack the Ripper — 137 Years Later, An](https://youtu.be/JIkkUPdQn_g) | New Discovery | 78.6 | 295 762 | 172 дн | 27 315 |
+| [Scientists Explored the Mariana Trench—What They Found Is More Terrify](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 352.8 | 809 431 | 12 дн | 27 061 |
+| [Unseen Korea \| Why Korea Doesn’t Fear Mega Floods Anymore \| 4K Docum](https://youtu.be/S10bdFymeUk) | Vagarious Travel | 72.3 | 83 600 | 115 дн | 26 184 |
+| [America Just Got Hit By Two Disasters At Once — And It's DISTURBING](https://youtu.be/X-rWl4RWEq0) | S zone | 6.4 | 87 164 | 46 дн | 23 807 |
+| [The Deep Ocean: Journey Into the Last Hidden World](https://youtu.be/OhOBhVLyXh0) | Underwater Earth 4K | 23.1 | 93 257 | 90 дн | 22 187 |
+| [Living in Ethiopia: How People Actually Live in Africa's Most Isolated](https://youtu.be/vtoRHf_FFOE) | Hidden Compass | 722.3 | 525 076 | 94 дн | 21 723 |
+| [China Built a Highway That Disappears Into the Sea Even Americans Can'](https://youtu.be/-0j6EVvAzHg) | Hidden World Docs | 225.4 | 468 849 | 128 дн | 21 381 |
+| [Living in Scotland \| How People Live at the "Edge of the UK" \| 4K Tr](https://youtu.be/VrSbJ8-G7xU) | The Planet Journal | 33.0 | 829 868 | 40 дн | 20 696 |
+| [The Zodiac Killer's Identity FINALLY Revealed After 55 Years — And It'](https://youtu.be/haKXmADd32E) | New Discovery | 15.0 | 56 361 | 180 дн | 20 458 |
+| [WILD COLOMBIA \| South America’s Most Dangerous Predators \| Nature An](https://youtu.be/ary66lPQJC4) | Discover Wildlife | 12.4 | 876 307 | 243 дн | 19 867 |
+| [Drone Discovers Amelia Earhart's Lost Plane After 88 Years — What They](https://youtu.be/9n7yR7XfNFg) | New Discovery | 36.5 | 137 455 | 175 дн | 17 917 |
+| [How People Live in Tristan \| Dark Secrets of the World’s Most Isolate](https://youtu.be/aSDhtruJBlI) | Impossible Travel | 15.5 | 772 221 | 28 дн | 17 540 |
+| [Unseen Japan \| How Japan Outsmarted Mega Floods \| 4K Documentary.](https://youtu.be/YhAYIB-mhDU) | Vagarious Travel | 93.6 | 108 260 | 112 дн | 17 481 |
+| [Researchers Studied People With Green Eyes — They Weren't Ready for th](https://youtu.be/5YvdRNLK0Bc) | New Discovery | 13.0 | 48 939 | 180 дн | 17 242 |
+| [WILD AMAZON \| Discovering Mysterious Predators Yet To Be Known \| Ani](https://youtu.be/uxT-S4TkrpA) | Wild Animals - Animal Document | 78.9 | 910 169 | 102 дн | 16 821 |
+| [Unseen Japan \| The Hidden Tech That Keeps Japan Standing During Earth](https://youtu.be/hMx3ajwG6q4) | Vagarious Travel | 350.2 | 405 151 | 94 дн | 16 747 |
+| [you need to sleep.](https://youtu.be/LFn2Qry5rEs) | comfort space ♡ | 25.0 | 382 821 | 107 дн | 15 712 |
+| [2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD](https://youtu.be/pN96xPVw02s) | Proof | 5.9 | 45 276 | 52 дн | 15 440 |
+| [Kepler-442b: The Perfect World FULL EPISODE \| Science Fiction Documen](https://youtu.be/pAouFljMuLg) | Khalan Studio | 25.1 | 428 575 | 309 дн | 14 937 |
+| [Neanderthals: The Strongest Humanity That Ever Existed! \| Prehistoric](https://youtu.be/uGovzmAKAT8) | WUFO Earth | 19.1 | 498 964 | 47 дн | 14 611 |
+| [Scientists Sent a Robot 31,000 Feet to the Ocean Floor — The Footage L](https://youtu.be/Hdbs56WR78g) | Blue Nexus | 208.4 | 478 175 | 7 дн | 13 707 |
+| [Russia’s Greatest Mystery Finally Solved By AI — Dyatlov Pass Was Far ](https://youtu.be/5iQZ7T2-O_E) | New Discovery | 20.6 | 77 570 | 177 дн | 13 310 |
+| [Bermuda Triangle: The Ocean Mystery That Still Haunts the World](https://youtu.be/cuK192txUYw) | Underwater Earth 4K | 32.7 | 132 045 | 84 дн | 13 192 |
+| [The Wave That Was Taller Than a Skyscraper](https://youtu.be/nhaTh5gGXiM) | The Last Day | 7.5 | 449 488 | 8 дн | 12 942 |
+| [The Truth Dies With Me Unless I Speak Now" — Sole Survivor Breaks Deca](https://youtu.be/OY8EsDBgk18) | New Discovery | 73.5 | 276 512 | 161 дн | 12 619 |
+| [SAN ANDREAS: The Big One That Could Destroy California](https://youtu.be/lK1aa4cU6SY) | Vanished Worlds | 33.3 | 623 521 | 14 дн | 11 615 |
+| [The Book of Enoch Describes What's Frozen Under Antarctica — And Why I](https://youtu.be/_l9fhZ4IZ1A) | The Hermon Codex | 173.6 | 566 558 | 42 дн | 11 549 |
+| [EARTHQUAKES ALL OVER THE PLANET! Venezuela, California, Japan – WHAT I](https://youtu.be/WRMngkuPsvM) | S zone | 37.3 | 506 510 | 6 дн | 11 543 |
 
 ## Пока без данных
 
-`space-doku` · `universe-scale` · `exoplanets` · `solar-system` · `space-missions` · `dinos` · `urzeit-tiere` · `mass-extinction` · `ice-age` · `human-evolution` · `deep-sea` · `ocean-creatures` · `antarctica` · `supervolcano` · `plate-tectonics` · `disasters` · `lost-civs` · `egypt` · `archaeology` · `megastructures` · `eng-disasters` · `lost-places` · `parasites` · `human-body` · `microbes` · `future-earth` · `terraforming` · `sleep-science` · `sleep-space` · `sleep-stories` · `sleep-relax` · `blindgaenger` · `sibirien` · `nachtschicht` · `kampf-ums-ueberleben` · `unserer-erde` · `mysterium` · `vulkane` · `bergen` · `decken` · `furchterregende` · `deutschlands-haerteste` · `voraus` · `hussein` · `einblicke` · `schiffe` · `beherrscht` · `chinesische` · `letztes` · `marianengraben` · `stalin` · `spannende` · `stahl` · `kannst` · `sogar` · `goldene` · `native` · `whales` · `idaho` · `built-world` · `people-live` · `place-earth` · `ancient-humans-start` · `humans-survive` · `battle-survival` · `did-ancient-humans` · `spain` · `finish` · `mariana-trench` · `get-creepier-deeper` · `timeless` · `answer-shocked` · `creatures-get-creepier` · `great-white-shark` · `found-something` · `stranger-gets-sleep` · `sea-creatures-get` · `anyone-expected` · `start-smoking` · `alaska-lake-monster` · `amazon-mysteries` · `calm-space` · `calm-universe` · `sleep-science-space` · `space-ambience` · `cosmic-journey` · `nasa-discoveries` · `galaxies` · `neutron-stars` · `space-time` · `alien-life` · `mars-exploration` · `end-universe` · `cosmic-scale` · `voyager-probes` · `answer-shocked-everyone` · `something-disturbing` · `deep-ocean` · `fiercest-predators` · `rocky-mountains` · `earth-planet` · `bigger-than` · `secret-china` · `scientists-asked-grok` · `ethiopian-bible` · `still-alive` · `deeper-dig-into` · `apex-predators` · `period-earth` · `china-hidden`
+`space-doku` · `universe-scale` · `exoplanets` · `solar-system` · `space-missions` · `dinos` · `urzeit-tiere` · `mass-extinction` · `ice-age` · `human-evolution` · `deep-sea` · `ocean-creatures` · `antarctica` · `supervolcano` · `plate-tectonics` · `disasters` · `lost-civs` · `egypt` · `archaeology` · `megastructures` · `eng-disasters` · `lost-places` · `parasites` · `human-body` · `microbes` · `future-earth` · `terraforming` · `sleep-science` · `sleep-space` · `sleep-stories` · `sleep-relax` · `blindgaenger` · `sibirien` · `nachtschicht` · `kampf-ums-ueberleben` · `unserer-erde` · `mysterium` · `vulkane` · `bergen` · `decken` · `furchterregende` · `deutschlands-haerteste` · `voraus` · `hussein` · `einblicke` · `schiffe` · `beherrscht` · `chinesische` · `letztes` · `marianengraben` · `spannende` · `stahl` · `kannst` · `sogar` · `goldene` · `native` · `whales` · `idaho` · `built-world` · `people-live` · `place-earth` · `ancient-humans-start` · `humans-survive` · `battle-survival` · `did-ancient-humans` · `spain` · `finish` · `mariana-trench` · `get-creepier-deeper` · `timeless` · `answer-shocked` · `creatures-get-creepier` · `great-white-shark` · `found-something` · `stranger-gets-sleep` · `sea-creatures-get` · `anyone-expected` · `start-smoking` · `alaska-lake-monster` · `amazon-mysteries` · `calm-space` · `calm-universe` · `sleep-science-space` · `space-ambience` · `cosmic-journey` · `nasa-discoveries` · `galaxies` · `neutron-stars` · `space-time` · `alien-life` · `mars-exploration` · `end-universe` · `cosmic-scale` · `voyager-probes` · `answer-shocked-everyone` · `something-disturbing` · `deep-ocean` · `fiercest-predators` · `rocky-mountains` · `earth-planet` · `bigger-than` · `secret-china` · `scientists-asked-grok` · `ethiopian-bible` · `still-alive` · `deeper-dig-into` · `apex-predators` · `period-earth` · `china-hidden`
 
 Пробилось меньше трёх разных молодых каналов — судить не о чем. Нужны прогоны.
 

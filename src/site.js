@@ -151,6 +151,25 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     growth: growthSinceLastRun(db.state?.runs ?? []),
     seedsDone: Object.values(db.state?.seedStats ?? {}).filter((x) => x.searches > 0).length,
     seedsTotal: seeds.length,
+    // Полный список тем: что искали, сколько раз и что нашли. Без него
+    // «73 из 134» — просто число, по которому не видно, чего не хватает.
+    topics: seeds.map((sd) => {
+      const st = db.state?.seedStats?.[sd.id] ?? {};
+      const n = m.niches[sd.id];
+      const de = n?.byMarket?.de, en = n?.byMarket?.en;
+      const best = (en?.channels ?? 0) >= (de?.channels ?? 0) ? en : de;
+      return {
+        id: sd.id, group: sd.group, ru: sd.ru ?? null,
+        query: sd.en ?? sd.de ?? sd.id,
+        auto: sd.source === 'auto',
+        searches: st.searches ?? 0,
+        last: st.lastSearched ?? null,
+        totalResults: st.totalResults ?? null,
+        newLast: st.newLastRun ?? null,
+        channels: best?.channels ?? 0,
+        fresh: best?.freshViews ?? null,
+      };
+    }).sort((a, b) => a.searches - b.searches || b.channels - a.channels),
     schedule: scheduleText(),
     groups: [...new Set(seeds.map((s) => s.group))],
   };
@@ -272,6 +291,11 @@ button.stat[aria-expanded="true"]{border-color:var(--brand);
 #drill a{color:inherit;text-decoration:none}
 #drill a:hover{color:var(--brand)}
 #drill .reg{color:var(--dim);font-size:11px}
+#drill .drillhint{color:var(--dim);font-size:12.5px;margin:0 0 12px;max-width:70ch;white-space:normal}
+#drill tr.untouched td{color:var(--dim);opacity:.75}
+#drill tr.untouched td:first-child::before{content:'○ ';color:var(--mid)}
+#drill .autotag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--brand);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
 .stat span{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 
 .banner{margin:16px 0 0;padding:12px 14px;border-radius:var(--r);
@@ -523,6 +547,10 @@ footer b{color:var(--ink)}
         <dd>Оценка самого YouTube: сколько всего роликов подходит под запрос. Приходит вместе с результатами поиска и это единственная прямая мера того, насколько тема велика <b>на самом деле</b>, а не в нашей базе.
         <br><br>Важно не путать её с числом каналов в таблице конкурентов: там показано, сколько нашли <b>мы</b>. Если по теме сделан один поиск, найдётся горстка каналов — и это ничего не говорит о YouTube.</dd>
 
+        <dt>Шкала наверху</dt>
+        <dd>Левый и правый края — это минимум и максимум среди найденных ниш, а не заданные рамки. Шкала пересчитывается на каждом прогоне: появится ниша с полусотней тысяч — правый край станет полусотней тысяч, а нынешний лидер съедет к середине. Никакого зашитого потолка нет.
+        <br><br>Шкала логарифмическая: иначе все ниши слиплись бы у левого края в одну точку.</dd>
+
         <dt>Ещё изучаем</dt>
         <dd>Темы, по которым сделано меньше трёх поисков или найдено меньше пятнадцати каналов. В рейтинг они не попадают намеренно: проценты по трём каналам выглядят убедительно и не значат ничего.</dd>
 
@@ -709,7 +737,7 @@ document.getElementById('base').innerHTML = [
   '<button class="stat act" data-k="videos"><b>' + num(P.dbSize.videos) + '</b> роликов'
     + (g && g.videos > 0 ? ' <em>+' + num(g.videos) + '</em>' : '') + ' ›</button>',
   '<span><b>' + P.snapshotDays + '</b> ' + plural(P.snapshotDays, 'день', 'дня', 'дней').split(' ')[1] + ' накопления</span>',
-  '<span><b>' + P.seedsDone + '/' + P.seedsTotal + '</b> тем изучено</span>',
+  '<button class="stat act" data-k="topics"><b>' + P.seedsDone + '/' + P.seedsTotal + '</b> тем изучено ›</button>',
 ].join('');
 
 // --- шкала разброса ---
@@ -755,6 +783,23 @@ function drawList(kind) {
             + (c.reg != null && c.reg - c.age > 60 ? ' <span class="reg">рег. ' + num(c.reg) + '</span>' : ''))
         + '</td><td>' + num(c.videos) +
         '</td><td>' + (c.subs == null ? '—' : num(c.subs)) + '</td></tr>').join('') + '</table>';
+  } else if (kind === 'topics') {
+    const t = P.topics ?? [];
+    const untouched = t.filter((x) => !x.searches).length;
+    box.innerHTML = '<h4>Темы — ' + P.seedsDone + ' изучено, ' + untouched + ' ещё не искали</h4>' +
+      '<p class="drillhint">Разведка берёт первыми те темы, по которым поисков меньше всего — они наверху списка. ' +
+      '«На YouTube» — оценка самого YouTube, сколько всего роликов подходит под запрос; она упирается в потолок в миллион.</p>' +
+      '<table><tr><th>Тема</th><th>Поисков</th><th>Каналов<br>нашли</th><th>Новых<br>в последний раз</th>' +
+      '<th>Свежий<br>ролик</th><th>На YouTube</th></tr>' +
+      t.map(x =>
+        '<tr class="' + (x.searches ? '' : 'untouched') + '">' +
+        '<td>' + x.query + (x.ru ? ' <span class="reg">' + x.ru + '</span>' : '') +
+          (x.auto ? ' <span class="autotag">авто</span>' : '') + '</td>' +
+        '<td>' + (x.searches || '—') + '</td>' +
+        '<td>' + (x.channels || '—') + '</td>' +
+        '<td>' + (x.newLast == null ? '—' : x.newLast) + '</td>' +
+        '<td>' + (x.fresh == null ? '—' : num(x.fresh)) + '</td>' +
+        '<td>' + (x.totalResults == null ? '—' : num(x.totalResults)) + '</td></tr>').join('') + '</table>';
   } else {
     box.innerHTML = '<h4>Видео — 300 самых просматриваемых из ' + num(P.dbSize.videos) + '</h4>' +
       '<table><tr><th>Ролик</th><th>Канал</th><th>Просмотры</th><th>Длина</th><th>Возраст</th></tr>' +

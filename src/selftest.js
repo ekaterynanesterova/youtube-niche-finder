@@ -4,6 +4,7 @@ import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore } from './collect.js';
+import { isBanned, promote } from './topics.js';
 import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
 
 let failed = 0;
@@ -25,6 +26,16 @@ check('медиана чётной длины', median([1, 2, 3, 4]) === 2.5);
 check('медиана игнорирует пустые', median([]) === null);
 check('язык канала — по большинству видео', dominantLang([{lang:'en-US'},{lang:'en'},{lang:'de'}]) === 'en');
 check('язык не выводится из двух рынков', dominantLang([{}], ['de','en']) === null);
+
+// --- запрещённые темы ---
+// Автопоиск про договорённости не знает и уже притащил «hitler Doku».
+check('военная тематика отсекается', isBanned('hitler Doku') && isBanned('weltkrieg') && isBanned('world war two'));
+check('обычные темы проходят', !isBanned('dinosaur documentary') && !isBanned('architektur'));
+check('запрещённое не попадает в разведку даже первым кандидатом',
+  promote({ candidates: [{ phrase: 'hitler bunker', channels: 9, lift: 30 },
+                         { phrase: 'deep ocean', channels: 4, lift: 5 }],
+            seeds: [], limit: 2, lang: 'en' })
+    .every((t) => !t.en.includes('hitler')));
 
 // --- разведка вслепую ---
 // Чарт mostPopular существует не для всех пар «страна + категория». 404 на
