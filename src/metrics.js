@@ -1,6 +1,6 @@
 // Метрики. Всё считается из накопленных данных, ничего не предсказывается.
 import { daysBetween } from './store.js';
-import { stopWords } from './topics.js';
+import { stopWords, topicShape } from './topics.js';
 
 // Возраст канала. Полный архив даёт настоящую дату первой загрузки; когда
 // архив не долистан, берём дату регистрации — она может только состарить канал,
@@ -193,8 +193,16 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
                                 channels, thresholds);
     }
     const st = db.state?.seedStats?.[seed.id] ?? {};
+    // Называет ли запрос предмет. Ниша из запроса про одно настроение считается
+    // по чужим видео: под «documentary to fall asleep to» подходит и дождь,
+    // и музыка для медитации. В рейтинг такие не идут.
+    const shapeLang = seed[primaryLang] ? primaryLang : (seed.en ? 'en' : 'de');
+    const shapeQuery = seed[shapeLang];
+    const shape = topicShape(queryKeywords(shapeQuery, shapeLang));
     niches[seed.id] = {
       id: seed.id, group: seed.group, control: !!seed.control,
+      broad: !shape.ok, broadReason: shape.reason, subjects: shape.subjects,
+      broadQuery: shapeQuery ?? null, broadLang: shapeLang,
       // Сколько раз мы вообще искали по этой теме и что YouTube думает
       // о её размере. Без этого «4 канала» читается как «на YouTube их 4».
       searches: st.searches ?? 0,

@@ -6,7 +6,20 @@ const MARKET = { de: 'немецкий', en: 'английский' };
 export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   const rows = [];
   const pending = [];
+  const broad = [];
   for (const n of niches) {
+    // Запрос, не называющий предмет, ранжировать нельзя: его цифры описывают
+    // не тему, а весь жанр. Показываем отдельно и с объяснением.
+    if (n.broad) {
+      const best = Object.entries(n.byMarket)
+        .sort((a, b) => (b[1].channels ?? 0) - (a[1].channels ?? 0))[0];
+      // Показываем ровно тот запрос, по которому и вынесен вердикт: иначе
+      // рядом с немецкой строкой стоят английские слова из объяснения.
+      broad.push({ id: n.id, ru: n.ru, query: n.broadQuery ?? n.queries[n.broadLang] ?? n.id,
+                   lang: n.broadLang ?? best?.[0] ?? 'en', reason: n.broadReason,
+                   channels: best?.[1]?.channels ?? 0, fresh: best?.[1]?.freshViews ?? null });
+      continue;
+    }
     for (const [lang, m] of Object.entries(n.byMarket)) {
       // Доказательством считаем только повторяемость: один дошедший канал
       // может быть чьей угодно удачей, двое — уже закономерность.
@@ -88,6 +101,7 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   }
   pending.sort((a, b) => (b.fresh ?? 0) - (a.fresh ?? 0));
   rows.pending = pending;
+  rows.broad = broad;
   return rows;
 }
 

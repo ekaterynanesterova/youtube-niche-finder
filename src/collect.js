@@ -2,6 +2,8 @@
 import { parseDuration, QuotaExceeded } from './api.js';
 import { BudgetExhausted } from './quota.js';
 import { daysBetween } from './store.js';
+import { topicShape } from './topics.js';
+import { queryKeywords } from './metrics.js';
 
 const log = (...a) => console.log(...a);
 
@@ -48,9 +50,16 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
     return String(A.lastSearched ?? '').localeCompare(String(B.lastSearched ?? ''));
   });
 
+  // Запрос, который не называет предмет, поиском ничего не выясняет: он приведёт
+  // случайные каналы всего жанра, а стоит столько же — сто юнитов. Такие темы
+  // в очередь не ставим вовсе.
+  const broad = seeds.filter((s) => !topicShape(queryKeywords(s.en ?? s.de, s.en ? 'en' : 'de')).ok);
+  if (broad.length) log(`Не ищем ${broad.length} широких тем: ${broad.map((s) => s.id).join(', ')}`);
+  const usable = seeds.filter((s) => !broad.includes(s));
+
   const plan = [];
   for (const [code, market] of Object.entries(markets)) {
-    const pool = market.role === 'control' ? seeds.filter((s) => s.control) : seeds;
+    const pool = market.role === 'control' ? usable.filter((s) => s.control) : usable;
     const ordered = queue(pool).filter((s) => s[code]);
     if (!ordered.length) continue;
     const n = Math.max(0, Math.round(searchBudget * market.searchShare));

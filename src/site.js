@@ -130,6 +130,8 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     spread: verdict.map((r) => ({ id: r.id, q: r.query, fresh: r.fresh })).filter((r) => r.fresh > 0),
     adLimitedWhy: POLICY.adLimited?.why ?? null,
     pending: verdict.pending ?? [],
+    broad: verdict.broad ?? [],
+    broadWhy: POLICY.topicShape?.why ?? null,
     // Списки для раскрытия по клику: посмотреть глазами, что вообще собрано.
     topChannels: Object.values(m.channels)
       .filter((c) => c.title)
@@ -183,6 +185,7 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
         channels: best?.channels ?? 0,
         fresh: best?.freshViews ?? null,
         adLimited: isAdLimited(sd.en ?? sd.de ?? sd.id, sd.group),
+        broad: !!m.niches[sd.id]?.broad,
       };
     }).sort((a, b) => a.searches - b.searches || b.channels - a.channels),
     schedule: scheduleText(),
@@ -313,6 +316,8 @@ button.stat[aria-expanded="true"]{border-color:var(--brand);
   color:var(--brand);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
 #drill .adtag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mid);
   border:1px solid var(--mid);border-radius:5px;padding:1px 4px;margin-left:6px;vertical-align:1px}
+#drill .broadtag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--bad);
+  border:1px solid var(--bad);border-radius:5px;padding:1px 4px;margin-left:6px;vertical-align:1px}
 .stat span{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
 
 .banner{margin:16px 0 0;padding:12px 14px;border-radius:var(--r);
@@ -596,6 +601,12 @@ footer b{color:var(--ink)}
         <dt>Ещё изучаем</dt>
         <dd>Темы, по которым сделано меньше трёх поисков или найдено меньше пятнадцати каналов. В рейтинг они не попадают намеренно: проценты по трём каналам выглядят убедительно и не значат ничего.</dd>
 
+        <dt>Не тема</dt>
+        <dd>Пометка в списке тем. Такой запрос называет формат и настроение, но не предмет: под «documentary to fall asleep to» одинаково подходят дождь, шум ветра, музыка для медитации и разбор космических миссий. Ниша из него собирается из чужих видео, а её цифры описывают не тему, а весь жанр «под что засыпают».
+        <br><br>Такие темы не ранжируются и на них не тратится квота: сто юнитов за поиск, который приведёт случайные каналы всего жанра.
+        <br><br>Именно так появился «спокойный космос»: запрос сводился к «fall»+«asleep», в нишу попадало всё для сна, а космос оказался там потому, что среди этого всего нашлось несколько сильных космических роликов. Канал-ориентир снимал спокойные научные факты, космос был у него третью каталога — тянул формат, а тему приписали задним числом.
+        <br><br>Список слов, которые предметом не считаются, лежит в <b>config/policy.json</b>.</dd>
+
         <dt>Роликов с цифрами</dt>
         <dd>Разведка находит каналы быстрее, чем дневной срез успевает снять с них просмотры: поиск стоит 100 юнитов квоты, а срез — по юниту на каждые 50 роликов. Если здесь не 100%, часть найденного в статистику ещё не вошла и ниши считаются по остальному.
         <br><br>Раньше срез обходил базу с начала и обрывался на остатке бюджета — всегда в одном месте. Новые ролики дописываются в конец, поэтому именно свежие находки не получали цифр никогда. Теперь под срез откладывается доля квоты заранее, молодые ролики обходятся первыми, а старые — по кругу, чтобы за несколько прогонов дошла очередь до всех.</dd>
@@ -842,7 +853,8 @@ function drawList(kind) {
     const t = P.topics ?? [];
     const untouched = t.filter((x) => !x.searches).length;
     box.innerHTML = '<h4>Темы — ' + P.seedsDone + ' изучено, ' + untouched + ' ещё не искали</h4>' +
-      '<p class="drillhint">Разведка берёт первыми те темы, по которым поисков меньше всего — они наверху списка. ' +
+      '<p class="drillhint">Помеченные «не тема» из разведки исключены и квоту не тратят: их запрос называет формат и настроение, но не предмет. '
+      + 'Разведка берёт первыми те темы, по которым поисков меньше всего — они наверху списка. ' +
       '«На YouTube» — оценка самого YouTube, сколько всего роликов подходит под запрос; она упирается в потолок в миллион.</p>' +
       '<table><tr><th>Тема</th><th>Поисков</th><th>Каналов<br>нашли</th><th>Новых<br>в последний раз</th>' +
       '<th>Свежий<br>ролик</th><th>На YouTube</th></tr>' +
@@ -850,7 +862,8 @@ function drawList(kind) {
         '<tr class="' + (x.searches ? '' : 'untouched') + '">' +
         '<td>' + x.query + (x.ru ? ' <span class="reg">' + x.ru + '</span>' : '') +
           (x.auto ? ' <span class="autotag">авто</span>' : '') +
-          (x.adLimited ? ' <span class="adtag">реклама урезана</span>' : '') + '</td>' +
+          (x.adLimited ? ' <span class="adtag">реклама урезана</span>' : '') +
+          (x.broad ? ' <span class="broadtag">не тема</span>' : '') + '</td>' +
         '<td>' + (x.searches || '—') + '</td>' +
         '<td>' + (x.channels || '—') + '</td>' +
         '<td>' + (x.newLast == null ? '—' : x.newLast) + '</td>' +

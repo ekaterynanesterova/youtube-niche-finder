@@ -4,7 +4,7 @@ import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot } from './collect.js';
-import { isBlocked, isAdLimited, promote, stopWords } from './topics.js';
+import { isBlocked, isAdLimited, promote, stopWords, topicShape } from './topics.js';
 import { queryKeywords, seedIndex, videoNiches, wordFrequency } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
@@ -398,6 +398,31 @@ check('списки служебных слов разные', stopWords('en').h
   const oldSecond = asked2.filter((id) => id.startsWith('old'));
   check('второй прогон берёт другие старые ролики',
     oldSecond.length > 0 && oldSecond.some((id) => !oldFirst.includes(id)));
+}
+
+// --- запрос обязан называть предмет ---
+// «documentary to fall asleep to» описывает настроение, а не тему: под него
+// подходит дождь, ветер и музыка для медитации. Метрики такой ниши описывают
+// весь жанр, а не тему, и квоту на неё тратить незачем.
+{
+  const shape = (q, l) => topicShape(queryKeywords(q, l));
+  check('запрос из одного настроения темой не считается',
+    !shape('documentary to fall asleep to', 'en').ok);
+  check('аудитория предметом не является', !shape('sleep stories for adults', 'en').ok);
+  check('обрывок заголовка предметом не является',
+    !shape('found something documentary', 'en').ok && !shape('finish documentary', 'en').ok);
+  check('предмет с настроением — это тема', shape('space to fall asleep to', 'en').ok);
+  check('предмет выделен из настроения',
+    shape('space to fall asleep to', 'en').subjects.join() === 'space');
+  check('обычная тема проходит', shape('antarctica documentary', 'en').ok
+        && shape('dinosaur documentary', 'en').ok);
+  check('немецкая тема с настроением проходит', shape('Weltraum zum Einschlafen', 'de').ok);
+  check('у широкого запроса есть объяснение', typeof shape('finish documentary', 'en').reason === 'string');
+  check('автопоиск не берёт запрос без предмета',
+    promote({ candidates: [{ phrase: 'found something', channels: 9, lift: 30 },
+                           { phrase: 'ancient egypt', channels: 4, lift: 5 }],
+              seeds: [], limit: 2, lang: 'en' })
+      .every((t) => !t.en.includes('found something')));
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

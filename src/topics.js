@@ -174,6 +174,30 @@ export function isBlocked(phrase, lang) {
   return rule ? hits(phrase, rule.words) : false;
 }
 
+// Называет ли запрос ПРЕДМЕТ. Слова вроде «sleep», «relaxing», «stories»,
+// «hours» задают настроение и формат, но не тему: под «documentary to fall
+// asleep to» подходит дождь, ветер, музыка для медитации — что угодно.
+// Ниша из такого запроса собирается из чужих видео, а её метрики описывают
+// не тему, а весь жанр «под что засыпают».
+//
+// Отсюда и «спокойный космос»: канал-ориентир снимал спокойные научные факты,
+// космос был у него третью роликов. Тянул формат, а тему приписали задним
+// числом.
+export function topicShape(keywords) {
+  const mod = new Set(POLICY.topicShape?.modifiers ?? []);
+  const subjects = (keywords ?? []).filter((w) => !mod.has(w));
+  const modifiers = (keywords ?? []).filter((w) => mod.has(w));
+  if (!keywords?.length) {
+    return { subjects, modifiers, ok: false, reason: 'в запросе не осталось значимых слов' };
+  }
+  if (!subjects.length) {
+    return { subjects, modifiers, ok: false,
+             reason: 'запрос называет только формат и настроение (' + modifiers.join(', ')
+                     + '), но не предмет — под него подходит что угодно' };
+  }
+  return { subjects, modifiers, ok: true, reason: null };
+}
+
 export function isAdLimited(phrase, group = null) {
   // Группа целиком: «pacific war» и «eastern front» под список слов не
   // подпадают, а ограничение по рекламе на них ровно то же.
@@ -211,6 +235,10 @@ export function promote({ candidates, seeds, limit, lang = 'en', group = 'Най
     const id = slug(c.phrase);
     if (!id || ids.has(id)) continue;
     if (isBlocked(c.phrase, lang)) continue;
+    // Обрывок заголовка темой не является. Автопоиск охотно приносил
+    // «found something documentary» и «finish» — связка проходила по подъёму,
+    // хотя предмета в ней нет.
+    if (!topicShape(c.phrase.split(/\s+/)).ok) continue;
     ids.add(id);
     added.push({
       id, group,
