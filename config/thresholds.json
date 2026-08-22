@@ -14,7 +14,7 @@
   "medianSamplePages": 2,
   "reportTopVideos": 60,
   "medianMinMatureVideos": 5,
-  "conveyorMinutesPerWeek": 180,
+  "conveyorMinutesPerWeek": 900,
   "topicMinChannels": 3,
   "topicMinLift": 2.5,
   "topicMaxCandidates": 40,
