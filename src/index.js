@@ -2,7 +2,7 @@
 import { YouTubeApi } from './api.js';
 import { Quota } from './quota.js';
 import { discover, explore, backfillFirstUpload, survey, hydrate, snapshot } from './collect.js';
-import { computeMetrics } from './metrics.js';
+import { computeMetrics, seedIndex, wordFrequency } from './metrics.js';
 import { renderReport } from './report.js';
 import { buildPayload, renderSite } from './site.js';
 import { renderBrief } from './brief.js';
@@ -10,7 +10,7 @@ import { Translator } from './translate.js';
 import { findTopics, promote } from './topics.js';
 import {
   loadDb, saveDb, readJson, writeJson, writeCompactJson, writeText, paths,
-  listSnapshots, today, ROOT,
+  listSnapshots, today, ROOT, daysBetween,
 } from './store.js';
 import { join } from 'node:path';
 
@@ -45,7 +45,19 @@ if (!metricsOnly) {
   const searchBudget = Number(process.env.SEARCH_BUDGET ?? thresholds.searchesPerRun);
   const onlySeeds = (process.env.ONLY_SEEDS ?? '').split(',').map((x) => x.trim()).filter(Boolean);
 
-  console.log(`Прогон ${date}. Бюджет ${quota.budget} юнитов, разведка ${searchBudget} запросов.`);
+  // Снапшот идёт последним, но платит первым. Без брони его съедала разведка:
+  // она тратит по 100 юнитов за запрос и всегда успевала раньше. Откладываем
+  // столько, сколько стоит обойти молодые ролики целиком плюс кусок хвоста.
+  const nowIso = new Date().toISOString();
+  const youngVideos = Object.values(db.videos)
+    .filter((v) => v.publishedAt && daysBetween(v.publishedAt, nowIso) <= thresholds.snapshotMaxAgeDays).length;
+  const snapshotReserve = Math.min(
+    Math.ceil(Object.keys(db.videos).length / 50),
+    Math.ceil(youngVideos / 50) + (thresholds.snapshotTailUnits ?? 400));
+  quota.reserve(snapshotReserve);
+
+  console.log(`Прогон ${date}. Бюджет ${quota.budget} юнитов, разведка ${searchBudget} запросов, `
+              + `броня снапшота ${snapshotReserve} (молодых видео ${youngVideos}).`);
 
   try {
     if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds });
@@ -96,7 +108,8 @@ if (!metricsOnly) {
 
 // Метрики считаем всегда — они дешёвые и не трогают API.
 const snapshots = listSnapshots().slice(-90).map((f) => readJson(paths.snapshot(f.replace('.json', ''))));
-const metrics = computeMetrics({ db, seeds, thresholds, snapshots,
+const primaryLang = Object.entries(markets).find(([, m]) => m.role === 'primary')?.[0] ?? 'en';
+const metrics = computeMetrics({ db, seeds, thresholds, snapshots, primaryLang,
                                 baseline: readJson(paths.baseline, null) });
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
 
@@ -175,6 +188,23 @@ payload.candidates = candidates
   .filter((c) => !promoted.some((t) => (t.en ?? t.de ?? '').startsWith(c.phrase)))
   .slice(0, 20);
 payload.promoted = promoted.map((t) => ({ id: t.id, query: t.en ?? t.de, ru: t.ru, ...t.foundVia }));
+
+// Две темы с одним набором якорей — это одна тема, показанная дважды: списки
+// видео под ними совпадают дословно, а в отчёте они выглядят независимыми
+// подтверждениями друг друга. Молча такое пропускать нельзя.
+{
+  const idx = seedIndex(seeds, ['de', 'en'], wordFrequency(Object.values(db.videos), metrics.channels));
+  const clash = [];
+  for (const lang of ['de', 'en']) {
+    const seen = new Map();
+    for (const s of idx[lang]) {
+      const key = s.anchors.slice().sort().join(' ');
+      if (seen.has(key)) clash.push(`${lang}: ${seen.get(key)} = ${s.id} (${key})`);
+      else seen.set(key, s.id);
+    }
+  }
+  if (clash.length) console.log('⚠ Темы с одинаковыми якорями:', clash.join(' · '));
+}
 
 writeText(join(ROOT, 'index.html'), renderSite(payload));
 // Тот же вывод одним markdown-файлом: сайт читается глазами, а бриф нужен,

@@ -262,32 +262,67 @@ export async function hydrate({ api, db, pending, markets, thresholds }) {
 }
 
 // Слой 3. Дневной срез. Ради него всё и затевалось: истории просмотров API не отдаёт.
+//
+// Порядок обхода здесь решает всё. Раньше срез шёл по базе с начала и упирался
+// в остаток бюджета: доходил до 72 000 видео из 95 000 и обрывался ровно там же
+// каждый раз. Хвост — а это всё, что нашли за последние дни, — не получал цифр
+// никогда, потому что новые видео дописываются в конец. Инструмент
+// систематически не видел собственных свежих находок.
+//
+// Теперь две очереди. Сначала молодые ролики: по ним считается главная метрика
+// и прирост, они обязаны обновляться каждый день. Потом всё остальное — по
+// кругу от курсора, чтобы за несколько прогонов обошлись все.
 export async function snapshot({ api, db, thresholds }) {
-  const ids = Object.keys(db.videos);
-  let n = 0;
+  const now = new Date().toISOString();
+  const maxAge = thresholds.snapshotMaxAgeDays;
+  const all = Object.keys(db.videos);
+  const young = [], old = [];
+  for (const id of all) {
+    const v = db.videos[id];
+    if (!v?.publishedAt) { old.push(id); continue; }
+    (daysBetween(v.publishedAt, now) <= maxAge ? young : old).push(id);
+  }
+
+  // Курсор живёт в состоянии: следующий прогон продолжает с того места,
+  // где предыдущий кончился.
+  const cursor = Math.min(db.state.snapshotCursor ?? 0, Math.max(0, old.length - 1));
+  const rotated = old.slice(cursor).concat(old.slice(0, cursor));
+  const order = young.concat(rotated);
+
+  const seen = new Set();
+  let n = 0, oldDone = 0;
   await tolerant('снапшот', async () => {
-    for (let i = 0; i < ids.length; i += 50) {
-      const res = await api.videos(ids.slice(i, i + 50));
+    for (let i = 0; i < order.length; i += 50) {
+      const batch = order.slice(i, i + 50);
+      // Броня снапшота: остальные слои до неё не дотягиваются, но и она конечна.
+      if (!api.quota.canAfford('videos', { useReserve: true })) break;
+      const res = await api.videos(batch, { useReserve: true });
       for (const v of res.items ?? []) {
         db.current[v.id] = [
           Number(v.statistics?.viewCount ?? 0),
           v.statistics?.likeCount == null ? null : Number(v.statistics.likeCount),
           v.statistics?.commentCount == null ? null : Number(v.statistics.commentCount),
         ];
+        seen.add(v.id);
         n++;
       }
+      if (i + 50 > young.length) oldDone = Math.min(old.length, i + 50 - young.length);
     }
   });
 
+  db.state.snapshotCursor = old.length ? (cursor + oldDone) % old.length : 0;
+
   // В историю кладём только молодые видео: у старых кривая уже легла в полку,
   // а хранить её каждый день — это сотни мегабайт в год ради нулевого прироста.
+  // И только те, что обновились СЕГОДНЯ: цифра, снятая позавчера, под сегодняшней
+  // датой превращает прирост между срезами в выдумку.
   const history = {};
-  for (const [id, stats] of Object.entries(db.current)) {
-    const v = db.videos[id];
-    if (v && daysBetween(v.publishedAt, new Date().toISOString()) <= thresholds.snapshotMaxAgeDays) {
-      history[id] = stats;
-    }
+  for (const id of young) {
+    if (seen.has(id) && db.current[id]) history[id] = db.current[id];
   }
-  log(`Снапшот: обновлено ${n} видео, в историю записано ${Object.keys(history).length}`);
+  const missedYoung = young.length - young.filter((id) => seen.has(id)).length;
+  log(`Снапшот: обновлено ${n} видео (молодых ${young.length - missedYoung} из ${young.length}, `
+      + `старых ${oldDone} из ${old.length}), в историю записано ${Object.keys(history).length}`);
+  if (missedYoung) log(`  ⚠ ${missedYoung} молодых видео остались без свежих цифр — не хватило брони`);
   return history;
 }

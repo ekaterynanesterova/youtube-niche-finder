@@ -1,6 +1,6 @@
 // Метрики. Всё считается из накопленных данных, ничего не предсказывается.
 import { daysBetween } from './store.js';
-import { STOP } from './topics.js';
+import { stopWords } from './topics.js';
 
 // Возраст канала. Полный архив даёт настоящую дату первой загрузки; когда
 // архив не долистан, берём дату регистрации — она может только состарить канал,
@@ -100,7 +100,8 @@ export function dominantLang(videos, fallbackMarkets = []) {
   return fallbackMarkets.length === 1 ? fallbackMarkets[0] : null;
 }
 
-export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline = null, now = new Date().toISOString() }) {
+export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline = null,
+                                 primaryLang = 'en', now = new Date().toISOString() }) {
   const byChannel = {};
   for (const v of Object.values(db.videos)) {
     const [views, likes, comments] = db.current?.[v.id] ?? [];
@@ -132,7 +133,14 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       medianViews, matureCount,
       ...hitProfile(vids, thresholds, now),
       lang: dominantLang(vids, ch.markets ?? []),
+      // Два разных числа, которые раньше были одним. videoCount — сколько
+      // роликов канала есть У НАС, catalogCount — сколько их у канала на самом
+      // деле (цифра самого YouTube). Архив листается не до конца: у HISTORY мы
+      // держим 323 ролика из 12 305. Строка «3 из 323» в таблице конкурентов
+      // выдавала случайного гостя за профильный канал.
       videoCount: vids.length,
+      catalogCount: Number.isFinite(ch.videoCount) && ch.videoCount > 0 ? ch.videoCount : null,
+      catalogPartial: Number.isFinite(ch.videoCount) && ch.videoCount > vids.length,
       uploadsPerWeek: uploadsPerWeek(vids, now),
       minutesPerWeek: uploadsPerWeek(vids, now) * ((median(vids.map((v) => v.durationSec)) ?? 0) / 60),
     };
@@ -140,8 +148,13 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
 
   // Ключевые слова тем разбираются один раз, а не для каждого из десятков
   // тысяч заголовков заново.
+  //
+  // Частоты считаем по УЖЕ посчитанным каналам: язык канала выводится из его
+  // видео и в db.channels его нет вовсе. Раньше сюда уходил db.channels, обе
+  // карты частот выходили пустыми, и выбор «двух самых редких слов запроса»
+  // молча вырождался в «первые два слова». Задуманного отбора не было ни разу.
   const sIndex = seedIndex(seeds, ['de', 'en'],
-    wordFrequency(Object.values(db.videos), db.channels ?? {}));
+    wordFrequency(Object.values(db.videos), channels));
 
   // --- уровень видео ---
   const videos = [];
@@ -189,10 +202,12 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       newChannelsLastSearch: st.newLastRun ?? null,
       explored: (st.searches ?? 0) >= (thresholds.nicheMinSearches ?? 3),
       queries: { de: seed.de ?? null, en: seed.en ?? null },
-      // Основной рынок — немецкий. Рейтинг строится по нему.
-      ...byLang.de,
+      // Поля верхнего уровня — по основному рынку. Он давно английский, а здесь
+      // всё ещё стоял немецкий: текстовый отчёт ранжировал темы по рынку, на
+      // котором до цели доходит один процент каналов.
+      ...byLang[primaryLang],
       byMarket: byLang,
-      confidence: confidence(byLang.de.videos, byLang.de.outlierChannels, snapshots.length),
+      confidence: confidence(byLang[primaryLang].videos, byLang[primaryLang].outlierChannels, snapshots.length),
     };
   }
 
@@ -320,11 +335,21 @@ function nicheStats(seedVideos, channels, thresholds) {
 // и любые метрики по нему считаются по мусору.
 const FORMAT_WORDS = /^(documentary|doku|dokumentation|film|video|explained|erklärt|full)$/i;
 
-export function queryKeywords(query) {
+// Служебные слова берём по языку запроса. На общем списке немецкое «war»
+// (был) съедало английское «war» (война): от «world war 2 documentary»
+// оставалось одно слово «world», и ниша про Вторую мировую собирала всё
+// подряд, где это слово встречалось.
+//
+// Голые цифры из запроса выбрасываем намеренно. В запросе «world war 2» двойка
+// есть, а в заголовках её почти нет: пишут «WWII», «World War II», «WW2».
+// Требовать её — значит не найти ничего.
+export function queryKeywords(query, lang = null) {
   if (!query) return [];
+  const stop = stopWords(lang);
   return query.split(/\s+/)
     .map((w) => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, ''))
-    .filter((w) => w.length > 2 && !FORMAT_WORDS.test(w) && !STOP.has(w));
+    .filter((w) => w.length > 2 && !FORMAT_WORDS.test(w) && !stop.has(w))
+    .filter((w) => !/^\d+$/.test(w));
 }
 
 // Канал, найденный по запросу «black hole documentary», снимает не только про
@@ -335,15 +360,27 @@ export function queryKeywords(query) {
 // evolution» и «human body» цеплялись за общее «human» и давали одинаковые
 // цифры. Требуем присутствия двух самых редких слов запроса сразу — а если
 // значимых слов всего одно или два, то всех.
+// Сколько слов запроса обязано стоять в заголовке. Раньше хватало двух самых
+// редких — и это склеивало разные темы в одну. «documentary to fall asleep to»,
+// «sleep stories for adults», «calm space for sleep» и «history to fall asleep
+// to» давали одни и те же якоря «fall»+«asleep» и один и тот же список из 1667
+// видео: четыре ниши в отчёте, один список под ними.
+//
+// Теперь нужны все значимые слова запроса. Строгость вскрывает плохо
+// написанные темы: запрос из четырёх понятий («james webb telescope
+// discovery») перестаёт находить что-либо — и это правильный сигнал сузить
+// запрос, а не повод ослабить правило.
+const MAX_ANCHORS = Infinity;
+
 export function seedIndex(seeds, langs = ['de', 'en'], wordFreq = {}) {
   const idx = {};
   for (const lang of langs) {
     idx[lang] = seeds.map((s) => {
-      const key = queryKeywords(s[lang]);
+      const key = queryKeywords(s[lang], lang);
       if (!key.length) return null;
       const freq = wordFreq[lang] ?? new Map();
       const byRarity = key.slice().sort((a, b) => (freq.get(a) ?? 0) - (freq.get(b) ?? 0));
-      const anchors = byRarity.slice(0, Math.min(2, byRarity.length));
+      const anchors = byRarity.slice(0, Math.min(MAX_ANCHORS, byRarity.length));
       return { id: s.id, anchors, key };
     }).filter(Boolean);
   }
@@ -363,12 +400,27 @@ export function wordFrequency(videos, channels) {
   return out;
 }
 
+// Якорь должен НАЧИНАТЬ слово, а не просто где-то встречаться. Проверка
+// подстрокой засчитывала «world» внутри «underworld», «decken» внутри
+// «entdecken», «schiffe» внутри «Raumschiffe». Начало слова оставляет
+// множественное число и падежи («dinosaur» ловит «dinosaurs»), но отсекает
+// склейку с чужим корнем.
+const anchorRe = new Map();
+function startsWord(text, word) {
+  let re = anchorRe.get(word);
+  if (!re) {
+    re = new RegExp('(?:^|[^\\p{L}\\p{N}])' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'u');
+    anchorRe.set(word, re);
+  }
+  return re.test(text);
+}
+
 export function videoNiches(title, index, lang) {
   const t = (title ?? '').toLowerCase();
   if (!t || !index?.[lang]) return [];
   const out = [];
   for (const s of index[lang]) {
-    if (s.anchors.every((w) => t.includes(w))) out.push(s.id);
+    if (s.anchors.every((w) => startsWord(t, w))) out.push(s.id);
   }
   return out;
 }

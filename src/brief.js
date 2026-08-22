@@ -67,6 +67,11 @@ export function renderBrief(P) {
   w('## Насколько этим цифрам можно верить');
   w('');
   w(`- В базе ${num(P.dbSize?.channels)} каналов и ${num(P.dbSize?.videos)} видео.`);
+  if (P.covered && P.covered.videos < P.dbSize?.videos) {
+    w(`- Из них посчитаны ${num(P.covered.channels)} каналов и ${num(P.covered.videos)} видео`,
+      `(${pct(P.covered.videos / P.dbSize.videos)} роликов). Остальное найдено, но дневной срез ещё`,
+      'не снял с них просмотры — в цифры ниже они не входят.');
+  }
   w(`- Дней накопления: **${P.snapshotDays}**. Всё, что считается по приросту между срезами`,
     '(старым роликам достаётся, живая полка), при малом числе дней шумит.');
   w(`- Тем изучено ${P.seedsDone} из ${P.seedsTotal}. Непройденные темы могут переставить рейтинг.`);

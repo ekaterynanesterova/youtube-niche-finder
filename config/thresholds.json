@@ -38,5 +38,6 @@
   "freshMinSample": 10,
   "nicheMinSearches": 3,
   "nicheMinChannels": 15,
-  "topicQueueLimit": 25
+  "topicQueueLimit": 25,
+  "snapshotTailUnits": 400
 }

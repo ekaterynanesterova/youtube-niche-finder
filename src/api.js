@@ -15,8 +15,8 @@ export class YouTubeApi {
     this.quota = quota;
   }
 
-  async call(endpoint, params) {
-    this.quota.spend(endpoint);
+  async call(endpoint, params, opts = {}) {
+    this.quota.spend(endpoint, opts);
 
     const url = new URL(`${BASE}/${endpoint}`);
     for (const [k, v] of Object.entries(params)) {
@@ -82,11 +82,11 @@ export class YouTubeApi {
     });
   }
 
-  videos(ids) {
+  videos(ids, opts = {}) {
     return this.call('videos', {
       part: 'snippet,contentDetails,statistics',
       id: ids.join(','), maxResults: 50,
-    });
+    }, opts);
   }
 }
 

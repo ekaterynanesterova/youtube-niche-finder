@@ -6,7 +6,11 @@ import { join } from 'node:path';
 
 // Служебные слова и форматная шелуха: они есть в каждом втором заголовке
 // и темой не являются.
-export const STOP = new Set(`
+// Служебные слова — по языкам, а не одним списком. Общий список стоил дорого:
+// немецкое «war» (был) выбрасывало английское «war» (война), «man» — «man»,
+// «die» — «die». Запрос «world war 2 documentary» усыхал до одного слова
+// «world», и в нишу про Вторую мировую попадало всё, где есть «world».
+const STOP_DE = `
 der die das den dem des ein eine einer eines einem und oder aber wie was wer wo
 wann warum ist sind war waren wird werden hat haben hatte kann können muss
 mit von für auf aus bei nach über unter vor zwischen durch gegen ohne um zum zur
@@ -16,11 +20,24 @@ doku dokumentation dokumentarfilm teil folge ganze ganzer ganzes hd video
 stunde stunden minute minuten sekunden lang länger langer version deutsch
 größte größten größer grösste beste besten neue neuen neues alte alten
 schrieb sagte gibt geht macht kommt bleibt heißt zeigt
+`.trim().split(/\s+/);
+
+const STOP_EN = `
 the a an of and or but how what who where when why is are was were will
 this that these those with from for on out at by to in it its their our your
 you we they he she i my his her not no all more most very just only
 documentary film full episode part hd video watch
-`.trim().split(/\s+/));
+`.trim().split(/\s+/);
+
+export const STOP_BY_LANG = { de: new Set(STOP_DE), en: new Set(STOP_EN) };
+
+// Объединённый список остаётся для мест, где язык неизвестен. Пользоваться им
+// там, где язык известен, нельзя — ровно из-за «war» и «man».
+export const STOP = new Set([...STOP_DE, ...STOP_EN]);
+
+export function stopWords(lang) {
+  return STOP_BY_LANG[lang] ?? STOP;
+}
 
 const norm = (w) => w.toLowerCase().replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
 

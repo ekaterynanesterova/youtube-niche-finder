@@ -94,7 +94,11 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
           id, title: c.title, subs: c.subscribers,
           age: c.ageDays == null ? null : Math.round(c.ageDays),
           exact: !!c.firstUploadComplete,
-          inNiche: vs.length, videos: c.videoCount,
+          // Знаменатель — настоящий каталог канала, а не то, сколько роликов
+          // мы успели собрать. Иначе «3 из 323» у HISTORY читалось как
+          // профильный канал, хотя роликов у него 12 305.
+          inNiche: vs.length, videos: c.catalogCount ?? c.videoCount,
+          partial: !!c.catalogPartial,
           usd: Math.round(c.monthlyUsd ?? 0),
           fresh: fresh.length >= 2 ? med(fresh.map((v) => v.views)) : null,
           best: Math.max(...vs.map((v) => v.views)),
@@ -154,6 +158,10 @@ export function buildPayload(m, seeds, thresholds, db = {}) {
     // журнале есть с чем сравнивать — выдумывать его нельзя.
     dbSize: { channels: Object.keys(db.channels ?? {}).length,
               videos: Object.keys(db.videos ?? {}).length },
+    // Сколько из найденного вообще посчитано. Разведка приводит каналы быстрее,
+    // чем дневной срез успевает снять с них цифры, и без этой строки страница
+    // выдаёт часть базы за всю базу.
+    covered: { channels: Object.keys(m.channels).length, videos: m.videos.length },
     growth: growthSinceLastRun(db.state?.runs ?? []),
     seedsDone: Object.values(db.state?.seedStats ?? {}).filter((x) => x.searches > 0).length,
     seedsTotal: seeds.length,
@@ -588,6 +596,10 @@ footer b{color:var(--ink)}
         <dt>Ещё изучаем</dt>
         <dd>Темы, по которым сделано меньше трёх поисков или найдено меньше пятнадцати каналов. В рейтинг они не попадают намеренно: проценты по трём каналам выглядят убедительно и не значат ничего.</dd>
 
+        <dt>Роликов с цифрами</dt>
+        <dd>Разведка находит каналы быстрее, чем дневной срез успевает снять с них просмотры: поиск стоит 100 юнитов квоты, а срез — по юниту на каждые 50 роликов. Если здесь не 100%, часть найденного в статистику ещё не вошла и ниши считаются по остальному.
+        <br><br>Раньше срез обходил базу с начала и обрывался на остатке бюджета — всегда в одном месте. Новые ролики дописываются в конец, поэтому именно свежие находки не получали цифр никогда. Теперь под срез откладывается доля квоты заранее, молодые ролики обходятся первыми, а старые — по кругу, чтобы за несколько прогонов дошла очередь до всех.</dd>
+
         <dt>Реклама урезана</dt>
         <dd>Пометка на нише и в списке тем. YouTube относит войну, конфликты и трагедии к «спорным темам и деликатным событиям»: рекламу там ставят не всю или не ставят вовсе. Тема при этом разрешена и каналы в ней зарабатывают — но общая ставка $5 за тысячу просмотров, по которой считается весь сайт, для таких ниш завышена. Читай доход по ним как верхнюю границу, а не как ожидание.
         <br><br>Инструмент не может измерить настоящую ставку: API её не отдаёт. Поэтому это пометка, а не поправочный коэффициент — придумывать множитель означало бы выдать догадку за расчёт.
@@ -776,6 +788,10 @@ document.getElementById('base').innerHTML = [
   '<button class="stat act" data-k="videos"><b>' + num(P.dbSize.videos) + '</b> роликов'
     + (g && g.videos > 0 ? ' <em>+' + num(g.videos) + '</em>' : '') + ' ›</button>',
   '<span><b>' + P.snapshotDays + '</b> ' + plural(P.snapshotDays, 'день', 'дня', 'дней').split(' ')[1] + ' накопления</span>',
+  (P.covered && P.covered.videos < P.dbSize.videos
+    ? '<span title="Найдено больше, чем успел снять дневной срез"><b>'
+      + pct(P.covered.videos / P.dbSize.videos) + '</b> роликов с цифрами</span>'
+    : ''),
   '<button class="stat act" data-k="topics"><b>' + P.seedsDone + '/' + P.seedsTotal + '</b> тем изучено ›</button>',
 ].join('');
 

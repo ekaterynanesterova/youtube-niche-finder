@@ -3,8 +3,10 @@ import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
-import { explore } from './collect.js';
-import { isBlocked, isAdLimited, promote } from './topics.js';
+import { explore, snapshot } from './collect.js';
+import { isBlocked, isAdLimited, promote, stopWords } from './topics.js';
+import { queryKeywords, seedIndex, videoNiches, wordFrequency } from './metrics.js';
+import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { readJson, ROOT } from './store.js';
 import { join } from 'node:path';
@@ -163,7 +165,7 @@ for (const [id, v] of Object.entries(videos)) {
   delete v.views; delete v.likes; delete v.comments;
 }
 
-const m = computeMetrics({ db: { channels, videos, current }, seeds, thresholds, snapshots, now });
+const m = computeMetrics({ db: { channels, videos, current }, seeds, thresholds, snapshots, now, primaryLang: 'de' });
 
 check('база канала — медиана зрелых видео', m.channels.young0.medianViews === 150000);
 check('тощая база не даёт медианы',
@@ -205,7 +207,7 @@ const partial = computeMetrics({
     videos: { p1v: { id: 'p1v', channelId: 'p1', title: 'offen p1', publishedAt: day(60), durationSec: 1500, lang: 'de' } },
     current: { p1v: [10000, 100, 10] },
   },
-  seeds, thresholds, snapshots: [], now,
+  seeds, thresholds, snapshots: [], now, primaryLang: 'de',
 });
 check('недолистанный архив не омолаживает канал',
   Math.round(partial.channels.p1.ageDays) === 3000);
@@ -221,6 +223,7 @@ for (let i = 0; i < 60; i++) {            // 60 роликов по два ча�
   ccur['c' + i] = [30000, 200, 10];
 }
 const conv = computeMetrics({ db: { channels: { c1: { id: 'c1', ...conveyor } }, videos: cv, current: ccur },
+  primaryLang: 'de',
                               seeds, thresholds, snapshots: [], now });
 // Лотерейный канал: двести роликов, один выстрел. Он не должен считаться
 // пробившимся — иначе ниша выглядит открытой из-за чужого везения.
@@ -232,7 +235,7 @@ const lot = computeMetrics({
       ['L' + i, { id: 'L' + i, channelId: 'L', title: 'offen L' + i, publishedAt: day(40 + i), durationSec: 1500, lang: 'de' }])),
     current: Object.fromEntries(Array.from({ length: 40 }, (_, i) => ['L' + i, [i === 0 ? 90000 : 900, 10, 1]])),
   },
-  seeds, thresholds, snapshots: [], now,
+  seeds, thresholds, snapshots: [], now, primaryLang: 'de',
 });
 check('видео без темы в заголовке в нишу не попадает',
   lot.videos.every((v) => v.seeds.includes('open')));
@@ -295,6 +298,107 @@ check('в брифе есть правила по темам', brief.includes('�
 check('в брифе есть таблица конкурентов', brief.includes('Канал') && brief.includes('32 из 49'));
 check('трудозатраты выведены текстом', brief.includes('5.5 ч готового видео в неделю'));
 check('в брифе стоит ссылка на свежий срез', brief.includes('docs/brief.md'));
+
+// --- разбор запроса в ключевые слова ---
+// Общий список служебных слов съедал содержательные: немецкое «war» (был)
+// убивало английское «war» (война), и от «world war 2 documentary» оставалось
+// одно «world».
+check('английское war переживает разбор', queryKeywords('world war 2 documentary', 'en').includes('war'));
+check('немецкое war отсеивается как служебное', !queryKeywords('war Doku', 'de').length);
+check('формат вычищается', !queryKeywords('antarctica documentary', 'en').includes('documentary'));
+check('голая цифра не становится словом', !queryKeywords('world war 2', 'en').includes('2'));
+check('списки служебных слов разные', stopWords('en').has('the') && !stopWords('en').has('war')
+      && stopWords('de').has('war'));
+
+// --- привязка видео к теме ---
+// Проверка подстрокой засчитывала «world» внутри «underworld».
+{
+  const idx = seedIndex([{ id: 'ww2', en: 'world war 2 documentary' },
+                         { id: 'dino', en: 'dinosaur documentary' }], ['en'], {});
+  const hit = (t) => videoNiches(t.toLowerCase(), idx, 'en');
+  check('тема ловится, когда слова запроса на месте', hit('The Last Days of World War II').includes('ww2'));
+  check('множественное число не мешает', hit('Giant Dinosaurs Explained').includes('dino'));
+  check('якорь внутри чужого слова не считается',
+    !hit('Vyacheslav Ivankov, King of the Russian Underworld').includes('ww2'));
+  check('одного слова из запроса мало',
+    !hit('Animals Of The World 4K - Scenic Wildlife Film').includes('ww2'));
+}
+
+// --- выбор якорей ---
+// Частоты приходили из db.channels, где языка нет вовсе: обе карты выходили
+// пустыми, и «два самых редких слова» вырождалось в «первые два». Разные темы
+// про засыпание получали одни якоря и один список видео на всех.
+{
+  const chans = { c1: { lang: 'en' } };
+  const wf = wordFrequency([{ channelId: 'c1', title: 'sleep sleep sleep story' }], chans);
+  check('частоты слов считаются, когда язык канала известен', wf.en.size > 0);
+  check('частоты пусты, когда языка нет', wordFrequency([{ channelId: 'c1', title: 'x yyy' }], { c1: {} }).en.size === 0);
+  const idx = seedIndex([{ id: 'a', en: 'documentary to fall asleep to' },
+                         { id: 'b', en: 'sleep stories for adults' }], ['en'], {});
+  const same = JSON.stringify(idx.en[0].anchors) === JSON.stringify(idx.en[1].anchors);
+  check('разные темы не получают одинаковые якоря', !same);
+  check('в якоря идут все значимые слова запроса',
+    idx.en[1].anchors.length === queryKeywords('sleep stories for adults', 'en').length);
+}
+
+// --- броня квоты ---
+// Разведка тратит по 100 юнитов и раньше съедала бюджет до снапшота: срез
+// обрывался на 72 000 видео из 95 000, и всё найденное за день оставалось
+// без цифр.
+{
+  const q = new Q2(300);
+  q.reserve(250);
+  check('до брони обычный слой не дотягивается', q.canAfford('search') === false);
+  check('броня доступна тому, кто её просил', q.canAfford('search', { useReserve: true }) === true);
+  q.spend('search', { useReserve: true });
+  check('трата из брони списывается с общего счёта', q.spent === 100);
+  check('остаток без брони считается честно', q.remaining() === -50);
+  check('остаток с бронёй показывает, сколько ещё можно снять',
+        q.remaining({ useReserve: true }) === 200);
+  let threw = false;
+  try { new Q2(100).reserve(90), (() => { const z = new Q2(100); z.reserve(90); z.spend('search'); })(); }
+  catch (e) { threw = e instanceof BudgetExhausted; }
+  check('попытка залезть в броню кидает BudgetExhausted', threw);
+}
+
+// --- порядок обхода в снапшоте ---
+// Срез шёл по базе с начала и обрывался на остатке бюджета всегда в одном и
+// том же месте. Новые видео дописываются в конец — и не получали цифр никогда.
+{
+  const mk = (id, ageDays) => [id, { id, channelId: 'c', title: id,
+    publishedAt: new Date(Date.parse(now) - ageDays * 86400000).toISOString(), durationSec: 900 }];
+  const vids = Object.fromEntries([
+    ...Array.from({ length: 60 }, (_, i) => mk('old' + i, 400)),
+    ...Array.from({ length: 40 }, (_, i) => mk('new' + i, 10)),
+  ]);
+  const asked = [];
+  const q = new Q2(1);                      // хватает ровно на один вызов: 50 роликов из 100
+  const api = { quota: q, videos: async (ids, opts) => {
+    asked.push(...ids);
+    q.spend('videos', opts);                // api.call тратит юнит сам
+    return { items: ids.map((id) => ({ id, statistics: { viewCount: '100' } })) };
+  } };
+  const dbs = { videos: vids, current: {}, state: {} };
+  const hist = await snapshot({ api, db: dbs, thresholds: { snapshotMaxAgeDays: 150 } });
+  check('молодые ролики обходятся первыми', asked.slice(0, 40).every((id) => id.startsWith('new')));
+  check('за один вызов ушло ровно 50 роликов', asked.length === 50);
+  check('в историю попали только молодые', Object.keys(hist).every((id) => id.startsWith('new')));
+  check('старые тоже обходятся, но после молодых', asked.some((id) => id.startsWith('old')));
+  check('курсор по старым сдвинулся', (dbs.state.snapshotCursor ?? 0) > 0);
+
+  // Второй прогон должен продолжить с того места, где кончился первый.
+  const asked2 = [];
+  const q2 = new Q2(1);
+  const api2 = { quota: q2, videos: async (ids, opts) => {
+    asked2.push(...ids); q2.spend('videos', opts);
+    return { items: ids.map((id) => ({ id, statistics: { viewCount: '100' } })) };
+  } };
+  await snapshot({ api: api2, db: dbs, thresholds: { snapshotMaxAgeDays: 150 } });
+  const oldFirst = asked.filter((id) => id.startsWith('old'));
+  const oldSecond = asked2.filter((id) => id.startsWith('old'));
+  check('второй прогон берёт другие старые ролики',
+    oldSecond.length > 0 && oldSecond.some((id) => !oldFirst.includes(id)));
+}
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

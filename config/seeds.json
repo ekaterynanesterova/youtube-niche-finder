@@ -221,13 +221,6 @@
       "ru": "наука для засыпания"
     },
     {
-      "id": "sleep-space",
-      "group": "Засыпание",
-      "de": "Weltraum zum Einschlafen",
-      "en": "space to fall asleep to",
-      "ru": "космос для засыпания"
-    },
-    {
       "id": "sleep-history",
       "group": "Засыпание",
       "de": "Geschichte zum Einschlafen",
@@ -1118,7 +1111,7 @@
     {
       "id": "space-ambience",
       "group": "Космос спокойный",
-      "en": "space ambience deep sleep",
+      "en": "space ambience sleep",
       "de": "Weltraum Klänge Schlaf",
       "ru": "космический эмбиент для сна"
     },
@@ -1139,8 +1132,8 @@
     {
       "id": "james-webb",
       "group": "Космос",
-      "en": "james webb telescope discovery",
-      "de": "James Webb Teleskop Entdeckung",
+      "en": "james webb telescope",
+      "de": "James Webb Teleskop",
       "ru": "телескоп Джеймс Уэбб"
     },
     {
@@ -1181,7 +1174,7 @@
     {
       "id": "end-universe",
       "group": "Космос",
-      "en": "end of the universe heat death",
+      "en": "heat death of the universe",
       "de": "Ende des Universums",
       "ru": "конец Вселенной"
     },
