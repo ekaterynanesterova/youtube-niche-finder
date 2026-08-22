@@ -156,6 +156,11 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
   const sIndex = seedIndex(seeds, ['de', 'en'],
     wordFrequency(Object.values(db.videos), channels));
 
+  // Существительные считаем по немецким заголовкам: приём работает только там,
+  // где регистр что-то значит.
+  const deTitles = Object.values(db.videos).filter((v) => channels[v.channelId]?.lang === 'de');
+  const nouns = nounEvidence(deTitles);
+
   // --- уровень видео ---
   const videos = [];
   for (const [cid, vids] of Object.entries(byChannel)) {
@@ -198,7 +203,32 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
     // и музыка для медитации. В рейтинг такие не идут.
     const shapeLang = seed[primaryLang] ? primaryLang : (seed.en ? 'en' : 'de');
     const shapeQuery = seed[shapeLang];
-    const shape = topicShape(queryKeywords(shapeQuery, shapeLang));
+    let shape = topicShape(queryKeywords(shapeQuery, shapeLang), { lang: shapeLang, nouns });
+
+    // Стоят ли слова запроса в заголовках рядом. Обрывок шаблона их не сводит:
+    // «place earth» живёт в «Most Beautiful Place on Earth», где между словами
+    // предлог, и темой это сочетание не является. Настоящая связка — «mariana
+    // trench», «great white shark» — стоит подряд почти всегда.
+    // Запрос с настроением («space to fall asleep to») разнесён служебными
+    // словами намеренно — соседства от него требовать нельзя. Проверяем только
+    // чистые предметные запросы, и целиком, а не по огрызку: список немаркеров
+    // однажды уже съел «white» из «great white shark» и забраковал акул.
+    if (shape.ok && !shape.modifiers.length) {
+      const kw = shape.subjects;
+      const sample = seedVideos.filter((v) => channels[v.channelId]?.lang === shapeLang);
+      if (kw.length >= 2 && sample.length >= (thresholds.topicAdjacencyMinSample ?? 20)) {
+        const forms = [kw.join(' '), kw.slice().reverse().join(' ')];
+        const together = sample.filter((v) => {
+          const t = ' ' + (v.title ?? '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim() + ' ';
+          return forms.some((f) => t.includes(' ' + f + ' '));
+        }).length / sample.length;
+        if (together < (thresholds.topicAdjacencyMin ?? 0.05)) {
+          shape = { ...shape, ok: false,
+                    reason: 'слова запроса почти никогда не стоят в заголовке рядом ('
+                            + Math.round(together * 100) + '%) — это обрывок шаблона, а не связка' };
+        }
+      }
+    }
     niches[seed.id] = {
       id: seed.id, group: seed.group, control: !!seed.control,
       broad: !shape.ok, broadReason: shape.reason, subjects: shape.subjects,
@@ -219,7 +249,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
     };
   }
 
-  return { computedAt: now, thresholds, channels, videos, niches,
+  return { computedAt: now, thresholds, channels, videos, niches, nouns,
            // За сколько дней измерен живой прирост. Сутки — это уже данные,
            // но выводы по ним делать рано, и это должно быть видно.
            gainWindowDays: baseline?.date ? Math.round(daysBetween(baseline.date, now)) : 0,
@@ -393,6 +423,29 @@ export function seedIndex(seeds, langs = ['de', 'en'], wordFreq = {}) {
     }).filter(Boolean);
   }
   return idx;
+}
+
+// Существительное ли слово. Для немецкого это решается корпусом: существительные
+// пишутся с большой буквы, и слово, встречающееся в середине заголовка со строчной,
+// существительным не является. Проверено на живых данных: Einsatz, Giganten,
+// Maschinen, Weltraum — 100% заглавных; gebaut, spannende, grausamste, beherrscht,
+// decken — 13–20%. Ровно эти пять автопоиск и притащил как «темы».
+//
+// Для английского приёма нет: в Title Case с большой буквы пишут всё подряд,
+// и «Shocked» неотличим от «Shark». Там спасает только список слов в policy.json.
+export function nounEvidence(videos) {
+  const cap = new Map(), tot = new Map();
+  for (const v of videos) {
+    const words = (v.title ?? '').split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+    // Первое слово заголовка заглавное всегда — по нему судить нельзя.
+    for (let i = 1; i < words.length; i++) {
+      const w = words[i], l = w.toLowerCase();
+      if (l.length < 3) continue;
+      tot.set(l, (tot.get(l) ?? 0) + 1);
+      if (w[0] !== l[0]) cap.set(l, (cap.get(l) ?? 0) + 1);
+    }
+  }
+  return { cap, tot };
 }
 
 export function wordFrequency(videos, channels) {

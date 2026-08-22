@@ -4,8 +4,8 @@ import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot } from './collect.js';
-import { isBlocked, isAdLimited, promote, stopWords, topicShape } from './topics.js';
-import { queryKeywords, seedIndex, videoNiches, wordFrequency } from './metrics.js';
+import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
+import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { readJson, ROOT } from './store.js';
@@ -423,6 +423,47 @@ check('списки служебных слов разные', stopWords('en').h
                            { phrase: 'ancient egypt', channels: 4, lift: 5 }],
               seeds: [], limit: 2, lang: 'en' })
       .every((t) => !t.en.includes('found something')));
+}
+
+// --- немецкое слово: существительное или нет ---
+// Списком слов немецкий мусор не переберёшь. Зато существительные пишутся
+// с большой буквы, и корпус это показывает: Einsatz, Giganten, Weltraum —
+// 100% заглавных; gebaut, spannende, grausamste — 13–20%.
+{
+  const titles = [];
+  for (let i = 0; i < 12; i++) {
+    titles.push({ title: 'Wie der Einsatz der Maschinen gebaut wurde' });
+    titles.push({ title: 'Der grosse Einsatz und die spannende Geschichte' });
+  }
+  const ev = nounEvidence(titles);
+  const share = (w) => (ev.cap.get(w) ?? 0) / (ev.tot.get(w) ?? 1);
+  check('существительное распознано по регистру', share('einsatz') > 0.9 && share('maschinen') > 0.9);
+  check('глагол и прилагательное — нет', share('gebaut') < 0.2 && share('spannende') < 0.2);
+  check('запрос без существительного отсеивается',
+    !topicShape(['gebaut'], { lang: 'de', nouns: ev }).ok);
+  check('запрос с существительным проходит',
+    topicShape(['einsatz'], { lang: 'de', nouns: ev }).ok);
+  // «wurde» в фикстуре стоит со строчной, но правило регистра — только для
+  // немецкого: в английском Title Case заглавные ни о чём не говорят.
+  check('немецкое правило ловит и слово вне списка',
+    !topicShape(['wurde'], { lang: 'de', nouns: ev }).ok);
+  check('английский этим правилом не судим',
+    topicShape(['wurde'], { lang: 'en', nouns: ev }).ok);
+  check('слово без набранной статистики не судим',
+    topicShape(['zeppelin'], { lang: 'de', nouns: ev }).ok);
+}
+
+// --- связка только из соседних слов ---
+// Служебные слова схлопывались, и связка перепрыгивала через них: из
+// «Most Beautiful Place on Earth» получалось «place earth» — обрывок шаблона
+// с высоким подъёмом, уезжавший в разведку как тема.
+{
+  const p1 = phrases('Most Beautiful Place on Earth');
+  check('связка через служебное слово не собирается', !p1.includes('place earth'));
+  check('соседние слова связкой остаются', p1.includes('beautiful place'));
+  const p2 = phrases('The Great White Shark Hunt');
+  check('длинная связка из соседних слов цела', p2.includes('great white shark'));
+  check('одиночные слова остаются', p2.includes('shark'));
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

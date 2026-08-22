@@ -43,18 +43,41 @@ const norm = (w) => w.toLowerCase().replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu,
 
 // Заголовок → связки из 1–3 слов. Тема почти всегда именно связка:
 // «schwarzes Loch», «Tiefsee Lebewesen».
-export function tokens(title) {
-  return String(title ?? '')
-    .split(/[\s|·—–\-:,.!?()\[\]"'„“»«/]+/u)
-    .map(norm)
-    .filter((w) => w.length > 2 && !STOP.has(w) && !/^\d+$/.test(w));
+// Слова заголовка со сквозной нумерацией: позиция нужна, чтобы отличить
+// стоящие рядом слова от разнесённых. Служебные выкидываем, но место, которое
+// они занимали, помним.
+export function tokensAt(title) {
+  const raw = String(title ?? '').split(/[\s|·—–\-:,.!?()\[\]"'„“»«/]+/u).map(norm);
+  const out = [];
+  raw.forEach((w, i) => {
+    if (w.length > 2 && !STOP.has(w) && !/^\d+$/.test(w)) out.push({ w, i });
+  });
+  return out;
 }
 
+export function tokens(title) {
+  return tokensAt(title).map((t) => t.w);
+}
+
+// Связка только из слов, стоящих в заголовке ПОДРЯД. Раньше служебные слова
+// схлопывались и связка перепрыгивала через них: из «Most Beautiful Place on
+// Earth» получалось «place earth», из «What They Built in the World» —
+// «built world». Такие обрывки набирали высокий подъём (шаблон повторяется в
+// сотнях заголовков) и уезжали в разведку как темы, хотя темой не являются.
 export function phrases(title, maxLen = 3) {
-  const words = tokens(title);
+  const at = tokensAt(title);
   const out = new Set();
-  for (let n = 1; n <= maxLen; n++) {
-    for (let i = 0; i + n <= words.length; i++) out.add(words.slice(i, i + n).join(' '));
+  for (let i = 0; i < at.length; i++) {
+    out.add(at[i].w);
+    let last = at[i].i;
+    const acc = [at[i].w];
+    for (let n = 1; n < maxLen && i + n < at.length; n++) {
+      const nxt = at[i + n];
+      if (nxt.i !== last + 1) break;      // между словами стояло служебное — это не связка
+      acc.push(nxt.w);
+      last = nxt.i;
+      out.add(acc.join(' '));
+    }
   }
   return [...out];
 }
@@ -183,7 +206,12 @@ export function isBlocked(phrase, lang) {
 // Отсюда и «спокойный космос»: канал-ориентир снимал спокойные научные факты,
 // космос был у него третью роликов. Тянул формат, а тему приписали задним
 // числом.
-export function topicShape(keywords) {
+// Порог, при котором слову вообще выносится приговор. Ниже — данных мало,
+// и молчание безопаснее ошибки.
+const NOUN_MIN_SEEN = 8;
+const NOUN_MIN_SHARE = 0.6;
+
+export function topicShape(keywords, { lang = null, nouns = null } = {}) {
   const mod = new Set(POLICY.topicShape?.modifiers ?? []);
   const subjects = (keywords ?? []).filter((w) => !mod.has(w));
   const modifiers = (keywords ?? []).filter((w) => mod.has(w));
@@ -194,6 +222,19 @@ export function topicShape(keywords) {
     return { subjects, modifiers, ok: false,
              reason: 'запрос называет только формат и настроение (' + modifiers.join(', ')
                      + '), но не предмет — под него подходит что угодно' };
+  }
+  // Немецкий проверяем корпусом: хотя бы одно слово должно быть существительным.
+  if (lang === 'de' && nouns) {
+    const judged = subjects.filter((w) => (nouns.tot.get(w) ?? 0) >= NOUN_MIN_SEEN);
+    if (judged.length) {
+      const isNoun = (w) => (nouns.cap.get(w) ?? 0) / nouns.tot.get(w) >= NOUN_MIN_SHARE;
+      if (!judged.some(isNoun)) {
+        return { subjects, modifiers, ok: false,
+                 reason: 'ни одно слово запроса не существительное (' + judged.join(', ')
+                         + ') — в заголовках они пишутся со строчной, это признак глагола'
+                         + ' или прилагательного, а не темы' };
+      }
+    }
   }
   return { subjects, modifiers, ok: true, reason: null };
 }
