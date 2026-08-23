@@ -377,6 +377,8 @@ function nicheStats(seedVideos, channels, thresholds) {
     // Сколько часов готового видео в неделю держит типичный состоявшийся канал.
     medianEarningMinutesPerWeek: median(seedChannels.filter((c) => c.earning).map((c) => c.minutesPerWeek)),
     ...newcomerFresh(seedVideos, channels, thresholds),
+    ...nicheDemand(seedVideos, thresholds),
+    ...demandBuckets(seedVideos, channels, thresholds),
     ...shelfLife(seedVideos, thresholds),
     // Ёмкость: на сколько роликов темы хватает тем, кто уже дошёл. Отвечает на
     // вопрос «а что я буду снимать после десятого видео».
@@ -508,6 +510,62 @@ export function videoNiches(title, index, lang) {
 // Главный вопрос ниши: сколько соберёт НОВЫЙ ролик, выпущенный сегодня
 // каналом без аудитории. Долговечность старых роликов приятна, но вторична:
 // зарабатывают на ролике в момент его выхода, а не через год.
+// Спрос на тему как таковую — по ВСЕМ каналам, а не только по молодым.
+// Ответ на вопрос «сколько тут вообще трафика», отдельно от вопроса «сколько
+// достанется мне». Одно число тут бессмысленно: в «dinosaur documentary»
+// медиана свежего ролика 546, а из 172 свежих роликов 55 взяли двадцать тысяч
+// и 21 — сто тысяч. Медиана описывает хвост, а решение принимается по голове.
+// Поэтому наружу отдаём и штуки, и форму распределения целиком.
+function nicheDemand(videos, thresholds) {
+  const fresh = videos.filter((v) =>
+    v.ageDays >= (thresholds.freshMinAgeDays ?? 7) && v.ageDays <= (thresholds.freshMaxAgeDays ?? 60));
+  if (fresh.length < (thresholds.freshMinSample ?? 10)) {
+    return { demandSample: fresh.length, demandOverWorking: 0, demandOverBreakout: 0,
+             demandBest: null, demandShape: null };
+  }
+  const sorted = fresh.map((v) => v.views).sort((a, b) => a - b);
+  return {
+    demandSample: fresh.length,
+    // Штуки, а не проценты: «55 роликов взяли двадцать тысяч» — это факт,
+    // который читается сразу, в отличие от «32% свежих роликов».
+    demandOverWorking: fresh.filter((v) => v.views >= thresholds.workingViews).length,
+    demandOverBreakout: fresh.filter((v) => v.views >= thresholds.breakoutViews).length,
+    demandBest: sorted[sorted.length - 1],
+    // Форма распределения для полоски на карточке. Одно число разброс
+    // в двадцать пять раз не передаёт, а пять — передают.
+    demandShape: [0.25, 0.5, 0.75, 0.9].map((p) => Math.round(quantile(sorted, p))),
+  };
+}
+
+// Раскладка свежих роликов по ступеням просмотров — отдельно все каналы,
+// отдельно новички с чистым стартом. Гистограмма отвечает сразу на оба вопроса:
+// есть ли в теме трафик и достаётся ли он тем, кто начинает с нуля. Средним
+// ни то, ни другое не передать.
+export const VIEW_STEPS = [
+  { lo: 0, hi: 1000, label: 'меньше 1 000' },
+  { lo: 1000, hi: 5000, label: '1 000 – 5 000' },
+  { lo: 5000, hi: 20000, label: '5 000 – 20 000' },
+  { lo: 20000, hi: 100000, label: '20 000 – 100 000' },
+  { lo: 100000, hi: Infinity, label: 'больше 100 000' },
+];
+
+function demandBuckets(videos, channels, thresholds) {
+  const fresh = videos.filter((v) =>
+    v.ageDays >= (thresholds.freshMinAgeDays ?? 7) && v.ageDays <= (thresholds.freshMaxAgeDays ?? 60));
+  if (fresh.length < (thresholds.freshMinSample ?? 10)) return { buckets: null };
+  const rows = VIEW_STEPS.map((st) => ({ label: st.label, lo: st.lo, all: 0, newcomer: 0 }));
+  for (const v of fresh) {
+    const i = VIEW_STEPS.findIndex((st) => v.views >= st.lo && v.views < st.hi);
+    if (i < 0) continue;
+    rows[i].all++;
+    const c = channels[v.channelId];
+    if (c?.cleanStart === true && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays) {
+      rows[i].newcomer++;
+    }
+  }
+  return { buckets: rows };
+}
+
 function newcomerFresh(videos, channels, thresholds) {
   const lo = thresholds.freshMinAgeDays ?? 7;      // до недели ролик ещё разгоняется
   const hi = thresholds.freshMaxAgeDays ?? 60;
@@ -550,7 +608,27 @@ function newcomerFresh(videos, channels, thresholds) {
     // Из пробившихся — сколько начинали с нуля, а не с воскрешённого аккаунта.
     // Доказательство «сюда пускают новичка» даёт только чистый старт.
     freshWinnersClean: [...winners].filter((id) => channels[id]?.cleanStart === true).length,
+    // Живой пример вместо процента: конкретный лучший ролик канала, который
+    // начинал с нуля. «Канал 44 дня, 3 230 подписчиков — 154 867 просмотров»
+    // говорит больше, чем любая медиана.
+    freshBestNewcomer: bestNewcomer(fresh, channels),
   };
+}
+
+// Лучший свежий ролик у канала, начинавшего с нуля.
+function bestNewcomer(fresh, channels) {
+  let best = null;
+  for (const v of fresh) {
+    const c = channels[v.channelId];
+    if (c?.cleanStart !== true) continue;
+    if (!best || v.views > best.views) {
+      best = { id: v.id, title: v.title, views: v.views,
+               channel: c.title ?? null, channelId: v.channelId,
+               channelAge: Math.round(c.ageDays), subs: c.subscribers ?? null,
+               age: Math.round(v.ageDays), minutes: Math.round(v.durationSec / 60) };
+    }
+  }
+  return best;
 }
 
 // Квантиль с линейной интерполяцией. Массив уже отсортирован.

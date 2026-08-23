@@ -69,6 +69,13 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         freshChannels: m.freshChannels,
         freshWinners: m.freshWinners,
         freshWinnersClean: m.freshWinnersClean,
+        freshBestNewcomer: m.freshBestNewcomer,
+        // Спрос на тему в штуках, а не в процентах, и форма распределения.
+        demandSample: m.demandSample,
+        demandOverWorking: m.demandOverWorking,
+        demandOverBreakout: m.demandOverBreakout,
+        demandBest: m.demandBest,
+        buckets: m.buckets,
         shelf: m.shelfLiveIndex ?? m.shelfIndex,
         shelfLive: m.shelfLiveIndex != null,
         shelfOldShare: m.shelfOldShare,
@@ -138,25 +145,34 @@ function plural(n, a, b, c) {
 }
 
 const nn = (x) => Math.round(x).toLocaleString('ru-RU');
+// Только слово, без числа: число уже отформатировано через nn с разделителями.
+const word = (n, a, b, c) => {
+  const m = Math.round(n) % 100, k = Math.round(n) % 10;
+  return m > 10 && m < 20 ? c : k === 1 ? a : k > 1 && k < 5 ? b : c;
+};
 
 function why(r) {
   const parts = [];
-  if (r.freshTop != null) {
-    // Сначала то, ради чего в нишу идут, потом то, что бывает у большинства.
-    parts.push(`удачный ролик у канала без аудитории берёт ${nn(r.freshTop)} просмотров `
-      + `за первые два месяца, лучший в нише — ${nn(r.freshBest)}`);
-    parts.push(`типовой при этом ${nn(r.fresh)} — половина роликов ниши проходит незамеченной`);
-  } else if (r.fresh != null) {
-    parts.push(`типовой свежий ролик у канала без аудитории собирает ${nn(r.fresh)} просмотров `
-      + `за первые два месяца, лучший — ${nn(r.freshBest)}`);
+  // Сначала спрос: сколько трафика в теме вообще. Штуками, а не средним —
+  // среднее на таком разбросе не значит ничего.
+  if (r.demandSample) {
+    parts.push(`за два месяца в теме вышло ${nn(r.demandSample)} свежих `
+      + word(r.demandSample, 'ролик', 'ролика', 'роликов')
+      + `, ${nn(r.demandOverWorking)} из них взяли 20 тысяч`
+      + (r.demandOverBreakout ? `, ${nn(r.demandOverBreakout)} — сто тысяч` : '')
+      + `, лучший собрал ${nn(r.demandBest)}`);
   }
-  if (r.freshWinners) {
-    const clean = r.freshWinnersClean ?? r.freshWinners;
-    parts.push(`планку в 20 тысяч взяли ${r.freshWinners} из ${r.freshChannels} `
-      + plural(r.freshChannels, 'молодого канала', 'молодых каналов', 'молодых каналов').replace(/^\d+\s/, '')
-      + (clean < r.freshWinners
-          ? `, но с нуля начинали только ${clean} — остальные подняли старый аккаунт`
-          : ', и все начинали с нуля'));
+  // Потом доступность: достаётся ли этот трафик тому, кто начинает с нуля.
+  const b = r.freshBestNewcomer;
+  if (b) {
+    parts.push(`лучшее у канала, начинавшего с нуля, — ${nn(b.views)} `
+      + word(b.views, 'просмотр', 'просмотра', 'просмотров')
+      + ` на ${nn(b.channelAge)}-й день жизни канала`);
+  }
+  if (r.freshChannels) {
+    parts.push(`из ${nn(r.freshChannels)} `
+      + word(r.freshChannels, 'такого канала', 'таких каналов', 'таких каналов')
+      + ` планку в 20 тысяч взяли ${r.freshWinnersClean ?? 0}`);
   }
   parts.push(`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`);
   if (r.mature) parts.push(`${r.mature} доросли до полной цели`);

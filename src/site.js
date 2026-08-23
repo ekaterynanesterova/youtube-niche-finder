@@ -480,6 +480,33 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
 .chat button:hover{border-color:var(--brand)}
 .chat .said{color:var(--good)}
 .warm{color:var(--mid);font-size:11px}
+/* Гистограмма ступеней просмотров. Цвета проверены валидатором на тёмном фоне:
+   полоса яркости, порог насыщенности, различимость при дальтонизме и контраст
+   к подложке. Плюс подписи числом у каждой полосы — цвет не единственный
+   носитель смысла. */
+.hist{margin:14px 0 4px}
+.hist .lg{display:flex;gap:16px;align-items:center;margin-bottom:10px;
+  font-size:12px;color:var(--dim)}
+.hist .lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;
+  vertical-align:-1px;font-style:normal}
+.hist .lg .a{background:#3b82f6}
+.hist .lg .b{background:#16a34a}
+.hrow{display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:center;padding:5px 0}
+.hrow > span{color:var(--dim);font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums}
+.htrack{display:flex;flex-direction:column;gap:2px;min-width:0}
+.hbar{display:flex;align-items:center;gap:8px}
+.hbar i{display:block;height:9px;border-radius:0 4px 4px 0;min-width:2px}
+.hbar .a{background:#3b82f6}
+.hbar .b{background:#16a34a}
+.hbar b{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
+.hbar em{font-size:12px;font-style:normal;color:var(--dim)}
+.hnote{color:var(--dim);font-size:12.5px;line-height:1.5;margin:10px 0 0}
+.example{margin:14px 0 0;padding:12px 14px;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;font-size:13.5px;line-height:1.5}
+.example b{color:var(--good)}
+.example a{color:var(--ink);text-decoration:none}
+.example a:hover{color:var(--brand)}
+.example span{color:var(--dim);font-size:12.5px}
 .fnote{color:var(--dim);font-size:13.5px;line-height:1.55;max-width:78ch;margin:16px 0 0}
 .fgrid{display:grid;gap:18px;margin-top:20px}
 .fbox{background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
@@ -592,22 +619,20 @@ footer b{color:var(--ink)}
         <dt>Брать первым</dt>
         <dd>Пометка на верхней карточке. Означает только одно: по собранным цифрам эта ниша выглядит лучше остальных <b>сегодня</b>. Это не рекомендация запускать канал не глядя — сначала надо открыть примеры и посмотреть, из чего сделаны ролики.</dd>
 
-        <dt>Берёт удачный ролик у новичка за 2 месяца</dt>
-        <dd>Главное число на странице. Берём ролики, вышедшие от недели до двух месяцев назад <b>на каналах моложе года</b>, и смотрим на верхнюю четверть по просмотрам. Это <b>всего просмотров за всю жизнь ролика</b>, а не за сутки: ролику от 7 до 60 дней, и столько он набрал суммарно.
-        <br><br>Почему четверть, а не середина. Распределение здесь степенное. В «antarctica» из 51 свежего ролика верхний собрал 566 558, нижний — 7, а середина 2 462. Медиана описывает поток однотипных роликов, которых в любой нише большинство, — но снимать их мы не собираемся. Верхняя четверть отвечает на настоящий вопрос: сколько берёт видео, которое <b>получилось</b>.</dd>
+        <dt>Свежих роликов взяли 20 тысяч</dt>
+        <dd>Главное число. Берём все ролики темы, вышедшие от недели до двух месяцев назад — <b>по всем каналам, а не только по молодым</b>, — и считаем, сколько из них перевалило за двадцать тысяч просмотров. Просмотры тут за всю жизнь ролика, а не за сутки.
+        <br><br>Раньше здесь стояло одно усреднённое число, и оно врало по форме. Разброс внутри ниши доходит до двадцати пяти раз: в «dinosaur documentary» середина свежего ролика — 546 просмотров, при том что 55 роликов из 172 взяли двадцать тысяч, а 21 взял сто тысяч. Любое среднее такую картину прячет, и ниша с настоящим трафиком выглядела мёртвой.</dd>
 
-        <dt>У типового ролика за те же 2 месяца</dt>
-        <dd>Медиана той же выборки — что бывает, если делать как все. Разрыв между удачным и типовым и есть цена качества. В «dinosaur documentary» типовой ролик берёт 982 просмотра, удачный — 14 239, лучший — 893 401.
-        <br><br>Большой разрыв — не приговор нише, а её описание: там много каналов, штампующих однотипные ролики, и попасть в верхнюю четверть означает просто не быть одним из них.</dd>
+        <dt>Гистограмма ступеней</dt>
+        <dd>Раскладка тех же свежих роликов по ступеням просмотров. Синим — все каналы, зелёным — только те, что начинали с нуля и моложе года.
+        <br><br>Читать её надо так. Синие полосы справа — есть ли в теме трафик вообще. Зелёные под ними — достаётся ли он тому, кто начинает без аудитории. Если зелёная полоса в верхних ступенях есть, значит новичок туда доходит; если её там нет совсем, трафик в теме держат старожилы.</dd>
 
-        <dt>Каналов с нуля взяли 20 тысяч</dt>
-        <dd>Сколько <b>разных</b> каналов моложе года выпустили за эти два месяца хотя бы один ролик выше 20 тысяч просмотров — из общего числа молодых каналов, работающих в нише.
-        <br><br>Считается по каналам, а не по роликам, намеренно. Один канал, заливший тридцать видео, сам себе сделает любой процент; а вопрос в том, у скольких <b>разных</b> новичков получилось.
-        <br><br>И считаются только каналы с <b>чистым стартом</b>. «Моложе года» меряется от первой загрузки, а четверть таких каналов — воскрешённые аккаунты: первый ролик полгода назад, регистрация двенадцать лет назад. У них мог остаться прежний зритель и прежние подписчики, и доказательством «сюда пускают новичка» они не являются. Ben Azelart Top Videos числится «моложе года» с 1.76 млн подписчиков ровно по этой причине.
-        <br><br>Чистым стартом считается канал, у которого между регистрацией и первым роликом прошло не больше полугода. В таблице конкурентов остальные помечены «аккаунт простоял N дн», рядом стоит строка «из них подняли старый аккаунт».</dd>
+        <dt>Лучшее у канала, начинавшего с нуля</dt>
+        <dd>Не процент, а конкретный ролик — самый успешный свежий ролик канала с чистым стартом, со ссылкой. Рядом стоят возраст канала и число подписчиков: по ним видно, что результат не заслуга накопленной аудитории.
+        <br><br>Это ответ на вопрос «а какой у меня потолок на старте» в той форме, в какой на него вообще можно ответить: показать живой пример, а не среднее по больнице.</dd>
 
-        <dt>Лучший свежий ролик в нише</dt>
-        <dd>Потолок: сколько собрал самый успешный ролик молодого канала за последние два месяца. Не обещание, а верхняя граница того, что в этой теме случается.</dd>
+        <dt>Лучший свежий ролик темы</dt>
+        <dd>Потолок по всем каналам, включая крупные. Разрыв между ним и лучшим у новичка показывает, насколько тема держится на накопленной аудитории.</dd>
 
         <dt>Новичков уже зарабатывают</dt>
         <dd>Сколько каналов моложе года приносят хоть сколько-нибудь заметные деньги. Судить двухмесячный канал целью в $2000 бессмысленно — у него десять роликов. Важно другое: формат сработал у новичка, значит сработает и у тебя.</dd>
@@ -833,10 +858,12 @@ document.getElementById('hero').innerHTML = lead
     + '<h1>' + lead.query + '</h1>'
     + (lead.ru ? '<div class="heroru">' + lead.ru + '</div>' : '')
     + '<div class="nums">'
-    + '<div><b>' + num(lead.freshTop ?? lead.fresh) + '</b><span>берёт удачный ролик у новичка за 2 месяца</span></div>'
-    + '<div><b>' + (lead.freshWinnersClean ?? lead.freshWinners ?? 0) + ' из ' + (lead.freshChannels ?? 0)
-      + '</b><span>каналов с нуля взяли 20 тысяч</span></div>'
-    + '<div><b>' + lead.young + '</b><span>новичков уже зарабатывают</span></div>'
+    + '<div><b>' + num(lead.demandOverWorking) + ' из ' + num(lead.demandSample)
+      + '</b><span>свежих роликов взяли 20 тысяч</span></div>'
+    + '<div><b>' + num(lead.freshBestNewcomer ? lead.freshBestNewcomer.views : lead.freshBest)
+      + '</b><span>лучшее у канала, начинавшего с нуля</span></div>'
+    + '<div><b>' + (lead.freshWinnersClean ?? 0) + ' из ' + (lead.freshChannels ?? 0)
+      + '</b><span>таких каналов взяли 20 тысяч</span></div>'
     + '</div>'
   : '<h1>Где дверь открыта</h1><div class="heroru">Данных пока мало — ни одна ниша не набрала достаточно.</div>';
 
@@ -962,6 +989,38 @@ if (cand.length || prom.length) {
     '</div>';
 }
 
+// Гистограмма ступеней просмотров. Средним разброс в двадцать пять раз не
+// передать: в динозаврах медиана свежего ролика 546, а 55 роликов из 172 взяли
+// двадцать тысяч и 21 — сто тысяч. Показываем сразу и объём трафика в теме,
+// и то, сколько его достаётся тем, кто начинает с нуля.
+function histogram(rows, sample) {
+  if (!rows || !rows.length) return '';
+  const max = Math.max(...rows.map(r => r.all), 1);
+  const w = (n) => Math.max(2, Math.round((n / max) * 100)) + '%';
+  return '<div class="hist">'
+    + '<div class="lg"><span><i class="a"></i>все каналы</span>'
+    + '<span><i class="b"></i>каналы с нуля моложе года</span></div>'
+    + rows.map(r =>
+        '<div class="hrow"><span>' + r.label + '</span><div class="htrack">'
+        + '<div class="hbar"><i class="a" style="width:' + w(r.all) + '"></i><b>' + r.all + '</b></div>'
+        + '<div class="hbar"><i class="b" style="width:' + w(r.newcomer) + '"></i><em>'
+        + r.newcomer + '</em></div>'
+        + '</div></div>').join('')
+    + '<p class="hnote">Свежие ролики темы — вышедшие от недели до двух месяцев назад, '
+    + 'всего ' + num(sample) + '. Считаются штуки, а не проценты: '
+    + 'по ним видно и сколько в теме трафика, и кому он достаётся.</p>'
+    + '</div>';
+}
+
+function newcomerExample(b) {
+  if (!b) return '';
+  return '<div class="example">Лучшее, что сделал новичок с нуля: '
+    + '<a href="https://youtube.com/watch?v=' + b.id + '" target="_blank" rel="noopener">'
+    + b.title + '</a><br><b>' + num(b.views) + ' просмотров</b> <span>· ролику ' + b.age + ' дн · '
+    + b.minutes + ' мин · канал «' + (b.channel || '—') + '», ему ' + num(b.channelAge) + ' дн, '
+    + num(b.subs) + ' подписчиков</span></div>';
+}
+
 // --- вкладка «Вывод» ---
 function drawVerdict() {
   const V = P.verdict ?? [];
@@ -971,12 +1030,10 @@ function drawVerdict() {
     return;
   }
   const money = (r) => [
-    [num(r.freshTop ?? r.fresh), 'берёт удачный ролик у новичка за 2 месяца'],
-    [num(r.fresh), 'у типового ролика за те же 2 месяца'],
-    [num(r.freshBest), 'лучший свежий ролик в нише'],
+    [num(r.demandOverWorking) + ' из ' + num(r.demandSample), 'свежих роликов взяли 20 тысяч'],
+    [num(r.demandOverBreakout), 'из них взяли 100 тысяч'],
+    [num(r.demandBest), 'лучший свежий ролик темы'],
     [(r.freshWinnersClean ?? 0) + ' из ' + (r.freshChannels ?? 0), 'каналов с нуля взяли 20 тысяч'],
-    [(r.freshWinners ?? 0) - (r.freshWinnersClean ?? 0) || '—', 'из них подняли старый аккаунт'],
-    [pct(r.freshOver20k), 'свежих роликов берут 20 тысяч и выше'],
     [r.young + '', 'новичков уже зарабатывают'],
     ['$' + num(r.usd), 'в месяц у среднего новичка'],
     [r.mature ? r.mature + '' : '—', 'выросли до $2000+'],
@@ -997,6 +1054,8 @@ function drawVerdict() {
       '<h4>' + r.query + (r.ru ? ' <em>' + r.ru + '</em>' : '') + '</h4>' +
       '<div class="mk">' + r.market + ' рынок · ' + r.group + '</div>' +
       '<div class="money">' + money(r) + '</div>' +
+      histogram(r.buckets, r.demandSample) +
+      newcomerExample(r.freshBestNewcomer) +
       '<p><span class="lab">почему сейчас:</span> ' + r.why + '</p>' +
       '<p><span class="lab">риск:</span> ' + r.risk + '</p>' +
       (r.adLimited

@@ -619,5 +619,46 @@ check('списки служебных слов разные', stopWords('en').h
     st.youngOutlierChannels === 2 && st.youngCleanChannels === 1);
 }
 
+// --- спрос темы считается по ВСЕМ каналам, а не только по молодым ---
+// Одно усреднённое число врало по форме: разброс внутри ниши доходит до
+// двадцати пяти раз, и ниша с настоящим трафиком выглядела мёртвой.
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const channels = {
+    big: { id: 'big', seeds: ['open'], markets: ['de'], firstUploadAt: day(3000),
+           firstUploadComplete: true, publishedAt: day(3000) },
+    small: { id: 'small', seeds: ['open'], markets: ['de'], firstUploadAt: day(100),
+             firstUploadComplete: true, publishedAt: day(105) },
+  };
+  const videos = {}, current = {};
+  // Старый канал: 10 роликов по 200 000. Новичок: 9 по 100 и один на 150 000.
+  for (let i = 0; i < 10; i++) {
+    videos['B' + i] = { id: 'B' + i, channelId: 'big', title: 'offen B' + i,
+                        publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
+    current['B' + i] = [200000, 100, 10];
+    videos['S' + i] = { id: 'S' + i, channelId: 'small', title: 'offen S' + i,
+                        publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
+    current['S' + i] = [i === 0 ? 150000 : 100, 10, 1];
+  }
+  const mm = computeMetrics({ db: { channels, videos, current }, seeds, thresholds,
+                              snapshots: [], now, primaryLang: 'de' });
+  const st = mm.niches.open.byMarket.de;
+  check('спрос считается по всем каналам', st.demandSample === 20);
+  check('штуки, а не проценты', st.demandOverWorking === 11 && st.demandOverBreakout === 11);
+  check('потолок темы — по всем каналам', st.demandBest === 200000);
+  check('ступени покрывают всю выборку',
+    st.buckets.reduce((n, b) => n + b.all, 0) === 20);
+  check('в ступенях отдельно видны новички',
+    st.buckets.find((b) => b.lo === 100000).newcomer === 1
+    && st.buckets.find((b) => b.lo === 0).newcomer === 9);
+  check('старый канал в счёт новичков не идёт',
+    st.buckets.reduce((n, b) => n + b.newcomer, 0) === 10);
+  const b = st.freshBestNewcomer;
+  check('живой пример — лучший ролик новичка, а не старого канала',
+    b && b.views === 150000 && b.channelId === 'small');
+  check('в примере есть возраст канала и подписчики',
+    b.channelAge != null && 'subs' in b);
+}
+
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);
