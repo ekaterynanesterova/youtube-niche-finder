@@ -12,6 +12,15 @@ function ageDays(ch, now) {
   return basis ? daysBetween(basis, now) : null;
 }
 
+// Простой аккаунта до первой загрузки.
+function dormancy(ch, now, thresholds) {
+  if (!ch.firstUploadComplete || !ch.publishedAt || !ch.firstUploadAt) {
+    return { dormantDays: null, cleanStart: null };
+  }
+  const dormantDays = Math.max(0, daysBetween(ch.publishedAt, ch.firstUploadAt));
+  return { dormantDays, cleanStart: dormantDays <= (thresholds.dormantStartDays ?? 180) };
+}
+
 // Смысл ниши — деньги, а не проценты. Цель задана в долларах в месяц;
 // из неё и RPM получается порог просмотров, и уже он решает, состоялся канал
 // или нет. Кратность к медиане тут бесполезна: у мёртвого канала она
@@ -130,6 +139,14 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       // Дата регистрации отдельно: канал могли завести годами раньше и держать
       // пустым — так делают, когда «прогревают» аккаунт перед запуском.
       registeredDays: ch.publishedAt ? daysBetween(ch.publishedAt, now) : null,
+      // Сколько аккаунт простоял пустым до первой загрузки. Канал, у которого
+      // первая загрузка полгода назад, а регистрация двенадцать лет назад, —
+      // это не новичок, а перезапуск: у него мог остаться прежний зритель,
+      // прежние подписчики и прежний вес у алгоритма. Ben Azelart Top Videos
+      // с 1.76 млн подписчиков «моложе года» ровно по этой причине.
+      // Считаем только когда архив долистан: иначе возраст и есть регистрация,
+      // разрыв выйдет нулевым и любой канал прикинется чистым стартом.
+      ...dormancy(ch, now, thresholds),
       medianViews, matureCount,
       ...hitProfile(vids, thresholds, now),
       lang: dominantLang(vids, ch.markets ?? []),
@@ -300,6 +317,7 @@ function nicheStats(seedVideos, channels, thresholds) {
   const outlierChannels = started.map((c) => c.id);
   const youngOutlierChannels = outlierChannels.filter((id) =>
     channels[id]?.ageDays != null && channels[id].ageDays <= thresholds.youngChannelDays);
+  const youngCleanChannels = youngOutlierChannels.filter((id) => channels[id]?.cleanStart === true);
   // Отдельно — кто уже дотянул до полной цели, любого возраста.
   const matureChannels = seedChannels.filter((c) => c.earning);
   const lotteryChannels = seedChannels.filter((c) => c.lottery);
@@ -323,6 +341,7 @@ function nicheStats(seedVideos, channels, thresholds) {
     // канал бывает «проклятым» независимо от ниши, и наоборот. Повторяемость на
     // нескольких каналах — единственное, что отличает открытую дверь от случайности.
     youngOutlierChannels: youngOutlierChannels.length,
+    youngCleanChannels: youngCleanChannels.length,
     // Главная метрика: доля выбросов, приходящаяся на молодые каналы.
     permeability: share(youngOutlierChannels.length, outlierChannels.length),
     medianViews: median(seedVideos.map((v) => v.views)),
@@ -500,7 +519,7 @@ function newcomerFresh(videos, channels, thresholds) {
   if (fresh.length < (thresholds.freshMinSample ?? 10)) {
     return { freshViews: null, freshTop: null, freshBest: null, freshOverWorking: null,
              freshOverBreakout: null, freshSample: fresh.length,
-             freshChannels: 0, freshWinners: 0 };
+             freshChannels: 0, freshWinners: 0, freshWinnersClean: 0 };
   }
   const share = (n) => fresh.filter((v) => v.views >= n).length / fresh.length;
   const sorted = fresh.map((v) => v.views).sort((a, b) => a - b);
@@ -528,6 +547,9 @@ function newcomerFresh(videos, channels, thresholds) {
     // РАЗНЫХ новичков получилось.
     freshChannels: chans.size,
     freshWinners: winners.size,
+    // Из пробившихся — сколько начинали с нуля, а не с воскрешённого аккаунта.
+    // Доказательство «сюда пускают новичка» даёт только чистый старт.
+    freshWinnersClean: [...winners].filter((id) => channels[id]?.cleanStart === true).length,
   };
 }
 

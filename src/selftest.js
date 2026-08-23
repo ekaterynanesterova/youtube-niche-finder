@@ -572,5 +572,52 @@ check('списки служебных слов разные', stopWords('en').h
     st.freshOverWorking < st.freshWinners / st.freshChannels);
 }
 
+// --- старый канал под видом нового ---
+// «Моложе года» меряется от первой загрузки. Аккаунт, заведённый двенадцать лет
+// назад и оживший полгода назад, проходит как новичок — хотя у него мог
+// остаться прежний зритель. Такие не должны идти в доказательство
+// «сюда пускают новичка».
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const chan = (id, first, reg, complete = true) => ({
+    id, seeds: ['open'], markets: ['de'],
+    firstUploadAt: day(first), firstUploadComplete: complete, publishedAt: day(reg),
+  });
+  const channels = {
+    fresh: chan('fresh', 100, 110),      // завели и сразу начали
+    warm: chan('warm', 100, 4000),       // аккаунт простоял одиннадцать лет
+    unknown: chan('unknown', 100, 4000, false), // архив не долистан
+  };
+  const videos = {}, current = {};
+  for (const id of ['fresh', 'warm', 'unknown']) {
+    for (let i = 0; i < 12; i++) {
+      videos[id + i] = { id: id + i, channelId: id, title: 'offen ' + id + i,
+                         publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
+      current[id + i] = [90000, 100, 10];
+    }
+  }
+  const mm = computeMetrics({ db: { channels, videos, current }, seeds, thresholds,
+                              snapshots: [], now, primaryLang: 'de' });
+  check('канал, заведённый перед стартом, — чистый старт',
+    mm.channels.fresh.cleanStart === true && mm.channels.fresh.dormantDays < 30);
+  check('оживший старый аккаунт помечен перезапуском',
+    mm.channels.warm.cleanStart === false && Math.round(mm.channels.warm.dormantDays) === 3900);
+  check('оба канала с долистанным архивом считаются молодыми',
+    mm.channels.fresh.ageDays <= thresholds.youngChannelDays
+    && mm.channels.warm.ageDays <= thresholds.youngChannelDays);
+  // Архив не долистан — возраст берётся от регистрации, и канал уходит
+  // в старые. Это безопасная сторона ошибки: лучше не засчитать новичка,
+  // чем выдать старожила за новичка.
+  check('без долистанного архива канал молодым не считается',
+    mm.channels.unknown.ageDays > thresholds.youngChannelDays);
+  check('без долистанного архива о простое не судим',
+    mm.channels.unknown.cleanStart === null && mm.channels.unknown.dormantDays === null);
+  const st = mm.niches.open.byMarket.de;
+  check('планку взяли оба молодых канала', st.freshWinners === 2);
+  check('в доказательство идут только чистые старты', st.freshWinnersClean === 1);
+  check('молодые с доходом тоже разделены',
+    st.youngOutlierChannels === 2 && st.youngCleanChannels === 1);
+}
+
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

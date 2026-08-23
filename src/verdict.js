@@ -44,6 +44,7 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         market: MARKET[lang] ?? lang,
         query: n.queries[lang] ?? n.id,
         young: m.youngOutlierChannels,
+        youngClean: m.youngCleanChannels,
         total: m.outlierChannels,
         nicheChannels: m.channels,
         searches: n.searches,
@@ -67,6 +68,7 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         freshSample: m.freshSample,
         freshChannels: m.freshChannels,
         freshWinners: m.freshWinners,
+        freshWinnersClean: m.freshWinnersClean,
         shelf: m.shelfLiveIndex ?? m.shelfIndex,
         shelfLive: m.shelfLiveIndex != null,
         shelfOldShare: m.shelfOldShare,
@@ -103,8 +105,14 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   //
   // Повторяемость считаем по каналам, а не по роликам: один канал, заливший
   // тридцать штук, сам себе делает любой процент.
+  //
+  // Повторяемость считаем по каналам с ЧИСТЫМ стартом. Четверть «молодых»
+  // каналов — это воскрешённые аккаунты: первая загрузка полгода назад,
+  // регистрация двенадцать лет назад. У них мог остаться прежний зритель, и
+  // доказательством «сюда пускают новичка» они не являются.
   const upside = (r) => r.freshTop ?? r.fresh ?? 0;
-  const repeat = (r) => (r.freshChannels ? (r.freshWinners ?? 0) / r.freshChannels : 0);
+  const repeat = (r) => (r.freshChannels
+    ? (r.freshWinnersClean ?? r.freshWinners ?? 0) / r.freshChannels : 0);
   rows.sort((a, b) => (upside(b) * (0.5 + repeat(b))) - (upside(a) * (0.5 + repeat(a))));
 
   for (const r of rows) {
@@ -143,8 +151,12 @@ function why(r) {
       + `за первые два месяца, лучший — ${nn(r.freshBest)}`);
   }
   if (r.freshWinners) {
+    const clean = r.freshWinnersClean ?? r.freshWinners;
     parts.push(`планку в 20 тысяч взяли ${r.freshWinners} из ${r.freshChannels} `
-      + plural(r.freshChannels, 'молодого канала', 'молодых каналов', 'молодых каналов').replace(/^\d+\s/, ''));
+      + plural(r.freshChannels, 'молодого канала', 'молодых каналов', 'молодых каналов').replace(/^\d+\s/, '')
+      + (clean < r.freshWinners
+          ? `, но с нуля начинали только ${clean} — остальные подняли старый аккаунт`
+          : ', и все начинали с нуля'));
   }
   parts.push(`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`);
   if (r.mature) parts.push(`${r.mature} доросли до полной цели`);

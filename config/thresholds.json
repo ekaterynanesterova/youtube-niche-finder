@@ -42,5 +42,6 @@
   "snapshotTailUnits": 400,
   "topicAdjacencyMin": 0.03,
   "topicAdjacencyMinSample": 20,
-  "freshTopMinSample": 20
+  "freshTopMinSample": 20,
+  "dormantStartDays": 180
 }

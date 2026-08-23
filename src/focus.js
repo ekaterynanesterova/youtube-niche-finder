@@ -111,10 +111,14 @@ export function buildFocus({ metrics, snapshots, seeds, focus }) {
       const wasShare = older.length ? (oc.get(p) ?? 0) / older.length : 0;
       const nowShare = recent.length ? n / recent.length : 0;
       const gain = recent.filter((r) => r.title.toLowerCase().includes(p)).reduce((s, r) => s + (r.perDay ?? 0), 0);
+      // Раньше здесь стояла Infinity для связки, которой в старых роликах нет
+      // вовсе. JSON.stringify превращает Infinity в null, на странице
+      // isFinite(null) — истина, и вёрстка падала на null.toFixed(). Связку
+      // без прошлого отмечаем честным null.
       return { phrase: p, videos: n, nowShare, wasShare,
-               lift: wasShare > 0 ? nowShare / wasShare : (nowShare > 0 ? Infinity : 0), perDay: gain };
+               lift: wasShare > 0 ? nowShare / wasShare : null, perDay: gain };
     })
-    .filter((x) => x.lift >= 1.8)
+    .filter((x) => x.lift == null || x.lift >= 1.8)
     .sort((a, b) => b.perDay - a.perDay)
     .slice(0, 14);
 

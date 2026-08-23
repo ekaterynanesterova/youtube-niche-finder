@@ -99,6 +99,8 @@ export function buildPayload(m, seeds, thresholds, db = {}, focus = null) {
           // профильный канал, хотя роликов у него 12 305.
           inNiche: vs.length, videos: c.catalogCount ?? c.videoCount,
           partial: !!c.catalogPartial,
+          dormant: c.dormantDays == null ? null : Math.round(c.dormantDays),
+          clean: c.cleanStart,
           usd: Math.round(c.monthlyUsd ?? 0),
           fresh: fresh.length >= 2 ? med(fresh.map((v) => v.views)) : null,
           best: Math.max(...vs.map((v) => v.views)),
@@ -477,6 +479,7 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
   font-size:13px;cursor:pointer}
 .chat button:hover{border-color:var(--brand)}
 .chat .said{color:var(--good)}
+.warm{color:var(--mid);font-size:11px}
 .fnote{color:var(--dim);font-size:13.5px;line-height:1.55;max-width:78ch;margin:16px 0 0}
 .fgrid{display:grid;gap:18px;margin-top:20px}
 .fbox{background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
@@ -597,9 +600,11 @@ footer b{color:var(--ink)}
         <dd>Медиана той же выборки — что бывает, если делать как все. Разрыв между удачным и типовым и есть цена качества. В «dinosaur documentary» типовой ролик берёт 982 просмотра, удачный — 14 239, лучший — 893 401.
         <br><br>Большой разрыв — не приговор нише, а её описание: там много каналов, штампующих однотипные ролики, и попасть в верхнюю четверть означает просто не быть одним из них.</dd>
 
-        <dt>Молодых каналов взяли 20 тысяч</dt>
+        <dt>Каналов с нуля взяли 20 тысяч</dt>
         <dd>Сколько <b>разных</b> каналов моложе года выпустили за эти два месяца хотя бы один ролик выше 20 тысяч просмотров — из общего числа молодых каналов, работающих в нише.
-        <br><br>Считается по каналам, а не по роликам, намеренно. Один канал, заливший тридцать видео, сам себе сделает любой процент; а вопрос в том, у скольких <b>разных</b> новичков получилось. «12 из 32» — это доказательство, что дверь открыта не одному везунчику.</dd>
+        <br><br>Считается по каналам, а не по роликам, намеренно. Один канал, заливший тридцать видео, сам себе сделает любой процент; а вопрос в том, у скольких <b>разных</b> новичков получилось.
+        <br><br>И считаются только каналы с <b>чистым стартом</b>. «Моложе года» меряется от первой загрузки, а четверть таких каналов — воскрешённые аккаунты: первый ролик полгода назад, регистрация двенадцать лет назад. У них мог остаться прежний зритель и прежние подписчики, и доказательством «сюда пускают новичка» они не являются. Ben Azelart Top Videos числится «моложе года» с 1.76 млн подписчиков ровно по этой причине.
+        <br><br>Чистым стартом считается канал, у которого между регистрацией и первым роликом прошло не больше полугода. В таблице конкурентов остальные помечены «аккаунт простоял N дн», рядом стоит строка «из них подняли старый аккаунт».</dd>
 
         <dt>Лучший свежий ролик в нише</dt>
         <dd>Потолок: сколько собрал самый успешный ролик молодого канала за последние два месяца. Не обещание, а верхняя граница того, что в этой теме случается.</dd>
@@ -829,8 +834,8 @@ document.getElementById('hero').innerHTML = lead
     + (lead.ru ? '<div class="heroru">' + lead.ru + '</div>' : '')
     + '<div class="nums">'
     + '<div><b>' + num(lead.freshTop ?? lead.fresh) + '</b><span>берёт удачный ролик у новичка за 2 месяца</span></div>'
-    + '<div><b>' + (lead.freshWinners ?? 0) + ' из ' + (lead.freshChannels ?? 0)
-      + '</b><span>молодых каналов взяли 20 тысяч</span></div>'
+    + '<div><b>' + (lead.freshWinnersClean ?? lead.freshWinners ?? 0) + ' из ' + (lead.freshChannels ?? 0)
+      + '</b><span>каналов с нуля взяли 20 тысяч</span></div>'
     + '<div><b>' + lead.young + '</b><span>новичков уже зарабатывают</span></div>'
     + '</div>'
   : '<h1>Где дверь открыта</h1><div class="heroru">Данных пока мало — ни одна ниша не набрала достаточно.</div>';
@@ -969,7 +974,8 @@ function drawVerdict() {
     [num(r.freshTop ?? r.fresh), 'берёт удачный ролик у новичка за 2 месяца'],
     [num(r.fresh), 'у типового ролика за те же 2 месяца'],
     [num(r.freshBest), 'лучший свежий ролик в нише'],
-    [(r.freshWinners ?? 0) + ' из ' + (r.freshChannels ?? 0), 'молодых каналов взяли 20 тысяч'],
+    [(r.freshWinnersClean ?? 0) + ' из ' + (r.freshChannels ?? 0), 'каналов с нуля взяли 20 тысяч'],
+    [(r.freshWinners ?? 0) - (r.freshWinnersClean ?? 0) || '—', 'из них подняли старый аккаунт'],
     [pct(r.freshOver20k), 'свежих роликов берут 20 тысяч и выше'],
     [r.young + '', 'новичков уже зарабатывают'],
     ['$' + num(r.usd), 'в месяц у среднего новичка'],
@@ -1029,14 +1035,18 @@ function drawVerdict() {
               '<tr class="' + (c.young ? 'y' : '') + '">'
               + '<td><a href="https://youtube.com/channel/' + c.id + '" target="_blank" rel="noopener">'
               + (c.title || '') + '</a></td>'
-              + '<td>' + (c.age == null ? '—' : num(c.age) + ' дн' + (c.exact ? '' : '?')) + '</td>'
+              + '<td>' + (c.age == null ? '—' : num(c.age) + ' дн' + (c.exact ? '' : '?'))
+                + (c.clean === false
+                    ? '<br><span class="warm">аккаунт простоял ' + num(c.dormant) + ' дн</span>' : '')
+                + '</td>'
               + '<td>' + c.inNiche + ' из ' + num(c.videos) + '</td>'
               + '<td>' + (c.fresh == null ? '—' : num(c.fresh)) + '</td>'
               + '<td>' + num(c.best) + '</td>'
               + '<td>$' + num(c.usd) + '</td>'
               + '<td>' + (c.subs == null ? '—' : num(c.subs)) + '</td></tr>').join('')
           + '</table><p class="hint">Зелёным — каналы моложе года. «Свежий ролик» — медиана '
-          + 'по роликам возрастом от недели до двух месяцев.</p></details>'
+          + 'по роликам возрастом от недели до двух месяцев. Пометка «аккаунт простоял» значит, '
+          + 'что канал завели задолго до первого ролика: это перезапуск, а не новичок с нуля.</p></details>'
         : '') +
       '</div>').join('') +
     ((P.pending ?? []).length
@@ -1138,8 +1148,8 @@ function drawFocus() {
     + (F.hot.length ? box('Формулировки в ходу',
         'Связки слов, доля которых среди свежих роликов выросла минимум в 1.8 раза против старых. Это не темы, а язык заголовков: чем сейчас цепляют. Рядом — сколько просмотров в сутки идёт на ролики с такой связкой.',
         '<div class="chips">' + F.hot.map(h =>
-          '<div class="' + (h.lift === null || !isFinite(h.lift) ? 'new' : '') + '"><b>' + h.phrase + '</b>'
-          + '<span>' + (isFinite(h.lift) ? '×' + h.lift.toFixed(1) : 'ново') + ' · ' + h.videos + ' видео · +'
+          '<div class="' + (h.lift == null ? 'new' : '') + '"><b>' + h.phrase + '</b>'
+          + '<span>' + (h.lift == null ? 'ново' : '×' + h.lift.toFixed(1)) + ' · ' + h.videos + ' видео · +'
           + num(h.perDay) + '/сут</span></div>').join('') + '</div>') : '')
     + (F.channels.length ? box('Кто работает в теме',
         'Отсортировано по суточному приросту всех роликов канала внутри темы, а не по подписчикам. Зелёной чертой отмечены каналы моложе года.',
