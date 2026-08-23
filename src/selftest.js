@@ -5,7 +5,7 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
-import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence } from './metrics.js';
+import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
@@ -526,6 +526,50 @@ check('списки служебных слов разные', stopWords('en').h
   check('вертикальная черта в заголовке экранирована', !!line);
   check('в строке таблицы ровно столько столбцов, сколько в шапке',
     !!line && (line.match(/(?<!\\)\|/g) || []).length === 7);
+}
+
+// --- верх распределения, а не только середина ---
+// Медиана на степенном распределении описывает поток однотипных роликов, а не
+// то, чего можно добиться: в «antarctica» верхний свежий ролик собрал 566 558,
+// нижний 7, медиана 2 462. Считаем и верхнюю четверть, и потолок, и — главное —
+// повторяемость по РАЗНЫМ каналам.
+{
+  check('квантиль на краях', quantile([1, 2, 3, 4, 5], 0) === 1 && quantile([1, 2, 3, 4, 5], 1) === 5);
+  check('верхняя четверть считается с интерполяцией', quantile([1, 2, 3, 4, 5], 0.75) === 4);
+  check('медиана и квантиль сходятся', quantile([1, 2, 3, 4, 5], 0.5) === 3);
+  check('пустой массив не ломает', quantile([], 0.5) === null);
+
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  // 24 свежих ролика: 16 слабых у одного конвейера и 8 сильных у восьми разных
+  // новичков. Медиана обязана остаться низкой, верхняя четверть — подняться,
+  // а повторяемость считаться по каналам: 8 из 9, а не 8 из 24.
+  const channels = { farm: { id: 'farm', seeds: ['open'], markets: ['de'],
+                             firstUploadAt: day(100), firstUploadComplete: true, publishedAt: day(100) } };
+  const videos = {}, current = {};
+  for (let i = 0; i < 16; i++) {
+    videos['f' + i] = { id: 'f' + i, channelId: 'farm', title: 'offen f' + i,
+                        publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
+    current['f' + i] = [300, 1, 1];
+  }
+  for (let i = 0; i < 8; i++) {
+    const cid = 'good' + i;
+    channels[cid] = { id: cid, seeds: ['open'], markets: ['de'], firstUploadAt: day(120),
+                      firstUploadComplete: true, publishedAt: day(120) };
+    videos['g' + i] = { id: 'g' + i, channelId: cid, title: 'offen g' + i,
+                        publishedAt: day(30), durationSec: 1500, lang: 'de' };
+    current['g' + i] = [90000, 100, 10];
+  }
+  const mm = computeMetrics({ db: { channels, videos, current }, seeds, thresholds,
+                              snapshots: [], now, primaryLang: 'de' });
+  const st = mm.niches.open.byMarket.de;
+  check('медиана прижата конвейером', st.freshViews === 300);
+  check('верхняя четверть видит сильные ролики', st.freshTop === 90000);
+  check('потолок ниши — лучший ролик', st.freshBest === 90000);
+  check('каналов в выборке посчитано девять', st.freshChannels === 9);
+  check('планку взяли восемь РАЗНЫХ каналов, а не восемь роликов из 24',
+    st.freshWinners === 8);
+  check('доля по роликам заметно ниже доли по каналам',
+    st.freshOverWorking < st.freshWinners / st.freshChannels);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

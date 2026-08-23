@@ -498,17 +498,45 @@ function newcomerFresh(videos, channels, thresholds) {
     return c?.ageDays != null && c.ageDays <= thresholds.youngChannelDays;
   });
   if (fresh.length < (thresholds.freshMinSample ?? 10)) {
-    return { freshViews: null, freshOverWorking: null, freshOverBreakout: null, freshSample: fresh.length };
+    return { freshViews: null, freshTop: null, freshBest: null, freshOverWorking: null,
+             freshOverBreakout: null, freshSample: fresh.length,
+             freshChannels: 0, freshWinners: 0 };
   }
   const share = (n) => fresh.filter((v) => v.views >= n).length / fresh.length;
+  const sorted = fresh.map((v) => v.views).sort((a, b) => a - b);
+  const chans = new Set(fresh.map((v) => v.channelId));
+  const winners = new Set(fresh.filter((v) => v.views >= thresholds.workingViews).map((v) => v.channelId));
   return {
-    // Столько собирает типовой свежий ролик у канала без аудитории.
-    freshViews: median(fresh.map((v) => v.views)),
+    // Столько собирает типовой свежий ролик у канала без аудитории. Число
+    // честное, но само по себе обманчивое: распределение здесь степенное.
+    // В «antarctica» из 51 свежего ролика верхний собрал 566 558, нижний — 7,
+    // а медиана 2 462, и описывает она поток однотипных роликов с двухсот
+    // просмотров, а не то, чего можно добиться.
+    freshViews: median(sorted),
+    // Верхняя четверть — что собирает УДАЧНЫЙ ролик. На неё и надо смотреть,
+    // выбирая нишу: медиана говорит, что бывает, если делать как все.
+    // На выборке меньше двадцати ролик квартиль — это два-три значения, поэтому
+    // не считаем.
+    freshTop: fresh.length >= (thresholds.freshTopMinSample ?? 20) ? quantile(sorted, 0.75) : null,
+    freshBest: sorted[sorted.length - 1],
     // Насколько это надёжно: доля свежих роликов, перешагнувших планку.
     freshOverWorking: share(thresholds.workingViews),
     freshOverBreakout: share(thresholds.breakoutViews),
     freshSample: fresh.length,
+    // Повторяемость по каналам, а не по роликам. Один канал, заливший тридцать
+    // роликов, может сам сделать любой процент — а нас интересует, у скольких
+    // РАЗНЫХ новичков получилось.
+    freshChannels: chans.size,
+    freshWinners: winners.size,
   };
+}
+
+// Квантиль с линейной интерполяцией. Массив уже отсортирован.
+export function quantile(sorted, p) {
+  if (!sorted.length) return null;
+  const i = (sorted.length - 1) * p;
+  const lo = Math.floor(i), hi = Math.ceil(i);
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (i - lo);
 }
 
 // Долговечность темы: работает ли старое видео или ниша требует бежать.

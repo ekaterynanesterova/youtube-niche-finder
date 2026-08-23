@@ -60,9 +60,13 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         missing: m.lotteryShare,
         views: m.medianOutlierViews,
         fresh: m.freshViews,
+        freshTop: m.freshTop,
+        freshBest: m.freshBest,
         freshOver20k: m.freshOverWorking,
         freshOver100k: m.freshOverBreakout,
         freshSample: m.freshSample,
+        freshChannels: m.freshChannels,
+        freshWinners: m.freshWinners,
         shelf: m.shelfLiveIndex ?? m.shelfIndex,
         shelfLive: m.shelfLiveIndex != null,
         shelfOldShare: m.shelfOldShare,
@@ -87,12 +91,21 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   rows.length = 0;
   rows.push(...unique);
 
-  // Ранжируем по тому, что решает: сколько соберёт новый ролик у новичка и
-  // насколько это повторяемо. Число дошедших каналов — подтверждение, а не
-  // основание: канал мог дойти год назад, когда в нише было пусто.
-  rows.sort((a, b) =>
-    ((b.fresh ?? 0) * (0.5 + (b.freshOver20k ?? 0))) -
-    ((a.fresh ?? 0) * (0.5 + (a.freshOver20k ?? 0))));
+  // Ранжируем по тому, что решает: сколько соберёт УДАЧНЫЙ ролик у новичка и у
+  // скольких разных новичков это вышло.
+  //
+  // Раньше в основании стояла медиана — и она уводила в сторону. Распределение
+  // здесь степенное: в «dinosaur documentary» медиана свежего ролика 982
+  // просмотра, верхняя четверть 14 239, лучший 893 401, и планку в 20 тысяч
+  // взяли двенадцать разных молодых каналов. Медиана описывала поток
+  // однотипных роликов, которые мы всё равно снимать не собираемся, и ниша
+  // с двенадцатью пробившимися новичками оказывалась внизу списка.
+  //
+  // Повторяемость считаем по каналам, а не по роликам: один канал, заливший
+  // тридцать штук, сам себе делает любой процент.
+  const upside = (r) => r.freshTop ?? r.fresh ?? 0;
+  const repeat = (r) => (r.freshChannels ? (r.freshWinners ?? 0) / r.freshChannels : 0);
+  rows.sort((a, b) => (upside(b) * (0.5 + repeat(b))) - (upside(a) * (0.5 + repeat(a))));
 
   for (const r of rows) {
     r.why = why(r);
@@ -116,12 +129,22 @@ function plural(n, a, b, c) {
   return n + ' ' + (m > 10 && m < 20 ? c : k === 1 ? a : k > 1 && k < 5 ? b : c);
 }
 
+const nn = (x) => Math.round(x).toLocaleString('ru-RU');
+
 function why(r) {
   const parts = [];
-  if (r.fresh != null) {
-    parts.push(`свежий ролик у канала без аудитории собирает около ` +
-      `${Math.round(r.fresh).toLocaleString('ru-RU')} просмотров, ` +
-      `${Math.round((r.freshOver20k ?? 0) * 100)}% таких роликов берут 20 тысяч и выше`);
+  if (r.freshTop != null) {
+    // Сначала то, ради чего в нишу идут, потом то, что бывает у большинства.
+    parts.push(`удачный ролик у канала без аудитории берёт ${nn(r.freshTop)} просмотров `
+      + `за первые два месяца, лучший в нише — ${nn(r.freshBest)}`);
+    parts.push(`типовой при этом ${nn(r.fresh)} — половина роликов ниши проходит незамеченной`);
+  } else if (r.fresh != null) {
+    parts.push(`типовой свежий ролик у канала без аудитории собирает ${nn(r.fresh)} просмотров `
+      + `за первые два месяца, лучший — ${nn(r.freshBest)}`);
+  }
+  if (r.freshWinners) {
+    parts.push(`планку в 20 тысяч взяли ${r.freshWinners} из ${r.freshChannels} `
+      + plural(r.freshChannels, 'молодого канала', 'молодых каналов', 'молодых каналов').replace(/^\d+\s/, ''));
   }
   parts.push(`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`);
   if (r.mature) parts.push(`${r.mature} доросли до полной цели`);
