@@ -76,6 +76,8 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         demandOverBreakout: m.demandOverBreakout,
         demandBest: m.demandBest,
         buckets: m.buckets,
+        cohorts: m.cohorts,
+        rangeLo: m.rangeLo, rangeHi: m.rangeHi, rangeN: m.rangeN,
         shelf: m.shelfLiveIndex ?? m.shelfIndex,
         shelfLive: m.shelfLiveIndex != null,
         shelfOldShare: m.shelfOldShare,
@@ -153,7 +155,13 @@ const word = (n, a, b, c) => {
 
 function why(r) {
   const parts = [];
-  // Сначала спрос: сколько трафика в теме вообще. Штуками, а не средним —
+  // Первым — диапазон: от чего до чего доходит ролик у канала без аудитории.
+  if (r.rangeLo != null) {
+    parts.push(`у канала без аудитории ролик набирает от ${nn(r.rangeLo)} до ${nn(r.rangeHi)} `
+      + word(r.rangeHi, 'просмотра', 'просмотров', 'просмотров')
+      + ` — так укладываются две трети его роликов`);
+  }
+  // Дальше спрос: сколько трафика в теме вообще. Штуками, а не средним —
   // среднее на таком разбросе не значит ничего.
   if (r.demandSample) {
     parts.push(`за два месяца в теме вышло ${nn(r.demandSample)} свежих `

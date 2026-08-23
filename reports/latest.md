@@ -40,7 +40,7 @@
 | 30 | **period-earth** —  <br><sub>Найдено автоматом</sub> | 50% | 2 из 4 | 101 771 | 60.7 мин | 20% | 1% | 4.0 | низкая — прокси-скорость, кривой роста ещё нет |
 | 31 | **sleep-doku** — документалка для засыпания <br><sub>Засыпание</sub> | 49% | 19 из 39 | 124 615 | 140.0 мин | 12% | 2% | 2.2 | низкая — прокси-скорость, кривой роста ещё нет |
 | 32 | **james-webb** — телескоп Джеймс Уэбб <br><sub>Космос</sub> | 50% | 4 из 8 | 80 098 | 38.1 мин | 7% | 2% | 5.3 | низкая — прокси-скорость, кривой роста ещё нет |
-| 33 | **place-earth** —  <br><sub>Найдено автоматом</sub> | 41% | 14 из 34 | 165 591 | 61.5 мин | 6% | 1% | 2.9 | низкая — прокси-скорость, кривой роста ещё нет |
+| 33 | **place-earth** —  <br><sub>Найдено автоматом</sub> | 41% | 14 из 34 | 165 591 | 61.5 мин | 6% | 1% | 2.8 | низкая — прокси-скорость, кривой роста ещё нет |
 | 34 | **ice-age** — ледниковый период <br><sub>Доисторическое</sub> | 40% | 4 из 10 | 93 185 | 83.1 мин | 22% | 2% | 3.7 | низкая — прокси-скорость, кривой роста ещё нет |
 | 35 | **secret-china** —  <br><sub>Найдено автоматом</sub> | 40% | 2 из 5 | 62 926 | 62.5 мин | 0% | 1% | 3.6 | низкая — прокси-скорость, кривой роста ещё нет |
 | 36 | **china-hidden** —  <br><sub>Найдено автоматом</sub> | 38% | 3 из 8 | 92 717 | 67.6 мин | 0% | 1% | 3.7 | низкая — прокси-скорость, кривой роста ещё нет |
@@ -184,46 +184,46 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 104.1 | 2 324 869 | 159 дн | 576 877 |
-| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 198.2 | 3 574 309 | 227 дн | 135 173 |
-| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 572.1 | 4 897 167 | 156 дн | 111 872 |
-| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 322.3 | 1 300 071 | 82 дн | 100 638 |
-| [WILD AMAZON \| Mysterious Predators Yet To Be Known \| Nature Animal D](https://youtu.be/hq8zlxMVa-w) | GaiaDocs | 55.9 | 1 247 943 | 150 дн | 95 781 |
-| [Forced Into an Arranged Marriage—3 Months Later, the Cold CEO Finally ](https://youtu.be/dRevLDDin5I) | PeachShine Drama | 15.2 | 1 488 059 | 64 дн | 83 103 |
-| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 487.6 | 3 357 943 | 7 дн | 69 299 |
-| [Impossible Places \| World’s Most Dangerous Structures That Will Leave](https://youtu.be/WzWs4dBRLI8) | Unknown Planet | 156.2 | 1 542 864 | 136 дн | 64 373 |
-| [The Hadzabe Tribe and Their Primitive Hunting Skills in Africa: Wild M](https://youtu.be/K7TdXelrsLs) | Hadza People Documentary | 27.0 | 702 273 | 80 дн | 54 070 |
-| [How People Live in Bermuda \| Why 60,000 People Live on a Rock with Ze](https://youtu.be/3HZHJ20UfYs) | Impossible Travel | 27.2 | 1 498 676 | 44 дн | 52 073 |
-| [DNA CONFIRMS D.B. Coopers Identity After 53 Years — And It’s NOT Who Y](https://youtu.be/yqstFZiDZVM) | New Discovery | 101.7 | 382 583 | 176 дн | 49 157 |
-| [20 Years on the River: Cooking and Living on a Tiny Boat on a Rainy Da](https://youtu.be/kUYXNxq6oik) | Vietnam Daily | 115.6 | 2 083 921 | 211 дн | 49 099 |
-| [WILD INDONESIA \| Pristine Jungle’s Hidden Apex Predators \| Nature An](https://youtu.be/4ui5vDd7oNw) | GaiaDocs | 19.6 | 437 252 | 154 дн | 48 422 |
-| [Living in Norway \| The Truth About Life in the World's Richest and Mo](https://youtu.be/bmFTLT1qo9k) | Happy Travel 99 | 28.8 | 1 804 921 | 5 дн | 47 503 |
-| [The 10 Worst Urban Hells on Earth \| 4K Documentary](https://youtu.be/luh5MQUptSc) | Unseen Earth 4K | 1894.1 | 1 206 548 | 110 дн | 43 961 |
-| [Graham Hancock : "We've Been Wrong About How the Egyptians Cut Granite](https://youtu.be/YcQHPd2LOOw) | Curious Explorer | 97.4 | 549 963 | 156 дн | 43 324 |
-| [What Did Ancient Humans Do When It Was Too Hot to Sleep?](https://youtu.be/wuFZrp-Dkiw) | Boneink | 1109.6 | 238 560 | 47 дн | 41 950 |
-| [It's Confirmed! Dubai's $12 Billion Man-Made Island Is Sinking Back In](https://youtu.be/E2bFQ3U8g6o) | Beijing Files | 58.4 | 303 193 | 97 дн | 38 305 |
-| [WILD AMAZON \| When Survival is in the Hands of Predators \| Nature An](https://youtu.be/rePkd5pYm9M) | GaiaDocs | 83.7 | 1 869 146 | 112 дн | 36 718 |
-| [Her New CEO Boss Is Her Cold Contract Husband—He’d Secretly Loved Her ](https://youtu.be/k09CsyIOBP4) | PeachShine Drama | 10.6 | 1 037 289 | 53 дн | 36 409 |
-| [CEO’s Son Refused All Food—But Loved His New Nanny’s Cooking, Never Kn](https://youtu.be/hapx9Gjnyck) | PeachShine Drama | 3.1 | 305 611 | 73 дн | 35 997 |
-| [They Marked Him for Death… He Came Back Stronger \| Action Movie HD](https://youtu.be/wwwLlVc9i1M) | Eurasian Echo Media Films  | 25.9 | 1 529 489 | 120 дн | 35 442 |
-| [BRUTAL INSECTS \| Nature’s Tiny Killers \| Nature Animal Documentary](https://youtu.be/-bejNgfBcnw) | Discover Wildlife | 6.7 | 481 304 | 274 дн | 34 614 |
-| [The Giant J’Ba Fofi Spider Is Real — And the Truth Is Worse Than the L](https://youtu.be/U1Nr69tcex0) | Curious Explorer | 22.1 | 124 561 | 165 дн | 34 080 |
-| [Unseen China \| Hidden Places In China You Won’t Believe Actually Exis](https://youtu.be/5s1VPLSRpBc) | Unknown Planet | 95.0 | 938 539 | 132 дн | 33 559 |
-| [AFRICAN LION \| Africa's Deadliest Fights For Survival (Full Episode) ](https://youtu.be/fkDbIlBmYX8) | WildVerse | 8.1 | 367 061 | 363 дн | 33 277 |
-| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 185.9 | 1 280 344 | 17 дн | 33 058 |
-| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 548.3 | 1 142 292 | 115 дн | 32 011 |
-| [What the Hopi Said Was Living Beneath the Grand Canyon](https://youtu.be/v7ct0oW3IIc) | Last Cartographer | 387.6 | 1 507 890 | 9 дн | 31 680 |
-| [He Promised to Protect Her… Now He Wants Revenge \| Full Thriller Movi](https://youtu.be/3yVfxmadsjg) | Eurasian Echo Media Films  | 5.3 | 315 208 | 153 дн | 31 614 |
-| [The Rise and Fall of America's Most Powerful Ranch Empire: 6666 Ranch,](https://youtu.be/rDVhfYTKgG8) | Paul McAllister | 11.8 | 749 630 | 197 дн | 31 372 |
-| [They Called Him Insane... Until They Learned the Truth \| Full Movie H](https://youtu.be/rkIZmnWGRJ0) | Eurasian Echo Media Films  | 12.5 | 740 514 | 139 дн | 31 280 |
-| [Unseen Korea \| Why Korea Doesn’t Fear Mega Floods Anymore \| 4K Docum](https://youtu.be/S10bdFymeUk) | Vagarious Travel | 107.8 | 124 710 | 115 дн | 31 268 |
-| [WILD PANTANAL \| The Predator Struggle for Survival  \| Nature Animal ](https://youtu.be/PSYxy4eX4D4) | GaiaDocs | 8.2 | 182 362 | 157 дн | 30 242 |
-| [They Dumped 2 Million Tires Into the Ocean — 50 Years Later, Nobody Ex](https://youtu.be/FiyaMqvPKfk) | Agriculture Flow | 26.7 | 374 241 | 312 дн | 28 630 |
-| [Scientists Explored the Mariana Trench—What They Found Is More Terrify](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 341.8 | 854 543 | 12 дн | 27 829 |
-| [WILD PACIFIC \| The Supreme Predators of the Ocean Depths \| Animal Do](https://youtu.be/gvQys2e0QDM) | Wild Animals - Animal Document | 139.6 | 1 609 727 | 99 дн | 27 799 |
-| [Archaeologists Just Uncovered Terrifying Pyramid Paintings… And They’r](https://youtu.be/4ZGMbtzXlBI) | Reef Discovery | 24.7 | 75 482 | 228 дн | 27 672 |
-| [Albert Lin’s Scans Exposed What the Terracotta Army Is Really Guarding](https://youtu.be/61uS0AxfQSI) | Curious Explorer | 138.6 | 782 767 | 140 дн | 27 387 |
-| [The Rise and Fall of America's Richest Ranch Empire: King Ranch, Texas](https://youtu.be/hgqFWepRXhU) | Paul McAllister | 8.9 | 565 755 | 200 дн | 27 197 |
+| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 104.1 | 2 324 869 | 159 дн | 572 865 |
+| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 198.2 | 3 574 309 | 227 дн | 135 028 |
+| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 572.1 | 4 897 167 | 156 дн | 111 800 |
+| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 324.6 | 1 300 071 | 82 дн | 100 418 |
+| [WILD AMAZON \| Mysterious Predators Yet To Be Known \| Nature Animal D](https://youtu.be/hq8zlxMVa-w) | GaiaDocs | 55.9 | 1 247 943 | 150 дн | 95 574 |
+| [Forced Into an Arranged Marriage—3 Months Later, the Cold CEO Finally ](https://youtu.be/dRevLDDin5I) | PeachShine Drama | 15.2 | 1 488 059 | 64 дн | 82 972 |
+| [NASA Just Confirmed Voyager 1 Found Something Impossible](https://youtu.be/FO65j14ekyg) | Proof | 487.6 | 3 357 943 | 7 дн | 69 259 |
+| [Impossible Places \| World’s Most Dangerous Structures That Will Leave](https://youtu.be/WzWs4dBRLI8) | Unknown Planet | 156.2 | 1 542 864 | 136 дн | 64 297 |
+| [The Hadzabe Tribe and Their Primitive Hunting Skills in Africa: Wild M](https://youtu.be/K7TdXelrsLs) | Hadza People Documentary | 27.0 | 702 273 | 80 дн | 53 953 |
+| [How People Live in Bermuda \| Why 60,000 People Live on a Rock with Ze](https://youtu.be/3HZHJ20UfYs) | Impossible Travel | 27.2 | 1 498 676 | 44 дн | 52 022 |
+| [20 Years on the River: Cooking and Living on a Tiny Boat on a Rainy Da](https://youtu.be/kUYXNxq6oik) | Vietnam Daily | 115.6 | 2 083 921 | 211 дн | 49 067 |
+| [DNA CONFIRMS D.B. Coopers Identity After 53 Years — And It’s NOT Who Y](https://youtu.be/yqstFZiDZVM) | New Discovery | 101.7 | 382 583 | 176 дн | 48 979 |
+| [WILD INDONESIA \| Pristine Jungle’s Hidden Apex Predators \| Nature An](https://youtu.be/4ui5vDd7oNw) | GaiaDocs | 19.6 | 437 252 | 154 дн | 48 271 |
+| [Living in Norway \| The Truth About Life in the World's Richest and Mo](https://youtu.be/bmFTLT1qo9k) | Happy Travel 99 | 28.8 | 1 804 921 | 5 дн | 47 468 |
+| [The 10 Worst Urban Hells on Earth \| 4K Documentary](https://youtu.be/luh5MQUptSc) | Unseen Earth 4K | 1894.1 | 1 206 548 | 110 дн | 43 916 |
+| [Graham Hancock : "We've Been Wrong About How the Egyptians Cut Granite](https://youtu.be/YcQHPd2LOOw) | Curious Explorer | 97.4 | 549 963 | 156 дн | 43 228 |
+| [What Did Ancient Humans Do When It Was Too Hot to Sleep?](https://youtu.be/wuFZrp-Dkiw) | Boneink | 1109.6 | 238 560 | 47 дн | 41 743 |
+| [It's Confirmed! Dubai's $12 Billion Man-Made Island Is Sinking Back In](https://youtu.be/E2bFQ3U8g6o) | Beijing Files | 58.4 | 303 193 | 97 дн | 38 168 |
+| [WILD AMAZON \| When Survival is in the Hands of Predators \| Nature An](https://youtu.be/rePkd5pYm9M) | GaiaDocs | 83.7 | 1 869 146 | 112 дн | 36 698 |
+| [Her New CEO Boss Is Her Cold Contract Husband—He’d Secretly Loved Her ](https://youtu.be/k09CsyIOBP4) | PeachShine Drama | 10.6 | 1 037 289 | 53 дн | 36 373 |
+| [CEO’s Son Refused All Food—But Loved His New Nanny’s Cooking, Never Kn](https://youtu.be/hapx9Gjnyck) | PeachShine Drama | 3.1 | 305 611 | 73 дн | 35 878 |
+| [They Marked Him for Death… He Came Back Stronger \| Action Movie HD](https://youtu.be/wwwLlVc9i1M) | Eurasian Echo Media Films  | 25.9 | 1 529 489 | 120 дн | 35 419 |
+| [BRUTAL INSECTS \| Nature’s Tiny Killers \| Nature Animal Documentary](https://youtu.be/-bejNgfBcnw) | Discover Wildlife | 6.7 | 481 304 | 274 дн | 34 544 |
+| [The Giant J’Ba Fofi Spider Is Real — And the Truth Is Worse Than the L](https://youtu.be/U1Nr69tcex0) | Curious Explorer | 22.1 | 124 561 | 165 дн | 33 819 |
+| [Unseen China \| Hidden Places In China You Won’t Believe Actually Exis](https://youtu.be/5s1VPLSRpBc) | Unknown Planet | 95.0 | 938 539 | 132 дн | 33 525 |
+| [AFRICAN LION \| Africa's Deadliest Fights For Survival (Full Episode) ](https://youtu.be/fkDbIlBmYX8) | WildVerse | 8.1 | 367 061 | 363 дн | 33 192 |
+| [James Webb Just Saw Pluto for the First Time And It Shouldn't Be Possi](https://youtu.be/UEFAes9Xd28) | Proof | 185.9 | 1 280 344 | 17 дн | 33 034 |
+| [China Built an Underwater Tunnel So Insane Even Americans Can't Believ](https://youtu.be/y7GFrNHSZ4E) | Hidden World Docs | 548.3 | 1 142 292 | 115 дн | 31 986 |
+| [What the Hopi Said Was Living Beneath the Grand Canyon](https://youtu.be/v7ct0oW3IIc) | Last Cartographer | 387.6 | 1 507 890 | 9 дн | 31 661 |
+| [He Promised to Protect Her… Now He Wants Revenge \| Full Thriller Movi](https://youtu.be/3yVfxmadsjg) | Eurasian Echo Media Films  | 5.3 | 315 208 | 153 дн | 31 525 |
+| [The Rise and Fall of America's Most Powerful Ranch Empire: 6666 Ranch,](https://youtu.be/rDVhfYTKgG8) | Paul McAllister | 11.8 | 749 630 | 197 дн | 31 335 |
+| [They Called Him Insane... Until They Learned the Truth \| Full Movie H](https://youtu.be/rkIZmnWGRJ0) | Eurasian Echo Media Films  | 12.5 | 740 514 | 139 дн | 31 242 |
+| [Unseen Korea \| Why Korea Doesn’t Fear Mega Floods Anymore \| 4K Docum](https://youtu.be/S10bdFymeUk) | Vagarious Travel | 103.7 | 124 710 | 115 дн | 31 048 |
+| [WILD PANTANAL \| The Predator Struggle for Survival  \| Nature Animal ](https://youtu.be/PSYxy4eX4D4) | GaiaDocs | 8.2 | 182 362 | 157 дн | 30 101 |
+| [They Dumped 2 Million Tires Into the Ocean — 50 Years Later, Nobody Ex](https://youtu.be/FiyaMqvPKfk) | Agriculture Flow | 26.7 | 374 241 | 312 дн | 28 568 |
+| [Scientists Explored the Mariana Trench—What They Found Is More Terrify](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 341.8 | 854 543 | 12 дн | 27 803 |
+| [WILD PACIFIC \| The Supreme Predators of the Ocean Depths \| Animal Do](https://youtu.be/gvQys2e0QDM) | Wild Animals - Animal Document | 139.6 | 1 609 727 | 99 дн | 27 786 |
+| [Archaeologists Just Uncovered Terrifying Pyramid Paintings… And They’r](https://youtu.be/4ZGMbtzXlBI) | Reef Discovery | 24.7 | 75 482 | 228 дн | 27 389 |
+| [Albert Lin’s Scans Exposed What the Terracotta Army Is Really Guarding](https://youtu.be/61uS0AxfQSI) | Curious Explorer | 138.6 | 782 767 | 140 дн | 27 360 |
+| [The Rise and Fall of America's Richest Ranch Empire: King Ranch, Texas](https://youtu.be/hgqFWepRXhU) | Paul McAllister | 8.9 | 565 755 | 200 дн | 27 161 |
 
 ## Пока без данных
 

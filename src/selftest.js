@@ -660,5 +660,40 @@ check('списки служебных слов разные', stopWords('en').h
     b.channelAge != null && 'subs' in b);
 }
 
+// --- диапазон и возрастные когорты ---
+// «Моложе года» прячет пятикратную разницу между «создан вчера» и «полгода»,
+// а одна точка вместо диапазона врёт на степенном распределении.
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const mk = (id, age) => ({ id, seeds: ['open'], markets: ['de'], firstUploadAt: day(age),
+                             firstUploadComplete: true, publishedAt: day(age + 5) });
+  const channels = { a: mk('a', 40), b: mk('b', 200), c: mk('c', 2000) };
+  const videos = {}, current = {};
+  for (const [cid, views] of [['a', 500], ['b', 5000], ['c', 50000]]) {
+    for (let i = 0; i < 12; i++) {
+      videos[cid + i] = { id: cid + i, channelId: cid, title: 'offen ' + cid + i,
+                          publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
+      current[cid + i] = [views * (i < 3 ? 60 : 1), 10, 1];
+    }
+  }
+  const mm = computeMetrics({ db: { channels, videos, current }, seeds, thresholds,
+                              snapshots: [], now, primaryLang: 'de' });
+  const st = mm.niches.open.byMarket.de;
+  const co = Object.fromEntries(st.cohorts.map((c) => [c.label, c]));
+  check('когорты разложены по возрасту канала',
+    co['канал 0–3 мес'].n === 12 && co['канал 6–12 мес'].n === 12 && co['старше года'].n === 12);
+  check('типичный ролик растёт с возрастом канала',
+    co['канал 0–3 мес'].median < co['канал 6–12 мес'].median
+    && co['канал 6–12 мес'].median < co['старше года'].median);
+  check('пустая когорта молчит, а не выдумывает',
+    co['канал 3–6 мес'].n === 0 && co['канал 3–6 мес'].median === null);
+  check('верхние 10% видят выстреливший ролик', co['канал 0–3 мес'].top > co['канал 0–3 мес'].median);
+  // Диапазон строится только по молодым с чистым стартом: канал c старше года.
+  check('диапазон — это два числа, а не одно',
+    st.rangeLo != null && st.rangeHi != null && st.rangeHi > st.rangeLo);
+  check('в диапазон идут только молодые каналы', st.rangeN === 24);
+  check('нижняя граница ниже верхней десятой доли', st.rangeLo < st.rangeHi);
+}
+
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

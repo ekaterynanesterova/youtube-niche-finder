@@ -507,6 +507,15 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
 .example a{color:var(--ink);text-decoration:none}
 .example a:hover{color:var(--brand)}
 .example span{color:var(--dim);font-size:12.5px}
+.coh{margin:16px 0 0}
+.coh h5{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--dim)}
+.coh table{border-collapse:collapse;width:100%;font-size:13.5px}
+.coh th{text-align:left;font-weight:600;color:var(--dim);font-size:11px;text-transform:uppercase;
+  letter-spacing:.06em;padding:0 10px 7px 0;border-bottom:1px solid var(--line)}
+.coh th:not(:first-child){text-align:right}
+.coh td{padding:7px 10px 7px 0;border-top:1px solid var(--line)}
+.coh td.n{text-align:right;font-variant-numeric:tabular-nums}
+.coh tr.old td{color:var(--dim)}
 .fnote{color:var(--dim);font-size:13.5px;line-height:1.55;max-width:78ch;margin:16px 0 0}
 .fgrid{display:grid;gap:18px;margin-top:20px}
 .fbox{background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
@@ -618,6 +627,18 @@ footer b{color:var(--ink)}
       <dl>
         <dt>Брать первым</dt>
         <dd>Пометка на верхней карточке. Означает только одно: по собранным цифрам эта ниша выглядит лучше остальных <b>сегодня</b>. Это не рекомендация запускать канал не глядя — сначала надо открыть примеры и посмотреть, из чего сделаны ролики.</dd>
+
+        <dt>Набирает ролик у канала без аудитории</dt>
+        <dd>Первое число на карточке и самое честное, какое тут можно дать: <b>диапазон</b>, а не точка. Нижняя граница — четверть роликов набирает меньше, верхняя — десятая часть набирает больше. Между ними укладывается основная масса.
+        <br><br>Считается по роликам возрастом от недели до двух месяцев на каналах моложе года с чистым стартом. Точку тут ставить нельзя: разброс внутри одной ниши доходит до двадцати пяти раз, и любое единственное число либо занижает, либо врёт в другую сторону.</dd>
+
+        <dt>Сколько набирает ролик, по возрасту канала</dt>
+        <dd>Таблица под гистограммой. «Моложе года» — слишком широкая полка, и она прячет главное. По всей базе:
+        <br><br>канал 0–3 месяца — типичный свежий ролик 355 просмотров, верхние 10% берут 17 464, планку в 20 тысяч перешагивают 9% роликов;
+        <br>3–6 месяцев — 796 / 21 816 / 11%;
+        <br>6–12 месяцев — 1 962 / 52 282 / 17%;
+        <br>старше года — 6 436 / 167 245 / 34%.
+        <br><br>То есть между «канал создан вчера» и «каналу полгода» разница примерно впятеро, а до уровня старожилов — ещё втрое. Возраст канала значит много, и сваливать весь первый год в одну пометку «молодой» нельзя. Строка «старше года» в таблице дана серым: это не то, на что рассчитывать на старте, а потолок, до которого растут.</dd>
 
         <dt>Свежих роликов взяли 20 тысяч</dt>
         <dd>Главное число. Берём все ролики темы, вышедшие от недели до двух месяцев назад — <b>по всем каналам, а не только по молодым</b>, — и считаем, сколько из них перевалило за двадцать тысяч просмотров. Просмотры тут за всю жизнь ролика, а не за сутки.
@@ -858,12 +879,12 @@ document.getElementById('hero').innerHTML = lead
     + '<h1>' + lead.query + '</h1>'
     + (lead.ru ? '<div class="heroru">' + lead.ru + '</div>' : '')
     + '<div class="nums">'
+    + '<div><b>' + (lead.rangeLo == null ? '—' : num(lead.rangeLo) + ' – ' + num(lead.rangeHi))
+      + '</b><span>набирает ролик у канала без аудитории</span></div>'
     + '<div><b>' + num(lead.demandOverWorking) + ' из ' + num(lead.demandSample)
       + '</b><span>свежих роликов взяли 20 тысяч</span></div>'
     + '<div><b>' + num(lead.freshBestNewcomer ? lead.freshBestNewcomer.views : lead.freshBest)
       + '</b><span>лучшее у канала, начинавшего с нуля</span></div>'
-    + '<div><b>' + (lead.freshWinnersClean ?? 0) + ' из ' + (lead.freshChannels ?? 0)
-      + '</b><span>таких каналов взяли 20 тысяч</span></div>'
     + '</div>'
   : '<h1>Где дверь открыта</h1><div class="heroru">Данных пока мало — ни одна ниша не набрала достаточно.</div>';
 
@@ -1012,6 +1033,26 @@ function histogram(rows, sample) {
     + '</div>';
 }
 
+// Возраст канала решает больше, чем кажется, и «моложе года» это прячет:
+// по всей базе медиана свежего ролика у канала 0–3 месяцев — 355 просмотров,
+// у 6–12 месяцев — 1 962, у старше года — 6 436. Разбивка отвечает на вопрос
+// «чего ждать на третьем месяце, а чего на восьмом».
+function cohortTable(rows) {
+  if (!rows || !rows.some(r => r.median != null)) return '';
+  return '<div class="coh"><h5>Сколько набирает свежий ролик, по возрасту канала</h5>'
+    + '<table><tr><th>Возраст канала</th><th>Роликов</th><th>Типичный</th>'
+    + '<th>Верхние 10%</th><th>Взяли 20 тысяч</th></tr>'
+    + rows.map(r =>
+        '<tr class="' + (r.lo >= 365 ? 'old' : '') + '"><td>' + r.label + '</td>'
+        + '<td class="n">' + r.n + '</td>'
+        + '<td class="n">' + (r.median == null ? '—' : num(r.median)) + '</td>'
+        + '<td class="n">' + (r.top == null ? '—' : num(r.top)) + '</td>'
+        + '<td class="n">' + (r.median == null ? '—' : r.over) + '</td></tr>').join('')
+    + '</table><p class="hnote">Прочерк — роликов в когорте меньше восьми, '
+    + 'считать по ним нечего. Строка «старше года» дана для сравнения: это потолок темы, '
+    + 'до которого растут.</p></div>';
+}
+
 function newcomerExample(b) {
   if (!b) return '';
   return '<div class="example">Лучшее, что сделал новичок с нуля: '
@@ -1030,6 +1071,8 @@ function drawVerdict() {
     return;
   }
   const money = (r) => [
+    [r.rangeLo == null ? '—' : num(r.rangeLo) + ' – ' + num(r.rangeHi),
+     'набирает ролик у канала без аудитории'],
     [num(r.demandOverWorking) + ' из ' + num(r.demandSample), 'свежих роликов взяли 20 тысяч'],
     [num(r.demandOverBreakout), 'из них взяли 100 тысяч'],
     [num(r.demandBest), 'лучший свежий ролик темы'],
@@ -1055,6 +1098,7 @@ function drawVerdict() {
       '<div class="mk">' + r.market + ' рынок · ' + r.group + '</div>' +
       '<div class="money">' + money(r) + '</div>' +
       histogram(r.buckets, r.demandSample) +
+      cohortTable(r.cohorts) +
       newcomerExample(r.freshBestNewcomer) +
       '<p><span class="lab">почему сейчас:</span> ' + r.why + '</p>' +
       '<p><span class="lab">риск:</span> ' + r.risk + '</p>' +

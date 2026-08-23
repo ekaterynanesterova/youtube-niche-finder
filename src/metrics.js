@@ -379,6 +379,8 @@ function nicheStats(seedVideos, channels, thresholds) {
     ...newcomerFresh(seedVideos, channels, thresholds),
     ...nicheDemand(seedVideos, thresholds),
     ...demandBuckets(seedVideos, channels, thresholds),
+    ...ageCohorts(seedVideos, channels, thresholds),
+    ...newcomerRange(seedVideos, channels, thresholds),
     ...shelfLife(seedVideos, thresholds),
     // Ёмкость: на сколько роликов темы хватает тем, кто уже дошёл. Отвечает на
     // вопрос «а что я буду снимать после десятого видео».
@@ -548,6 +550,58 @@ export const VIEW_STEPS = [
   { lo: 20000, hi: 100000, label: '20 000 – 100 000' },
   { lo: 100000, hi: Infinity, label: 'больше 100 000' },
 ];
+
+// Возрастные когорты канала. «Моложе года» — слишком широкая полка: по всей
+// базе медиана свежего ролика у канала 0–3 месяцев 355 просмотров, у 6–12
+// месяцев 1 962, у старше года 6 436. Восемнадцатикратный разброс внутри одной
+// пометки «молодой» делает её бесполезной. Разбивка отвечает на настоящий
+// вопрос: чего ждать на третьем месяце, а чего на восьмом.
+export const AGE_COHORTS = [
+  { lo: 0, hi: 90, label: 'канал 0–3 мес' },
+  { lo: 90, hi: 180, label: 'канал 3–6 мес' },
+  { lo: 180, hi: 365, label: 'канал 6–12 мес' },
+  { lo: 365, hi: Infinity, label: 'старше года' },
+];
+
+function ageCohorts(videos, channels, thresholds) {
+  const fresh = videos.filter((v) =>
+    v.ageDays >= (thresholds.freshMinAgeDays ?? 7) && v.ageDays <= (thresholds.freshMaxAgeDays ?? 60));
+  const rows = AGE_COHORTS.map((co) => {
+    const a = fresh.filter((v) => {
+      const c = channels[v.channelId];
+      return c?.ageDays != null && c.ageDays >= co.lo && c.ageDays < co.hi;
+    }).map((v) => v.views).sort((x, y) => x - y);
+    // По горстке роликов медиана — случайность. Молчим, а не выдумываем.
+    if (a.length < (thresholds.cohortMinSample ?? 8)) {
+      return { label: co.label, lo: co.lo, n: a.length, median: null, top: null, over: 0 };
+    }
+    return {
+      label: co.label, lo: co.lo, n: a.length,
+      median: Math.round(quantile(a, 0.5)),
+      top: Math.round(quantile(a, 0.9)),
+      over: a.filter((v) => v >= thresholds.workingViews).length,
+    };
+  });
+  return { cohorts: rows };
+}
+
+// Диапазон, в который укладывается ролик у молодого канала с чистым стартом.
+// Одно число на степенном распределении не значит ничего, а «от и до» —
+// значит: нижняя граница показывает, что бывает при обычном ролике, верхняя —
+// что бывает, когда получилось.
+function newcomerRange(videos, channels, thresholds) {
+  const a = videos.filter((v) => {
+    if (v.ageDays < (thresholds.freshMinAgeDays ?? 7) || v.ageDays > (thresholds.freshMaxAgeDays ?? 60)) return false;
+    const c = channels[v.channelId];
+    return c?.cleanStart === true && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays;
+  }).map((v) => v.views).sort((x, y) => x - y);
+  if (a.length < (thresholds.freshMinSample ?? 10)) return { rangeLo: null, rangeHi: null, rangeN: a.length };
+  return {
+    rangeLo: Math.round(quantile(a, 0.25)),
+    rangeHi: Math.round(quantile(a, 0.9)),
+    rangeN: a.length,
+  };
+}
 
 function demandBuckets(videos, channels, thresholds) {
   const fresh = videos.filter((v) =>
