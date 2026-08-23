@@ -1,6 +1,6 @@
 # Бриф для контент-плана
 
-Срез на 22 августа в 21:09 по Берлину. Файл собирается заново на каждом прогоне —
+Срез на 23 августа в 10:15 по Берлину. Файл собирается заново на каждом прогоне —
 править его руками бессмысленно, правки затрёт следующий сбор.
 
 - Живая версия со всеми кликами: https://ekaterynanesterova.github.io/youtube-niche-finder/
@@ -31,13 +31,13 @@
 
 ## Насколько этим цифрам можно верить
 
-- В базе 1 803 каналов и 94 995 видео.
-- Из них посчитаны 746 каналов и 72 000 видео
-(76% роликов). Остальное найдено, но дневной срез ещё
+- В базе 2 227 каналов и 121 035 видео.
+- Из них посчитаны 1 410 каналов и 119 477 видео
+(99% роликов). Остальное найдено, но дневной срез ещё
 не снял с них просмотры — в цифры ниже они не входят.
-- Дней накопления: **5**. Всё, что считается по приросту между срезами
+- Дней накопления: **6**. Всё, что считается по приросту между срезами
 (старым роликам достаётся, живая полка), при малом числе дней шумит.
-- Тем изучено 73 из 134. Непройденные темы могут переставить рейтинг.
+- Тем изучено 94 из 134. Непройденные темы могут переставить рейтинг.
 - Инструмент видит только заголовки, длительность, даты и счётчики. Он **не видит содержимое ролика**:
 ни картинку, ни монтаж, ни то, сделано это руками или нагенерировано. Последнее слово — за глазами.
 - Деньги — оценка по единой ставке $5 за тысячу просмотров. Настоящая ставка отличается
@@ -58,241 +58,241 @@
 
 ## Куда идти
 
-У 12 молодых каналов в этой нише уже есть доход, типичный — около $770 в месяц. Для сравнения рынков: на немецком до цели доходят 1% молодых каналов, на английском — 20%.
+У 14 молодых каналов в этой нише уже есть доход, типичный — около $2609 в месяц. Для сравнения рынков: на немецком до цели доходят 1% молодых каналов, на английском — 14%.
 
-Лидер на сегодня — **antarctica documentary** (Антарктида), рынок английский.
+Лидер на сегодня — **people live documentary**, рынок английский.
 
 ### Топ ниш
 
 | # | Запрос | Рынок | Свежий ролик | 20 000+ | Новичков зарабатывают | В месяц у новичка | Каналов в теме | Длина ролика |
 |---|---|---|---|---|---|---|---|---|
-| 1 | **antarctica documentary**<br><sub>Антарктида</sub> | английский | 2 462 | 14% | 12 | $770 | 31 | 91 мин |
-| 2 | **earth planet documentary** | английский | 1 680 | 25% | 2 | $670 | 18 | 57 мин |
-| 3 | **space documentary**<br><sub>документалки о космосе</sub> | английский | 1 271 | 14% | 19 | $833 | 89 | 55 мин |
-| 4 | **solar system explained**<br><sub>Солнечная система</sub> | английский | 1 337 | 9% | 9 | $491 | 36 | 72 мин |
-| 5 | **dinosaur documentary**<br><sub>динозавры</sub> | английский | 986 | 24% | 10 | $1 816 | 43 | 64 мин |
-| 6 | **ice age documentary**<br><sub>ледниковый период</sub> | английский | 926 | 12% | 4 | $1 393 | 16 | 67 мин |
-| 7 | **deep ocean documentary** | английский | 854 | 11% | 9 | $715 | 19 | 180 мин |
-| 8 | **deep sea documentary**<br><sub>глубоководный мир</sub> | английский | 767 | 3% | 7 | $710 | 16 | 78 мин |
-| 9 | **amerika Doku** | немецкий | 556 | 0% | 2 | $1 252 | 16 | 45 мин |
-| 10 | **urzeit Doku** | немецкий | 285 | 8% | 2 | $834 | 16 | 43 мин |
-| 11 | **galaxies documentary**<br><sub>галактики</sub> | английский | 261 | 7% | 4 | $2 170 | 16 | 144 мин |
-| 12 | **ancient egypt documentary**<br><sub>Древний Египет</sub> | английский | 203 | 8% | 3 | $4 095 | 17 | 48 мин |
+| 1 | **people live documentary** | английский | 3 880 | 36% | 14 | $2 609 | 36 | 32 мин |
+| 2 | **did ancient humans documentary** | английский | 1 280 | 11% | 10 | $1 758 | 28 | 22 мин |
+| 3 | **earth planet documentary** | английский | 1 073 | 17% | 4 | $743 | 29 | 61 мин |
+| 4 | **ethiopian bible documentary** | английский | 1 115 | 10% | 14 | $2 042 | 19 | 26 мин |
+| 5 | **humans survive documentary** | английский | 759 | 12% | 11 | $1 458 | 23 | 24 мин |
+| 6 | **antarctica documentary**<br><sub>Антарктида</sub> | английский | 710 | 9% | 18 | $950 | 44 | 90 мин |
+| 7 | **deep ocean documentary** | английский | 720 | 7% | 11 | $744 | 29 | 181 мин |
+| 8 | **dinosaur documentary**<br><sub>динозавры</sub> | английский | 554 | 20% | 10 | $1 915 | 52 | 64 мин |
+| 9 | **ice age documentary**<br><sub>ледниковый период</sub> | английский | 625 | 8% | 4 | $1 416 | 23 | 83 мин |
+| 10 | **mariana trench documentary** | английский | 625 | 7% | 14 | $959 | 24 | 45 мин |
+| 11 | **ancient egypt documentary**<br><sub>Древний Египет</sub> | английский | 449 | 9% | 13 | $2 367 | 33 | 48 мин |
+| 12 | **solar system explained**<br><sub>Солнечная система</sub> | английский | 406 | 6% | 10 | $455 | 48 | 70 мин |
 
 ### Разбор первых ниш
 
-#### antarctica documentary — Антарктида (английский)
+#### people live documentary (английский)
 
-- **Почему:** свежий ролик у канала без аудитории собирает около 2 462 просмотров, 14% таких роликов берут 20 тысяч и выше, 12 каналов моложе года уже зарабатывают, 14 доросли до полной цели, самый быстрый дошёл за 2 месяца.
-- **Риск:** типовой ролик — 91 минут, это тяжёлый вход; свежий ролик новичка собирает всего около 2 462 просмотров — заработать в моменте не выйдет.
-- **Трудозатраты:** 2.9 ч готового видео в неделю, около 13 ч в месяц; типовой ролик — 91 мин.
-- **Цифры:** быстрее всех новичок дошёл за 2 мес.; у дошедших типично 181 ролик по теме; старым роликам достаётся 42% новых просмотров при доле каталога 31%.
+- **Почему:** свежий ролик у канала без аудитории собирает около 3 880 просмотров, 36% таких роликов берут 20 тысяч и выше, 14 каналов моложе года уже зарабатывают, 18 доросли до полной цели, самый быстрый дошёл за 1 месяц.
+- **Риск:** Явных ловушек в цифрах не видно.
+- **Трудозатраты:** 2.3 ч готового видео в неделю, около 10 ч в месяц; типовой ролик — 32 мин.
+- **Цифры:** быстрее всех новичок дошёл за 1 мес.; у дошедших типично 84 ролика по теме; старым роликам достаётся 72% новых просмотров при доле каталога 22%; на YouTube по запросу около 207 983 роликов.
 
 Кто уже в теме:
 
 | Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |
 |---|---|---|---|---|---|
-| 🟢 Discover Wildlife | 287 дн. | 97 000 | $16 489 | — | 4 из 131 |
-| Ridddle | 4293 дн.? | 5 690 000 | $14 219 | — | 8 из 564 |
-| 🟢 Optic Expedition | 243 дн.? | 219 000 | $11 970 | — | 3 из 649 |
-| Origins Explained | 3870 дн.? | 3 890 000 | $9 861 | — | 8 из 4467 |
-| 🟢 Wild Animals - Animal Documentary | 156 дн. | 39 800 | $9 359 | — | 6 из 77 |
-| Secret Origins | 1386 дн. | 626 000 | $7 792 | — | 13 из 378 |
-| New Scientist | 7208 дн.? | 581 000 | $6 960 | — | 4 из 4986 |
-| 🟢 Underwater Earth 4K | 94 дн. | 16 500 | $4 685 | 7 272 | 4 из 89 |
+| Sideprojects | 2193 дн.? | 1 330 000 | $19 381 | — | 3 из 961 |
+| New Travel Insight | 539 дн. | 176 000 | $17 400 | — | 3 из 383 |
+| 🟢 Impossible Travel | 73 дн. | 25 300 | $9 463 | 63 935 | 44 из 46 |
+| Best Travel | 617 дн. | 101 000 | $8 002 | 58 522 | 101 из 260 |
+| 🟢 Hidden World Docs | 151 дн. | 31 100 | $6 277 | — | 3 из 43 |
+| Planet Vista 4K | 378 дн. | 75 100 | $5 864 | 11 017 | 9 из 126 |
+| 🟢 Happy Travel 99 | 43 дн. | 25 500 | $5 498 | 39 798 | 9 из 19 |
+| The Ulengovs | 2574 дн. | 1 660 000 | $4 984 | — | 32 из 225 |
 
 🟢 — канал моложе года. Смотреть надо на них: если зелёных нет, в теме сидят одни старожилы.
 
 Заголовки, которые сработали у новичков:
 
-- **WILD ANTARCTICA | The fight for survival against the extreme cold | Nature Animal Documentary** — «ДИКАЯ АНТАРКТИДА | Борьба за выживание в условиях экстремального холода | Документальный фильм о диких животных»  
-  418 386 просмотров · 42 мин · канал «Discover Wildlife» на 102-й день · зарабатывает $16 489/мес
-- **We Finally Know What’s Really Buried Under Antarctica**  
-  1 235 610 просмотров · 32 мин · канал «Astrum Earth» на 364-й день · зарабатывает $15 251/мес
-- **Drone Flew Over Antarctica’s Ice Shelf — What It Recorded Defies Explanation** — «Беспилотник пролетел над шельфовым ледником Антарктиды — то, что он записал, не поддается объяснению»  
-  20 988 просмотров · 21 мин · канал «Optic Expedition» на 82-й день · зарабатывает $11 970/мес
-- **The Giant Humanoids Swim Beneath Antarctica - The Ningen Are Real** — «Гигантские гуманоиды плавают под Антарктидой - Нинген реален»  
-  212 816 просмотров · 29 мин · канал «New Discovery» на 124-й день · зарабатывает $10 832/мес
-- **NOTHING About Prehistoric Antarctica Is Normal... Here's Why**  
-  84 089 просмотров · 26 мин · канал «Spinosnack» на 351-й день · зарабатывает $9 403/мес
-- **Joe Rogan Just Announced The Shocking Truth About Antarctica That Terrifies The Whole World** — «Джо Роган только что объявил шокирующую правду об Антарктиде, которая пугает весь мир»  
-  956 305 просмотров · 23 мин · канал «Secret Origins» на 246-й день · зарабатывает $7 792/мес
+- **Life on TRISTAN DA CUNHA! - SAFEST Island on Earth Where 240 People Live with No Way Out!**  
+  147 586 просмотров · 32 мин · канал «Amazing Global Discoveries» на 244-й день · зарабатывает $10 873/мес
+- **How People Live in Bermuda | Why 60,000 People Live on a Rock with Zero Resources | 4K Travel**  
+  1 498 676 просмотров · 31 мин · канал «Impossible Travel» на 44-й день · зарабатывает $9 463/мес
+- **Unreal Humans | It’s Hard to Believe People Live Like This | Travel Video 4K**  
+  802 231 просмотров · 61 мин · канал «Best Travel» на 186-й день · зарабатывает $8 002/мес
+- **HIMALAYA: Explore Why People Accept Risking Their Lives For The Mountains | 4K Travel Documentary**  
+  112 858 просмотров · 58 мин · канал «Planet Vista 4K» на 242-й день · зарабатывает $5 864/мес
+- **Living in the Faroe Islands | How People Live Where Trees Cannot Grow | 4K**  
+  367 517 просмотров · 35 мин · канал «Happy Travel 99» на 3-й день · зарабатывает $5 498/мес
+- **Impossible Places | The Most Extreme Houses That People Still Live In | 4K Travel Documentary**  
+  41 248 просмотров · 60 мин · канал «Unknown Planet» на 130-й день · зарабатывает $4 849/мес
 
-#### earth planet documentary (английский)
+#### did ancient humans documentary (английский)
 
-- **Почему:** свежий ролик у канала без аудитории собирает около 1 680 просмотров, 25% таких роликов берут 20 тысяч и выше, 2 канала моложе года уже зарабатывают, 7 доросли до полной цели, самый быстрый дошёл за 3 месяца.
-- **Риск:** в базе всего 18 каналов по теме — выборка тонкая, проценты по ней шаткие; свежих роликов для замера всего 20, цифра может сильно поехать; свежий ролик новичка собирает всего около 1 680 просмотров — заработать в моменте не выйдет.
-- **Трудозатраты:** 2.8 ч готового видео в неделю, около 12 ч в месяц; типовой ролик — 57 мин.
-- **Цифры:** быстрее всех новичок дошёл за 3 мес.; у дошедших типично 304 ролика по теме; старым роликам достаётся 23% новых просмотров при доле каталога 56%.
+- **Почему:** свежий ролик у канала без аудитории собирает около 1 280 просмотров, 11% таких роликов берут 20 тысяч и выше, 10 каналов моложе года уже зарабатывают, 3 доросли до полной цели, самый быстрый дошёл за 1 месяц.
+- **Риск:** свежий ролик новичка собирает всего около 1 280 просмотров — заработать в моменте не выйдет.
+- **Трудозатраты:** 1.7 ч готового видео в неделю, около 7 ч в месяц; типовой ролик — 22 мин.
+- **Цифры:** быстрее всех новичок дошёл за 1 мес.; у дошедших типично 60 роликов по теме; на YouTube по запросу около 220 570 роликов.
 
 Кто уже в теме:
 
 | Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |
 |---|---|---|---|---|---|
-| National Geographic | 7412 дн.? | 26 300 000 | $28 089 | — | 6 из 11451 |
-| New Travel Insight | 538 дн. | 176 000 | $17 093 | — | 21 из 383 |
-| Ridddle | 4293 дн.? | 5 690 000 | $14 219 | — | 5 из 564 |
-| What If | 2957 дн.? | 8 960 000 | $9 959 | — | 3 из 1665 |
-| My Unreal Planet TV | 866 дн.? | 246 000 | $3 615 | — | 4 из 586 |
-| Spark | 3504 дн.? | 1 990 000 | $2 965 | — | 3 из 1235 |
-| Destiny | 3094 дн. | 2 010 000 | $2 296 | — | 10 из 328 |
-| Science Before Sleep | 436 дн. | 62 700 | $1 673 | — | 3 из 434 |
+| 🟢 Mack | 90 дн. | 76 600 | $12 794 | 21 996 | 23 из 60 |
+| 🟢 Stickly | 89 дн. | 49 500 | $8 158 | 5 632 | 20 из 57 |
+| 🟢 Explain In Paint | 110 дн. | 69 500 | $7 287 | 7 408 | 26 из 66 |
+| 🟢 Goshu | 116 дн. | 13 800 | $1 907 | 10 020 | 36 из 57 |
+| 🟢 Banana Explains | 69 дн. | 4 370 | $1 856 | 4 899 | 16 из 39 |
+| 🟢 Mogo | 69 дн. | 2 730 | $1 661 | 2 564 | 16 из 36 |
+| 🟢 Deep Epoch | 42 дн. | 4 510 | $1 458 | 2 758 | 50 из 65 |
+| 🟢 Boneink | 53 дн. | 1 350 | $676 | 741 | 21 из 41 |
+
+🟢 — канал моложе года. Смотреть надо на них: если зелёных нет, в теме сидят одни старожилы.
+
+Заголовки, которые сработали у новичков:
+
+- **When Did Ancient Humans Start Smoking?**  
+  1 704 362 просмотров · 22 мин · канал «Mack» на 0-й день · зарабатывает $12 794/мес
+- **What Did Ancient Humans Do During the Night?**  
+  592 984 просмотров · 22 мин · канал «Stickly» на 3-й день · зарабатывает $8 158/мес
+- **How Did Ancient Humans Keep Kids Alive?**  
+  692 979 просмотров · 22 мин · канал «Explain In Paint» на 28-й день · зарабатывает $7 287/мес
+- **How did Ancient Humans Discover Iron?**  
+  426 360 просмотров · 36 мин · канал «Goshu» на 96-й день · зарабатывает $1 907/мес
+- **How Did Ancient Humans Survive Mosquitoes?**  
+  109 396 просмотров · 25 мин · канал «Banana Explains» на 10-й день · зарабатывает $1 856/мес
+- **How Did Ancient Humans Survive Endless Rain?**  
+  158 927 просмотров · 24 мин · канал «Mogo» на 14-й день · зарабатывает $1 661/мес
+
+#### earth planet documentary (английский)
+
+- **Почему:** свежий ролик у канала без аудитории собирает около 1 073 просмотров, 17% таких роликов берут 20 тысяч и выше, 4 канала моложе года уже зарабатывают, 9 доросли до полной цели, самый быстрый дошёл за 3 месяца.
+- **Риск:** свежий ролик новичка собирает всего около 1 073 просмотров — заработать в моменте не выйдет.
+- **Трудозатраты:** 3.4 ч готового видео в неделю, около 15 ч в месяц; типовой ролик — 61 мин.
+- **Цифры:** быстрее всех новичок дошёл за 3 мес.; у дошедших типично 304 ролика по теме; старым роликам достаётся 22% новых просмотров при доле каталога 55%; на YouTube по запросу около 186 071 роликов.
+
+Кто уже в теме:
+
+| Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |
+|---|---|---|---|---|---|
+| National Geographic | 7037 дн. | 26 300 000 | $28 373 | — | 6 из 11451 |
+| New Travel Insight | 539 дн. | 176 000 | $17 400 | — | 21 из 383 |
+| Ridddle | 4294 дн.? | 5 690 000 | $14 378 | — | 5 из 564 |
+| What If | 2958 дн.? | 8 960 000 | $10 076 | — | 3 из 1665 |
+| SunKran Travel | 768 дн. | 26 800 | $3 774 | — | 6 из 117 |
+| My Unreal Planet TV | 866 дн.? | 246 000 | $3 689 | — | 4 из 586 |
+| Spark | 3505 дн.? | 1 990 000 | $2 998 | — | 3 из 1235 |
+| Destiny | 3095 дн. | 2 010 000 | $2 392 | — | 10 из 328 |
 
 🟢 — канал моложе года. Смотреть надо на них: если зелёных нет, в теме сидят одни старожилы.
 
 Заголовки, которые сработали у новичков:
 
 - **Impossible Places: The Most Extreme Corners of Planet Earth | 4K Travel Documentary** — «Невозможные места: самые экстремальные уголки планеты Земля | 4K Travel Documentary»  
-  3 455 260 просмотров · 65 мин · канал «New Travel Insight» на 362-й день · зарабатывает $17 093/мес
+  3 460 410 просмотров · 65 мин · канал «New Travel Insight» на 362-й день · зарабатывает $17 400/мес
 - **EARTHQUAKES ALL OVER THE PLANET! Venezuela, California, Japan – WHAT IS HAPPENING RIGHT NOW?**  
-  506 510 просмотров · 29 мин · канал «S zone» на 6-й день · зарабатывает $7 168/мес
+  506 660 просмотров · 29 мин · канал «S zone» на 6-й день · зарабатывает $7 179/мес
 - **The Lost Earth: A Planet Where Dinosaurs Still Ruled | Full Documentary**  
-  233 625 просмотров · 62 мин · канал «WUFO Earth» на 42-й день · зарабатывает $6 687/мес
+  240 354 просмотров · 62 мин · канал «WUFO Earth» на 42-й день · зарабатывает $6 782/мес
 - **"From Earth to the Universe" ESO Planetarium Film - VR180 8K conversion**  
-  64 190 просмотров · 32 мин · канал «Astrum Extra» на 3-й день · зарабатывает $5 984/мес
-- **What If The Earth Collided With Another Planet?**  
-  1 855 208 просмотров · 9 мин · канал «Destiny» на 0-й день · зарабатывает $2 296/мес
-- **YAKUTIA: The Coldest Place On Planet Earth | 4K Travel Documentary**  
-  109 172 просмотров · 60 мин · канал «Secret Wonders» на 83-й день · зарабатывает $2 278/мес
+  64 207 просмотров · 32 мин · канал «Astrum Extra» на 3-й день · зарабатывает $6 039/мес
+- **Impossible Places | The Most Extreme Corners of Planet Earth That Dare You to Live In | 4K Travel**  
+  24 200 просмотров · 61 мин · канал «Into Unseen World» на 31-й день · зарабатывает $2 662/мес
+- **The Sleepy Scientist | Planet Earth: From Stardust to Civilisation**  
+  48 339 просмотров · 150 мин · канал «The Sleepy Scientist » на 32-й день · зарабатывает $2 433/мес
 
-#### space documentary — документалки о космосе (английский)
+#### ethiopian bible documentary (английский)
 
-- **Почему:** свежий ролик у канала без аудитории собирает около 1 271 просмотров, 14% таких роликов берут 20 тысяч и выше, 19 каналов моложе года уже зарабатывают, 28 доросли до полной цели, самый быстрый дошёл за 1 месяц.
-- **Риск:** свежий ролик новичка собирает всего около 1 271 просмотров — заработать в моменте не выйдет.
-- **Трудозатраты:** 1.8 ч готового видео в неделю, около 8 ч в месяц; типовой ролик — 55 мин.
-- **Цифры:** быстрее всех новичок дошёл за 1 мес.; у дошедших типично 315 роликов по теме; старым роликам достаётся 29% новых просмотров при доле каталога 55%; на YouTube по запросу около 172 425 роликов.
-
-Кто уже в теме:
-
-| Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |
-|---|---|---|---|---|---|
-| HISTORY | 7301 дн.? | 15 400 000 | $58 122 | 38 982 | 5 из 12305 |
-| Sideprojects | 2193 дн.? | 1 330 000 | $19 492 | — | 5 из 961 |
-| Top Fives | 4166 дн.? | 3 150 000 | $18 936 | — | 9 из 2545 |
-| Best Documentary | 3763 дн.? | 8 330 000 | $16 577 | 859 683 | 3 из 3373 |
-| Astrum | 4671 дн. | 2 860 000 | $15 267 | — | 32 из 484 |
-| Ridddle | 4293 дн.? | 5 690 000 | $14 219 | — | 38 из 564 |
-| 🟢 Optic Expedition | 243 дн.? | 219 000 | $11 970 | 1 851 | 4 из 649 |
-| Joe Scott | 7254 дн.? | 2 550 000 | $11 894 | — | 23 из 984 |
-
-🟢 — канал моложе года. Смотреть надо на них: если зелёных нет, в теме сидят одни старожилы.
-
-Заголовки, которые сработали у новичков:
-
-- **Bob Lazar  The Man Who Claimed He Worked on Alien Spacecraft — And Why People Still Debate** — «Боб Лазар  Человек, который утверждал, что работал над космическим кораблем пришельцев — и почему люди до сих пор спорят»  
-  43 106 просмотров · 26 мин · канал «Optic Expedition» на 123-й день · зарабатывает $11 970/мес
-- **"Dark" (2012) - VR180 8K Space Documentary about Dark Matter**  
-  63 986 просмотров · 20 мин · канал «Astrum Extra» на 1-й день · зарабатывает $5 984/мес
-- **Why Is Space So Cold When the Sun Is So Hot?** — «Почему в космосе так холодно, а на Солнце так жарко?»  
-  333 347 просмотров · 135 мин · канал «Calm Space» на 80-й день · зарабатывает $5 148/мес
-- **How Far Could Humans Actually Travel Through Space in One Lifetime?**  
-  549 166 просмотров · 114 мин · канал «Sleep On Science» на 102-й день · зарабатывает $3 848/мес
-- **The Machines That Built the Space Needle in 400 Days (1962)**  
-  73 579 просмотров · 33 мин · канал «Construction Legends» на 325-й день · зарабатывает $3 558/мес
-- **How Will SpaceX Get Us To Mars?**  
-  2 069 165 просмотров · 8 мин · канал «Real Engineering» на 287-й день · зарабатывает $3 281/мес
-
-#### solar system explained — Солнечная система (английский)
-
-- **Почему:** свежий ролик у канала без аудитории собирает около 1 337 просмотров, 9% таких роликов берут 20 тысяч и выше, 9 каналов моложе года уже зарабатывают, 11 доросли до полной цели, самый быстрый дошёл за 2 месяца.
-- **Риск:** свежий ролик новичка собирает всего около 1 337 просмотров — заработать в моменте не выйдет.
-- **Трудозатраты:** 1.2 ч готового видео в неделю, около 5 ч в месяц; типовой ролик — 72 мин.
-- **Цифры:** быстрее всех новичок дошёл за 2 мес.; у дошедших типично 320 роликов по теме; старым роликам достаётся 34% новых просмотров при доле каталога 55%.
+- **Почему:** свежий ролик у канала без аудитории собирает около 1 115 просмотров, 10% таких роликов берут 20 тысяч и выше, 14 каналов моложе года уже зарабатывают, 7 доросли до полной цели, самый быстрый дошёл за 1 месяц.
+- **Риск:** в базе всего 19 каналов по теме — выборка тонкая, проценты по ней шаткие; свежий ролик новичка собирает всего около 1 115 просмотров — заработать в моменте не выйдет.
+- **Трудозатраты:** 7.8 ч готового видео в неделю, около 34 ч в месяц; типовой ролик — 26 мин.
+- **Цифры:** быстрее всех новичок дошёл за 1 мес.; у дошедших типично 261 ролик по теме; старым роликам достаётся 34% новых просмотров при доле каталога 12%; на YouTube по запросу около 3 955 роликов.
 
 Кто уже в теме:
 
 | Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |
 |---|---|---|---|---|---|
-| Astrum | 4671 дн. | 2 860 000 | $15 267 | — | 32 из 484 |
-| Ridddle | 4293 дн.? | 5 690 000 | $14 219 | — | 6 из 564 |
-| What If | 2957 дн.? | 8 960 000 | $9 959 | — | 9 из 1665 |
-| Origins Explained | 3870 дн.? | 3 890 000 | $9 861 | — | 3 из 4467 |
-| 🟢 Proof | 55 дн. | 70 100 | $9 762 | 7 551 | 6 из 110 |
-| Astrum Extra | 2489 дн. | 314 000 | $5 984 | — | 17 из 191 |
-| 🟢 Calm Space | 239 дн. | 93 900 | $5 148 | 10 443 | 19 из 185 |
-| 🟢 Sleep On Science | 343 дн. | 75 300 | $3 848 | 25 886 | 26 из 320 |
+| 🟢 Curious Explorer | 169 дн. | 51 300 | $22 573 | 6 950 | 12 из 346 |
+| 🟢 Optic Expedition | 244 дн.? | 219 000 | $11 999 | — | 14 из 649 |
+| 🟢 New Discovery | 184 дн. | 37 800 | $11 018 | — | 8 из 261 |
+| 🟢 Reef Discovery | 231 дн. | 30 100 | $6 137 | — | 7 из 362 |
+| 🟢 The Ultimate Finding | 197 дн. | 48 100 | $4 103 | — | 8 из 143 |
+| 🟢 Forgotten Bible Stories | 67 дн. | 24 600 | $2 964 | 18 908 | 4 из 39 |
+| 🟢 The Sealed Scroll | 231 дн. | 99 600 | $2 920 | — | 13 из 227 |
+| 🟢 The Mind | 33 дн. | 8 220 | $1 163 | 81 797 | 3 из 53 |
 
 🟢 — канал моложе года. Смотреть надо на них: если зелёных нет, в теме сидят одни старожилы.
 
 Заголовки, которые сработали у новичков:
 
-- **Our Solar System's Planets: Mars - In 4K Resolution**  
-  1 107 208 просмотров · 11 мин · канал «Astrum» на 180-й день · зарабатывает $15 267/мес
-- **Scientists Shocked Voyager 2 Just Crossed the Edge of Our Solar System**  
-  30 673 просмотров · 25 мин · канал «Proof» на 8-й день · зарабатывает $9 762/мес
-- **What Voyager Detected at The Edge of Our Solar System**  
-  1 776 059 просмотров · 142 мин · канал «Calm Space» на 53-й день · зарабатывает $5 148/мес
-- **Neptune: The Most Violent Giant in the Solar System**  
-  114 531 просмотров · 110 мин · канал «Sleep On Science» на 253-й день · зарабатывает $3 848/мес
-- **The Most Relaxing Facts About Our Solar System to Fall Asleep To** — «Самые расслабляющие факты о нашей Солнечной системе, чтобы уснуть»  
-  1 224 941 просмотров · 120 мин · канал «Sleepy Science Channel» на 12-й день · зарабатывает $3 001/мес
-- **Science For Sleep | What’s Above and Below Our Solar System?**  
-  107 184 просмотров · 176 мин · канал «Science Before Sleep» на 96-й день · зарабатывает $1 673/мес
+- **Elon Musk Grok AI Was Asked About Jesus Resurrection in Ethiopian Bible The Answer Was Unexpected**  
+  295 859 просмотров · 28 мин · канал «Curious Explorer» на 109-й день · зарабатывает $22 573/мес
+- **Mel Gibson  “The Ethiopian Bible Reveals the Real End Times” — And It’s Not We Thought**  
+  551 196 просмотров · 20 мин · канал «Optic Expedition» на 96-й день · зарабатывает $11 999/мес
+- **The Ethiopian Bible Just Exposed What JesusSaid After Resurrection—And The Church TriedTo Bury It**  
+  202 174 просмотров · 27 мин · канал «New Discovery» на 15-й день · зарабатывает $11 018/мес
+- **Mel Gibson: The Ethiopian Bible Uncovers Jesus in Incredible Detail — And It's Not What You Think!**  
+  289 395 просмотров · 29 мин · канал «The Ultimate Finding» на 21-й день · зарабатывает $4 103/мес
+- **ONLY the Ethiopian Bible Tells the TRUE Story of Eden | Bible Movie 4K**  
+  214 709 просмотров · 74 мин · канал «Forgotten Bible Stories» на 12-й день · зарабатывает $2 964/мес
+- **The Ethiopian Bible Just Revealed Why Jesus’ Post-Resurrection Words Were Never Taught—It’s Shocking**  
+  652 911 просмотров · 35 мин · канал «The Sealed Scroll» на 6-й день · зарабатывает $2 920/мес
 
-#### dinosaur documentary — динозавры (английский)
+#### humans survive documentary (английский)
 
-- **Почему:** свежий ролик у канала без аудитории собирает около 986 просмотров, 24% таких роликов берут 20 тысяч и выше, 10 каналов моложе года уже зарабатывают, 19 доросли до полной цели, самый быстрый дошёл за 1 месяц.
-- **Риск:** свежий ролик новичка собирает всего около 986 просмотров — заработать в моменте не выйдет.
-- **Трудозатраты:** 1 ч готового видео в неделю, около 4 ч в месяц; типовой ролик — 64 мин.
-- **Цифры:** быстрее всех новичок дошёл за 1 мес.; у дошедших типично 150 роликов по теме; старым роликам достаётся 31% новых просмотров при доле каталога 55%; на YouTube по запросу около 658 роликов.
+- **Почему:** свежий ролик у канала без аудитории собирает около 759 просмотров, 12% таких роликов берут 20 тысяч и выше, 11 каналов моложе года уже зарабатывают, 2 доросли до полной цели, самый быстрый дошёл за 1 месяц.
+- **Риск:** в базе всего 23 канала по теме — выборка тонкая, проценты по ней шаткие; свежий ролик новичка собирает всего около 759 просмотров — заработать в моменте не выйдет.
+- **Трудозатраты:** 1.7 ч готового видео в неделю, около 8 ч в месяц; типовой ролик — 24 мин.
+- **Цифры:** быстрее всех новичок дошёл за 1 мес.; у дошедших типично 63 ролика по теме; старым роликам достаётся 10% новых просмотров при доле каталога 15%; на YouTube по запросу около 1 000 000 роликов.
 
 Кто уже в теме:
 
 | Канал | Возраст | Подписчиков | В месяц | Свежий ролик | Роликов по теме |
 |---|---|---|---|---|---|
-| Astrum | 4671 дн. | 2 860 000 | $15 267 | — | 4 из 484 |
-| Ridddle | 4293 дн.? | 5 690 000 | $14 219 | — | 9 из 564 |
-| ABCmouse | 5764 дн.? | 2 320 000 | $13 563 | — | 3 из 855 |
-| Pororo the Little Penguin | 3676 дн.? | 5 960 000 | $10 866 | 139 873 | 53 из 4134 |
-| What If | 2957 дн.? | 8 960 000 | $9 959 | — | 10 из 1665 |
-| Origins Explained | 3870 дн.? | 3 890 000 | $9 861 | 126 326 | 15 из 4467 |
-| Spinosnack | 600 дн. | 506 000 | $9 403 | 92 115 | 28 из 345 |
-| New Scientist | 7208 дн.? | 581 000 | $6 960 | — | 4 из 4986 |
+| 🟢 Mack | 90 дн. | 76 600 | $12 794 | — | 3 из 60 |
+| 🟢 Explain In Paint | 110 дн. | 69 500 | $7 287 | 3 654 | 5 из 66 |
+| 🟢 Goshu | 116 дн. | 13 800 | $1 907 | 10 020 | 7 из 57 |
+| 🟢 Banana Explains | 69 дн. | 4 370 | $1 856 | 109 396 | 3 из 39 |
+| 🟢 Mogo | 69 дн. | 2 730 | $1 661 | 4 721 | 3 из 36 |
+| 🟢 Deep Epoch | 42 дн. | 4 510 | $1 458 | 11 259 | 5 из 65 |
+| 🟢 Wild Origins | 307 дн. | 80 800 | $976 | — | 16 из 220 |
+| Celestial Stuff | 417 дн. | 3 340 | $773 | 1 183 | 3 из 412 |
 
 🟢 — канал моложе года. Смотреть надо на них: если зелёных нет, в теме сидят одни старожилы.
 
 Заголовки, которые сработали у новичков:
 
-- **The Congo Dinosaur Is Still Alive - What Witness Saw will Haunt You**  
-  68 325 просмотров · 30 мин · канал «New Discovery» на 138-й день · зарабатывает $10 832/мес
-- **Dinosaurs That Were Straight-Up Psychopathic Killers**  
-  2 511 872 просмотров · 27 мин · канал «Spinosnack» на 264-й день · зарабатывает $9 403/мес
-- **Paleogene Period: The Strange World After Dinosaurs Went Extinct | Full Documentary**  
-  389 346 просмотров · 87 мин · канал «WUFO Earth» на 4-й день · зарабатывает $6 687/мес
-- **The Terrifying World Before Dinosaurs**  
-  585 984 просмотров · 29 мин · канал «Mr. Science» на 268-й день · зарабатывает $5 999/мес
-- **The Dinosaur That May Still Be Alive in the Congo Rainforest? The Hidden World Inside Africa**  
-  1 053 854 просмотров · 30 мин · канал «Wild Horizons» на 40-й день · зарабатывает $4 445/мес
-- **Bigger Than A T-Rex - The Forgotten 42-Ton Monster That Defied the Dinosaur Scale**  
-  182 382 просмотров · 51 мин · канал «Bright Side Wild Nature» на 288-й день · зарабатывает $3 845/мес
+- **How Did Ancient Humans Survive Endless Rain?**  
+  421 202 просмотров · 25 мин · канал «Mack» на 50-й день · зарабатывает $12 794/мес
+- **How Did Ancient Humans Survive Before Medicine?**  
+  203 668 просмотров · 21 мин · канал «Stickly» на 10-й день · зарабатывает $8 158/мес
+- **How Ancient Humans Survived Brutal Winters?**  
+  344 091 просмотров · 20 мин · канал «Explain In Paint» на 34-й день · зарабатывает $7 287/мес
+- **The First 'Humans': How Did Homo Habilis Struggle and Survive? | Prehistoric Humans Documentary**  
+  288 891 просмотров · 60 мин · канал «WUFO Earth» на 44-й день · зарабатывает $6 782/мес
+- **Could Humans Actually Survive a Real Interstellar Mission (Brace Yourself)**  
+  59 768 просмотров · 123 мин · канал «Sleep On Science» на 249-й день · зарабатывает $3 686/мес
+- **Life 4.7 Million Years Ago | How did prehistoric humans survive to sustain life and more**  
+  54 615 просмотров · 108 мин · канал «Sleepless Historian» на 137-й день · зарабатывает $2 344/мес
 
 ## Архетипы каналов
 
 Не отдельные темы, а наборы тем, которые дошедшие до денег каналы снимают вместе.
 Полезно для контент-плана: показывает, чем заполнять каталог после первых роликов.
 
-- **places world’s · dangerous roads · impossible places · dare · corners · extreme places**  
-  5 каналов, из них 4 моложе года; быстрейший дошёл за 3 мес.; типично 67 роликов и $3 433 в месяц; 3.5 ч видео в неделю
-  Примеры: Unknown Planet, My Unreal Planet TV, Orca Planet TV, Aventurex.
-- **dangerous predators · tropical · kingdom nature · nature animal · fiercest · colombia**  
-  4 канала, из них 3 моложе года; быстрейший дошёл за 2 мес.; типично 122 ролика и $12 924 в месяц; 5.4 ч видео в неделю
-  Примеры: Nature's Moments, Discover Wildlife, Wild Animals - Animal Documentary, S zone.
-- **did ancient · ancient humans · did · humans · eat · did humans**  
-  4 канала, из них 3 моложе года; быстрейший дошёл за 3 мес.; типично 63 ролика и $7 685 в месяц; 1.7 ч видео в неделю
-  Примеры: Mack, Stickly, Explain In Paint, krishashok.
-- **remote · people live · live · richest · region · community**  
-  4 канала, из них 3 моложе года; быстрейший дошёл за 2 мес.; типично 62 ролика и $6 592 в месяц; 1.7 ч видео в неделю
-  Примеры: RocaNews, Impossible Travel, The Planet Journal, Secret Wonders.
-- **movie · survival movie · action movie · action · sci · giant**  
-  4 канала, из них 3 моложе года; быстрейший дошёл за 2 мес.; типично 26 роликов и $3 397 в месяц; 1.0 ч видео в неделю
-  Примеры: The Epic Reel | Stories Too Big for Reality, Razzu The Explainer , Filmenic, Sci-Fi Central.
+- **people live · people · living · remote · live · islands**  
+  7 каналов, из них 6 моложе года; быстрейший дошёл за 1 мес.; типично 46 роликов и $4 357 в месяц; 1.7 ч видео в неделю
+  Примеры: Impossible Travel, Best Travel, Happy Travel 99, Where on Earth.
+- **world · day · inside · ancient · desert · mystery**  
+  10 каналов, из них 5 моложе года; быстрейший дошёл за 2 мес.; типично 15 роликов и $9 593 в месяц; 0.3 ч видео в неделю
+  Примеры: Will Tennyson, Drew Binsky, Astraway, The Overlap.
+- **places world’s · impossible places · dare · extreme corners · corners · dangerous roads**  
+  7 каналов, из них 5 моложе года; быстрейший дошёл за 3 мес.; типично 67 роликов и $3 515 в месяц; 3.4 ч видео в неделю
+  Примеры: Unknown Planet, SunKran Travel, My Unreal Planet TV, Orca Planet TV.
+- **did · ancient humans · did ancient · humans · humans start · did humans**  
+  5 каналов, из них 4 моложе года; быстрейший дошёл за 1 мес.; типично 57 роликов и $7 287 в месяц; 1.7 ч видео в неделю
+  Примеры: Mack, Stickly, Explain In Paint, Vornic.
+- **fiercest · animal · nature animal · wild amazon · wild ocean · dangerous predators**  
+  5 каналов, из них 3 моложе года; быстрейший дошёл за 5 мес.; типично 103 ролика и $9 412 в месяц; 5.2 ч видео в неделю
+  Примеры: Discover Wildlife, GaiaDocs, Wild Animals - Animal Documentary, WildVerse.
 
 ## Рынки: английский против немецкого
 
 | Рынок | Каналов | Моложе года | Из них зарабатывают | Доля |
 |---|---|---|---|---|
-| английский | 480 | 248 | 49 | 20% |
-| немецкий | 266 | 163 | 2 | 1% |
+| английский | 1 122 | 628 | 88 | 14% |
+| немецкий | 288 | 180 | 2 | 1% |
 
 Разрыв здесь и есть причина делать канал на английском.
 
@@ -300,8 +300,8 @@
 
 Ниша, которую снимаем сами. За ней следим отдельно и подробнее остальных: что набирает просмотры прямо сейчас, что взлетело за сутки, кто работает в теме и какие формулировки пошли в ход. Остальная разведка при этом продолжается — фокус забирает долю поисков, а не всю квоту.
 
-В теме 3 404 роликов у 159 каналов;
-суточный прирост измерен у 1 336.
+В теме 5 470 роликов у 332 каналов;
+суточный прирост измерен у 1 338.
 
 ### Резко пошло
 
@@ -310,31 +310,22 @@
 
 | Ролик | Канал | Ускорение | Возраст | Просмотров | За сутки |
 |---|---|---|---|---|---|
-| The Untold Story Of India’s Space Programme \| India’s Space Odyssey \| Discovery Channel India | DiscoveryChannelInd | ×5.1 | 4 дн | 1 461 | +754 |
-| Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space! | Blue Nexus 🟢 | ×2.1 | 30 дн | 809 431 | +30 779 |
-| The Most Impossible Exoplanets We've Ever Found | Destiny | ×2.0 | 109 дн | 83 125 | +828 |
-| The Terrifying Truth About How Cold Space Really Is<br><sub>Ужасающая правда о том, насколько холодным на самом деле является космос</sub> | Calm Space 🟢 | ×1.9 | 145 дн | 180 686 | +3 409 |
-| What Will Fail First on a 100-Year Starship? \| Space Documentary | Celestial Stuff | ×1.9 | 10 дн | 5 276 | +343 |
-| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | ×1.8 | 4 дн | 27 703 | +11 476 |
-| Astronomers Found Galaxies So Far Away They Can't Be Real | Insane Curiosity | ×1.6 | 26 дн | 29 074 | +670 |
-| 100 Ancient Artifacts That Look Like Parts of Spacecraft | KirTop - Archaeology | ×1.6 | 36 дн | 19 272 | +671 |
-| A Hostile Alien Spacecraft Just Landed In The Arizona Desert! \| Battlefield 2025 \| Full Sci-Fi Movie | Sci-Fi Central | ×1.6 | 50 дн | 93 703 | +609 |
-| The Distance Between Galaxies Is Worse Than You Think | Calm Space 🟢 | ×1.6 | 71 дн | 222 975 | +2 526 |
+| The Strangest Dwarf Planet in Our Solar System: Haumea | Snoozy Space 🟢 | ×1.8 | 3 дн | 2 158 | +988 |
 
 ### Набирает больше всех
 
 | Ролик | Канал | Возраст | Просмотров | За сутки |
 |---|---|---|---|---|
-| James Webb Just Revealed Why Saturn Is the Scariest Planet in Our Solar System | Destiny | 7 дн | 279 338 | +83 888 |
-| Collisions: Life and Death From Outer Space ✦ The Secrets of the Universe 🪐 | Best Documentary | 18 дн | 859 683 | +42 440 |
-| Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space! | Blue Nexus 🟢 | 30 дн | 809 431 | +30 779 |
-| We’ve Never Seen This Happen In Space Until Now | Astrum Extra | 6 дн | 179 386 | +15 831 |
-| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | 4 дн | 27 703 | +11 476 |
-| Something’s Wrong With Our Galaxy’s Black Hole | Ridddle | 62 дн | 302 140 | +10 739 |
-| 2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD | Proof 🟢 | 3 дн | 45 276 | +10 163 |
-| The true Scale of the Universe – How Big is the Universe? \| Space Documentary 2026 | Actual Space | 83 дн | 577 222 | +8 873 |
-| Every Rare Space Event We’ll Actually See Before We Die | Ridddle | 136 дн | 1 886 469 | +8 678 |
-| The Terrifying Voices Caught From Space | Dark Space | 45 дн | 160 094 | +4 521 |
+| Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space! | Blue Nexus 🟢 | 31 дн | 854 543 | +45 112 |
+| James Webb Just Revealed Why Saturn Is the Scariest Planet in Our Solar System | Destiny | 8 дн | 321 481 | +42 143 |
+| Collisions: Life and Death From Outer Space ✦ The Secrets of the Universe 🪐 | Best Documentary | 19 дн | 893 701 | +34 018 |
+| We’ve Never Seen This Happen In Space Until Now | Astrum Extra | 7 дн | 194 058 | +14 672 |
+| Something’s Wrong With Our Galaxy’s Black Hole | Ridddle | 63 дн | 311 458 | +9 318 |
+| Every Rare Space Event We’ll Actually See Before We Die | Ridddle | 137 дн | 1 894 923 | +8 454 |
+| The true Scale of the Universe – How Big is the Universe? \| Space Documentary 2026 | Actual Space | 84 дн | 583 932 | +6 710 |
+| You Are Alive to Watch the Solar System's Greatest Storm Die | What If | 51 дн | 1 021 029 | +5 156 |
+| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | 4 дн | 32 810 | +5 107 |
+| 2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD | Proof 🟢 | 4 дн | 50 247 | +4 971 |
 
 ### Только вышло
 
@@ -342,53 +333,53 @@
 
 | Ролик | Канал | Возраст | Просмотров | За сутки |
 |---|---|---|---|---|
-| James Webb Just Revealed Why Saturn Is the Scariest Planet in Our Solar System | Destiny | 7 дн | 279 338 | +83 888 |
-| We’ve Never Seen This Happen In Space Until Now | Astrum Extra | 6 дн | 179 386 | +15 831 |
-| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | 4 дн | 27 703 | +11 476 |
-| 2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD | Proof 🟢 | 3 дн | 45 276 | +10 163 |
-| Killer Asteroids: Averting the Apocalypse \| Free Documentary Space | Free Documentary - Space | 7 дн | 15 544 | +3 089 |
-| The Spy Satellites That Dropped Top-Secret Films From Space | Dark Space | 3 дн | 11 636 | +1 745 |
-| The Spaceship That Has to Replace Our Entire Planet | Calm Space 🟢 | 7 дн | 22 752 | +1 407 |
-| Cosmology: The Science of the Universe \| Free Documentary Space | Free Documentary - Space | 3 дн | 3 506 | +1 106 |
-| Why Uranus Broke Every Rule in the Solar System | Calm Space 🟢 | 4 дн | 7 394 | +973 |
-| One Year on Mars: The Journey of Perseverance \| Free Documentary Space | Free Documentary - Space | 14 дн | 34 961 | +942 |
+| James Webb Just Revealed Why Saturn Is the Scariest Planet in Our Solar System | Destiny | 8 дн | 321 481 | +42 143 |
+| We’ve Never Seen This Happen In Space Until Now | Astrum Extra | 7 дн | 194 058 | +14 672 |
+| The Terrifying Scale of the Oort Cloud… And Why the Solar System Never Really Ends | Sleep On Science 🟢 | 4 дн | 32 810 | +5 107 |
+| 2 MINUTES AGO:NASA's Lucy Discovery STOPPED the WORLD | Proof 🟢 | 4 дн | 50 247 | +4 971 |
+| Killer Asteroids: Averting the Apocalypse \| Free Documentary Space | Free Documentary - Space | 8 дн | 17 057 | +1 513 |
+| The Spy Satellites That Dropped Top-Secret Films From Space | Dark Space | 4 дн | 12 673 | +1 037 |
+| The Strangest Dwarf Planet in Our Solar System: Haumea | Snoozy Space 🟢 | 3 дн | 2 158 | +988 |
+| Cosmology: The Science of the Universe \| Free Documentary Space | Free Documentary - Space | 4 дн | 4 258 | +752 |
+| The Spaceship That Has to Replace Our Entire Planet | Calm Space 🟢 | 7 дн | 23 420 | +668 |
+| Science For Sleep \| Something Is Pushing the Milky Way Through Space | Science Before Sleep | 4 дн | 4 867 | +529 |
 
 ### Формулировки в ходу
 
 Связки слов, доля которых среди свежих роликов выросла минимум в 1.8 раза против старых.
 Это язык заголовков, а не темы: чем сейчас цепляют.
 
-- **scariest** — ×2.1, 6 видео, +83 897 просмотров в сутки
-- **scariest planet** — ×4.7, 3 видео, +83 890 просмотров в сутки
-- **terrifying** — ×2.3, 42 видео, +48 369 просмотров в сутки
-- **terrifying than** — ×2.7, 3 видео, +30 780 просмотров в сутки
-- **never** — ×2.0, 20 видео, +27 541 просмотров в сутки
-- **minutes ago** — ×18.9, 3 видео, +10 165 просмотров в сутки
-- **ago** — ×3.6, 4 видео, +10 165 просмотров в сутки
-- **ship** — ×7.4, 14 видео, +6 413 просмотров в сутки
-- **deep** — ×3.7, 53 видео, +5 376 просмотров в сутки
-- **story** — ×2.9, 6 видео, +4 952 просмотров в сутки
-- **told** — ×1.9, 3 видео, +4 115 просмотров в сутки
-- **wrong** — ×1.9, 4 видео, +3 997 просмотров в сутки
-- **about black** — ×2.3, 4 видео, +3 543 просмотров в сутки
-- **kill** — ×7.4, 7 видео, +3 090 просмотров в сутки
+- **mariana** — ново, 5 видео, +45 179 просмотров в сутки
+- **mariana trench** — ново, 5 видео, +45 179 просмотров в сутки
+- **trench** — ново, 5 видео, +45 179 просмотров в сутки
+- **than space** — ×10.4, 6 видео, +45 179 просмотров в сутки
+- **terrifying than** — ×3.5, 8 видео, +45 112 просмотров в сутки
+- **scientists explored** — ново, 4 видео, +45 112 просмотров в сутки
+- **explored** — ×6.9, 4 видео, +45 112 просмотров в сутки
+- **james** — ×2.6, 125 видео, +42 235 просмотров в сутки
+- **james webb** — ×2.7, 125 видео, +42 235 просмотров в сутки
+- **webb** — ×2.5, 125 видео, +42 235 просмотров в сутки
+- **reveal** — ×2.3, 4 видео, +42 146 просмотров в сутки
+- **scariest planet** — ×2.6, 3 видео, +42 145 просмотров в сутки
+- **collisions** — ×2.6, 3 видео, +34 052 просмотров в сутки
+- **now** — ×6.7, 54 видео, +15 715 просмотров в сутки
 
 ### Кто работает в теме
 
 | Канал | Возраст | Роликов в теме | Свежих за месяц | За сутки | $/мес |
 |---|---|---|---|---|---|
-| Destiny | 3094 дн | 49 из 328 | 1 | +84 716 | $2 296 |
-| Best Documentary | 3763 дн | 3 из 3 373 | 2 | +42 496 | $16 577 |
-| Blue Nexus 🟢 | 42 дн | 2 из 41 | 2 | +30 850 | $2 799 |
-| Ridddle | 4293 дн | 71 из 564 | 0 | +23 357 | $14 219 |
-| Sleep On Science 🟢 | 343 дн | 77 из 320 | 11 | +19 400 | $3 848 |
-| Astrum Extra | 2489 дн | 81 из 191 | 1 | +19 071 | $5 984 |
-| Calm Space 🟢 | 239 дн | 56 из 185 | 10 | +18 341 | $5 148 |
-| Free Documentary - Space | 483 дн | 139 из 140 | 8 | +16 637 | $1 616 |
-| Proof 🟢 | 55 дн | 22 из 110 | 15 | +10 306 | $9 762 |
-| Actual Space | 1209 дн | 35 из 78 | 1 | +9 851 | $987 |
-| What If | 2957 дн | 32 из 1 665 | 0 | +8 734 | $9 959 |
-| Dark Space | 2047 дн | 44 из 96 | 1 | +7 276 | $475 |
+| Blue Nexus 🟢 | 43 дн | 2 из 41 | 1 | +45 179 | $2 920 |
+| Destiny | 3095 дн | 49 из 328 | 1 | +42 602 | $2 392 |
+| Best Documentary | 3764 дн | 3 из 3 373 | 2 | +34 059 | $16 910 |
+| Ridddle | 4294 дн | 71 из 564 | 0 | +20 556 | $14 378 |
+| Astrum Extra | 2490 дн | 81 из 191 | 1 | +17 571 | $6 039 |
+| Calm Space 🟢 | 239 дн | 56 из 185 | 10 | +12 946 | $5 078 |
+| Free Documentary - Space | 484 дн | 139 из 140 | 8 | +12 268 | $1 630 |
+| Sleep On Science 🟢 | 343 дн | 77 из 320 | 11 | +11 303 | $3 686 |
+| What If | 2958 дн | 32 из 1 665 | 0 | +9 880 | $10 076 |
+| Actual Space | 1209 дн | 35 из 78 | 1 | +7 604 | $1 000 |
+| Astrum | 4672 дн | 84 из 484 | 0 | +5 690 | $15 360 |
+| Dark Space | 2048 дн | 44 из 96 | 1 | +5 328 | $484 |
 
 ## Не темы
 
@@ -427,16 +418,16 @@
 В рейтинг не попадают намеренно: проценты по трём каналам выглядят убедительно и не значат ничего.
 Но среди них может оказаться то, что через неделю выйдет в лидеры.
 
-- whales documentary — английский, каналов 4, свежий ролик 32 852
-- history to fall asleep to (история для засыпания) — английский, каналов 10, свежий ролик 16 767
-- people live documentary — английский, каналов 14, свежий ролик 13 275
-- deutschlands Doku (немецкий документальный фильм) — немецкий, каналов 11, свежий ролик 11 594
-- secret china documentary — английский, каналов 3, свежий ролик 8 398
-- apex predators documentary — английский, каналов 9, свежий ролик 5 743
-- supervolcano documentary (супервулканы) — английский, каналов 4, свежий ролик 4 480
-- did ancient humans documentary — английский, каналов 8, свежий ролик 4 251
-- great white shark documentary — английский, каналов 3, свежий ролик 3 915
-- gott Doku — немецкий, каналов 8, свежий ролик 3 454
-- james webb telescope (телескоп Джеймс Уэбб) — английский, каналов 11, свежий ролик 3 113
-- built world documentary — английский, каналов 6, свежий ролик 2 267
+- deutschlands Doku (немецкий документальный фильм) — немецкий, каналов 11, свежий ролик 11 537
+- secret china documentary — английский, каналов 7, свежий ролик 6 335
+- apex predators documentary — английский, каналов 11, свежий ролик 5 726
+- native documentary — английский, каналов 6, свежий ролик 5 563
+- gott Doku — немецкий, каналов 8, свежий ролик 3 411
+- battle survival documentary — английский, каналов 12, свежий ролик 2 617
+- built world documentary — английский, каналов 9, свежий ролик 2 047
+- supervolcano documentary (супервулканы) — английский, каналов 5, свежий ролик 1 840
+- great white shark documentary — английский, каналов 10, свежий ролик 1 746
+- scientists asked grok documentary — английский, каналов 13, свежий ролик 1 305
+- whales documentary — английский, каналов 12, свежий ролик 1 093
+- ancient humans start documentary — английский, каналов 9, свежий ролик 1 029
 
