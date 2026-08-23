@@ -484,6 +484,12 @@ footer{color:var(--dim);font-size:13.5px;margin-top:34px;max-width:70ch}
    полоса яркости, порог насыщенности, различимость при дальтонизме и контраст
    к подложке. Плюс подписи числом у каждой полосы — цвет не единственный
    носитель смысла. */
+.histd{margin:14px 0 0;border-top:1px solid var(--line);padding-top:12px}
+.histd > summary{cursor:pointer;list-style:none;font-size:12.5px;color:var(--dim)}
+.histd > summary::-webkit-details-marker{display:none}
+.histd > summary::after{content:' ▾'}
+.histd[open] > summary::after{content:' ▴'}
+.histd > summary:hover{color:var(--brand)}
 .hist{margin:14px 0 4px}
 .hist .lg{display:flex;gap:16px;align-items:center;margin-bottom:10px;
   font-size:12px;color:var(--dim)}
@@ -1018,7 +1024,14 @@ function histogram(rows, sample) {
   if (!rows || !rows.length) return '';
   const max = Math.max(...rows.map(r => r.all), 1);
   const w = (n) => Math.max(2, Math.round((n / max) * 100)) + '%';
-  return '<div class="hist">'
+  const over = rows.filter(r => r.lo >= 20000).reduce((n, r) => n + r.all, 0);
+  // Свёрнута намеренно. Ответ она даёт предсказуемый — у старых каналов
+  // больше, — и в развёрнутом виде занимает половину карточки ради вывода,
+  // который и так известен. Нужна, когда хочется проверить именно форму:
+  // где лежит масса и добирается ли туда новичок.
+  return '<details class="histd"><summary>Разбивка по ступеням просмотров — '
+    + num(over) + ' из ' + num(sample) + ' выше 20 тысяч</summary>'
+    + '<div class="hist">'
     + '<div class="lg"><span><i class="a"></i>все каналы</span>'
     + '<span><i class="b"></i>каналы с нуля моложе года</span></div>'
     + rows.map(r =>
@@ -1030,7 +1043,7 @@ function histogram(rows, sample) {
     + '<p class="hnote">Свежие ролики темы — вышедшие от недели до двух месяцев назад, '
     + 'всего ' + num(sample) + '. Считаются штуки, а не проценты: '
     + 'по ним видно и сколько в теме трафика, и кому он достаётся.</p>'
-    + '</div>';
+    + '</div></details>';
 }
 
 // Возраст канала решает больше, чем кажется, и «моложе года» это прячет:
