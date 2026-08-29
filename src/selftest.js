@@ -3,7 +3,7 @@ import { computeMetrics } from './metrics.js';
 import { renderReport, score } from './report.js';
 import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
-import { explore, snapshot } from './collect.js';
+import { explore, snapshot, survey, isMissing } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
 import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
@@ -693,6 +693,44 @@ check('списки служебных слов разные', stopWords('en').h
     st.rangeLo != null && st.rangeHi != null && st.rangeHi > st.rangeLo);
   check('в диапазон идут только молодые каналы', st.rangeN === 24);
   check('нижняя граница ниже верхней десятой доли', st.rangeLo < st.rangeHi);
+}
+
+// --- исчезнувший канал не должен ронять прогон ---
+// Канал могли удалить или закрыть между разведкой и опросом: его плейлист
+// загрузок отдаёт 404. Прогоны 25 и 28 августа умерли ровно на этом, потратив
+// по четыре тысячи юнитов.
+{
+  check('404 распознаётся как пропавший ресурс',
+    isMissing(new Error('playlistItems 404: not found')));
+  check('прочие ошибки пропавшими не считаются',
+    !isMissing(new Error('playlistItems 500: server error')) && !isMissing(new Error('сеть')));
+
+  const db = {
+    channels: {
+      dead: { id: 'dead', uploadsPlaylistId: 'UUdead', videoCount: 10 },
+      live: { id: 'live', uploadsPlaylistId: 'UUlive', videoCount: 10 },
+    },
+    videos: {}, current: {}, state: {},
+  };
+  const q = new Q2(500);
+  const api = {
+    quota: q,
+    channels: async () => { q.spend('channels'); return { items: [] }; },
+    playlistItems: async (pid) => {
+      q.spend('playlistItems');
+      if (pid === 'UUdead') throw new Error('playlistItems 404: The playlist cannot be found.');
+      return { items: [{ contentDetails: { videoId: 'v1', videoPublishedAt: now } }] };
+    },
+  };
+  let threw = null;
+  const pending = await survey({ api, db, thresholds: { maxChannelsSurveyedPerRun: 10,
+    maxUploadPagesNewChannel: 10, medianSamplePages: 2 } })
+    .catch((e) => { threw = e; return null; });
+  check('прогон переживает исчезнувший канал', threw === null);
+  check('живой канал всё равно опрошен', pending && pending.has('v1'));
+  check('исчезнувший помечен датой', typeof db.channels.dead.gone === 'string');
+  check('к исчезнувшему больше не ходим', db.channels.dead.uploadsPlaylistId === null);
+  check('данные живого канала не пострадали', db.channels.live.firstUploadComplete === true);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

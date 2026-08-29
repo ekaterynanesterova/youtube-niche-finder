@@ -45,6 +45,7 @@ jobs:
         run: node src/selftest.js
 
       - name: Прогон
+        id: run
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           SEARCH_BUDGET: ${{ github.event.inputs.searchBudget || '40' }}
@@ -52,7 +53,12 @@ jobs:
           ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}
         run: node src/index.js ${{ github.event.inputs.metricsOnly == 'true' && '--metrics-only' || '' }}
 
+      # Коммитим даже если прогон упал. Оркестратор сохраняет базу в finally,
+      # так что на диске лежит всё собранное до падения. Раньше падение на
+      # одном мёртвом канале выбрасывало четыре тысячи потраченных юнитов
+      # и целый день сбора вместе с ними.
       - name: Коммит результата
+        if: always()
         run: |
           git config user.name "niche-finder"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -63,6 +69,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Данные не изменились — коммитить нечего"
           else
-            git commit -m "Сбор за $(date -u +%F)"
+            git commit -m "Сбор за $(date -u +%F)${{ steps.run.outcome == 'failure' && ' (прогон упал, сохранено собранное)' || '' }}"
             git push
           fi

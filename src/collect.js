@@ -7,6 +7,15 @@ import { queryKeywords } from './metrics.js';
 
 const log = (...a) => console.log(...a);
 
+// Канал мог быть удалён, закрыт или переведён в приватные между разведкой и
+// опросом — тогда его плейлист загрузок отдаёт 404. Это нормальная жизнь
+// каталога, а не поломка: один мёртвый канал не должен ронять весь прогон.
+// Ровно на этом прогоны 25 и 28 августа умерли, потратив по четыре тысячи
+// юнитов и не сохранив ничего.
+export function isMissing(e) {
+  return e instanceof Error && / 404: /.test(e.message);
+}
+
 // Ошибки бюджета и квоты не валят прогон: собранное должно сохраниться.
 // Слои, помеченные optional, не валят его вообще ничем — они улучшают
 // результат, но без них сбор осмысленный. Обязательные слои по-прежнему
@@ -173,17 +182,24 @@ export async function backfillFirstUpload({ api, db, ids, unitBudget }) {
     for (const id of ids) {
       if (api.quota.spent - spentAtStart >= unitBudget) break;
       const ch = db.channels[id];
-      if (!ch?.uploadsPlaylistId || ch.firstUploadComplete) continue;
+      if (!ch?.uploadsPlaylistId || ch.firstUploadComplete || ch.gone) continue;
       let token, oldest = ch.firstUploadAt ?? null;
-      for (;;) {
-        if (!api.quota.canAfford('playlistItems')) return;
-        const res = await api.playlistItems(ch.uploadsPlaylistId, token);
-        for (const it of res.items ?? []) {
-          const at = it.contentDetails?.videoPublishedAt;
-          if (at && (!oldest || at < oldest)) oldest = at;
+      try {
+        for (;;) {
+          if (!api.quota.canAfford('playlistItems')) return;
+          const res = await api.playlistItems(ch.uploadsPlaylistId, token);
+          for (const it of res.items ?? []) {
+            const at = it.contentDetails?.videoPublishedAt;
+            if (at && (!oldest || at < oldest)) oldest = at;
+          }
+          token = res.nextPageToken;
+          if (!token) { ch.firstUploadComplete = true; done++; break; }
         }
-        token = res.nextPageToken;
-        if (!token) { ch.firstUploadComplete = true; done++; break; }
+      } catch (e) {
+        if (!isMissing(e)) throw e;
+        ch.gone = new Date().toISOString().slice(0, 10);
+        ch.uploadsPlaylistId = null;
+        continue;
       }
       ch.firstUploadAt = oldest;
     }
@@ -216,10 +232,11 @@ export async function survey({ api, db, thresholds }) {
   });
 
   const pending = new Set();
+  let gone = 0;
   await tolerant('список загрузок', async () => {
     for (const id of batch) {
       const ch = db.channels[id];
-      if (!ch?.uploadsPlaylistId) continue;
+      if (!ch?.uploadsPlaylistId || ch.gone) continue;
       // Новый канал листаем до конца — нужна дата первой загрузки.
       // Известный — только первую страницу, свежее там всё равно нет.
       // У каналов с огромным архивом до конца не дойти: берём столько, сколько
@@ -228,26 +245,36 @@ export async function survey({ api, db, thresholds }) {
       const maxPages = ch.surveyed ? 1
         : (reachable ? thresholds.maxUploadPagesNewChannel : thresholds.medianSamplePages);
       let token, pages = 0, oldest = ch.firstUploadAt ?? null;
-      while (pages < maxPages) {
-        if (!api.quota.canAfford('playlistItems')) break;
-        const res = await api.playlistItems(ch.uploadsPlaylistId, token);
-        for (const it of res.items ?? []) {
-          const vid = it.contentDetails?.videoId;
-          const at = it.contentDetails?.videoPublishedAt;
-          if (!vid) continue;
-          if (at && (!oldest || at < oldest)) oldest = at;
-          if (!db.videos[vid] || !db.videos[vid].durationSec) pending.add(vid);
+      try {
+        while (pages < maxPages) {
+          if (!api.quota.canAfford('playlistItems')) break;
+          const res = await api.playlistItems(ch.uploadsPlaylistId, token);
+          for (const it of res.items ?? []) {
+            const vid = it.contentDetails?.videoId;
+            const at = it.contentDetails?.videoPublishedAt;
+            if (!vid) continue;
+            if (at && (!oldest || at < oldest)) oldest = at;
+            if (!db.videos[vid] || !db.videos[vid].durationSec) pending.add(vid);
+          }
+          pages++;
+          token = res.nextPageToken;
+          if (!token) { ch.firstUploadComplete = true; break; }
         }
-        pages++;
-        token = res.nextPageToken;
-        if (!token) { ch.firstUploadComplete = true; break; }
+      } catch (e) {
+        if (!isMissing(e)) throw e;
+        // Канала больше нет. Помечаем и не ходим к нему снова: иначе он будет
+        // валить каждый прогон и жечь юниты.
+        ch.gone = new Date().toISOString().slice(0, 10);
+        ch.uploadsPlaylistId = null;
+        gone++;
       }
       ch.firstUploadAt = oldest;
       ch.surveyed = new Date().toISOString();
     }
   });
 
-  log(`Опрос: ${batch.length} каналов, ${pending.size} видео к дозагрузке`);
+  log(`Опрос: ${batch.length} каналов, ${pending.size} видео к дозагрузке`
+      + (gone ? `, ${gone} каналов исчезло` : ''));
   return pending;
 }
 
