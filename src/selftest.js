@@ -5,7 +5,7 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot, survey, isMissing } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
-import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile } from './metrics.js';
+import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
@@ -125,27 +125,27 @@ const seeds = [{ id: 'open', group: 'Тест', de: 'offen', en: 'open' },
 // Ниша «open»: молодые каналы дают выбросы — дверь открыта.
 for (let c = 0; c < 4; c++) {
   const id = `young${c}`;
-  channels[id] = { id, title: `Молодой ${c}`, seeds: ['open'], markets: ['de'],
+  channels[id] = { id, title: `Jung ${c}`, seeds: ['open'], markets: ['de'],
                    firstUploadAt: day(200), firstUploadComplete: true, publishedAt: day(200), subscribers: 900 };
   for (let v = 0; v < 12; v++) {
-    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `offen видео ${v}`,
+    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `offen Folge ${v}`,
       publishedAt: day(40 + v * 10), durationSec: 1500, views: 150000, likes: 6000, comments: 600, lang: 'de' };
   }
   // один выброс — ×10 к медиане
-  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `offen выброс ${c}`,
+  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `offen Treffer ${c}`,
     publishedAt: day(20), durationSec: 1800, views: 1500000, likes: 60000, comments: 4500, lang: 'de' };
 }
 
 // Ниша «closed»: выбросы только у старых каналов — дверь закрыта.
 for (let c = 0; c < 3; c++) {
   const id = `old${c}`;
-  channels[id] = { id, title: `Старик ${c}`, seeds: ['closed'], markets: ['de'],
+  channels[id] = { id, title: `Alt ${c}`, seeds: ['closed'], markets: ['de'],
                    firstUploadAt: day(2000), firstUploadComplete: true, publishedAt: day(2000), subscribers: 1500000 };
   for (let v = 0; v < 12; v++) {
-    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `gesperrt видео ${v}`,
+    videos[`${id}v${v}`] = { id: `${id}v${v}`, channelId: id, title: `gesperrt Folge ${v}`,
       publishedAt: day(40 + v * 10), durationSec: 1500, views: 250000, likes: 7500, comments: 600, lang: 'de' };
   }
-  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `gesperrt выброс старика ${c}`,
+  videos[`${id}hit`] = { id: `${id}hit`, channelId: id, title: `gesperrt Treffer alt ${c}`,
     publishedAt: day(20), durationSec: 1800, views: 2500000, likes: 75000, comments: 4500, lang: 'de' };
 }
 
@@ -731,6 +731,54 @@ check('списки служебных слов разные', stopWords('en').h
   check('исчезнувший помечен датой', typeof db.channels.dead.gone === 'string');
   check('к исчезнувшему больше не ходим', db.channels.dead.uploadsPlaylistId === null);
   check('данные живого канала не пострадали', db.channels.live.firstUploadComplete === true);
+}
+
+// --- язык канала по заголовкам, а не по объявленному полю ---
+// defaultAudioLanguage заполняет владелец канала и ошибается: у Filmenic там
+// стоит «en», а ролики называются «Ek Galat Experiment Ne Bana Diya Khaufnaak
+// Dinosaur». Такой канал попадал в английские ниши и портил их цифры.
+{
+  const t = (...a) => a.map((x) => ({ title: x }));
+  check('чужое письмо распознано', titleLanguage(t(
+    'अंतरिक्ष की कहानी', 'ब्रह्मांड का रहस्य', 'पृथ्वी और चंद्रमा')) === 'hi');
+  check('романизированный хинди распознан', titleLanguage(t(
+    'Ek Galat Experiment Ne Bana Diya Khaufnaak Dinosaur',
+    'Ye Movie Kya Hai Aur Kaise Bani',
+    'Iska Raaz Kya Hai Jo Kisi Ne Nahi Dekha')) === 'hi');
+  check('английский вердикта не получает', titleLanguage(t(
+    'The Terrifying Scale of the Oort Cloud',
+    'What Will Fail First on a 100-Year Starship',
+    'How the Solar System Formed')) === null);
+  check('немецкий вердикта не получает', titleLanguage(t(
+    'Die größten Rätsel des Weltalls', 'Wie das Universum entstand',
+    'Was war vor dem Urknall')) === null);
+  // Два немецких канала про засыпание разделяют заголовок корейской буквой «ㅣ».
+  // Одиночный знак — украшение, а не язык.
+  check('одиночный знак чужого письма не считается языком', titleLanguage(t(
+    'Gemütlich einschlafenㅣDas Tal der Drachenhirten',
+    'In wenigen Minuten einschlafenㅣDas verborgene Gewächshaus',
+    'Gemütliche EinschlafgeschichteㅣDie Pilzzüchterin')) === null);
+  check('одного маркера хинди мало', titleLanguage(t(
+    'The Sea Ka Mystery', 'Deep Ocean Explained', 'What Lives Below')) === null);
+  check('на двух заголовках вердикт не выносим',
+    titleLanguage(t('अंतरिक्ष की कहानी', 'ब्रह्मांड का रहस्य')) === null);
+
+  // Канал с чужим языком должен выпасть из обоих рынков целиком.
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const channels = { hi: { id: 'hi', seeds: ['open'], markets: ['de'], firstUploadAt: day(100),
+                           firstUploadComplete: true, publishedAt: day(105) } };
+  const videos = {}, current = {};
+  for (let i = 0; i < 12; i++) {
+    videos['h' + i] = { id: 'h' + i, channelId: 'hi', durationSec: 1500, lang: 'de',
+                        publishedAt: day(20 + i),
+                        title: 'offen Kya Hai Aur Kaise Bana ' + i };
+    current['h' + i] = [90000, 100, 10];
+  }
+  const mm = computeMetrics({ db: { channels, videos, current }, seeds, thresholds,
+                              snapshots: [], now, primaryLang: 'de' });
+  check('язык из заголовков перебивает объявленный', mm.channels.hi.lang === 'hi');
+  check('чужой канал не попадает в немецкую нишу', mm.niches.open.byMarket.de.channels === 0);
+  check('и в английскую тоже', mm.niches.open.byMarket.en.channels === 0);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

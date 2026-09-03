@@ -94,6 +94,63 @@ export function engagement(v) {
   };
 }
 
+// Язык по заголовкам, а не по тому, что канал о себе объявил. Поле
+// defaultAudioLanguage заполняет владелец канала, и он ошибается: у Filmenic
+// там стоит «en», а ролики называются «Ek Galat Experiment Ne Bana Diya
+// Khaufnaak Dinosaur». Такой канал попадал в английские ниши и портил их
+// цифры — один его ролик был лучшим в теме динозавров.
+//
+// Два признака. Чужое письмо — деванагари, кириллица, арабица и прочие.
+// И романизированный хинди с урду: письмо латинское, но слова свои.
+const FOREIGN_SCRIPTS = [
+  ['hi', /^\p{Script=Devanagari}+$/u],
+  ['bn', /^\p{Script=Bengali}+$/u],
+  ['ta', /^\p{Script=Tamil}+$/u],
+  ['ar', /^\p{Script=Arabic}+$/u],
+  ['he', /^\p{Script=Hebrew}+$/u],
+  ['ru', /^\p{Script=Cyrillic}+$/u],
+  ['el', /^\p{Script=Greek}+$/u],
+  ['zh', /^\p{Script=Han}+$/u],
+  ['ja', /^(?:\p{Script=Hiragana}|\p{Script=Katakana})+$/u],
+  ['ko', /^\p{Script=Hangul}+$/u],
+  ['th', /^\p{Script=Thai}+$/u],
+];
+
+// Служебные слова хинди и урду, не совпадающие с английскими. Требуем два
+// разных в одном заголовке: одно может оказаться чьим-то именем.
+const HINGLISH = new Set((
+  'ne ka ki ko se hai hain kya kyun kyu mein aur bhi yeh woh tha thi nahi nahin ' +
+  'kaise kaun bana banaya diya gaya raha rahi liye wala wali jab phir abhi sirf ' +
+  'bahut bohot kar karo karne hua hui kuch mera tera uska iska hum tum aap sabse ' +
+  'jaise itna kitna wale unka lekin agar toh apne apni hoti hota rahe gaye dekho dekha suno'
+).split(' '));
+
+// Одиночный знак чужого письма — это украшение, а не язык: два немецких канала
+// про засыпание разделяют заголовок корейской буквой «ㅣ» вместо палочки.
+// Поэтому письмо засчитывается, только если им написано слово от двух букв.
+export function titleLanguage(videos, thresholds = {}) {
+  const titles = videos.map((v) => v.title).filter(Boolean);
+  if (titles.length < (thresholds.langMinTitles ?? 3)) return null;
+  const need = thresholds.foreignTitleShare ?? 0.3;
+
+  const byScript = {};
+  let hinglish = 0;
+  for (const t of titles) {
+    const words = t.split(/[^\p{L}]+/u).filter((w) => w.length >= 2);
+    const seen = new Set();
+    for (const w of words) {
+      for (const [code, re] of FOREIGN_SCRIPTS) if (re.test(w)) seen.add(code);
+    }
+    for (const code of seen) byScript[code] = (byScript[code] ?? 0) + 1;
+    const marks = new Set(t.toLowerCase().split(/[^\p{L}]+/u).filter((w) => HINGLISH.has(w)));
+    if (marks.size >= 2) hinglish++;
+  }
+  const top = Object.entries(byScript).sort((a, b) => b[1] - a[1])[0];
+  if (top && top[1] / titles.length >= need) return top[0];
+  if (hinglish / titles.length >= need) return 'hi';
+  return null;
+}
+
 // Параметр relevanceLanguage в search.list — подсказка, а не фильтр: по немецкому
 // запросу приезжают National Geographic и KBS. Язык канала определяем по его же
 // видео; запрос говорит только о теме.
@@ -149,7 +206,9 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       ...dormancy(ch, now, thresholds),
       medianViews, matureCount,
       ...hitProfile(vids, thresholds, now),
-      lang: dominantLang(vids, ch.markets ?? []),
+      // Заголовки главнее объявленного языка: их пишет тот же владелец, но
+      // соврать в них труднее, чем в служебном поле.
+      lang: titleLanguage(vids, thresholds) ?? dominantLang(vids, ch.markets ?? []),
       // Два разных числа, которые раньше были одним. videoCount — сколько
       // роликов канала есть У НАС, catalogCount — сколько их у канала на самом
       // деле (цифра самого YouTube). Архив листается не до конца: у HISTORY мы

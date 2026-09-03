@@ -44,5 +44,7 @@
   "topicAdjacencyMinSample": 20,
   "freshTopMinSample": 20,
   "dormantStartDays": 180,
-  "cohortMinSample": 8
+  "cohortMinSample": 8,
+  "foreignTitleShare": 0.3,
+  "langMinTitles": 3
 }
