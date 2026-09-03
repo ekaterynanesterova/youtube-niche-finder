@@ -654,10 +654,19 @@ function newcomerRange(videos, channels, thresholds) {
     const c = channels[v.channelId];
     return c?.cleanStart === true && c.ageDays != null && c.ageDays <= thresholds.youngChannelDays;
   }).map((v) => v.views).sort((x, y) => x - y);
-  if (a.length < (thresholds.freshMinSample ?? 10)) return { rangeLo: null, rangeHi: null, rangeN: a.length };
+  // Верхняя граница — три четверти, а не девять десятых. Девятая десятая на
+  // выборке в двадцать роликов это второе-третье значение сверху, то есть
+  // почти чистый шум: при делении выборки пополам p90 расходится на 14%,
+  // а p75 — на 9%. Потолок при этом никуда не делся, он показан отдельно
+  // живым примером «лучшее у новичка с нуля».
+  //
+  // Двадцать пять роликов — минимум, ниже которого о диапазоне говорить нечего.
+  // Ниша с меньшей выборкой уходит в «ещё изучаем», а не занимает первое место
+  // на трёх удачных роликах.
+  if (a.length < (thresholds.rangeMinSample ?? 25)) return { rangeLo: null, rangeHi: null, rangeN: a.length };
   return {
     rangeLo: Math.round(quantile(a, 0.25)),
-    rangeHi: Math.round(quantile(a, 0.9)),
+    rangeHi: Math.round(quantile(a, 0.75)),
     rangeN: a.length,
   };
 }
@@ -707,7 +716,7 @@ function newcomerFresh(videos, channels, thresholds) {
     // выбирая нишу: медиана говорит, что бывает, если делать как все.
     // На выборке меньше двадцати ролик квартиль — это два-три значения, поэтому
     // не считаем.
-    freshTop: fresh.length >= (thresholds.freshTopMinSample ?? 20) ? quantile(sorted, 0.75) : null,
+    freshTop: fresh.length >= (thresholds.rangeMinSample ?? 25) ? quantile(sorted, 0.75) : null,
     freshBest: sorted[sorted.length - 1],
     // Насколько это надёжно: доля свежих роликов, перешагнувших планку.
     freshOverWorking: share(thresholds.workingViews),

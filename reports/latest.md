@@ -200,46 +200,46 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [The End of Nepal? Home to the Himalayas’ Most UNSTABLE Places \| 4K Do](https://youtu.be/UGaEQyoaldg) | Pure Earth | 891.8 | 2 364 675 | 282 дн | 538 321 |
-| [390 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/aL3rIqFfuFw) | MTH Incredible Moments | 912.6 | 1 834 267 | 60 дн | 334 823 |
-| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/Rn9jqZdaLos) | Fat Foodie | 6197.7 | 4 505 736 | 175 дн | 314 586 |
-| [The Cold CEO Everyone Fears Is Her Secret Husband—Cold at Work, But Sm](https://youtu.be/JD_RVbdwTQ4) | PeachShine Drama | 13.0 | 988 503 | 90 дн | 278 616 |
-| [What Just Happened In Nepal Reveals A Terrifying Truth You Aren't Read](https://youtu.be/z_vo0DCEKAE) | The Space Desk | 60.9 | 1 204 885 | 143 дн | 233 485 |
-| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P1)](https://youtu.be/6wjlg9LMEKg) | MTH Incredible Moments | 1284.3 | 2 581 497 | 54 дн | 226 097 |
-| [Hamburger Hill \| Don Cheadle (Avengers) \| ACTION, WAR \| Full Movies](https://youtu.be/KHOQ6TJR2W0) | MovieSphere - Action Full Movi | 28.3 | 2 042 817 | 329 дн | 165 380 |
-| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 102.2 | 2 356 695 | 159 дн | 152 679 |
-| [Florida's New Predator Isn't a Python — And It Hunts Humans](https://youtu.be/oM_TU6UM6ok) | Ambrose Wild | 20.8 | 1 856 649 | 80 дн | 152 368 |
-| [China quietly saved the world last month](https://youtu.be/BkA0bkb6ZO0) | Max Fisher | 5.2 | 6 905 733 | 175 дн | 142 821 |
-| [WILD COLOMBIA \| Hidden Predators in the Heart of South America \| Nat](https://youtu.be/jR_qBWnh3mc) | GaiaDocs | 20.5 | 472 272 | 171 дн | 137 466 |
-| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #2](https://youtu.be/Tr2peUT-zgc) | SNAP MOMENTS | 169.4 | 3 263 314 | 23 дн | 128 298 |
-| [Life In Rural Afghanistan \| 100-Year-Old Woman's Hard Nomadic Life, W](https://youtu.be/ahto5julCec) | Shamshir | 56.8 | 3 752 011 | 92 дн | 127 578 |
-| [A unique Khanty dwelling that can withstand the most severe cold in th](https://youtu.be/M50moHjAS4Q) | Liliana Sun | 11.2 | 3 692 199 | 58 дн | 126 168 |
-| [Epoch of Voyages Full 4K Fantasy Action Movie \| Episode 1 Epic Fantas](https://youtu.be/_oKHNBRf45M) | Shanhay Studio | 4.8 | 1 225 475 | 74 дн | 120 205 |
-| [Your phone addiction is keeping you from achieving flow state \| Arthu](https://youtu.be/KHd-luu3M8s) | Big Think Clips | 38.8 | 2 491 069 | 250 дн | 116 895 |
-| [WILD COLOMBIA \| The Most Apex Predators in South America  \| Nature A](https://youtu.be/foSpcgQzTGA) | GaiaDocs | 50.7 | 1 168 663 | 164 дн | 111 991 |
-| [SAVIOR \| Dennis Quaid (The Day After Tomorrow) \| ACTION, WAR \| Full](https://youtu.be/sF5JXjVpwjc) | MovieSphere - Action Full Movi | 8.1 | 582 699 | 336 дн | 108 869 |
-| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 641.0 | 5 715 279 | 156 дн | 103 575 |
-| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 190.4 | 3 867 985 | 227 дн | 102 198 |
-| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P18)](https://youtu.be/aVd4wrla2G0) | SNAP MOMENTS | 174.9 | 3 370 008 | 13 дн | 95 009 |
-| [Mess With The Wrong Guy! Retired Assassin Wipes Out Entire Gang In 202](https://youtu.be/1Nv-RlUGua0) | Alpha Series | 634.6 | 3 630 285 | 230 дн | 94 451 |
-| [China Released Horses Into a Barren Desert With No Grass — What Happen](https://youtu.be/55cPLrfV5iM) | Phantom Expedition | 35.5 | 854 570 | 103 дн | 93 563 |
-| [She Took the Elevator in Her Pajamas—And Her SECRET CRUSH Was Inside! ](https://youtu.be/mkcY0sTRL2M) | PeachShine Drama | 4.4 | 334 327 | 90 дн | 92 544 |
-| [199 Moments Filmed Second Before Disaster \| Incredible Moments 2026 (](https://youtu.be/fCQSQG0q9Fs) | MTH Incredible Moments | 419.7 | 843 665 | 56 дн | 89 235 |
-| [Why the Mariana Trench Still Terrifies Scientists](https://youtu.be/W5v_IrhO-1w) | YESTERDAY | 5.0 | 2 023 321 | 292 дн | 84 094 |
-| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #3](https://youtu.be/BnIjDcAeFow) | SNAP MOMENTS | 79.0 | 1 521 763 | 29 дн | 78 301 |
-| [Incredible Moments Caught on Camera \| Moments Filmed Seconds Before D](https://youtu.be/a454VLwqRyE) | SOHA Moments | 5.9 | 433 913 | 199 дн | 74 679 |
-| [Life In Rural Afghanistan \| 100-Year-Old Afghan Man, Young Second Wif](https://youtu.be/TNjsaaGuE_k) | Shamshir | 54.0 | 3 563 563 | 73 дн | 73 608 |
-| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 432.9 | 1 724 706 | 82 дн | 70 906 |
-| [99 Nurses Couldn’t Stop CEO’s Baby From Crying—Only a Cleaner Could, B](https://youtu.be/YAXEqAhVXF0) | PeachShine Drama | 10.8 | 822 744 | 82 дн | 70 440 |
-| [How People Live in Netherlands \| The Dark Secret Behind 18 Million Pe](https://youtu.be/m5tvfuoSzOQ) | Impossible Travel | 17.8 | 1 255 482 | 66 дн | 69 039 |
-| [Dragonbone Continent Full 4K Fantasy Action Movie \| Chapter 2 Epic Fa](https://youtu.be/0fytIDfQ13A) | Shanhay Studio | 4.0 | 1 030 633 | 69 дн | 67 927 |
-| [Mariana Trench: What Really Exists 11 KM Below the Ocean?](https://youtu.be/jzyAHsYqUm8) | Shivan Decode  | 1401.8 | 1 640 080 | 237 дн | 67 560 |
-| [8 Disturbing Paranormal Police Encounters No One Can Explain](https://youtu.be/G8FqGh102nc) | Warrior Mind | 3250.4 | 2 987 143 | 219 дн | 67 299 |
-| [【ENG DUB \| FULL】They Mocked the Poor Nanny Until She Understood the B](https://youtu.be/uX27_hUXQv4) | Eve DramaTV | 35.4 | 2 341 728 | 24 дн | 66 089 |
-| [Living in Tasmania \| How People Live at the Edge of the World \| 4K](https://youtu.be/J5LUYPwGSiY) | Happy Travel 99 | 4.7 | 355 490 | 49 дн | 65 416 |
-| [No Boss, No Money: The Raw Reality of China’s Gen-Z Freelancers](https://youtu.be/eJZFUEQebbI) | Inside China Lives | 147.8 | 3 799 751 | 304 дн | 65 106 |
-| [How Mountain Men Built Hidden Dugouts in 72 Hours That Modern Engineer](https://youtu.be/_LweyLdfFp8) | Cabin 8 | 127.7 | 305 301 | 38 дн | 63 464 |
-| [THE EXILED \| A Soldier Declared Dead Finds New Life on an Alien World](https://youtu.be/3d9ecV7vFKY) | Aurelume Films | 3.2 | 3 283 481 | 78 дн | 62 920 |
+| [The End of Nepal? Home to the Himalayas’ Most UNSTABLE Places \| 4K Do](https://youtu.be/UGaEQyoaldg) | Pure Earth | 891.8 | 2 364 675 | 282 дн | 537 437 |
+| [390 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/aL3rIqFfuFw) | MTH Incredible Moments | 912.6 | 1 834 267 | 60 дн | 334 382 |
+| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/Rn9jqZdaLos) | Fat Foodie | 6197.7 | 4 505 736 | 175 дн | 314 427 |
+| [The Cold CEO Everyone Fears Is Her Secret Husband—Cold at Work, But Sm](https://youtu.be/JD_RVbdwTQ4) | PeachShine Drama | 13.0 | 988 503 | 90 дн | 278 050 |
+| [What Just Happened In Nepal Reveals A Terrifying Truth You Aren't Read](https://youtu.be/z_vo0DCEKAE) | The Space Desk | 60.9 | 1 204 885 | 143 дн | 233 158 |
+| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P1)](https://youtu.be/6wjlg9LMEKg) | MTH Incredible Moments | 1284.3 | 2 581 497 | 54 дн | 225 954 |
+| [Hamburger Hill \| Don Cheadle (Avengers) \| ACTION, WAR \| Full Movies](https://youtu.be/KHOQ6TJR2W0) | MovieSphere - Action Full Movi | 28.3 | 2 042 817 | 329 дн | 165 283 |
+| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 102.2 | 2 356 695 | 159 дн | 152 607 |
+| [Florida's New Predator Isn't a Python — And It Hunts Humans](https://youtu.be/oM_TU6UM6ok) | Ambrose Wild | 20.8 | 1 856 649 | 80 дн | 152 278 |
+| [China quietly saved the world last month](https://youtu.be/BkA0bkb6ZO0) | Max Fisher | 5.2 | 6 905 733 | 175 дн | 142 800 |
+| [WILD COLOMBIA \| Hidden Predators in the Heart of South America \| Nat](https://youtu.be/jR_qBWnh3mc) | GaiaDocs | 20.5 | 472 272 | 171 дн | 137 177 |
+| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #2](https://youtu.be/Tr2peUT-zgc) | SNAP MOMENTS | 169.4 | 3 263 314 | 23 дн | 128 261 |
+| [Life In Rural Afghanistan \| 100-Year-Old Woman's Hard Nomadic Life, W](https://youtu.be/ahto5julCec) | Shamshir | 56.8 | 3 752 011 | 92 дн | 127 546 |
+| [A unique Khanty dwelling that can withstand the most severe cold in th](https://youtu.be/M50moHjAS4Q) | Liliana Sun | 11.2 | 3 692 199 | 58 дн | 126 137 |
+| [Epoch of Voyages Full 4K Fantasy Action Movie \| Episode 1 Epic Fantas](https://youtu.be/_oKHNBRf45M) | Shanhay Studio | 4.8 | 1 225 475 | 74 дн | 120 120 |
+| [Your phone addiction is keeping you from achieving flow state \| Arthu](https://youtu.be/KHd-luu3M8s) | Big Think Clips | 38.8 | 2 491 069 | 250 дн | 116 856 |
+| [WILD COLOMBIA \| The Most Apex Predators in South America  \| Nature A](https://youtu.be/foSpcgQzTGA) | GaiaDocs | 50.7 | 1 168 663 | 164 дн | 111 913 |
+| [SAVIOR \| Dennis Quaid (The Day After Tomorrow) \| ACTION, WAR \| Full](https://youtu.be/sF5JXjVpwjc) | MovieSphere - Action Full Movi | 8.1 | 582 699 | 336 дн | 108 723 |
+| [Why The Ocean's Deadliest Predator Refuses To Kill Us](https://youtu.be/VtrcKTkhDHU) | OctoLab | 641.0 | 5 715 279 | 156 дн | 103 561 |
+| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 190.4 | 3 867 985 | 227 дн | 102 178 |
+| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P18)](https://youtu.be/aVd4wrla2G0) | SNAP MOMENTS | 174.9 | 3 370 008 | 13 дн | 94 990 |
+| [Mess With The Wrong Guy! Retired Assassin Wipes Out Entire Gang In 202](https://youtu.be/1Nv-RlUGua0) | Alpha Series | 634.6 | 3 630 285 | 230 дн | 94 433 |
+| [China Released Horses Into a Barren Desert With No Grass — What Happen](https://youtu.be/55cPLrfV5iM) | Phantom Expedition | 35.5 | 854 570 | 103 дн | 93 489 |
+| [She Took the Elevator in Her Pajamas—And Her SECRET CRUSH Was Inside! ](https://youtu.be/mkcY0sTRL2M) | PeachShine Drama | 4.4 | 334 327 | 90 дн | 92 360 |
+| [199 Moments Filmed Second Before Disaster \| Incredible Moments 2026 (](https://youtu.be/fCQSQG0q9Fs) | MTH Incredible Moments | 419.7 | 843 665 | 56 дн | 89 167 |
+| [Why the Mariana Trench Still Terrifies Scientists](https://youtu.be/W5v_IrhO-1w) | YESTERDAY | 5.0 | 2 023 321 | 292 дн | 84 069 |
+| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #3](https://youtu.be/BnIjDcAeFow) | SNAP MOMENTS | 79.0 | 1 521 763 | 29 дн | 78 272 |
+| [Incredible Moments Caught on Camera \| Moments Filmed Seconds Before D](https://youtu.be/a454VLwqRyE) | SOHA Moments | 5.9 | 433 913 | 199 дн | 74 586 |
+| [Life In Rural Afghanistan \| 100-Year-Old Afghan Man, Young Second Wif](https://youtu.be/TNjsaaGuE_k) | Shamshir | 54.0 | 3 563 563 | 73 дн | 73 597 |
+| [The Deep Ocean: The Last Unknown World on Earth](https://youtu.be/Sbm4VisY6_A) | Underwater Earth 4K | 432.9 | 1 724 706 | 82 дн | 70 885 |
+| [99 Nurses Couldn’t Stop CEO’s Baby From Crying—Only a Cleaner Could, B](https://youtu.be/YAXEqAhVXF0) | PeachShine Drama | 10.8 | 822 744 | 82 дн | 70 397 |
+| [How People Live in Netherlands \| The Dark Secret Behind 18 Million Pe](https://youtu.be/m5tvfuoSzOQ) | Impossible Travel | 17.8 | 1 255 482 | 66 дн | 69 012 |
+| [Dragonbone Continent Full 4K Fantasy Action Movie \| Chapter 2 Epic Fa](https://youtu.be/0fytIDfQ13A) | Shanhay Studio | 4.0 | 1 030 633 | 69 дн | 67 895 |
+| [Mariana Trench: What Really Exists 11 KM Below the Ocean?](https://youtu.be/jzyAHsYqUm8) | Shivan Decode  | 1401.8 | 1 640 080 | 237 дн | 67 540 |
+| [8 Disturbing Paranormal Police Encounters No One Can Explain](https://youtu.be/G8FqGh102nc) | Warrior Mind | 3250.4 | 2 987 143 | 219 дн | 67 288 |
+| [【ENG DUB \| FULL】They Mocked the Poor Nanny Until She Understood the B](https://youtu.be/uX27_hUXQv4) | Eve DramaTV | 35.4 | 2 341 728 | 24 дн | 66 075 |
+| [Living in Tasmania \| How People Live at the Edge of the World \| 4K](https://youtu.be/J5LUYPwGSiY) | Happy Travel 99 | 4.7 | 355 490 | 49 дн | 65 329 |
+| [No Boss, No Money: The Raw Reality of China’s Gen-Z Freelancers](https://youtu.be/eJZFUEQebbI) | Inside China Lives | 147.8 | 3 799 751 | 304 дн | 65 097 |
+| [How Mountain Men Built Hidden Dugouts in 72 Hours That Modern Engineer](https://youtu.be/_LweyLdfFp8) | Cabin 8 | 127.7 | 305 301 | 38 дн | 63 369 |
+| [THE EXILED \| A Soldier Declared Dead Finds New Life on an Alien World](https://youtu.be/3d9ecV7vFKY) | Aurelume Films | 3.2 | 3 283 481 | 78 дн | 62 911 |
 
 ## Пока без данных
 

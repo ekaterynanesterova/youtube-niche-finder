@@ -540,18 +540,18 @@ check('списки служебных слов разные', stopWords('en').h
   check('пустой массив не ломает', quantile([], 0.5) === null);
 
   const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
-  // 24 свежих ролика: 16 слабых у одного конвейера и 8 сильных у восьми разных
+  // 26 свежих роликов: 17 слабых у одного конвейера и 9 сильных у девяти разных
   // новичков. Медиана обязана остаться низкой, верхняя четверть — подняться,
   // а повторяемость считаться по каналам: 8 из 9, а не 8 из 24.
   const channels = { farm: { id: 'farm', seeds: ['open'], markets: ['de'],
                              firstUploadAt: day(100), firstUploadComplete: true, publishedAt: day(100) } };
   const videos = {}, current = {};
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 17; i++) {
     videos['f' + i] = { id: 'f' + i, channelId: 'farm', title: 'offen f' + i,
                         publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
     current['f' + i] = [300, 1, 1];
   }
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 9; i++) {
     const cid = 'good' + i;
     channels[cid] = { id: cid, seeds: ['open'], markets: ['de'], firstUploadAt: day(120),
                       firstUploadComplete: true, publishedAt: day(120) };
@@ -565,9 +565,9 @@ check('списки служебных слов разные', stopWords('en').h
   check('медиана прижата конвейером', st.freshViews === 300);
   check('верхняя четверть видит сильные ролики', st.freshTop === 90000);
   check('потолок ниши — лучший ролик', st.freshBest === 90000);
-  check('каналов в выборке посчитано девять', st.freshChannels === 9);
-  check('планку взяли восемь РАЗНЫХ каналов, а не восемь роликов из 24',
-    st.freshWinners === 8);
+  check('каналов в выборке посчитано десять', st.freshChannels === 10);
+  check('планку взяли девять РАЗНЫХ каналов, а не девять роликов из 26',
+    st.freshWinners === 9);
   check('доля по роликам заметно ниже доли по каналам',
     st.freshOverWorking < st.freshWinners / st.freshChannels);
 }
@@ -670,7 +670,7 @@ check('списки служебных слов разные', stopWords('en').h
   const channels = { a: mk('a', 40), b: mk('b', 200), c: mk('c', 2000) };
   const videos = {}, current = {};
   for (const [cid, views] of [['a', 500], ['b', 5000], ['c', 50000]]) {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 13; i++) {
       videos[cid + i] = { id: cid + i, channelId: cid, title: 'offen ' + cid + i,
                           publishedAt: day(20 + i), durationSec: 1500, lang: 'de' };
       current[cid + i] = [views * (i < 3 ? 60 : 1), 10, 1];
@@ -681,7 +681,7 @@ check('списки служебных слов разные', stopWords('en').h
   const st = mm.niches.open.byMarket.de;
   const co = Object.fromEntries(st.cohorts.map((c) => [c.label, c]));
   check('когорты разложены по возрасту канала',
-    co['канал 0–3 мес'].n === 12 && co['канал 6–12 мес'].n === 12 && co['старше года'].n === 12);
+    co['канал 0–3 мес'].n === 13 && co['канал 6–12 мес'].n === 13 && co['старше года'].n === 13);
   check('типичный ролик растёт с возрастом канала',
     co['канал 0–3 мес'].median < co['канал 6–12 мес'].median
     && co['канал 6–12 мес'].median < co['старше года'].median);
@@ -691,8 +691,23 @@ check('списки служебных слов разные', stopWords('en').h
   // Диапазон строится только по молодым с чистым стартом: канал c старше года.
   check('диапазон — это два числа, а не одно',
     st.rangeLo != null && st.rangeHi != null && st.rangeHi > st.rangeLo);
-  check('в диапазон идут только молодые каналы', st.rangeN === 24);
-  check('нижняя граница ниже верхней десятой доли', st.rangeLo < st.rangeHi);
+  check('в диапазон идут только молодые каналы', st.rangeN === 26);
+  check('нижняя граница ниже верхней', st.rangeLo < st.rangeHi);
+  // Верхняя граница — три четверти, а не девять десятых: на два десятка
+  // роликов девятая десятая это второе значение сверху, то есть шум.
+  const sorted24 = mm.videos.filter((v) => v.seeds.includes('open')
+      && mm.channels[v.channelId]?.cleanStart === true
+      && mm.channels[v.channelId].ageDays <= thresholds.youngChannelDays
+      && v.ageDays >= 7 && v.ageDays <= 60)
+    .map((v) => v.views).sort((a, b) => a - b);
+  check('верхняя граница — это три четверти выборки',
+    st.rangeHi === Math.round(quantile(sorted24, 0.75)));
+  check('ниша с тонкой выборкой диапазона не получает',
+    computeMetrics({ db: { channels: { one: channels.a },
+      videos: Object.fromEntries(Object.entries(videos).filter(([k]) => k.startsWith('a'))),
+      current: Object.fromEntries(Object.entries(current).filter(([k]) => k.startsWith('a'))) },
+      seeds, thresholds, snapshots: [], now, primaryLang: 'de' })
+      .niches.open.byMarket.de.rangeHi === null);
 }
 
 // --- исчезнувший канал не должен ронять прогон ---
