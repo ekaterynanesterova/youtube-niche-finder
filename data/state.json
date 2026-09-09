@@ -274,21 +274,34 @@
       },
       "channels": 3376,
       "videos": 225025
+    },
+    {
+      "date": "2026-09-09",
+      "budget": 9000,
+      "spent": 9000,
+      "byEndpoint": {
+        "search": 4000,
+        "videos": 3733,
+        "channels": 8,
+        "playlistItems": 1259
+      },
+      "channels": 3431,
+      "videos": 228130
     }
   ],
   "seedStats": {
     "space-doku": {
-      "searches": 27,
-      "lastSearched": "2026-09-08",
-      "totalResults": 96054,
-      "channelsSeen": 1300,
-      "newLastRun": 1
+      "searches": 29,
+      "lastSearched": "2026-09-09",
+      "totalResults": 90241,
+      "channelsSeen": 1400,
+      "newLastRun": 0
     },
     "lost-places": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 93423,
-      "channelsSeen": 300,
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 85204,
+      "channelsSeen": 350,
       "newLastRun": 1
     },
     "sibirien": {
@@ -327,11 +340,11 @@
       "newLastRun": 1
     },
     "mass-extinction": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 62536,
-      "channelsSeen": 300,
-      "newLastRun": 1
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 58066,
+      "channelsSeen": 350,
+      "newLastRun": 0
     },
     "sleep-doku": {
       "searches": 2,
@@ -341,95 +354,95 @@
       "newLastRun": 0
     },
     "sleep-history": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 98707,
-      "channelsSeen": 300,
-      "newLastRun": 4
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 93155,
+      "channelsSeen": 350,
+      "newLastRun": 2
     },
     "ice-age": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 90261,
-      "channelsSeen": 300,
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 86131,
+      "channelsSeen": 350,
       "newLastRun": 1
     },
     "human-evolution": {
-      "searches": 18,
-      "lastSearched": "2026-09-08",
-      "totalResults": 90693,
-      "channelsSeen": 850,
-      "newLastRun": 1
+      "searches": 19,
+      "lastSearched": "2026-09-09",
+      "totalResults": 87756,
+      "channelsSeen": 900,
+      "newLastRun": 0
     },
     "deep-sea": {
-      "searches": 18,
-      "lastSearched": "2026-09-08",
-      "totalResults": 14461,
-      "channelsSeen": 325,
-      "newLastRun": 1
+      "searches": 19,
+      "lastSearched": "2026-09-09",
+      "totalResults": 14513,
+      "channelsSeen": 339,
+      "newLastRun": 0
     },
     "ocean-creatures": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 206714,
-      "channelsSeen": 300,
-      "newLastRun": 3
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 187517,
+      "channelsSeen": 350,
+      "newLastRun": 5
     },
     "antarctica": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 97393,
-      "channelsSeen": 300,
-      "newLastRun": 2
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 88813,
+      "channelsSeen": 350,
+      "newLastRun": 0
     },
     "supervolcano": {
-      "searches": 18,
-      "lastSearched": "2026-09-08",
-      "totalResults": 399,
-      "channelsSeen": 393,
+      "searches": 19,
+      "lastSearched": "2026-09-09",
+      "totalResults": 395,
+      "channelsSeen": 417,
       "newLastRun": 0
     },
     "disasters": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 111984,
-      "channelsSeen": 300,
-      "newLastRun": 1
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 102964,
+      "channelsSeen": 350,
+      "newLastRun": 2
     },
     "egypt": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 85086,
-      "channelsSeen": 300,
-      "newLastRun": 1
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 95819,
+      "channelsSeen": 350,
+      "newLastRun": 0
     },
     "archaeology": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 450966,
-      "channelsSeen": 300,
-      "newLastRun": 3
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 451761,
+      "channelsSeen": 350,
+      "newLastRun": 0
     },
     "parasites": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 18685,
-      "channelsSeen": 300,
-      "newLastRun": 10
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 23299,
+      "channelsSeen": 344,
+      "newLastRun": 7
     },
     "microbes": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 15560,
-      "channelsSeen": 105,
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 15701,
+      "channelsSeen": 122,
       "newLastRun": 0
     },
     "future-earth": {
-      "searches": 18,
-      "lastSearched": "2026-09-08",
-      "totalResults": 76785,
-      "channelsSeen": 586,
-      "newLastRun": 1
+      "searches": 19,
+      "lastSearched": "2026-09-09",
+      "totalResults": 75231,
+      "channelsSeen": 626,
+      "newLastRun": 0
     },
     "maschinen": {
       "searches": 1,
@@ -446,11 +459,11 @@
       "newLastRun": 0
     },
     "sleep-science": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 78870,
-      "channelsSeen": 300,
-      "newLastRun": 2
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 74176,
+      "channelsSeen": 350,
+      "newLastRun": 1
     },
     "sleep-space": {
       "searches": 1,
@@ -460,11 +473,11 @@
       "newLastRun": null
     },
     "terraforming": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 15096,
-      "channelsSeen": 300,
-      "newLastRun": 1
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 15888,
+      "channelsSeen": 350,
+      "newLastRun": 0
     },
     "solar-system": {
       "searches": 9,
@@ -481,23 +494,23 @@
       "newLastRun": null
     },
     "dinos": {
-      "searches": 19,
-      "lastSearched": "2026-09-08",
-      "totalResults": 6067,
-      "channelsSeen": 900,
+      "searches": 20,
+      "lastSearched": "2026-09-09",
+      "totalResults": 13845,
+      "channelsSeen": 950,
       "newLastRun": 0
     },
     "lost-civs": {
-      "searches": 18,
-      "lastSearched": "2026-09-08",
-      "totalResults": 3199,
-      "channelsSeen": 183,
+      "searches": 19,
+      "lastSearched": "2026-09-09",
+      "totalResults": 3548,
+      "channelsSeen": 192,
       "newLastRun": 0
     },
     "megastructures": {
-      "searches": 18,
-      "lastSearched": "2026-09-08",
-      "totalResults": 44,
+      "searches": 19,
+      "lastSearched": "2026-09-09",
+      "totalResults": 48,
       "channelsSeen": 0,
       "newLastRun": 0
     },
@@ -516,31 +529,31 @@
       "newLastRun": null
     },
     "human-body": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 109268,
-      "channelsSeen": 300,
-      "newLastRun": 2
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 102513,
+      "channelsSeen": 350,
+      "newLastRun": 0
     },
     "calm-space": {
-      "searches": 27,
-      "lastSearched": "2026-09-08",
-      "totalResults": 62083,
-      "channelsSeen": 1350,
+      "searches": 28,
+      "lastSearched": "2026-09-09",
+      "totalResults": 59802,
+      "channelsSeen": 1400,
       "newLastRun": 0
     },
     "plate-tectonics": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 7416,
-      "channelsSeen": 350,
-      "newLastRun": 0
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 8227,
+      "channelsSeen": 400,
+      "newLastRun": 1
     },
     "eng-disasters": {
-      "searches": 7,
-      "lastSearched": "2026-09-06",
-      "totalResults": 52029,
-      "channelsSeen": 350,
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 48636,
+      "channelsSeen": 400,
       "newLastRun": 3
     },
     "nachtschicht": {
@@ -838,39 +851,39 @@
       "newLastRun": null
     },
     "native": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 234106,
-      "channelsSeen": 350,
-      "newLastRun": 2
-    },
-    "whales": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 68413,
-      "channelsSeen": 350,
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 228534,
+      "channelsSeen": 400,
       "newLastRun": 1
     },
+    "whales": {
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 51317,
+      "channelsSeen": 400,
+      "newLastRun": 2
+    },
     "idaho": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 91452,
-      "channelsSeen": 350,
-      "newLastRun": 4
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 58771,
+      "channelsSeen": 400,
+      "newLastRun": 3
     },
     "built-world": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 270491,
-      "channelsSeen": 350,
-      "newLastRun": 5
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 272210,
+      "channelsSeen": 400,
+      "newLastRun": 1
     },
     "people-live": {
-      "searches": 7,
-      "lastSearched": "2026-09-07",
-      "totalResults": 156175,
-      "channelsSeen": 350,
-      "newLastRun": 3
+      "searches": 8,
+      "lastSearched": "2026-09-09",
+      "totalResults": 153036,
+      "channelsSeen": 400,
+      "newLastRun": 2
     },
     "place-earth": {
       "searches": 7,
@@ -1027,67 +1040,67 @@
       "newLastRun": 0
     },
     "space-ambience": {
-      "searches": 8,
-      "lastSearched": "2026-09-06",
-      "totalResults": 96649,
-      "channelsSeen": 400,
-      "newLastRun": 2
-    },
-    "cosmic-journey": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 107787,
-      "channelsSeen": 374,
-      "newLastRun": 6
-    },
-    "nasa-discoveries": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 76637,
-      "channelsSeen": 272,
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 63969,
+      "channelsSeen": 450,
       "newLastRun": 1
     },
+    "cosmic-journey": {
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 100247,
+      "channelsSeen": 424,
+      "newLastRun": 3
+    },
+    "nasa-discoveries": {
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 52918,
+      "channelsSeen": 291,
+      "newLastRun": 4
+    },
     "james-webb": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 68607,
-      "channelsSeen": 400,
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 64317,
+      "channelsSeen": 450,
       "newLastRun": 1
     },
     "galaxies": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 75963,
-      "channelsSeen": 400,
-      "newLastRun": 2
-    },
-    "neutron-stars": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 16178,
-      "channelsSeen": 400,
-      "newLastRun": 1
-    },
-    "space-time": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 54804,
-      "channelsSeen": 400,
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 71216,
+      "channelsSeen": 450,
       "newLastRun": 0
     },
+    "neutron-stars": {
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 15924,
+      "channelsSeen": 450,
+      "newLastRun": 0
+    },
+    "space-time": {
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 51398,
+      "channelsSeen": 450,
+      "newLastRun": 3
+    },
     "alien-life": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 101962,
-      "channelsSeen": 400,
-      "newLastRun": 2
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 95231,
+      "channelsSeen": 450,
+      "newLastRun": 1
     },
     "mars-exploration": {
-      "searches": 8,
-      "lastSearched": "2026-09-07",
-      "totalResults": 45300,
-      "channelsSeen": 400,
-      "newLastRun": 2
+      "searches": 9,
+      "lastSearched": "2026-09-09",
+      "totalResults": 43971,
+      "channelsSeen": 450,
+      "newLastRun": 0
     },
     "end-universe": {
       "searches": 8,
@@ -1258,5 +1271,5 @@
       "newLastRun": 0
     }
   },
-  "snapshotCursor": 46102
+  "snapshotCursor": 101027
 }
