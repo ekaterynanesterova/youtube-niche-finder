@@ -166,6 +166,13 @@ export function dominantLang(videos, fallbackMarkets = []) {
   return fallbackMarkets.length === 1 ? fallbackMarkets[0] : null;
 }
 
+// Дотянется ли разведка до темы. Контрольный рынок ищет только опорные темы,
+// поэтому тема с запросом только на нём и без пометки control не будет найдена
+// никогда — её нельзя считать «ещё не дошла очередь».
+export function reachable(seed, primaryLang = 'en') {
+  return !!(seed.control || seed[primaryLang]);
+}
+
 export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline = null,
                                  primaryLang = 'en', now = new Date().toISOString() }) {
   const byChannel = {};
@@ -308,6 +315,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
     niches[seed.id] = {
       id: seed.id, group: seed.group, control: !!seed.control,
       broad: !shape.ok, broadReason: shape.reason, subjects: shape.subjects,
+      reachable: reachable(seed, primaryLang),
       broadQuery: shapeQuery ?? null, broadLang: shapeLang,
       // Сколько раз мы вообще искали по этой теме и что YouTube думает
       // о её размере. Без этого «4 канала» читается как «на YouTube их 4».

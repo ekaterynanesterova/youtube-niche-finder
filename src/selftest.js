@@ -5,7 +5,7 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot, survey, isMissing } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
-import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage } from './metrics.js';
+import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
@@ -794,6 +794,41 @@ check('списки служебных слов разные', stopWords('en').h
   check('язык из заголовков перебивает объявленный', mm.channels.hi.lang === 'hi');
   check('чужой канал не попадает в немецкую нишу', mm.niches.open.byMarket.de.channels === 0);
   check('и в английскую тоже', mm.niches.open.byMarket.en.channels === 0);
+}
+
+// --- недостижимые темы и очередь автопоиска ---
+// Тема с запросом только на контрольном рынке не будет найдена никогда:
+// контроль ищет лишь опорные темы. Сорок таких считались «ещё не искали»,
+// держали очередь выше лимита и держали автопоиск на паузе больше недели.
+{
+  check('тема с запросом основного рынка достижима',
+    reachable({ id: 'a', en: 'whales documentary' }, 'en'));
+  check('опорная тема достижима даже без основного запроса',
+    reachable({ id: 'b', de: 'wale Doku', control: true }, 'en'));
+  check('тема только с контрольным запросом недостижима',
+    !reachable({ id: 'c', de: 'wale Doku' }, 'en'));
+}
+
+// --- автопоиск не заводит обрывки шаблонов ---
+// Разблокировав очередь, автопоиск сразу принёс «say about», «one can»,
+// «unfolded», «moments filmed seconds» — снова обвязку заголовков.
+{
+  const cand = (p) => ({ phrase: p, channels: 5, lift: 5 });
+  const out = promote({
+    candidates: ['say about', 'one can', 'unfolded', 'moments filmed seconds',
+                 'before disasters', 'mariana trench', 'great white shark'].map(cand),
+    seeds: [], limit: 20, lang: 'en',
+  });
+  const queries = out.map((x) => x.en);
+  check('обвязка заголовка темой не становится',
+    !queries.some((q) => /say about|one can|unfolded|moments filmed/.test(q)));
+  check('настоящие связки проходят целиком',
+    queries.includes('mariana trench documentary')
+    && queries.includes('great white shark documentary'));
+  check('лишние слова из запроса вычищены',
+    queries.includes('disasters documentary') && !queries.some((q) => q.startsWith('before ')));
+  check('идентификатор строится по предмету',
+    out.some((x) => x.id === 'disasters') && !out.some((x) => x.id === 'before-disasters'));
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

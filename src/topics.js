@@ -27,6 +27,11 @@ the a an of and or but how what who where when why is are was were will
 this that these those with from for on out at by to in it its their our your
 you we they he she i my his her not no all more most very just only
 documentary film full episode part hd video watch
+did do does done can could should would may might must
+has have had been being am
+about before after into onto over under through during between against
+again once here there then than such other another some any each every
+one two three four five ten own same both few many much
 `.trim().split(/\s+/);
 
 export const STOP_BY_LANG = { de: new Set(STOP_DE), en: new Set(STOP_EN) };
@@ -273,17 +278,28 @@ export function promote({ candidates, seeds, limit, lang = 'en', group = 'Най
   const added = [];
   for (const c of candidates) {
     if (added.length >= limit) break;
-    const id = slug(c.phrase);
+    // Служебные слова снимаем здесь же: связка приходит из добычи уже
+    // очищенной, но promote вызывают и напрямую, и полагаться на чужую
+    // подготовку нельзя.
+    const stop = stopWords(lang);
+    const words = c.phrase.split(/\s+/).map((w) => w.toLowerCase()).filter((w) => w && !stop.has(w));
+    const shape = topicShape(words);
+    if (!shape.ok) continue;
+    // В запрос идут только слова-предметы. Связка приезжает из заголовков
+    // вместе с обвязкой — «before disasters», «hopi said», — и искать по ней
+    // значит искать чужой шаблон, а не тему.
+    const subject = shape.subjects.join(' ');
+    if (!subject) continue;
+    const id = slug(subject);
     if (!id || ids.has(id)) continue;
     if (isBlocked(c.phrase, lang)) continue;
     // Обрывок заголовка темой не является. Автопоиск охотно приносил
     // «found something documentary» и «finish» — связка проходила по подъёму,
     // хотя предмета в ней нет.
-    if (!topicShape(c.phrase.split(/\s+/)).ok) continue;
     ids.add(id);
     added.push({
       id, group,
-      [lang]: toQuery(c.phrase, lang),
+      [lang]: toQuery(subject, lang),
       ru: null,                      // подпись переведём отдельно
       source: 'auto',
       addedAt: new Date().toISOString().slice(0, 10),

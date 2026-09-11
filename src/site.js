@@ -169,8 +169,13 @@ export function buildPayload(m, seeds, thresholds, db = {}, focus = null) {
     // выдаёт часть базы за всю базу.
     covered: { channels: Object.keys(m.channels).length, videos: m.videos.length },
     growth: growthSinceLastRun(db.state?.runs ?? []),
-    seedsDone: Object.values(db.state?.seedStats ?? {}).filter((x) => x.searches > 0).length,
-    seedsTotal: seeds.length,
+    // Знаменатель — только те темы, до которых разведка вообще может дотянуться.
+    // Раньше сюда входили 33 темы с запросом лишь на контрольном рынке, которые
+    // не будут найдены никогда, и счётчик неделю стоял на «94 из 134».
+    seedsDone: seeds.filter((sd) => m.niches[sd.id]?.reachable && !m.niches[sd.id]?.broad
+                                    && (db.state?.seedStats?.[sd.id]?.searches ?? 0) > 0).length,
+    seedsTotal: seeds.filter((sd) => m.niches[sd.id]?.reachable && !m.niches[sd.id]?.broad).length,
+    seedsUnreachable: seeds.filter((sd) => m.niches[sd.id] && !m.niches[sd.id].reachable).length,
     // Полный список тем: что искали, сколько раз и что нашли. Без него
     // «73 из 134» — просто число, по которому не видно, чего не хватает.
     topics: seeds.map((sd) => {
@@ -190,6 +195,7 @@ export function buildPayload(m, seeds, thresholds, db = {}, focus = null) {
         fresh: best?.freshViews ?? null,
         adLimited: isAdLimited(sd.en ?? sd.de ?? sd.id, sd.group),
         broad: !!m.niches[sd.id]?.broad,
+        unreachable: m.niches[sd.id] ? !m.niches[sd.id].reachable : false,
       };
     }).sort((a, b) => a.searches - b.searches || b.channels - a.channels),
     schedule: scheduleText(),
@@ -964,6 +970,7 @@ function drawList(kind) {
     const untouched = t.filter((x) => !x.searches).length;
     box.innerHTML = '<h4>Темы — ' + P.seedsDone + ' изучено, ' + untouched + ' ещё не искали</h4>' +
       '<p class="drillhint">Помеченные «не тема» из разведки исключены и квоту не тратят: их запрос называет формат и настроение, но не предмет. '
+      + 'Помеченные «не ищется» разведка не найдёт никогда: у них есть запрос только на контрольном немецком рынке, а он ищет лишь опорные темы. '
       + 'Разведка берёт первыми те темы, по которым поисков меньше всего — они наверху списка. ' +
       '«На YouTube» — оценка самого YouTube, сколько всего роликов подходит под запрос; она упирается в потолок в миллион.</p>' +
       '<table><tr><th>Тема</th><th>Поисков</th><th>Каналов<br>нашли</th><th>Новых<br>в последний раз</th>' +
@@ -973,7 +980,8 @@ function drawList(kind) {
         '<td>' + x.query + (x.ru ? ' <span class="reg">' + x.ru + '</span>' : '') +
           (x.auto ? ' <span class="autotag">авто</span>' : '') +
           (x.adLimited ? ' <span class="adtag">реклама урезана</span>' : '') +
-          (x.broad ? ' <span class="broadtag">не тема</span>' : '') + '</td>' +
+          (x.broad ? ' <span class="broadtag">не тема</span>' : '') +
+          (x.unreachable ? ' <span class="broadtag">не ищется</span>' : '') + '</td>' +
         '<td>' + (x.searches || '—') + '</td>' +
         '<td>' + (x.channels || '—') + '</td>' +
         '<td>' + (x.newLast == null ? '—' : x.newLast) + '</td>' +

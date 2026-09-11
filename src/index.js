@@ -155,7 +155,16 @@ const candidates = [
 // Список тем рос быстрее, чем мы успевали его обходить: девяносто девять тем
 // из ста тридцати четырёх не искались ни разу. Новые пускаем только когда
 // очередь непройденных короткая.
-const untouched = seeds.filter((x) => !(db.state.seedStats?.[x.id]?.searches)).length;
+//
+// Считать надо только те темы, до которых разведка может дотянуться. Сорок тем
+// имеют запрос лишь на контрольном рынке, а он ищет только опорные — они не
+// будут найдены никогда. Попадая в счёт непройденных, они держали очередь
+// выше лимита и автопоиск стоял на паузе больше недели, хотя реальная очередь
+// давно пуста.
+const untouched = seeds.filter((x) => {
+  if (!metrics.niches[x.id]?.reachable || metrics.niches[x.id]?.broad) return false;
+  return !(db.state.seedStats?.[x.id]?.searches);
+}).length;
 const room = Math.max(0, (thresholds.topicQueueLimit ?? 25) - untouched);
 const promoted = promote({
   candidates, seeds,

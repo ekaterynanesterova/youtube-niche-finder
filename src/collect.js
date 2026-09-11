@@ -59,6 +59,22 @@ export async function discover({ api, db, seeds, markets, thresholds, searchBudg
     return String(A.lastSearched ?? '').localeCompare(String(B.lastSearched ?? ''));
   });
 
+  // Тема, до которой разведка не может дотянуться. Контрольный рынок ищет
+  // только опорные темы — так задумано, ему нужна повторяемость, а не широта.
+  // Но тема, у которой есть запрос ТОЛЬКО на контрольном рынке и опорной она
+  // не помечена, не будет найдена никогда. Таких накопилось 33, и счётчик
+  // «изучено 94 из 134» неделю показывал их как «ещё дойдёт очередь».
+  const primary = Object.entries(markets).find(([, mk]) => mk.role === 'primary')?.[0];
+  const unreachable = seeds.filter((s) => {
+    if (s.control) return false;
+    return !Object.entries(markets).some(([code, mk]) =>
+      s[code] && (mk.role !== 'control' || s.control));
+  });
+  if (unreachable.length) {
+    log(`Недостижимо для разведки ${unreachable.length} тем: есть запрос только на контрольном рынке `
+        + `(${primary ?? 'основной'} запроса нет, опорными не помечены)`);
+  }
+
   // Запрос, который не называет предмет, поиском ничего не выясняет: он приведёт
   // случайные каналы всего жанра, а стоит столько же — сто юнитов. Такие темы
   // в очередь не ставим вовсе.

@@ -1422,6 +1422,71 @@
       "group": "Вторая мировая",
       "en": "enigma codebreakers documentary",
       "ru": "взлом «Энигмы»"
+    },
+    {
+      "id": "hopi",
+      "group": "Найдено автоматом",
+      "en": "hopi documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 5,
+        "lift": 5.8,
+        "medianViews": 132338.5
+      }
+    },
+    {
+      "id": "legend",
+      "group": "Найдено автоматом",
+      "en": "legend documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 14.6,
+        "medianViews": 396279
+      }
+    },
+    {
+      "id": "phone-call",
+      "group": "Найдено автоматом",
+      "en": "phone call documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 5,
+        "lift": 4.6,
+        "medianViews": 216951
+      }
+    },
+    {
+      "id": "brutal-animal-attacks",
+      "group": "Найдено автоматом",
+      "en": "brutal animal attacks documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 4,
+        "lift": 6.7,
+        "medianViews": 871712
+      }
+    },
+    {
+      "id": "animal-attacks",
+      "group": "Найдено автоматом",
+      "en": "animal attacks documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 4,
+        "lift": 6.7,
+        "medianViews": 871712
+      }
     }
   ]
 }
