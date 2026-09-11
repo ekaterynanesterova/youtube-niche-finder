@@ -450,19 +450,6 @@
       }
     },
     {
-      "id": "gebaut",
-      "group": "Найдено автоматом",
-      "de": "gebaut Doku",
-      "ru": "построено DOCU",
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 5,
-        "lift": 3.8,
-        "medianViews": 55266
-      }
-    },
-    {
       "id": "deutschlands-haerteste",
       "group": "Найдено автоматом",
       "de": "deutschlands härteste Doku",
@@ -486,19 +473,6 @@
         "channels": 4,
         "lift": 5.2,
         "medianViews": 76148
-      }
-    },
-    {
-      "id": "grausamste",
-      "group": "Найдено автоматом",
-      "de": "grausamste Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 3,
-        "lift": 8.2,
-        "medianViews": 94497
       }
     },
     {
@@ -632,19 +606,6 @@
       }
     },
     {
-      "id": "beherrscht",
-      "group": "Найдено автоматом",
-      "de": "beherrscht Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 3,
-        "lift": 6.1,
-        "medianViews": 49731
-      }
-    },
-    {
       "id": "chinesische",
       "group": "Найдено автоматом",
       "de": "chinesische Doku",
@@ -694,19 +655,6 @@
         "channels": 3,
         "lift": 5.2,
         "medianViews": 183490
-      }
-    },
-    {
-      "id": "spannende",
-      "group": "Найдено автоматом",
-      "de": "spannende Doku",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-19",
-      "foundVia": {
-        "channels": 3,
-        "lift": 4.9,
-        "medianViews": 31298
       }
     },
     {
@@ -905,19 +853,6 @@
       }
     },
     {
-      "id": "finish",
-      "group": "Найдено автоматом",
-      "en": "finish documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 3,
-        "lift": 8.8,
-        "medianViews": 73917
-      }
-    },
-    {
       "id": "mariana-trench",
       "group": "Найдено автоматом",
       "en": "mariana trench documentary",
@@ -928,32 +863,6 @@
         "channels": 12,
         "lift": 2.8,
         "medianViews": 202214.5
-      }
-    },
-    {
-      "id": "get-creepier-deeper",
-      "group": "Найдено автоматом",
-      "en": "get creepier deeper documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 5,
-        "lift": 8.3,
-        "medianViews": 115209
-      }
-    },
-    {
-      "id": "timeless",
-      "group": "Найдено автоматом",
-      "en": "timeless documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 5,
-        "lift": 8.3,
-        "medianViews": 59606
       }
     },
     {
@@ -996,32 +905,6 @@
       }
     },
     {
-      "id": "found-something",
-      "group": "Найдено автоматом",
-      "en": "found something documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 10,
-        "lift": 2.6,
-        "medianViews": 36850.5
-      }
-    },
-    {
-      "id": "stranger-gets-sleep",
-      "group": "Найдено автоматом",
-      "en": "stranger gets sleep documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 4,
-        "lift": 10,
-        "medianViews": 70683.5
-      }
-    },
-    {
       "id": "sea-creatures-get",
       "group": "Найдено автоматом",
       "en": "sea creatures get documentary",
@@ -1032,32 +915,6 @@
         "channels": 4,
         "lift": 8.6,
         "medianViews": 203183
-      }
-    },
-    {
-      "id": "anyone-expected",
-      "group": "Найдено автоматом",
-      "en": "anyone expected documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 5,
-        "lift": 5.4,
-        "medianViews": 41627
-      }
-    },
-    {
-      "id": "start-smoking",
-      "group": "Найдено автоматом",
-      "en": "start smoking documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 3,
-        "lift": 15,
-        "medianViews": 961403
       }
     },
     {
@@ -1206,19 +1063,6 @@
       }
     },
     {
-      "id": "something-disturbing",
-      "group": "Найдено автоматом",
-      "en": "something disturbing documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 4,
-        "lift": 7.5,
-        "medianViews": 62640
-      }
-    },
-    {
       "id": "deep-ocean",
       "group": "Найдено автоматом",
       "en": "deep ocean documentary",
@@ -1271,19 +1115,6 @@
       }
     },
     {
-      "id": "bigger-than",
-      "group": "Найдено автоматом",
-      "en": "bigger than documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 8,
-        "lift": 2.5,
-        "medianViews": 59873
-      }
-    },
-    {
       "id": "secret-china",
       "group": "Найдено автоматом",
       "en": "secret china documentary",
@@ -1320,32 +1151,6 @@
         "channels": 4,
         "lift": 6.1,
         "medianViews": 107947
-      }
-    },
-    {
-      "id": "still-alive",
-      "group": "Найдено автоматом",
-      "en": "still alive documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 6,
-        "lift": 3.3,
-        "medianViews": 78847
-      }
-    },
-    {
-      "id": "deeper-dig-into",
-      "group": "Найдено автоматом",
-      "en": "deeper dig into documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-08-21",
-      "foundVia": {
-        "channels": 4,
-        "lift": 5.8,
-        "medianViews": 57524
       }
     },
     {
@@ -1489,7 +1294,58 @@
       }
     },
     {
-<<<<<<< HEAD
+      "id": "boarding-house",
+      "group": "Найдено автоматом",
+      "en": "boarding house documentary",
+      "ru": "документальный фильм о пансионате",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 16,
+        "medianViews": 49261
+      }
+    },
+    {
+      "id": "human-history",
+      "group": "Найдено автоматом",
+      "en": "human history documentary",
+      "ru": "документальный фильм о человеческой истории",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 6,
+        "lift": 3.6,
+        "medianViews": 60383
+      }
+    },
+    {
+      "id": "thriller-english",
+      "group": "Найдено автоматом",
+      "en": "thriller english documentary",
+      "ru": "триллер документальный фильм на английском языке",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 12,
+        "medianViews": 75194
+      }
+    },
+    {
+      "id": "tower-won",
+      "group": "Найдено автоматом",
+      "en": "tower won documentary",
+      "ru": "документальный фильм о выигранной башне",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 12,
+        "medianViews": 46800
+      }
+    },
+    {
       "id": "hidden-history",
       "group": "Список из 50",
       "en": "hidden history documentary",
@@ -1744,71 +1600,6 @@
       "ru": "великие противостояния",
       "source": "list50",
       "addedAt": "2026-09-11"
-=======
-      "id": "boarding-house",
-      "group": "Найдено автоматом",
-      "en": "boarding house documentary",
-      "ru": "документальный фильм о пансионате",
-      "source": "auto",
-      "addedAt": "2026-09-11",
-      "foundVia": {
-        "channels": 3,
-        "lift": 16,
-        "medianViews": 49261
-      }
-    },
-    {
-      "id": "nobody-wants",
-      "group": "Найдено автоматом",
-      "en": "nobody wants documentary",
-      "ru": "никому не нужен документальный фильм",
-      "source": "auto",
-      "addedAt": "2026-09-11",
-      "foundVia": {
-        "channels": 7,
-        "lift": 3,
-        "medianViews": 146002
-      }
-    },
-    {
-      "id": "human-history",
-      "group": "Найдено автоматом",
-      "en": "human history documentary",
-      "ru": "документальный фильм о человеческой истории",
-      "source": "auto",
-      "addedAt": "2026-09-11",
-      "foundVia": {
-        "channels": 6,
-        "lift": 3.6,
-        "medianViews": 60383
-      }
-    },
-    {
-      "id": "thriller-english",
-      "group": "Найдено автоматом",
-      "en": "thriller english documentary",
-      "ru": "триллер документальный фильм на английском языке",
-      "source": "auto",
-      "addedAt": "2026-09-11",
-      "foundVia": {
-        "channels": 3,
-        "lift": 12,
-        "medianViews": 75194
-      }
-    },
-    {
-      "id": "tower-won",
-      "group": "Найдено автоматом",
-      "en": "tower won documentary",
-      "ru": "документальный фильм о выигранной башне",
-      "source": "auto",
-      "addedAt": "2026-09-11",
-      "foundVia": {
-        "channels": 3,
-        "lift": 12,
-        "medianViews": 46800
-      }
->>>>>>> origin/main
     }
   ]
 }

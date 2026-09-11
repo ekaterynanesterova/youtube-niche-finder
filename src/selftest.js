@@ -831,5 +831,29 @@ check('списки служебных слов разные', stopWords('en').h
     out.some((x) => x.id === 'disasters') && !out.some((x) => x.id === 'before-disasters'));
 }
 
+// --- конфиги должны читаться ---
+// Неразрешённый конфликт слияния однажды уехал в config/seeds.json прямо
+// в репозиторий: файл перестал быть JSON, и ночной прогон упал бы на первой
+// строке. Проверка счётной части идёт в workflow перед прогоном — значит
+// сломанный конфиг остановится здесь, а не в бою.
+{
+  const { readdirSync } = await import('node:fs');
+  const cfgDir = join(ROOT, 'config');
+  const files = readdirSync(cfgDir).filter((f) => f.endsWith('.json'));
+  check('в config есть файлы настроек', files.length >= 4);
+  for (const f of files) {
+    let ok = false, why = '';
+    try { readJson(join(cfgDir, f)); ok = true; }
+    catch (e) { why = e.message.slice(0, 60); }
+    check(`config/${f} читается как JSON${ok ? '' : ' — ' + why}`, ok);
+  }
+  const cfg = readJson(join(cfgDir, 'seeds.json'));
+  check('в seeds.json есть список тем', Array.isArray(cfg.seeds) && cfg.seeds.length > 0);
+  const ids = cfg.seeds.map((x) => x.id);
+  check('идентификаторы тем не повторяются', new Set(ids).size === ids.length);
+  check('у каждой темы есть идентификатор и хотя бы один запрос',
+    cfg.seeds.every((x) => x.id && (x.en || x.de)));
+}
+
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);
