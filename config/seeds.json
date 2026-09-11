@@ -1487,6 +1487,262 @@
         "lift": 6.7,
         "medianViews": 871712
       }
+    },
+    {
+      "id": "hidden-history",
+      "group": "Список из 50",
+      "en": "hidden history documentary",
+      "ru": "скрытая история",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "business-rivalry",
+      "group": "Список из 50",
+      "en": "business rivalry documentary",
+      "ru": "бизнес-битвы",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "impossible-engineering",
+      "group": "Список из 50",
+      "en": "impossible engineering documentary",
+      "ru": "невозможная инженерия",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "internet-mystery",
+      "group": "Список из 50",
+      "en": "internet mystery documentary",
+      "ru": "загадки интернета",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "psychology-doc",
+      "group": "Список из 50",
+      "en": "psychology documentary",
+      "ru": "психология",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "evolution-timeline",
+      "group": "Список из 50",
+      "en": "evolution timeline documentary",
+      "ru": "эволюция: хронология",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "biggest-scams",
+      "group": "Список из 50",
+      "en": "biggest scams documentary",
+      "ru": "громкие аферы",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "business-failure",
+      "group": "Список из 50",
+      "en": "business failure documentary",
+      "ru": "громкие провалы",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "comeback-story",
+      "group": "Список из 50",
+      "en": "comeback story documentary",
+      "ru": "великие камбэки",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "survival-story",
+      "group": "Список из 50",
+      "en": "survival story documentary",
+      "ru": "чудеса выживания",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "myths-debunked",
+      "group": "Список из 50",
+      "en": "myths debunked documentary",
+      "ru": "разрушаем мифы",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "future-predictions",
+      "group": "Список из 50",
+      "en": "future predictions documentary",
+      "ru": "прогнозы на будущее",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "alternate-history",
+      "group": "Список из 50",
+      "en": "alternate history documentary",
+      "ru": "что было бы, если",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "strategy-breakdown",
+      "group": "Список из 50",
+      "en": "strategy breakdown documentary",
+      "ru": "разборы стратегий",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "secret-empire",
+      "group": "Список из 50",
+      "en": "secret empire documentary",
+      "ru": "тайные империи",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "corporate-collapse",
+      "group": "Список из 50",
+      "en": "corporate collapse documentary",
+      "ru": "крахи корпораций",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "marketing-genius",
+      "group": "Список из 50",
+      "en": "marketing genius documentary",
+      "ru": "гениальный маркетинг",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "innovation-story",
+      "group": "Список из 50",
+      "en": "innovation story documentary",
+      "ru": "истории инноваций",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "military-strategy",
+      "group": "Список из 50",
+      "en": "military strategy documentary",
+      "ru": "стратегии полководцев",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "technology-explained",
+      "group": "Список из 50",
+      "en": "technology explained documentary",
+      "ru": "технологии простым языком",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "sports-dynasty",
+      "group": "Список из 50",
+      "en": "sports dynasty documentary",
+      "ru": "спортивные династии",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "movie-production",
+      "group": "Список из 50",
+      "en": "movie production documentary",
+      "ru": "как снимали кино",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "ai-explained",
+      "group": "Список из 50",
+      "en": "artificial intelligence explained",
+      "ru": "AI простым языком",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "startup-story",
+      "group": "Список из 50",
+      "en": "startup story documentary",
+      "ru": "кейсы стартапов",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "millionaire-habits",
+      "group": "Список из 50",
+      "en": "millionaire habits documentary",
+      "ru": "привычки миллионеров",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "billionaire-breakdown",
+      "group": "Список из 50",
+      "en": "billionaire breakdown documentary",
+      "ru": "разборы миллиардеров",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "biggest-scandals",
+      "group": "Список из 50",
+      "en": "biggest scandals documentary",
+      "ru": "скандальные события",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "disaster-doc",
+      "group": "Список из 50",
+      "en": "disaster documentary",
+      "ru": "разбор катастроф",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "map-explained",
+      "group": "Список из 50",
+      "en": "map explained documentary",
+      "ru": "объясняем на картах",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "world-records",
+      "group": "Список из 50",
+      "en": "world records documentary",
+      "ru": "мировые рекорды",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "greatest-achievements",
+      "group": "Список из 50",
+      "en": "greatest achievements documentary",
+      "ru": "невероятные достижения",
+      "source": "list50",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "greatest-rivalries",
+      "group": "Список из 50",
+      "en": "greatest rivalries documentary",
+      "ru": "великие противостояния",
+      "source": "list50",
+      "addedAt": "2026-09-11"
     }
   ]
 }
