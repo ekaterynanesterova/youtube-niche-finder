@@ -1489,6 +1489,7 @@
       }
     },
     {
+<<<<<<< HEAD
       "id": "hidden-history",
       "group": "Список из 50",
       "en": "hidden history documentary",
@@ -1743,6 +1744,71 @@
       "ru": "великие противостояния",
       "source": "list50",
       "addedAt": "2026-09-11"
+=======
+      "id": "boarding-house",
+      "group": "Найдено автоматом",
+      "en": "boarding house documentary",
+      "ru": "документальный фильм о пансионате",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 16,
+        "medianViews": 49261
+      }
+    },
+    {
+      "id": "nobody-wants",
+      "group": "Найдено автоматом",
+      "en": "nobody wants documentary",
+      "ru": "никому не нужен документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 7,
+        "lift": 3,
+        "medianViews": 146002
+      }
+    },
+    {
+      "id": "human-history",
+      "group": "Найдено автоматом",
+      "en": "human history documentary",
+      "ru": "документальный фильм о человеческой истории",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 6,
+        "lift": 3.6,
+        "medianViews": 60383
+      }
+    },
+    {
+      "id": "thriller-english",
+      "group": "Найдено автоматом",
+      "en": "thriller english documentary",
+      "ru": "триллер документальный фильм на английском языке",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 12,
+        "medianViews": 75194
+      }
+    },
+    {
+      "id": "tower-won",
+      "group": "Найдено автоматом",
+      "en": "tower won documentary",
+      "ru": "документальный фильм о выигранной башне",
+      "source": "auto",
+      "addedAt": "2026-09-11",
+      "foundVia": {
+        "channels": 3,
+        "lift": 12,
+        "medianViews": 46800
+      }
+>>>>>>> origin/main
     }
   ]
 }
