@@ -1600,6 +1600,102 @@
       "ru": "великие противостояния",
       "source": "list50",
       "addedAt": "2026-09-11"
+    },
+    {
+      "id": "science-facts",
+      "group": "Список из 80",
+      "en": "science facts documentary",
+      "ru": "научные факты",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "history-facts",
+      "group": "Список из 80",
+      "en": "history facts documentary",
+      "ru": "исторические факты",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "book-summary",
+      "group": "Список из 80",
+      "en": "book summary documentary",
+      "ru": "пересказы книг",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "film-analysis",
+      "group": "Список из 80",
+      "en": "film analysis documentary",
+      "ru": "разборы фильмов",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "series-breakdown",
+      "group": "Список из 80",
+      "en": "tv series breakdown documentary",
+      "ru": "разборы сериалов",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "game-lore",
+      "group": "Список из 80",
+      "en": "game lore explained documentary",
+      "ru": "сюжеты игр",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "cinematography",
+      "group": "Список из 80",
+      "en": "cinematography documentary",
+      "ru": "киношные кадры",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "minimalism-doc",
+      "group": "Список из 80",
+      "en": "minimalism documentary",
+      "ru": "минимализм",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "street-food-doc",
+      "group": "Список из 80",
+      "en": "street food documentary",
+      "ru": "уличная еда",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "village-life",
+      "group": "Список из 80",
+      "en": "village life documentary",
+      "ru": "жизнь в деревне",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "unusual-food",
+      "group": "Список из 80",
+      "en": "unusual food documentary",
+      "ru": "необычная еда",
+      "source": "list80",
+      "addedAt": "2026-09-11"
+    },
+    {
+      "id": "tourist-places",
+      "group": "Список из 80",
+      "en": "tourist places documentary",
+      "ru": "туристические места",
+      "source": "list80",
+      "addedAt": "2026-09-11"
     }
   ]
 }
