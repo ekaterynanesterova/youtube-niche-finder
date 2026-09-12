@@ -313,14 +313,27 @@
       },
       "channels": 3625,
       "videos": 237894
+    },
+    {
+      "date": "2026-09-12",
+      "budget": 9000,
+      "spent": 9000,
+      "byEndpoint": {
+        "search": 4000,
+        "videos": 3709,
+        "channels": 8,
+        "playlistItems": 1283
+      },
+      "channels": 4109,
+      "videos": 256986
     }
   ],
   "seedStats": {
     "space-doku": {
-      "searches": 32,
-      "lastSearched": "2026-09-11",
-      "totalResults": 94470,
-      "channelsSeen": 1550,
+      "searches": 33,
+      "lastSearched": "2026-09-12",
+      "totalResults": 98855,
+      "channelsSeen": 1600,
       "newLastRun": 0
     },
     "lost-places": {
@@ -338,24 +351,24 @@
       "newLastRun": null
     },
     "blackhole": {
-      "searches": 10,
-      "lastSearched": "2026-09-10",
-      "totalResults": 92015,
-      "channelsSeen": 450,
+      "searches": 11,
+      "lastSearched": "2026-09-12",
+      "totalResults": 102233,
+      "channelsSeen": 500,
       "newLastRun": 0
     },
     "exoplanets": {
-      "searches": 10,
-      "lastSearched": "2026-09-10",
-      "totalResults": 42943,
-      "channelsSeen": 450,
-      "newLastRun": 0
+      "searches": 11,
+      "lastSearched": "2026-09-12",
+      "totalResults": 48791,
+      "channelsSeen": 500,
+      "newLastRun": 1
     },
     "space-missions": {
-      "searches": 10,
-      "lastSearched": "2026-09-10",
-      "totalResults": 166707,
-      "channelsSeen": 450,
+      "searches": 11,
+      "lastSearched": "2026-09-12",
+      "totalResults": 176062,
+      "channelsSeen": 500,
       "newLastRun": 0
     },
     "urzeit-tiere": {
@@ -394,17 +407,17 @@
       "newLastRun": 0
     },
     "human-evolution": {
-      "searches": 21,
-      "lastSearched": "2026-09-11",
-      "totalResults": 92624,
-      "channelsSeen": 1000,
+      "searches": 22,
+      "lastSearched": "2026-09-12",
+      "totalResults": 97024,
+      "channelsSeen": 1050,
       "newLastRun": 0
     },
     "deep-sea": {
-      "searches": 21,
-      "lastSearched": "2026-09-11",
-      "totalResults": 20076,
-      "channelsSeen": 365,
+      "searches": 22,
+      "lastSearched": "2026-09-12",
+      "totalResults": 14048,
+      "channelsSeen": 382,
       "newLastRun": 0
     },
     "ocean-creatures": {
@@ -422,10 +435,10 @@
       "newLastRun": 1
     },
     "supervolcano": {
-      "searches": 21,
-      "lastSearched": "2026-09-11",
-      "totalResults": 412,
-      "channelsSeen": 463,
+      "searches": 22,
+      "lastSearched": "2026-09-12",
+      "totalResults": 427,
+      "channelsSeen": 486,
       "newLastRun": 0
     },
     "disasters": {
@@ -464,11 +477,11 @@
       "newLastRun": 0
     },
     "future-earth": {
-      "searches": 21,
-      "lastSearched": "2026-09-11",
-      "totalResults": 79641,
-      "channelsSeen": 706,
-      "newLastRun": 1
+      "searches": 22,
+      "lastSearched": "2026-09-12",
+      "totalResults": 82880,
+      "channelsSeen": 747,
+      "newLastRun": 0
     },
     "maschinen": {
       "searches": 1,
@@ -478,11 +491,11 @@
       "newLastRun": null
     },
     "universe-scale": {
-      "searches": 10,
-      "lastSearched": "2026-09-10",
-      "totalResults": 90077,
-      "channelsSeen": 450,
-      "newLastRun": 0
+      "searches": 11,
+      "lastSearched": "2026-09-12",
+      "totalResults": 99929,
+      "channelsSeen": 500,
+      "newLastRun": 1
     },
     "sleep-science": {
       "searches": 8,
@@ -506,11 +519,11 @@
       "newLastRun": 0
     },
     "solar-system": {
-      "searches": 10,
-      "lastSearched": "2026-09-10",
-      "totalResults": 83543,
-      "channelsSeen": 450,
-      "newLastRun": 1
+      "searches": 11,
+      "lastSearched": "2026-09-12",
+      "totalResults": 92936,
+      "channelsSeen": 500,
+      "newLastRun": 0
     },
     "sleep-relax": {
       "searches": 1,
@@ -520,22 +533,22 @@
       "newLastRun": null
     },
     "dinos": {
-      "searches": 22,
-      "lastSearched": "2026-09-11",
-      "totalResults": 6875,
-      "channelsSeen": 1050,
-      "newLastRun": 0
+      "searches": 23,
+      "lastSearched": "2026-09-12",
+      "totalResults": 6536,
+      "channelsSeen": 1100,
+      "newLastRun": 1
     },
     "lost-civs": {
-      "searches": 21,
-      "lastSearched": "2026-09-11",
-      "totalResults": 3524,
-      "channelsSeen": 206,
+      "searches": 22,
+      "lastSearched": "2026-09-12",
+      "totalResults": 3393,
+      "channelsSeen": 211,
       "newLastRun": 0
     },
     "megastructures": {
-      "searches": 21,
-      "lastSearched": "2026-09-11",
+      "searches": 22,
+      "lastSearched": "2026-09-12",
       "totalResults": 53,
       "channelsSeen": 0,
       "newLastRun": 0
@@ -562,11 +575,11 @@
       "newLastRun": 0
     },
     "calm-space": {
-      "searches": 31,
-      "lastSearched": "2026-09-11",
-      "totalResults": 62740,
-      "channelsSeen": 1550,
-      "newLastRun": 0
+      "searches": 33,
+      "lastSearched": "2026-09-12",
+      "totalResults": 44060,
+      "channelsSeen": 1650,
+      "newLastRun": 1
     },
     "plate-tectonics": {
       "searches": 9,
@@ -1122,32 +1135,32 @@
       "newLastRun": 2
     },
     "mars-exploration": {
-      "searches": 9,
-      "lastSearched": "2026-09-09",
-      "totalResults": 43971,
-      "channelsSeen": 450,
-      "newLastRun": 0
+      "searches": 10,
+      "lastSearched": "2026-09-12",
+      "totalResults": 48513,
+      "channelsSeen": 500,
+      "newLastRun": 2
     },
     "end-universe": {
-      "searches": 9,
-      "lastSearched": "2026-09-10",
-      "totalResults": 43077,
-      "channelsSeen": 450,
+      "searches": 10,
+      "lastSearched": "2026-09-12",
+      "totalResults": 46877,
+      "channelsSeen": 500,
       "newLastRun": 1
     },
     "cosmic-scale": {
-      "searches": 9,
-      "lastSearched": "2026-09-10",
-      "totalResults": 18630,
-      "channelsSeen": 269,
+      "searches": 10,
+      "lastSearched": "2026-09-12",
+      "totalResults": 22100,
+      "channelsSeen": 294,
       "newLastRun": 1
     },
     "voyager-probes": {
-      "searches": 9,
-      "lastSearched": "2026-09-10",
-      "totalResults": 33707,
-      "channelsSeen": 450,
-      "newLastRun": 0
+      "searches": 10,
+      "lastSearched": "2026-09-12",
+      "totalResults": 36438,
+      "channelsSeen": 500,
+      "newLastRun": 1
     },
     "answer-shocked-everyone": {
       "searches": 8,
@@ -1330,7 +1343,343 @@
       "totalResults": 208790,
       "channelsSeen": 50,
       "newLastRun": 5
+    },
+    "boarding-house": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 6034,
+      "channelsSeen": 50,
+      "newLastRun": 42
+    },
+    "human-history": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 203287,
+      "channelsSeen": 50,
+      "newLastRun": 9
+    },
+    "thriller-english": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 1000000,
+      "channelsSeen": 50,
+      "newLastRun": 44
+    },
+    "tower-won": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 104827,
+      "channelsSeen": 26,
+      "newLastRun": 17
+    },
+    "hidden-history": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 137079,
+      "channelsSeen": 50,
+      "newLastRun": 13
+    },
+    "business-rivalry": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 132109,
+      "channelsSeen": 12,
+      "newLastRun": 11
+    },
+    "impossible-engineering": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 69613,
+      "channelsSeen": 50,
+      "newLastRun": 2
+    },
+    "internet-mystery": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 98933,
+      "channelsSeen": 37,
+      "newLastRun": 20
+    },
+    "psychology-doc": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 104145,
+      "channelsSeen": 50,
+      "newLastRun": 30
+    },
+    "evolution-timeline": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 77766,
+      "channelsSeen": 23,
+      "newLastRun": 17
+    },
+    "biggest-scams": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 85032,
+      "channelsSeen": 29,
+      "newLastRun": 20
+    },
+    "business-failure": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 53840,
+      "channelsSeen": 50,
+      "newLastRun": 46
+    },
+    "comeback-story": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 108408,
+      "channelsSeen": 45,
+      "newLastRun": 40
+    },
+    "survival-story": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 106835,
+      "channelsSeen": 50,
+      "newLastRun": 17
+    },
+    "myths-debunked": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 106046,
+      "channelsSeen": 28,
+      "newLastRun": 23
+    },
+    "future-predictions": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 65987,
+      "channelsSeen": 33,
+      "newLastRun": 20
+    },
+    "alternate-history": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 100322,
+      "channelsSeen": 50,
+      "newLastRun": 35
+    },
+    "strategy-breakdown": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 106038,
+      "channelsSeen": 2,
+      "newLastRun": 2
+    },
+    "secret-empire": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 110474,
+      "channelsSeen": 40,
+      "newLastRun": 31
+    },
+    "corporate-collapse": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 695243,
+      "channelsSeen": 50,
+      "newLastRun": 25
+    },
+    "marketing-genius": {
+      "searches": 1,
+      "lastSearched": "2026-09-12",
+      "totalResults": 24993,
+      "channelsSeen": 2,
+      "newLastRun": 1
+    },
+    "innovation-story": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "military-strategy": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "technology-explained": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "sports-dynasty": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "movie-production": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "ai-explained": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "startup-story": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "millionaire-habits": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "billionaire-breakdown": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "biggest-scandals": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "disaster-doc": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "world-records": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "map-explained": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "greatest-achievements": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "greatest-rivalries": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "science-facts": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "history-facts": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "book-summary": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "film-analysis": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "series-breakdown": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "game-lore": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "cinematography": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "minimalism-doc": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "street-food-doc": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "village-life": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "unusual-food": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
+    },
+    "tourist-places": {
+      "searches": 0,
+      "lastSearched": null,
+      "totalResults": null,
+      "channelsSeen": 0,
+      "newLastRun": null
     }
   },
-  "snapshotCursor": 71436
+  "snapshotCursor": 81774
 }
