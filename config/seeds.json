@@ -1696,6 +1696,71 @@
       "ru": "туристические места",
       "source": "list80",
       "addedAt": "2026-09-11"
+    },
+    {
+      "id": "hindi-dubbed",
+      "group": "Найдено автоматом",
+      "en": "hindi dubbed documentary",
+      "ru": "дублированный документальный фильм на хинди",
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 8,
+        "lift": 3.5,
+        "medianViews": 269885
+      }
+    },
+    {
+      "id": "movie-hindi",
+      "group": "Найдено автоматом",
+      "en": "movie hindi documentary",
+      "ru": "документальный фильм на хинди",
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 6,
+        "lift": 4.5,
+        "medianViews": 121183
+      }
+    },
+    {
+      "id": "real-life",
+      "group": "Найдено автоматом",
+      "en": "real life documentary",
+      "ru": "документальный фильм о реальной жизни",
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 9,
+        "lift": 2.6,
+        "medianViews": 269069
+      }
+    },
+    {
+      "id": "america",
+      "group": "Найдено автоматом",
+      "en": "america documentary",
+      "ru": "документальный фильм об америке",
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 4,
+        "lift": 8.4,
+        "medianViews": 137204.5
+      }
+    },
+    {
+      "id": "quadruplets",
+      "group": "Найдено автоматом",
+      "en": "quadruplets documentary",
+      "ru": "документальный фильм о четверняшках",
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 15.4,
+        "medianViews": 1107567
+      }
     }
   ]
 }
