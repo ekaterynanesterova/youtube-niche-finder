@@ -1698,32 +1698,6 @@
       "addedAt": "2026-09-11"
     },
     {
-      "id": "hindi-dubbed",
-      "group": "Найдено автоматом",
-      "en": "hindi dubbed documentary",
-      "ru": "дублированный документальный фильм на хинди",
-      "source": "auto",
-      "addedAt": "2026-09-13",
-      "foundVia": {
-        "channels": 8,
-        "lift": 3.5,
-        "medianViews": 269885
-      }
-    },
-    {
-      "id": "movie-hindi",
-      "group": "Найдено автоматом",
-      "en": "movie hindi documentary",
-      "ru": "документальный фильм на хинди",
-      "source": "auto",
-      "addedAt": "2026-09-13",
-      "foundVia": {
-        "channels": 6,
-        "lift": 4.5,
-        "medianViews": 121183
-      }
-    },
-    {
       "id": "real-life",
       "group": "Найдено автоматом",
       "en": "real life documentary",
@@ -1760,6 +1734,214 @@
         "channels": 3,
         "lift": 15.4,
         "medianViews": 1107567
+      }
+    },
+    {
+      "id": "sitting",
+      "group": "Найдено автоматом",
+      "en": "sitting documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 4,
+        "lift": 12.2,
+        "medianViews": 89557
+      }
+    },
+    {
+      "id": "mansions",
+      "group": "Найдено автоматом",
+      "en": "mansions documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 4,
+        "lift": 9.5,
+        "medianViews": 60806.5
+      }
+    },
+    {
+      "id": "terrifying-truth",
+      "group": "Найдено автоматом",
+      "en": "terrifying truth documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 4,
+        "lift": 7.1,
+        "medianViews": 349500
+      }
+    },
+    {
+      "id": "untold",
+      "group": "Найдено автоматом",
+      "en": "untold documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 5,
+        "lift": 4.2,
+        "medianViews": 105528
+      }
+    },
+    {
+      "id": "now",
+      "group": "Найдено автоматом",
+      "en": "now documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 11.9,
+        "medianViews": 226050.5
+      }
+    },
+    {
+      "id": "mercenary",
+      "group": "Найдено автоматом",
+      "en": "mercenary documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.7,
+        "medianViews": 420884
+      }
+    },
+    {
+      "id": "modern-history",
+      "group": "Найдено автоматом",
+      "en": "modern history documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.7,
+        "medianViews": 134042
+      }
+    },
+    {
+      "id": "rewrites",
+      "group": "Найдено автоматом",
+      "en": "rewrites documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.7,
+        "medianViews": 32170
+      }
+    },
+    {
+      "id": "ever",
+      "group": "Найдено автоматом",
+      "en": "ever documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.2,
+        "medianViews": 72888.5
+      }
+    },
+    {
+      "id": "truth-behind",
+      "group": "Найдено автоматом",
+      "en": "truth behind documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 4,
+        "lift": 5.8,
+        "medianViews": 620294.5
+      }
+    },
+    {
+      "id": "fantasy-action",
+      "group": "Найдено автоматом",
+      "en": "fantasy action documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.2,
+        "medianViews": 563066
+      }
+    },
+    {
+      "id": "beasts",
+      "group": "Найдено автоматом",
+      "en": "beasts documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.7,
+        "medianViews": 347005
+      }
+    },
+    {
+      "id": "saudi-arabia",
+      "group": "Найдено автоматом",
+      "en": "saudi arabia documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.7,
+        "medianViews": 35955
+      }
+    },
+    {
+      "id": "fantasy-movie",
+      "group": "Найдено автоматом",
+      "en": "fantasy movie documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.8,
+        "medianViews": 898400.5
+      }
+    },
+    {
+      "id": "cannibal",
+      "group": "Найдено автоматом",
+      "en": "cannibal documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.1,
+        "medianViews": 44223
+      }
+    },
+    {
+      "id": "love",
+      "group": "Найдено автоматом",
+      "en": "love documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-13",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.7,
+        "medianViews": 421057
       }
     }
   ]

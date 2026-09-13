@@ -125,6 +125,26 @@ const HINGLISH = new Set((
   'jaise itna kitna wale unka lekin agar toh apne apni hoti hota rahe gaye dekho dekha suno'
 ).split(' '));
 
+// Прямая пометка языка в самом заголовке. Канал пишет заголовок латиницей и
+// по-английски — «Blockbuster South Action Thriller Movie In Hindi Dubbed», —
+// так что ни письмо, ни служебные слова его не выдают. А язык назван прямым
+// текстом. Тридцать два таких канала числились английскими, и полнометражные
+// болливудские фильмы в дубляже на восемнадцать миллионов просмотров вышли
+// у нас на первое место в рейтинге ниш.
+const LANG_MARKER = [
+  ['hi', /\b(?:in\s+)?hindi(?:\s+dubbed)?\b/i],
+  ['ur', /\b(?:in\s+)?urdu\b/i],
+  ['ta', /\b(?:in\s+)?tamil\b/i],
+  ['te', /\b(?:in\s+)?telugu\b/i],
+  ['bn', /\b(?:in\s+)?(?:bangla|bengali)\b/i],
+  ['pa', /\b(?:in\s+)?punjabi\b/i],
+  ['mr', /\b(?:in\s+)?marathi\b/i],
+  ['ml', /\b(?:in\s+)?malayalam\b/i],
+  ['kn', /\b(?:in\s+)?kannada\b/i],
+  ['id', /\b(?:in\s+)?(?:bahasa|indonesia)\b/i],
+  ['vi', /\b(?:in\s+)?vietnamese\b/i],
+];
+
 // Одиночный знак чужого письма — это украшение, а не язык: два немецких канала
 // про засыпание разделяют заголовок корейской буквой «ㅣ» вместо палочки.
 // Поэтому письмо засчитывается, только если им написано слово от двух букв.
@@ -148,6 +168,10 @@ export function titleLanguage(videos, thresholds = {}) {
   const top = Object.entries(byScript).sort((a, b) => b[1] - a[1])[0];
   if (top && top[1] / titles.length >= need) return top[0];
   if (hinglish / titles.length >= need) return 'hi';
+  // Язык, названный в заголовке прямым текстом.
+  for (const [code, re] of LANG_MARKER) {
+    if (titles.filter((t) => re.test(t)).length / titles.length >= need) return code;
+  }
   return null;
 }
 
@@ -566,7 +590,24 @@ function startsWord(text, word) {
   return re.test(text);
 }
 
+// Выложенный целиком чужой фильм — не тема и не контент канала. Такие ролики
+// набирают миллионы просмотров и вытаскивали на первое место рейтинга ниши
+// «movie english» и «movie hindi»: 1 398 роликов из 1 562 там были
+// полнометражными фильмами — ужастики, пиратский Disney, AI-сгенерированное
+// кино. Повторить это нельзя и не нужно, а цифры ниши они портят полностью.
+//
+// Опознаём по прямой пометке в заголовке, а не по длительности: сонный формат
+// тоже идёт часами, и потолок по времени убил бы его вместе с фильмами.
+// Между «full» и «movie» бывает жанр: «FULL HORROR MOVIE», «ganzer Spielfilm».
+const FILM_UPLOAD = /\b(?:full\s+(?:\p{L}+\s+)?(?:movie|film|episode)|complete\s+movie|ganzer?\s+(?:\p{L}+\s+)?film|movie\s+in\s+(?:english|hindi|urdu|tamil))\b/iu;
+
+export function isFilmUpload(title) {
+  return FILM_UPLOAD.test(title ?? '');
+}
+
 export function videoNiches(title, index, lang) {
+  // Чужой фильм целиком не принадлежит ни одной теме.
+  if (isFilmUpload(title)) return [];
   const t = (title ?? '').toLowerCase();
   if (!t || !index?.[lang]) return [];
   const out = [];

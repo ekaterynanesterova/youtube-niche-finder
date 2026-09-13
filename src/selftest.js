@@ -5,7 +5,7 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot, survey, isMissing } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
-import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable } from './metrics.js';
+import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
@@ -853,6 +853,42 @@ check('списки служебных слов разные', stopWords('en').h
   check('идентификаторы тем не повторяются', new Set(ids).size === ids.length);
   check('у каждой темы есть идентификатор и хотя бы один запрос',
     cfg.seeds.every((x) => x.id && (x.en || x.de)));
+}
+
+// --- чужое кино, выложенное целиком ---
+// «movie english documentary» и «movie hindi documentary» вышли на первое
+// место рейтинга: 1 398 роликов из 1 562 там были полнометражными фильмами —
+// ужастики, пиратский Disney, AI-сгенерированное кино. Повторить это нельзя.
+{
+  const t = (...a) => a.map((x) => ({ title: x }));
+  check('выложенный фильм опознан',
+    isFilmUpload('BLOODY MARY - NEW 2021 HORROR MOVIE - FULL HORROR MOVIE')
+    && isFilmUpload('Robotropolis (2011 | Abenteuerfilm | Ganzer Film | HD)'));
+  check('обычный ролик фильмом не считается',
+    !isFilmUpload('The Terrifying Scale of the Oort Cloud')
+    && !isFilmUpload('How the Solar System Formed | The Universe'));
+  // Потолка по длительности нет намеренно: сонный формат идёт часами.
+  check('длинный сонный ролик не задет',
+    !isFilmUpload('10 Hours — Space Facts to Fall Asleep To — No Adverts'));
+
+  const idx = seedIndex([{ id: 'mv', en: 'movie documentary' }], ['en'], {});
+  check('фильм целиком не попадает ни в одну тему',
+    videoNiches('ADRIFT: Beyond Horizon | 2025 Full Movie | English', idx, 'en').length === 0);
+
+  // Язык в заголовке — тоже язык канала, даже когда заголовок английский.
+  check('дубляж распознан по прямой пометке', titleLanguage(t(
+    'GENZ CHIEF MINISTER Full Movie Hindi Dubbed',
+    'Blockbuster South Action Thriller Movie In Hindi Dubbed',
+    'Prabhas New Blockbuster South Action HD Movie In Hindi')) === 'hi');
+  check('страна в заголовке языком не считается', titleLanguage(t(
+    'The Untold Story Of India Space Programme',
+    'How India Built Its Rockets', 'India Moon Mission Explained')) === null);
+
+  check('тема не может называться по языку',
+    !topicShape(queryKeywords('movie english documentary', 'en')).ok
+    && !topicShape(queryKeywords('movie hindi documentary', 'en')).ok);
+  check('разбор фильмов темой остаётся',
+    topicShape(queryKeywords('film analysis documentary', 'en')).ok);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
