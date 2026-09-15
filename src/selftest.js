@@ -5,7 +5,7 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot, survey, isMissing } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
-import { liveIncome, liveProfile, queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
+import { conveyorProfile, liveIncome, liveProfile, queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
@@ -974,6 +974,51 @@ check('списки служебных слов разные', stopWords('en').h
     liveProfile(live, 'nobody', TL).liveUsd === null);
   check('коротких рядов срезов не хватает',
     liveIncome(snaps.slice(0, 2), db, TL).windowDays === 0);
+}
+
+// --- шаблонный конвейер ---
+{
+  const TT = { templateMinVideos: 8, templateScoreFlag: 4 };
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  // Станок: одна рамка, один хронометраж, номера выпусков, поток.
+  const farm = [];
+  for (let i = 1; i <= 20; i++) {
+    farm.push({ title: `Chilling True Crime Stories for Sleep With Rain Sound Black Screen Vol ${700 + i}`,
+                durationSec: 14500 + i * 10, publishedAt: day(20 - i) });
+  }
+  // Настоящий канал: разные темы, разная длина, публикации редкие.
+  const real = [
+    'The Mongols - Terror of the Steppe', 'Egypt - Fall of the Pharaohs',
+    'Carthage - Empire of the Phoenicians', 'Bagan - City of Temples',
+    'The Nabataeans - The Last Days Of Petra', 'The Sumerians',
+    'Byzantium - Last of the Romans', 'The Maya - Ruins Among the Trees',
+    'Easter Island - Where Giants Walked', 'The Aztecs - A Clash of Worlds',
+  ].map((title, i) => ({ title, durationSec: 4000 + i * 2200, publishedAt: day(300 - i * 28) }));
+
+  const f = conveyorProfile(farm, TT);
+  const r = conveyorProfile(real, TT);
+  check('рамка заголовка у станка почти вся', f.templateFrame >= 0.5);
+  check('у настоящего канала рамки нет', r.templateFrame < 0.35);
+  check('одинаковый хронометраж замечен', f.durationUniform === 1);
+  check('разная длина роликов не считается станком', r.durationUniform < 0.7);
+  check('порядковые номера посчитаны', f.serialShare === 1);
+  check('у настоящего канала номеров нет', r.serialShare < 0.25);
+  check('станок помечен', f.templated === true);
+  check('настоящий канал не помечен', r.templated === false);
+
+  // Перезалив — отдельный след, и он не должен подменять собой шаблон:
+  // один ролик, выложенный дважды, ещё не конвейер.
+  const twice = real.concat(real.map((v) => ({ ...v })));
+  check('перезаливы видно', conveyorProfile(twice, TT).reuploadShare === 0.5);
+  check('но перезалив сам по себе станком не делает',
+    conveyorProfile(twice, TT).templateFrame < 0.35);
+  check('по короткому каталогу шаблон не считается',
+    conveyorProfile(real.slice(0, 5), TT).templateScore === null);
+  // Сериальный канал получает балл за номера и не должен проходить порог
+  // только из-за них: приговор выносится по сумме следов.
+  const serialOnly = real.map((v, i) => ({ ...v, title: `${v.title} — Episode ${i + 1}` }));
+  const so = conveyorProfile(serialOnly, TT);
+  check('одной нумерации для приговора мало', so.serialShare === 1 && so.templated === false);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

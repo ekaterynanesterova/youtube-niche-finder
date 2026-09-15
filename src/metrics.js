@@ -35,6 +35,93 @@ export function liveProfile(live, cid, thresholds) {
   };
 }
 
+// Конвейер по шаблону: ниши, которые YouTube перестал монетизировать.
+//
+// В июле 2025 площадка переписала правило про «повторяющийся контент»:
+// монетизацию теряет не низкое качество само по себе, а массовое
+// производство по одному шаблону. Это те самые ниши, где из ролика в ролик
+// одни и те же человечки строят один и тот же домик, меняется только номер
+// в заголовке. Заходить в такую нишу бессмысленно: цифры там могут быть
+// прекрасные, а денег не будет.
+//
+// Содержимое ролика API не отдаёт. Но производство по шаблону видно по
+// следам, которые оно оставляет в метаданных, и ни один из следов сам по
+// себе приговором не является — считаем их вместе:
+//
+//   рамка   — какая доля слов заголовка повторяется в большинстве других
+//             заголовков канала. Шаблон это неподвижная рамка плюс одно
+//             меняющееся слово: «Chilling True Crime Stories for Sleep …
+//             Vol 795», «… Vol 796».
+//   длина   — насколько все ролики нарезаны в один хронометраж. Человек так
+//             не снимает, станок — так.
+//   номер   — доля заголовков с порядковым номером: Vol, Part, Episode, #.
+//   темп    — сколько роликов в неделю. Четыре длинных ролика в неделю ещё
+//             делаются руками, двенадцать — уже нет.
+//   перезалив — доля повторяющихся заголовков: тот же ролик выкладывают
+//             заново, чтобы набрать ещё раз.
+//
+// Важно, чего здесь НЕТ: оценки качества, «нейронки» и вкуса. Хороший
+// сериальный канал с нумерацией выпусков получит балл за номер и не
+// получит за всё остальное. Приговор выносится только по сумме.
+const SERIAL = /(?:\b(?:vol|volume|ep|episode|part|pt|no|nr|folge|day|week)\b[\s.:#-]*\d+|#\s*\d+|\b\d+\s*$)/i;
+// Служебные слова из рамки выбрасываем: в «The Mongols — Terror of the Steppe»
+// и «Egypt — Fall of the Pharaohs» повторяются только the и of, и без этой
+// чистки любой канал с короткими заголовками выглядит шаблонным.
+const FRAME_STOP = new Set([...stopWords('en'), ...stopWords('de')]);
+const titleSkeleton = (t) => (t ?? '').toLowerCase()
+  .replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\b\d+\b/g, '#')
+  .split(/\s+/).filter((w) => w && w !== '#' && w.length > 2 && !FRAME_STOP.has(w));
+
+export function conveyorProfile(vids, thresholds = {}) {
+  const none = { templateFrame: null, durationUniform: null, serialShare: null,
+                 reuploadShare: null, uploadsPerWeekAll: null,
+                 templateScore: null, templated: null };
+  if (!vids || vids.length < (thresholds.templateMinVideos ?? 8)) return none;
+
+  // Перезаливы считаем отдельно, но из остальных мер убираем: иначе канал,
+  // выложивший один ролик дважды, выглядит шаблонным на ровном месте.
+  const uniq = new Map();
+  for (const v of vids) {
+    // Ключ — заголовок как есть, с цифрами: «Vol 795» и «Vol 796» это два
+    // разных ролика одной серии, а не перезалив. Цифры стираются позже, при
+    // разборе рамки, и только там.
+    const k = (v.title ?? '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    if (k && !uniq.has(k)) uniq.set(k, v);
+  }
+  const list = [...uniq.values()];
+  if (list.length < (thresholds.templateMinVideos ?? 8)) return none;
+
+  const titles = list.map((v) => titleSkeleton(v.title));
+  const df = new Map();
+  for (const t of titles) for (const w of new Set(t)) df.set(w, (df.get(w) ?? 0) + 1);
+  const shares = titles.map((t) => {
+    const ws = [...new Set(t)];
+    return ws.length ? ws.filter((w) => df.get(w) / titles.length >= 0.5).length / ws.length : 0;
+  }).sort((a, b) => a - b);
+  const templateFrame = shares[Math.floor(shares.length / 2)];
+
+  const d = list.map((v) => v.durationSec).filter(Boolean).sort((a, b) => a - b);
+  const med = d.length ? d[Math.floor(d.length / 2)] : 0;
+  const durationUniform = med ? d.filter((x) => Math.abs(x - med) / med <= 0.15).length / d.length : null;
+
+  const serialShare = list.filter((v) => SERIAL.test(v.title ?? '')).length / list.length;
+  const reuploadShare = 1 - list.length / vids.length;
+
+  const ts = vids.map((v) => Date.parse(v.publishedAt)).filter(Number.isFinite).sort((a, b) => a - b);
+  const spanWeeks = ts.length > 1 ? (ts[ts.length - 1] - ts[0]) / (7 * 86400000) : 0;
+  const uploadsPerWeekAll = spanWeeks > 1 ? vids.length / spanWeeks : null;
+
+  const templateScore =
+      (templateFrame >= 0.5 ? 2 : templateFrame >= 0.35 ? 1 : 0)
+    + ((durationUniform ?? 0) >= 0.85 ? 2 : (durationUniform ?? 0) >= 0.7 ? 1 : 0)
+    + (serialShare >= 0.5 ? 2 : serialShare >= 0.25 ? 1 : 0)
+    + ((uploadsPerWeekAll ?? 0) >= 12 ? 2 : (uploadsPerWeekAll ?? 0) >= 4 ? 1 : 0)
+    + (reuploadShare >= 0.6 ? 2 : reuploadShare >= 0.3 ? 1 : 0);
+
+  return { templateFrame, durationUniform, serialShare, reuploadShare, uploadsPerWeekAll,
+           templateScore, templated: templateScore >= (thresholds.templateScoreFlag ?? 4) };
+}
+
 // Простой аккаунта до первой загрузки.
 function dormancy(ch, now, thresholds) {
   if (!ch.firstUploadComplete || !ch.publishedAt || !ch.firstUploadAt) {
@@ -262,6 +349,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       medianViews, matureCount,
       ...hitProfile(vids, thresholds, now),
       ...liveProfile(live, cid, thresholds),
+      ...conveyorProfile(vids, thresholds),
       // Заголовки главнее объявленного языка: их пишет тот же владелец, но
       // соврать в них труднее, чем в служебном поле.
       lang: titleLanguage(vids, thresholds) ?? dominantLang(vids, ch.markets ?? []),
@@ -501,6 +589,11 @@ function nicheStats(seedVideos, channels, thresholds) {
   const liveYoungHolding = liveHolding.filter((c) =>
     c.ageDays != null && c.ageDays <= thresholds.youngChannelDays && c.cleanStart === true);
   const lotteryChannels = seedChannels.filter((c) => c.lottery);
+  // Доля каналов ниши, работающих по шаблону. Меряем по тем, кого вообще
+  // можно измерить: у канала с шестью роликами шаблона не разглядеть.
+  const shaped = seedChannels.filter((c) => c.templateScore != null);
+  const templateShare = shaped.length >= 5
+    ? shaped.filter((c) => c.templated).length / shaped.length : null;
 
   // Сколько готового хронометража ниша выпускает в неделю. Порог стоит высоко
   // намеренно: простой видеоряд из футажей человек собирает быстро, и три часа
@@ -546,6 +639,13 @@ function nicheStats(seedVideos, channels, thresholds) {
     liveHolding: liveHolding.length,
     liveYoungHolding: liveYoungHolding.length,
     medianLiveUsd: median(liveHolding.map((c) => c.liveUsd)),
+    // Шаблонный конвейер: ниша, которую YouTube с 2025 года не монетизирует.
+    templateShare,
+    templateSample: shaped.length,
+    templateWorst: shaped.filter((c) => c.templated)
+      .sort((a, b) => b.templateScore - a.templateScore).slice(0, 3)
+      .map((c) => ({ id: c.id, title: c.title, score: c.templateScore,
+                     perWeek: c.uploadsPerWeekAll, serial: c.serialShare })),
     medianMatureUsd: median(matureChannels.map((c) => c.monthlyUsd)),
     // Скорость набора: сколько канал зарабатывает на месяц своей жизни.
     // Молодой канал на $700 за два месяца растёт быстрее, чем старый на $2000.

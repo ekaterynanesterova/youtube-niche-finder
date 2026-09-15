@@ -47,6 +47,9 @@ export function buildFocus({ metrics, snapshots, seeds, focus }) {
       channelId: v.channelId,
       channel: metrics.channels[v.channelId]?.title ?? null,
       channelMedian: med,
+      // Канал-станок: «залетело» у него ничего не советует. Повторить это
+      // можно только тем же станком, а за станок YouTube снимает монетизацию.
+      templated: metrics.channels[v.channelId]?.templated === true,
       vsChannel: med ? v.views / med : null,
       channelAge: metrics.channels[v.channelId]?.ageDays == null
         ? null : Math.round(metrics.channels[v.channelId].ageDays),

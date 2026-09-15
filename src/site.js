@@ -156,7 +156,8 @@ export function buildPayload(m, seeds, thresholds, db = {}, focus = null) {
     // Архетип канала — набор тем, которые состоявшиеся каналы снимают вместе.
     archetypes: buildArchetypes({ metrics: m, thresholds, lang: 'en' }),
     headline: headline(verdict, markets),
-    target: { usd: thresholds.targetMonthlyUsd, rpm: thresholds.rpmUsd },
+    target: { usd: thresholds.targetMonthlyUsd, rpm: thresholds.rpmUsd,
+              templateShare: thresholds.templateNicheShare },
     // Пороги отдаём на страницу целиком: если переписывать их в текст руками,
     // они разойдутся с кодом при первой же правке конфига.
     thresholds,
@@ -754,6 +755,9 @@ footer b{color:var(--ink)}
         <dt>Темп держится</dt>
         <dd>Последняя неделя против предыдущей. Меньше 0,7 — канал теряет ход, и его сегодняшний доход сам по себе ничего не обещает.</dd>
 
+        <dt>Каналов работают по шаблону</dt>
+        <dd>С 2025 года YouTube снимает монетизацию не за низкое качество, а за <b>массовое производство по одному образцу</b> — когда из ролика в ролик одно и то же, а меняется только номер в заголовке. Содержимое ролика API не отдаёт, но станок оставляет следы в метаданных, и считаются они вместе: неподвижная рамка в заголовке, один и тот же хронометраж у всех роликов, порядковые номера (Vol, Part, Episode, #), поток больше четырёх роликов в неделю, перезаливы одного и того же. Ни один след сам по себе приговором не является — приговор выносится по сумме. Ниша с высокой долей таких каналов не прячется, но опускается в рейтинге: цифры там бывают отличные, а денег не будет.</dd>
+
         <dt>Зарабатывают сейчас, медиана</dt>
         <dd>Типичный месячный доход среди тех каналов ниши, кто и держит цель, и не теряет темп. Это и есть ответ на вопрос «сколько здесь платят», очищенный от прошлых заслуг.</dd>
       </dl>
@@ -1100,6 +1104,26 @@ function newcomerExample(b) {
     + num(b.subs) + ' подписчиков</span></div>';
 }
 
+// Ниша, которую делают станком. Не мнение о качестве — сумма следов в
+// метаданных: одна рамка в заголовке, один хронометраж, номера выпусков,
+// поток в неделю, перезаливы.
+function templateWarning(r) {
+  if (r.template == null || r.template < (P.target.templateShare ?? 0.35)) return '';
+  const w = r.templateWorst ?? [];
+  return '<p class="adlim"><b>Ниша шаблонная.</b> По шаблону работают '
+    + pct(r.template) + ' измеренных каналов ниши (' + r.templateSample + ' шт). '
+    + 'С 2025 года YouTube снимает монетизацию за массовое производство по одному образцу — '
+    + 'просмотры здесь есть, а денег может не быть.'
+    + (w.length
+        ? '<br><span>Самые станочные: ' + w.map(c =>
+            '<a href="https://youtube.com/channel/' + c.id + '" target="_blank" rel="noopener">'
+            + (c.title || c.id) + '</a>'
+            + (c.perWeek ? ' (' + Math.round(c.perWeek) + ' роликов в неделю)' : '')).join(', ')
+          + '</span>'
+        : '')
+    + '</p>';
+}
+
 // --- вкладка «Вывод» ---
 function drawVerdict() {
   const V = P.verdict ?? [];
@@ -1121,6 +1145,7 @@ function drawVerdict() {
     [r.liveEarners == null ? '—' : r.liveHolding + ' из ' + r.liveEarners,
      'держат цель по набранным просмотрам'],
     [r.liveUsd == null ? '—' : '$' + num(r.liveUsd), 'зарабатывают сейчас, медиана'],
+    [r.template == null ? '—' : pct(r.template), 'каналов работают по шаблону'],
 
     [r.fastestMonths == null ? '—' : Math.round(r.fastestMonths) + ' мес', 'быстрее всех дошёл за'],
     [r.effort ? r.effort.hoursPerWeek + ' ч/нед' : '—', 'выпускают лидеры'],
@@ -1146,6 +1171,7 @@ function drawVerdict() {
       (r.adLimited
         ? '<p class="adlim"><b>Реклама урезана.</b> ' + (P.adLimitedWhy ?? '') + '</p>'
         : '') +
+      templateWarning(r) +
       (r.shelf != null && r.shelfOldShare != null
         ? '<p><span class="lab">старые ролики:</span> видео старше полугода — это '
           + pct(r.shelfOldShare) + ' всех роликов ниши, а достаётся им '
@@ -1269,7 +1295,8 @@ function drawFocus() {
     + '<th>К норме канала</th><th>Возраст</th><th>Просмотров</th><th>За сутки</th></tr>'
     + list.map(r => '<tr class="' + (r.young ? 'y' : '') + '">'
       + '<td>' + yt(r.id, r.title) + (r.titleRu ? '<br><span class="reg">' + r.titleRu + '</span>' : '') + '</td>'
-      + '<td>' + ch(r.channelId, r.channel) + (r.young ? '<br><span class="reg">моложе года</span>' : '') + '</td>'
+      + '<td>' + ch(r.channelId, r.channel) + (r.young ? '<br><span class="reg">моложе года</span>' : '')
+        + (r.templated ? '<br><span class="warm">канал-станок</span>' : '') + '</td>'
       + (extra ? '<td class="n">' + extra.cell(r) + '</td>' : '')
       + '<td class="n">' + norm(r) + '</td>'
       + '<td class="n">' + r.age + ' дн</td>'

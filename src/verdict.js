@@ -68,6 +68,10 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         liveHolding: m.liveHolding,
         liveYoungHolding: m.liveYoungHolding,
         liveUsd: m.medianLiveUsd,
+        // Шаблонный конвейер — ниша, где YouTube снимает монетизацию.
+        template: m.templateShare,
+        templateSample: m.templateSample,
+        templateWorst: m.templateWorst,
         climb: m.medianClimbUsd,
         fastestMonths: m.fastestYoungDays == null ? null : m.fastestYoungDays / 30.4,
         minutes: m.medianOutlierMinutes,
@@ -142,7 +146,19 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
   const upside = (r) => r.rangeHi ?? 0;
   const repeat = (r) => (r.freshChannels
     ? (r.freshWinnersClean ?? r.freshWinners ?? 0) / r.freshChannels : 0);
-  rows.sort((a, b) => (upside(b) * (0.5 + repeat(b))) - (upside(a) * (0.5 + repeat(a))));
+  // Ниша, которую делают по шаблону, идёт вниз, а не вон. Цифры у неё бывают
+  // отличные, и увидеть их полезно — но заходить туда нельзя: YouTube с 2025
+  // года снимает монетизацию за массовое производство по одному образцу.
+  // Совсем прятать такую нишу тоже неправильно: доля считается по метаданным,
+  // а не по картинке, и ошибиться она может.
+  const clean = (r) => {
+    const t = r.template;
+    if (t == null) return 1;
+    const bar = thresholds.templateNicheShare ?? 0.35;
+    return t <= bar ? 1 : Math.max(0.15, 1 - (t - bar) / (1 - bar));
+  };
+  rows.sort((a, b) => (upside(b) * (0.5 + repeat(b)) * clean(b))
+                    - (upside(a) * (0.5 + repeat(a)) * clean(a)));
 
   for (const r of rows) {
     r.why = why(r);
@@ -241,6 +257,17 @@ function risk(r, thresholds) {
     out.push(`свежий ролик новичка собирает всего около ${Math.round(r.fresh).toLocaleString('ru-RU')} просмотров — заработать в моменте не выйдет`);
   } else if ((r.freshOver20k ?? 0) < 0.2) {
     out.push(`только ${Math.round((r.freshOver20k ?? 0) * 100)}% свежих роликов берут 20 тысяч — большинство выходит впустую`);
+  }
+  // Шаблонный конвейер — риск не про трафик, а про деньги: ролики собирают,
+  // а монетизации нет. Ставим его первым, потому что он отменяет всё
+  // остальное.
+  if (r.template != null && r.template >= (thresholds.templateNicheShare ?? 0.35)) {
+    const w = (r.templateWorst ?? [])[0];
+    out.unshift(`${Math.round(r.template * 100)}% каналов ниши работают по шаблону — `
+      + `одна и та же рамка в заголовке, один хронометраж, ролики с номерами, поток в неделю`
+      + (w ? `; крупнее всех этим занят «${w.title}»` : '')
+      + `. С 2025 года YouTube снимает монетизацию за массовое производство по одному образцу: `
+      + `просмотры в такой нише есть, денег может не быть`);
   }
   // Затухание видно только по живому приросту: по накопленным просмотрам
   // канал, собравший миллион полгода назад и с тех пор молчащий, выглядит

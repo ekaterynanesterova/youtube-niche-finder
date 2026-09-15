@@ -48,5 +48,8 @@
   "langMinTitles": 3,
   "rangeMinSample": 25,
   "liveWindowDays": 14,
-  "liveHoldRatio": 0.7
+  "liveHoldRatio": 0.7,
+  "templateMinVideos": 8,
+  "templateScoreFlag": 4,
+  "templateNicheShare": 0.35
 }
