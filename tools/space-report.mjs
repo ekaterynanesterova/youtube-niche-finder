@@ -5,11 +5,12 @@
 // Запуск: node tools/space-report.mjs > docs/космос-afterlight.md
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { ROOT, paths, readJson, unpackVideos, loadSeries } from '../src/store.js';
 
-const ROOT = new URL('..', import.meta.url).pathname;
-const r = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
-const V = r('data/videos.json'), C = r('data/channels.json'), CUR = r('data/current.json');
-const STATE = r('data/state.json');
+const V = unpackVideos(readJson(paths.videos, null));
+const C = readJson(paths.channels, {});
+const CUR = readJson(paths.current, {});
+const STATE = readJson(paths.state, { runs: [] });
 const PAGE = JSON.parse(readFileSync(join(ROOT, 'index.html'), 'utf8')
   .match(/<script type="application\/json" id="payload">([\s\S]*?)<\/script>/)[1]);
 
@@ -277,10 +278,7 @@ w('');
 // набирает хвостом», а для планирования это важнее рекорда. Ответ есть в
 // дневных срезах: у ролика, вышедшего внутри окна наблюдения, известны
 // просмотры ровно на седьмой день его жизни.
-const SNAPDIR = join(ROOT, 'data/snapshots');
-const { readdirSync } = await import('node:fs');
-const snaps = readdirSync(SNAPDIR).sort()
-  .map((f) => JSON.parse(readFileSync(join(SNAPDIR, f), 'utf8')));
+const snaps = loadSeries();
 const viewsAtAge = (publishedAt, id, age) => {
   let best = null, gap = Infinity;
   for (const s of snaps) {

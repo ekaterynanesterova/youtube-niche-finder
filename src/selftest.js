@@ -9,7 +9,7 @@ import { conveyorProfile, liveIncome, liveProfile, queryKeywords, seedIndex, vid
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
-import { readJson, ROOT } from './store.js';
+import { readJson, ROOT, packVideos, unpackVideos, packSeries, unpackSeries } from './store.js';
 import { join } from 'node:path';
 import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
 
@@ -1019,6 +1019,48 @@ check('списки служебных слов разные', stopWords('en').h
   const serialOnly = real.map((v, i) => ({ ...v, title: `${v.title} — Episode ${i + 1}` }));
   const so = conveyorProfile(serialOnly, TT);
   check('одной нумерации для приговора мало', so.serialShare === 1 && so.templated === false);
+}
+
+// --- упаковка данных: то, что уложили, должно вернуться тем же ---
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const src = {
+    a: { id: 'a', channelId: 'UC1', title: 'Тест раз', publishedAt: day(10),
+         durationSec: 600, lang: 'en', firstSeen: day(9) },
+    b: { id: 'b', channelId: 'UC1', title: 'Test two', publishedAt: day(20),
+         durationSec: 1200, lang: 'de', firstSeen: day(19) },
+    c: { id: 'c', channelId: 'UC2', title: 'Старьё', publishedAt: day(900),
+         durationSec: 300, lang: 'en', firstSeen: day(899) },
+  };
+  const back = unpackVideos(packVideos(src, Date.parse(now)));
+  check('ролики пережили упаковку', Object.keys(back).length === 3);
+  // Обрезка по возрасту выбивала каналы из ниш: у канала, попавшего в нишу
+  // тремя роликами, третий мог оказаться старым, и канал выпадал целиком
+  // вместе со своими свежими роликами.
+  check('старый ролик не выброшен', back.c !== undefined && back.c.title === 'Старьё');
+  check('канал восстановлен из справочника', back.a.channelId === 'UC1' && back.b.channelId === 'UC1');
+  check('язык восстановлен', back.a.lang === 'en' && back.b.lang === 'de');
+  check('дата не поехала', back.a.publishedAt.slice(0, 16) === src.a.publishedAt.slice(0, 16));
+  check('длительность на месте', back.b.durationSec === 1200);
+  check('заголовок с кириллицей цел', back.a.title === 'Тест раз');
+  // firstSeen не читает никто — он и не должен переживать упаковку.
+  check('мёртвое поле не хранится', back.a.firstSeen === undefined);
+
+  const snaps = [
+    { date: '2026-09-01', videos: { a: [100, 5, 1], b: [200, 9, 2] } },
+    { date: '2026-09-02', videos: { a: [150, 6, 1] } },
+    { date: '2026-09-03', videos: { a: [170, 7, 1], c: [50, 0, 0] } },
+  ];
+  const rows = unpackSeries(packSeries(snaps));
+  check('дней в ряду столько же', rows.length === 3);
+  check('просмотры целы', rows[0].videos.a[0] === 100 && rows[2].videos.a[0] === 170);
+  check('пропуск остался пропуском', rows[1].videos.b === undefined);
+  check('поздний ролик подхвачен', rows[2].videos.c[0] === 50);
+  check('даты на месте', rows.map((r) => r.date).join() === '2026-09-01,2026-09-02,2026-09-03');
+  // Ноль — настоящее значение, а не пропуск: перепутать их значит превратить
+  // мёртвый ролик в отсутствующий и потерять его из расчёта прироста.
+  const zero = unpackSeries(packSeries([{ date: '2026-09-04', videos: { a: [0] } }]));
+  check('ноль просмотров это значение, а не пропуск', zero[0].videos.a[0] === 0);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

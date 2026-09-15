@@ -10,8 +10,8 @@ import { buildFocus } from './focus.js';
 import { Translator } from './translate.js';
 import { findTopics, promote } from './topics.js';
 import {
-  loadDb, saveDb, readJson, writeJson, writeCompactJson, writeText, paths,
-  listSnapshots, today, ROOT, daysBetween,
+  loadDb, saveDb, readJson, writeJson, writePlainJson, writeText, paths,
+  loadSeries, saveSeries, today, ROOT, daysBetween,
 } from './store.js';
 import { join } from 'node:path';
 
@@ -80,7 +80,10 @@ if (!metricsOnly) {
 
     const snap = await snapshot({ api, db, thresholds });
     if (Object.keys(snap).length) {
-      writeCompactJson(paths.snapshot(date), { date, videos: snap });
+      // Ряд наблюдений лежит одним файлом, а не файлом в день: раньше в каждом
+      // суточном файле заново повторялись идентификаторы всех роликов.
+      const series = loadSeries().filter((s) => s.date !== date);
+      saveSeries([...series, { date, videos: snap }]);
     }
 
     // Опорный срез по ВСЕМ видео, включая старые. Он нужен для долговечности:
@@ -91,7 +94,7 @@ if (!metricsOnly) {
     const baselineAge = baseline?.date
       ? (Date.parse(date) - Date.parse(baseline.date)) / 86400000 : Infinity;
     if (baselineAge >= (thresholds.baselineRefreshDays ?? 7)) {
-      writeCompactJson(paths.baseline, { date, views: Object.fromEntries(
+      writeJson(paths.baseline, { date, views: Object.fromEntries(
         Object.entries(db.current).map(([id, s]) => [id, s[0]])) });
       console.log(`Опорный срез обновлён (прошлому было ${Math.round(baselineAge)} дн)`);
     }
@@ -109,7 +112,7 @@ if (!metricsOnly) {
 }
 
 // Метрики считаем всегда — они дешёвые и не трогают API.
-const snapshots = listSnapshots().slice(-90).map((f) => readJson(paths.snapshot(f.replace('.json', ''))));
+const snapshots = loadSeries().slice(-90);
 const primaryLang = Object.entries(markets).find(([, m]) => m.role === 'primary')?.[0] ?? 'en';
 const metrics = computeMetrics({ db, seeds, thresholds, snapshots, primaryLang,
                                 baseline: readJson(paths.baseline, null) });
@@ -179,7 +182,7 @@ for (const t of promoted) {
 if (promoted.length) {
   const cfg = readJson(join(ROOT, 'config/seeds.json'));
   cfg.seeds = seeds;
-  writeJson(join(ROOT, 'config/seeds.json'), cfg);
+  writePlainJson(join(ROOT, 'config/seeds.json'), cfg);
   console.log('Новые темы:', promoted.map((t) => t.en ?? t.de).join(' · '));
 }
 const pending = [];

@@ -50,6 +50,24 @@ jobs:
         with:
           node-version: '20'
 
+      # Накопленная база живёт в кэше, а не в репозитории.
+      #
+      # Раньше она лежала в git, и каждый ночной прогон дописывал в историю
+      # новый снимок videos.json целиком — около ста мегабайт в сутки. За это
+      # аккаунт и заблокировали: со стороны GitHub репозиторий в роли базы
+      # данных и Actions в роли сборщика данных выглядят ровно так, как
+      # выглядит злоупотребление, и их правила запрещают и то, и другое.
+      #
+      # Ключ уникален для прогона, поэтому запись всегда создаёт новую запись
+      # кэша, а restore-keys подбирает самую свежую из прошлых. Так кэш
+      # обновляется, а не залипает на первой версии.
+      - name: Достать накопленную базу
+        uses: actions/cache/restore@v4
+        with:
+          path: data
+          key: niche-db-${{ github.run_id }}
+          restore-keys: niche-db-
+
       - name: Проверка счётной части
         run: node src/selftest.js
 
@@ -62,21 +80,40 @@ jobs:
           ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}
         run: node src/index.js ${{ github.event.inputs.metricsOnly == 'true' && '--metrics-only' || '' }}
 
-      # Коммитим даже если прогон упал. Оркестратор сохраняет базу в finally,
+      # Сохраняем даже если прогон упал. Оркестратор пишет базу в finally,
       # так что на диске лежит всё собранное до падения. Раньше падение на
       # одном мёртвом канале выбрасывало четыре тысячи потраченных юнитов
       # и целый день сбора вместе с ними.
-      - name: Коммит результата
+      - name: Убрать базу на хранение
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data
+          key: niche-db-${{ github.run_id }}
+
+      # Кэш GitHub выселяет по давности и по объёму — это не хранилище, а
+      # ускоритель. Отдельная копия артефактом даёт откуда восстановиться,
+      # если кэш пропадёт: скачивается со страницы прогона руками.
+      - name: Запасная копия базы
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: niche-db-${{ github.run_id }}
+          path: data
+          retention-days: 14
+          compression-level: 0
+
+      # В репозиторий уезжает только то, что человек читает: страница,
+      # отчёты и config/seeds.json, куда автопоиск дописывает найденные темы.
+      # Данные сюда больше не попадают — они в .gitignore.
+      - name: Коммит страницы и отчётов
         if: always()
         run: |
           git config user.name "niche-finder"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # config — там seeds.json, куда автопоиск дописывает найденные темы.
-          # Без него каждая ночная находка исчезала вместе с контейнером.
-          # docs — бриф, который забирают в другой чат по ссылке.
-          git add -A data reports docs config index.html
+          git add -A reports docs config index.html
           if git diff --staged --quiet; then
-            echo "Данные не изменились — коммитить нечего"
+            echo "Страница не изменилась — коммитить нечего"
           else
             git commit -m "Сбор за $(date -u +%F)${{ steps.run.outcome == 'failure' && ' (прогон упал, сохранено собранное)' || '' }}"
             git push
