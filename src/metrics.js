@@ -12,6 +12,29 @@ function ageDays(ch, now) {
   return basis ? daysBetween(basis, now) : null;
 }
 
+// Что из живого прироста следует по одному каналу.
+export function liveProfile(live, cid, thresholds) {
+  const c = live?.byChannel?.[cid];
+  if (!c || !live.windowDays || !c.measured) {
+    return { liveUsd: null, liveTrend: null, liveMeasured: 0, liveEarning: null };
+  }
+  const monthlyViews = (c.gain / live.windowDays) * 30.4;
+  const liveUsd = (monthlyViews / 1000) * thresholds.rpmUsd;
+  // Держится ли темп: последняя неделя против предыдущей. Меньше единицы —
+  // канал затухает, даже если по накопленному выглядит богатым.
+  const perDayRecent = live.halfDays ? c.recent / live.halfDays : null;
+  const perDayPrev = live.windowDays - live.halfDays > 0
+    ? c.prev / (live.windowDays - live.halfDays) : null;
+  const liveTrend = perDayPrev && perDayPrev > 0 && perDayRecent != null
+    ? perDayRecent / perDayPrev : null;
+  return {
+    liveUsd,
+    liveTrend,
+    liveMeasured: c.measured,
+    liveEarning: liveUsd >= thresholds.targetMonthlyUsd,
+  };
+}
+
 // Простой аккаунта до первой загрузки.
 function dormancy(ch, now, thresholds) {
   if (!ch.firstUploadComplete || !ch.publishedAt || !ch.firstUploadAt) {
@@ -207,6 +230,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
   }
 
   // --- уровень канала ---
+  const live = liveIncome(snapshots, db, thresholds);
   const channels = {};
   for (const [cid, vids] of Object.entries(byChannel)) {
     const ch = db.channels[cid] ?? { id: cid };
@@ -237,6 +261,7 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       ...dormancy(ch, now, thresholds),
       medianViews, matureCount,
       ...hitProfile(vids, thresholds, now),
+      ...liveProfile(live, cid, thresholds),
       // Заголовки главнее объявленного языка: их пишет тот же владелец, но
       // соврать в них труднее, чем в служебном поле.
       lang: titleLanguage(vids, thresholds) ?? dominantLang(vids, ch.markets ?? []),
@@ -357,11 +382,67 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
     };
   }
 
-  return { computedAt: now, thresholds, channels, videos, niches, nouns,
+  return { computedAt: now, thresholds, channels, videos, niches, nouns, live,
            // За сколько дней измерен живой прирост. Сутки — это уже данные,
            // но выводы по ним делать рано, и это должно быть видно.
            gainWindowDays: baseline?.date ? Math.round(daysBetween(baseline.date, now)) : 0,
            snapshotDays: snapshots.length };
+}
+
+// Доход по НАБРАННЫМ просмотрам, а не по накопленным.
+//
+// До сих пор деньги считались так: сумма просмотров всех роликов моложе
+// девяноста дней, делённая на три. Это снимок накопленного, а не заработок
+// за месяц. Канал, у которого ролик собрал миллион полгода назад и с тех пор
+// затих, выглядел так же, как растущий. Вопрос «зарабатывает ли ниша
+// стабильно» на таком числе не отвечается вообще.
+//
+// Теперь считаем разницу между срезами: сколько просмотров канал реально
+// набрал за две недели. И отдельно — держится ли этот темп: сравниваем
+// последнюю неделю с предыдущей.
+//
+// Оговорка, которую важно не потерять: дневные срезы хранят только ролики
+// не старше snapshotMaxAgeDays. У молодого канала почти весь каталог внутри
+// этого окна, у старого — нет, и его доход мы занижаем. Решения принимаются
+// по молодым, так что смещение на нужной стороне.
+export function liveIncome(snapshots, db, thresholds) {
+  const out = { byChannel: {}, windowDays: 0, halfDays: 0, snapshots: snapshots.length };
+  if (snapshots.length < 3) return out;
+
+  const last = snapshots[snapshots.length - 1];
+  const at = (backDays) => {
+    let best = snapshots[0], bestGap = Infinity;
+    for (const s of snapshots) {
+      const gap = Math.abs((Date.parse(last.date) - Date.parse(s.date)) / 86400000 - backDays);
+      if (gap < bestGap) { bestGap = gap; best = s; }
+    }
+    return best;
+  };
+  const full = at(thresholds.liveWindowDays ?? 14);
+  const mid = at((thresholds.liveWindowDays ?? 14) / 2);
+  const days = (a, b) => (Date.parse(b.date) - Date.parse(a.date)) / 86400000;
+  out.windowDays = days(full, last);
+  out.halfDays = days(mid, last);
+  if (out.windowDays <= 0) return out;
+
+  const add = (cid, key, v) => {
+    const c = (out.byChannel[cid] ??= { gain: 0, recent: 0, prev: 0, measured: 0 });
+    c[key] += v;
+  };
+  for (const id of Object.keys(last.videos)) {
+    const cid = db.videos[id]?.channelId;
+    if (!cid) continue;
+    const now = last.videos[id]?.[0];
+    if (!Number.isFinite(now)) continue;
+    const then = full.videos[id]?.[0];
+    if (Number.isFinite(then)) { add(cid, 'gain', Math.max(0, now - then)); add(cid, 'measured', 1); }
+    const half = mid.videos[id]?.[0];
+    if (Number.isFinite(half)) {
+      add(cid, 'recent', Math.max(0, now - half));
+      if (Number.isFinite(then)) add(cid, 'prev', Math.max(0, half - then));
+    }
+  }
+  return out;
 }
 
 // Сколько просмотров видео набрало за окно наблюдения. Ради этого числа
@@ -411,6 +492,14 @@ function nicheStats(seedVideos, channels, thresholds) {
   const youngCleanChannels = youngOutlierChannels.filter((id) => channels[id]?.cleanStart === true);
   // Отдельно — кто уже дотянул до полной цели, любого возраста.
   const matureChannels = seedChannels.filter((c) => c.earning);
+  // По живому доходу: кто реально зарабатывает сейчас и у кого это держится.
+  // Старая оценка записывала в богатые затухшие каналы — «Deep Sea Live»
+  // числился на $4 146, а по набранным просмотрам у него $253.
+  const liveEarners = seedChannels.filter((c) => c.liveEarning === true);
+  const liveHolding = liveEarners.filter((c) => c.liveTrend != null
+    && c.liveTrend >= (thresholds.liveHoldRatio ?? 0.7));
+  const liveYoungHolding = liveHolding.filter((c) =>
+    c.ageDays != null && c.ageDays <= thresholds.youngChannelDays && c.cleanStart === true);
   const lotteryChannels = seedChannels.filter((c) => c.lottery);
 
   // Сколько готового хронометража ниша выпускает в неделю. Порог стоит высоко
@@ -452,6 +541,11 @@ function nicheStats(seedVideos, channels, thresholds) {
     medianMonthlyUsd: median(started.map((c) => c.monthlyUsd)),
     // Сколько каналов ниши доросли до полной цели — мера потолка, а не входа.
     matureChannels: matureChannels.length,
+    // Каналы, которые зарабатывают ПО НАБРАННЫМ просмотрам, а не по накопленным.
+    liveEarners: liveEarners.length,
+    liveHolding: liveHolding.length,
+    liveYoungHolding: liveYoungHolding.length,
+    medianLiveUsd: median(liveHolding.map((c) => c.liveUsd)),
     medianMatureUsd: median(matureChannels.map((c) => c.monthlyUsd)),
     // Скорость набора: сколько канал зарабатывает на месяц своей жизни.
     // Молодой канал на $700 за два месяца растёт быстрее, чем старый на $2000.

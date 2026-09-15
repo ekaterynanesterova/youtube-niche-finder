@@ -16,82 +16,83 @@
 | 8 | **did-ancient-humans** —  <br><sub>Найдено автоматом</sub> | 86% | 19 из 22 | 107 857 | 21.9 мин | 11% | 2% | 3.3 | рабочая |
 | 9 | **ethiopian-bible** —  <br><sub>Найдено автоматом</sub> | 83% | 20 из 24 | 91 063 | 28.0 мин | 0% | 3% | 6.3 | рабочая |
 | 10 | **supervolcano** — супервулканы <br><sub>Геология</sub> | 80% | 4 из 5 | 71 338 | 50.5 мин | 13% | 2% | 9.3 | рабочая |
-| 11 | **scientists-asked-grok** —  <br><sub>Найдено автоматом</sub> | 75% | 9 из 12 | 67 170 | 27.5 мин | 0% | 2% | 6.5 | рабочая |
-| 12 | **saudi-arabia** —  <br><sub>Найдено автоматом</sub> | 71% | 5 из 7 | 166 631 | 34.7 мин | 0% | 1% | 5.4 | рабочая |
-| 13 | **great-white-shark** —  <br><sub>Найдено автоматом</sub> | 73% | 8 из 11 | 108 777 | 32.0 мин | 7% | 1% | 6.5 | рабочая |
-| 14 | **rewrites** —  <br><sub>Найдено автоматом</sub> | 75% | 3 из 4 | 56 610 | 30.0 мин | 0% | 2% | 14.1 | рабочая |
-| 15 | **terrifying-truth** —  <br><sub>Найдено автоматом</sub> | 73% | 11 из 15 | 86 765 | 48.3 мин | 0% | 2% | 4.8 | рабочая |
-| 16 | **disasters** — природные катастрофы <br><sub>Геология</sub> | 67% | 2 из 3 | 364 115 | 47.2 мин | 0% | 1% | 3.3 | рабочая |
-| 17 | **mariana-trench** —  <br><sub>Найдено автоматом</sub> | 68% | 15 из 22 | 160 554 | 45.1 мин | 22% | 1% | 5.1 | рабочая |
-| 18 | **animal-attacks** —  <br><sub>Найдено автоматом</sub> | 67% | 10 из 15 | 208 428 | 33.6 мин | 6% | 1% | 3.7 | рабочая |
-| 19 | **sleep-science** — наука для засыпания <br><sub>Засыпание</sub> | 67% | 2 из 3 | 145 411 | 128.0 мин | 4% | 2% | 2.7 | рабочая |
-| 20 | **ocean-creatures** — обитатели глубин <br><sub>Океан</sub> | 63% | 5 из 8 | 104 786 | 113.2 мин | 46% | 1% | 4.9 | рабочая |
-| 21 | **james-webb** — телескоп Джеймс Уэбб <br><sub>Космос</sub> | 63% | 10 из 16 | 102 926 | 32.8 мин | 3% | 2% | 4.9 | рабочая |
-| 22 | **people-live** —  <br><sub>Найдено автоматом</sub> | 58% | 21 из 36 | 133 838 | 33.6 мин | 2% | 1% | 2.6 | рабочая |
-| 23 | **deep-ocean** —  <br><sub>Найдено автоматом</sub> | 59% | 17 из 29 | 114 037 | 178.4 мин | 30% | 1% | 3.4 | рабочая |
-| 24 | **fantasy-action** —  <br><sub>Найдено автоматом</sub> | 50% | 2 из 4 | 998 252 | 81.4 мин | 0% | 1% | 3.9 | рабочая |
-| 25 | **sleep-history** — история для засыпания <br><sub>Засыпание</sub> | 55% | 6 из 11 | 131 341 | 142.7 мин | 13% | 1% | 2.5 | рабочая |
-| 26 | **ice-age** — ледниковый период <br><sub>Доисторическое</sub> | 50% | 8 из 16 | 101 339 | 51.7 мин | 19% | 2% | 3.5 | рабочая |
-| 27 | **whales** —  <br><sub>Найдено автоматом</sub> | 50% | 6 из 12 | 86 122 | 30.5 мин | 27% | 2% | 2.3 | рабочая |
-| 28 | **deep-sea** — глубоководный мир <br><sub>Океан</sub> | 47% | 15 из 32 | 185 334 | 54.3 мин | 20% | 1% | 3.0 | рабочая |
-| 29 | **sleep-doku** — документалка для засыпания <br><sub>Засыпание</sub> | 48% | 28 из 58 | 121 460 | 142.9 мин | 8% | 2% | 1.9 | рабочая |
-| 30 | **antarctica** — Антарктида <br><sub>Океан</sub> | 49% | 24 из 49 | 97 482 | 63.2 мин | 29% | 1% | 5.5 | рабочая |
-| 31 | **secret-china** —  <br><sub>Найдено автоматом</sub> | 50% | 5 из 10 | 68 737 | 61.5 мин | 0% | 1% | 3.1 | рабочая |
-| 32 | **battle-survival** —  <br><sub>Найдено автоматом</sub> | 46% | 6 из 13 | 141 648 | 60.7 мин | 11% | 1% | 2.7 | рабочая |
-| 33 | **native** —  <br><sub>Найдено автоматом</sub> | 50% | 4 из 8 | 47 917 | 76.1 мин | 15% | 2% | 3.0 | рабочая |
-| 34 | **place-earth** —  <br><sub>Найдено автоматом</sub> | 45% | 19 из 42 | 162 300 | 61.2 мин | 14% | 1% | 2.9 | рабочая |
-| 35 | **built-world** —  <br><sub>Найдено автоматом</sub> | 47% | 7 из 15 | 104 802 | 44.6 мин | 0% | 1% | 4.5 | рабочая |
-| 36 | **ww2-pacific** — война на Тихом океане <br><sub>Вторая мировая</sub> | 43% | 3 из 7 | 130 638 | 50.4 мин | 0% | 2% | 6.5 | рабочая |
-| 37 | **apex-predators** —  <br><sub>Найдено автоматом</sub> | 43% | 6 из 14 | 127 699 | 58.0 мин | 18% | 1% | 3.2 | рабочая |
-| 38 | **science-facts** — научные факты <br><sub>Список из 80</sub> | 40% | 2 из 5 | 241 579 | 123.6 мин | 0% | 2% | 2.7 | рабочая |
-| 39 | **egypt** — Древний Египет <br><sub>Древние</sub> | 39% | 17 из 44 | 194 342 | 48.6 мин | 11% | 2% | 5.1 | рабочая |
-| 40 | **map-explained** — объясняем на картах <br><sub>Список из 50</sub> | 42% | 11 из 26 | 74 871 | 28.0 мин | 7% | 2% | 5.5 | рабочая |
-| 41 | **fantasy-movie** —  <br><sub>Найдено автоматом</sub> | 33% | 4 из 12 | 711 502 | 74.9 мин | 8% | 1% | 1.9 | рабочая |
-| 42 | **period-earth** —  <br><sub>Найдено автоматом</sub> | 40% | 2 из 5 | 116 952 | 61.0 мин | 17% | 1% | 3.6 | рабочая |
-| 43 | **blackhole** — чёрные дыры <br><sub>Космос</sub> | 39% | 20 из 51 | 142 593 | 48.6 мин | 4% | 2% | 3.0 | рабочая |
-| 44 | **solar-system** — Солнечная система <br><sub>Космос</sub> | 40% | 21 из 53 | 99 745 | 45.5 мин | 3% | 2% | 3.5 | рабочая |
-| 45 | **galaxies** — галактики <br><sub>Космос</sub> | 38% | 6 из 16 | 122 443 | 126.9 мин | 15% | 2% | 3.5 | рабочая |
-| 46 | **america** — документальный фильм об америке <br><sub>Найдено автоматом</sub> | 37% | 127 из 344 | 120 117 | 42.7 мин | 5% | 2% | 2.9 | рабочая |
-| 47 | **survival-story** — чудеса выживания <br><sub>Список из 50</sub> | 33% | 1 из 3 | 268 145 | 30.9 мин | 27% | 1% | 4.6 | рабочая |
-| 48 | **space-doku** — документалки о космосе <br><sub>Космос</sub> | 35% | 50 из 141 | 147 728 | 61.5 мин | 5% | 2% | 2.3 | рабочая |
-| 49 | **disaster-doc** — разбор катастроф <br><sub>Список из 50</sub> | 33% | 27 из 81 | 228 750 | 34.3 мин | 4% | 1% | 3.5 | рабочая |
-| 50 | **human-history** — документальный фильм о человеческой истории <br><sub>Найдено автоматом</sub> | 36% | 9 из 25 | 113 637 | 35.9 мин | 17% | 2% | 3.6 | рабочая |
-| 51 | **real-life** — документальный фильм о реальной жизни <br><sub>Найдено автоматом</sub> | 34% | 17 из 50 | 127 718 | 40.6 мин | 4% | 1% | 3.4 | рабочая |
-| 52 | **modern-history** —  <br><sub>Найдено автоматом</sub> | 33% | 2 из 6 | 106 511 | 57.8 мин | 19% | 2% | 2.2 | рабочая |
-| 53 | **calm-space** — космос для засыпания <br><sub>Космос спокойный</sub> | 33% | 1 из 3 | 96 576 | 226.9 мин | 12% | 1% | 2.7 | рабочая |
-| 54 | **tourist-places** — туристические места <br><sub>Список из 80</sub> | 33% | 1 из 3 | 93 569 | 66.7 мин | 0% | 1% | 4.2 | нет данных |
-| 55 | **ww2-aircraft** — авиация Второй мировой <br><sub>Вторая мировая</sub> | 33% | 1 из 3 | 76 686 | 15.1 мин | 0% | 2% | 3.3 | нет данных |
-| 56 | **impossible-engineering** — невозможная инженерия <br><sub>Список из 50</sub> | 30% | 3 из 10 | 165 902 | 75.2 мин | 0% | 1% | 3.3 | рабочая |
-| 57 | **dinos** — динозавры <br><sub>Доисторическое</sub> | 29% | 15 из 51 | 145 917 | 62.1 мин | 4% | 1% | 1.6 | рабочая |
-| 58 | **ww2-eastern** — Восточный фронт <br><sub>Вторая мировая</sub> | 29% | 2 из 7 | 144 438 | 51.3 мин | 0% | 2% | 3.1 | рабочая |
-| 59 | **future-earth** — будущее Земли <br><sub>Будущее</sub> | 33% | 1 из 3 | 42 230 | 60.0 мин | 0% | 2% | 2.5 | рабочая |
-| 60 | **psychology-doc** — психология <br><sub>Список из 50</sub> | 30% | 3 из 10 | 89 153 | 88.1 мин | 0% | 3% | 3.0 | рабочая |
-| 61 | **love** —  <br><sub>Найдено автоматом</sub> | 26% | 18 из 69 | 241 109 | 80.1 мин | 11% | 2% | 3.7 | рабочая |
-| 62 | **megastructures** — мегасооружения <br><sub>Инженерия</sub> | 25% | 1 из 4 | 262 990 | 116.5 мин | 33% | 2% | 1.8 | рабочая |
-| 63 | **village-life** — жизнь в деревне <br><sub>Список из 80</sub> | 26% | 5 из 19 | 182 235 | 43.2 мин | 0% | 1% | 1.5 | рабочая |
-| 64 | **human-body** — как устроено тело <br><sub>Биология</sub> | 25% | 1 из 4 | 249 929 | 22.8 мин | 0% | 3% | 3.9 | рабочая |
-| 65 | **thriller-english** — триллер документальный фильм на английском языке <br><sub>Найдено автоматом</sub> | 25% | 1 из 4 | 169 444 | 86.2 мин | 0% | 1% | 2.8 | рабочая |
-| 66 | **china-hidden** —  <br><sub>Найдено автоматом</sub> | 25% | 2 из 8 | 88 089 | 67.6 мин | 0% | 1% | 3.3 | рабочая |
-| 67 | **earth-planet** —  <br><sub>Найдено автоматом</sub> | 22% | 6 из 27 | 166 657 | 61.9 мин | 7% | 1% | 3.0 | рабочая |
-| 68 | **hidden-history** — скрытая история <br><sub>Список из 50</sub> | 24% | 5 из 21 | 103 528 | 53.3 мин | 19% | 2% | 5.2 | рабочая |
-| 69 | **untold** —  <br><sub>Найдено автоматом</sub> | 24% | 10 из 42 | 103 508 | 49.7 мин | 7% | 2% | 4.5 | рабочая |
-| 70 | **truth-behind** —  <br><sub>Найдено автоматом</sub> | 23% | 8 из 35 | 104 934 | 42.5 мин | 2% | 2% | 4.6 | рабочая |
-| 71 | **technology-explained** — технологии простым языком <br><sub>Список из 50</sub> | 19% | 5 из 27 | 295 255 | 52.6 мин | 9% | 2% | 4.5 | рабочая |
-| 72 | **film-analysis** — разборы фильмов <br><sub>Список из 80</sub> | 20% | 3 из 15 | 193 489 | 46.3 мин | 0% | 3% | 2.0 | рабочая |
-| 73 | **nasa-discoveries** — открытия NASA <br><sub>Космос</sub> | 25% | 1 из 4 | 49 953 | 127.8 мин | 17% | 2% | 4.8 | рабочая |
-| 74 | **archaeology** — загадки археологии <br><sub>Древние</sub> | 20% | 2 из 10 | 74 308 | 35.9 мин | 8% | 4% | 2.4 | рабочая |
-| 75 | **history-facts** — исторические факты <br><sub>Список из 80</sub> | 17% | 1 из 6 | 150 340 | 131.0 мин | 11% | 1% | 2.1 | рабочая |
-| 76 | **lost-civs** — исчезнувшие цивилизации <br><sub>Древние</sub> | 13% | 1 из 8 | 414 885 | 96.6 мин | 10% | 1% | 3.6 | рабочая |
-| 77 | **legend** —  <br><sub>Найдено автоматом</sub> | 16% | 11 из 68 | 149 386 | 52.7 мин | 6% | 2% | 3.3 | рабочая |
-| 78 | **ww2-doku** — документалки о Второй мировой <br><sub>Вторая мировая</sub> | 13% | 7 из 53 | 276 232 | 51.6 мин | 1% | 2% | 3.1 | рабочая |
-| 79 | **lost-places** — заброшенные места <br><sub>Инженерия</sub> | 14% | 1 из 7 | 72 602 | 24.3 мин | 0% | 3% | 1.0 | рабочая |
-| 80 | **ww2-battles** — сражения Второй мировой <br><sub>Вторая мировая</sub> | 9% | 1 из 11 | 272 881 | 51.0 мин | 8% | 1% | 3.3 | рабочая |
-| 81 | **idaho** —  <br><sub>Найдено автоматом</sub> | 11% | 1 из 9 | 97 301 | 34.7 мин | 8% | 7% | 2.6 | рабочая |
-| 82 | **spain** —  <br><sub>Найдено автоматом</sub> | 10% | 2 из 21 | 135 381 | 27.9 мин | 11% | 2% | 3.3 | рабочая |
-| 83 | **urzeit-tiere** — звери доисторических эпох <br><sub>Доисторическое</sub> | 0% | 0 из 5 | 559 670 | 35.2 мин | 0% | 2% | 1.6 | рабочая |
-| 84 | **universe-scale** — размеры Вселенной <br><sub>Космос</sub> | 0% | 0 из 5 | 102 104 | 17.8 мин | 10% | 1% | 1.5 | рабочая |
-| 85 | **exoplanets** — экзопланеты <br><sub>Космос</sub> | 0% | 0 из 4 | 84 116 | 40.4 мин | 10% | 1% | 1.6 | рабочая |
-| 86 | **mass-extinction** — массовые вымирания <br><sub>Доисторическое</sub> | 0% | 0 из 3 | 83 171 | 53.7 мин | 0% | 3% | 1.6 | рабочая |
+| 11 | **result** —  <br><sub>Найдено автоматом</sub> | 77% | 30 из 39 | 76 040 | 26.2 мин | 0% | 2% | 5.8 | рабочая |
+| 12 | **scientists-asked-grok** —  <br><sub>Найдено автоматом</sub> | 75% | 9 из 12 | 67 170 | 27.5 мин | 0% | 2% | 6.5 | рабочая |
+| 13 | **saudi-arabia** —  <br><sub>Найдено автоматом</sub> | 71% | 5 из 7 | 166 631 | 34.7 мин | 0% | 1% | 5.4 | рабочая |
+| 14 | **great-white-shark** —  <br><sub>Найдено автоматом</sub> | 73% | 8 из 11 | 108 777 | 32.0 мин | 7% | 1% | 6.5 | рабочая |
+| 15 | **rewrites** —  <br><sub>Найдено автоматом</sub> | 75% | 3 из 4 | 56 610 | 30.0 мин | 0% | 2% | 14.1 | рабочая |
+| 16 | **terrifying-truth** —  <br><sub>Найдено автоматом</sub> | 73% | 11 из 15 | 86 765 | 48.3 мин | 0% | 2% | 4.8 | рабочая |
+| 17 | **disasters** — природные катастрофы <br><sub>Геология</sub> | 67% | 2 из 3 | 364 115 | 47.2 мин | 0% | 1% | 3.3 | рабочая |
+| 18 | **mariana-trench** —  <br><sub>Найдено автоматом</sub> | 68% | 15 из 22 | 160 554 | 45.1 мин | 22% | 1% | 5.1 | рабочая |
+| 19 | **animal-attacks** —  <br><sub>Найдено автоматом</sub> | 67% | 10 из 15 | 208 428 | 33.6 мин | 6% | 1% | 3.7 | рабочая |
+| 20 | **sleep-science** — наука для засыпания <br><sub>Засыпание</sub> | 67% | 2 из 3 | 145 411 | 128.0 мин | 4% | 2% | 2.7 | рабочая |
+| 21 | **ocean-creatures** — обитатели глубин <br><sub>Океан</sub> | 63% | 5 из 8 | 104 786 | 113.2 мин | 46% | 1% | 4.9 | рабочая |
+| 22 | **james-webb** — телескоп Джеймс Уэбб <br><sub>Космос</sub> | 63% | 10 из 16 | 102 926 | 32.8 мин | 3% | 2% | 4.9 | рабочая |
+| 23 | **people-live** —  <br><sub>Найдено автоматом</sub> | 58% | 21 из 36 | 133 838 | 33.6 мин | 2% | 1% | 2.6 | рабочая |
+| 24 | **deep-ocean** —  <br><sub>Найдено автоматом</sub> | 59% | 17 из 29 | 114 037 | 178.4 мин | 30% | 1% | 3.3 | рабочая |
+| 25 | **fantasy-action** —  <br><sub>Найдено автоматом</sub> | 50% | 2 из 4 | 998 252 | 81.4 мин | 0% | 1% | 3.9 | рабочая |
+| 26 | **sleep-history** — история для засыпания <br><sub>Засыпание</sub> | 55% | 6 из 11 | 131 341 | 142.7 мин | 13% | 1% | 2.5 | рабочая |
+| 27 | **ice-age** — ледниковый период <br><sub>Доисторическое</sub> | 50% | 8 из 16 | 101 339 | 51.7 мин | 19% | 2% | 3.5 | рабочая |
+| 28 | **whales** —  <br><sub>Найдено автоматом</sub> | 50% | 6 из 12 | 86 122 | 30.5 мин | 27% | 2% | 2.3 | рабочая |
+| 29 | **deep-sea** — глубоководный мир <br><sub>Океан</sub> | 47% | 15 из 32 | 185 334 | 54.3 мин | 20% | 1% | 3.0 | рабочая |
+| 30 | **sleep-doku** — документалка для засыпания <br><sub>Засыпание</sub> | 48% | 28 из 58 | 121 460 | 142.9 мин | 8% | 2% | 1.9 | рабочая |
+| 31 | **antarctica** — Антарктида <br><sub>Океан</sub> | 49% | 24 из 49 | 97 482 | 63.2 мин | 29% | 1% | 5.5 | рабочая |
+| 32 | **secret-china** —  <br><sub>Найдено автоматом</sub> | 50% | 5 из 10 | 68 737 | 61.5 мин | 0% | 1% | 3.1 | рабочая |
+| 33 | **battle-survival** —  <br><sub>Найдено автоматом</sub> | 46% | 6 из 13 | 141 648 | 60.7 мин | 11% | 1% | 2.7 | рабочая |
+| 34 | **native** —  <br><sub>Найдено автоматом</sub> | 50% | 4 из 8 | 47 917 | 76.1 мин | 15% | 2% | 3.0 | рабочая |
+| 35 | **place-earth** —  <br><sub>Найдено автоматом</sub> | 45% | 19 из 42 | 162 300 | 61.2 мин | 14% | 1% | 2.9 | рабочая |
+| 36 | **built-world** —  <br><sub>Найдено автоматом</sub> | 47% | 7 из 15 | 104 802 | 44.6 мин | 0% | 1% | 4.5 | рабочая |
+| 37 | **ww2-pacific** — война на Тихом океане <br><sub>Вторая мировая</sub> | 43% | 3 из 7 | 130 638 | 50.4 мин | 0% | 2% | 6.5 | рабочая |
+| 38 | **apex-predators** —  <br><sub>Найдено автоматом</sub> | 43% | 6 из 14 | 127 699 | 58.0 мин | 18% | 1% | 3.2 | рабочая |
+| 39 | **science-facts** — научные факты <br><sub>Список из 80</sub> | 40% | 2 из 5 | 241 579 | 123.6 мин | 0% | 2% | 2.7 | рабочая |
+| 40 | **egypt** — Древний Египет <br><sub>Древние</sub> | 39% | 17 из 44 | 194 342 | 48.6 мин | 11% | 2% | 5.1 | рабочая |
+| 41 | **map-explained** — объясняем на картах <br><sub>Список из 50</sub> | 42% | 11 из 26 | 74 871 | 28.0 мин | 7% | 2% | 5.5 | рабочая |
+| 42 | **fantasy-movie** —  <br><sub>Найдено автоматом</sub> | 33% | 4 из 12 | 711 502 | 74.9 мин | 8% | 1% | 1.9 | рабочая |
+| 43 | **period-earth** —  <br><sub>Найдено автоматом</sub> | 40% | 2 из 5 | 116 952 | 61.0 мин | 17% | 1% | 3.6 | рабочая |
+| 44 | **blackhole** — чёрные дыры <br><sub>Космос</sub> | 39% | 20 из 51 | 142 593 | 48.6 мин | 4% | 2% | 3.0 | рабочая |
+| 45 | **solar-system** — Солнечная система <br><sub>Космос</sub> | 40% | 21 из 53 | 99 745 | 45.5 мин | 3% | 2% | 3.5 | рабочая |
+| 46 | **galaxies** — галактики <br><sub>Космос</sub> | 38% | 6 из 16 | 122 443 | 126.9 мин | 15% | 2% | 3.5 | рабочая |
+| 47 | **america** — документальный фильм об америке <br><sub>Найдено автоматом</sub> | 37% | 127 из 344 | 120 117 | 42.7 мин | 5% | 2% | 2.9 | рабочая |
+| 48 | **survival-story** — чудеса выживания <br><sub>Список из 50</sub> | 33% | 1 из 3 | 268 145 | 30.9 мин | 27% | 1% | 4.6 | рабочая |
+| 49 | **space-doku** — документалки о космосе <br><sub>Космос</sub> | 35% | 50 из 141 | 147 728 | 61.5 мин | 5% | 2% | 2.3 | рабочая |
+| 50 | **disaster-doc** — разбор катастроф <br><sub>Список из 50</sub> | 33% | 27 из 81 | 228 750 | 34.3 мин | 4% | 1% | 3.5 | рабочая |
+| 51 | **human-history** — документальный фильм о человеческой истории <br><sub>Найдено автоматом</sub> | 36% | 9 из 25 | 113 637 | 35.9 мин | 17% | 2% | 3.6 | рабочая |
+| 52 | **real-life** — документальный фильм о реальной жизни <br><sub>Найдено автоматом</sub> | 34% | 17 из 50 | 127 718 | 40.6 мин | 4% | 1% | 3.4 | рабочая |
+| 53 | **modern-history** —  <br><sub>Найдено автоматом</sub> | 33% | 2 из 6 | 106 511 | 57.8 мин | 19% | 2% | 2.2 | рабочая |
+| 54 | **calm-space** — космос для засыпания <br><sub>Космос спокойный</sub> | 33% | 1 из 3 | 96 576 | 226.9 мин | 12% | 1% | 2.7 | рабочая |
+| 55 | **tourist-places** — туристические места <br><sub>Список из 80</sub> | 33% | 1 из 3 | 93 569 | 66.7 мин | 0% | 1% | 4.2 | нет данных |
+| 56 | **ww2-aircraft** — авиация Второй мировой <br><sub>Вторая мировая</sub> | 33% | 1 из 3 | 76 686 | 15.1 мин | 0% | 2% | 3.3 | нет данных |
+| 57 | **impossible-engineering** — невозможная инженерия <br><sub>Список из 50</sub> | 30% | 3 из 10 | 165 902 | 75.2 мин | 0% | 1% | 3.3 | рабочая |
+| 58 | **dinos** — динозавры <br><sub>Доисторическое</sub> | 29% | 15 из 51 | 145 917 | 62.1 мин | 4% | 1% | 1.6 | рабочая |
+| 59 | **ww2-eastern** — Восточный фронт <br><sub>Вторая мировая</sub> | 29% | 2 из 7 | 144 438 | 51.3 мин | 0% | 2% | 3.1 | рабочая |
+| 60 | **future-earth** — будущее Земли <br><sub>Будущее</sub> | 33% | 1 из 3 | 42 230 | 60.0 мин | 0% | 2% | 2.5 | рабочая |
+| 61 | **psychology-doc** — психология <br><sub>Список из 50</sub> | 30% | 3 из 10 | 89 153 | 88.1 мин | 0% | 3% | 3.0 | рабочая |
+| 62 | **love** —  <br><sub>Найдено автоматом</sub> | 26% | 18 из 69 | 241 109 | 80.1 мин | 11% | 2% | 3.7 | рабочая |
+| 63 | **megastructures** — мегасооружения <br><sub>Инженерия</sub> | 25% | 1 из 4 | 262 990 | 116.5 мин | 33% | 2% | 1.8 | рабочая |
+| 64 | **village-life** — жизнь в деревне <br><sub>Список из 80</sub> | 26% | 5 из 19 | 182 235 | 43.2 мин | 0% | 1% | 1.5 | рабочая |
+| 65 | **human-body** — как устроено тело <br><sub>Биология</sub> | 25% | 1 из 4 | 249 929 | 22.8 мин | 0% | 3% | 3.9 | рабочая |
+| 66 | **thriller-english** — триллер документальный фильм на английском языке <br><sub>Найдено автоматом</sub> | 25% | 1 из 4 | 169 444 | 86.2 мин | 0% | 1% | 2.8 | рабочая |
+| 67 | **china-hidden** —  <br><sub>Найдено автоматом</sub> | 25% | 2 из 8 | 88 089 | 67.6 мин | 0% | 1% | 3.3 | рабочая |
+| 68 | **earth-planet** —  <br><sub>Найдено автоматом</sub> | 22% | 6 из 27 | 166 657 | 61.9 мин | 7% | 1% | 3.0 | рабочая |
+| 69 | **hidden-history** — скрытая история <br><sub>Список из 50</sub> | 24% | 5 из 21 | 103 528 | 53.3 мин | 19% | 2% | 5.2 | рабочая |
+| 70 | **untold** —  <br><sub>Найдено автоматом</sub> | 24% | 10 из 42 | 103 508 | 49.7 мин | 7% | 2% | 4.5 | рабочая |
+| 71 | **truth-behind** —  <br><sub>Найдено автоматом</sub> | 23% | 8 из 35 | 104 934 | 42.5 мин | 2% | 2% | 4.6 | рабочая |
+| 72 | **technology-explained** — технологии простым языком <br><sub>Список из 50</sub> | 19% | 5 из 27 | 295 255 | 52.6 мин | 9% | 2% | 4.5 | рабочая |
+| 73 | **film-analysis** — разборы фильмов <br><sub>Список из 80</sub> | 20% | 3 из 15 | 193 489 | 46.3 мин | 0% | 3% | 2.0 | рабочая |
+| 74 | **nasa-discoveries** — открытия NASA <br><sub>Космос</sub> | 25% | 1 из 4 | 49 953 | 127.8 мин | 17% | 2% | 4.8 | рабочая |
+| 75 | **archaeology** — загадки археологии <br><sub>Древние</sub> | 20% | 2 из 10 | 74 308 | 35.9 мин | 8% | 4% | 2.4 | рабочая |
+| 76 | **history-facts** — исторические факты <br><sub>Список из 80</sub> | 17% | 1 из 6 | 150 340 | 131.0 мин | 11% | 1% | 2.1 | рабочая |
+| 77 | **lost-civs** — исчезнувшие цивилизации <br><sub>Древние</sub> | 13% | 1 из 8 | 414 885 | 96.6 мин | 10% | 1% | 3.6 | рабочая |
+| 78 | **legend** —  <br><sub>Найдено автоматом</sub> | 16% | 11 из 68 | 149 386 | 52.7 мин | 6% | 2% | 3.3 | рабочая |
+| 79 | **ww2-doku** — документалки о Второй мировой <br><sub>Вторая мировая</sub> | 13% | 7 из 53 | 276 232 | 51.6 мин | 1% | 2% | 3.1 | рабочая |
+| 80 | **lost-places** — заброшенные места <br><sub>Инженерия</sub> | 14% | 1 из 7 | 72 602 | 24.3 мин | 0% | 3% | 1.0 | рабочая |
+| 81 | **ww2-battles** — сражения Второй мировой <br><sub>Вторая мировая</sub> | 9% | 1 из 11 | 272 881 | 51.0 мин | 8% | 1% | 3.3 | рабочая |
+| 82 | **idaho** —  <br><sub>Найдено автоматом</sub> | 11% | 1 из 9 | 97 301 | 34.7 мин | 8% | 7% | 2.6 | рабочая |
+| 83 | **spain** —  <br><sub>Найдено автоматом</sub> | 10% | 2 из 21 | 135 381 | 27.9 мин | 11% | 2% | 3.3 | рабочая |
+| 84 | **urzeit-tiere** — звери доисторических эпох <br><sub>Доисторическое</sub> | 0% | 0 из 5 | 559 670 | 35.2 мин | 0% | 2% | 1.6 | рабочая |
+| 85 | **universe-scale** — размеры Вселенной <br><sub>Космос</sub> | 0% | 0 из 5 | 102 104 | 17.8 мин | 10% | 1% | 1.5 | рабочая |
+| 86 | **exoplanets** — экзопланеты <br><sub>Космос</sub> | 0% | 0 из 4 | 84 116 | 40.4 мин | 10% | 1% | 1.6 | рабочая |
+| 87 | **mass-extinction** — массовые вымирания <br><sub>Доисторическое</sub> | 0% | 0 из 3 | 83 171 | 53.7 мин | 0% | 3% | 1.6 | рабочая |
 
 ## Немецкий против английского
 
@@ -109,6 +110,7 @@
 | did-ancient-humans —  | — (0) | — | 86% (22) | 1 721 |
 | ethiopian-bible —  | — (0) | — | 83% (24) | 2 645 |
 | ⚓ supervolcano — супервулканы | — (0) | 3 807 | 80% (5) | 5 460 |
+| result —  | — (0) | — | 77% (39) | 2 376 |
 | scientists-asked-grok —  | — (0) | — | 75% (12) | 869 |
 | saudi-arabia —  | — (0) | — | 71% (7) | 3 931 |
 | great-white-shark —  | — (0) | — | 73% (11) | 2 841 |
@@ -248,6 +250,7 @@
 | mercenary —  | — (0) | — | 100% (1) | 61 372 |
 | beasts —  | — (0) | — | 0% (2) | 6 580 |
 | cannibal —  | — (0) | — | 0% (2) | 36 515 |
+| anna —  | — (0) | — | 0% (2) | 40 897 |
 
 ## Свежие выбросы на молодых каналах
 
@@ -255,50 +258,50 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [GENZ CHIEF MINISTER Full Movie Hindi Dubbed \| Thalapathy Vijay, Nayan](https://youtu.be/_oRtucV13W0) | Movie Zilla - Hindi Movies | 79.3 | 18 352 424 | 133 дн | 447 811 |
-| [Nepal's 2026 Disaster Explained: The Glacier That Wiped Out a Valley](https://youtu.be/vfIaNeGVaVo) | The Last Day | 58.7 | 4 405 682 | 56 дн | 414 726 |
-| [2-hour 4K full feature film— REBORN MECH BEAST- Humanity’s Last Weapon](https://youtu.be/3eYnXsVlSt0) | Cine Drop  | 10.0 | 6 188 645 | 102 дн | 376 357 |
-| [The Wolf's Revenge \| Full Action Fantasy Movie \| The Last Warrior Re](https://youtu.be/8wtBevf0GA8) | Titan Entertainment | 12.9 | 2 861 585 | 220 дн | 355 955 |
-| [Blockbuster South Action Thriller Movie In Hindi Dubbed \| Ishq Tera \](https://youtu.be/7LGpZX3dLc0) | PrimeFlix Arena | 20.2 | 13 157 466 | 245 дн | 286 112 |
-| [The Cold CEO Everyone Fears Is Her Secret Husband—Cold at Work, But Sm](https://youtu.be/JD_RVbdwTQ4) | PeachShine Drama | 53.2 | 3 962 432 | 90 дн | 260 441 |
-| [390 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/aL3rIqFfuFw) | MTH Incredible Moments | 2072.1 | 4 421 804 | 60 дн | 257 911 |
-| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/Rn9jqZdaLos) | Fat Foodie | 5182.1 | 4 505 871 | 175 дн | 173 375 |
-| [The End of Nepal? Home to the Himalayas’ Most UNSTABLE Places \| 4K Do](https://youtu.be/UGaEQyoaldg) | Pure Earth | 973.5 | 2 539 826 | 282 дн | 158 155 |
-| [110 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/NGV2GH56TDE) | MTH Incredible Moments | 822.4 | 1 754 915 | 65 дн | 144 541 |
-| [Suriya Blockbuster South Action Movie Hindi Dubbed \| Irumudi \| Priya](https://youtu.be/7tcVblbxwvs) | PrimeFlix Arena | 5.8 | 3 798 612 | 263 дн | 135 726 |
-| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/MwhYVza-hDw) | Fat Foodie | 2145.6 | 1 865 567 | 187 дн | 132 981 |
-| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P1)](https://youtu.be/6wjlg9LMEKg) | MTH Incredible Moments | 1371.7 | 2 927 152 | 54 дн | 126 804 |
-| [Your phone addiction is keeping you from achieving flow state \| Arthu](https://youtu.be/KHd-luu3M8s) | Big Think Clips | 57.9 | 4 099 110 | 250 дн | 124 303 |
-| [Irumudi Telugu Full Movie Mass Ravi Teja \| Priya Bhavani Shankar \| S](https://youtu.be/1TR-lMJ0fPs) | Hijack Movies | 12.1 | 1 959 393 | 135 дн | 122 161 |
-| [The paradox at the heart of AI and science \| Terence Tao](https://youtu.be/svl_1upFpQo) | Big Think Clips | 20.5 | 1 450 703 | 271 дн | 121 125 |
-| [Irumudi Telugu Full Movie Ravi Teja (2026) Priya Bhavani \| Shankar \|](https://youtu.be/G00aknRhD8o) | Hijack Movies | 15.7 | 2 534 762 | 130 дн | 120 516 |
-| [NEPAL Before the Flood: Brothers Share One Wife, Living Goddesses & Li](https://youtu.be/eoyY6emxx9w) | Global Life Lens | 21.3 | 1 924 576 | 22 дн | 113 876 |
-| [A unique Khanty dwelling that can withstand the most severe cold in th](https://youtu.be/M50moHjAS4Q) | Liliana Sun | 10.3 | 4 579 644 | 58 дн | 111 888 |
-| [Hamburger Hill \| Don Cheadle (Avengers) \| ACTION, WAR \| Full Movies](https://youtu.be/KHOQ6TJR2W0) | MovieSphere - Action Full Movi | 13.6 | 2 573 598 | 329 дн | 107 150 |
-| [99 Animal Encounters \| They Didn't Know They Were Being Hunted!](https://youtu.be/1zYbW2zBW6Y) | Media Context  | 252.7 | 875 056 | 93 дн | 100 752 |
-| [The Wrong Woman \| Full Thriller Movie \| Danica McKellar \| Jonathan ](https://youtu.be/vO9xmTPuosY) | Films 4 Everyone | 341.4 | 1 817 995 | 252 дн | 99 742 |
-| [Hanuman Ansh Full Movie 2026 \| Chandan Anand \| Purnima Tiwari \| Sho](https://youtu.be/hhVoy9BkV44) | Alone Pictures | 26.6 | 2 362 319 | 22 дн | 99 037 |
-| [Life In Rural Afghanistan \| 100-Year-Old Woman's Hard Nomadic Life, W](https://youtu.be/ahto5julCec) | Shamshir | 57.2 | 3 885 119 | 92 дн | 94 584 |
-| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #2](https://youtu.be/Tr2peUT-zgc) | SNAP MOMENTS | 196.9 | 3 474 573 | 23 дн | 93 649 |
-| [Toxic Saitaan \| Raghava Lawrence Blockbuster South Action Thriller Hi](https://youtu.be/u6nvkaWQuzg) | PrimeFlix Arena | 5.6 | 3 683 956 | 251 дн | 92 128 |
-| [Florida's New Predator Isn't a Python — And It Hunts Humans](https://youtu.be/oM_TU6UM6ok) | Ambrose Wild | 27.0 | 2 185 588 | 80 дн | 91 633 |
-| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 99.5 | 2 369 147 | 159 дн | 87 416 |
-| [Jason and the Argonauts — They Woke Something in the Sea](https://youtu.be/rmBrcFiryGk) | The Next Show \| Stories That  | 3.7 | 2 340 217 | 238 дн | 86 597 |
-| [Salman Khan & Saiee Manjrekar \| Bihari \| Blockbuster Bollywood Suspe](https://youtu.be/OmWzNpZMrUI) | Duroflex Action | 239.1 | 3 430 698 | 348 дн | 83 681 |
-| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P18)](https://youtu.be/aVd4wrla2G0) | SNAP MOMENTS | 222.0 | 3 917 921 | 13 дн | 83 118 |
-| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 176.6 | 4 065 625 | 227 дн | 82 110 |
-| [Epoch of Voyages Full 4K Fantasy Action Movie \| Episode 1 Epic Fantas](https://youtu.be/_oKHNBRf45M) | Shanhay Studio | 4.2 | 1 786 683 | 74 дн | 81 728 |
-| [Emraan Hashmi \| Tumba \| Blockbuster Bollywood Action Thriller Full M](https://youtu.be/A1iKF8gHq14) | Duroflex Action | 306.2 | 4 393 707 | 335 дн | 81 368 |
-| [Blockbuster Bollywood Action Movie \| Shorr \| Sidharth Malhotra & Kia](https://youtu.be/b4HEWF8LErY) | Duroflex Action | 313.2 | 4 493 512 | 333 дн | 80 245 |
-| [Arshad Warsi & Bhoomi \| Negative \| Blockbuster Bollywood Action Thri](https://youtu.be/Z3iQj6xeHtY) | Duroflex Action | 277.5 | 3 980 775 | 339 дн | 79 619 |
-| [Albert Lin Scanned the Terracotta Army — What He Found Changed Everyth](https://youtu.be/JlXMMtX-F6A) | Past Unsealed | 235.3 | 568 076 | 79 дн | 75 454 |
-| [Tibetan Monks Just EXPOSED the Terrifying Secret Behind Mount Kailash ](https://youtu.be/DEDBwFV96x0) | Elias Stone | 192.3 | 882 258 | 249 дн | 75 124 |
-| [What Just Happened In Nepal Reveals A Terrifying Truth You Aren't Read](https://youtu.be/z_vo0DCEKAE) | The Space Desk | 77.6 | 1 250 322 | 143 дн | 74 305 |
-| [Mess With The Wrong Guy! Retired Assassin Wipes Out Entire Gang In 202](https://youtu.be/1Nv-RlUGua0) | Alpha Series | 616.2 | 3 674 790 | 230 дн | 73 346 |
+| [GENZ CHIEF MINISTER Full Movie Hindi Dubbed \| Thalapathy Vijay, Nayan](https://youtu.be/_oRtucV13W0) | Movie Zilla - Hindi Movies | 79.3 | 18 352 424 | 133 дн | 447 679 |
+| [Nepal's 2026 Disaster Explained: The Glacier That Wiped Out a Valley](https://youtu.be/vfIaNeGVaVo) | The Last Day | 58.7 | 4 405 682 | 56 дн | 414 256 |
+| [2-hour 4K full feature film— REBORN MECH BEAST- Humanity’s Last Weapon](https://youtu.be/3eYnXsVlSt0) | Cine Drop  | 10.0 | 6 188 645 | 102 дн | 376 081 |
+| [The Wolf's Revenge \| Full Action Fantasy Movie \| The Last Warrior Re](https://youtu.be/8wtBevf0GA8) | Titan Entertainment | 15.4 | 2 861 585 | 220 дн | 355 423 |
+| [Blockbuster South Action Thriller Movie In Hindi Dubbed \| Ishq Tera \](https://youtu.be/7LGpZX3dLc0) | PrimeFlix Arena | 20.2 | 13 157 466 | 245 дн | 286 037 |
+| [The Cold CEO Everyone Fears Is Her Secret Husband—Cold at Work, But Sm](https://youtu.be/JD_RVbdwTQ4) | PeachShine Drama | 53.2 | 3 962 432 | 90 дн | 260 235 |
+| [390 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/aL3rIqFfuFw) | MTH Incredible Moments | 2072.1 | 4 421 804 | 60 дн | 257 730 |
+| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/Rn9jqZdaLos) | Fat Foodie | 5182.1 | 4 505 871 | 175 дн | 173 295 |
+| [The End of Nepal? Home to the Himalayas’ Most UNSTABLE Places \| 4K Do](https://youtu.be/UGaEQyoaldg) | Pure Earth | 973.5 | 2 539 826 | 282 дн | 158 037 |
+| [110 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/NGV2GH56TDE) | MTH Incredible Moments | 822.4 | 1 754 915 | 65 дн | 144 398 |
+| [Suriya Blockbuster South Action Movie Hindi Dubbed \| Irumudi \| Priya](https://youtu.be/7tcVblbxwvs) | PrimeFlix Arena | 5.8 | 3 798 612 | 263 дн | 135 668 |
+| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/MwhYVza-hDw) | Fat Foodie | 2145.6 | 1 865 567 | 187 дн | 132 867 |
+| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P1)](https://youtu.be/6wjlg9LMEKg) | MTH Incredible Moments | 1371.7 | 2 927 152 | 54 дн | 126 738 |
+| [Your phone addiction is keeping you from achieving flow state \| Arthu](https://youtu.be/KHd-luu3M8s) | Big Think Clips | 57.9 | 4 099 110 | 250 дн | 124 258 |
+| [Irumudi Telugu Full Movie Mass Ravi Teja \| Priya Bhavani Shankar \| S](https://youtu.be/1TR-lMJ0fPs) | Hijack Movies | 12.1 | 1 959 393 | 135 дн | 122 069 |
+| [The paradox at the heart of AI and science \| Terence Tao](https://youtu.be/svl_1upFpQo) | Big Think Clips | 20.5 | 1 450 703 | 271 дн | 121 003 |
+| [Irumudi Telugu Full Movie Ravi Teja (2026) Priya Bhavani \| Shankar \|](https://youtu.be/G00aknRhD8o) | Hijack Movies | 15.7 | 2 534 762 | 130 дн | 120 447 |
+| [NEPAL Before the Flood: Brothers Share One Wife, Living Goddesses & Li](https://youtu.be/eoyY6emxx9w) | Global Life Lens | 21.3 | 1 924 576 | 22 дн | 113 794 |
+| [A unique Khanty dwelling that can withstand the most severe cold in th](https://youtu.be/M50moHjAS4Q) | Liliana Sun | 10.3 | 4 579 644 | 58 дн | 111 855 |
+| [Hamburger Hill \| Don Cheadle (Avengers) \| ACTION, WAR \| Full Movies](https://youtu.be/KHOQ6TJR2W0) | MovieSphere - Action Full Movi | 13.6 | 2 573 598 | 329 дн | 107 096 |
+| [99 Animal Encounters \| They Didn't Know They Were Being Hunted!](https://youtu.be/1zYbW2zBW6Y) | Media Context  | 252.7 | 875 056 | 93 дн | 100 612 |
+| [The Wrong Woman \| Full Thriller Movie \| Danica McKellar \| Jonathan ](https://youtu.be/vO9xmTPuosY) | Films 4 Everyone | 341.4 | 1 817 995 | 252 дн | 99 676 |
+| [Hanuman Ansh Full Movie 2026 \| Chandan Anand \| Purnima Tiwari \| Sho](https://youtu.be/hhVoy9BkV44) | Alone Pictures | 26.6 | 2 362 319 | 22 дн | 98 987 |
+| [Life In Rural Afghanistan \| 100-Year-Old Woman's Hard Nomadic Life, W](https://youtu.be/ahto5julCec) | Shamshir | 57.2 | 3 885 119 | 92 дн | 94 556 |
+| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #2](https://youtu.be/Tr2peUT-zgc) | SNAP MOMENTS | 196.9 | 3 474 573 | 23 дн | 93 619 |
+| [Toxic Saitaan \| Raghava Lawrence Blockbuster South Action Thriller Hi](https://youtu.be/u6nvkaWQuzg) | PrimeFlix Arena | 5.6 | 3 683 956 | 251 дн | 92 101 |
+| [Florida's New Predator Isn't a Python — And It Hunts Humans](https://youtu.be/oM_TU6UM6ok) | Ambrose Wild | 27.0 | 2 185 588 | 80 дн | 91 586 |
+| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 99.5 | 2 369 147 | 159 дн | 87 377 |
+| [Jason and the Argonauts — They Woke Something in the Sea](https://youtu.be/rmBrcFiryGk) | The Next Show \| Stories That  | 3.7 | 2 340 217 | 238 дн | 86 558 |
+| [Salman Khan & Saiee Manjrekar \| Bihari \| Blockbuster Bollywood Suspe](https://youtu.be/OmWzNpZMrUI) | Duroflex Action | 238.9 | 3 430 698 | 348 дн | 83 656 |
+| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P18)](https://youtu.be/aVd4wrla2G0) | SNAP MOMENTS | 222.0 | 3 917 921 | 13 дн | 83 097 |
+| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 176.6 | 4 065 625 | 227 дн | 82 090 |
+| [Epoch of Voyages Full 4K Fantasy Action Movie \| Episode 1 Epic Fantas](https://youtu.be/_oKHNBRf45M) | Shanhay Studio | 4.2 | 1 786 683 | 74 дн | 81 683 |
+| [Emraan Hashmi \| Tumba \| Blockbuster Bollywood Action Thriller Full M](https://youtu.be/A1iKF8gHq14) | Duroflex Action | 305.9 | 4 393 707 | 335 дн | 81 350 |
+| [Blockbuster Bollywood Action Movie \| Shorr \| Sidharth Malhotra & Kia](https://youtu.be/b4HEWF8LErY) | Duroflex Action | 312.9 | 4 493 512 | 333 дн | 80 227 |
+| [Arshad Warsi & Bhoomi \| Negative \| Blockbuster Bollywood Action Thri](https://youtu.be/Z3iQj6xeHtY) | Duroflex Action | 277.2 | 3 980 775 | 339 дн | 79 600 |
+| [Albert Lin Scanned the Terracotta Army — What He Found Changed Everyth](https://youtu.be/JlXMMtX-F6A) | Past Unsealed | 235.3 | 568 076 | 79 дн | 75 334 |
+| [Tibetan Monks Just EXPOSED the Terrifying Secret Behind Mount Kailash ](https://youtu.be/DEDBwFV96x0) | Elias Stone | 192.3 | 882 258 | 249 дн | 75 047 |
+| [What Just Happened In Nepal Reveals A Terrifying Truth You Aren't Read](https://youtu.be/z_vo0DCEKAE) | The Space Desk | 77.6 | 1 250 322 | 143 дн | 74 252 |
+| [Mess With The Wrong Guy! Retired Assassin Wipes Out Entire Gang In 202](https://youtu.be/1Nv-RlUGua0) | Alpha Series | 616.2 | 3 674 790 | 230 дн | 73 329 |
 
 ## Пока без данных
 
-`space-missions` · `human-evolution` · `plate-tectonics` · `eng-disasters` · `parasites` · `microbes` · `terraforming` · `sleep-stories` · `sleep-relax` · `maschinen` · `blindgaenger` · `sibirien` · `nachtschicht` · `kampf-ums-ueberleben` · `gott` · `giganten` · `urzeit` · `unserer-erde` · `mysterium` · `vulkane` · `bergen` · `deutschlands` · `decken` · `furchterregende` · `expedition` · `deutschlands-haerteste` · `flugzeug` · `voraus` · `naturwunder` · `einsatz` · `haertetest` · `hussein` · `einblicke` · `mittelalter` · `schlacht` · `herrscher` · `schiffe` · `chinesische` · `amerika` · `letztes` · `marianengraben` · `stahl` · `kannst` · `sogar` · `goldene` · `creatures-get-creepier` · `sea-creatures-get` · `alaska-lake-monster` · `amazon-mysteries` · `calm-universe` · `sleep-science-space` · `space-ambience` · `cosmic-journey` · `neutron-stars` · `space-time` · `alien-life` · `mars-exploration` · `end-universe` · `cosmic-scale` · `voyager-probes` · `fiercest-predators` · `rocky-mountains` · `ww2-codebreak` · `phone-call` · `boarding-house` · `tower-won` · `business-rivalry` · `internet-mystery` · `evolution-timeline` · `biggest-scams` · `business-failure` · `comeback-story` · `myths-debunked` · `future-predictions` · `alternate-history` · `strategy-breakdown` · `secret-empire` · `corporate-collapse` · `marketing-genius` · `innovation-story` · `military-strategy` · `sports-dynasty` · `movie-production` · `ai-explained` · `startup-story` · `millionaire-habits` · `billionaire-breakdown` · `biggest-scandals` · `world-records` · `greatest-achievements` · `greatest-rivalries` · `book-summary` · `series-breakdown` · `game-lore` · `cinematography` · `minimalism-doc` · `street-food-doc` · `unusual-food` · `quadruplets` · `sitting` · `mercenary` · `beasts` · `cannibal`
+`space-missions` · `human-evolution` · `plate-tectonics` · `eng-disasters` · `parasites` · `microbes` · `terraforming` · `sleep-stories` · `sleep-relax` · `maschinen` · `blindgaenger` · `sibirien` · `nachtschicht` · `kampf-ums-ueberleben` · `gott` · `giganten` · `urzeit` · `unserer-erde` · `mysterium` · `vulkane` · `bergen` · `deutschlands` · `decken` · `furchterregende` · `expedition` · `deutschlands-haerteste` · `flugzeug` · `voraus` · `naturwunder` · `einsatz` · `haertetest` · `hussein` · `einblicke` · `mittelalter` · `schlacht` · `herrscher` · `schiffe` · `chinesische` · `amerika` · `letztes` · `marianengraben` · `stahl` · `kannst` · `sogar` · `goldene` · `creatures-get-creepier` · `sea-creatures-get` · `alaska-lake-monster` · `amazon-mysteries` · `calm-universe` · `sleep-science-space` · `space-ambience` · `cosmic-journey` · `neutron-stars` · `space-time` · `alien-life` · `mars-exploration` · `end-universe` · `cosmic-scale` · `voyager-probes` · `fiercest-predators` · `rocky-mountains` · `ww2-codebreak` · `phone-call` · `boarding-house` · `tower-won` · `business-rivalry` · `internet-mystery` · `evolution-timeline` · `biggest-scams` · `business-failure` · `comeback-story` · `myths-debunked` · `future-predictions` · `alternate-history` · `strategy-breakdown` · `secret-empire` · `corporate-collapse` · `marketing-genius` · `innovation-story` · `military-strategy` · `sports-dynasty` · `movie-production` · `ai-explained` · `startup-story` · `millionaire-habits` · `billionaire-breakdown` · `biggest-scandals` · `world-records` · `greatest-achievements` · `greatest-rivalries` · `book-summary` · `series-breakdown` · `game-lore` · `cinematography` · `minimalism-doc` · `street-food-doc` · `unusual-food` · `quadruplets` · `sitting` · `mercenary` · `beasts` · `cannibal` · `anna`
 
 Пробилось меньше трёх разных молодых каналов — судить не о чем. Нужны прогоны.
 

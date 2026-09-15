@@ -46,5 +46,7 @@
   "cohortMinSample": 8,
   "foreignTitleShare": 0.3,
   "langMinTitles": 3,
-  "rangeMinSample": 25
+  "rangeMinSample": 25,
+  "liveWindowDays": 14,
+  "liveHoldRatio": 0.7
 }

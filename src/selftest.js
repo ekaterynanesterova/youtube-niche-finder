@@ -5,7 +5,7 @@ import { Quota, BudgetExhausted } from './quota.js';
 import { Translator } from './translate.js';
 import { explore, snapshot, survey, isMissing } from './collect.js';
 import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from './topics.js';
-import { queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
+import { liveIncome, liveProfile, queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
@@ -934,6 +934,46 @@ check('списки служебных слов разные', stopWords('en').h
     !f.rising.some((r) => r.vsChannel != null && r.vsChannel < 1));
   check('норма канала отдана наружу',
     f.hits.every((r) => typeof r.channelMedian === 'number'));
+}
+
+// --- живой доход: деньги по НАБРАННЫМ просмотрам ---
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const TL = { liveWindowDays: 14, liveHoldRatio: 0.7, rpmUsd: 5, targetMonthlyUsd: 2000 };
+  const db = {
+    videos: {
+      grow: { channelId: 'up' },   // растёт ровно
+      fade: { channelId: 'down' }, // собрал своё раньше и затих
+      old:  { channelId: 'ghost' },// не двигается вовсе
+    },
+    channels: {},
+  };
+  // Окно 14 дней, половина 7. По «up» прирост одинаковый в обеих половинах,
+  // по «down» вся прибавка пришлась на первую неделю.
+  const snaps = [
+    { date: day(14), videos: { grow: [0],       fade: [0],       old: [500000] } },
+    { date: day(7),  videos: { grow: [1400000], fade: [2600000], old: [500000] } },
+    { date: day(0),  videos: { grow: [2800000], fade: [2800000], old: [500000] } },
+  ];
+  const live = liveIncome(snaps, db, TL);
+  check('окно живого прироста — две недели', live.windowDays === 14 && live.halfDays === 7);
+  check('прирост посчитан по разнице срезов', live.byChannel.up.gain === 2800000);
+  check('неподвижный ролик даёт нулевой прирост', live.byChannel.ghost.gain === 0);
+
+  const up = liveProfile(live, 'up', TL);
+  const down = liveProfile(live, 'down', TL);
+  const ghost = liveProfile(live, 'ghost', TL);
+  // 2 800 000 за 14 дней = 200 000/день = 6,08 млн в месяц = $30 400 при RPM $5.
+  check('живой доход считается из набранного за окно', Math.round(up.liveUsd) === 30400);
+  check('ровный рост держит темп', Math.abs(up.liveTrend - 1) < 0.01);
+  check('затухающий канал виден по темпу', down.liveTrend < 0.2);
+  check('но по накопленному он неотличим от растущего',
+    Math.round(down.liveUsd) === Math.round(up.liveUsd));
+  check('затухший канал зарабатывающим не считается', ghost.liveEarning === false);
+  check('канал без замеров не получает дохода',
+    liveProfile(live, 'nobody', TL).liveUsd === null);
+  check('коротких рядов срезов не хватает',
+    liveIncome(snaps.slice(0, 2), db, TL).windowDays === 0);
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

@@ -63,6 +63,11 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         usd: m.medianYoungMonthlyUsd ?? m.medianMonthlyUsd,
         mature: m.matureChannels,
         matureUsd: m.medianMatureUsd,
+        // Доход по НАБРАННЫМ за окно просмотрам, а не по накопленным.
+        liveEarners: m.liveEarners,
+        liveHolding: m.liveHolding,
+        liveYoungHolding: m.liveYoungHolding,
+        liveUsd: m.medianLiveUsd,
         climb: m.medianClimbUsd,
         fastestMonths: m.fastestYoungDays == null ? null : m.fastestYoungDays / 30.4,
         minutes: m.medianOutlierMinutes,
@@ -198,6 +203,14 @@ function why(r) {
       + word(r.freshChannels, 'такого канала', 'таких каналов', 'таких каналов')
       + ` планку в 20 тысяч взяли ${r.freshWinnersClean ?? 0}`);
   }
+  // Живой доход: не «сколько накоплено», а «сколько набрано за две недели».
+  // Это единственное место, где видно, зарабатывает ниша сейчас или когда-то
+  // зарабатывала.
+  if (r.liveEarners) {
+    parts.push(`по набранным за две недели просмотрам цель держат ${plural(r.liveEarners, 'канал', 'канала', 'каналов')}`
+      + `, темп не падает у ${r.liveHolding}`
+      + (r.liveUsd != null ? `, типичный доход такого канала $${nn(r.liveUsd)} в месяц` : ''));
+  }
   parts.push(`${plural(r.young, 'канал', 'канала', 'каналов')} моложе года уже ${r.young === 1 ? 'зарабатывает' : 'зарабатывают'}`);
   if (r.mature) parts.push(`${r.mature} доросли до полной цели`);
   if (r.fastestMonths != null) parts.push(`самый быстрый дошёл за ${months(r.fastestMonths)}`);
@@ -228,6 +241,16 @@ function risk(r, thresholds) {
     out.push(`свежий ролик новичка собирает всего около ${Math.round(r.fresh).toLocaleString('ru-RU')} просмотров — заработать в моменте не выйдет`);
   } else if ((r.freshOver20k ?? 0) < 0.2) {
     out.push(`только ${Math.round((r.freshOver20k ?? 0) * 100)}% свежих роликов берут 20 тысяч — большинство выходит впустую`);
+  }
+  // Затухание видно только по живому приросту: по накопленным просмотрам
+  // канал, собравший миллион полгода назад и с тех пор молчащий, выглядит
+  // так же, как растущий.
+  if (r.liveEarners != null && r.liveEarners >= 3 && r.liveHolding / r.liveEarners < 0.5) {
+    out.push(`из ${plural(r.liveEarners, 'зарабатывающего канала', 'зарабатывающих каналов', 'зарабатывающих каналов')} `
+      + `темп держат только ${r.liveHolding} — ниша скорее затухает, чем растёт`);
+  }
+  if (r.liveEarners === 0 && r.mature) {
+    out.push(`каналы с деньгами здесь есть, но за последние две недели ни один не набирает столько, чтобы цель держалась — доход у них в прошлом`);
   }
   // Тема может кончиться раньше канала — это отдельный риск, не связанный
   // с деньгами и конкуренцией.
