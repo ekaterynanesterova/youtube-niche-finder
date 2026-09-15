@@ -1244,13 +1244,22 @@ function drawFocus() {
   const ch = (id, t) => '<a href="https://youtube.com/channel/' + id + '" target="_blank" rel="noopener">' + (t || '—') + '</a>';
   const up = (n) => n == null ? '—' : '<span class="up">+' + num(n) + '</span>';
 
+  // Во сколько раз ролик обошёл собственную норму канала. Без этой колонки
+  // число просмотров обманывает: 200 тысяч у канала с нормой в два миллиона —
+  // это провал.
+  const norm = (r) => r.vsChannel == null
+    ? '<span class="reg">норма канала неизвестна</span>'
+    : '<b>×' + (r.vsChannel >= 10 ? Math.round(r.vsChannel) : r.vsChannel.toFixed(1)) + '</b>'
+      + '<br><span class="reg">обычно ' + num(r.channelMedian) + '</span>';
+
   const vidTable = (list, extra) =>
     '<table><tr><th>Ролик</th><th>Канал</th>' + (extra ? '<th>' + extra.head + '</th>' : '')
-    + '<th>Возраст</th><th>Просмотров</th><th>За сутки</th></tr>'
+    + '<th>К норме канала</th><th>Возраст</th><th>Просмотров</th><th>За сутки</th></tr>'
     + list.map(r => '<tr class="' + (r.young ? 'y' : '') + '">'
       + '<td>' + yt(r.id, r.title) + (r.titleRu ? '<br><span class="reg">' + r.titleRu + '</span>' : '') + '</td>'
       + '<td>' + ch(r.channelId, r.channel) + (r.young ? '<br><span class="reg">моложе года</span>' : '') + '</td>'
       + (extra ? '<td class="n">' + extra.cell(r) + '</td>' : '')
+      + '<td class="n">' + norm(r) + '</td>'
       + '<td class="n">' + r.age + ' дн</td>'
       + '<td class="n">' + num(r.views) + '</td>'
       + '<td class="n">' + up(r.perDay) + '</td></tr>').join('')
@@ -1268,6 +1277,14 @@ function drawFocus() {
       + '<div><b>' + F.topics.length + '</b><span>запросов в теме</span></div>'
     + '</div>'
     + '<div class="fgrid">'
+    + (F.hits && F.hits.length ? box('Залетает сейчас',
+        'Ролики, обошедшие собственную норму своего канала в разы. Это и значит «залетело»: '
+        + 'двести тысяч просмотров у канала, где обычное видео берёт два миллиона, — провал, '
+        + 'а не находка. В список идут только ролики от 20 тысяч просмотров у каналов, '
+        + 'чья норма сама по себе не меньше двух тысяч: иначе мёртвый канал с нормой в сорок '
+        + 'просмотров даёт превышение в полторы тысячи раз и занимает весь список. '
+        + 'Не больше двух роликов на канал.',
+        vidTable(F.hits)) : '')
     + (F.breaking.length ? box('Резко пошло',
         'Ролики, у которых суточный прирост за последний замер вырос в полтора раза и больше. Именно так выглядит новость, под которую все побежали снимать: смотреть надо в первую очередь сюда.',
         vidTable(F.breaking, { head: 'Ускорение', cell: r => '×' + r.accel.toFixed(1) })) : '')

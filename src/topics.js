@@ -32,6 +32,7 @@ has have had been being am
 about before after into onto over under through during between against
 again once here there then than such other another some any each every
 one two three four five ten own same both few many much
+now today ever never always still also even really actually literally
 `.trim().split(/\s+/);
 
 export const STOP_BY_LANG = { de: new Set(STOP_DE), en: new Set(STOP_EN) };

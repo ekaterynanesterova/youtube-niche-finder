@@ -1789,19 +1789,6 @@
       }
     },
     {
-      "id": "now",
-      "group": "Найдено автоматом",
-      "en": "now documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-09-13",
-      "foundVia": {
-        "channels": 3,
-        "lift": 11.9,
-        "medianViews": 226050.5
-      }
-    },
-    {
       "id": "mercenary",
       "group": "Найдено автоматом",
       "en": "mercenary documentary",
@@ -1838,19 +1825,6 @@
         "channels": 3,
         "lift": 10.7,
         "medianViews": 32170
-      }
-    },
-    {
-      "id": "ever",
-      "group": "Найдено автоматом",
-      "en": "ever documentary",
-      "ru": null,
-      "source": "auto",
-      "addedAt": "2026-09-13",
-      "foundVia": {
-        "channels": 3,
-        "lift": 10.2,
-        "medianViews": 72888.5
       }
     },
     {
@@ -1942,6 +1916,32 @@
         "channels": 3,
         "lift": 6.7,
         "medianViews": 421057
+      }
+    },
+    {
+      "id": "result",
+      "group": "Найдено автоматом",
+      "en": "result documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-15",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.9,
+        "medianViews": 282802
+      }
+    },
+    {
+      "id": "anna",
+      "group": "Найдено автоматом",
+      "en": "anna documentary",
+      "ru": null,
+      "source": "auto",
+      "addedAt": "2026-09-15",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.9,
+        "medianViews": 148557
       }
     }
   ]

@@ -37,10 +37,17 @@ export function buildFocus({ metrics, snapshots, seeds, focus }) {
     // Ускорение: сравниваем последний отрезок с предыдущим. Ролик, который
     // вчера брал тысячу в сутки, а сегодня десять тысяч, — это и есть «пошло».
     const prev = s.length >= 3 ? perDayBetween(s[s.length - 3], s[s.length - 2]) : null;
+    // Во сколько раз ролик обошёл собственную норму канала. Без этого число
+    // просмотров ничего не значит: 200 тысяч у канала, где обычное видео
+    // берёт два миллиона, — это провал, а не находка. Норма — медиана канала
+    // по видео старше месяца, она считается только когда таких хотя бы пять.
+    const med = metrics.channels[v.channelId]?.medianViews ?? null;
     rows.push({
       id: v.id, title: v.title, titleRu: null,
       channelId: v.channelId,
       channel: metrics.channels[v.channelId]?.title ?? null,
+      channelMedian: med,
+      vsChannel: med ? v.views / med : null,
       channelAge: metrics.channels[v.channelId]?.ageDays == null
         ? null : Math.round(metrics.channels[v.channelId].ageDays),
       young: metrics.channels[v.channelId]?.ageDays != null
@@ -60,13 +67,42 @@ export function buildFocus({ metrics, snapshots, seeds, focus }) {
   const size = focus.listSize ?? 20;
   const measured = rows.filter((r) => r.perDay != null);
 
-  // Что смотрят прямо сейчас — по абсолютному суточному приросту.
-  const rising = measured.slice().sort((a, b) => b.perDay - a.perDay).slice(0, size);
+  // Главный список: ролики, которые обошли собственную норму канала в разы.
+  // Именно это и значит «залетело». Абсолютный порог нужен, чтобы канал
+  // с нормой в сто просмотров не занимал весь список.
+  // Норма канала тоже должна быть настоящей. У канала с медианой в 38
+  // просмотров любое видео даёт превышение в полторы тысячи раз — это
+  // говорит о мёртвом канале, а не о теме, которая залетела.
+  const hits = rows
+    .filter((r) => r.vsChannel != null
+      && r.vsChannel >= (focus.hotMinVsChannel ?? 2)
+      && r.views >= (focus.hotMinViews ?? 20000)
+      && r.channelMedian >= (focus.hotMinChannelMedian ?? 2000))
+    .sort((a, b) => b.vsChannel - a.vsChannel);
+  // Не больше двух роликов на канал: иначе один удачливый канал занимает
+  // весь список и темы других не видно.
+  const perChannel = new Map();
+  const hitsTop = hits.filter((r) => {
+    const n = (perChannel.get(r.channelId) ?? 0) + 1;
+    perChannel.set(r.channelId, n);
+    return n <= 2;
+  }).slice(0, size);
 
-  // Что именно ускорилось. Порог по приросту нужен, чтобы ролик с трёх
-  // просмотров до тридцати не изображал взрывной рост.
+  // Что смотрят прямо сейчас — по абсолютному суточному приросту. Ролики,
+  // не дотянувшие до собственной нормы канала, сюда не идут: они растут
+  // только потому, что канал большой.
+  const rising = measured
+    .filter((r) => r.views >= (focus.risingMinViews ?? 10000)
+      && (r.vsChannel == null || r.vsChannel >= 1))
+    .sort((a, b) => b.perDay - a.perDay).slice(0, size);
+
+  // Что именно ускорилось. Пороги по приросту и по размеру нужны, чтобы
+  // ролик с трёх просмотров до тридцати не изображал взрывной рост.
   const breaking = measured
-    .filter((r) => r.accel != null && r.accel >= 1.5 && r.perDay >= (focus.breakingMinPerDay ?? 300))
+    .filter((r) => r.accel != null && r.accel >= 1.5
+      && r.perDay >= (focus.breakingMinPerDay ?? 1000)
+      && r.views >= (focus.risingMinViews ?? 10000)
+      && (r.vsChannel == null || r.vsChannel >= 1))
     .sort((a, b) => b.accel - a.accel).slice(0, size);
 
   // Только что вышло: по этим роликам видно, что снимают конкуренты сегодня.
@@ -110,7 +146,11 @@ export function buildFocus({ metrics, snapshots, seeds, focus }) {
     .map(([p, n]) => {
       const wasShare = older.length ? (oc.get(p) ?? 0) / older.length : 0;
       const nowShare = recent.length ? n / recent.length : 0;
-      const gain = recent.filter((r) => r.title.toLowerCase().includes(p)).reduce((s, r) => s + (r.perDay ?? 0), 0);
+      // Вес связки — не просто прирост, а прирост у роликов, обошедших норму
+      // своего канала. Иначе наверх всплывают формулировки больших каналов,
+      // у которых что угодно собирает много.
+      const gain = recent.filter((r) => r.title.toLowerCase().includes(p))
+        .reduce((s, r) => s + ((r.vsChannel ?? 1) >= 1 ? (r.perDay ?? 0) : 0), 0);
       // Раньше здесь стояла Infinity для связки, которой в старых роликах нет
       // вовсе. JSON.stringify превращает Infinity в null, на странице
       // isFinite(null) — истина, и вёрстка падала на null.toFixed(). Связку
@@ -123,6 +163,7 @@ export function buildFocus({ metrics, snapshots, seeds, focus }) {
     .slice(0, 14);
 
   return {
+    hits: hitsTop,
     id: focus.id, label: focus.label, why: focus.why, lang,
     seedIds: [...seedIds],
     topics: [...seedIds].map((id) => ({ id, query: byId[id]?.[lang] ?? id, ru: byId[id]?.ru ?? null })),

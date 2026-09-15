@@ -891,5 +891,50 @@ check('списки служебных слов разные', stopWords('en').h
     topicShape(queryKeywords('film analysis documentary', 'en')).ok);
 }
 
+// --- «залетело» считается в разах к норме своего канала ---
+// Двести тысяч просмотров у канала, где обычное видео берёт два миллиона, —
+// это провал. Абсолютные просмотры на вкладке фокуса обманывали.
+{
+  const day = (n) => new Date(Date.parse(now) - n * 86400000).toISOString();
+  const mk = (id, t, views, age, cid) => ({ id, channelId: cid, title: t, views, ageDays: age,
+                                            durationSec: 1800, seeds: ['sp'], publishedAt: day(age) });
+  const metrics = {
+    thresholds: { youngChannelDays: 365 },
+    channels: {
+      big: { id: 'big', title: 'Большой', lang: 'en', ageDays: 900, medianViews: 2000000 },
+      mid: { id: 'mid', title: 'Средний', lang: 'en', ageDays: 200, medianViews: 5000 },
+      dead: { id: 'dead', title: 'Мёртвый', lang: 'en', ageDays: 200, medianViews: 40 },
+    },
+    videos: [
+      mk('flop', 'Провал у большого канала', 200000, 20, 'big'),
+      mk('hit', 'Настоящий выстрел', 250000, 20, 'mid'),
+      mk('fake', 'Выстрел на мёртвом канале', 60000, 20, 'dead'),
+      mk('tiny', 'Мелочь', 900, 20, 'mid'),
+    ],
+  };
+  const snaps = [
+    { date: day(2), videos: { flop: [190000], hit: [200000], fake: [50000], tiny: [700] } },
+    { date: day(1), videos: { flop: [195000], hit: [220000], fake: [55000], tiny: [800] } },
+    { date: day(0), videos: { flop: [200000], hit: [250000], fake: [60000], tiny: [900] } },
+  ];
+  const f = buildFocus({
+    metrics, snapshots: snaps, seeds: [{ id: 'sp', group: 'Космос', en: 'space documentary' }],
+    focus: { id: 'space', label: 'Космос', groups: ['Космос'], lang: 'en', listSize: 10,
+             hotMinViews: 20000, hotMinVsChannel: 2, hotMinChannelMedian: 2000,
+             risingMinViews: 10000, breakingMinPerDay: 1000 },
+  });
+  const ids = f.hits.map((r) => r.id);
+  check('превышение нормы канала посчитано',
+    f.rising.concat(f.hits).every((r) => r.vsChannel == null || r.vsChannel > 0));
+  check('настоящий выстрел в списке', ids.includes('hit'));
+  check('провал у большого канала в список не идёт', !ids.includes('flop'));
+  check('выстрел на мёртвом канале не считается выстрелом', !ids.includes('fake'));
+  check('мелочь отсечена порогом просмотров', !ids.includes('tiny'));
+  check('в списке по приросту нет тех, кто ниже своей нормы',
+    !f.rising.some((r) => r.vsChannel != null && r.vsChannel < 1));
+  check('норма канала отдана наружу',
+    f.hits.every((r) => typeof r.channelMedian === 'number'));
+}
+
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);
