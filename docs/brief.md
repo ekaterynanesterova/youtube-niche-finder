@@ -1,6 +1,6 @@
 # Бриф для контент-плана
 
-Срез на 16 сентября в 14:53 по Берлину. Файл собирается заново на каждом прогоне —
+Срез на 16 сентября в 14:59 по Берлину. Файл собирается заново на каждом прогоне —
 править его руками бессмысленно, правки затрёт следующий сбор.
 
 - Живая версия со всеми кликами: https://ekaterynanesterova.github.io/youtube-niche-finder/
@@ -350,7 +350,7 @@
 |---|---|---|---|---|---|
 | Law&Crime Network | 3023 дн. | 7 690 000 | $89 082 | 86 032 | 3 из 42844 |
 | Rotten Mango | 1297 дн. | 6 850 000 | $76 852 | — | 8 из 474 |
-| 🟢 PeachShine Drama | 106 дн. | 57 500 | $46 579 | 55 523 | 42 из 131 |
+| 🟢 PeachShine Drama | 106 дн. | 57 500 | $46 283 | 55 523 | 42 из 131 |
 | Nancy Grace | 3381 дн.? | 1 060 000 | $42 900 | — | 3 из 2015 |
 | 🟢 Echo-SHORT | 98 дн. | 68 600 | $28 663 | 81 901 | 10 из 175 |
 | CinnamonToastKen | 5675 дн. | 4 800 000 | $23 565 | 278 707 | 4 из 4555 |
@@ -364,7 +364,7 @@
 - **Japanese Dad-Daughter Duo's unspeakable murder in LOVE MOTEL**  
   3 554 534 просмотров · 52 мин · канал «Rotten Mango» на 226-й день · зарабатывает $76 852/мес
 - **Her New CEO Boss Is Her Cold Contract Husband—He’d Secretly Loved Her Since She Was Young! 😱❤️**  
-  1 425 833 просмотров · 144 мин · канал «PeachShine Drama» на 53-й день · зарабатывает $46 579/мес
+  1 425 833 просмотров · 144 мин · канал «PeachShine Drama» на 53-й день · зарабатывает $46 283/мес
 - **GF kiss with lover before poor guy.But then,9 beautiful CEOs pick him up in luxury cars!**  
   363 641 просмотров · 130 мин · канал «Echo-SHORT» на 0-й день · зарабатывает $28 663/мес
 - **【ENG DUB | FULL】His First Love Returned So I Filed for Divorce Overnight！#romance**  

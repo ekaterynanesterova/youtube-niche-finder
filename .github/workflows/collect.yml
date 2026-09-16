@@ -99,6 +99,17 @@ jobs:
         id: run
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          # Пока эти два секрета не заданы, база работает по локальным файлам
+          # и уезжает в кэш, как сейчас. Как только заданы — источник правды
+          # переезжает в Supabase, а кэш остаётся тёплым стартом на случай,
+          # если хранилище окажется недоступно.
+          #
+          # Первый прогон с Supabase бутстрапится сам: скачивать оттуда нечего,
+          # база остаётся та, что пришла из кэша, и в конце прогона уезжает
+          # в хранилище.
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_BUCKET: ${{ vars.SUPABASE_BUCKET || 'niche-db' }}
           SEARCH_BUDGET: ${{ github.event.inputs.searchBudget || '40' }}
           UNIT_BUDGET: ${{ github.event.inputs.unitBudget || '9000' }}
           ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}

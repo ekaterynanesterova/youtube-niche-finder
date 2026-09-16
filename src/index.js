@@ -14,9 +14,21 @@ import {
   loadSeries, saveSeries, loadBases, saveBases, latestBase, today, ROOT, daysBetween,
 } from './store.js';
 import { join } from 'node:path';
+import { pullData, pushData, snapshotLocal, remoteConfigured } from './remote.js';
 
 const args = new Set(process.argv.slice(2));
 const metricsOnly = args.has('--metrics-only');
+
+// База живёт в Supabase, если он настроен: скачиваем её перед прогоном,
+// заливаем после. Без переменных окружения всё идёт по локальным файлам —
+// ровно как раньше.
+const beforeRun = snapshotLocal();
+if (remoteConfigured()) {
+  const r = await pullData();
+  console.log(`База скачана из Supabase: ${r.got.length} файлов, `
+    + `${(r.bytes / 1048576).toFixed(1)} МБ`
+    + (r.missing.length ? `; нет ещё: ${r.missing.join(', ')}` : ''));
+}
 
 const thresholds = readJson(join(ROOT, 'config/thresholds.json'));
 const markets = readJson(join(ROOT, 'config/markets.json'));
@@ -246,3 +258,13 @@ writeText(join(ROOT, 'docs/brief.md'), renderBrief(payload));
 // неоткуда — data/ наружу не публикуется. Всё, что в нём лежало, целиком
 // есть в index.html и docs/brief.md.
 console.log(`Готово. Каналов ${Object.keys(metrics.channels).length}, видео ${metrics.videos.length}, ниш ${Object.keys(metrics.niches).length}.`);
+
+// Заливаем в самом конце и только изменившееся: исходящий трафик на
+// бесплатном тарифе не бесконечен, а translations и bases в обычный день
+// не меняются вовсе.
+if (remoteConfigured()) {
+  const r = await pushData(beforeRun);
+  console.log(`База залита в Supabase: ${r.sent.length} файлов, `
+    + `${(r.bytes / 1048576).toFixed(1)} МБ`
+    + (r.same.length ? `; без изменений: ${r.same.join(', ')}` : ''));
+}

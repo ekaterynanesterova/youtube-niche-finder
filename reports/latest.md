@@ -258,46 +258,46 @@
 
 | Видео | Канал | ×медианы | Просмотры | Возраст канала | Просм./день |
 |-------|-------|----------|-----------|----------------|-------------|
-| [GENZ CHIEF MINISTER Full Movie Hindi Dubbed \| Thalapathy Vijay, Nayan](https://youtu.be/_oRtucV13W0) | Movie Zilla - Hindi Movies | 92.8 | 18 352 424 | 133 дн | 436 950 |
-| [Nepal's 2026 Disaster Explained: The Glacier That Wiped Out a Valley](https://youtu.be/vfIaNeGVaVo) | The Last Day | 58.7 | 4 405 682 | 56 дн | 378 438 |
-| [2-hour 4K full feature film— REBORN MECH BEAST- Humanity’s Last Weapon](https://youtu.be/3eYnXsVlSt0) | Cine Drop  | 10.0 | 6 188 645 | 102 дн | 354 402 |
-| [The Wolf's Revenge \| Full Action Fantasy Movie \| The Last Warrior Re](https://youtu.be/8wtBevf0GA8) | Titan Entertainment | 16.8 | 2 861 585 | 220 дн | 315 925 |
-| [Blockbuster South Action Thriller Movie In Hindi Dubbed \| Ishq Tera \](https://youtu.be/7LGpZX3dLc0) | PrimeFlix Arena | 20.2 | 13 157 466 | 245 дн | 279 912 |
-| [The Cold CEO Everyone Fears Is Her Secret Husband—Cold at Work, But Sm](https://youtu.be/JD_RVbdwTQ4) | PeachShine Drama | 54.9 | 3 962 432 | 90 дн | 244 098 |
-| [390 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/aL3rIqFfuFw) | MTH Incredible Moments | 1805.2 | 4 421 804 | 60 дн | 243 447 |
-| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/Rn9jqZdaLos) | Fat Foodie | 5182.1 | 4 505 871 | 175 дн | 166 836 |
-| [The End of Nepal? Home to the Himalayas’ Most UNSTABLE Places \| 4K Do](https://youtu.be/UGaEQyoaldg) | Pure Earth | 973.5 | 2 539 826 | 282 дн | 148 722 |
-| [110 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/NGV2GH56TDE) | MTH Incredible Moments | 716.4 | 1 754 915 | 65 дн | 133 353 |
-| [Suriya Blockbuster South Action Movie Hindi Dubbed \| Irumudi \| Priya](https://youtu.be/7tcVblbxwvs) | PrimeFlix Arena | 5.8 | 3 798 612 | 263 дн | 130 960 |
-| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/MwhYVza-hDw) | Fat Foodie | 2145.6 | 1 865 567 | 187 дн | 123 979 |
-| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P1)](https://youtu.be/6wjlg9LMEKg) | MTH Incredible Moments | 1195.0 | 2 927 152 | 54 дн | 121 445 |
-| [Your phone addiction is keeping you from achieving flow state \| Arthu](https://youtu.be/KHd-luu3M8s) | Big Think Clips | 57.9 | 4 099 110 | 250 дн | 120 579 |
-| [Irumudi Telugu Full Movie Ravi Teja (2026) Priya Bhavani \| Shankar \|](https://youtu.be/G00aknRhD8o) | Hijack Movies | 15.7 | 2 534 762 | 130 дн | 114 949 |
-| [Irumudi Telugu Full Movie Mass Ravi Teja \| Priya Bhavani Shankar \| S](https://youtu.be/1TR-lMJ0fPs) | Hijack Movies | 12.1 | 1 959 393 | 135 дн | 114 866 |
-| [The paradox at the heart of AI and science \| Terence Tao](https://youtu.be/svl_1upFpQo) | Big Think Clips | 20.5 | 1 450 703 | 271 дн | 111 631 |
-| [A unique Khanty dwelling that can withstand the most severe cold in th](https://youtu.be/M50moHjAS4Q) | Liliana Sun | 10.3 | 4 579 644 | 58 дн | 109 171 |
-| [NEPAL Before the Flood: Brothers Share One Wife, Living Goddesses & Li](https://youtu.be/eoyY6emxx9w) | Global Life Lens | 21.3 | 1 924 576 | 22 дн | 107 402 |
-| [Hamburger Hill \| Don Cheadle (Avengers) \| ACTION, WAR \| Full Movies](https://youtu.be/KHOQ6TJR2W0) | MovieSphere - Action Full Movi | 13.6 | 2 573 598 | 329 дн | 102 791 |
-| [Hanuman Ansh Full Movie 2026 \| Chandan Anand \| Purnima Tiwari \| Sho](https://youtu.be/hhVoy9BkV44) | Alone Pictures | 26.6 | 2 362 319 | 22 дн | 94 980 |
-| [The Wrong Woman \| Full Thriller Movie \| Danica McKellar \| Jonathan ](https://youtu.be/vO9xmTPuosY) | Films 4 Everyone | 341.4 | 1 817 995 | 252 дн | 94 463 |
-| [Life In Rural Afghanistan \| 100-Year-Old Woman's Hard Nomadic Life, W](https://youtu.be/ahto5julCec) | Shamshir | 57.2 | 3 885 119 | 92 дн | 92 295 |
-| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #2](https://youtu.be/Tr2peUT-zgc) | SNAP MOMENTS | 198.6 | 3 474 573 | 23 дн | 91 147 |
-| [99 Animal Encounters \| They Didn't Know They Were Being Hunted!](https://youtu.be/1zYbW2zBW6Y) | Media Context  | 252.7 | 875 056 | 93 дн | 90 176 |
-| [Toxic Saitaan \| Raghava Lawrence Blockbuster South Action Thriller Hi](https://youtu.be/u6nvkaWQuzg) | PrimeFlix Arena | 5.6 | 3 683 956 | 251 дн | 89 840 |
-| [Florida's New Predator Isn't a Python — And It Hunts Humans](https://youtu.be/oM_TU6UM6ok) | Ambrose Wild | 28.9 | 2 185 588 | 80 дн | 87 879 |
-| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 98.8 | 2 369 147 | 159 дн | 84 249 |
-| [Jason and the Argonauts — They Woke Something in the Sea](https://youtu.be/rmBrcFiryGk) | The Next Show \| Stories That  | 3.7 | 2 340 217 | 238 дн | 83 451 |
-| [Salman Khan & Saiee Manjrekar \| Bihari \| Blockbuster Bollywood Suspe](https://youtu.be/OmWzNpZMrUI) | Duroflex Action | 238.9 | 3 430 698 | 348 дн | 81 652 |
-| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P18)](https://youtu.be/aVd4wrla2G0) | SNAP MOMENTS | 224.0 | 3 917 921 | 13 дн | 81 360 |
-| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 176.6 | 4 065 625 | 227 дн | 80 455 |
-| [Emraan Hashmi \| Tumba \| Blockbuster Bollywood Action Thriller Full M](https://youtu.be/A1iKF8gHq14) | Duroflex Action | 305.9 | 4 393 707 | 335 дн | 79 862 |
-| [Blockbuster Bollywood Action Movie \| Shorr \| Sidharth Malhotra & Kia](https://youtu.be/b4HEWF8LErY) | Duroflex Action | 312.9 | 4 493 512 | 333 дн | 78 811 |
-| [Epoch of Voyages Full 4K Fantasy Action Movie \| Episode 1 Epic Fantas](https://youtu.be/_oKHNBRf45M) | Shanhay Studio | 4.2 | 1 786 683 | 74 дн | 78 090 |
-| [Arshad Warsi & Bhoomi \| Negative \| Blockbuster Bollywood Action Thri](https://youtu.be/Z3iQj6xeHtY) | Duroflex Action | 277.2 | 3 980 775 | 339 дн | 78 029 |
-| [Mess With The Wrong Guy! Retired Assassin Wipes Out Entire Gang In 202](https://youtu.be/1Nv-RlUGua0) | Alpha Series | 616.2 | 3 674 790 | 230 дн | 71 885 |
-| [What Just Happened In Nepal Reveals A Terrifying Truth You Aren't Read](https://youtu.be/z_vo0DCEKAE) | The Space Desk | 77.6 | 1 250 322 | 143 дн | 70 064 |
-| [DON 2 (2026) Chiranjeevi & Nayanthara \| Full Hindi Dubbed Action Thri](https://youtu.be/1be-iEO5nxg) | Movie Zilla - Hindi Movies | 16.9 | 3 348 790 | 127 дн | 69 742 |
-| [Tibetan Monks Just EXPOSED the Terrifying Secret Behind Mount Kailash ](https://youtu.be/DEDBwFV96x0) | Elias Stone | 192.3 | 882 258 | 249 дн | 69 128 |
+| [GENZ CHIEF MINISTER Full Movie Hindi Dubbed \| Thalapathy Vijay, Nayan](https://youtu.be/_oRtucV13W0) | Movie Zilla - Hindi Movies | 92.8 | 18 352 424 | 133 дн | 436 908 |
+| [Nepal's 2026 Disaster Explained: The Glacier That Wiped Out a Valley](https://youtu.be/vfIaNeGVaVo) | The Last Day | 58.7 | 4 405 682 | 56 дн | 378 306 |
+| [2-hour 4K full feature film— REBORN MECH BEAST- Humanity’s Last Weapon](https://youtu.be/3eYnXsVlSt0) | Cine Drop  | 10.0 | 6 188 645 | 102 дн | 354 320 |
+| [The Wolf's Revenge \| Full Action Fantasy Movie \| The Last Warrior Re](https://youtu.be/8wtBevf0GA8) | Titan Entertainment | 16.8 | 2 861 585 | 220 дн | 315 783 |
+| [Blockbuster South Action Thriller Movie In Hindi Dubbed \| Ishq Tera \](https://youtu.be/7LGpZX3dLc0) | PrimeFlix Arena | 20.2 | 13 157 466 | 245 дн | 279 888 |
+| [The Cold CEO Everyone Fears Is Her Secret Husband—Cold at Work, But Sm](https://youtu.be/JD_RVbdwTQ4) | PeachShine Drama | 56.7 | 3 962 432 | 90 дн | 244 037 |
+| [390 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/aL3rIqFfuFw) | MTH Incredible Moments | 1805.2 | 4 421 804 | 60 дн | 243 392 |
+| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/Rn9jqZdaLos) | Fat Foodie | 5182.1 | 4 505 871 | 175 дн | 166 811 |
+| [The End of Nepal? Home to the Himalayas’ Most UNSTABLE Places \| 4K Do](https://youtu.be/UGaEQyoaldg) | Pure Earth | 973.5 | 2 539 826 | 282 дн | 148 686 |
+| [110 Incredible Moments Caught on Camera \| Moments Filmed Seconds Befo](https://youtu.be/NGV2GH56TDE) | MTH Incredible Moments | 716.4 | 1 754 915 | 65 дн | 133 312 |
+| [Suriya Blockbuster South Action Movie Hindi Dubbed \| Irumudi \| Priya](https://youtu.be/7tcVblbxwvs) | PrimeFlix Arena | 5.8 | 3 798 612 | 263 дн | 130 941 |
+| [Live ! Diving deep in the ocean bed To catch THE BIG FISH](https://youtu.be/MwhYVza-hDw) | Fat Foodie | 2145.6 | 1 865 567 | 187 дн | 123 945 |
+| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P1)](https://youtu.be/6wjlg9LMEKg) | MTH Incredible Moments | 1195.0 | 2 927 152 | 54 дн | 121 425 |
+| [Your phone addiction is keeping you from achieving flow state \| Arthu](https://youtu.be/KHd-luu3M8s) | Big Think Clips | 57.9 | 4 099 110 | 250 дн | 120 564 |
+| [Irumudi Telugu Full Movie Ravi Teja (2026) Priya Bhavani \| Shankar \|](https://youtu.be/G00aknRhD8o) | Hijack Movies | 15.7 | 2 534 762 | 130 дн | 114 928 |
+| [Irumudi Telugu Full Movie Mass Ravi Teja \| Priya Bhavani Shankar \| S](https://youtu.be/1TR-lMJ0fPs) | Hijack Movies | 12.1 | 1 959 393 | 135 дн | 114 838 |
+| [The paradox at the heart of AI and science \| Terence Tao](https://youtu.be/svl_1upFpQo) | Big Think Clips | 20.5 | 1 450 703 | 271 дн | 111 596 |
+| [A unique Khanty dwelling that can withstand the most severe cold in th](https://youtu.be/M50moHjAS4Q) | Liliana Sun | 10.3 | 4 579 644 | 58 дн | 109 161 |
+| [NEPAL Before the Flood: Brothers Share One Wife, Living Goddesses & Li](https://youtu.be/eoyY6emxx9w) | Global Life Lens | 21.3 | 1 924 576 | 22 дн | 107 378 |
+| [Hamburger Hill \| Don Cheadle (Avengers) \| ACTION, WAR \| Full Movies](https://youtu.be/KHOQ6TJR2W0) | MovieSphere - Action Full Movi | 13.6 | 2 573 598 | 329 дн | 102 774 |
+| [Hanuman Ansh Full Movie 2026 \| Chandan Anand \| Purnima Tiwari \| Sho](https://youtu.be/hhVoy9BkV44) | Alone Pictures | 27.0 | 2 362 319 | 22 дн | 94 965 |
+| [The Wrong Woman \| Full Thriller Movie \| Danica McKellar \| Jonathan ](https://youtu.be/vO9xmTPuosY) | Films 4 Everyone | 341.4 | 1 817 995 | 252 дн | 94 443 |
+| [Life In Rural Afghanistan \| 100-Year-Old Woman's Hard Nomadic Life, W](https://youtu.be/ahto5julCec) | Shamshir | 57.2 | 3 885 119 | 92 дн | 92 286 |
+| [Most BRUTAL ANIMAL ATTACKS Caught on Camera - Best of Month #2](https://youtu.be/Tr2peUT-zgc) | SNAP MOMENTS | 198.6 | 3 474 573 | 23 дн | 91 137 |
+| [99 Animal Encounters \| They Didn't Know They Were Being Hunted!](https://youtu.be/1zYbW2zBW6Y) | Media Context  | 252.7 | 875 056 | 93 дн | 90 138 |
+| [Toxic Saitaan \| Raghava Lawrence Blockbuster South Action Thriller Hi](https://youtu.be/u6nvkaWQuzg) | PrimeFlix Arena | 5.6 | 3 683 956 | 251 дн | 89 831 |
+| [Florida's New Predator Isn't a Python — And It Hunts Humans](https://youtu.be/oM_TU6UM6ok) | Ambrose Wild | 28.9 | 2 185 588 | 80 дн | 87 865 |
+| [WILD AMAZON \| Only the Strongest Predators Will Survive \| Nature Ani](https://youtu.be/BPztOwOOfMk) | GaiaDocs | 98.8 | 2 369 147 | 159 дн | 84 237 |
+| [Jason and the Argonauts — They Woke Something in the Sea](https://youtu.be/rmBrcFiryGk) | The Next Show \| Stories That  | 3.7 | 2 340 217 | 238 дн | 83 439 |
+| [Salman Khan & Saiee Manjrekar \| Bihari \| Blockbuster Bollywood Suspe](https://youtu.be/OmWzNpZMrUI) | Duroflex Action | 238.9 | 3 430 698 | 348 дн | 81 644 |
+| [Moments Filmed Second Before Disaster \| Incredible Moments 2026 (P18)](https://youtu.be/aVd4wrla2G0) | SNAP MOMENTS | 224.0 | 3 917 921 | 13 дн | 81 353 |
+| [20 Years on a Tiny Boat: How They Eat, Sleep and Raise Their Children ](https://youtu.be/Lg0HIlCJLdw) | Vietnam Daily | 176.6 | 4 065 625 | 227 дн | 80 448 |
+| [Emraan Hashmi \| Tumba \| Blockbuster Bollywood Action Thriller Full M](https://youtu.be/A1iKF8gHq14) | Duroflex Action | 305.9 | 4 393 707 | 335 дн | 79 856 |
+| [Blockbuster Bollywood Action Movie \| Shorr \| Sidharth Malhotra & Kia](https://youtu.be/b4HEWF8LErY) | Duroflex Action | 312.9 | 4 493 512 | 333 дн | 78 805 |
+| [Epoch of Voyages Full 4K Fantasy Action Movie \| Episode 1 Epic Fantas](https://youtu.be/_oKHNBRf45M) | Shanhay Studio | 4.2 | 1 786 683 | 74 дн | 78 076 |
+| [Arshad Warsi & Bhoomi \| Negative \| Blockbuster Bollywood Action Thri](https://youtu.be/Z3iQj6xeHtY) | Duroflex Action | 277.2 | 3 980 775 | 339 дн | 78 023 |
+| [Mess With The Wrong Guy! Retired Assassin Wipes Out Entire Gang In 202](https://youtu.be/1Nv-RlUGua0) | Alpha Series | 616.2 | 3 674 790 | 230 дн | 71 879 |
+| [What Just Happened In Nepal Reveals A Terrifying Truth You Aren't Read](https://youtu.be/z_vo0DCEKAE) | The Space Desk | 77.6 | 1 250 322 | 143 дн | 70 048 |
+| [DON 2 (2026) Chiranjeevi & Nayanthara \| Full Hindi Dubbed Action Thri](https://youtu.be/1be-iEO5nxg) | Movie Zilla - Hindi Movies | 16.9 | 3 348 790 | 127 дн | 69 736 |
+| [Tibetan Monks Just EXPOSED the Terrifying Secret Behind Mount Kailash ](https://youtu.be/DEDBwFV96x0) | Elias Stone | 192.3 | 882 258 | 249 дн | 69 106 |
 
 ## Пока без данных
 

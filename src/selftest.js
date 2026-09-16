@@ -8,6 +8,7 @@ import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from 
 import { conveyorProfile, liveIncome, liveProfile, queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
+import { pullData, pushData, snapshotLocal, remoteConfigured } from './remote.js';
 import { buildFocus } from './focus.js';
 import { readJson, ROOT, packVideos, unpackVideos, packSeries, unpackSeries, packChannels, unpackChannels, latestBase } from './store.js';
 import { join } from 'node:path';
@@ -1083,6 +1084,25 @@ check('списки служебных слов разные', stopWords('en').h
   check('отсутствие плейлиста сохранено', ch.UCdead99.uploadsPlaylistId === null);
   check('пометка о мёртвом канале цела', ch.UCdead99.gone === '2026-09-02');
   check('id восстановлен из ключа', ch.UCabc123.id === 'UCabc123');
+}
+
+// --- хранение вне GitHub ---
+{
+  // Без переменных окружения всё должно идти по локальным файлам. Это не
+  // мелочь: если бы remoteConfigured() врал, самопроверка и локальный запуск
+  // полезли бы в сеть за базой, которой там может не быть.
+  check('без настроек Supabase хранилище локальное', remoteConfigured() === false);
+  const noop = await pullData();
+  check('скачивание без настроек ничего не делает', noop.skipped === true);
+  const noop2 = await pushData();
+  check('заливка без настроек ничего не делает', noop2.skipped === true);
+
+  // Отпечаток должен ловить изменение и не срабатывать на его отсутствии:
+  // на нём держится решение, что заливать, а что оставить лежать.
+  const a = snapshotLocal();
+  const b = snapshotLocal();
+  check('отпечаток базы воспроизводится', [...a].every(([k, v]) => b.get(k) === v));
+  check('отпечаток видит файлы базы', a.size === 0 || [...a.keys()].some((k) => k.endsWith('.gz')));
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
