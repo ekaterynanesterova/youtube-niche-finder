@@ -87,8 +87,8 @@ export const paths = {
   baseline: join(DATA, 'baseline.json.gz'),
   translations: join(DATA, 'translations.json.gz'),
   state: join(DATA, 'state.json.gz'),
-  metrics: join(DATA, 'metrics.json.gz'),
   series: join(DATA, 'series.json.gz'),
+  bases: join(DATA, 'bases.json.gz'),
   report: (name) => join(REPORTS, name),
 };
 
@@ -134,6 +134,54 @@ export function unpackVideos(packed) {
     out[id] = { id, channelId: packed.chans[ch] ?? null, title,
                 publishedAt: fromStamp(stamp), durationSec: dur,
                 lang: packed.langs[lang] || null };
+  }
+  return out;
+}
+
+// --- каналы: выбрасываем то, чего никто не читает ---
+//
+// Аудит показал в записи канала четыре поля, которые только пишутся:
+//
+//   id                 141 КБ  он же и так ключ записи
+//   uploadsPlaylistId  202 КБ  всегда «UU» + id без «UC» — проверено на всех
+//                              4396 каналах, ни одного исключения. Хранить
+//                              нечего, кроме самого факта «плейлиста нет»:
+//                              им collect.js помечает каналы, у которых архив
+//                              недоступен, и это единственное, что несёт
+//                              информацию.
+//   firstSeen          172 КБ  когда мы впервые увидели канал. Не читается
+//                              ни метриками, ни сбором, ни отчётом
+//   country             65 КБ  страна канала. Записана, не прочитана ни разу
+//   viaTrending          5 КБ  пришёл ли канал из Trending. То же самое
+//
+// Это не про мегабайты — после сжатия тут экономятся сотни килобайт. Это про
+// то, что поле, которое никто не читает, со временем начинает выглядеть как
+// данные, и однажды кто-нибудь построит на нём вывод.
+const DEAD_CHANNEL_FIELDS = ['id', 'uploadsPlaylistId', 'firstSeen', 'country', 'viaTrending'];
+
+export function packChannels(channels) {
+  const out = {};
+  for (const [id, c] of Object.entries(channels)) {
+    const row = {};
+    for (const [k, v] of Object.entries(c)) {
+      if (DEAD_CHANNEL_FIELDS.includes(k)) continue;
+      row[k] = v;
+    }
+    // Плейлист выводится из id, но «плейлиста нет» вывести неоткуда.
+    if (!c.uploadsPlaylistId) row.noUploads = 1;
+    out[id] = row;
+  }
+  return { v: 1, channels: out };
+}
+
+export function unpackChannels(packed) {
+  if (!packed) return {};
+  const src = packed.channels ?? packed;
+  const out = {};
+  for (const [id, c] of Object.entries(src)) {
+    const { noUploads, ...rest } = c;
+    out[id] = { ...rest, id,
+                uploadsPlaylistId: noUploads ? null : 'UU' + id.slice(2) };
   }
   return out;
 }
@@ -194,11 +242,51 @@ export function saveSeries(snapshots, keepDays = 90) {
   return kept;
 }
 
+// --- опорные срезы: не один, а все ---
+//
+// Опорный срез — это просмотры ВСЕХ роликов, включая старые; дневные срезы
+// ради места держат только молодые. Раньше файл был один и раз в неделю
+// перезаписывался новым, то есть каждый предыдущий терялся.
+//
+// Потерялись не пустяки. В истории репозитория нашлись три перезаписанных
+// опорных — за 20 и 27 августа и 3 сентября, — и каждый покрывает около ста
+// тысяч роликов, которых в дневных срезах нет вовсе. Вместе с текущим это
+// трёхнедельное окно по 69 245 роликам у 706 каналов: ровно то, чего не
+// хватало, чтобы считать доход СТАРЫХ каналов, а не только молодых.
+//
+// Хранить их все стоит 0,86 МБ сверх одного. Формат тот же, что у дневного
+// ряда: идентификаторы один раз, даты строками матрицы.
+export function loadBases() {
+  const packed = readJson(paths.bases, null);
+  if (packed?.ids) return unpackSeries(packed);
+  // Переезд со старого одиночного файла: он становится первым и единственным срезом.
+  const one = readJson(paths.baseline, null);
+  if (!one?.views) return [];
+  return [{ date: one.date, videos: Object.fromEntries(
+    Object.entries(one.views).map(([id, v]) => [id, [v]])) }];
+}
+
+// Двенадцати недель хватает: дальше в прошлое ни одна метрика не заглядывает,
+// а каждый срез весит почти мегабайт.
+export function saveBases(bases, keepWeeks = 12) {
+  const kept = bases.slice(-keepWeeks);
+  writeJson(paths.bases, packSeries(kept));
+  return kept;
+}
+
+// Самый свежий опорный в том виде, в каком его ждут метрики.
+export function latestBase(bases) {
+  const last = bases[bases.length - 1];
+  if (!last) return null;
+  return { date: last.date, views: Object.fromEntries(
+    Object.entries(last.videos).map(([id, v]) => [id, v[0]])) };
+}
+
 // --- база целиком ---
 
 export function loadDb() {
   return {
-    channels: readJson(paths.channels, {}),
+    channels: unpackChannels(readJson(paths.channels, null)),
     videos: unpackVideos(readJson(paths.videos, null)),
     current: readJson(paths.current, {}),
     state: readJson(paths.state, { seedCursor: 0, runs: [] }),
@@ -213,7 +301,7 @@ export function saveDb(db, now = Date.now()) {
   const live = new Set(packed.rows.map((r) => r[0]));
   for (const id of Object.keys(db.current)) if (!live.has(id)) delete db.current[id];
 
-  writeJson(paths.channels, db.channels);
+  writeJson(paths.channels, packChannels(db.channels));
   writeJson(paths.videos, packed);
   writeJson(paths.current, db.current);
   writeJson(paths.state, db.state);

@@ -11,7 +11,7 @@ import { Translator } from './translate.js';
 import { findTopics, promote } from './topics.js';
 import {
   loadDb, saveDb, readJson, writeJson, writePlainJson, writeText, paths,
-  loadSeries, saveSeries, today, ROOT, daysBetween,
+  loadSeries, saveSeries, loadBases, saveBases, latestBase, today, ROOT, daysBetween,
 } from './store.js';
 import { join } from 'node:path';
 
@@ -90,13 +90,17 @@ if (!metricsOnly) {
     // дневные снапшоты хранят только молодые ролики ради места, а прирост
     // старых иначе не измерить. Файл один и переписывается раз в неделю,
     // поэтому объём не растёт.
-    const baseline = readJson(paths.baseline, null);
+    const bases = loadBases();
+    const baseline = latestBase(bases);
     const baselineAge = baseline?.date
       ? (Date.parse(date) - Date.parse(baseline.date)) / 86400000 : Infinity;
     if (baselineAge >= (thresholds.baselineRefreshDays ?? 7)) {
-      writeJson(paths.baseline, { date, views: Object.fromEntries(
-        Object.entries(db.current).map(([id, s]) => [id, s[0]])) });
-      console.log(`Опорный срез обновлён (прошлому было ${Math.round(baselineAge)} дн)`);
+      // Новый опорный ДОБАВЛЯЕТСЯ к прошлым, а не затирает их. Раньше затирал,
+      // и три недельных среза уцелели только в истории репозитория.
+      saveBases([...bases.filter((b) => b.date !== date),
+                 { date, videos: Object.fromEntries(
+                   Object.entries(db.current).map(([id, s]) => [id, [s[0]]])) }]);
+      console.log(`Опорный срез добавлен (прошлому было ${Math.round(baselineAge)} дн, всего срезов ${bases.length + 1})`);
     }
   } finally {
     // Что успели собрать — сохраняем, даже если прогон упал на полпути.
@@ -115,7 +119,7 @@ if (!metricsOnly) {
 const snapshots = loadSeries().slice(-90);
 const primaryLang = Object.entries(markets).find(([, m]) => m.role === 'primary')?.[0] ?? 'en';
 const metrics = computeMetrics({ db, seeds, thresholds, snapshots, primaryLang,
-                                baseline: readJson(paths.baseline, null) });
+                                baseline: latestBase(loadBases()) });
 writeText(paths.report('latest.md'), renderReport(metrics, seeds));
 
 // Страница собирается с вшитыми данными: без fetch ей нечего не догрузить.
@@ -236,14 +240,9 @@ writeText(join(ROOT, 'index.html'), renderSite(payload));
 // чтобы отдать статистику в другой чат целиком, одной ссылкой.
 writeText(join(ROOT, 'docs/brief.md'), renderBrief(payload));
 
-// В metrics.json кладём выводы, а не сырьё: массив всех видео весил 17 МБ
-// и переписывался бы целиком каждый день. Сырьё и так лежит в data/.
-writeJson(paths.metrics, {
-  computedAt: metrics.computedAt,
-  snapshotDays: metrics.snapshotDays,
-  thresholds: metrics.thresholds,
-  niches: metrics.niches,
-  channelCount: Object.keys(metrics.channels).length,
-  videoCount: metrics.videos.length,
-});
+// metrics.json больше не пишется. Он собирался «чтобы был», и его не читал
+// никто: ни сайт (у него данные вшиты внутрь страницы), ни бриф, ни отчёт по
+// космосу, ни сам сбор. А после переезда базы из git его и забрать стало
+// неоткуда — data/ наружу не публикуется. Всё, что в нём лежало, целиком
+// есть в index.html и docs/brief.md.
 console.log(`Готово. Каналов ${Object.keys(metrics.channels).length}, видео ${metrics.videos.length}, ниш ${Object.keys(metrics.niches).length}.`);

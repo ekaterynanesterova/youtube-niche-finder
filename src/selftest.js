@@ -9,7 +9,7 @@ import { conveyorProfile, liveIncome, liveProfile, queryKeywords, seedIndex, vid
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
-import { readJson, ROOT, packVideos, unpackVideos, packSeries, unpackSeries } from './store.js';
+import { readJson, ROOT, packVideos, unpackVideos, packSeries, unpackSeries, packChannels, unpackChannels, latestBase } from './store.js';
 import { join } from 'node:path';
 import { median, dominantLang, channelBaseline, targetMonthlyViews } from './metrics.js';
 
@@ -1061,6 +1061,28 @@ check('списки служебных слов разные', stopWords('en').h
   // мёртвый ролик в отсутствующий и потерять его из расчёта прироста.
   const zero = unpackSeries(packSeries([{ date: '2026-09-04', videos: { a: [0] } }]));
   check('ноль просмотров это значение, а не пропуск', zero[0].videos.a[0] === 0);
+
+  // Каналы: мёртвые поля не должны пережить упаковку, живые — должны.
+  const chans = {
+    UCabc123: { id: 'UCabc123', title: 'Живой', seeds: ['x'], markets: ['en'],
+                subscribers: 900, videoCount: 12, surveyed: '2026-09-01',
+                uploadsPlaylistId: 'UUabc123',
+                firstSeen: '2026-08-01', country: 'US', viaTrending: true },
+    UCdead99: { id: 'UCdead99', title: 'Без архива', uploadsPlaylistId: null, gone: '2026-09-02' },
+  };
+  const ch = unpackChannels(packChannels(chans));
+  check('живые поля канала целы',
+    ch.UCabc123.title === 'Живой' && ch.UCabc123.subscribers === 900
+    && ch.UCabc123.surveyed === '2026-09-01' && ch.UCabc123.videoCount === 12);
+  check('мёртвые поля канала не хранятся',
+    JSON.stringify(packChannels(chans)).includes('firstSeen') === false
+    && JSON.stringify(packChannels(chans)).includes('viaTrending') === false);
+  check('плейлист выведен из id', ch.UCabc123.uploadsPlaylistId === 'UUabc123');
+  // «Плейлиста нет» вывести неоткуда — этим сбор помечает недоступный архив,
+  // и спутать его с выводимым значением значит снова полезть в мёртвый канал.
+  check('отсутствие плейлиста сохранено', ch.UCdead99.uploadsPlaylistId === null);
+  check('пометка о мёртвом канале цела', ch.UCdead99.gone === '2026-09-02');
+  check('id восстановлен из ключа', ch.UCabc123.id === 'UCabc123');
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

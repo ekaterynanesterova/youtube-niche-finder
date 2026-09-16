@@ -5,10 +5,10 @@
 // Запуск: node tools/space-report.mjs > docs/космос-afterlight.md
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ROOT, paths, readJson, unpackVideos, loadSeries } from '../src/store.js';
+import { ROOT, paths, readJson, unpackVideos, unpackChannels, loadSeries } from '../src/store.js';
 
 const V = unpackVideos(readJson(paths.videos, null));
-const C = readJson(paths.channels, {});
+const C = unpackChannels(readJson(paths.channels, null));
 const CUR = readJson(paths.current, {});
 const STATE = readJson(paths.state, { runs: [] });
 const PAGE = JSON.parse(readFileSync(join(ROOT, 'index.html'), 'utf8')
