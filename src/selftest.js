@@ -1105,5 +1105,25 @@ check('списки служебных слов разные', stopWords('en').h
   check('отпечаток видит файлы базы', a.size === 0 || [...a.keys()].some((k) => k.endsWith('.gz')));
 }
 
+// --- вес готовой страницы ---
+{
+  // Страницу переписывает каждый прогон. Пока она весила 1,7 МБ открытым
+  // JSON, это давало 0,6 ГБ в год в историю репозитория — ту же болезнь, за
+  // которую аккаунт блокировали, только медленнее. Данные теперь едут внутри
+  // страницы сжатыми, и эта проверка сторожит, чтобы так и осталось.
+  const { readFileSync, existsSync } = await import('node:fs');
+  const page = join(ROOT, 'index.html');
+  if (existsSync(page)) {
+    const html = readFileSync(page, 'utf8');
+    const size = Buffer.byteLength(html);
+    check(`страница весит ${(size / 1048576).toFixed(2)} МБ, порог 1`, size < 1048576);
+    check('данные в странице сжаты, а не открытым текстом',
+      html.includes('type="application/gzip;base64"'));
+    // Открытый JSON внутри означал бы, что сжатие отвалилось и вес вернётся.
+    check('открытого JSON-полотна в странице нет',
+      !html.includes('<script type="application/json" id="payload">'));
+  }
+}
+
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
 process.exit(failed ? 1 : 0);

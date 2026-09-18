@@ -4,6 +4,7 @@ import { score } from './report.js';
 import { buildVerdict, headline, marketStats } from './verdict.js';
 import { buildArchetypes } from './archetypes.js';
 import { isAdLimited, POLICY } from './topics.js';
+import { gzipSync } from 'node:zlib';
 
 const MARKET_LABEL = { de: 'Немецкий', en: 'Английский' };
 
@@ -205,7 +206,18 @@ export function buildPayload(m, seeds, thresholds, db = {}, focus = null) {
 }
 
 export function renderSite(payload) {
-  const json = JSON.stringify(payload).replace(/</g, '\\u003c');
+  // Данные вшиваются в страницу СЖАТЫМИ, а распаковывает их браузер.
+  //
+  // Раньше они лежали открытым JSON, и страница весила 1,7 МБ. Её
+  // переписывает каждый прогон — это 0,6 ГБ в год в историю репозитория,
+  // то есть ровно та болезнь, за которую аккаунт уже блокировали, только
+  // медленнее. Сжатие с кодированием в base64 даёт 0,41 МБ вместо 1,6:
+  // страница целиком 0,51 МБ, за год 0,18 ГБ.
+  //
+  // base64, а не сырые байты, потому что данные едут внутри HTML: в тексте
+  // страницы бинарник не проживёт. Тридцать процентов, которые base64
+  // добавляет сверху, всё равно вчетверо меньше исходного.
+  const json = gzipSync(Buffer.from(JSON.stringify(payload)), { level: 9 }).toString('base64');
   return `<!doctype html>
 <html lang="ru">
 <head>
@@ -772,9 +784,23 @@ footer b{color:var(--ink)}
   </footer>
 </div>
 
-<script type="application/json" id="payload">${json}</script>
-<script>
-const P = JSON.parse(document.getElementById('payload').textContent);
+<script type="application/gzip;base64" id="payload">${json}</script>
+<script type="module">
+// Модуль, а не обычный скрипт, ради одной строчки ниже: распаковка
+// асинхронная, а await на верхнем уровне бывает только в модуле. Inline-
+// обработчиков в вёрстке нет, так что областью видимости ничего не ломается.
+const P = await (async () => {
+  const b64 = document.getElementById('payload').textContent.trim();
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  if (typeof DecompressionStream !== 'function') {
+    document.body.innerHTML = '<p style="padding:24px;line-height:1.6">'
+      + 'Этот браузер не умеет распаковывать данные страницы. '
+      + 'Нужен Chrome 80+, Firefox 113+ или Safari 16.4+.</p>';
+    throw new Error('DecompressionStream не поддерживается');
+  }
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return JSON.parse(await new Response(stream).text());
+})();
 
 const num = n => n == null ? '—' : Math.round(n).toLocaleString('ru-RU');
 const pct = n => n == null ? '—' : Math.round(n * 100) + '%';

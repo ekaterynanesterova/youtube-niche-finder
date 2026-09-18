@@ -282,6 +282,21 @@ export function latestBase(bases) {
     Object.entries(last.videos).map(([id, v]) => [id, v[0]])) };
 }
 
+// Данные готовой страницы, вынутые обратно.
+//
+// Страница носит их в себе сжатыми — так она весит 0,5 МБ вместо 1,7 и не
+// раздувает историю репозитория. Инструментам, которые по ней отчитываются,
+// нужен разбор, и он должен быть ровно один: когда формат менялся, отчёт по
+// космосу об этом не знал и падал.
+export function readPagePayload(html) {
+  const gz = html.match(/<script type="application\/gzip;base64" id="payload">([\s\S]*?)<\/script>/);
+  if (gz) return JSON.parse(gunzipSync(Buffer.from(gz[1].trim(), 'base64')).toString('utf8'));
+  // Страница, собранная до сжатия.
+  const plain = html.match(/<script type="application\/json" id="payload">([\s\S]*?)<\/script>/);
+  if (plain) return JSON.parse(plain[1]);
+  throw new Error('В странице нет данных: ни сжатых, ни открытых');
+}
+
 // --- база целиком ---
 
 export function loadDb() {
