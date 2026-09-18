@@ -16,6 +16,10 @@ on:
         description: 'Только пересчитать метрики и пересобрать страницу, без похода в YouTube'
         type: boolean
         default: false
+      checkRemote:
+        description: 'Только проверить связь с Supabase и выйти. Квоту не тратит, базу не трогает'
+        type: boolean
+        default: false
   schedule:
     # 07:30 UTC — через полчаса после летнего обнуления квоты Google.
     #
@@ -55,6 +59,7 @@ jobs:
       # обновляется, а не залипает на первой версии.
       - name: Достать накопленную базу
         id: db
+        if: github.event.inputs.checkRemote != 'true'
         uses: actions/cache/restore@v4
         with:
           path: data
@@ -76,7 +81,7 @@ jobs:
       # поимённо. Основной запасной путь — артефакт прогона, он содержит
       # bases.json.gz целиком. История репозитория — последний рубеж.
       - name: Поднять базу из истории, если кэша нет
-        if: steps.db.outputs.cache-matched-key == ''
+        if: steps.db.outputs.cache-matched-key == '' && github.event.inputs.checkRemote != 'true'
         run: |
           echo "Кэша нет — достаю последнюю базу из истории репозитория"
           git fetch --depth=1 origin f9024c7d31e6951c9b196946259ab027c8efb18f
@@ -105,14 +110,17 @@ jobs:
           SEARCH_BUDGET: ${{ github.event.inputs.searchBudget || '40' }}
           UNIT_BUDGET: ${{ github.event.inputs.unitBudget || '9000' }}
           ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}
-        run: node src/index.js ${{ github.event.inputs.metricsOnly == 'true' && '--metrics-only' || '' }}
+        run: |
+          node src/index.js \
+            ${{ github.event.inputs.checkRemote == 'true' && '--check-remote' || '' }} \
+            ${{ github.event.inputs.metricsOnly == 'true' && '--metrics-only' || '' }}
 
       # Сохраняем даже если прогон упал. Оркестратор пишет базу в finally,
       # так что на диске лежит всё собранное до падения. Раньше падение на
       # одном мёртвом канале выбрасывало четыре тысячи потраченных юнитов
       # и целый день сбора вместе с ними.
       - name: Убрать базу на хранение
-        if: always()
+        if: always() && github.event.inputs.checkRemote != 'true'
         uses: actions/cache/save@v4
         with:
           path: data
@@ -122,7 +130,7 @@ jobs:
       # ускоритель. Отдельная копия артефактом даёт откуда восстановиться,
       # если кэш пропадёт: скачивается со страницы прогона руками.
       - name: Запасная копия базы
-        if: always()
+        if: always() && github.event.inputs.checkRemote != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: niche-db-${{ github.run_id }}
@@ -146,7 +154,7 @@ jobs:
       # в git. Если порог сработал — это не повод его поднять, это повод
       # выяснить, что именно распухло.
       - name: Проверка веса коммита
-        if: always()
+        if: always() && github.event.inputs.checkRemote != 'true'
         run: |
           git add -A reports docs config index.html
           if git diff --staged --name-only | grep -q '^data/'; then
@@ -167,7 +175,7 @@ jobs:
           fi
 
       - name: Коммит страницы и отчётов
-        if: always()
+        if: always() && github.event.inputs.checkRemote != 'true'
         run: |
           git config user.name "niche-finder"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

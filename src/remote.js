@@ -109,6 +109,55 @@ export function snapshotLocal() {
   return out;
 }
 
+// Проверка настройки: заливаем крошечный файл, читаем обратно, сверяем,
+// удаляем. Без неё «я всё настроила» и «оно работает» — разные утверждения,
+// и разницу между ними видно только через сутки, когда прогон не найдёт базу.
+export async function checkRemote() {
+  const steps = [];
+  const say = (ok, text) => { steps.push({ ok, text }); return ok; };
+
+  if (!remoteConfigured()) {
+    say(false, 'Переменные SUPABASE_URL и SUPABASE_KEY не заданы — хранилище не настроено');
+    return { ok: false, steps };
+  }
+  say(true, `Адрес и ключ на месте, бакет «${BUCKET}»`);
+
+  const name = `probe-${Date.now()}.txt`;
+  const body = Buffer.from(`проверка связи ${new Date().toISOString()}`);
+
+  try {
+    const up = await tryFetch(endpoint(name), {
+      method: 'POST',
+      headers: { ...auth, 'Content-Type': 'text/plain', 'x-upsert': 'true' },
+      body,
+    }, 1);
+    if (!up.ok) {
+      const why = up.status === 400 || up.status === 404
+        ? `бакет «${BUCKET}» не найден — создайте его в Storage`
+        : up.status === 401 || up.status === 403
+          ? 'ключ не подошёл — нужен секретный (sb_secret_… или service_role), не публичный'
+          : `ответ ${up.status}`;
+      say(false, `Записать не удалось: ${why}`);
+      return { ok: false, steps };
+    }
+    say(true, 'Запись прошла');
+
+    const down = await tryFetch(endpoint(name), { headers: auth }, 1);
+    if (!down.ok) { say(false, `Прочитать обратно не удалось: ответ ${down.status}`); return { ok: false, steps }; }
+    const back = Buffer.from(await down.arrayBuffer());
+    if (!back.equals(body)) { say(false, 'Прочиталось не то, что записывали'); return { ok: false, steps }; }
+    say(true, 'Чтение прошло, содержимое совпало');
+
+    const del = await tryFetch(endpoint(name), { method: 'DELETE', headers: auth }, 1);
+    say(del.ok, del.ok ? 'Пробный файл убран' : `Пробный файл остался лежать (ответ ${del.status}), это не страшно`);
+
+    return { ok: true, steps };
+  } catch (e) {
+    say(false, `Связи нет: ${e.message}`);
+    return { ok: false, steps };
+  }
+}
+
 function hash(buf) {
   let h = 5381;
   for (let i = 0; i < buf.length; i++) h = ((h * 33) ^ buf[i]) >>> 0;

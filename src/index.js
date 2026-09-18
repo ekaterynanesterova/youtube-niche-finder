@@ -14,7 +14,7 @@ import {
   loadSeries, saveSeries, loadBases, saveBases, latestBase, today, ROOT, daysBetween,
 } from './store.js';
 import { join } from 'node:path';
-import { pullData, pushData, snapshotLocal, remoteConfigured } from './remote.js';
+import { pullData, pushData, snapshotLocal, remoteConfigured, checkRemote } from './remote.js';
 
 const args = new Set(process.argv.slice(2));
 const metricsOnly = args.has('--metrics-only');
@@ -22,6 +22,17 @@ const metricsOnly = args.has('--metrics-only');
 // База живёт в Supabase, если он настроен: скачиваем её перед прогоном,
 // заливаем после. Без переменных окружения всё идёт по локальным файлам —
 // ровно как раньше.
+// Проверка настройки хранилища — отдельный быстрый режим. Квоту не тратит,
+// базу не трогает: заливает пробный файл, читает обратно и удаляет.
+if (args.has('--check-remote')) {
+  const { ok, steps } = await checkRemote();
+  for (const s of steps) console.log(`${s.ok ? '✓' : '✗'} ${s.text}`);
+  console.log(ok
+    ? '\nХранилище настроено верно. База поедет в Supabase на ближайшем прогоне.'
+    : '\nХранилище НЕ настроено. Пока так, база остаётся в кэше GitHub Actions — это рабочий запасной путь, ничего не сломано.');
+  process.exit(ok ? 0 : 1);
+}
+
 const beforeRun = snapshotLocal();
 if (remoteConfigured()) {
   const r = await pullData();
