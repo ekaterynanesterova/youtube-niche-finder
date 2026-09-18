@@ -22,7 +22,18 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, statSy
 import { join } from 'node:path';
 import { DATA } from './store.js';
 
-const URL_ = process.env.SUPABASE_URL?.replace(/\/+$/, '');
+// Адрес проекта, а не адрес Data API.
+//
+// В панели Supabase на видном месте лежит ссылка вида
+// https://xxx.supabase.co/rest/v1/ — это REST-эндпоинт базы, и скопировать
+// хочется именно его. Нам же нужен корень: /storage/v1/... пристраивается
+// к нему сам. Отрезаем хвост молча, чтобы человек не выяснял это по
+// невнятной ошибке.
+const URL_ = process.env.SUPABASE_URL
+  ?.trim()
+  .replace(/\/+$/, '')
+  .replace(/\/rest\/v1$/, '')
+  .replace(/\/storage\/v1$/, '');
 const KEY = process.env.SUPABASE_KEY;
 const BUCKET = process.env.SUPABASE_BUCKET || 'niche-db';
 
@@ -120,7 +131,11 @@ export async function checkRemote() {
     say(false, 'Переменные SUPABASE_URL и SUPABASE_KEY не заданы — хранилище не настроено');
     return { ok: false, steps };
   }
-  say(true, `Адрес и ключ на месте, бакет «${BUCKET}»`);
+  say(true, `Адрес ${URL_}, бакет «${BUCKET}», ключ ${KEY.slice(0, 12)}…`);
+  if (!/^sb_secret_|^eyJ/.test(KEY)) {
+    say(false, 'Это похоже на публичный ключ. Нужен секретный: sb_secret_… или старый service_role');
+    return { ok: false, steps };
+  }
 
   const name = `probe-${Date.now()}.txt`;
   const body = Buffer.from(`проверка связи ${new Date().toISOString()}`);
