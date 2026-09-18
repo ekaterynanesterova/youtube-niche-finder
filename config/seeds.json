@@ -1943,6 +1943,71 @@
         "lift": 8.9,
         "medianViews": 148557
       }
+    },
+    {
+      "id": "seduction",
+      "group": "Найдено автоматом",
+      "en": "seduction documentary",
+      "ru": "документальный фильм о соблазнении",
+      "source": "auto",
+      "addedAt": "2026-09-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 18.4,
+        "medianViews": 787003
+      }
+    },
+    {
+      "id": "benz",
+      "group": "Найдено автоматом",
+      "en": "benz documentary",
+      "ru": "документальный фильм о benz",
+      "source": "auto",
+      "addedAt": "2026-09-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 13.8,
+        "medianViews": 96606
+      }
+    },
+    {
+      "id": "complete",
+      "group": "Найдено автоматом",
+      "en": "complete documentary",
+      "ru": "полный документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-18",
+      "foundVia": {
+        "channels": 4,
+        "lift": 5.8,
+        "medianViews": 62791
+      }
+    },
+    {
+      "id": "idea-police",
+      "group": "Найдено автоматом",
+      "en": "idea police documentary",
+      "ru": "идея полицейский документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.2,
+        "medianViews": 720010.5
+      }
+    },
+    {
+      "id": "going-home",
+      "group": "Найдено автоматом",
+      "en": "going home documentary",
+      "ru": "документальный фильм о возвращении домой",
+      "source": "auto",
+      "addedAt": "2026-09-18",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.2,
+        "medianViews": 189840.5
+      }
     }
   ]
 }
