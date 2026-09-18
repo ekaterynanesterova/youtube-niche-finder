@@ -48,15 +48,45 @@ const FILES = ['videos.json.gz', 'channels.json.gz', 'current.json.gz',
                'series.json.gz', 'bases.json.gz', 'state.json.gz',
                'translations.json.gz'];
 
+// «Файла нет» — это ответ, а не сбой, и повторять запрос незачем.
+//
+// Тонкость, на которой прогон и упал: Supabase на отсутствующий объект
+// отвечает не 404, а 400 с пояснением в теле. Прежний код считал ответом
+// только 404, поэтому пустое хранилище выглядело как поломка сервиса —
+// три попытки, четырнадцать секунд и падение всего прогона.
+//
+// Разбирать тело приходится потому, что 400 у Supabase значит и «нет
+// объекта», и «запрос кривой». Путать их нельзя в обе стороны: принять
+// поломку за пустоту значит начать сбор с пустой базой и затереть ею
+// хорошую, а принять пустоту за поломку значит никогда не стартовать.
+export function looksMissing(status, body = '') {
+  if (status === 404) return true;
+  if (status !== 400) return false;
+  return /not\s*found|nosuchkey|does not exist/i.test(body);
+}
+
 async function tryFetch(url, init, tries = 3) {
   let last;
   for (let i = 0; i < tries; i++) {
     try {
       const res = await fetch(url, init);
-      // 404 — это ответ, а не сбой: файла ещё нет, и повторять незачем.
-      if (res.ok || res.status === 404) return res;
-      last = new Error(`${res.status} ${res.statusText}`);
-    } catch (e) { last = e; }
+      if (res.ok) return res;
+      // Тело читаем только у неуспешных ответов: у успешных оно нужно целиком
+      // и вторым чтением его уже не получить.
+      const body = res.status === 400 ? await res.clone().text().catch(() => '') : '';
+      // Плоский объект, а не Response: у Response свойства лежат в прототипе
+      // и через расширение не копируются. Вызывающим нужен только статус.
+      if (looksMissing(res.status, body)) return { ok: false, status: 404, missing: true };
+      // Неверный ключ повторять бессмысленно и опасно: молчаливый повтор
+      // прячет причину, по которой база не приедет.
+      if (res.status === 401 || res.status === 403) {
+        throw new Error(`${res.status}: ключ не подошёл`);
+      }
+      last = new Error(`${res.status} ${res.statusText}${body ? ' — ' + body.slice(0, 200) : ''}`);
+    } catch (e) {
+      if (/ключ не подошёл/.test(e.message)) throw e;
+      last = e;
+    }
     await new Promise((r) => setTimeout(r, 2000 * 2 ** i));
   }
   throw last;
@@ -165,6 +195,16 @@ export async function checkRemote() {
 
     const del = await tryFetch(endpoint(name), { method: 'DELETE', headers: auth }, 1);
     say(del.ok, del.ok ? 'Пробный файл убран' : `Пробный файл остался лежать (ответ ${del.status}), это не страшно`);
+
+    // Главное — путь «файла нет». Прежняя проверка его не трогала: она
+    // читала файл, который сама только что записала. А сломался прогон
+    // именно здесь, потому что Supabase отвечает на пропажу кодом 400.
+    const gone = await tryFetch(endpoint(`nothing-here-${Date.now()}.txt`), { headers: auth }, 1);
+    if (gone.status !== 404) {
+      say(false, `Отсутствующий файл распознан как ответ ${gone.status}, а должен как «нет файла»`);
+      return { ok: false, steps };
+    }
+    say(true, 'Отсутствующий файл распознан правильно');
 
     return { ok: true, steps };
   } catch (e) {

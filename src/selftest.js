@@ -8,7 +8,7 @@ import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from 
 import { conveyorProfile, liveIncome, liveProfile, queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
-import { pullData, pushData, snapshotLocal, remoteConfigured } from './remote.js';
+import { pullData, pushData, snapshotLocal, remoteConfigured, looksMissing } from './remote.js';
 import { buildFocus } from './focus.js';
 import { readJson, ROOT, packVideos, unpackVideos, packSeries, unpackSeries, packChannels, unpackChannels, latestBase } from './store.js';
 import { join } from 'node:path';
@@ -1109,6 +1109,20 @@ check('списки служебных слов разные', stopWords('en').h
   check('отпечаток базы воспроизводится', [...a].every(([k, v]) => b.get(k) === v));
   check('отпечаток возвращает пары имя→метка',
     [...a.values()].every((v) => typeof v === 'string' && /^\d+:[0-9a-z]+$/.test(v)));
+
+  // «Файла нет» против «сервис сломался». На этом прогон и упал: Supabase
+  // отвечает на отсутствующий объект кодом 400, а не 404, и пустое хранилище
+  // выглядело как поломка. Путать эти два случая нельзя в обе стороны —
+  // принять поломку за пустоту значит затереть хорошую базу пустой.
+  check('404 — файла нет', looksMissing(404, '') === true);
+  check('400 с «Object not found» — файла нет',
+    looksMissing(400, '{"error":"not_found","message":"Object not found"}') === true);
+  check('400 с «NoSuchKey» — файла нет', looksMissing(400, '{"message":"NoSuchKey"}') === true);
+  check('400 по другой причине — это ошибка',
+    looksMissing(400, '{"message":"Invalid request body"}') === false);
+  check('401 — не «нет файла», а неверный ключ', looksMissing(401, '') === false);
+  check('403 — не «нет файла», а нет прав', looksMissing(403, '') === false);
+  check('500 — не «нет файла», а сбой сервиса', looksMissing(500, '') === false);
 }
 
 // --- вес готовой страницы ---
