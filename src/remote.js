@@ -206,6 +206,30 @@ export async function checkRemote() {
     }
     say(true, 'Отсутствующий файл распознан правильно');
 
+    // И наконец — что в хранилище лежит на самом деле. Без этого «база
+    // уехала» остаётся утверждением: заливка вернула успех, но увидеть
+    // результат было негде.
+    const ls = await tryFetch(`${URL_}/storage/v1/object/list/${BUCKET}`, {
+      method: 'POST',
+      headers: { ...auth, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prefix: '', limit: 100, sortBy: { column: 'name', order: 'asc' } }),
+    }, 1);
+    if (ls.ok) {
+      const items = await ls.json().catch(() => []);
+      const db = items.filter((o) => FILES.includes(o.name));
+      if (!db.length) {
+        say(true, 'Базы в хранилище пока нет — приедет после первого сбора');
+      } else {
+        const size = db.reduce((n, o) => n + (o.metadata?.size ?? 0), 0);
+        say(true, `В хранилище ${db.length} из ${FILES.length} файлов базы, ${(size / 1048576).toFixed(1)} МБ`);
+        for (const o of db) {
+          const mb = ((o.metadata?.size ?? 0) / 1048576).toFixed(2);
+          const when = (o.updated_at ?? '').slice(0, 16).replace('T', ' ');
+          steps.push({ ok: true, text: `    ${o.name.padEnd(22)} ${mb.padStart(6)} МБ   ${when}` });
+        }
+      }
+    }
+
     return { ok: true, steps };
   } catch (e) {
     say(false, `Связи нет: ${e.message}`);
