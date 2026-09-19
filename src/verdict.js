@@ -53,6 +53,10 @@ export function buildVerdict({ niches, thresholds, minYoung = 2 }) {
         id: n.id, ru: n.ru, group: n.group, lang,
         market: MARKET[lang] ?? lang,
         query: n.queries[lang] ?? n.id,
+        // Ниша называется предметом, формат идёт отдельной пометкой.
+        subject: n.subject || (n.queries[lang] ?? n.id),
+        format: n.format ?? '',
+        formatTried: n.formatTried ?? null,
         young: m.youngOutlierChannels,
         youngClean: m.youngCleanChannels,
         total: m.outlierChannels,

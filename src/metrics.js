@@ -1,6 +1,7 @@
 // Метрики. Всё считается из накопленных данных, ничего не предсказывается.
 import { daysBetween } from './store.js';
 import { stopWords, topicShape } from './topics.js';
+import { splitQuery } from './formats.js';
 
 // Возраст канала. Полный архив даёт настоящую дату первой загрузки; когда
 // архив не долистан, берём дату регистрации — она может только состарить канал,
@@ -461,6 +462,13 @@ export function computeMetrics({ db, seeds, thresholds, snapshots = [], baseline
       newChannelsLastSearch: st.newLastRun ?? null,
       explored: (st.searches ?? 0) >= (thresholds.nicheMinSearches ?? 3),
       queries: { de: seed.de ?? null, en: seed.en ?? null },
+      // Предмет отдельно от формата: ниша называется предметом, а формат —
+      // это способ её найти. Слитыми они делали каждую нишу «X documentary»
+      // и создавали ложное впечатление, что на YouTube ничего другого нет.
+      // Для тем, заведённых до разделения, предмет вынимается из запроса.
+      subject: seed.subject ?? splitQuery(seed.en ?? seed.de ?? '', seed.en ? 'en' : 'de').subject,
+      format: seed.format ?? splitQuery(seed.en ?? seed.de ?? '', seed.en ? 'en' : 'de').format,
+      formatTried: seed.formatTried ?? null,
       // Поля верхнего уровня — по основному рынку. Он давно английский, а здесь
       // всё ещё стоял немецкий: текстовый отчёт ранжировал темы по рынку, на
       // котором до цели доходит один процент каналов.

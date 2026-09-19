@@ -9,6 +9,14 @@ import { renderBrief } from './brief.js';
 import { buildFocus } from './focus.js';
 import { Translator } from './translate.js';
 import { findTopics, promote } from './topics.js';
+import { tuneFormats } from './tune.js';
+
+// Подбор формата — улучшение, а не основа: если он упал, сбор должен идти
+// дальше. Терять сутки данных из-за необязательного шага нельзя.
+async function tolerantTune(args) {
+  try { return await tuneFormats(args); }
+  catch (e) { console.log(`Подбор формата пропущен: ${e.message}`); return []; }
+}
 import {
   loadDb, saveDb, readJson, writeJson, writePlainJson, writeText, paths,
   loadSeries, saveSeries, loadBases, saveBases, latestBase, today, ROOT, daysBetween,
@@ -84,6 +92,17 @@ if (!metricsOnly) {
               + `броня снапшота ${snapshotReserve} (молодых видео ${youngVideos}).`);
 
   try {
+    // Подбор формата для новых тем. Стоит около пятисот юнитов и делается
+    // ДО разведки: если формат теме не подходит, разведка по ней потратит
+    // квоту на чужой контент.
+    const tuned = await tolerantTune({ api, db, seeds });
+    if (tuned.length) {
+      for (const t of tuned) console.log(`Формат подобран: «${t.subject}» → ${t.chosen}`);
+      const cfg = readJson(join(ROOT, 'config/seeds.json'));
+      cfg.seeds = seeds;
+      writePlainJson(join(ROOT, 'config/seeds.json'), cfg);
+    }
+
     if (searchBudget > 0) await discover({ api, db, seeds, markets, thresholds, searchBudget, onlySeeds,
                                            focus: readJson(join(ROOT, 'config/focus.json'), null) });
 

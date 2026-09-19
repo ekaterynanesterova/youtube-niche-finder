@@ -123,7 +123,8 @@ export function renderBrief(P) {
     + '| Лучший | Лучшее у новичка | В месяц | Держат цель сейчас |');
   w('|---|---|---|---|---|---|---|---|---|---|---|');
   for (const [i, r] of rows.slice(0, 12).entries()) {
-    w(`| ${i + 1} | **${esc(r.query)}**${r.adLimited ? ' ⚠' : ''}${r.ru ? `<br><sub>${esc(r.ru)}</sub>` : ''} | ${MARKET[r.lang] ?? r.lang} `
+    w(`| ${i + 1} | **${esc(r.subject || r.query)}**${r.adLimited ? ' ⚠' : ''}${r.ru ? `<br><sub>${esc(r.ru)}</sub>` : ''}`
+      + `${r.format ? `<br><sub>ищем как «${esc(r.query)}»</sub>` : ''} | ${MARKET[r.lang] ?? r.lang} `
       + `| ${r.rangeLo == null ? '—' : num(r.rangeLo) + ' – ' + num(r.rangeHi)} `
       + `| ${num(r.demandSample)} | ${num(r.demandOverWorking)} | ${num(r.demandOverBreakout)} `
       + `| ${num(r.demandBest)} `
@@ -136,7 +137,9 @@ export function renderBrief(P) {
   w('### Разбор первых ниш');
   w('');
   for (const r of rows.slice(0, 5)) {
-    w(`#### ${r.query}${r.ru ? ` — ${r.ru}` : ''} (${MARKET[r.lang] ?? r.lang})`);
+    w(`#### ${r.subject || r.query}${r.ru ? ` — ${r.ru}` : ''} (${MARKET[r.lang] ?? r.lang})`);
+    w('');
+    w(`*Ищем запросом «${r.query}». Тема и способ её найти — разные вещи: слово в запросе отсекает мультики и художественное кино, но темой не является.*`);
     w('');
     w(`- **Почему:** ${r.why}`);
     w(`- **Риск:** ${r.risk}`);

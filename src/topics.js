@@ -264,7 +264,10 @@ export function slug(phrase) {
 }
 
 // Поисковый запрос из связки. Голое слово ищется слишком широко, поэтому
-// добавляем формат — так же, как выглядят темы, заданные руками.
+// новая тема заводится с базовым форматом — но только как СТАРТОВЫМ.
+// Дальше src/tune.js пробует остальные форматы и оставляет тот, что приводит
+// наш контент. Раньше здесь всё и заканчивалось: слово дописывалось навсегда
+// и становилось частью названия темы.
 const FORMAT = { de: 'Doku', en: 'documentary' };
 
 export function toQuery(phrase, lang = 'de') {
@@ -300,6 +303,10 @@ export function promote({ candidates, seeds, limit, lang = 'en', group = 'Най
     ids.add(id);
     added.push({
       id, group,
+      // Предмет и формат хранятся врозь. Предмет — это тема, формат — способ
+      // её найти; склеенные, они превращали каждую нишу в «X documentary».
+      subject,
+      format: FORMAT[lang] ?? FORMAT.de,
       [lang]: toQuery(subject, lang),
       ru: null,                      // подпись переведём отдельно
       source: 'auto',

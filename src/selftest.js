@@ -8,6 +8,8 @@ import { isBlocked, isAdLimited, promote, stopWords, topicShape, phrases } from 
 import { conveyorProfile, liveIncome, liveProfile, queryKeywords, seedIndex, videoNiches, wordFrequency, nounEvidence, quantile, titleLanguage, reachable, isFilmUpload } from './metrics.js';
 import { Quota as Q2 } from './quota.js';
 import { renderBrief } from './brief.js';
+import { buildQuery, splitQuery, scoreHarvest, pickFormat } from './formats.js';
+import { needFormat } from './tune.js';
 import { pullData, pushData, snapshotLocal, remoteConfigured, looksMissing } from './remote.js';
 import { buildFocus } from './focus.js';
 import { readJson, ROOT, packVideos, unpackVideos, packSeries, unpackSeries, packChannels, unpackChannels, latestBase } from './store.js';
@@ -1143,6 +1145,62 @@ check('списки служебных слов разные', stopWords('en').h
     check('открытого JSON-полотна в странице нет',
       !html.includes('<script type="application/json" id="payload">'));
   }
+}
+
+// --- тема и формат ---
+{
+  // Разделение появилось из наблюдения: все ниши назывались «X documentary»,
+  // и казалось, что на YouTube ничего другого нет. Тема — это предмет,
+  // формат — способ её найти.
+  check('запрос собирается из темы и формата',
+    buildQuery('ancient egypt', 'documentary') === 'ancient egypt documentary');
+  check('пустой формат оставляет голый предмет',
+    buildQuery('village life', '') === 'village life');
+  // «the truth about pyramids», а не «pyramids the truth about».
+  check('предлог встаёт впереди',
+    buildQuery('pyramids', 'the truth about') === 'the truth about pyramids');
+  check('без темы запроса нет', buildQuery('', 'documentary') === '');
+
+  // Обратный разбор нужен темам, заведённым до разделения: у них в конфиге
+  // лежит только склеенная строка.
+  const a = splitQuery('deep sea documentary', 'en');
+  check('предмет вынимается из старого запроса', a.subject === 'deep sea' && a.format === 'documentary');
+  const b = splitQuery('the truth about atlantis', 'en');
+  check('формат-предлог тоже вынимается', b.subject === 'atlantis' && b.format === 'the truth about');
+  const c = splitQuery('village life', 'en');
+  check('запрос без формата остаётся собой', c.subject === 'village life' && c.format === '');
+  // «documentary» внутри предмета — не формат: «film analysis documentary»
+  // это тема «разборы фильмов», а не «documentary» с хвостом.
+  check('разбор не съедает слова из середины',
+    splitQuery('film analysis documentary', 'en').subject === 'film analysis');
+
+  // Оценка улова. Просмотры намеренно не участвуют: по ним выигрывал бы
+  // голый запрос, потому что MrBeast перевесит любую нишу, куда мы можем войти.
+  const good = Array.from({ length: 40 }, (_, i) => ({ channelId: 'c' + i, sec: 1800, subs: 5000 }));
+  const bad = Array.from({ length: 40 }, (_, i) => ({ channelId: 'c' + (i % 3), sec: 300, subs: 9000000 }));
+  check('длинные ролики у маленьких каналов ценятся выше',
+    scoreHarvest(good).score > scoreHarvest(bad).score);
+  check('пустой улов не получает балла', scoreHarvest([]).score === 0);
+  check('вотчина из трёх каналов заметна', scoreHarvest(bad).channels === 3);
+
+  // Ничья решается в пользу первого: базовый формат проверен, менять его
+  // ради сотых долей незачем.
+  const tie = [{ format: 'documentary', score: 0.70, n: 40 }, { format: 'explained', score: 0.72, n: 40 }];
+  check('при почти равных баллах остаётся базовый', pickFormat(tie).format === 'documentary');
+  const clear = [{ format: 'documentary', score: 0.50, n: 40 }, { format: 'explained', score: 0.80, n: 40 }];
+  check('явно лучший формат выигрывает', pickFormat(clear).format === 'explained');
+  check('тонкая выборка в расчёт не идёт',
+    pickFormat([{ format: 'explained', score: 0.9, n: 3 }]) === null);
+
+  // Очередь на подбор: только автонайденные и только те, где его ещё не было.
+  const seeds = [
+    { id: 'a', en: 'a documentary', source: 'auto', addedAt: '2026-09-18' },
+    { id: 'b', en: 'b documentary', source: 'auto', addedAt: '2026-09-10', formatTried: [] },
+    { id: 'c', en: 'c documentary' },
+  ];
+  const q = needFormat(seeds, 'en');
+  check('в очередь идут только неподобранные', q.length === 1 && q[0].id === 'a');
+  check('темы, заданные руками, не трогаются', !q.some((x) => x.id === 'c'));
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
