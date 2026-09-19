@@ -1947,7 +1947,7 @@
     {
       "id": "seduction",
       "group": "Найдено автоматом",
-      "en": "seduction documentary",
+      "en": "seduction documentary documentary",
       "ru": "документальный фильм о соблазнении",
       "source": "auto",
       "addedAt": "2026-09-18",
@@ -1955,12 +1955,51 @@
         "channels": 3,
         "lift": 18.4,
         "medianViews": 787003
-      }
+      },
+      "subject": "seduction documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 49
+        },
+        {
+          "format": "full story",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 5
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 43
+        }
+      ]
     },
     {
       "id": "benz",
       "group": "Найдено автоматом",
-      "en": "benz documentary",
+      "en": "benz documentary explained",
       "ru": "документальный фильм о benz",
       "source": "auto",
       "addedAt": "2026-09-18",
@@ -1968,7 +2007,46 @@
         "channels": 3,
         "lift": 13.8,
         "medianViews": 96606
-      }
+      },
+      "subject": "benz documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        },
+        {
+          "format": "explained",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 5
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "complete",
@@ -2007,6 +2085,81 @@
         "channels": 3,
         "lift": 9.2,
         "medianViews": 189840.5
+      }
+    },
+    {
+      "id": "deadly-game",
+      "group": "Найдено автоматом",
+      "subject": "deadly game",
+      "format": "documentary",
+      "en": "deadly game documentary",
+      "ru": "документальный фильм о смертельной игре",
+      "source": "auto",
+      "addedAt": "2026-09-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 13.6,
+        "medianViews": 95497
+      }
+    },
+    {
+      "id": "mama",
+      "group": "Найдено автоматом",
+      "subject": "mama",
+      "format": "documentary",
+      "en": "mama documentary",
+      "ru": "мама документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.9,
+        "medianViews": 51077
+      }
+    },
+    {
+      "id": "drama",
+      "group": "Найдено автоматом",
+      "subject": "drama",
+      "format": "documentary",
+      "en": "drama documentary",
+      "ru": "документальный драматический фильм",
+      "source": "auto",
+      "addedAt": "2026-09-19",
+      "foundVia": {
+        "channels": 7,
+        "lift": 2.7,
+        "medianViews": 346687.5
+      }
+    },
+    {
+      "id": "sang",
+      "group": "Найдено автоматом",
+      "subject": "sang",
+      "format": "documentary",
+      "en": "sang documentary",
+      "ru": "пел документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.1,
+        "medianViews": 52908
+      }
+    },
+    {
+      "id": "sign",
+      "group": "Найдено автоматом",
+      "subject": "sign",
+      "format": "documentary",
+      "en": "sign documentary",
+      "ru": "подписать документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-19",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.1,
+        "medianViews": 59250
       }
     }
   ]
