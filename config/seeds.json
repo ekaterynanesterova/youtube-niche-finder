@@ -2100,7 +2100,44 @@
         "channels": 3,
         "lift": 13.6,
         "medianViews": 95497
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 34
+        },
+        {
+          "format": "full story",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 46
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 6
+        },
+        {
+          "format": "",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "mama",
@@ -2115,7 +2152,44 @@
         "channels": 3,
         "lift": 10.9,
         "medianViews": 51077
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 47
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "drama",
@@ -2271,6 +2345,81 @@
       "ru": "рейтинги и сравнения",
       "source": "manual",
       "addedAt": "2026-09-20"
+    },
+    {
+      "id": "action-drama",
+      "group": "Найдено автоматом",
+      "subject": "action drama",
+      "format": "documentary",
+      "en": "action drama documentary",
+      "ru": "документальный боевик драма",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 3,
+        "lift": 18.6,
+        "medianViews": 107197
+      }
+    },
+    {
+      "id": "talks",
+      "group": "Найдено автоматом",
+      "subject": "talks",
+      "format": "documentary",
+      "en": "talks documentary",
+      "ru": "документальный фильм о переговорах",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 5,
+        "lift": 4.7,
+        "medianViews": 235596
+      }
+    },
+    {
+      "id": "action-thriller",
+      "group": "Найдено автоматом",
+      "subject": "action thriller",
+      "format": "documentary",
+      "en": "action thriller documentary",
+      "ru": "документальный боевик-триллер",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 6,
+        "lift": 3.1,
+        "medianViews": 233578.5
+      }
+    },
+    {
+      "id": "pharaoh",
+      "group": "Найдено автоматом",
+      "subject": "pharaoh",
+      "format": "documentary",
+      "en": "pharaoh documentary",
+      "ru": "документальный фильм о фараоне",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.3,
+        "medianViews": 713726
+      }
+    },
+    {
+      "id": "untouchable",
+      "group": "Найдено автоматом",
+      "subject": "untouchable",
+      "format": "documentary",
+      "en": "untouchable documentary",
+      "ru": "неприкасаемый документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.3,
+        "medianViews": 1212284
+      }
     }
   ]
 }
