@@ -2359,7 +2359,44 @@
         "channels": 3,
         "lift": 18.6,
         "medianViews": 107197
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 30
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 25
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 9
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        }
+      ]
     },
     {
       "id": "talks",
@@ -2374,7 +2411,44 @@
         "channels": 5,
         "lift": 4.7,
         "medianViews": 235596
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.23,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 42
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 39
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        },
+        {
+          "format": "",
+          "score": 0.55,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 19
+        }
+      ]
     },
     {
       "id": "action-thriller",
@@ -2419,6 +2493,81 @@
         "channels": 3,
         "lift": 9.3,
         "medianViews": 1212284
+      }
+    },
+    {
+      "id": "saga",
+      "group": "Найдено автоматом",
+      "subject": "saga",
+      "format": "documentary",
+      "en": "saga documentary",
+      "ru": "документальный фильм о саге",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8,
+        "medianViews": 61259
+      }
+    },
+    {
+      "id": "martial-arts",
+      "group": "Найдено автоматом",
+      "subject": "martial arts",
+      "format": "documentary",
+      "en": "martial arts documentary",
+      "ru": "документальный фильм о боевых искусствах",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 5,
+        "lift": 3.3,
+        "medianViews": 167450.5
+      }
+    },
+    {
+      "id": "thriller-action",
+      "group": "Найдено автоматом",
+      "subject": "thriller action",
+      "format": "documentary",
+      "en": "thriller action documentary",
+      "ru": "документальный боевик триллер",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.2,
+        "medianViews": 761864
+      }
+    },
+    {
+      "id": "thriller",
+      "group": "Найдено автоматом",
+      "subject": "thriller",
+      "format": "documentary",
+      "en": "thriller documentary",
+      "ru": "документальный триллер",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4.3,
+        "medianViews": 198457.5
+      }
+    },
+    {
+      "id": "fantasy",
+      "group": "Найдено автоматом",
+      "subject": "fantasy",
+      "format": "documentary",
+      "en": "fantasy documentary",
+      "ru": "документальный фильм о фэнтези",
+      "source": "auto",
+      "addedAt": "2026-09-20",
+      "foundVia": {
+        "channels": 3,
+        "lift": 6.9,
+        "medianViews": 826605
       }
     }
   ]
