@@ -2161,6 +2161,116 @@
         "lift": 9.1,
         "medianViews": 59250
       }
+    },
+    {
+      "id": "sleep-ambience",
+      "group": "Безликие форматы",
+      "subject": "sleep ambience",
+      "format": "",
+      "en": "sleep ambience",
+      "ru": "эмбиент для сна",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "rain-sounds",
+      "group": "Безликие форматы",
+      "subject": "rain sounds sleeping",
+      "format": "",
+      "en": "rain sounds sleeping",
+      "ru": "звуки дождя",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "ocean-ambience",
+      "group": "Безликие форматы",
+      "subject": "ocean waves ambience",
+      "format": "",
+      "en": "ocean waves ambience",
+      "ru": "шум океана",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "cozy-ambience",
+      "group": "Безликие форматы",
+      "subject": "cozy fireplace ambience",
+      "format": "",
+      "en": "cozy fireplace ambience",
+      "ru": "уютный камин",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "size-comparison",
+      "group": "Безликие форматы",
+      "subject": "size comparison",
+      "format": "",
+      "en": "size comparison",
+      "ru": "сравнение размеров",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "scale-universe",
+      "group": "Безликие форматы",
+      "subject": "scale of the universe",
+      "format": "",
+      "en": "scale of the universe",
+      "ru": "масштабы Вселенной",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "what-if",
+      "group": "Безликие форматы",
+      "subject": "what if",
+      "format": "explained",
+      "en": "what if explained",
+      "ru": "что если",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "how-it-works",
+      "group": "Безликие форматы",
+      "subject": "how it works",
+      "format": "explained",
+      "en": "how it works explained",
+      "ru": "как это устроено",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "unsolved-mystery",
+      "group": "Безликие форматы",
+      "subject": "unsolved mystery",
+      "format": "",
+      "en": "unsolved mystery",
+      "ru": "нераскрытые тайны",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "timelapse-future",
+      "group": "Безликие форматы",
+      "subject": "timelapse of the future",
+      "format": "",
+      "en": "timelapse of the future",
+      "ru": "таймлапс будущего",
+      "source": "manual",
+      "addedAt": "2026-09-20"
+    },
+    {
+      "id": "data-ranking",
+      "group": "Безликие форматы",
+      "subject": "ranked comparison",
+      "format": "",
+      "en": "ranked comparison",
+      "ru": "рейтинги и сравнения",
+      "source": "manual",
+      "addedAt": "2026-09-20"
     }
   ]
 }

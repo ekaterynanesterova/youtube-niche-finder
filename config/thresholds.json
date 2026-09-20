@@ -29,7 +29,12 @@
   "startingUsd": 400,
   "trendingCategories": [
     "27",
-    "28"
+    "28",
+    "22",
+    "10",
+    "15",
+    "19",
+    "24"
   ],
   "backfillUnitBudget": 800,
   "topicSingleWordLift": 8,
