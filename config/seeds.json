@@ -2463,7 +2463,44 @@
         "channels": 6,
         "lift": 3.1,
         "medianViews": 233578.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 39
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 39
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 36
+        }
+      ]
     },
     {
       "id": "pharaoh",
@@ -2478,7 +2515,44 @@
         "channels": 3,
         "lift": 9.3,
         "medianViews": 713726
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 26
+        },
+        {
+          "format": "explained",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 32
+        },
+        {
+          "format": "the truth about",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 41
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "untouchable",
@@ -2568,6 +2642,81 @@
         "channels": 3,
         "lift": 6.9,
         "medianViews": 826605
+      }
+    },
+    {
+      "id": "action-adventure",
+      "group": "Найдено автоматом",
+      "subject": "action adventure",
+      "format": "documentary",
+      "en": "action adventure documentary",
+      "ru": "приключенческий документальный боевик",
+      "source": "auto",
+      "addedAt": "2026-09-21",
+      "foundVia": {
+        "channels": 4,
+        "lift": 4.8,
+        "medianViews": 750408
+      }
+    },
+    {
+      "id": "crime",
+      "group": "Найдено автоматом",
+      "subject": "crime",
+      "format": "documentary",
+      "en": "crime documentary",
+      "ru": "криминальный документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 7.9,
+        "medianViews": 103745
+      }
+    },
+    {
+      "id": "dollar",
+      "group": "Найдено автоматом",
+      "subject": "dollar",
+      "format": "documentary",
+      "en": "dollar documentary",
+      "ru": "долларовый документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.3,
+        "medianViews": 220796.5
+      }
+    },
+    {
+      "id": "ancient-egypt",
+      "group": "Найдено автоматом",
+      "subject": "ancient egypt",
+      "format": "documentary",
+      "en": "ancient egypt documentary",
+      "ru": "документальный фильм о древнем Египте",
+      "source": "auto",
+      "addedAt": "2026-09-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.6,
+        "medianViews": 317919
+      }
+    },
+    {
+      "id": "horror-sci",
+      "group": "Найдено автоматом",
+      "subject": "horror sci",
+      "format": "documentary",
+      "en": "horror sci documentary",
+      "ru": "научно-популярный документальный фильм ужасов",
+      "source": "auto",
+      "addedAt": "2026-09-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.9,
+        "medianViews": 436331
       }
     }
   ]
