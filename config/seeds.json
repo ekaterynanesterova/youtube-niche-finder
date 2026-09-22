@@ -2657,7 +2657,44 @@
         "channels": 4,
         "lift": 4.8,
         "medianViews": 750408
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 43
+        },
+        {
+          "format": "explained",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 29
+        },
+        {
+          "format": "full story",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 39
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 41
+        }
+      ]
     },
     {
       "id": "crime",
@@ -2672,7 +2709,44 @@
         "channels": 3,
         "lift": 7.9,
         "medianViews": 103745
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.58,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 21
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 32
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 32
+        },
+        {
+          "format": "the truth about",
+          "score": 0.46,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 8
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "dollar",
@@ -2717,6 +2791,81 @@
         "channels": 3,
         "lift": 3.9,
         "medianViews": 436331
+      }
+    },
+    {
+      "id": "mob",
+      "group": "Найдено автоматом",
+      "subject": "mob",
+      "format": "documentary",
+      "en": "mob documentary",
+      "ru": "документальный фильм о мобе",
+      "source": "auto",
+      "addedAt": "2026-09-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.2,
+        "medianViews": 162724
+      }
+    },
+    {
+      "id": "review",
+      "group": "Найдено автоматом",
+      "subject": "review",
+      "format": "documentary",
+      "en": "review documentary",
+      "ru": "просмотр документального фильма",
+      "source": "auto",
+      "addedAt": "2026-09-22",
+      "foundVia": {
+        "channels": 5,
+        "lift": 2.6,
+        "medianViews": 143313
+      }
+    },
+    {
+      "id": "bermuda-triangle",
+      "group": "Найдено автоматом",
+      "subject": "bermuda triangle",
+      "format": "documentary",
+      "en": "bermuda triangle documentary",
+      "ru": "документальный фильм о бермудском треугольнике",
+      "source": "auto",
+      "addedAt": "2026-09-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.6,
+        "medianViews": 1425800
+      }
+    },
+    {
+      "id": "sea-creatures",
+      "group": "Найдено автоматом",
+      "subject": "sea creatures",
+      "format": "documentary",
+      "en": "sea creatures documentary",
+      "ru": "документальный фильм о морских существах",
+      "source": "auto",
+      "addedAt": "2026-09-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 2.9,
+        "medianViews": 768667
+      }
+    },
+    {
+      "id": "beautiful-women",
+      "group": "Найдено автоматом",
+      "subject": "beautiful women",
+      "format": "documentary",
+      "en": "beautiful women documentary",
+      "ru": "документальный фильм о красивых женщинах",
+      "source": "auto",
+      "addedAt": "2026-09-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 2.7,
+        "medianViews": 67167.5
       }
     }
   ]
