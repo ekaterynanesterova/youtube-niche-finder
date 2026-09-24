@@ -2946,8 +2946,8 @@
       "id": "sheep",
       "group": "Найдено автоматом",
       "subject": "sheep",
-      "format": "documentary",
-      "en": "sheep documentary",
+      "format": "explained",
+      "en": "sheep explained",
       "ru": "документальный фильм о овцах",
       "source": "auto",
       "addedAt": "2026-09-23",
@@ -2955,14 +2955,51 @@
         "channels": 3,
         "lift": 12.1,
         "medianViews": 126767
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        },
+        {
+          "format": "explained",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 49
+        },
+        {
+          "format": "full story",
+          "score": 0.57,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 21
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 49
+        },
+        {
+          "format": "",
+          "score": 0.51,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 14
+        }
+      ]
     },
     {
       "id": "behind",
       "group": "Найдено автоматом",
       "subject": "behind",
-      "format": "documentary",
-      "en": "behind documentary",
+      "format": "explained",
+      "en": "behind explained",
       "ru": "за документальным",
       "source": "auto",
       "addedAt": "2026-09-23",
@@ -2970,7 +3007,44 @@
         "channels": 3,
         "lift": 2.7,
         "medianViews": 317858
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.58,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 22
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 48
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 46
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        }
+      ]
     },
     {
       "id": "scientists-finally",
@@ -3015,6 +3089,81 @@
         "channels": 19,
         "lift": 2.8,
         "medianViews": 92697
+      }
+    },
+    {
+      "id": "walker",
+      "group": "Найдено автоматом",
+      "subject": "walker",
+      "format": "documentary",
+      "en": "walker documentary",
+      "ru": "документальный фильм о ходячих",
+      "source": "auto",
+      "addedAt": "2026-09-24",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.1,
+        "medianViews": 236498
+      }
+    },
+    {
+      "id": "greene",
+      "group": "Найдено автоматом",
+      "subject": "greene",
+      "format": "documentary",
+      "en": "greene documentary",
+      "ru": "greene документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-24",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.1,
+        "medianViews": 120336
+      }
+    },
+    {
+      "id": "iceberg",
+      "group": "Найдено автоматом",
+      "subject": "iceberg",
+      "format": "documentary",
+      "en": "iceberg documentary",
+      "ru": "документальный фильм об айсберге",
+      "source": "auto",
+      "addedAt": "2026-09-24",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.3,
+        "medianViews": 791549
+      }
+    },
+    {
+      "id": "great-lakes",
+      "group": "Найдено автоматом",
+      "subject": "great lakes",
+      "format": "documentary",
+      "en": "great lakes documentary",
+      "ru": "документальный фильм о великих озерах",
+      "source": "auto",
+      "addedAt": "2026-09-24",
+      "foundVia": {
+        "channels": 15,
+        "lift": 3.5,
+        "medianViews": 38893.5
+      }
+    },
+    {
+      "id": "answer",
+      "group": "Найдено автоматом",
+      "subject": "answer",
+      "format": "documentary",
+      "en": "answer documentary",
+      "ru": "документальный фильм с ответом",
+      "source": "auto",
+      "addedAt": "2026-09-24",
+      "foundVia": {
+        "channels": 18,
+        "lift": 2.6,
+        "medianViews": 78922
       }
     }
   ]
