@@ -3095,8 +3095,8 @@
       "id": "walker",
       "group": "Найдено автоматом",
       "subject": "walker",
-      "format": "documentary",
-      "en": "walker documentary",
+      "format": "the truth about",
+      "en": "the truth about walker",
       "ru": "документальный фильм о ходячих",
       "source": "auto",
       "addedAt": "2026-09-24",
@@ -3104,14 +3104,51 @@
         "channels": 3,
         "lift": 8.1,
         "medianViews": 236498
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 43
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 43
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 47
+        },
+        {
+          "format": "the truth about",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 40
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 47
+        }
+      ]
     },
     {
       "id": "greene",
       "group": "Найдено автоматом",
       "subject": "greene",
-      "format": "documentary",
-      "en": "greene documentary",
+      "format": "the truth about",
+      "en": "the truth about greene",
       "ru": "greene документальный фильм",
       "source": "auto",
       "addedAt": "2026-09-24",
@@ -3119,7 +3156,44 @@
         "channels": 3,
         "lift": 8.1,
         "medianViews": 120336
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.85,
+          "longShare": 1,
+          "smallShare": 0.63,
+          "channels": 42
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "iceberg",
@@ -3164,6 +3238,81 @@
         "channels": 18,
         "lift": 2.6,
         "medianViews": 78922
+      }
+    },
+    {
+      "id": "years-ago",
+      "group": "Найдено автоматом",
+      "subject": "years ago",
+      "format": "documentary",
+      "en": "years ago documentary",
+      "ru": "лет назад документальный",
+      "source": "auto",
+      "addedAt": "2026-09-25",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.4,
+        "medianViews": 31713
+      }
+    },
+    {
+      "id": "wild-animals",
+      "group": "Найдено автоматом",
+      "subject": "wild animals",
+      "format": "documentary",
+      "en": "wild animals documentary",
+      "ru": "документальный фильм о диких животных",
+      "source": "auto",
+      "addedAt": "2026-09-25",
+      "foundVia": {
+        "channels": 16,
+        "lift": 2.8,
+        "medianViews": 120322
+      }
+    },
+    {
+      "id": "finally-reveal",
+      "group": "Найдено автоматом",
+      "subject": "finally reveal",
+      "format": "documentary",
+      "en": "finally reveal documentary",
+      "ru": "наконец-то раскрыть документальный",
+      "source": "auto",
+      "addedAt": "2026-09-25",
+      "foundVia": {
+        "channels": 9,
+        "lift": 5.8,
+        "medianViews": 74718.5
+      }
+    },
+    {
+      "id": "secret-behind-mount",
+      "group": "Найдено автоматом",
+      "subject": "secret behind mount",
+      "format": "documentary",
+      "en": "secret behind mount documentary",
+      "ru": "документальный фильм \"Секрет за горой\"",
+      "source": "auto",
+      "addedAt": "2026-09-25",
+      "foundVia": {
+        "channels": 9,
+        "lift": 5.7,
+        "medianViews": 312335
+      }
+    },
+    {
+      "id": "first-civilization",
+      "group": "Найдено автоматом",
+      "subject": "first civilization",
+      "format": "documentary",
+      "en": "first civilization documentary",
+      "ru": "документальный фильм о первой цивилизации",
+      "source": "auto",
+      "addedAt": "2026-09-25",
+      "foundVia": {
+        "channels": 12,
+        "lift": 3.6,
+        "medianViews": 83279.5
       }
     }
   ]
