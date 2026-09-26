@@ -126,6 +126,12 @@ jobs:
             node src/index.js \
               ${{ github.event.inputs.checkRemote == 'true' && '--check-remote' || '' }} \
               ${{ github.event.inputs.metricsOnly == 'true' && '--metrics-only' || '' }}
+            # Отчёт по космосу для канала. Раньше собирался только руками и
+            # за неделю устарел — а его читает другая сессия, которая
+            # планирует ролики. Пусть пересобирается с каждым сбором.
+            if [ "${{ github.event.inputs.checkRemote }}" != "true" ] && [ -f data/videos.json.gz ]; then
+              node tools/space-report.mjs > docs/космос-afterlight.md || echo "Отчёт по космосу не собрался"
+            fi
           fi
 
       # Сохраняем даже если прогон упал. Оркестратор пишет базу в finally,
