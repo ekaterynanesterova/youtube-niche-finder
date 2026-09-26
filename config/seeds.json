@@ -3463,6 +3463,81 @@
         "lift": 3.3,
         "medianViews": 63548
       }
+    },
+    {
+      "id": "monks",
+      "group": "Найдено автоматом",
+      "subject": "monks",
+      "format": "documentary",
+      "en": "monks documentary",
+      "ru": "документальный фильм о монахах",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 8,
+        "lift": 5,
+        "medianViews": 96301.5
+      }
+    },
+    {
+      "id": "beyond",
+      "group": "Найдено автоматом",
+      "subject": "beyond",
+      "format": "documentary",
+      "en": "beyond documentary",
+      "ru": "за рамками документального",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 5,
+        "lift": 12.9,
+        "medianViews": 191444
+      }
+    },
+    {
+      "id": "attacks",
+      "group": "Найдено автоматом",
+      "subject": "attacks",
+      "format": "documentary",
+      "en": "attacks documentary",
+      "ru": "документальный фильм о нападениях",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 9,
+        "lift": 4,
+        "medianViews": 309054
+      }
+    },
+    {
+      "id": "happening-right",
+      "group": "Найдено автоматом",
+      "subject": "happening right",
+      "format": "documentary",
+      "en": "happening right documentary",
+      "ru": "происходит правильный документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 8,
+        "lift": 4.6,
+        "medianViews": 521154.5
+      }
+    },
+    {
+      "id": "coldest-place",
+      "group": "Найдено автоматом",
+      "subject": "coldest place",
+      "format": "documentary",
+      "en": "coldest place documentary",
+      "ru": "документальный фильм о самом холодном месте",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 10,
+        "lift": 3.3,
+        "medianViews": 111566.5
+      }
     }
   ]
 }
