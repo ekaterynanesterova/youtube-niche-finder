@@ -64,9 +64,20 @@ for (const t of spec) {
   const recent = all.filter((v) => v.age <= 60);
   console.log(`  вышло за 60 дней: ${recent.length}` + (recent.length ? `, медиана сейчас ${nn(q(recent.map((v) => v.views), 0.5))}` : ''));
   console.log('');
-  console.log('  ролики каналов меньше 100 тыс подписчиков, по просмотрам:');
-  for (const v of [...small, ...mid].sort((a, b) => b.views - a.views).slice(0, 12)) {
-    console.log(`    ${nn(v.views).padStart(10)}  ${nn(v.subs).padStart(8)} подп  ${String(Math.round(v.age)).padStart(4)} дн  ${Math.round(v.durationSec / 60)} мин  ${v.title.slice(0, 60)}`);
+  // Со ссылками: по ним открывают и смотрят, как сделано, а не только сколько набрало.
+  const line = (v) => `    ${nn(v.views).padStart(10)}  ${nn(v.subs).padStart(9)} подп  ${String(Math.round(v.age)).padStart(4)} дн  `
+    + `${String(Math.round(v.durationSec / 60)).padStart(3)} мин  https://youtu.be/${v.id}  ${v.title.slice(0, 70)}  [${v.ch}]`;
+  for (const [label, g, n] of [['каналы до 10 тыс подписчиков — твоя группа', small, 10],
+                               ['каналы 10–100 тыс', mid, 8],
+                               ['каналы больше 100 тыс', big, 6]]) {
+    console.log(`  ${label}, лучшие по просмотрам:`);
+    for (const v of [...g].sort((a, b) => b.views - a.views).slice(0, n)) console.log(line(v));
+    console.log('');
   }
-  console.log('');
+  const fresh = all.filter((v) => v.age <= 60).sort((a, b) => b.views - a.views).slice(0, 8);
+  if (fresh.length) {
+    console.log('  вышли за последние 60 дней:');
+    for (const v of fresh) console.log(line(v));
+    console.log('');
+  }
 }
