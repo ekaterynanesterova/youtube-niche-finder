@@ -27,6 +27,9 @@ on:
       lookVideos:
         description: 'Разобрать конкретные ролики: id через запятую. Тратит единицы юнитов, базу не меняет'
         default: ''
+      topicStats:
+        description: 'Распределение просмотров по темам: «Имя=regex;Имя=regex». Квоту не тратит, базу не меняет'
+        default: ''
   schedule:
     # 07:30 UTC — через полчаса после летнего обнуления квоты Google.
     #
@@ -118,7 +121,9 @@ jobs:
           UNIT_BUDGET: ${{ github.event.inputs.unitBudget || '9000' }}
           ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}
         run: |
-          if [ -n "${{ github.event.inputs.lookVideos }}" ]; then
+          if [ -n "${{ github.event.inputs.topicStats }}" ]; then
+            TOPICS="${{ github.event.inputs.topicStats }}" node tools/topic-stats.mjs
+          elif [ -n "${{ github.event.inputs.lookVideos }}" ]; then
             LOOK_VIDEOS="${{ github.event.inputs.lookVideos }}" node tools/look.mjs
           elif [ "${{ github.event.inputs.lensTest }}" = "true" ]; then
             node tools/lens-test.mjs
@@ -139,7 +144,7 @@ jobs:
       # одном мёртвом канале выбрасывало четыре тысячи потраченных юнитов
       # и целый день сбора вместе с ними.
       - name: Убрать базу на хранение
-        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == ''
+        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == '' && github.event.inputs.topicStats == ''
         uses: actions/cache/save@v4
         with:
           path: data
@@ -149,7 +154,7 @@ jobs:
       # ускоритель. Отдельная копия артефактом даёт откуда восстановиться,
       # если кэш пропадёт: скачивается со страницы прогона руками.
       - name: Запасная копия базы
-        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == ''
+        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == '' && github.event.inputs.topicStats == ''
         uses: actions/upload-artifact@v4
         with:
           name: niche-db-${{ github.run_id }}
@@ -173,7 +178,7 @@ jobs:
       # в git. Если порог сработал — это не повод его поднять, это повод
       # выяснить, что именно распухло.
       - name: Проверка веса коммита
-        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == ''
+        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == '' && github.event.inputs.topicStats == ''
         run: |
           git add -A reports docs config index.html
           if git diff --staged --name-only | grep -q '^data/'; then
@@ -194,7 +199,7 @@ jobs:
           fi
 
       - name: Коммит страницы и отчётов
-        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == ''
+        if: always() && github.event.inputs.checkRemote != 'true' && github.event.inputs.lensTest != 'true' && github.event.inputs.lookVideos == '' && github.event.inputs.topicStats == ''
         run: |
           git config user.name "niche-finder"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
