@@ -3244,8 +3244,8 @@
       "id": "years-ago",
       "group": "Найдено автоматом",
       "subject": "years ago",
-      "format": "documentary",
-      "en": "years ago documentary",
+      "format": "explained",
+      "en": "years ago explained",
       "ru": "лет назад документальный",
       "source": "auto",
       "addedAt": "2026-09-25",
@@ -3253,14 +3253,51 @@
         "channels": 3,
         "lift": 3.4,
         "medianViews": 31713
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.58,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 22
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 45
+        },
+        {
+          "format": "full story",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 45
+        },
+        {
+          "format": "the truth about",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 42
+        },
+        {
+          "format": "",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "wild-animals",
       "group": "Найдено автоматом",
       "subject": "wild animals",
-      "format": "documentary",
-      "en": "wild animals documentary",
+      "format": "explained",
+      "en": "wild animals explained",
       "ru": "документальный фильм о диких животных",
       "source": "auto",
       "addedAt": "2026-09-25",
@@ -3268,7 +3305,44 @@
         "channels": 16,
         "lift": 2.8,
         "medianViews": 120322
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 29
+        },
+        {
+          "format": "the truth about",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.29,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "finally-reveal",
@@ -3313,6 +3387,81 @@
         "channels": 12,
         "lift": 3.6,
         "medianViews": 83279.5
+      }
+    },
+    {
+      "id": "behind-mount-kailash",
+      "group": "Найдено автоматом",
+      "subject": "behind mount kailash",
+      "format": "documentary",
+      "en": "behind mount kailash documentary",
+      "ru": "за документальным фильмом о горе Кайлас",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 9,
+        "lift": 5.3,
+        "medianViews": 312351
+      }
+    },
+    {
+      "id": "people",
+      "group": "Найдено автоматом",
+      "subject": "people",
+      "format": "documentary",
+      "en": "people documentary",
+      "ru": "документальный фильм о людях",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 14,
+        "lift": 2.7,
+        "medianViews": 127987
+      }
+    },
+    {
+      "id": "true-scale",
+      "group": "Найдено автоматом",
+      "subject": "true scale",
+      "format": "documentary",
+      "en": "true scale documentary",
+      "ru": "документальный фильм о истинных масштабах",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 13,
+        "lift": 2.8,
+        "medianViews": 63955
+      }
+    },
+    {
+      "id": "sense",
+      "group": "Найдено автоматом",
+      "subject": "sense",
+      "format": "documentary",
+      "en": "sense documentary",
+      "ru": "документальный фильм о смысле",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 12,
+        "lift": 3,
+        "medianViews": 104388.5
+      }
+    },
+    {
+      "id": "jesus-resurrection",
+      "group": "Найдено автоматом",
+      "subject": "jesus resurrection",
+      "format": "documentary",
+      "en": "jesus resurrection documentary",
+      "ru": "документальный фильм о воскресении Иисуса",
+      "source": "auto",
+      "addedAt": "2026-09-26",
+      "foundVia": {
+        "channels": 11,
+        "lift": 3.3,
+        "medianViews": 63548
       }
     }
   ]
