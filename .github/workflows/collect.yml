@@ -30,6 +30,10 @@ on:
       topicStats:
         description: 'Распределение просмотров по темам: «Имя=regex;Имя=regex». Квоту не тратит, базу не меняет'
         default: ''
+      topicBrief:
+        description: 'К topicStats: одна строка на тему вместо подробной раскладки'
+        type: boolean
+        default: false
   schedule:
     # 07:30 UTC — через полчаса после летнего обнуления квоты Google.
     #
@@ -122,7 +126,7 @@ jobs:
           ONLY_SEEDS: ${{ github.event.inputs.onlySeeds }}
         run: |
           if [ -n "${{ github.event.inputs.topicStats }}" ]; then
-            TOPICS="${{ github.event.inputs.topicStats }}" node tools/topic-stats.mjs
+            TOPICS="${{ github.event.inputs.topicStats }}" TOPICS_BRIEF="${{ github.event.inputs.topicBrief == 'true' && '1' || '' }}" node tools/topic-stats.mjs
           elif [ -n "${{ github.event.inputs.lookVideos }}" ]; then
             LOOK_VIDEOS="${{ github.event.inputs.lookVideos }}" node tools/look.mjs
           elif [ "${{ github.event.inputs.lensTest }}" = "true" ]; then

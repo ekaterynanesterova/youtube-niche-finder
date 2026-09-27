@@ -32,6 +32,16 @@ function day7(v) {
   return gap <= 1.5 ? best : null;
 }
 
+// Короткий режим: одна строка на тему, только группа каналов до 10 тысяч
+// подписчиков. Для сравнения двадцати тем разом подробная раскладка не
+// читается.
+const BRIEF = process.env.TOPICS_BRIEF === '1';
+if (BRIEF) {
+  console.log('Каналы до 10 тыс подписчиков, ролики длиннее 8 минут и старше месяца.');
+  console.log('');
+  console.log('тема'.padEnd(34) + 'роликов  обычный  верх.четв  верх.10%  ≥10к   за 60 дн  лучший у малых');
+}
+
 for (const t of spec) {
   const all = [];
   for (const v of Object.values(V)) {
@@ -49,6 +59,16 @@ for (const t of spec) {
   const mid = settled.filter((v) => v.subs != null && v.subs >= 10000 && v.subs < 100000);
   const big = settled.filter((v) => v.subs != null && v.subs >= 100000);
 
+  if (BRIEF) {
+    const vs = small.map((v) => v.views);
+    const top = [...small].sort((a, b) => b.views - a.views)[0];
+    console.log(t.name.padEnd(34)
+      + String(small.length).padStart(7) + nn(q(vs, 0.5)).padStart(9) + nn(q(vs, 0.75)).padStart(11)
+      + nn(q(vs, 0.9)).padStart(10) + pct(small.filter((v) => v.views >= 10000).length, small.length).padStart(6)
+      + String(all.filter((v) => v.age <= 60).length).padStart(10)
+      + (top ? `   ${nn(top.views)} https://youtu.be/${top.id}` : ''));
+    continue;
+  }
   console.log('='.repeat(70));
   console.log(`${t.name}   (роликов длиннее 8 минут: ${all.length}, из них старше месяца: ${settled.length})`);
   console.log('');
