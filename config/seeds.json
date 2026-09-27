@@ -3393,8 +3393,8 @@
       "id": "behind-mount-kailash",
       "group": "Найдено автоматом",
       "subject": "behind mount kailash",
-      "format": "documentary",
-      "en": "behind mount kailash documentary",
+      "format": "explained",
+      "en": "behind mount kailash explained",
       "ru": "за документальным фильмом о горе Кайлас",
       "source": "auto",
       "addedAt": "2026-09-26",
@@ -3402,7 +3402,44 @@
         "channels": 9,
         "lift": 5.3,
         "medianViews": 312351
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.35,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.52,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.53,
+          "channels": 45
+        },
+        {
+          "format": "the truth about",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.56,
+          "channels": 43
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        }
+      ]
     },
     {
       "id": "people",
@@ -3417,7 +3454,44 @@
         "channels": 14,
         "lift": 2.7,
         "medianViews": 127987
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 29
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 43
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "true-scale",
@@ -3537,6 +3611,81 @@
         "channels": 10,
         "lift": 3.3,
         "medianViews": 111566.5
+      }
+    },
+    {
+      "id": "wild-serengeti",
+      "group": "Найдено автоматом",
+      "subject": "wild serengeti",
+      "format": "documentary",
+      "en": "wild serengeti documentary",
+      "ru": "документальный фильм о диких серенгети",
+      "source": "auto",
+      "addedAt": "2026-09-27",
+      "foundVia": {
+        "channels": 8,
+        "lift": 4.4,
+        "medianViews": 284285.5
+      }
+    },
+    {
+      "id": "white-shark-whole",
+      "group": "Найдено автоматом",
+      "subject": "white shark whole",
+      "format": "documentary",
+      "en": "white shark whole documentary",
+      "ru": "весь документальный фильм о белой акуле",
+      "source": "auto",
+      "addedAt": "2026-09-27",
+      "foundVia": {
+        "channels": 7,
+        "lift": 5.4,
+        "medianViews": 92350.5
+      }
+    },
+    {
+      "id": "saw",
+      "group": "Найдено автоматом",
+      "subject": "saw",
+      "format": "documentary",
+      "en": "saw documentary",
+      "ru": "видел документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-27",
+      "foundVia": {
+        "channels": 9,
+        "lift": 3.7,
+        "medianViews": 92386
+      }
+    },
+    {
+      "id": "noah-s-ark",
+      "group": "Найдено автоматом",
+      "subject": "noah’s ark",
+      "format": "documentary",
+      "en": "noah’s ark documentary",
+      "ru": "документальный фильм о Ноевом ковчеге",
+      "source": "auto",
+      "addedAt": "2026-09-27",
+      "foundVia": {
+        "channels": 9,
+        "lift": 3.6,
+        "medianViews": 73066
+      }
+    },
+    {
+      "id": "crop-circle",
+      "group": "Найдено автоматом",
+      "subject": "crop circle",
+      "format": "documentary",
+      "en": "crop circle documentary",
+      "ru": "документальный фильм о кругах на полях",
+      "source": "auto",
+      "addedAt": "2026-09-27",
+      "foundVia": {
+        "channels": 8,
+        "lift": 4.2,
+        "medianViews": 51481
       }
     }
   ]
