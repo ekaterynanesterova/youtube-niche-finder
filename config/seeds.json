@@ -3626,14 +3626,51 @@
         "channels": 8,
         "lift": 4.4,
         "medianViews": 284285.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 30
+        },
+        {
+          "format": "explained",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 5
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 10
+        },
+        {
+          "format": "the truth about",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 4
+        },
+        {
+          "format": "",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.23,
+          "channels": 30
+        }
+      ]
     },
     {
       "id": "white-shark-whole",
       "group": "Найдено автоматом",
       "subject": "white shark whole",
-      "format": "documentary",
-      "en": "white shark whole documentary",
+      "format": "the truth about",
+      "en": "the truth about white shark whole",
       "ru": "весь документальный фильм о белой акуле",
       "source": "auto",
       "addedAt": "2026-09-27",
@@ -3641,7 +3678,44 @@
         "channels": 7,
         "lift": 5.4,
         "medianViews": 92350.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 31
+        },
+        {
+          "format": "explained",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.44,
+          "channels": 16
+        },
+        {
+          "format": "full story",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.38,
+          "channels": 21
+        },
+        {
+          "format": "the truth about",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.7,
+          "channels": 29
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 28
+        }
+      ]
     },
     {
       "id": "saw",
@@ -3686,6 +3760,51 @@
         "channels": 8,
         "lift": 4.2,
         "medianViews": 51481
+      }
+    },
+    {
+      "id": "mystery-finally",
+      "group": "Найдено автоматом",
+      "subject": "mystery finally",
+      "format": "documentary",
+      "en": "mystery finally documentary",
+      "ru": "тайна наконец-то документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-09-28",
+      "foundVia": {
+        "channels": 12,
+        "lift": 2.7,
+        "medianViews": 56087.5
+      }
+    },
+    {
+      "id": "bible",
+      "group": "Найдено автоматом",
+      "subject": "bible",
+      "format": "documentary",
+      "en": "bible documentary",
+      "ru": "документальный фильм о Библии",
+      "source": "auto",
+      "addedAt": "2026-09-28",
+      "foundVia": {
+        "channels": 12,
+        "lift": 2.6,
+        "medianViews": 136534
+      }
+    },
+    {
+      "id": "wild-arctic",
+      "group": "Найдено автоматом",
+      "subject": "wild arctic",
+      "format": "documentary",
+      "en": "wild arctic documentary",
+      "ru": "документальный фильм о дикой Арктике",
+      "source": "auto",
+      "addedAt": "2026-09-28",
+      "foundVia": {
+        "channels": 6,
+        "lift": 6.7,
+        "medianViews": 154924
       }
     }
   ]
