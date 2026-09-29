@@ -3766,8 +3766,8 @@
       "id": "mystery-finally",
       "group": "Найдено автоматом",
       "subject": "mystery finally",
-      "format": "documentary",
-      "en": "mystery finally documentary",
+      "format": "the truth about",
+      "en": "the truth about mystery finally",
       "ru": "тайна наконец-то документальный фильм",
       "source": "auto",
       "addedAt": "2026-09-28",
@@ -3775,7 +3775,44 @@
         "channels": 12,
         "lift": 2.7,
         "medianViews": 56087.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 33
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 0.97,
+          "smallShare": 0.06,
+          "channels": 28
+        },
+        {
+          "format": "the truth about",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.24,
+          "channels": 29
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "bible",
@@ -3790,7 +3827,44 @@
         "channels": 12,
         "lift": 2.6,
         "medianViews": 136534
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 30
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 27
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 28
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "wild-arctic",
