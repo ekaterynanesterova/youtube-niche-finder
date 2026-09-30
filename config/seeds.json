@@ -3721,8 +3721,8 @@
       "id": "saw",
       "group": "Найдено автоматом",
       "subject": "saw",
-      "format": "documentary",
-      "en": "saw documentary",
+      "format": "the truth about",
+      "en": "the truth about saw",
       "ru": "видел документальный фильм",
       "source": "auto",
       "addedAt": "2026-09-27",
@@ -3730,7 +3730,44 @@
         "channels": 9,
         "lift": 3.7,
         "medianViews": 92386
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 39
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 40
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 49
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "noah-s-ark",
@@ -3879,7 +3916,44 @@
         "channels": 6,
         "lift": 6.7,
         "medianViews": 154924
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 37
+        },
+        {
+          "format": "explained",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 2
+        },
+        {
+          "format": "full story",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 12
+        },
+        {
+          "format": "the truth about",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 6
+        },
+        {
+          "format": "",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 33
+        }
+      ]
     }
   ]
 }
