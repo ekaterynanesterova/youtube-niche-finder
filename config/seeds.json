@@ -3773,8 +3773,8 @@
       "id": "noah-s-ark",
       "group": "Найдено автоматом",
       "subject": "noah’s ark",
-      "format": "documentary",
-      "en": "noah’s ark documentary",
+      "format": "the truth about",
+      "en": "the truth about noah’s ark",
       "ru": "документальный фильм о Ноевом ковчеге",
       "source": "auto",
       "addedAt": "2026-09-27",
@@ -3782,14 +3782,51 @@
         "channels": 9,
         "lift": 3.6,
         "medianViews": 73066
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 46
+        },
+        {
+          "format": "explained",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.23,
+          "channels": 48
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.37,
+          "channels": 45
+        },
+        {
+          "format": "",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 42
+        }
+      ]
     },
     {
       "id": "crop-circle",
       "group": "Найдено автоматом",
       "subject": "crop circle",
-      "format": "documentary",
-      "en": "crop circle documentary",
+      "format": "explained",
+      "en": "crop circle explained",
       "ru": "документальный фильм о кругах на полях",
       "source": "auto",
       "addedAt": "2026-09-27",
@@ -3797,7 +3834,44 @@
         "channels": 8,
         "lift": 4.2,
         "medianViews": 51481
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.15,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 38
+        },
+        {
+          "format": "the truth about",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.31,
+          "channels": 38
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "mystery-finally",
@@ -3954,6 +4028,21 @@
           "channels": 33
         }
       ]
+    },
+    {
+      "id": "unseen-china",
+      "group": "Найдено автоматом",
+      "subject": "unseen china",
+      "format": "documentary",
+      "en": "unseen china documentary",
+      "ru": "невидимый китайский документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-10-01",
+      "foundVia": {
+        "channels": 11,
+        "lift": 2.8,
+        "medianViews": 108014
+      }
     }
   ]
 }
