@@ -3497,8 +3497,8 @@
       "id": "true-scale",
       "group": "Найдено автоматом",
       "subject": "true scale",
-      "format": "documentary",
-      "en": "true scale documentary",
+      "format": "explained",
+      "en": "true scale explained",
       "ru": "документальный фильм о истинных масштабах",
       "source": "auto",
       "addedAt": "2026-09-26",
@@ -3506,7 +3506,44 @@
         "channels": 13,
         "lift": 2.8,
         "medianViews": 63955
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 25
+        },
+        {
+          "format": "explained",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 30
+        },
+        {
+          "format": "full story",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.71,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.98,
+          "longShare": 0.96,
+          "smallShare": 1,
+          "channels": 20
+        },
+        {
+          "format": "",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.29,
+          "channels": 37
+        }
+      ]
     },
     {
       "id": "sense",
@@ -4033,8 +4070,8 @@
       "id": "unseen-china",
       "group": "Найдено автоматом",
       "subject": "unseen china",
-      "format": "documentary",
-      "en": "unseen china documentary",
+      "format": "full story",
+      "en": "unseen china full story",
       "ru": "невидимый китайский документальный фильм",
       "source": "auto",
       "addedAt": "2026-10-01",
@@ -4042,6 +4079,58 @@
         "channels": 11,
         "lift": 2.8,
         "medianViews": 108014
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.52,
+          "channels": 27
+        },
+        {
+          "format": "explained",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.4,
+          "channels": 19
+        },
+        {
+          "format": "full story",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.68,
+          "channels": 35
+        },
+        {
+          "format": "the truth about",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 13
+        },
+        {
+          "format": "",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.35,
+          "channels": 23
+        }
+      ]
+    },
+    {
+      "id": "changes",
+      "group": "Найдено автоматом",
+      "subject": "changes",
+      "format": "documentary",
+      "en": "changes documentary",
+      "ru": "изменяет документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-10-02",
+      "foundVia": {
+        "channels": 11,
+        "lift": 2.8,
+        "medianViews": 69769
       }
     }
   ]
