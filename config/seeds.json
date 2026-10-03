@@ -3549,8 +3549,8 @@
       "id": "sense",
       "group": "Найдено автоматом",
       "subject": "sense",
-      "format": "documentary",
-      "en": "sense documentary",
+      "format": "the truth about",
+      "en": "the truth about sense",
       "ru": "документальный фильм о смысле",
       "source": "auto",
       "addedAt": "2026-09-26",
@@ -3558,7 +3558,44 @@
         "channels": 12,
         "lift": 3,
         "medianViews": 104388.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.16,
+          "channels": 39
+        },
+        {
+          "format": "explained",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 39
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 40
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 49
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        }
+      ]
     },
     {
       "id": "jesus-resurrection",
@@ -4122,8 +4159,8 @@
       "id": "changes",
       "group": "Найдено автоматом",
       "subject": "changes",
-      "format": "documentary",
-      "en": "changes documentary",
+      "format": "full story",
+      "en": "changes full story",
       "ru": "изменяет документальный фильм",
       "source": "auto",
       "addedAt": "2026-10-02",
@@ -4131,6 +4168,58 @@
         "channels": 11,
         "lift": 2.8,
         "medianViews": 69769
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 45
+        },
+        {
+          "format": "full story",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 49
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 45
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 48
+        }
+      ]
+    },
+    {
+      "id": "wild-kingdom",
+      "group": "Найдено автоматом",
+      "subject": "wild kingdom",
+      "format": "documentary",
+      "en": "wild kingdom documentary",
+      "ru": "документальный фильм о диком королевстве",
+      "source": "auto",
+      "addedAt": "2026-10-03",
+      "foundVia": {
+        "channels": 7,
+        "lift": 6.7,
+        "medianViews": 67238
       }
     }
   ]
