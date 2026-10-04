@@ -3601,8 +3601,8 @@
       "id": "jesus-resurrection",
       "group": "Найдено автоматом",
       "subject": "jesus resurrection",
-      "format": "documentary",
-      "en": "jesus resurrection documentary",
+      "format": "the truth about",
+      "en": "the truth about jesus resurrection",
       "ru": "документальный фильм о воскресении Иисуса",
       "source": "auto",
       "addedAt": "2026-09-26",
@@ -3610,7 +3610,44 @@
         "channels": 11,
         "lift": 3.3,
         "medianViews": 63548
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 36
+        },
+        {
+          "format": "full story",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 38
+        },
+        {
+          "format": "the truth about",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 43
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 33
+        }
+      ]
     },
     {
       "id": "monks",
@@ -4220,7 +4257,44 @@
         "channels": 7,
         "lift": 6.7,
         "medianViews": 67238
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 23
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 11
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 23
+        },
+        {
+          "format": "the truth about",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 7
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 30
+        }
+      ]
     }
   ]
 }
