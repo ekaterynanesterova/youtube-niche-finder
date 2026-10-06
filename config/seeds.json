@@ -3766,7 +3766,44 @@
         "channels": 9,
         "lift": 4,
         "medianViews": 309054
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 48
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 37
+        }
+      ]
     },
     {
       "id": "happening-right",
@@ -4383,7 +4420,44 @@
         "channels": 3,
         "lift": 10.6,
         "medianViews": 133126.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 36
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 49
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 39
+        }
+      ]
     }
   ]
 }
