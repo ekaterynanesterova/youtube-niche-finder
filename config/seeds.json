@@ -3818,14 +3818,51 @@
         "channels": 8,
         "lift": 4.6,
         "medianViews": 521154.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 16
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 48
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 28
+        },
+        {
+          "format": "the truth about",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.19,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "coldest-place",
       "group": "Найдено автоматом",
       "subject": "coldest place",
-      "format": "documentary",
-      "en": "coldest place documentary",
+      "format": "explained",
+      "en": "coldest place explained",
       "ru": "документальный фильм о самом холодном месте",
       "source": "auto",
       "addedAt": "2026-09-26",
@@ -3833,7 +3870,44 @@
         "channels": 10,
         "lift": 3.3,
         "medianViews": 111566.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 16
+        },
+        {
+          "format": "full story",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.37,
+          "channels": 46
+        },
+        {
+          "format": "the truth about",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 11
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 35
+        }
+      ]
     },
     {
       "id": "wild-serengeti",
