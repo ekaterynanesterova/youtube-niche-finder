@@ -3357,14 +3357,51 @@
         "channels": 9,
         "lift": 5.8,
         "medianViews": 74718.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.7,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.85,
+          "longShare": 1,
+          "smallShare": 0.63,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.6,
+          "channels": 45
+        },
+        {
+          "format": "the truth about",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 49
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        }
+      ]
     },
     {
       "id": "secret-behind-mount",
       "group": "Найдено автоматом",
       "subject": "secret behind mount",
-      "format": "documentary",
-      "en": "secret behind mount documentary",
+      "format": "the truth about",
+      "en": "the truth about secret behind mount",
       "ru": "документальный фильм \"Секрет за горой\"",
       "source": "auto",
       "addedAt": "2026-09-25",
@@ -3372,7 +3409,44 @@
         "channels": 9,
         "lift": 5.7,
         "medianViews": 312335
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 46
+        },
+        {
+          "format": "explained",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.4,
+          "channels": 47
+        },
+        {
+          "format": "full story",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 14
+        },
+        {
+          "format": "the truth about",
+          "score": 0.89,
+          "longShare": 1,
+          "smallShare": 0.72,
+          "channels": 43
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 48
+        }
+      ]
     },
     {
       "id": "first-civilization",
