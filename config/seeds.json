@@ -3208,7 +3208,44 @@
         "channels": 3,
         "lift": 3.3,
         "medianViews": 791549
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 39
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 40
+        },
+        {
+          "format": "the truth about",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 43
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "great-lakes",
@@ -3461,7 +3498,44 @@
         "channels": 12,
         "lift": 3.6,
         "medianViews": 83279.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.58,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 23
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 34
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "behind-mount-kailash",
@@ -4606,6 +4680,21 @@
           "channels": 39
         }
       ]
+    },
+    {
+      "id": "finally-reached",
+      "group": "Найдено автоматом",
+      "subject": "finally reached",
+      "format": "documentary",
+      "en": "finally reached documentary",
+      "ru": "наконец-то достигнут документальный",
+      "source": "auto",
+      "addedAt": "2026-10-09",
+      "foundVia": {
+        "channels": 8,
+        "lift": 4.1,
+        "medianViews": 56072
+      }
     }
   ]
 }
