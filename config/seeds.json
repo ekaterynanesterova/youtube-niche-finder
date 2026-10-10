@@ -3251,8 +3251,8 @@
       "id": "great-lakes",
       "group": "Найдено автоматом",
       "subject": "great lakes",
-      "format": "documentary",
-      "en": "great lakes documentary",
+      "format": "the truth about",
+      "en": "the truth about great lakes",
       "ru": "документальный фильм о великих озерах",
       "source": "auto",
       "addedAt": "2026-09-24",
@@ -3260,7 +3260,44 @@
         "channels": 15,
         "lift": 3.5,
         "medianViews": 38893.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 36
+        },
+        {
+          "format": "explained",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.26,
+          "channels": 46
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 33
+        },
+        {
+          "format": "the truth about",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 41
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 37
+        }
+      ]
     },
     {
       "id": "answer",
@@ -4685,8 +4722,8 @@
       "id": "finally-reached",
       "group": "Найдено автоматом",
       "subject": "finally reached",
-      "format": "documentary",
-      "en": "finally reached documentary",
+      "format": "the truth about",
+      "en": "the truth about finally reached",
       "ru": "наконец-то достигнут документальный",
       "source": "auto",
       "addedAt": "2026-10-09",
@@ -4694,7 +4731,44 @@
         "channels": 8,
         "lift": 4.1,
         "medianViews": 56072
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 45
+        },
+        {
+          "format": "explained",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 49
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 49
+        },
+        {
+          "format": "the truth about",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 50
+        },
+        {
+          "format": "",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 47
+        }
+      ]
     }
   ]
 }
