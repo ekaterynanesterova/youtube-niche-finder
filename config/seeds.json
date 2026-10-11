@@ -3059,7 +3059,44 @@
         "channels": 36,
         "lift": 2.8,
         "medianViews": 66826.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.85,
+          "longShare": 1,
+          "smallShare": 0.62,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.6,
+          "channels": 38
+        },
+        {
+          "format": "the truth about",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.71,
+          "channels": 43
+        },
+        {
+          "format": "",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.58,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "mount-kailash",
@@ -3312,7 +3349,44 @@
         "channels": 18,
         "lift": 2.6,
         "medianViews": 78922
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 44
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 29
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        }
+      ]
     },
     {
       "id": "years-ago",
@@ -4769,6 +4843,36 @@
           "channels": 47
         }
       ]
+    },
+    {
+      "id": "gene-hackman-s",
+      "group": "Найдено автоматом",
+      "subject": "gene hackman’s",
+      "format": "documentary",
+      "en": "gene hackman’s documentary",
+      "ru": "документальный фильм гена хакмана",
+      "source": "auto",
+      "addedAt": "2026-10-11",
+      "foundVia": {
+        "channels": 8,
+        "lift": 4.4,
+        "medianViews": 78505
+      }
+    },
+    {
+      "id": "secret-tunnel",
+      "group": "Найдено автоматом",
+      "subject": "secret tunnel",
+      "format": "documentary",
+      "en": "secret tunnel documentary",
+      "ru": "документальный фильм о секретном туннеле",
+      "source": "auto",
+      "addedAt": "2026-10-11",
+      "foundVia": {
+        "channels": 9,
+        "lift": 3.6,
+        "medianViews": 84479
+      }
     }
   ]
 }
