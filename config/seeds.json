@@ -4857,14 +4857,51 @@
         "channels": 8,
         "lift": 4.4,
         "medianViews": 78505
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.58,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.52,
+          "channels": 42
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 36
+        },
+        {
+          "format": "the truth about",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.59,
+          "channels": 37
+        },
+        {
+          "format": "",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "secret-tunnel",
       "group": "Найдено автоматом",
       "subject": "secret tunnel",
-      "format": "documentary",
-      "en": "secret tunnel documentary",
+      "format": "the truth about",
+      "en": "the truth about secret tunnel",
       "ru": "документальный фильм о секретном туннеле",
       "source": "auto",
       "addedAt": "2026-10-11",
@@ -4872,6 +4909,58 @@
         "channels": 9,
         "lift": 3.6,
         "medianViews": 84479
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 43
+        },
+        {
+          "format": "explained",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 42
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        },
+        {
+          "format": "the truth about",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 42
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        }
+      ]
+    },
+    {
+      "id": "life-forever",
+      "group": "Найдено автоматом",
+      "subject": "life forever",
+      "format": "documentary",
+      "en": "life forever documentary",
+      "ru": "документальный фильм life forever",
+      "source": "auto",
+      "addedAt": "2026-10-12",
+      "foundVia": {
+        "channels": 3,
+        "lift": 14,
+        "medianViews": 49781
       }
     }
   ]
