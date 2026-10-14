@@ -2910,7 +2910,44 @@
         "channels": 3,
         "lift": 3.6,
         "medianViews": 1425800
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 45
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 46
+        },
+        {
+          "format": "the truth about",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 44
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 47
+        }
+      ]
     },
     {
       "id": "sea-creatures",
@@ -3154,8 +3191,8 @@
       "id": "great-white",
       "group": "Найдено автоматом",
       "subject": "great white",
-      "format": "documentary",
-      "en": "great white documentary",
+      "format": "the truth about",
+      "en": "the truth about great white",
       "ru": "большой белый документальный фильм",
       "source": "auto",
       "addedAt": "2026-09-23",
@@ -3163,7 +3200,44 @@
         "channels": 19,
         "lift": 2.8,
         "medianViews": 92697
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 49
+        },
+        {
+          "format": "full story",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 37
+        },
+        {
+          "format": "the truth about",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 36
+        }
+      ]
     },
     {
       "id": "walker",
@@ -5036,6 +5110,51 @@
           "channels": 44
         }
       ]
+    },
+    {
+      "id": "apex-predator",
+      "group": "Найдено автоматом",
+      "subject": "apex predator",
+      "format": "documentary",
+      "en": "apex predator documentary",
+      "ru": "документальный фильм о хищнике Apex",
+      "source": "auto",
+      "addedAt": "2026-10-14",
+      "foundVia": {
+        "channels": 3,
+        "lift": 10.6,
+        "medianViews": 300301.5
+      }
+    },
+    {
+      "id": "dragons",
+      "group": "Найдено автоматом",
+      "subject": "dragons",
+      "format": "documentary",
+      "en": "dragons documentary",
+      "ru": "документальный фильм о драконах",
+      "source": "auto",
+      "addedAt": "2026-10-14",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.2,
+        "medianViews": 256067
+      }
+    },
+    {
+      "id": "dangerous-predators",
+      "group": "Найдено автоматом",
+      "subject": "dangerous predators",
+      "format": "documentary",
+      "en": "dangerous predators documentary",
+      "ru": "документальный фильм об опасных хищниках",
+      "source": "auto",
+      "addedAt": "2026-10-14",
+      "foundVia": {
+        "channels": 10,
+        "lift": 3.6,
+        "medianViews": 132405
+      }
     }
   ]
 }
