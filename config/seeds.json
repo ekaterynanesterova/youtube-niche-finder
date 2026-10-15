@@ -5115,8 +5115,8 @@
       "id": "apex-predator",
       "group": "Найдено автоматом",
       "subject": "apex predator",
-      "format": "documentary",
-      "en": "apex predator documentary",
+      "format": "the truth about",
+      "en": "the truth about apex predator",
       "ru": "документальный фильм о хищнике Apex",
       "source": "auto",
       "addedAt": "2026-10-14",
@@ -5124,14 +5124,51 @@
         "channels": 3,
         "lift": 10.6,
         "medianViews": 300301.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 27
+        },
+        {
+          "format": "explained",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.26,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.15,
+          "channels": 31
+        },
+        {
+          "format": "the truth about",
+          "score": 0.86,
+          "longShare": 1,
+          "smallShare": 0.65,
+          "channels": 33
+        },
+        {
+          "format": "",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 32
+        }
+      ]
     },
     {
       "id": "dragons",
       "group": "Найдено автоматом",
       "subject": "dragons",
-      "format": "documentary",
-      "en": "dragons documentary",
+      "format": "full story",
+      "en": "dragons full story",
       "ru": "документальный фильм о драконах",
       "source": "auto",
       "addedAt": "2026-10-14",
@@ -5139,7 +5176,44 @@
         "channels": 3,
         "lift": 9.2,
         "medianViews": 256067
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 43
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 43
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 41
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        },
+        {
+          "format": "",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 45
+        }
+      ]
     },
     {
       "id": "dangerous-predators",
@@ -5154,6 +5228,21 @@
         "channels": 10,
         "lift": 3.6,
         "medianViews": 132405
+      }
+    },
+    {
+      "id": "ending",
+      "group": "Найдено автоматом",
+      "subject": "ending",
+      "format": "documentary",
+      "en": "ending documentary",
+      "ru": "окончание документального фильма",
+      "source": "auto",
+      "addedAt": "2026-10-15",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.3,
+        "medianViews": 83656.5
       }
     }
   ]
