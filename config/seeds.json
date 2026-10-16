@@ -5219,8 +5219,8 @@
       "id": "dangerous-predators",
       "group": "Найдено автоматом",
       "subject": "dangerous predators",
-      "format": "documentary",
-      "en": "dangerous predators documentary",
+      "format": "explained",
+      "en": "dangerous predators explained",
       "ru": "документальный фильм об опасных хищниках",
       "source": "auto",
       "addedAt": "2026-10-14",
@@ -5228,7 +5228,44 @@
         "channels": 10,
         "lift": 3.6,
         "medianViews": 132405
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.38,
+          "channels": 39
+        },
+        {
+          "format": "full story",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 26
+        },
+        {
+          "format": "the truth about",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.41,
+          "channels": 29
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "ending",
@@ -5243,7 +5280,44 @@
         "channels": 3,
         "lift": 4.3,
         "medianViews": 83656.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.49,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 11
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 32
+        },
+        {
+          "format": "the truth about",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 36
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        }
+      ]
     }
   ]
 }
