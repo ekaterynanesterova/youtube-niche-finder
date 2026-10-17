@@ -2962,14 +2962,51 @@
         "channels": 3,
         "lift": 2.9,
         "medianViews": 768667
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 33
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "beautiful-women",
       "group": "Найдено автоматом",
       "subject": "beautiful women",
-      "format": "documentary",
-      "en": "beautiful women documentary",
+      "format": "explained",
+      "en": "beautiful women explained",
       "ru": "документальный фильм о красивых женщинах",
       "source": "auto",
       "addedAt": "2026-09-22",
@@ -2977,7 +3014,44 @@
         "channels": 3,
         "lift": 2.7,
         "medianViews": 67167.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.32,
+          "channels": 48
+        },
+        {
+          "format": "explained",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 49
+        },
+        {
+          "format": "full story",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.29,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.3,
+          "channels": 45
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "sheep",
