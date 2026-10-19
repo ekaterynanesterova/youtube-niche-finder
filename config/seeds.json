@@ -2558,8 +2558,8 @@
       "id": "untouchable",
       "group": "Найдено автоматом",
       "subject": "untouchable",
-      "format": "documentary",
-      "en": "untouchable documentary",
+      "format": "the truth about",
+      "en": "the truth about untouchable",
       "ru": "неприкасаемый документальный фильм",
       "source": "auto",
       "addedAt": "2026-09-20",
@@ -2567,7 +2567,44 @@
         "channels": 3,
         "lift": 9.3,
         "medianViews": 1212284
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 48
+        },
+        {
+          "format": "explained",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.31,
+          "channels": 50
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 45
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 49
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 42
+        }
+      ]
     },
     {
       "id": "saga",
@@ -2856,8 +2893,8 @@
       "id": "horror-sci",
       "group": "Найдено автоматом",
       "subject": "horror sci",
-      "format": "documentary",
-      "en": "horror sci documentary",
+      "format": "the truth about",
+      "en": "the truth about horror sci",
       "ru": "научно-популярный документальный фильм ужасов",
       "source": "auto",
       "addedAt": "2026-09-21",
@@ -2865,7 +2902,44 @@
         "channels": 3,
         "lift": 3.9,
         "medianViews": 436331
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 33
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 15
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 37
+        }
+      ]
     },
     {
       "id": "mob",
@@ -5466,6 +5540,21 @@
           "channels": 34
         }
       ]
+    },
+    {
+      "id": "archaeologists-finally",
+      "group": "Найдено автоматом",
+      "subject": "archaeologists finally",
+      "format": "documentary",
+      "en": "archaeologists finally documentary",
+      "ru": "археологи наконец-то документальный",
+      "source": "auto",
+      "addedAt": "2026-10-19",
+      "foundVia": {
+        "channels": 9,
+        "lift": 3.6,
+        "medianViews": 44933
+      }
     }
   ]
 }
