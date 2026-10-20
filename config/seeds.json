@@ -2610,8 +2610,8 @@
       "id": "saga",
       "group": "Найдено автоматом",
       "subject": "saga",
-      "format": "documentary",
-      "en": "saga documentary",
+      "format": "the truth about",
+      "en": "the truth about saga",
       "ru": "документальный фильм о саге",
       "source": "auto",
       "addedAt": "2026-09-20",
@@ -2619,7 +2619,44 @@
         "channels": 3,
         "lift": 8,
         "medianViews": 61259
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "the truth about",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 45
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "martial-arts",
@@ -5545,8 +5582,8 @@
       "id": "archaeologists-finally",
       "group": "Найдено автоматом",
       "subject": "archaeologists finally",
-      "format": "documentary",
-      "en": "archaeologists finally documentary",
+      "format": "explained",
+      "en": "archaeologists finally explained",
       "ru": "археологи наконец-то документальный",
       "source": "auto",
       "addedAt": "2026-10-19",
@@ -5554,7 +5591,44 @@
         "channels": 9,
         "lift": 3.6,
         "medianViews": 44933
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 37
+        },
+        {
+          "format": "explained",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.61,
+          "channels": 26
+        },
+        {
+          "format": "full story",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.68,
+          "channels": 32
+        },
+        {
+          "format": "the truth about",
+          "score": 0.89,
+          "longShare": 1,
+          "smallShare": 0.72,
+          "channels": 31
+        },
+        {
+          "format": "",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.53,
+          "channels": 37
+        }
+      ]
     }
   ]
 }
