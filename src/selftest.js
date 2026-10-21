@@ -404,6 +404,38 @@ check('списки служебных слов разные', stopWords('en').h
     oldSecond.length > 0 && oldSecond.some((id) => !oldFirst.includes(id)));
 }
 
+// --- ролики, которых YouTube больше не отдаёт ---
+// Тринадцать тысяч удалённых и скрытых роликов запрашивались каждый день,
+// а лог называл это нехваткой брони.
+{
+  const mk = (id) => [id, { id, channelId: 'c', title: id,
+    publishedAt: new Date(Date.parse(now) - 10 * 86400000).toISOString(), durationSec: 900 }];
+  const vids = Object.fromEntries(['live1', 'live2', 'dead1'].map(mk));
+  const dbs = { videos: vids, current: {}, state: {} };
+  let lastAsked = [];
+  const run = async () => {
+    const q = new Q2(100);
+    lastAsked = [];
+    await snapshot({ api: { quota: q, videos: async (ids, opts) => {
+      lastAsked.push(...ids); q.spend('videos', opts);
+      return { items: ids.filter((id) => id !== 'dead1').map((id) => ({ id, statistics: { viewCount: '5' } })) };
+    } }, db: dbs, thresholds: { snapshotMaxAgeDays: 150 } });
+  };
+  await run();
+  check('промах записан', dbs.state.videoMiss?.dead1?.[0] === 1);
+  check('живой ролик промахом не считается', !dbs.state.videoMiss?.live1);
+  await run(); await run();
+  check('после трёх промахов ролик ещё спрашивали', lastAsked.includes('dead1'));
+  await run();
+  check('потом он отдыхает', !lastAsked.includes('dead1') && lastAsked.includes('live1'));
+  dbs.state.videoMiss.dead1[1] = new Date(Date.parse(now) - 31 * 86400000).toISOString().slice(0, 10);
+  await run();
+  check('через месяц его спрашивают снова', lastAsked.includes('dead1'));
+  dbs.state.videoMiss.live2 = [1, now.slice(0, 10)];
+  await run();
+  check('вернувшийся ролик вычеркнут из промахов', !dbs.state.videoMiss.live2);
+}
+
 // --- запрос обязан называть предмет ---
 // «documentary to fall asleep to» описывает настроение, а не тему: под него
 // подходит дождь, ветер и музыка для медитации. Метрики такой ниши описывают
@@ -427,6 +459,17 @@ check('списки служебных слов разные', stopWords('en').h
                            { phrase: 'ancient egypt', channels: 4, lift: 5 }],
               seeds: [], limit: 2, lang: 'en' })
       .every((t) => !t.en.includes('found something')));
+  // Обрывки кликбейтных заголовков, которые автопоиск заводил темами.
+  const junk = ['the truth about sense', 'the truth about beyond', 'happening right documentary',
+                'changes full story', 'years ago explained', 'true scale explained',
+                'people live documentary', 'thriller action documentary', 'review documentary'];
+  check('обрывки кликбейта темой не считаются', junk.every((q) => !shape(q, 'en').ok));
+  const real = ['the truth about monks', 'great white shark documentary', 'mount kailash explained',
+                'iceberg documentary', 'ancient egypt documentary', 'animal attacks documentary',
+                'pharaoh documentary', 'film analysis documentary', 'neutron star supernova'];
+  check('настоящие темы рядом с общими словами проходят', real.every((q) => shape(q, 'en').ok));
+  check('общие слова из запроса не вычёркиваются',
+    shape('great white shark documentary', 'en').subjects.join(' ') === 'great white shark');
 }
 
 // --- немецкое слово: существительное или нет ---
@@ -1194,13 +1237,15 @@ check('списки служебных слов разные', stopWords('en').h
 
   // Очередь на подбор: только автонайденные и только те, где его ещё не было.
   const seeds = [
-    { id: 'a', en: 'a documentary', source: 'auto', addedAt: '2026-09-18' },
-    { id: 'b', en: 'b documentary', source: 'auto', addedAt: '2026-09-10', formatTried: [] },
-    { id: 'c', en: 'c documentary' },
+    { id: 'a', en: 'pharaoh documentary', source: 'auto', addedAt: '2026-09-18' },
+    { id: 'b', en: 'iceberg documentary', source: 'auto', addedAt: '2026-09-10', formatTried: [] },
+    { id: 'c', en: 'whales documentary' },
+    { id: 'd', en: 'sense documentary', subject: 'sense', source: 'auto', addedAt: '2026-09-26' },
   ];
   const q = needFormat(seeds, 'en');
   check('в очередь идут только неподобранные', q.length === 1 && q[0].id === 'a');
   check('темы, заданные руками, не трогаются', !q.some((x) => x.id === 'c'));
+  check('на обрывок заголовка квоту не тратим', !q.some((x) => x.id === 'd'));
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');

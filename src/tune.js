@@ -12,6 +12,8 @@
 // уже подобран, больше не трогается. За месяц через это пройдут все.
 import { YouTubeApi, parseDuration } from './api.js';
 import { formatsFor, buildQuery, scoreHarvest, pickFormat } from './formats.js';
+import { topicShape } from './topics.js';
+import { queryKeywords } from './metrics.js';
 
 // Сколько тем за прогон. Один подбор — это число форматов × 100 юнитов,
 // то есть около 500 из девяти тысяч. Больше двух за раз брать незачем:
@@ -43,9 +45,13 @@ async function harvest(api, db, query) {
 
 // Темы без подобранного формата, самые молодые первыми: свежая находка
 // важнее — по ней ещё не собрано ничего, и ошибиться с запросом дороже.
+//
+// Тему, которая предмета не называет, не подбираем: пять поисков по «sense»
+// стоили пятьсот юнитов и приносили случайные каналы.
 export function needFormat(seeds, lang = 'en') {
   return seeds
     .filter((s) => s[lang] && !s.formatTried && s.source === 'auto')
+    .filter((s) => topicShape(queryKeywords(s.subject ?? s[lang], lang)).ok)
     .sort((a, b) => String(b.addedAt ?? '').localeCompare(String(a.addedAt ?? '')));
 }
 

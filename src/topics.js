@@ -229,6 +229,15 @@ export function topicShape(keywords, { lang = null, nouns = null } = {}) {
              reason: 'запрос называет только формат и настроение (' + modifiers.join(', ')
                      + '), но не предмет — под него подходит что угодно' };
   }
+  // Пустые слова из списка сами темой не бывают, но из запроса не вычёркиваются:
+  // «great white shark» должен остаться целым. Нужно лишь, чтобы рядом с ними
+  // стояло хоть одно настоящее слово. Английский списком, немецкий — корпусом ниже.
+  const generic = new Set(POLICY.topicShape?.generic ?? []);
+  if (!subjects.some((w) => !generic.has(w))) {
+    return { subjects, modifiers, ok: false,
+             reason: 'в запросе одни общие слова (' + subjects.join(', ')
+                     + ') — это обрывок кликбейтного заголовка, а не предмет' };
+  }
   // Немецкий проверяем корпусом: хотя бы одно слово должно быть существительным.
   if (lang === 'de' && nouns) {
     const judged = subjects.filter((w) => (nouns.tot.get(w) ?? 0) >= NOUN_MIN_SEEN);

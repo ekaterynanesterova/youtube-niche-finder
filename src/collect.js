@@ -351,12 +351,27 @@ export async function hydrate({ api, db, pending, markets, thresholds }) {
 // Теперь две очереди. Сначала молодые ролики: по ним считается главная метрика
 // и прирост, они обязаны обновляться каждый день. Потом всё остальное — по
 // кругу от курсора, чтобы за несколько прогонов обошлись все.
+const MISS_LIMIT = 3;
+const MISS_REST_DAYS = 30;
+
 export async function snapshot({ api, db, thresholds }) {
   const now = new Date().toISOString();
   const maxAge = thresholds.snapshotMaxAgeDays;
   const all = Object.keys(db.videos);
   const young = [], old = [];
+  // Ролики, которых YouTube больше не отдаёт: удалены, скрыты, заблокированы.
+  // Раньше их запрашивали каждый день — около тринадцати тысяч, двести семьдесят
+  // юнитов впустую, — а лог называл это «не хватило брони». После трёх промахов
+  // подряд ролик отдыхает месяц, потом его спрашивают снова: скрытый ролик
+  // иногда возвращается.
+  const miss = db.state.videoMiss ?? {};
+  const resting = (id) => {
+    const m = miss[id];
+    return m && m[0] >= MISS_LIMIT && daysBetween(m[1], now) < MISS_REST_DAYS;
+  };
+  let skipped = 0;
   for (const id of all) {
+    if (resting(id)) { skipped++; continue; }
     const v = db.videos[id];
     if (!v?.publishedAt) { old.push(id); continue; }
     (daysBetween(v.publishedAt, now) <= maxAge ? young : old).push(id);
@@ -369,13 +384,15 @@ export async function snapshot({ api, db, thresholds }) {
   const order = young.concat(rotated);
 
   const seen = new Set();
-  let n = 0, oldDone = 0;
+  const asked = new Set();
+  let n = 0, oldDone = 0, outOfBudget = false;
   await tolerant('снапшот', async () => {
     for (let i = 0; i < order.length; i += 50) {
       const batch = order.slice(i, i + 50);
       // Броня снапшота: остальные слои до неё не дотягиваются, но и она конечна.
-      if (!api.quota.canAfford('videos', { useReserve: true })) break;
+      if (!api.quota.canAfford('videos', { useReserve: true })) { outOfBudget = true; break; }
       const res = await api.videos(batch, { useReserve: true });
+      for (const id of batch) asked.add(id);
       for (const v of res.items ?? []) {
         db.current[v.id] = [
           Number(v.statistics?.viewCount ?? 0),
@@ -399,9 +416,24 @@ export async function snapshot({ api, db, thresholds }) {
   for (const id of young) {
     if (seen.has(id) && db.current[id]) history[id] = db.current[id];
   }
-  const missedYoung = young.length - young.filter((id) => seen.has(id)).length;
-  log(`Снапшот: обновлено ${n} видео (молодых ${young.length - missedYoung} из ${young.length}, `
+  // Промах — это ролик, который мы спросили, а YouTube не вернул. Ролик, до
+  // которого не дошла очередь, промахом не считается.
+  const today = now.slice(0, 10);
+  let gone = 0;
+  for (const id of asked) {
+    if (seen.has(id)) { delete miss[id]; continue; }
+    const prev = miss[id]?.[0] ?? 0;
+    miss[id] = [prev + 1, today];
+    gone++;
+  }
+  db.state.videoMiss = miss;
+
+  const notAsked = young.filter((id) => !asked.has(id)).length;
+  const notReturned = young.filter((id) => asked.has(id) && !seen.has(id)).length;
+  log(`Снапшот: обновлено ${n} видео (молодых ${young.length - notAsked - notReturned} из ${young.length}, `
       + `старых ${oldDone} из ${old.length}), в историю записано ${Object.keys(history).length}`);
-  if (missedYoung) log(`  ⚠ ${missedYoung} молодых видео остались без свежих цифр — не хватило брони`);
+  if (notReturned) log(`  ${notReturned} молодых видео YouTube не вернул — удалены или скрыты`);
+  if (skipped) log(`  ${skipped} видео пропущены: YouTube не отдаёт их ${MISS_LIMIT} дня подряд, отдыхают ${MISS_REST_DAYS} дней`);
+  if (outOfBudget && notAsked) log(`  ⚠ ${notAsked} молодых видео остались без свежих цифр — не хватило брони`);
   return history;
 }
