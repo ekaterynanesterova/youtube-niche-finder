@@ -2662,8 +2662,8 @@
       "id": "martial-arts",
       "group": "Найдено автоматом",
       "subject": "martial arts",
-      "format": "documentary",
-      "en": "martial arts documentary",
+      "format": "the truth about",
+      "en": "the truth about martial arts",
       "ru": "документальный фильм о боевых искусствах",
       "source": "auto",
       "addedAt": "2026-09-20",
@@ -2671,7 +2671,44 @@
         "channels": 5,
         "lift": 3.3,
         "medianViews": 167450.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 40
+        },
+        {
+          "format": "the truth about",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "thriller-action",
@@ -2686,7 +2723,44 @@
         "channels": 3,
         "lift": 7.2,
         "medianViews": 761864
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.24,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 32
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 46
+        },
+        {
+          "format": "the truth about",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 37
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 43
+        }
+      ]
     },
     {
       "id": "thriller",
