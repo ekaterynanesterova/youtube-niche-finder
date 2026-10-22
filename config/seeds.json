@@ -1934,7 +1934,7 @@
     {
       "id": "anna",
       "group": "Найдено автоматом",
-      "en": "anna documentary",
+      "en": "anna documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-15",
@@ -1942,7 +1942,46 @@
         "channels": 3,
         "lift": 8.9,
         "medianViews": 148557
-      }
+      },
+      "subject": "anna documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 32
+        },
+        {
+          "format": "explained",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 46
+        },
+        {
+          "format": "full story",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 26
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "seduction",
@@ -2064,7 +2103,7 @@
     {
       "id": "idea-police",
       "group": "Найдено автоматом",
-      "en": "idea police documentary",
+      "en": "the truth about idea police documentary",
       "ru": "идея полицейский документальный фильм",
       "source": "auto",
       "addedAt": "2026-09-18",
@@ -2072,7 +2111,46 @@
         "channels": 3,
         "lift": 10.2,
         "medianViews": 720010.5
-      }
+      },
+      "subject": "idea police documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.6,
+          "channels": 16
+        },
+        {
+          "format": "full story",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.53,
+          "channels": 14
+        },
+        {
+          "format": "the truth about",
+          "score": 0.91,
+          "longShare": 1,
+          "smallShare": 0.77,
+          "channels": 28
+        },
+        {
+          "format": "",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 24
+        }
+      ]
     },
     {
       "id": "going-home",
@@ -5703,6 +5781,81 @@
           "channels": 37
         }
       ]
+    },
+    {
+      "id": "vanish",
+      "group": "Найдено автоматом",
+      "subject": "vanish",
+      "format": "documentary",
+      "en": "vanish documentary",
+      "ru": "документальный фильм об исчезновении",
+      "source": "auto",
+      "addedAt": "2026-10-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 17.5,
+        "medianViews": 105418
+      }
+    },
+    {
+      "id": "alexandra-paul",
+      "group": "Найдено автоматом",
+      "subject": "alexandra paul",
+      "format": "documentary",
+      "en": "alexandra paul documentary",
+      "ru": "документальный фильм alexandra paul",
+      "source": "auto",
+      "addedAt": "2026-10-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 13.1,
+        "medianViews": 249358
+      }
+    },
+    {
+      "id": "smiles",
+      "group": "Найдено автоматом",
+      "subject": "smiles",
+      "format": "documentary",
+      "en": "smiles documentary",
+      "ru": "документальный фильм об улыбках",
+      "source": "auto",
+      "addedAt": "2026-10-22",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.8,
+        "medianViews": 2436358
+      }
+    },
+    {
+      "id": "gene-hackman",
+      "group": "Найдено автоматом",
+      "subject": "gene hackman",
+      "format": "documentary",
+      "en": "gene hackman documentary",
+      "ru": "документальный фильм о гене хакмене",
+      "source": "auto",
+      "addedAt": "2026-10-22",
+      "foundVia": {
+        "channels": 10,
+        "lift": 3.9,
+        "medianViews": 53199
+      }
+    },
+    {
+      "id": "dna-study",
+      "group": "Найдено автоматом",
+      "subject": "dna study",
+      "format": "documentary",
+      "en": "dna study documentary",
+      "ru": "документальный фильм об исследовании ДНК",
+      "source": "auto",
+      "addedAt": "2026-10-22",
+      "foundVia": {
+        "channels": 7,
+        "lift": 6.9,
+        "medianViews": 131040
+      }
     }
   ]
 }
