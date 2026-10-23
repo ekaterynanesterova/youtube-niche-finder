@@ -5795,7 +5795,44 @@
         "channels": 3,
         "lift": 17.5,
         "medianViews": 105418
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 36
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 48
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 46
+        }
+      ]
     },
     {
       "id": "alexandra-paul",
@@ -5810,7 +5847,44 @@
         "channels": 3,
         "lift": 13.1,
         "medianViews": 249358
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.6,
+          "channels": 39
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 2
+        },
+        {
+          "format": "full story",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 29
+        },
+        {
+          "format": "the truth about",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 40
+        },
+        {
+          "format": "",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "smiles",
@@ -5855,6 +5929,36 @@
         "channels": 7,
         "lift": 6.9,
         "medianViews": 131040
+      }
+    },
+    {
+      "id": "new-dna-study",
+      "group": "Найдено автоматом",
+      "subject": "new dna study",
+      "format": "documentary",
+      "en": "new dna study documentary",
+      "ru": "новый документальный фильм об исследовании ДНК",
+      "source": "auto",
+      "addedAt": "2026-10-23",
+      "foundVia": {
+        "channels": 6,
+        "lift": 7.1,
+        "medianViews": 131066
+      }
+    },
+    {
+      "id": "new-dna",
+      "group": "Найдено автоматом",
+      "subject": "new dna",
+      "format": "documentary",
+      "en": "new dna documentary",
+      "ru": "новый документальный фильм о ДНК",
+      "source": "auto",
+      "addedAt": "2026-10-23",
+      "foundVia": {
+        "channels": 11,
+        "lift": 2.9,
+        "medianViews": 90927
       }
     }
   ]
