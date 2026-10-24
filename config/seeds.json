@@ -5935,8 +5935,8 @@
       "id": "new-dna-study",
       "group": "Найдено автоматом",
       "subject": "new dna study",
-      "format": "documentary",
-      "en": "new dna study documentary",
+      "format": "full story",
+      "en": "new dna study full story",
       "ru": "новый документальный фильм об исследовании ДНК",
       "source": "auto",
       "addedAt": "2026-10-23",
@@ -5944,14 +5944,51 @@
         "channels": 6,
         "lift": 7.1,
         "medianViews": 131066
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.85,
+          "longShare": 1,
+          "smallShare": 0.64,
+          "channels": 33
+        },
+        {
+          "format": "full story",
+          "score": 0.9,
+          "longShare": 1,
+          "smallShare": 0.75,
+          "channels": 13
+        },
+        {
+          "format": "the truth about",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.68,
+          "channels": 23
+        },
+        {
+          "format": "",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.55,
+          "channels": 44
+        }
+      ]
     },
     {
       "id": "new-dna",
       "group": "Найдено автоматом",
       "subject": "new dna",
-      "format": "documentary",
-      "en": "new dna documentary",
+      "format": "explained",
+      "en": "new dna explained",
       "ru": "новый документальный фильм о ДНК",
       "source": "auto",
       "addedAt": "2026-10-23",
@@ -5959,7 +5996,44 @@
         "channels": 11,
         "lift": 2.9,
         "medianViews": 90927
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 29
+        },
+        {
+          "format": "explained",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.54,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 33
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 38
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 42
+        }
+      ]
     }
   ]
 }
