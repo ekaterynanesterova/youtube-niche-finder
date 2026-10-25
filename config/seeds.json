@@ -5899,7 +5899,44 @@
         "channels": 3,
         "lift": 8.8,
         "medianViews": 2436358
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.85,
+          "longShare": 1,
+          "smallShare": 0.62,
+          "channels": 50
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 43
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 43
+        }
+      ]
     },
     {
       "id": "gene-hackman",
@@ -5914,7 +5951,44 @@
         "channels": 10,
         "lift": 3.9,
         "medianViews": 53199
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.86,
+          "longShare": 1,
+          "smallShare": 0.66,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.54,
+          "channels": 40
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 36
+        },
+        {
+          "format": "the truth about",
+          "score": 0.89,
+          "longShare": 1,
+          "smallShare": 0.71,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.24,
+          "channels": 33
+        }
+      ]
     },
     {
       "id": "dna-study",
