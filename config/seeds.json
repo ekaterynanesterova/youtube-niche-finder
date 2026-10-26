@@ -1713,7 +1713,7 @@
     {
       "id": "america",
       "group": "Найдено автоматом",
-      "en": "america documentary",
+      "en": "america documentary documentary",
       "ru": "документальный фильм об америке",
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -1721,7 +1721,46 @@
         "channels": 4,
         "lift": 8.4,
         "medianViews": 137204.5
-      }
+      },
+      "subject": "america documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 33
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        },
+        {
+          "format": "the truth about",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 31
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        }
+      ]
     },
     {
       "id": "quadruplets",
@@ -5994,8 +6033,8 @@
       "id": "dna-study",
       "group": "Найдено автоматом",
       "subject": "dna study",
-      "format": "documentary",
-      "en": "dna study documentary",
+      "format": "explained",
+      "en": "dna study explained",
       "ru": "документальный фильм об исследовании ДНК",
       "source": "auto",
       "addedAt": "2026-10-22",
@@ -6003,7 +6042,44 @@
         "channels": 7,
         "lift": 6.9,
         "medianViews": 131040
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.35,
+          "channels": 37
+        },
+        {
+          "format": "explained",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.59,
+          "channels": 41
+        },
+        {
+          "format": "the truth about",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 40
+        },
+        {
+          "format": "",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 42
+        }
+      ]
     },
     {
       "id": "new-dna-study",
