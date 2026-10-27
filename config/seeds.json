@@ -1765,7 +1765,7 @@
     {
       "id": "quadruplets",
       "group": "Найдено автоматом",
-      "en": "quadruplets documentary",
+      "en": "quadruplets documentary full story",
       "ru": "документальный фильм о четверняшках",
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -1773,7 +1773,46 @@
         "channels": 3,
         "lift": 15.4,
         "medianViews": 1107567
-      }
+      },
+      "subject": "quadruplets documentary",
+      "format": "full story",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.47,
+          "channels": 45
+        },
+        {
+          "format": "explained",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 3
+        },
+        {
+          "format": "full story",
+          "score": 0.86,
+          "longShare": 1,
+          "smallShare": 0.65,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 25
+        },
+        {
+          "format": "",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 45
+        }
+      ]
     },
     {
       "id": "sitting",
@@ -1791,7 +1830,7 @@
     {
       "id": "mansions",
       "group": "Найдено автоматом",
-      "en": "mansions documentary",
+      "en": "mansions documentary full story",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -1799,7 +1838,46 @@
         "channels": 4,
         "lift": 9.5,
         "medianViews": 60806.5
-      }
+      },
+      "subject": "mansions documentary",
+      "format": "full story",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.29,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 20
+        },
+        {
+          "format": "full story",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.45,
+          "channels": 36
+        },
+        {
+          "format": "the truth about",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 34
+        },
+        {
+          "format": "",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.16,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "terrifying-truth",
@@ -6184,6 +6262,21 @@
           "channels": 42
         }
       ]
+    },
+    {
+      "id": "lakes",
+      "group": "Найдено автоматом",
+      "subject": "lakes",
+      "format": "documentary",
+      "en": "lakes documentary",
+      "ru": "документальный фильм об озерах",
+      "source": "auto",
+      "addedAt": "2026-10-27",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.1,
+        "medianViews": 135733
+      }
     }
   ]
 }
