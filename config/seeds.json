@@ -1908,7 +1908,7 @@
     {
       "id": "mercenary",
       "group": "Найдено автоматом",
-      "en": "mercenary documentary",
+      "en": "mercenary documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -1916,7 +1916,46 @@
         "channels": 3,
         "lift": 10.7,
         "medianViews": 420884
-      }
+      },
+      "subject": "mercenary documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 43
+        },
+        {
+          "format": "explained",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.48,
+          "channels": 43
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.16,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 31
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "modern-history",
@@ -6267,8 +6306,8 @@
       "id": "lakes",
       "group": "Найдено автоматом",
       "subject": "lakes",
-      "format": "documentary",
-      "en": "lakes documentary",
+      "format": "the truth about",
+      "en": "the truth about lakes",
       "ru": "документальный фильм об озерах",
       "source": "auto",
       "addedAt": "2026-10-27",
@@ -6276,7 +6315,44 @@
         "channels": 3,
         "lift": 9.1,
         "medianViews": 135733
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 43
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 48
+        },
+        {
+          "format": "the truth about",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.47,
+          "channels": 47
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 46
+        }
+      ]
     }
   ]
 }

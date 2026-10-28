@@ -1,6 +1,6 @@
 # Космос и планетология: что показывают собранные данные
 
-Собрано автоматически 27.10.2026, 14:47:12 по берлинскому времени. Пересобирается командой `node tools/space-report.mjs > docs/космос-afterlight.md`.
+Собрано автоматически 28.10.2026, 15:40:35 по берлинскому времени. Пересобирается командой `node tools/space-report.mjs > docs/космос-afterlight.md`.
 
 ## 1. Что это за база
 
@@ -8,10 +8,10 @@
 
 | | |
 |---|---|
-| Каналов в базе | 12 295 |
-| Роликов в базе | 331 162 |
-| Из них с космосом в заголовке | 26 821 |
-| Ежедневных срезов просмотров | 65 |
+| Каналов в базе | 12 411 |
+| Роликов в базе | 335 186 |
+| Из них с космосом в заголовке | 26 847 |
+| Ежедневных срезов просмотров | 66 |
 | Прогонов сбора | 30 |
 
 Что есть в записи ролика: заголовок, канал, дата публикации, длительность, объявленный язык, просмотры и их прирост между срезами. Что есть по каналу: дата регистрации, дата первой загрузки, подписчики, число роликов.
@@ -31,70 +31,70 @@
 
 | Ниша | Каналов | Свежих роликов | ≥20к | ≥100к | Лучший | Коридор новичка | Типичная длина |
 |---|---|---|---|---|---|---|---|
-| **space documentary**<br><sub>документалки о космосе</sub> | 401 | 608 | 79 | 26 | 3 313 505 | 73 – 2 047 | 61 мин |
-| **solar system explained**<br><sub>Солнечная система</sub> | 123 | 117 | 13 | 4 | 574 890 | 55 – 1 593 | 36 мин |
-| **black hole documentary**<br><sub>чёрные дыры</sub> | 137 | 109 | 8 | 2 | 309 133 | 59 – 1 344 | 50 мин |
-| **galaxies documentary**<br><sub>галактики</sub> | 54 | 61 | 6 | 2 | 381 095 | 227 – 1 344 | 127 мин |
+| **space documentary**<br><sub>документалки о космосе</sub> | 401 | 572 | 72 | 21 | 1 896 679 | 70 – 1 454 | 61 мин |
+| **solar system explained**<br><sub>Солнечная система</sub> | 123 | 109 | 12 | 3 | 575 216 | 73 – 1 039 | 36 мин |
+| **black hole documentary**<br><sub>чёрные дыры</sub> | 137 | 105 | 8 | 2 | 316 865 | 59 – 1 361 | 50 мин |
+| **galaxies documentary**<br><sub>галактики</sub> | 54 | 58 | 6 | 2 | 401 920 | 234 – 2 667 | 127 мин |
 | **size of the universe**<br><sub>размеры Вселенной</sub> | 10 | 3 | 0 | 0 | — | — | 18 мин |
-| **exoplanets documentary**<br><sub>экзопланеты</sub> | 11 | 20 | 2 | 0 | 53 300 | — | 47 мин |
+| **exoplanets documentary**<br><sub>экзопланеты</sub> | 11 | 18 | 2 | 0 | 53 340 | — | 47 мин |
 | **space missions documentary**<br><sub>космические миссии</sub> | 1 | 2 | 0 | 0 | — | — | 60 мин |
-| **future of earth documentary**<br><sub>будущее Земли</sub> | 4 | 8 | 0 | 0 | — | — | 60 мин |
+| **future of earth documentary**<br><sub>будущее Земли</sub> | 4 | 7 | 0 | 0 | — | — | 60 мин |
 | **terraforming mars**<br><sub>терраформирование Марса</sub> | 3 | 4 | 0 | 0 | — | — | 25 мин |
-| **space to fall asleep to**<br><sub>космос для засыпания</sub> | 36 | 33 | 0 | 0 | 6 302 | — | 211 мин |
+| **space to fall asleep to**<br><sub>космос для засыпания</sub> | 36 | 32 | 0 | 0 | 6 311 | — | 211 мин |
 | **relaxing universe documentary**<br><sub>расслабляющее о Вселенной</sub> | 13 | 9 | 0 | 0 | — | — | 120 мин |
-| **calm science documentary sleep**<br><sub>спокойная наука на ночь</sub> | 5 | 5 | 0 | 0 | — | — | — |
-| **space ambience sleep**<br><sub>космический эмбиент для сна</sub> | 15 | 27 | 1 | 0 | 21 286 | — | 715 мин |
-| **nasa discovery explained**<br><sub>открытия NASA</sub> | 6 | 5 | 0 | 0 | — | — | 23 мин |
+| **calm science documentary sleep**<br><sub>спокойная наука на ночь</sub> | 5 | 6 | 0 | 0 | — | — | — |
+| **space ambience sleep**<br><sub>космический эмбиент для сна</sub> | 15 | 24 | 1 | 0 | 21 399 | — | 715 мин |
+| **nasa discovery explained**<br><sub>открытия NASA</sub> | 6 | 4 | 0 | 0 | — | — | 23 мин |
 
 Те же ниши по деньгам и по тому, сколько там станочных каналов:
 
 | Ниша | Зарабатывают сейчас | Из них темп держат | Медиана $/мес | Каналов по шаблону |
 |---|---|---|---|---|
-| space documentary | 34 | 33 | $3 415 | 4% из 391 |
-| solar system explained | 12 | 12 | $3 308 | 1% из 122 |
-| black hole documentary | 9 | 9 | $3 338 | 3% из 137 |
-| galaxies documentary | 2 | 2 | $4 143 | 7% из 54 |
-| size of the universe | 1 | 1 | $2 820 | 0% из 10 |
-| exoplanets documentary | 2 | 2 | $4 042 | 9% из 11 |
+| space documentary | 34 | 33 | $3 254 | 4% из 391 |
+| solar system explained | 12 | 12 | $3 215 | 1% из 122 |
+| black hole documentary | 9 | 9 | $3 254 | 3% из 137 |
+| galaxies documentary | 2 | 2 | $4 105 | 7% из 54 |
+| size of the universe | 1 | 1 | $3 031 | 0% из 10 |
+| exoplanets documentary | 2 | 2 | $3 977 | 9% из 11 |
 | space missions documentary | 0 | 0 | — | — |
 | future of earth documentary | 0 | 0 | — | — |
 | terraforming mars | 0 | 0 | — | — |
-| space to fall asleep to | 1 | 1 | $3 630 | 15% из 34 |
-| relaxing universe documentary | 1 | 1 | $3 630 | 38% из 13 |
+| space to fall asleep to | 1 | 1 | $3 618 | 15% из 34 |
+| relaxing universe documentary | 1 | 1 | $3 618 | 38% из 13 |
 | calm science documentary sleep | 0 | 0 | — | — |
-| space ambience sleep | 1 | 1 | $2 078 | 29% из 14 |
-| nasa discovery explained | 2 | 2 | $7 449 | 0% из 6 |
+| space ambience sleep | 1 | 1 | $2 151 | 29% из 14 |
+| nasa discovery explained | 2 | 2 | $7 798 | 0% из 6 |
 
 «Зарабатывают сейчас» — по просмотрам, реально набранным за две недели между срезами, а не по накопленным за всё время. «Каналов по шаблону» — доля каналов, у которых заголовки сидят в одной рамке, хронометраж один и тот же, в названиях порядковые номера и поток больше четырёх роликов в неделю. С 2025 года YouTube снимает за такое монетизацию. **Ниша с высокой долей таких каналов для нас закрыта, какие бы там ни были просмотры.**
 
 ### Достаётся ли это каналу без аудитории
 
-Из 14 322 космических роликов, выпущенных за последний год каналами меньше 50 тысяч подписчиков, планку в 100 тысяч просмотров взяли 286 — это 2.0%. Отношение просмотров к подписчикам по всей космической выборке: медиана 0.21. То есть типичный ролик собирает около пятой части числа подписчиков канала, и потому редкие выбросы здесь важнее медианы.
+Из 14 334 космических роликов, выпущенных за последний год каналами меньше 50 тысяч подписчиков, планку в 100 тысяч просмотров взяли 286 — это 2.0%. Отношение просмотров к подписчикам по всей космической выборке: медиана 0.21. То есть типичный ролик собирает около пятой части числа подписчиков канала, и потому редкие выбросы здесь важнее медианы.
 
 Двадцать самых крупных попаданий у маленьких каналов — это и есть образцы того, что имеет смысл разбирать:
 
 | Ролик | Канал | Подписчиков | Просмотров | Длина | Возраст |
 |---|---|---|---|---|---|
-| [Stranded on Mars: The Full Journey from Start to Finish](https://youtu.be/8UKIFgXMfpM) | Red Horizon | 47 500 | 2 620 119 | 62 мин | 323 дн |
-| [Every Type Of Black Hole Explained in 11 Minutes](https://youtu.be/GprjiFSsLOI) | Bluntly Explained | 38 400 | 1 864 492 | 11 мин | 161 дн |
-| [Brian Cox - The Most Mysterious Facts About The Universe](https://youtu.be/wiWjLCmhY90) | Astral Curiosity | 49 500 | 1 786 567 | 57 мин | 195 дн |
-| [Are We Alone? The Mystery of the Fermi Paradox   Free Documentary Space](https://youtu.be/ODWKrhs_5xs) | Free Documentary - Space | 49 500 | 1 378 282 | 53 мин | 59 дн |
-| [What NASA Actually Found At The Bottom Of The Ocean](https://youtu.be/5qUvEJMLlOA) | Mystral | 31 200 | 1 300 828 | 37 мин | 223 дн |
-| [Wonders Of Planet   Explore 50 UNESCO World Heritage Sites in ONE Epic Journey   4K Documentary](https://youtu.be/mghQVcxuiIk) | Orca Planet TV | 9 740 | 1 275 876 | 130 мин | 80 дн |
-| [The Cosmic Theory Scientists Are Too Afraid To Talk About](https://youtu.be/bfD3iAex60E) | Cosmic Horizons | 12 500 | 1 228 337 | 15 мин | 191 дн |
-| [The Most Disturbing Space Theories Explained](https://youtu.be/spymcHcV4Cs) | Bluntly Explained | 38 400 | 1 200 782 | 8 мин | 153 дн |
-| [My Soundscape for Sleeping at the Edge of the Universe](https://youtu.be/fsxvm6W4EoY) | Polarity Ambient | 9 030 | 1 191 230 | 36 мин | 114 дн |
-| [She Lost Everything 💔 Now She’s a Street Food Star ⭐](https://youtu.be/UV3eezr9flg) | Papa Food Show | 34 400 | 1 157 225 | 20 мин | 347 дн |
-| [James Webb Just Saw Something Impossible on Pluto — Scientists Are Stunned](https://youtu.be/3J_miNIpmtc) | Deep Space News | 30 600 | 1 133 602 | 16 мин | 96 дн |
-| [Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space!](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 14 600 | 1 125 251 | 27 мин | 96 дн |
-| [Every Type Of Star Explained in 10 minutes](https://youtu.be/0gwHOu8ZmkU) | Bluntly Explained | 38 400 | 1 016 277 | 11 мин | 176 дн |
-| [SAITAMA vs REAL LIFE Power Levels – From Humans to Cosmic Forces!](https://youtu.be/hv5nojdo6V8) | Infinity Power Scale | 29 900 | 887 361 | 18 мин | 143 дн |
-| [The Kuiper Belt: Where the Solar System Ends   Beyond Our Earth   Free Documentary Space](https://youtu.be/8ZHyKBr13no) | Free Documentary - Space | 49 500 | 875 107 | 52 мин | 251 дн |
-| [Alone on Mars 2: The Fight to Stay Alive Continues – Free Movie   Full Film](https://youtu.be/UCgmZ9CiKS8) | Red Horizon | 47 500 | 848 805 | 90 мин | 290 дн |
-| ["It's a Different Universe" — James Webb Found Something That Doesn't Add Up](https://youtu.be/TwrD53xdeMU) | Space Before After | 18 200 | 821 707 | 102 мин | 221 дн |
-| [How HUGE Is the Universe? An Answer You Won't Be Able to Believe](https://youtu.be/XrCGzLzy-lI) | Cosmic Signal | 6 200 | 773 813 | 36 мин | 67 дн |
-| [Nighttime   Deep Meditative Ambient Music for Sleep Beneath Shimmering Stars - Relaxing Night Music](https://youtu.be/0H9GybUt2Q0) | Astral Ambience | 26 700 | 759 083 | 120 мин | 260 дн |
-| [The Lost Earth: A Planet Where Dinosaurs Still Ruled   Full Documentary](https://youtu.be/hkTSDqSpy8o) | WUFO Earth | 25 800 | 749 442 | 62 мин | 105 дн |
+| [Stranded on Mars: The Full Journey from Start to Finish](https://youtu.be/8UKIFgXMfpM) | Red Horizon | 47 500 | 2 620 119 | 62 мин | 324 дн |
+| [Every Type Of Black Hole Explained in 11 Minutes](https://youtu.be/GprjiFSsLOI) | Bluntly Explained | 38 400 | 1 864 492 | 11 мин | 162 дн |
+| [Brian Cox - The Most Mysterious Facts About The Universe](https://youtu.be/wiWjLCmhY90) | Astral Curiosity | 49 500 | 1 786 567 | 57 мин | 196 дн |
+| [Are We Alone? The Mystery of the Fermi Paradox   Free Documentary Space](https://youtu.be/ODWKrhs_5xs) | Free Documentary - Space | 49 500 | 1 387 379 | 53 мин | 60 дн |
+| [What NASA Actually Found At The Bottom Of The Ocean](https://youtu.be/5qUvEJMLlOA) | Mystral | 31 200 | 1 300 828 | 37 мин | 224 дн |
+| [Wonders Of Planet   Explore 50 UNESCO World Heritage Sites in ONE Epic Journey   4K Documentary](https://youtu.be/mghQVcxuiIk) | Orca Planet TV | 11 200 | 1 276 848 | 130 мин | 81 дн |
+| [The Cosmic Theory Scientists Are Too Afraid To Talk About](https://youtu.be/bfD3iAex60E) | Cosmic Horizons | 12 500 | 1 228 337 | 15 мин | 192 дн |
+| [My Soundscape for Sleeping at the Edge of the Universe](https://youtu.be/fsxvm6W4EoY) | Polarity Ambient | 9 030 | 1 208 904 | 36 мин | 115 дн |
+| [The Most Disturbing Space Theories Explained](https://youtu.be/spymcHcV4Cs) | Bluntly Explained | 38 400 | 1 200 782 | 8 мин | 155 дн |
+| [She Lost Everything 💔 Now She’s a Street Food Star ⭐](https://youtu.be/UV3eezr9flg) | Papa Food Show | 34 400 | 1 157 695 | 20 мин | 348 дн |
+| [James Webb Just Saw Something Impossible on Pluto — Scientists Are Stunned](https://youtu.be/3J_miNIpmtc) | Deep Space News | 30 600 | 1 133 734 | 16 мин | 97 дн |
+| [Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space!](https://youtu.be/zYwiYcDQ49E) | Blue Nexus | 14 600 | 1 125 323 | 27 мин | 97 дн |
+| [Every Type Of Star Explained in 10 minutes](https://youtu.be/0gwHOu8ZmkU) | Bluntly Explained | 38 400 | 1 016 277 | 11 мин | 178 дн |
+| [SAITAMA vs REAL LIFE Power Levels – From Humans to Cosmic Forces!](https://youtu.be/hv5nojdo6V8) | Infinity Power Scale | 29 900 | 892 284 | 18 мин | 144 дн |
+| [The Kuiper Belt: Where the Solar System Ends   Beyond Our Earth   Free Documentary Space](https://youtu.be/8ZHyKBr13no) | Free Documentary - Space | 49 500 | 875 107 | 52 мин | 252 дн |
+| [Alone on Mars 2: The Fight to Stay Alive Continues – Free Movie   Full Film](https://youtu.be/UCgmZ9CiKS8) | Red Horizon | 47 500 | 848 805 | 90 мин | 291 дн |
+| ["It's a Different Universe" — James Webb Found Something That Doesn't Add Up](https://youtu.be/TwrD53xdeMU) | Space Before After | 18 200 | 821 707 | 102 мин | 222 дн |
+| [How HUGE Is the Universe? An Answer You Won't Be Able to Believe](https://youtu.be/XrCGzLzy-lI) | Cosmic Signal | 6 200 | 775 031 | 36 мин | 68 дн |
+| [Nighttime   Deep Meditative Ambient Music for Sleep Beneath Shimmering Stars - Relaxing Night Music](https://youtu.be/0H9GybUt2Q0) | Astral Ambience | 26 700 | 759 083 | 120 мин | 261 дн |
+| [The Lost Earth: A Planet Where Dinosaurs Still Ruled   Full Documentary](https://youtu.be/hkTSDqSpy8o) | WUFO Earth | 25 800 | 752 404 | 62 мин | 106 дн |
 
 ## 3. Спрос есть, свежих крупных роликов нет
 
@@ -113,20 +113,20 @@
 
 | Объект | Роликов | ≥100к за историю | Из них у каналов <100к | Вышло за 60 дней | Из них ≥20к | Лучшее у канала <100к подписчиков |
 |---|---|---|---|---|---|---|
-| **Планета Девять** | 205 | 26 | 2 | 14 | 0 | [A Giant Hidden Planet X Bigger Than Earth May Exist in Our Solar System](https://youtu.be/w6XH_c-60Vc) — 328 402, «BRIGHT SIDE SPACE NEWS», 5 720 подписчиков |
+| **Планета Девять** | 205 | 26 | 2 | 13 | 0 | [A Giant Hidden Planet X Bigger Than Earth May Exist in Our Solar System](https://youtu.be/w6XH_c-60Vc) — 328 402, «BRIGHT SIDE SPACE NEWS», 5 720 подписчиков |
 | **Уран** | 164 | 17 | 6 | 14 | 0 | [URANUS & NEPTUN: Eine rätselhafte Reise in das Sonnensystem   Strip The Cosmos S4E08 WELT SPACE](https://youtu.be/wIaGJQnypI0) — 544 326, «WELT Space», 57 400 подписчиков |
-| **Межзвёздные объекты (ʻOumuamua, Borisov, 3I/ATLAS)** | 334 | 16 | 5 | 19 | 0 | [Oumuamua: Visitor from Interstellar Space   Free Documentary Space](https://youtu.be/va6eXDSbzys) — 306 425, «Free Documentary - Space», 49 500 подписчиков |
-| **Нейтронные звёзды** | 169 | 15 | 1 | 11 | 5 | [Inside a Neutron Star, Matter Starts Breaking Down](https://youtu.be/ckhNLur0BRQ) — 206 964, «Sleep On Physics», 44 800 подписчиков |
-| **Perseverance** | 81 | 15 | 1 | 13 | 1 | [DER MARS: Hat es hier Leben gegeben? Perseverance Rover auf der Suche   Strip the Cosmos S4E01](https://youtu.be/At15y8JwByQ) — 174 410, «WELT Space», 57 400 подписчиков |
+| **Межзвёздные объекты (ʻOumuamua, Borisov, 3I/ATLAS)** | 334 | 16 | 5 | 17 | 0 | [Oumuamua: Visitor from Interstellar Space   Free Documentary Space](https://youtu.be/va6eXDSbzys) — 306 487, «Free Documentary - Space», 49 500 подписчиков |
+| **Нейтронные звёзды** | 169 | 15 | 1 | 10 | 4 | [Inside a Neutron Star, Matter Starts Breaking Down](https://youtu.be/ckhNLur0BRQ) — 206 964, «Sleep On Physics», 44 800 подписчиков |
+| **Perseverance** | 81 | 15 | 1 | 11 | 1 | [DER MARS: Hat es hier Leben gegeben? Perseverance Rover auf der Suche   Strip the Cosmos S4E01](https://youtu.be/At15y8JwByQ) — 174 410, «WELT Space», 57 400 подписчиков |
 | **Проксима Центавра** | 63 | 11 | 3 | 5 | 0 | [Why is it IMPOSSIBLE to go to Pluto and Proxima Centauri?](https://youtu.be/wqpqG4rTQ9Q) — 326 553, «Today in the Space World», 77 000 подписчиков |
 | **Титан (спутник Сатурна)** | 80 | 10 | 1 | 7 | 0 | [The REAL Reason We Should Go to Titan Instead of Mars](https://youtu.be/uDAqIg7iLvg) — 121 400, «Sleep On Science», 83 400 подписчиков |
 | **Пояс Койпера** | 42 | 5 | 1 | 5 | 0 | [The Kuiper Belt: Where the Solar System Ends   Beyond Our Earth   Free Documentary Space](https://youtu.be/8ZHyKBr13no) — 875 107, «Free Documentary - Space», 49 500 подписчиков |
-| **Европа (спутник Юпитера)** | 57 | 5 | 1 | 6 | 0 | [Why Europa is The Scariest Moon (Something Lives Under the Ice)](https://youtu.be/Plh2ZeJgANM) — 790 364, «Cosmicus», 99 100 подписчиков |
-| **Бетельгейзе** | 39 | 4 | 1 | 4 | 1 | [Betelgeuse is NOT a Star — It's Something Worse (And It Just Woke Up)](https://youtu.be/VftzqKCxrUU) — 234 238, «Cosmicus», 99 100 подписчиков |
+| **Европа (спутник Юпитера)** | 58 | 5 | 1 | 7 | 0 | [Why Europa is The Scariest Moon (Something Lives Under the Ice)](https://youtu.be/Plh2ZeJgANM) — 790 364, «Cosmicus», 99 100 подписчиков |
+| **Бетельгейзе** | 39 | 4 | 1 | 3 | 0 | [Betelgeuse is NOT a Star — It's Something Worse (And It Just Woke Up)](https://youtu.be/VftzqKCxrUU) — 234 238, «Cosmicus», 99 100 подписчиков |
 | **Сверхновые** | 43 | 4 | 1 | 2 | 1 | [This Planet Got Wiped Out by a Supernova in KSP](https://youtu.be/2nCUK52Y_hE) — 151 381, «Bogue », 34 200 подписчиков |
-| **Облако Оорта** | 34 | 3 | 1 | 7 | 0 | [The True Scale of the Oort Cloud… And Why the Solar System Never Really Ends](https://youtu.be/hy2koE4JO54) — 263 408, «Sleep On Space», 38 300 подписчиков |
-| **Стрелец A*** | 29 | 3 | 1 | 2 | 0 | [Sagittarius A* Might Not Be a Black Hole — It Might Be Something Far Stranger](https://youtu.be/C1SkAgy5rcg) — 162 837, «Milky Stellar», 70 300 подписчиков |
-| **Магнетары** | 23 | 3 | 1 | 1 | 0 | [Magnetar: The Star More Dangerous Than a Black Hole](https://youtu.be/pw_4a-cRaWs) — 146 946, «The Quiet Observatory», 28 800 подписчиков |
+| **Облако Оорта** | 34 | 3 | 1 | 6 | 0 | [The True Scale of the Oort Cloud… And Why the Solar System Never Really Ends](https://youtu.be/hy2koE4JO54) — 263 408, «Sleep On Space», 38 300 подписчиков |
+| **Стрелец A*** | 29 | 3 | 1 | 2 | 0 | [Sagittarius A* Might Not Be a Black Hole — It Might Be Something Far Stranger](https://youtu.be/C1SkAgy5rcg) — 162 911, «Milky Stellar», 70 300 подписчиков |
+| **Магнетары** | 23 | 3 | 1 | 1 | 0 | [Magnetar: The Star More Dangerous Than a Black Hole](https://youtu.be/pw_4a-cRaWs) — 147 621, «The Quiet Observatory», 28 800 подписчиков |
 
 ### 3.2. Пробел есть, но новички эту тему не берут
 
@@ -138,12 +138,12 @@
 |---|---|---|---|---|---|
 | Конец Вселенной | 64 | 9 | 4 | 1 | [The Beginning and End of the Universe   How the Universe Works   Science Channel](https://youtu.be/Mz86UFPMC20) — 1 715 432, «Science Channel», 5 380 000 подписчиков |
 | New Horizons | 20 | 5 | 3 | 0 | [What did NASA's New Horizons discover around Pluto?](https://youtu.be/6l4kr36TzQ4) — 9 250 052, «Astrum», 2 880 000 подписчиков |
-| Тёмная энергия | 45 | 5 | 4 | 0 | [Anti-gravity and the True Nature of Dark Energy   Space Time   PBS Digital Studios](https://youtu.be/UwYSWAlAewc) — 2 213 420, «PBS Space Time», 3 530 000 подписчиков |
+| Тёмная энергия | 45 | 5 | 2 | 0 | [Anti-gravity and the True Nature of Dark Energy   Space Time   PBS Digital Studios](https://youtu.be/UwYSWAlAewc) — 2 213 420, «PBS Space Time», 3 530 000 подписчиков |
 | Тритон | 20 | 4 | 1 | 0 | [Is Triton a Moon or a Dwarf Planet?](https://youtu.be/dTNc4nRdtho) — 1 582 710, «SolarBalls», 2 260 000 подписчиков |
-| Энцелад | 44 | 3 | 5 | 0 | [We Found New Evidence of Life on Saturn's Moon Enceladus](https://youtu.be/QAj9DANPZHU) — 1 150 002, «Astrum», 2 880 000 подписчиков |
+| Энцелад | 44 | 3 | 4 | 0 | [We Found New Evidence of Life on Saturn's Moon Enceladus](https://youtu.be/QAj9DANPZHU) — 1 150 002, «Astrum», 2 880 000 подписчиков |
 | Кассини | 31 | 3 | 3 | 0 | [NASA Cassini's Final Images of Saturn Stunned Me](https://youtu.be/tyMbktsAScE) — 9 266 357, «Astrum», 2 880 000 подписчиков |
 | Квазары | 18 | 3 | 0 | 0 | [Why Quasars are so Awesome   Space Time](https://youtu.be/3TZEp_n3eIc) — 2 002 768, «PBS Space Time», 3 530 000 подписчиков |
-| Церера | 17 | 3 | 2 | 0 | [What NASA's Dawn Saw on Ceres and Vesta Stunned Me   Supercut](https://youtu.be/0w6KRajHMlo) — 2 953 808, «Astrum», 2 880 000 подписчиков |
+| Церера | 17 | 3 | 1 | 0 | [What NASA's Dawn Saw on Ceres and Vesta Stunned Me   Supercut](https://youtu.be/0w6KRajHMlo) — 2 953 808, «Astrum», 2 880 000 подписчиков |
 
 ### 3.3. Темы, где свежие попадания есть
 
@@ -151,32 +151,32 @@
 
 | Объект | Роликов | ≥100к за историю | Вышло за 60 дней | Из них ≥20к | Из них ≥100к |
 |---|---|---|---|---|---|
-| Плутон | 436 | 55 | 44 | 3 | **2** |
-| Юнона (Juno) | 32 | 7 | 2 | 2 | **2** |
-| Нептун | 209 | 31 | 23 | 1 | **1** |
-| Меркурий | 178 | 29 | 25 | 7 | **1** |
+| Плутон | 436 | 55 | 41 | 3 | **2** |
+| Нептун | 209 | 31 | 19 | 1 | **1** |
+| Меркурий | 178 | 29 | 24 | 6 | **1** |
 | Хаббл | 107 | 23 | 14 | 1 | **1** |
+| Юнона (Juno) | 32 | 8 | 1 | 1 | **1** |
 
 ## 4. Заголовки
 
 **Данных по CTR нет ни по одному чужому ролику — эту цифру YouTube отдаёт только владельцу канала.** Ниже не CTR, а корреляция приёма в заголовке с тем, взял ли ролик сто тысяч просмотров. Причинности здесь нет: «Full Documentary» не делает ролик успешным, так подписывают полнометражные работы, в которые вложились. Читать это надо как «какие заголовки стоят на удачных роликах», а не «какие заголовки делают ролик удачным».
 
-Выборка: 16 701 космических роликов длиннее восьми минут у каналов меньше 50 тысяч подписчиков, ролику больше 30 дней. Сто тысяч взяли 398 из них — базовая доля 2.4%.
+Выборка: 16 720 космических роликов длиннее восьми минут у каналов меньше 50 тысяч подписчиков, ролику больше 30 дней. Сто тысяч взяли 398 из них — базовая доля 2.4%.
 
 | Приём | Роликов | Из них ≥100к | Доля | К базовой |
 |---|---|---|---|---|
-| «Full Documentary» в заголовке | 114 | 9 | 7.9% | ×3.31 |
+| «Full Documentary» в заголовке | 114 | 9 | 7.9% | ×3.32 |
 | «4K» / «8K» | 594 | 31 | 5.2% | ×2.19 |
-| Год в заголовке (2024–2029) | 545 | 19 | 3.5% | ×1.46 |
-| Составной заголовок (тире или двоеточие) | 9 076 | 229 | 2.5% | ×1.06 |
-| Слово капсом | 3 776 | 93 | 2.5% | ×1.03 |
+| Год в заголовке (2024–2029) | 546 | 19 | 3.5% | ×1.46 |
+| Составной заголовок (тире или двоеточие) | 9 085 | 229 | 2.5% | ×1.06 |
+| Слово капсом | 3 787 | 93 | 2.5% | ×1.03 |
 | «Just / Finally / Scientists just…» | 542 | 12 | 2.2% | ×0.93 |
 | Название объекта первым словом | 321 | 7 | 2.2% | ×0.92 |
 | Число в начале («10 things…») | 809 | 16 | 2.0% | ×0.83 |
-| «What / Why / How» в начале | 2 818 | 55 | 2.0% | ×0.82 |
-| «Mystery / Unsolved / We don’t know» | 315 | 6 | 1.9% | ×0.80 |
-| Вопросительный знак | 2 523 | 38 | 1.5% | ×0.63 |
-| NASA в заголовке | 1 735 | 26 | 1.5% | ×0.63 |
+| «What / Why / How» в начале | 2 821 | 55 | 1.9% | ×0.82 |
+| «Mystery / Unsolved / We don’t know» | 314 | 6 | 1.9% | ×0.80 |
+| Вопросительный знак | 2 528 | 38 | 1.5% | ×0.63 |
+| NASA в заголовке | 1 737 | 26 | 1.5% | ×0.63 |
 | «What if…» | 150 | 2 | 1.3% | ×0.56 |
 | «Terrifying / Scary / Disturbing» | 837 | 11 | 1.3% | ×0.55 |
 
@@ -190,11 +190,11 @@
 
 | Длина | Роликов | Медиана просмотров | Верхние 10% | Взяли 100к |
 |---|---|---|---|---|
-| 8–20 мин | 1 864 | 634 | 16 725 | 56 |
-| 20–35 мин | 2 807 | 529 | 16 235 | 75 |
-| 35–60 мин | 2 288 | 1 116 | 29 899 | 92 |
-| 60–90 мин | 2 233 | 1 008 | 15 438 | 59 |
-| 90–180 мин | 5 546 | 779 | 11 235 | 74 |
+| 8–20 мин | 1 874 | 634 | 16 541 | 56 |
+| 20–35 мин | 2 811 | 530 | 16 205 | 75 |
+| 35–60 мин | 2 289 | 1 110 | 29 899 | 92 |
+| 60–90 мин | 2 234 | 1 008 | 15 438 | 59 |
+| 90–180 мин | 5 549 | 778 | 11 235 | 74 |
 | 180–∞ мин | 1 963 | 787 | 14 090 | 42 |
 
 Коротко: 35–60 минут — единственная полка, где медиана, верхняя десятая процентиль и число стотысячников одновременно выше соседних. Всё, что длиннее полутора часов, — в основном фоновые и сонные ролики, и медиана там падает. Тридцатитрёхминутный ролик попадает в полку 20–35, которая по верхнему хвосту слабее.
@@ -203,7 +203,7 @@
 
 Суммарные просмотры не отвечают на вопрос, разгоняется тема сразу или набирает хвостом. Ответ есть в дневных срезах: у ролика, вышедшего внутри окна наблюдения, известны просмотры ровно на седьмой день его жизни — не оценка, а замер.
 
-Выборка: 2 983 космических роликов с честным замером на седьмой день, из них 1 918 доживших в наблюдении до двадцать первого.
+Выборка: 2 989 космических роликов с честным замером на седьмой день, из них 1 920 доживших в наблюдении до двадцать первого.
 
 **Космос — категория быстрого сгорания, а не длинного хвоста.** Медианный ролик собирает **93% своих трёхнедельных просмотров за первую неделю**; у четверти роликов это 98% и выше. Практический вывод: если ролик не пошёл за первую неделю, ждать, что он раскачается, почти не на что. Планировать надо повод и выход, а не «пусть полежит».
 
@@ -226,7 +226,7 @@
 | Юпитер | 68 | 637 | 14 764 | 96% |
 | Солнце | 23 | 607 | 14 210 | 98% |
 | Сатурн | 49 | 601 | 35 934 | 94% |
-| Уэбб (JWST) | 312 | 600 | 8 505 | 98% |
+| Уэбб (JWST) | 315 | 600 | 8 945 | 98% |
 | Облако Оорта | 9 | 413 | 37 545 | — мало данных |
 | Галактики | 209 | 399 | 27 227 | 95% |
 | Экзопланеты | 27 | 379 | 8 725 | 92% |
