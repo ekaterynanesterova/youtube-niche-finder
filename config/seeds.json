@@ -1960,7 +1960,7 @@
     {
       "id": "modern-history",
       "group": "Найдено автоматом",
-      "en": "modern history documentary",
+      "en": "modern history documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -1968,7 +1968,46 @@
         "channels": 3,
         "lift": 10.7,
         "medianViews": 134042
-      }
+      },
+      "subject": "modern history documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 29
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        },
+        {
+          "format": "the truth about",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 32
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "rewrites",
@@ -2012,7 +2051,7 @@
     {
       "id": "beasts",
       "group": "Найдено автоматом",
-      "en": "beasts documentary",
+      "en": "beasts documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -2020,7 +2059,46 @@
         "channels": 3,
         "lift": 8.7,
         "medianViews": 347005
-      }
+      },
+      "subject": "beasts documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.45,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 43
+        }
+      ]
     },
     {
       "id": "saudi-arabia",
@@ -6353,6 +6431,36 @@
           "channels": 46
         }
       ]
+    },
+    {
+      "id": "dallas",
+      "group": "Найдено автоматом",
+      "subject": "dallas",
+      "format": "documentary",
+      "en": "dallas documentary",
+      "ru": "документальный фильм о Далласе",
+      "source": "auto",
+      "addedAt": "2026-10-29",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.3,
+        "medianViews": 210292
+      }
+    },
+    {
+      "id": "camera-best",
+      "group": "Найдено автоматом",
+      "subject": "camera best",
+      "format": "documentary",
+      "en": "camera best documentary",
+      "ru": "лучший документальный фильм о камере",
+      "source": "auto",
+      "addedAt": "2026-10-29",
+      "foundVia": {
+        "channels": 10,
+        "lift": 3.2,
+        "medianViews": 386317.5
+      }
     }
   ]
 }
