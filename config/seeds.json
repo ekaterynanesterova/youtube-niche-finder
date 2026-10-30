@@ -6436,8 +6436,8 @@
       "id": "dallas",
       "group": "Найдено автоматом",
       "subject": "dallas",
-      "format": "documentary",
-      "en": "dallas documentary",
+      "format": "explained",
+      "en": "dallas explained",
       "ru": "документальный фильм о Далласе",
       "source": "auto",
       "addedAt": "2026-10-29",
@@ -6445,14 +6445,51 @@
         "channels": 3,
         "lift": 9.3,
         "medianViews": 210292
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 45
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 46
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 36
+        }
+      ]
     },
     {
       "id": "camera-best",
       "group": "Найдено автоматом",
       "subject": "camera best",
-      "format": "documentary",
-      "en": "camera best documentary",
+      "format": "full story",
+      "en": "camera best full story",
       "ru": "лучший документальный фильм о камере",
       "source": "auto",
       "addedAt": "2026-10-29",
@@ -6460,7 +6497,44 @@
         "channels": 10,
         "lift": 3.2,
         "medianViews": 386317.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 36
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.93,
+          "longShare": 1,
+          "smallShare": 0.82,
+          "channels": 28
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 12
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 34
+        }
+      ]
     }
   ]
 }
