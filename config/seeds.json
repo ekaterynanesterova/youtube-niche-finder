@@ -2103,7 +2103,7 @@
     {
       "id": "saudi-arabia",
       "group": "Найдено автоматом",
-      "en": "saudi arabia documentary",
+      "en": "saudi arabia documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -2111,7 +2111,46 @@
         "channels": 3,
         "lift": 8.7,
         "medianViews": 35955
-      }
+      },
+      "subject": "saudi arabia documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 32
+        },
+        {
+          "format": "explained",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        }
+      ]
     },
     {
       "id": "fantasy-movie",
@@ -2129,7 +2168,7 @@
     {
       "id": "cannibal",
       "group": "Найдено автоматом",
-      "en": "cannibal documentary",
+      "en": "the truth about cannibal documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-13",
@@ -2137,7 +2176,46 @@
         "channels": 3,
         "lift": 10.1,
         "medianViews": 44223
-      }
+      },
+      "subject": "cannibal documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 41
+        },
+        {
+          "format": "the truth about",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 29
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "love",
@@ -6535,6 +6613,21 @@
           "channels": 34
         }
       ]
+    },
+    {
+      "id": "far-worse",
+      "group": "Найдено автоматом",
+      "subject": "far worse",
+      "format": "documentary",
+      "en": "far worse documentary",
+      "ru": "гораздо худший документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-10-31",
+      "foundVia": {
+        "channels": 10,
+        "lift": 3.2,
+        "medianViews": 83386.5
+      }
     }
   ]
 }
