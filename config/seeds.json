@@ -1231,7 +1231,7 @@
     {
       "id": "hopi",
       "group": "Найдено автоматом",
-      "en": "hopi documentary",
+      "en": "hopi documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1239,7 +1239,46 @@
         "channels": 5,
         "lift": 5.8,
         "medianViews": 132338.5
-      }
+      },
+      "subject": "hopi documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.6,
+          "channels": 49
+        },
+        {
+          "format": "explained",
+          "score": 0.91,
+          "longShare": 1,
+          "smallShare": 0.77,
+          "channels": 29
+        },
+        {
+          "format": "full story",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 24
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 8
+        },
+        {
+          "format": "",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.54,
+          "channels": 49
+        }
+      ]
     },
     {
       "id": "legend",
@@ -6618,8 +6657,8 @@
       "id": "far-worse",
       "group": "Найдено автоматом",
       "subject": "far worse",
-      "format": "documentary",
-      "en": "far worse documentary",
+      "format": "full story",
+      "en": "far worse full story",
       "ru": "гораздо худший документальный фильм",
       "source": "auto",
       "addedAt": "2026-10-31",
@@ -6627,7 +6666,44 @@
         "channels": 10,
         "lift": 3.2,
         "medianViews": 83386.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.44,
+          "channels": 48
+        },
+        {
+          "format": "full story",
+          "score": 0.85,
+          "longShare": 1,
+          "smallShare": 0.64,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 48
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 43
+        }
+      ]
     }
   ]
 }
