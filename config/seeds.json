@@ -1296,7 +1296,7 @@
     {
       "id": "phone-call",
       "group": "Найдено автоматом",
-      "en": "phone call documentary",
+      "en": "the truth about phone call documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1304,12 +1304,51 @@
         "channels": 5,
         "lift": 4.6,
         "medianViews": 216951
-      }
+      },
+      "subject": "phone call documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 17
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 6
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 18
+        },
+        {
+          "format": "the truth about",
+          "score": 0.9,
+          "longShare": 1,
+          "smallShare": 0.75,
+          "channels": 35
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 41
+        }
+      ]
     },
     {
       "id": "brutal-animal-attacks",
       "group": "Найдено автоматом",
-      "en": "brutal animal attacks documentary",
+      "en": "the truth about brutal animal attacks documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1317,7 +1356,46 @@
         "channels": 4,
         "lift": 6.7,
         "medianViews": 871712
-      }
+      },
+      "subject": "brutal animal attacks documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 27
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 3
+        },
+        {
+          "format": "full story",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 26
+        },
+        {
+          "format": "the truth about",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.44,
+          "channels": 23
+        },
+        {
+          "format": "",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.15,
+          "channels": 30
+        }
+      ]
     },
     {
       "id": "animal-attacks",
