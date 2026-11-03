@@ -1400,7 +1400,7 @@
     {
       "id": "animal-attacks",
       "group": "Найдено автоматом",
-      "en": "animal attacks documentary",
+      "en": "animal attacks documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1408,12 +1408,51 @@
         "channels": 4,
         "lift": 6.7,
         "medianViews": 871712
-      }
+      },
+      "subject": "animal attacks documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.28,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 8
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 22
+        },
+        {
+          "format": "the truth about",
+          "score": 0.84,
+          "longShare": 1,
+          "smallShare": 0.6,
+          "channels": 6
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 28
+        }
+      ]
     },
     {
       "id": "boarding-house",
       "group": "Найдено автоматом",
-      "en": "boarding house documentary",
+      "en": "boarding house documentary explained",
       "ru": "документальный фильм о пансионате",
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1421,7 +1460,46 @@
         "channels": 3,
         "lift": 16,
         "medianViews": 49261
-      }
+      },
+      "subject": "boarding house documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 45
+        },
+        {
+          "format": "explained",
+          "score": 0.93,
+          "longShare": 1,
+          "smallShare": 0.82,
+          "channels": 33
+        },
+        {
+          "format": "full story",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.29,
+          "channels": 43
+        },
+        {
+          "format": "the truth about",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.41,
+          "channels": 38
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "human-history",
