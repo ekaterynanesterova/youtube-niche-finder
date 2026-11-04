@@ -1504,7 +1504,7 @@
     {
       "id": "human-history",
       "group": "Найдено автоматом",
-      "en": "human history documentary",
+      "en": "human history documentary documentary",
       "ru": "документальный фильм о человеческой истории",
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1512,7 +1512,46 @@
         "channels": 6,
         "lift": 3.6,
         "medianViews": 60383
-      }
+      },
+      "subject": "human history documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 31
+        },
+        {
+          "format": "explained",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 30
+        },
+        {
+          "format": "full story",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 30
+        },
+        {
+          "format": "the truth about",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 36
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 33
+        }
+      ]
     },
     {
       "id": "thriller-english",
@@ -1530,7 +1569,7 @@
     {
       "id": "tower-won",
       "group": "Найдено автоматом",
-      "en": "tower won documentary",
+      "en": "tower won documentary documentary",
       "ru": "документальный фильм о выигранной башне",
       "source": "auto",
       "addedAt": "2026-09-11",
@@ -1538,7 +1577,46 @@
         "channels": 3,
         "lift": 12,
         "medianViews": 46800
-      }
+      },
+      "subject": "tower won documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 10
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 8
+        },
+        {
+          "format": "full story",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 17
+        },
+        {
+          "format": "the truth about",
+          "score": 0,
+          "longShare": 0,
+          "smallShare": 0,
+          "channels": 0
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 13
+        }
+      ]
     },
     {
       "id": "hidden-history",
