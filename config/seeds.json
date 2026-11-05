@@ -712,7 +712,7 @@
     {
       "id": "native",
       "group": "Найдено автоматом",
-      "en": "native documentary",
+      "en": "native documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -720,12 +720,51 @@
         "channels": 3,
         "lift": 12.1,
         "medianViews": 43283.5
-      }
+      },
+      "subject": "native documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 47
+        },
+        {
+          "format": "explained",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 33
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        },
+        {
+          "format": "the truth about",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 42
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "whales",
       "group": "Найдено автоматом",
-      "en": "whales documentary",
+      "en": "the truth about whales documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -733,7 +772,46 @@
         "channels": 3,
         "lift": 9.1,
         "medianViews": 83716
-      }
+      },
+      "subject": "whales documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.33,
+          "channels": 45
+        },
+        {
+          "format": "full story",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 37
+        },
+        {
+          "format": "the truth about",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.56,
+          "channels": 39
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 32
+        }
+      ]
     },
     {
       "id": "idaho",
