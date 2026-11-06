@@ -816,7 +816,7 @@
     {
       "id": "idaho",
       "group": "Найдено автоматом",
-      "en": "idaho documentary",
+      "en": "the truth about idaho documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -824,7 +824,46 @@
         "channels": 3,
         "lift": 9.1,
         "medianViews": 29191
-      }
+      },
+      "subject": "idaho documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 34
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 28
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 32
+        },
+        {
+          "format": "the truth about",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.3,
+          "channels": 19
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 35
+        }
+      ]
     },
     {
       "id": "built-world",
@@ -855,7 +894,7 @@
     {
       "id": "place-earth",
       "group": "Найдено автоматом",
-      "en": "place earth documentary",
+      "en": "place earth documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -863,7 +902,46 @@
         "channels": 3,
         "lift": 9.1,
         "medianViews": 653313.5
-      }
+      },
+      "subject": "place earth documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 25
+        },
+        {
+          "format": "explained",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.26,
+          "channels": 27
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 23
+        },
+        {
+          "format": "the truth about",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 6
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 26
+        }
+      ]
     },
     {
       "id": "ancient-humans-start",
