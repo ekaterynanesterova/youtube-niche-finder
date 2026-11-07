@@ -946,7 +946,7 @@
     {
       "id": "ancient-humans-start",
       "group": "Найдено автоматом",
-      "en": "ancient humans start documentary",
+      "en": "the truth about ancient humans start documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -954,12 +954,51 @@
         "channels": 3,
         "lift": 7.8,
         "medianViews": 501108.5
-      }
+      },
+      "subject": "ancient humans start documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 33
+        },
+        {
+          "format": "explained",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 35
+        },
+        {
+          "format": "the truth about",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.28,
+          "channels": 37
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 36
+        }
+      ]
     },
     {
       "id": "humans-survive",
       "group": "Найдено автоматом",
-      "en": "humans survive documentary",
+      "en": "the truth about humans survive documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -967,7 +1006,46 @@
         "channels": 3,
         "lift": 5.7,
         "medianViews": 383796
-      }
+      },
+      "subject": "humans survive documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.72,
+          "longShare": 1,
+          "smallShare": 0.31,
+          "channels": 39
+        },
+        {
+          "format": "explained",
+          "score": 0.73,
+          "longShare": 1,
+          "smallShare": 0.32,
+          "channels": 38
+        },
+        {
+          "format": "full story",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.7,
+          "channels": 15
+        },
+        {
+          "format": "",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.19,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "battle-survival",
