@@ -1050,7 +1050,7 @@
     {
       "id": "battle-survival",
       "group": "Найдено автоматом",
-      "en": "battle survival documentary",
+      "en": "battle survival documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1058,12 +1058,51 @@
         "channels": 4,
         "lift": 3.3,
         "medianViews": 170379
-      }
+      },
+      "subject": "battle survival documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 33
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 15
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 20
+        },
+        {
+          "format": "the truth about",
+          "score": 0.54,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 4
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 32
+        }
+      ]
     },
     {
       "id": "did-ancient-humans",
       "group": "Найдено автоматом",
-      "en": "did ancient humans documentary",
+      "en": "the truth about did ancient humans documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1071,7 +1110,46 @@
         "channels": 4,
         "lift": 3,
         "medianViews": 215726
-      }
+      },
+      "subject": "did ancient humans documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 31
+        },
+        {
+          "format": "explained",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 34
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 36
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "spain",
@@ -7172,6 +7250,21 @@
           "channels": 43
         }
       ]
+    },
+    {
+      "id": "ancient-humans",
+      "group": "Найдено автоматом",
+      "subject": "ancient humans",
+      "format": "documentary",
+      "en": "ancient humans documentary",
+      "ru": "документальный фильм о древних людях",
+      "source": "auto",
+      "addedAt": "2026-11-08",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.1,
+        "medianViews": 200829
+      }
     }
   ]
 }
