@@ -1154,7 +1154,7 @@
     {
       "id": "spain",
       "group": "Найдено автоматом",
-      "en": "spain documentary",
+      "en": "spain documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1162,7 +1162,46 @@
         "channels": 3,
         "lift": 8.8,
         "medianViews": 32632
-      }
+      },
+      "subject": "spain documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 43
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 39
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 26
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 29
+        }
+      ]
     },
     {
       "id": "mariana-trench",
@@ -7264,6 +7303,58 @@
         "channels": 3,
         "lift": 3.1,
         "medianViews": 200829
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 30
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 40
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 36
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 34
+        }
+      ]
+    },
+    {
+      "id": "new-engine",
+      "group": "Найдено автоматом",
+      "subject": "new engine",
+      "format": "documentary",
+      "en": "new engine documentary",
+      "ru": "новый документальный фильм о двигателе",
+      "source": "auto",
+      "addedAt": "2026-11-09",
+      "foundVia": {
+        "channels": 8,
+        "lift": 4.2,
+        "medianViews": 79078
       }
     }
   ]
