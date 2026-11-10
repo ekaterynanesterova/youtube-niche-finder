@@ -1206,7 +1206,7 @@
     {
       "id": "mariana-trench",
       "group": "Найдено автоматом",
-      "en": "mariana trench documentary",
+      "en": "mariana trench documentary full story",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1214,7 +1214,46 @@
         "channels": 12,
         "lift": 2.8,
         "medianViews": 202214.5
-      }
+      },
+      "subject": "mariana trench documentary",
+      "format": "full story",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.35,
+          "channels": 34
+        },
+        {
+          "format": "full story",
+          "score": 0.81,
+          "longShare": 1,
+          "smallShare": 0.52,
+          "channels": 39
+        },
+        {
+          "format": "the truth about",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.56,
+          "channels": 39
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "answer-shocked",
@@ -7355,7 +7394,44 @@
         "channels": 8,
         "lift": 4.2,
         "medianViews": 79078
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "full story",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 40
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 25
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        }
+      ]
     }
   ]
 }
