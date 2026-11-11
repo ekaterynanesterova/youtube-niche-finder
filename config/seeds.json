@@ -1271,7 +1271,7 @@
     {
       "id": "creatures-get-creepier",
       "group": "Найдено автоматом",
-      "en": "creatures get creepier documentary",
+      "en": "creatures get creepier documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1279,12 +1279,51 @@
         "channels": 4,
         "lift": 12,
         "medianViews": 203183
-      }
+      },
+      "subject": "creatures get creepier documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.44,
+          "channels": 22
+        },
+        {
+          "format": "explained",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 4
+        },
+        {
+          "format": "full story",
+          "score": 0.9,
+          "longShare": 1,
+          "smallShare": 0.75,
+          "channels": 5
+        },
+        {
+          "format": "the truth about",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 9
+        },
+        {
+          "format": "",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.46,
+          "channels": 19
+        }
+      ]
     },
     {
       "id": "great-white-shark",
       "group": "Найдено автоматом",
-      "en": "great white shark documentary",
+      "en": "great white shark documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1292,7 +1331,46 @@
         "channels": 6,
         "lift": 5,
         "medianViews": 78076.5
-      }
+      },
+      "subject": "great white shark documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.15,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.38,
+          "channels": 40
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 27
+        },
+        {
+          "format": "the truth about",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.16,
+          "channels": 34
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 36
+        }
+      ]
     },
     {
       "id": "sea-creatures-get",
