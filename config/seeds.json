@@ -1375,7 +1375,7 @@
     {
       "id": "sea-creatures-get",
       "group": "Найдено автоматом",
-      "en": "sea creatures get documentary",
+      "en": "the truth about sea creatures get documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1383,12 +1383,51 @@
         "channels": 4,
         "lift": 8.6,
         "medianViews": 203183
-      }
+      },
+      "subject": "sea creatures get documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 32
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 25
+        },
+        {
+          "format": "the truth about",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.48,
+          "channels": 19
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 29
+        }
+      ]
     },
     {
       "id": "alaska-lake-monster",
       "group": "Найдено автоматом",
-      "en": "alaska lake monster documentary",
+      "en": "the truth about alaska lake monster documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1396,7 +1435,46 @@
         "channels": 3,
         "lift": 15,
         "medianViews": 35885
-      }
+      },
+      "subject": "alaska lake monster documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.41,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 6
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 14
+        },
+        {
+          "format": "the truth about",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.7,
+          "channels": 28
+        },
+        {
+          "format": "",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.42,
+          "channels": 38
+        }
+      ]
     },
     {
       "id": "amazon-mysteries",
@@ -7510,6 +7588,21 @@
           "channels": 34
         }
       ]
+    },
+    {
+      "id": "mask",
+      "group": "Найдено автоматом",
+      "subject": "mask",
+      "format": "documentary",
+      "en": "mask documentary",
+      "ru": "документальный фильм о масках",
+      "source": "auto",
+      "addedAt": "2026-11-12",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.5,
+        "medianViews": 1542026
+      }
     }
   ]
 }
