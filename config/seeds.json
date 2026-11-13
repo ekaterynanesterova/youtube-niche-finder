@@ -1479,7 +1479,7 @@
     {
       "id": "amazon-mysteries",
       "group": "Найдено автоматом",
-      "en": "amazon mysteries documentary",
+      "en": "amazon mysteries documentary full story",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1487,7 +1487,46 @@
         "channels": 3,
         "lift": 15,
         "medianViews": 605875
-      }
+      },
+      "subject": "amazon mysteries documentary",
+      "format": "full story",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.28,
+          "channels": 46
+        },
+        {
+          "format": "explained",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.37,
+          "channels": 29
+        },
+        {
+          "format": "full story",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.46,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 34
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 40
+        }
+      ]
     },
     {
       "id": "calm-space",
@@ -7602,7 +7641,44 @@
         "channels": 3,
         "lift": 8.5,
         "medianViews": 1542026
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 46
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 48
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 48
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 24
+        },
+        {
+          "format": "",
+          "score": 0.54,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 17
+        }
+      ]
     }
   ]
 }
