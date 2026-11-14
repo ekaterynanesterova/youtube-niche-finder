@@ -1650,7 +1650,7 @@
     {
       "id": "deep-ocean",
       "group": "Найдено автоматом",
-      "en": "deep ocean documentary",
+      "en": "deep ocean documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1658,12 +1658,51 @@
         "channels": 7,
         "lift": 3,
         "medianViews": 58760
-      }
+      },
+      "subject": "deep ocean documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 24
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 34
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 27
+        },
+        {
+          "format": "the truth about",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 29
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 29
+        }
+      ]
     },
     {
       "id": "fiercest-predators",
       "group": "Найдено автоматом",
-      "en": "fiercest predators documentary",
+      "en": "fiercest predators documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1671,7 +1710,46 @@
         "channels": 4,
         "lift": 6.4,
         "medianViews": 170480
-      }
+      },
+      "subject": "fiercest predators documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.3,
+          "channels": 20
+        },
+        {
+          "format": "explained",
+          "score": 0.87,
+          "longShare": 1,
+          "smallShare": 0.67,
+          "channels": 15
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.29,
+          "channels": 18
+        },
+        {
+          "format": "the truth about",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.48,
+          "channels": 20
+        },
+        {
+          "format": "",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 15
+        }
+      ]
     },
     {
       "id": "rocky-mountains",
@@ -7679,6 +7757,21 @@
           "channels": 17
         }
       ]
+    },
+    {
+      "id": "years-later",
+      "group": "Найдено автоматом",
+      "subject": "years later",
+      "format": "documentary",
+      "en": "years later documentary",
+      "ru": "документальный фильм «Спустя годы»",
+      "source": "auto",
+      "addedAt": "2026-11-14",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.2,
+        "medianViews": 227394
+      }
     }
   ]
 }
