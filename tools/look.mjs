@@ -15,8 +15,20 @@ import { conveyorProfile } from '../src/metrics.js';
 const KEY = process.env.YOUTUBE_API_KEY;
 if (!KEY) { console.error('Нет YOUTUBE_API_KEY'); process.exit(1); }
 
-const ids = (process.env.LOOK_VIDEOS ?? '').split(/[,\s]+/).filter(Boolean);
-if (!ids.length) { console.error('Пусто в LOOK_VIDEOS'); process.exit(1); }
+const refs = (process.env.LOOK_VIDEOS ?? '').split(/[,\s]+/).filter(Boolean);
+if (!refs.length) { console.error('Пусто в LOOK_VIDEOS'); process.exit(1); }
+
+// Ссылка на канал вместо ролика: @handle, youtube.com/@handle или UC-id.
+// Отдельного поля в запуске под это нет — их число у workflow_dispatch
+// ограничено, а разбор канала по смыслу тот же «посмотри вот это».
+const isChannel = (r) => /^@|youtube\.com\/@|^UC[\w-]{20,}$/.test(r);
+const channelRefs = refs.filter(isChannel);
+if (channelRefs.length) {
+  const { lookChannel } = await import('./channel.mjs');
+  for (const r of channelRefs) await lookChannel(r);
+}
+const ids = refs.filter((r) => !isChannel(r));
+if (!ids.length) process.exit(0);
 
 const quota = new Quota(Number(process.env.UNIT_BUDGET ?? 200));
 const api = new YouTubeApi(KEY, quota);
