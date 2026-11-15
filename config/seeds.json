@@ -1754,7 +1754,7 @@
     {
       "id": "rocky-mountains",
       "group": "Найдено автоматом",
-      "en": "rocky mountains documentary",
+      "en": "rocky mountains documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1762,7 +1762,46 @@
         "channels": 4,
         "lift": 6.3,
         "medianViews": 100232
-      }
+      },
+      "subject": "rocky mountains documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.4,
+          "channels": 22
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 31
+        },
+        {
+          "format": "the truth about",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.34,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "earth-planet",
@@ -7762,8 +7801,8 @@
       "id": "years-later",
       "group": "Найдено автоматом",
       "subject": "years later",
-      "format": "documentary",
-      "en": "years later documentary",
+      "format": "the truth about",
+      "en": "the truth about years later",
       "ru": "документальный фильм «Спустя годы»",
       "source": "auto",
       "addedAt": "2026-11-14",
@@ -7771,6 +7810,58 @@
         "channels": 3,
         "lift": 3.2,
         "medianViews": 227394
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 27
+        },
+        {
+          "format": "explained",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 36
+        },
+        {
+          "format": "full story",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 47
+        },
+        {
+          "format": "the truth about",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.44,
+          "channels": 47
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        }
+      ]
+    },
+    {
+      "id": "sunrise",
+      "group": "Найдено автоматом",
+      "subject": "sunrise",
+      "format": "documentary",
+      "en": "sunrise documentary",
+      "ru": "документальный фильм о восходе солнца",
+      "source": "auto",
+      "addedAt": "2026-11-15",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.6,
+        "medianViews": 239461
       }
     }
   ]
