@@ -1806,7 +1806,7 @@
     {
       "id": "earth-planet",
       "group": "Найдено автоматом",
-      "en": "earth planet documentary",
+      "en": "the truth about earth planet documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1814,7 +1814,46 @@
         "channels": 4,
         "lift": 6.3,
         "medianViews": 90201
-      }
+      },
+      "subject": "earth planet documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 26
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 35
+        },
+        {
+          "format": "full story",
+          "score": 0.59,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 22
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 31
+        },
+        {
+          "format": "",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 26
+        }
+      ]
     },
     {
       "id": "secret-china",
@@ -7862,6 +7901,58 @@
         "channels": 3,
         "lift": 8.6,
         "medianViews": 239461
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 45
+        },
+        {
+          "format": "explained",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 31
+        },
+        {
+          "format": "full story",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 36
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 24
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 43
+        }
+      ]
+    },
+    {
+      "id": "bin-laden",
+      "group": "Найдено автоматом",
+      "subject": "bin laden",
+      "format": "documentary",
+      "en": "bin laden documentary",
+      "ru": "документальный фильм о бен Ладене",
+      "source": "auto",
+      "addedAt": "2026-11-16",
+      "foundVia": {
+        "channels": 3,
+        "lift": 5.9,
+        "medianViews": 3195897
       }
     }
   ]
