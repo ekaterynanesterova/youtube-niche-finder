@@ -1858,7 +1858,7 @@
     {
       "id": "secret-china",
       "group": "Найдено автоматом",
-      "en": "secret china documentary",
+      "en": "the truth about secret china documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1866,7 +1866,46 @@
         "channels": 3,
         "lift": 11.3,
         "medianViews": 104333
-      }
+      },
+      "subject": "secret china documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 30
+        },
+        {
+          "format": "explained",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 15
+        },
+        {
+          "format": "full story",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.1,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.78,
+          "longShare": 1,
+          "smallShare": 0.45,
+          "channels": 20
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "scientists-asked-grok",
@@ -7953,6 +7992,58 @@
         "channels": 3,
         "lift": 5.9,
         "medianViews": 3195897
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        },
+        {
+          "format": "explained",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 33
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        }
+      ]
+    },
+    {
+      "id": "humans",
+      "group": "Найдено автоматом",
+      "subject": "humans",
+      "format": "documentary",
+      "en": "humans documentary",
+      "ru": "документальный фильм о людях",
+      "source": "auto",
+      "addedAt": "2026-11-17",
+      "foundVia": {
+        "channels": 13,
+        "lift": 2.5,
+        "medianViews": 197911
       }
     }
   ]
