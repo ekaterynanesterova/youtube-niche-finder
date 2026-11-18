@@ -1910,7 +1910,7 @@
     {
       "id": "scientists-asked-grok",
       "group": "Найдено автоматом",
-      "en": "scientists asked grok documentary",
+      "en": "scientists asked grok documentary documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1918,7 +1918,46 @@
         "channels": 3,
         "lift": 11.3,
         "medianViews": 33097
-      }
+      },
+      "subject": "scientists asked grok documentary",
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.96,
+          "longShare": 1,
+          "smallShare": 0.9,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.96,
+          "longShare": 1,
+          "smallShare": 0.89,
+          "channels": 37
+        },
+        {
+          "format": "full story",
+          "score": 0.94,
+          "longShare": 1,
+          "smallShare": 0.85,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.97,
+          "longShare": 1,
+          "smallShare": 0.91,
+          "channels": 37
+        },
+        {
+          "format": "",
+          "score": 0.95,
+          "longShare": 1,
+          "smallShare": 0.88,
+          "channels": 27
+        }
+      ]
     },
     {
       "id": "ethiopian-bible",
@@ -8035,8 +8074,8 @@
       "id": "humans",
       "group": "Найдено автоматом",
       "subject": "humans",
-      "format": "documentary",
-      "en": "humans documentary",
+      "format": "the truth about",
+      "en": "the truth about humans",
       "ru": "документальный фильм о людях",
       "source": "auto",
       "addedAt": "2026-11-17",
@@ -8044,7 +8083,44 @@
         "channels": 13,
         "lift": 2.5,
         "medianViews": 197911
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 37
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.38,
+          "channels": 48
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 38
+        }
+      ]
     }
   ]
 }
