@@ -1962,7 +1962,7 @@
     {
       "id": "ethiopian-bible",
       "group": "Найдено автоматом",
-      "en": "ethiopian bible documentary",
+      "en": "ethiopian bible documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1970,12 +1970,51 @@
         "channels": 4,
         "lift": 6.1,
         "medianViews": 107947
-      }
+      },
+      "subject": "ethiopian bible documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 42
+        },
+        {
+          "format": "explained",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.39,
+          "channels": 42
+        },
+        {
+          "format": "full story",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 41
+        },
+        {
+          "format": "the truth about",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.4,
+          "channels": 40
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 43
+        }
+      ]
     },
     {
       "id": "apex-predators",
       "group": "Найдено автоматом",
-      "en": "apex predators documentary",
+      "en": "apex predators documentary explained",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -1983,7 +2022,46 @@
         "channels": 6,
         "lift": 3.2,
         "medianViews": 172733
-      }
+      },
+      "subject": "apex predators documentary",
+      "format": "explained",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.21,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.46,
+          "channels": 37
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.15,
+          "channels": 25
+        },
+        {
+          "format": "the truth about",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 26
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 26
+        }
+      ]
     },
     {
       "id": "period-earth",
