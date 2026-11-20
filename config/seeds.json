@@ -2066,7 +2066,7 @@
     {
       "id": "period-earth",
       "group": "Найдено автоматом",
-      "en": "period earth documentary",
+      "en": "the truth about period earth documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -2074,12 +2074,51 @@
         "channels": 3,
         "lift": 10,
         "medianViews": 97226
-      }
+      },
+      "subject": "period earth documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.88,
+          "longShare": 1,
+          "smallShare": 0.71,
+          "channels": 32
+        },
+        {
+          "format": "explained",
+          "score": 0.93,
+          "longShare": 1,
+          "smallShare": 0.81,
+          "channels": 24
+        },
+        {
+          "format": "full story",
+          "score": 0.92,
+          "longShare": 1,
+          "smallShare": 0.84,
+          "channels": 23
+        },
+        {
+          "format": "the truth about",
+          "score": 0.95,
+          "longShare": 1,
+          "smallShare": 0.87,
+          "channels": 28
+        },
+        {
+          "format": "",
+          "score": 0.9,
+          "longShare": 1,
+          "smallShare": 0.75,
+          "channels": 31
+        }
+      ]
     },
     {
       "id": "china-hidden",
       "group": "Найдено автоматом",
-      "en": "china hidden documentary",
+      "en": "the truth about china hidden documentary",
       "ru": null,
       "source": "auto",
       "addedAt": "2026-08-21",
@@ -2087,7 +2126,46 @@
         "channels": 4,
         "lift": 5.6,
         "medianViews": 71693
-      }
+      },
+      "subject": "china hidden documentary",
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.14,
+          "channels": 35
+        },
+        {
+          "format": "the truth about",
+          "score": 0.79,
+          "longShare": 1,
+          "smallShare": 0.48,
+          "channels": 42
+        },
+        {
+          "format": "",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 41
+        }
+      ]
     },
     {
       "id": "ww2-doku",
