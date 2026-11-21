@@ -8277,6 +8277,36 @@
           "channels": 38
         }
       ]
+    },
+    {
+      "id": "truly-explore",
+      "group": "Найдено автоматом",
+      "subject": "truly explore",
+      "format": "documentary",
+      "en": "truly explore documentary",
+      "ru": "действительно изучить документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-11-21",
+      "foundVia": {
+        "channels": 3,
+        "lift": 9.4,
+        "medianViews": 522185
+      }
+    },
+    {
+      "id": "finally-opened",
+      "group": "Найдено автоматом",
+      "subject": "finally opened",
+      "format": "documentary",
+      "en": "finally opened documentary",
+      "ru": "наконец-то открыл документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-11-21",
+      "foundVia": {
+        "channels": 13,
+        "lift": 2.6,
+        "medianViews": 51322
+      }
     }
   ]
 }
