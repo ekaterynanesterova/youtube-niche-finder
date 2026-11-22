@@ -8291,14 +8291,51 @@
         "channels": 3,
         "lift": 9.4,
         "medianViews": 522185
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.98,
+          "longShare": 1,
+          "smallShare": 0.94,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.98,
+          "longShare": 1,
+          "smallShare": 0.95,
+          "channels": 23
+        },
+        {
+          "format": "full story",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 27
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 48
+        },
+        {
+          "format": "",
+          "score": 0.94,
+          "longShare": 1,
+          "smallShare": 0.95,
+          "channels": 20
+        }
+      ]
     },
     {
       "id": "finally-opened",
       "group": "Найдено автоматом",
       "subject": "finally opened",
-      "format": "documentary",
-      "en": "finally opened documentary",
+      "format": "explained",
+      "en": "finally opened explained",
       "ru": "наконец-то открыл документальный фильм",
       "source": "auto",
       "addedAt": "2026-11-21",
@@ -8306,7 +8343,44 @@
         "channels": 13,
         "lift": 2.6,
         "medianViews": 51322
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.77,
+          "longShare": 1,
+          "smallShare": 0.43,
+          "channels": 12
+        },
+        {
+          "format": "explained",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 34
+        },
+        {
+          "format": "full story",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.41,
+          "channels": 41
+        },
+        {
+          "format": "the truth about",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.4,
+          "channels": 47
+        },
+        {
+          "format": "",
+          "score": 0.74,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 35
+        }
+      ]
     }
   ]
 }
