@@ -8381,6 +8381,66 @@
           "channels": 35
         }
       ]
+    },
+    {
+      "id": "humanity-s-last",
+      "group": "Найдено автоматом",
+      "subject": "humanity’s last",
+      "format": "documentary",
+      "en": "humanity’s last documentary",
+      "ru": "последний документальный фильм человечества",
+      "source": "auto",
+      "addedAt": "2026-11-23",
+      "foundVia": {
+        "channels": 3,
+        "lift": 19,
+        "medianViews": 668897
+      }
+    },
+    {
+      "id": "captain",
+      "group": "Найдено автоматом",
+      "subject": "captain",
+      "format": "documentary",
+      "en": "captain documentary",
+      "ru": "документальный фильм о капитане",
+      "source": "auto",
+      "addedAt": "2026-11-23",
+      "foundVia": {
+        "channels": 3,
+        "lift": 8.2,
+        "medianViews": 471643
+      }
+    },
+    {
+      "id": "western",
+      "group": "Найдено автоматом",
+      "subject": "western",
+      "format": "documentary",
+      "en": "western documentary",
+      "ru": "западный документальный фильм",
+      "source": "auto",
+      "addedAt": "2026-11-23",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.2,
+        "medianViews": 417607.5
+      }
+    },
+    {
+      "id": "killer-wife",
+      "group": "Найдено автоматом",
+      "subject": "killer wife",
+      "format": "documentary",
+      "en": "killer wife documentary",
+      "ru": "документальный фильм о жене-убийце",
+      "source": "auto",
+      "addedAt": "2026-11-23",
+      "foundVia": {
+        "channels": 3,
+        "lift": 3.3,
+        "medianViews": 1685167.5
+      }
     }
   ]
 }
