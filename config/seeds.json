@@ -8386,8 +8386,8 @@
       "id": "humanity-s-last",
       "group": "Найдено автоматом",
       "subject": "humanity’s last",
-      "format": "documentary",
-      "en": "humanity’s last documentary",
+      "format": "full story",
+      "en": "humanity’s last full story",
       "ru": "последний документальный фильм человечества",
       "source": "auto",
       "addedAt": "2026-11-23",
@@ -8395,14 +8395,51 @@
         "channels": 3,
         "lift": 19,
         "medianViews": 668897
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.7,
+          "longShare": 1,
+          "smallShare": 0.25,
+          "channels": 48
+        },
+        {
+          "format": "explained",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 44
+        },
+        {
+          "format": "full story",
+          "score": 0.76,
+          "longShare": 1,
+          "smallShare": 0.4,
+          "channels": 35
+        },
+        {
+          "format": "the truth about",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 18
+        },
+        {
+          "format": "",
+          "score": 0.71,
+          "longShare": 1,
+          "smallShare": 0.27,
+          "channels": 46
+        }
+      ]
     },
     {
       "id": "captain",
       "group": "Найдено автоматом",
       "subject": "captain",
-      "format": "documentary",
-      "en": "captain documentary",
+      "format": "the truth about",
+      "en": "the truth about captain",
       "ru": "документальный фильм о капитане",
       "source": "auto",
       "addedAt": "2026-11-23",
@@ -8410,7 +8447,44 @@
         "channels": 3,
         "lift": 8.2,
         "medianViews": 471643
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 46
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 44
+        },
+        {
+          "format": "the truth about",
+          "score": 0.69,
+          "longShare": 1,
+          "smallShare": 0.22,
+          "channels": 47
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 39
+        }
+      ]
     },
     {
       "id": "western",
