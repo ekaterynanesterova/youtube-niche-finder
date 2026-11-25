@@ -8490,8 +8490,8 @@
       "id": "western",
       "group": "Найдено автоматом",
       "subject": "western",
-      "format": "documentary",
-      "en": "western documentary",
+      "format": "the truth about",
+      "en": "the truth about western",
       "ru": "западный документальный фильм",
       "source": "auto",
       "addedAt": "2026-11-23",
@@ -8499,7 +8499,44 @@
         "channels": 3,
         "lift": 4.2,
         "medianViews": 417607.5
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 45
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 46
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 29
+        }
+      ]
     },
     {
       "id": "killer-wife",
@@ -8514,6 +8551,73 @@
         "channels": 3,
         "lift": 3.3,
         "medianViews": 1685167.5
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 28
+        },
+        {
+          "format": "explained",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 21
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 34
+        },
+        {
+          "format": "the truth about",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 12
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 26
+        }
+      ]
+    },
+    {
+      "id": "days-trapped",
+      "group": "Найдено автоматом",
+      "subject": "days trapped",
+      "format": "documentary",
+      "en": "days trapped documentary",
+      "ru": "документальный фильм «Запертые на несколько дней»",
+      "source": "auto",
+      "addedAt": "2026-11-25",
+      "foundVia": {
+        "channels": 3,
+        "lift": 11.3,
+        "medianViews": 187401
+      }
+    },
+    {
+      "id": "zombie-outbreak",
+      "group": "Найдено автоматом",
+      "subject": "zombie outbreak",
+      "format": "documentary",
+      "en": "zombie outbreak documentary",
+      "ru": "документальный фильм о вспышке зомби",
+      "source": "auto",
+      "addedAt": "2026-11-25",
+      "foundVia": {
+        "channels": 3,
+        "lift": 4.4,
+        "medianViews": 161440
       }
     }
   ]
