@@ -466,7 +466,8 @@ check('списки служебных слов разные', stopWords('en').h
   check('обрывки кликбейта темой не считаются', junk.every((q) => !shape(q, 'en').ok));
   const real = ['the truth about monks', 'great white shark documentary', 'mount kailash explained',
                 'iceberg documentary', 'ancient egypt documentary', 'animal attacks documentary',
-                'pharaoh documentary', 'film analysis documentary', 'neutron star supernova'];
+                'pharaoh documentary', 'film analysis documentary', 'neutron star supernova',
+                'ancient humans documentary'];
   check('настоящие темы рядом с общими словами проходят', real.every((q) => shape(q, 'en').ok));
   check('общие слова из запроса не вычёркиваются',
     shape('great white shark documentary', 'en').subjects.join(' ') === 'great white shark');
