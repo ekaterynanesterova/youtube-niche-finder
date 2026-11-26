@@ -2596,200 +2596,222 @@
     {
       "id": "hidden-history",
       "group": "Список из 50",
-      "en": "hidden history documentary",
+      "en": "hidden history",
       "ru": "скрытая история",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "hidden history"
+      "subject": "hidden history",
+      "format": ""
     },
     {
       "id": "business-rivalry",
       "group": "Список из 50",
-      "en": "business rivalry documentary",
+      "en": "business rivalry",
       "ru": "бизнес-битвы",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "business rivalry"
+      "subject": "business rivalry",
+      "format": ""
     },
     {
       "id": "impossible-engineering",
       "group": "Список из 50",
-      "en": "impossible engineering documentary",
+      "en": "impossible engineering",
       "ru": "невозможная инженерия",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "impossible engineering"
+      "subject": "impossible engineering",
+      "format": ""
     },
     {
       "id": "internet-mystery",
       "group": "Список из 50",
-      "en": "internet mystery documentary",
+      "en": "internet mystery",
       "ru": "загадки интернета",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "internet mystery"
+      "subject": "internet mystery",
+      "format": ""
     },
     {
       "id": "psychology-doc",
       "group": "Список из 50",
-      "en": "psychology documentary",
+      "en": "psychology",
       "ru": "психология",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "psychology"
+      "subject": "psychology",
+      "format": ""
     },
     {
       "id": "evolution-timeline",
       "group": "Список из 50",
-      "en": "evolution timeline documentary",
+      "en": "evolution timeline",
       "ru": "эволюция: хронология",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "evolution timeline"
+      "subject": "evolution timeline",
+      "format": ""
     },
     {
       "id": "biggest-scams",
       "group": "Список из 50",
-      "en": "biggest scams documentary",
+      "en": "biggest scams",
       "ru": "громкие аферы",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "biggest scams"
+      "subject": "biggest scams",
+      "format": ""
     },
     {
       "id": "business-failure",
       "group": "Список из 50",
-      "en": "business failure documentary",
+      "en": "business failure",
       "ru": "громкие провалы",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "business failure"
+      "subject": "business failure",
+      "format": ""
     },
     {
       "id": "comeback-story",
       "group": "Список из 50",
-      "en": "comeback story documentary",
+      "en": "comeback story",
       "ru": "великие камбэки",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "comeback story"
+      "subject": "comeback story",
+      "format": ""
     },
     {
       "id": "survival-story",
       "group": "Список из 50",
-      "en": "survival story documentary",
+      "en": "survival story",
       "ru": "чудеса выживания",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "survival story"
+      "subject": "survival story",
+      "format": ""
     },
     {
       "id": "myths-debunked",
       "group": "Список из 50",
-      "en": "myths debunked documentary",
+      "en": "myths debunked",
       "ru": "разрушаем мифы",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "myths debunked"
+      "subject": "myths debunked",
+      "format": ""
     },
     {
       "id": "future-predictions",
       "group": "Список из 50",
-      "en": "future predictions documentary",
+      "en": "future predictions",
       "ru": "прогнозы на будущее",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "future predictions"
+      "subject": "future predictions",
+      "format": ""
     },
     {
       "id": "alternate-history",
       "group": "Список из 50",
-      "en": "alternate history documentary",
+      "en": "alternate history",
       "ru": "что было бы, если",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "alternate history"
+      "subject": "alternate history",
+      "format": ""
     },
     {
       "id": "strategy-breakdown",
       "group": "Список из 50",
-      "en": "strategy breakdown documentary",
+      "en": "strategy breakdown",
       "ru": "разборы стратегий",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "strategy breakdown"
+      "subject": "strategy breakdown",
+      "format": ""
     },
     {
       "id": "secret-empire",
       "group": "Список из 50",
-      "en": "secret empire documentary",
+      "en": "secret empire",
       "ru": "тайные империи",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "secret empire"
+      "subject": "secret empire",
+      "format": ""
     },
     {
       "id": "corporate-collapse",
       "group": "Список из 50",
-      "en": "corporate collapse documentary",
+      "en": "corporate collapse",
       "ru": "крахи корпораций",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "corporate collapse"
+      "subject": "corporate collapse",
+      "format": ""
     },
     {
       "id": "marketing-genius",
       "group": "Список из 50",
-      "en": "marketing genius documentary",
+      "en": "marketing genius",
       "ru": "гениальный маркетинг",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "marketing genius"
+      "subject": "marketing genius",
+      "format": ""
     },
     {
       "id": "innovation-story",
       "group": "Список из 50",
-      "en": "innovation story documentary",
+      "en": "innovation story",
       "ru": "истории инноваций",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "innovation story"
+      "subject": "innovation story",
+      "format": ""
     },
     {
       "id": "military-strategy",
       "group": "Список из 50",
-      "en": "military strategy documentary",
+      "en": "military strategy",
       "ru": "стратегии полководцев",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "military strategy"
+      "subject": "military strategy",
+      "format": ""
     },
     {
       "id": "technology-explained",
       "group": "Список из 50",
-      "en": "technology explained documentary",
+      "en": "technology explained",
       "ru": "технологии простым языком",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "technology"
+      "subject": "technology",
+      "format": "explained"
     },
     {
       "id": "sports-dynasty",
       "group": "Список из 50",
-      "en": "sports dynasty documentary",
+      "en": "sports dynasty",
       "ru": "спортивные династии",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "sports dynasty"
+      "subject": "sports dynasty",
+      "format": ""
     },
     {
       "id": "movie-production",
       "group": "Список из 50",
-      "en": "movie production documentary",
+      "en": "movie production",
       "ru": "как снимали кино",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "movie production"
+      "subject": "movie production",
+      "format": ""
     },
     {
       "id": "ai-explained",
@@ -2798,196 +2820,218 @@
       "ru": "AI простым языком",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "artificial intelligence"
+      "subject": "artificial intelligence",
+      "format": "explained"
     },
     {
       "id": "startup-story",
       "group": "Список из 50",
-      "en": "startup story documentary",
+      "en": "startup story",
       "ru": "кейсы стартапов",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "startup story"
+      "subject": "startup story",
+      "format": ""
     },
     {
       "id": "millionaire-habits",
       "group": "Список из 50",
-      "en": "millionaire habits documentary",
+      "en": "millionaire habits",
       "ru": "привычки миллионеров",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "millionaire habits"
+      "subject": "millionaire habits",
+      "format": ""
     },
     {
       "id": "billionaire-breakdown",
       "group": "Список из 50",
-      "en": "billionaire breakdown documentary",
+      "en": "billionaire breakdown",
       "ru": "разборы миллиардеров",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "billionaire breakdown"
+      "subject": "billionaire breakdown",
+      "format": ""
     },
     {
       "id": "biggest-scandals",
       "group": "Список из 50",
-      "en": "biggest scandals documentary",
+      "en": "biggest scandals",
       "ru": "скандальные события",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "biggest scandals"
+      "subject": "biggest scandals",
+      "format": ""
     },
     {
       "id": "disaster-doc",
       "group": "Список из 50",
-      "en": "disaster documentary",
+      "en": "disaster explained",
       "ru": "разбор катастроф",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "disaster"
+      "subject": "disaster",
+      "format": "explained"
     },
     {
       "id": "map-explained",
       "group": "Список из 50",
-      "en": "map explained documentary",
+      "en": "map explained",
       "ru": "объясняем на картах",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "map"
+      "subject": "map",
+      "format": "explained"
     },
     {
       "id": "world-records",
       "group": "Список из 50",
-      "en": "world records documentary",
+      "en": "world records",
       "ru": "мировые рекорды",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "world records"
+      "subject": "world records",
+      "format": ""
     },
     {
       "id": "greatest-achievements",
       "group": "Список из 50",
-      "en": "greatest achievements documentary",
+      "en": "greatest achievements",
       "ru": "невероятные достижения",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "greatest achievements"
+      "subject": "greatest achievements",
+      "format": ""
     },
     {
       "id": "greatest-rivalries",
       "group": "Список из 50",
-      "en": "greatest rivalries documentary",
+      "en": "greatest rivalries",
       "ru": "великие противостояния",
       "source": "list50",
       "addedAt": "2026-09-11",
-      "subject": "greatest rivalries"
+      "subject": "greatest rivalries",
+      "format": ""
     },
     {
       "id": "science-facts",
       "group": "Список из 80",
-      "en": "science facts documentary",
+      "en": "science facts",
       "ru": "научные факты",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "science facts"
+      "subject": "science facts",
+      "format": ""
     },
     {
       "id": "history-facts",
       "group": "Список из 80",
-      "en": "history facts documentary",
+      "en": "history facts",
       "ru": "исторические факты",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "history facts"
+      "subject": "history facts",
+      "format": ""
     },
     {
       "id": "book-summary",
       "group": "Список из 80",
-      "en": "book summary documentary",
+      "en": "book summary",
       "ru": "пересказы книг",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "book summary"
+      "subject": "book summary",
+      "format": ""
     },
     {
       "id": "film-analysis",
       "group": "Список из 80",
-      "en": "film analysis documentary",
+      "en": "film analysis",
       "ru": "разборы фильмов",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "film analysis"
+      "subject": "film analysis",
+      "format": ""
     },
     {
       "id": "series-breakdown",
       "group": "Список из 80",
-      "en": "tv series breakdown documentary",
+      "en": "tv series breakdown",
       "ru": "разборы сериалов",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "tv series breakdown"
+      "subject": "tv series breakdown",
+      "format": ""
     },
     {
       "id": "game-lore",
       "group": "Список из 80",
-      "en": "game lore explained documentary",
+      "en": "game lore",
       "ru": "сюжеты игр",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "game lore"
+      "subject": "game lore",
+      "format": ""
     },
     {
       "id": "cinematography",
       "group": "Список из 80",
-      "en": "cinematography documentary",
+      "en": "cinematography",
       "ru": "киношные кадры",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "cinematography"
+      "subject": "cinematography",
+      "format": ""
     },
     {
       "id": "minimalism-doc",
       "group": "Список из 80",
-      "en": "minimalism documentary",
+      "en": "minimalism",
       "ru": "минимализм",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "minimalism"
+      "subject": "minimalism",
+      "format": ""
     },
     {
       "id": "street-food-doc",
       "group": "Список из 80",
-      "en": "street food documentary",
+      "en": "street food",
       "ru": "уличная еда",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "street food"
+      "subject": "street food",
+      "format": ""
     },
     {
       "id": "village-life",
       "group": "Список из 80",
-      "en": "village life documentary",
+      "en": "village life",
       "ru": "жизнь в деревне",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "village life"
+      "subject": "village life",
+      "format": ""
     },
     {
       "id": "unusual-food",
       "group": "Список из 80",
-      "en": "unusual food documentary",
+      "en": "unusual food",
       "ru": "необычная еда",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "unusual food"
+      "subject": "unusual food",
+      "format": ""
     },
     {
       "id": "tourist-places",
       "group": "Список из 80",
-      "en": "tourist places documentary",
+      "en": "tourist places",
       "ru": "туристические места",
       "source": "list80",
       "addedAt": "2026-09-11",
-      "subject": "tourist places"
+      "subject": "tourist places",
+      "format": ""
     },
     {
       "id": "real-life",
@@ -8742,217 +8786,241 @@
       "id": "plane-crash",
       "group": "Расширение: ноябрь",
       "subject": "plane crash",
-      "en": "plane crash documentary",
+      "en": "plane crash",
       "ru": "авиакатастрофы",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "shipwreck",
       "group": "Расширение: ноябрь",
       "subject": "shipwreck",
-      "en": "shipwreck documentary",
+      "en": "shipwreck",
       "ru": "кораблекрушения",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "heist",
       "group": "Расширение: ноябрь",
       "subject": "heist",
-      "en": "heist documentary",
+      "en": "heist",
       "ru": "громкие ограбления",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "cold-war-spies",
       "group": "Расширение: ноябрь",
       "subject": "cold war spies",
-      "en": "cold war spies documentary",
+      "en": "cold war spies",
       "ru": "шпионы холодной войны",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "cults",
       "group": "Расширение: ноябрь",
       "subject": "cults",
-      "en": "cults documentary",
+      "en": "cults",
       "ru": "секты",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "biblical-archaeology",
       "group": "Расширение: ноябрь",
       "subject": "biblical archaeology",
-      "en": "biblical archaeology documentary",
+      "en": "biblical archaeology",
       "ru": "библейская археология",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "greek-mythology",
       "group": "Расширение: ноябрь",
       "subject": "greek mythology",
-      "en": "greek mythology documentary",
+      "en": "greek mythology",
       "ru": "греческие мифы",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "norse-mythology",
       "group": "Расширение: ноябрь",
       "subject": "norse mythology",
-      "en": "norse mythology documentary",
+      "en": "norse mythology",
       "ru": "скандинавские мифы",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "medieval-life",
       "group": "Расширение: ноябрь",
       "subject": "medieval life",
-      "en": "medieval life documentary",
+      "en": "medieval life",
       "ru": "жизнь в Средневековье",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "royal-history",
       "group": "Расширение: ноябрь",
       "subject": "royal family history",
-      "en": "royal family history documentary",
+      "en": "royal family history",
       "ru": "история королевских семей",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "roman-empire",
       "group": "Расширение: ноябрь",
       "subject": "roman empire",
-      "en": "roman empire documentary",
+      "en": "roman empire",
       "ru": "Римская империя",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "maya-aztec",
       "group": "Расширение: ноябрь",
       "subject": "maya civilization",
-      "en": "maya civilization documentary",
+      "en": "maya civilization",
       "ru": "майя",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "samurai",
       "group": "Расширение: ноябрь",
       "subject": "samurai history",
-      "en": "samurai history documentary",
+      "en": "samurai history",
       "ru": "самураи",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "pirates",
       "group": "Расширение: ноябрь",
       "subject": "pirates history",
-      "en": "pirates history documentary",
+      "en": "pirates history",
       "ru": "пираты",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "vikings",
       "group": "Расширение: ноябрь",
       "subject": "vikings",
-      "en": "vikings documentary",
+      "en": "vikings",
       "ru": "викинги",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "nuclear-disaster",
       "group": "Расширение: ноябрь",
       "subject": "nuclear disaster",
-      "en": "nuclear disaster documentary",
+      "en": "nuclear disaster",
       "ru": "ядерные катастрофы",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "submarine",
       "group": "Расширение: ноябрь",
       "subject": "submarine",
-      "en": "submarine documentary",
+      "en": "submarine",
       "ru": "подводные лодки",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "economics",
       "group": "Расширение: ноябрь",
       "subject": "economics",
-      "en": "economics documentary",
+      "en": "economics",
       "ru": "экономика простым языком",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "geography",
       "group": "Расширение: ноябрь",
       "subject": "geography",
-      "en": "geography documentary",
+      "en": "geography",
       "ru": "география: почему страны такие",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "brand-history",
       "group": "Расширение: ноябрь",
       "subject": "history of brands",
-      "en": "history of brands documentary",
+      "en": "history of brands",
       "ru": "история брендов",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "car-history",
       "group": "Расширение: ноябрь",
       "subject": "automotive history",
-      "en": "automotive history documentary",
+      "en": "automotive history",
       "ru": "история автомобилей",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "weird-animals",
       "group": "Расширение: ноябрь",
       "subject": "weird animals",
-      "en": "weird animals documentary",
+      "en": "weird animals",
       "ru": "странные животные",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "true-crime-cases",
       "group": "Расширение: ноябрь",
       "subject": "true crime cases",
-      "en": "true crime cases documentary",
+      "en": "true crime cases",
       "ru": "реальные преступления",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     },
     {
       "id": "megaprojects",
       "group": "Расширение: ноябрь",
       "subject": "megaprojects",
-      "en": "megaprojects documentary",
+      "en": "megaprojects",
       "ru": "мегапроекты",
       "source": "list-nov",
-      "addedAt": "2026-11-26"
+      "addedAt": "2026-11-26",
+      "format": ""
     }
   ]
 }
