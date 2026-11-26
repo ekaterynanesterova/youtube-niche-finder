@@ -8594,8 +8594,8 @@
       "id": "days-trapped",
       "group": "Найдено автоматом",
       "subject": "days trapped",
-      "format": "documentary",
-      "en": "days trapped documentary",
+      "format": "explained",
+      "en": "days trapped explained",
       "ru": "документальный фильм «Запертые на несколько дней»",
       "source": "auto",
       "addedAt": "2026-11-25",
@@ -8603,7 +8603,44 @@
         "channels": 3,
         "lift": 11.3,
         "medianViews": 187401
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.66,
+          "longShare": 1,
+          "smallShare": 0.16,
+          "channels": 37
+        },
+        {
+          "format": "explained",
+          "score": 0.75,
+          "longShare": 1,
+          "smallShare": 0.36,
+          "channels": 32
+        },
+        {
+          "format": "full story",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 37
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 32
+        }
+      ]
     },
     {
       "id": "zombie-outbreak",
@@ -8618,7 +8655,44 @@
         "channels": 3,
         "lift": 4.4,
         "medianViews": 161440
-      }
+      },
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 36
+        },
+        {
+          "format": "explained",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 39
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 40
+        },
+        {
+          "format": "the truth about",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 34
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        }
+      ]
     }
   ]
 }
