@@ -432,7 +432,23 @@
       "beautiful",
       "archaeologists",
       "researchers",
-      "mount"
+      "mount",
+      "truly",
+      "explore",
+      "explored",
+      "opened",
+      "open",
+      "later",
+      "worse",
+      "best",
+      "smiles",
+      "camera",
+      "trapped",
+      "humanity",
+      "western",
+      "far",
+      "humanitys",
+      "humans"
     ],
     "whyGeneric": "Слова, которые бывают в названии темы, но сами темой не являются: «truth», «sense», «people», «finally», «years ago». Автопоиск ловил их как обрывки кликбейтных заголовков и заводил темы «the truth about sense» и «happening right» — по сто юнитов за поиск, приносящий случайные каналы. В отличие от модификаторов, из запроса они не вычёркиваются: «great white shark» остаётся целым. Правило одно — кроме таких слов в запросе должно быть хотя бы одно настоящее: shark, pharaoh, iceberg. Жанры кино здесь же: «thriller action» — это выложенные чужие фильмы, а не ниша."
   }
