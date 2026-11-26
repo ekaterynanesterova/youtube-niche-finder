@@ -16,9 +16,9 @@ import { topicShape } from './topics.js';
 import { queryKeywords } from './metrics.js';
 
 // Сколько тем за прогон. Один подбор — это число форматов × 100 юнитов,
-// то есть около 500 из девяти тысяч. Больше двух за раз брать незачем:
-// темы никуда не убегут, а квота нужна сбору.
-const TOPICS_PER_RUN = 2;
+// то есть около 500 из девяти тысяч. В ноябре в очередь встали 68 тем из
+// списков — при двух за прогон это месяц, поэтому три.
+const TOPICS_PER_RUN = 3;
 
 async function harvest(api, db, query) {
   const res = await api.search({ q: query, maxResults: 50, relevanceLanguage: 'en' });
@@ -48,11 +48,22 @@ async function harvest(api, db, query) {
 //
 // Тему, которая предмета не называет, не подбираем: пять поисков по «sense»
 // стоили пятьсот юнитов и приносили случайные каналы.
+//
+// Темы из списков Кати (list50, list80, list-nov) тоже подбираются, и первыми.
+// Раньше подбор касался только автонайденных, и её темы искались с
+// приклеенным «documentary»: «book summary documentary», «game lore
+// explained documentary» — так эти ниши на YouTube не называются.
+export const tunable = (s) => s.source === 'auto' || /^list/.test(s.source ?? '');
+
 export function needFormat(seeds, lang = 'en') {
+  // Сначала старые списки: их запросы испорчены приклеенным словом. Новые темы
+  // ноября ищутся и с «documentary» нормально, им подбор нужен меньше.
+  const rank = (s) => (s.source === 'auto' ? 2 : s.source === 'list-nov' ? 1 : 0);
   return seeds
-    .filter((s) => s[lang] && !s.formatTried && s.source === 'auto')
+    .filter((s) => s[lang] && !s.formatTried && tunable(s))
     .filter((s) => topicShape(queryKeywords(s.subject ?? s[lang], lang)).ok)
-    .sort((a, b) => String(b.addedAt ?? '').localeCompare(String(a.addedAt ?? '')));
+    .sort((a, b) => rank(a) - rank(b)
+      || String(b.addedAt ?? '').localeCompare(String(a.addedAt ?? '')));
 }
 
 export async function tuneFormats({ api, db, seeds, lang = 'en', limit = TOPICS_PER_RUN }) {

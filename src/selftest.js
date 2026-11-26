@@ -1247,6 +1247,9 @@ check('списки служебных слов разные', stopWords('en').h
   check('в очередь идут только неподобранные', q.length === 1 && q[0].id === 'a');
   check('темы, заданные руками, не трогаются', !q.some((x) => x.id === 'c'));
   check('на обрывок заголовка квоту не тратим', !q.some((x) => x.id === 'd'));
+  const q2 = needFormat([...seeds,
+    { id: 'e', en: 'book summary documentary', subject: 'book summary', source: 'list80', addedAt: '2026-09-11' }], 'en');
+  check('темы из списков Кати подбираются, и первыми', q2[0]?.id === 'e');
 }
 
 console.log(failed ? `\n${failed} проверок не прошло` : '\nВсе проверки прошли');
