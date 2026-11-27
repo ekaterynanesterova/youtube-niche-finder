@@ -2596,32 +2596,143 @@
     {
       "id": "hidden-history",
       "group": "Список из 50",
-      "en": "hidden history",
+      "en": "hidden history documentary",
       "ru": "скрытая история",
       "source": "list50",
       "addedAt": "2026-09-11",
       "subject": "hidden history",
-      "format": ""
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 36
+        },
+        {
+          "format": "explained",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 36
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 36
+        },
+        {
+          "format": "the truth about",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.07,
+          "channels": 41
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 34
+        }
+      ]
     },
     {
       "id": "business-rivalry",
       "group": "Список из 50",
-      "en": "business rivalry",
+      "en": "the truth about business rivalry",
       "ru": "бизнес-битвы",
       "source": "list50",
       "addedAt": "2026-09-11",
       "subject": "business rivalry",
-      "format": ""
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.83,
+          "longShare": 1,
+          "smallShare": 0.57,
+          "channels": 35
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 1
+        },
+        {
+          "format": "full story",
+          "score": 0.82,
+          "longShare": 1,
+          "smallShare": 0.54,
+          "channels": 27
+        },
+        {
+          "format": "the truth about",
+          "score": 1,
+          "longShare": 1,
+          "smallShare": 1,
+          "channels": 10
+        },
+        {
+          "format": "",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 48
+        }
+      ]
     },
     {
       "id": "impossible-engineering",
       "group": "Список из 50",
-      "en": "impossible engineering",
+      "en": "the truth about impossible engineering",
       "ru": "невозможная инженерия",
       "source": "list50",
       "addedAt": "2026-09-11",
       "subject": "impossible engineering",
-      "format": ""
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.09,
+          "channels": 22
+        },
+        {
+          "format": "explained",
+          "score": 0.68,
+          "longShare": 1,
+          "smallShare": 0.2,
+          "channels": 30
+        },
+        {
+          "format": "full story",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0.12,
+          "channels": 19
+        },
+        {
+          "format": "the truth about",
+          "score": 0.8,
+          "longShare": 1,
+          "smallShare": 0.5,
+          "channels": 18
+        },
+        {
+          "format": "",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.17,
+          "channels": 26
+        }
+      ]
     },
     {
       "id": "internet-mystery",
