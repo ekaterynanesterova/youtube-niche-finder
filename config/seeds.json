@@ -2737,32 +2737,143 @@
     {
       "id": "internet-mystery",
       "group": "Список из 50",
-      "en": "internet mystery",
+      "en": "the truth about internet mystery",
       "ru": "загадки интернета",
       "source": "list50",
       "addedAt": "2026-09-11",
       "subject": "internet mystery",
-      "format": ""
+      "format": "the truth about",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.61,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 27
+        },
+        {
+          "format": "explained",
+          "score": 0.59,
+          "longShare": 1,
+          "smallShare": 0.02,
+          "channels": 22
+        },
+        {
+          "format": "full story",
+          "score": 0.56,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 18
+        },
+        {
+          "format": "the truth about",
+          "score": 0.67,
+          "longShare": 1,
+          "smallShare": 0.18,
+          "channels": 29
+        },
+        {
+          "format": "",
+          "score": 0.56,
+          "longShare": 1,
+          "smallShare": 0.03,
+          "channels": 19
+        }
+      ]
     },
     {
       "id": "psychology-doc",
       "group": "Список из 50",
-      "en": "psychology",
+      "en": "psychology documentary",
       "ru": "психология",
       "source": "list50",
       "addedAt": "2026-09-11",
       "subject": "psychology",
-      "format": ""
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 41
+        },
+        {
+          "format": "explained",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        },
+        {
+          "format": "full story",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.05,
+          "channels": 41
+        },
+        {
+          "format": "the truth about",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 33
+        },
+        {
+          "format": "",
+          "score": 0.6,
+          "longShare": 1,
+          "smallShare": 0,
+          "channels": 37
+        }
+      ]
     },
     {
       "id": "evolution-timeline",
       "group": "Список из 50",
-      "en": "evolution timeline",
+      "en": "evolution timeline documentary",
       "ru": "эволюция: хронология",
       "source": "list50",
       "addedAt": "2026-09-11",
       "subject": "evolution timeline",
-      "format": ""
+      "format": "documentary",
+      "formatTried": [
+        {
+          "format": "documentary",
+          "score": 0.64,
+          "longShare": 1,
+          "smallShare": 0.11,
+          "channels": 38
+        },
+        {
+          "format": "explained",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.04,
+          "channels": 36
+        },
+        {
+          "format": "full story",
+          "score": 0.63,
+          "longShare": 1,
+          "smallShare": 0.08,
+          "channels": 42
+        },
+        {
+          "format": "the truth about",
+          "score": 0.65,
+          "longShare": 1,
+          "smallShare": 0.13,
+          "channels": 6
+        },
+        {
+          "format": "",
+          "score": 0.62,
+          "longShare": 1,
+          "smallShare": 0.06,
+          "channels": 43
+        }
+      ]
     },
     {
       "id": "biggest-scams",
